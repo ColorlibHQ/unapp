@@ -1,0 +1,1892 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: UNAPP\n"
+"POT-Creation-Date: 2018-06-12 00:56+0600\n"
+"PO-Revision-Date: 2018-06-12 00:56+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+
+#: comments.php:34
+msgid "Comments"
+msgstr ""
+
+#: comments.php:63
+msgid "Submit"
+msgstr ""
+
+#: comments.php:64
+msgid "Leave a Comments"
+msgstr ""
+
+#: footer.php:18
+#, php-format
+msgid "Unapp Themes &copy; %s. All rights reserved."
+msgstr ""
+
+#: functions.php:71
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:72
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:139
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:141 functions.php:152
+msgid "Add widgets here to appear in your sidebar."
+msgstr ""
+
+#: functions.php:150 inc/customizer/settings/sections.php:89
+msgid "Footer"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:334 inc/unapp_add_plugin.php:61
+msgid "Install Required Plugins"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:335 inc/unapp_add_plugin.php:62
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: inc/class-tgm-plugin-activation.php:337 inc/unapp_add_plugin.php:63
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: inc/class-tgm-plugin-activation.php:339 inc/unapp_add_plugin.php:64
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:340 inc/unapp_add_plugin.php:65
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:343 inc/unapp_add_plugin.php:67
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:349 inc/unapp_add_plugin.php:72
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:355 inc/unapp_add_plugin.php:77
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:361 inc/unapp_add_plugin.php:82
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:367 inc/unapp_add_plugin.php:87
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:373 inc/unapp_add_plugin.php:92
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:378 inc/unapp_add_plugin.php:97
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:383 inc/unapp_add_plugin.php:102
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:388 inc/unapp_add_plugin.php:107
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:392 inc/unapp_add_plugin.php:111
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:393
+#: inc/class-tgm-plugin-activation.php:912
+#: inc/class-tgm-plugin-activation.php:2618
+#: inc/class-tgm-plugin-activation.php:3665
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:394
+#: inc/class-tgm-plugin-activation.php:3244 inc/unapp_add_plugin.php:112
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:395
+#: inc/class-tgm-plugin-activation.php:3037 inc/unapp_add_plugin.php:113
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: inc/class-tgm-plugin-activation.php:397 inc/unapp_add_plugin.php:114
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/class-tgm-plugin-activation.php:399 inc/unapp_add_plugin.php:115
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: inc/class-tgm-plugin-activation.php:401 inc/unapp_add_plugin.php:116
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:402 inc/unapp_add_plugin.php:117
+msgid "Dismiss this notice"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:403 inc/unapp_add_plugin.php:118
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:404 inc/unapp_add_plugin.php:119
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:607
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:608
+msgid "Update Required"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1019
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1019
+#: inc/class-tgm-plugin-activation.php:1022
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1022
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1206
+#: inc/class-tgm-plugin-activation.php:3033
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: inc/class-tgm-plugin-activation.php:2067
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2358
+msgid "Required"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2361
+msgid "Recommended"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2377
+msgid "WordPress Repository"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2380
+msgid "External Source"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2383
+msgid "Pre-Packaged"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2400
+msgid "Not Installed"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2404
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2406
+msgid "Active"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2412
+msgid "Required Update not Available"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2415
+msgid "Requires Update"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2418
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: inc/class-tgm-plugin-activation.php:2427
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: inc/class-tgm-plugin-activation.php:2473
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: inc/class-tgm-plugin-activation.php:2477
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: inc/class-tgm-plugin-activation.php:2481
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: inc/class-tgm-plugin-activation.php:2485
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:2567
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2575
+msgid "Installed version:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2583
+msgid "Minimum required version:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2595
+msgid "Available version:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2618
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2632
+msgid "Plugin"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2633
+msgid "Source"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2634
+msgid "Type"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2638
+msgid "Version"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2639
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/class-tgm-plugin-activation.php:2688
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/class-tgm-plugin-activation.php:2693
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/class-tgm-plugin-activation.php:2699
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2769
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2802
+#: inc/libraries/epsilon-framework/customizer/sections/class-epsilon-section-recommended-actions.php:279
+#: inc/libraries/epsilon-framework/customizer/sections/class-epsilon-section-recommended-actions.php:345
+msgid "Install"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2808
+#: inc/libraries/epsilon-framework/customizer/sections/class-epsilon-section-recommended-actions.php:287
+#: inc/libraries/epsilon-framework/customizer/sections/class-epsilon-section-recommended-actions.php:353
+msgid "Update"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2811
+#: inc/libraries/epsilon-framework/customizer/sections/class-epsilon-section-recommended-actions.php:283
+#: inc/libraries/epsilon-framework/customizer/sections/class-epsilon-section-recommended-actions.php:349
+msgid "Activate"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2842
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2844
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2885
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2887
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2993
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3019
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3243
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/class-tgm-plugin-activation.php:3583
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: inc/class-tgm-plugin-activation.php:3586
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/class-tgm-plugin-activation.php:3588
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3592
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/class-tgm-plugin-activation.php:3594
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3595
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/class-tgm-plugin-activation.php:3597
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3600
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/class-tgm-plugin-activation.php:3602
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3603
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/class-tgm-plugin-activation.php:3605
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/class-unapp.php:135
+msgid "Accent Colors"
+msgstr ""
+
+#: inc/class-unapp.php:141
+msgid "Accent Color #1"
+msgstr ""
+
+#: inc/class-unapp.php:142
+msgid "Theme main color."
+msgstr ""
+
+#: inc/class-unapp.php:149
+msgid "Accent Color #2"
+msgstr ""
+
+#: inc/class-unapp.php:150
+msgid "The second main color."
+msgstr ""
+
+#: inc/class-unapp.php:157
+msgid "Typography Colors"
+msgstr ""
+
+#: inc/class-unapp.php:163 inc/class-unapp.php:279
+msgid "Title Color"
+msgstr ""
+
+#: inc/class-unapp.php:164
+msgid "The color used for titles."
+msgstr ""
+
+#: inc/class-unapp.php:171 inc/class-unapp.php:287
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:279
+msgid "Text Color"
+msgstr ""
+
+#: inc/class-unapp.php:172
+msgid "The color used for paragraphs."
+msgstr ""
+
+#: inc/class-unapp.php:179 inc/class-unapp.php:295
+msgid "Link Color"
+msgstr ""
+
+#: inc/class-unapp.php:180
+msgid "The color used for links."
+msgstr ""
+
+#: inc/class-unapp.php:187 inc/class-unapp.php:303
+msgid "Link Hover Color"
+msgstr ""
+
+#: inc/class-unapp.php:188
+msgid "The color used for hovered links."
+msgstr ""
+
+#: inc/class-unapp.php:195 inc/class-unapp.php:311
+msgid "Link Active Color"
+msgstr ""
+
+#: inc/class-unapp.php:196
+msgid "The color used for active links."
+msgstr ""
+
+#: inc/class-unapp.php:203
+msgid "Navigation Colors"
+msgstr ""
+
+#: inc/class-unapp.php:209
+msgid "Header background color"
+msgstr ""
+
+#: inc/class-unapp.php:210
+msgid "The color used for the header background."
+msgstr ""
+
+#: inc/class-unapp.php:217
+msgid "Dropdown background"
+msgstr ""
+
+#: inc/class-unapp.php:218
+msgid "The color used for the menu background."
+msgstr ""
+
+#: inc/class-unapp.php:225
+msgid "Dropdown Hover background"
+msgstr ""
+
+#: inc/class-unapp.php:226
+msgid "The color used for the menu hover background."
+msgstr ""
+
+#: inc/class-unapp.php:233
+msgid "Menu item color"
+msgstr ""
+
+#: inc/class-unapp.php:234
+msgid "The color used for the menu item color."
+msgstr ""
+
+#: inc/class-unapp.php:241
+msgid "Menu item hover color"
+msgstr ""
+
+#: inc/class-unapp.php:242
+msgid "The color used for the menu item hover color."
+msgstr ""
+
+#: inc/class-unapp.php:249
+msgid "Menu item active color"
+msgstr ""
+
+#: inc/class-unapp.php:250
+msgid "The color used for the menu item active color."
+msgstr ""
+
+#: inc/class-unapp.php:257
+msgid "Footer Colors"
+msgstr ""
+
+#: inc/class-unapp.php:263
+msgid "Contact Background Color"
+msgstr ""
+
+#: inc/class-unapp.php:264
+msgid "The color used for the footer contact background."
+msgstr ""
+
+#: inc/class-unapp.php:271
+msgid "Background Color"
+msgstr ""
+
+#: inc/class-unapp.php:272
+msgid "The color used for the footer background."
+msgstr ""
+
+#: inc/class-unapp.php:280
+msgid "The color used for the footer title color."
+msgstr ""
+
+#: inc/class-unapp.php:288 inc/class-unapp.php:296 inc/class-unapp.php:304
+#: inc/class-unapp.php:312
+msgid "The color used for the footer text color."
+msgstr ""
+
+#: inc/customizer/class-unapp-customizer.php:79
+msgid ""
+"The image logo, if set, will override the text logo. You can not have both "
+"at the same time. A tagline can be displayed under the text logo."
+msgstr ""
+
+#: inc/customizer/class-unapp-customizer.php:80
+msgid "Page Header"
+msgstr ""
+
+#: inc/customizer/class-unapp-customizer.php:81
+msgid ""
+"If you have front-end sections, those will be displayed instead. Consider "
+"adding a \"Content Section\" if you need to display the page content as well."
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:69
+msgid "Banner Section"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:70
+msgid "Banner section retrieves content from theme options"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:143
+#: inc/customizer/class-unapp-repeatable-sections.php:402
+#: inc/customizer/class-unapp-repeatable-sections.php:508
+#: inc/customizer/class-unapp-repeatable-sections.php:633
+#: inc/customizer/class-unapp-repeatable-sections.php:839
+#: inc/customizer/class-unapp-repeatable-sections.php:949
+#: inc/customizer/class-unapp-repeatable-sections.php:1038
+#: inc/customizer/class-unapp-repeatable-sections.php:1152
+#: inc/customizer/class-unapp-repeatable-sections.php:1255
+#: inc/customizer/settings/fields.php:220
+#: inc/customizer/settings/fields.php:252
+#: inc/customizer/settings/fields.php:290
+#: inc/customizer/settings/fields.php:389
+msgid "Title"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:149
+#: inc/customizer/class-unapp-repeatable-sections.php:408
+#: inc/customizer/class-unapp-repeatable-sections.php:845
+#: inc/customizer/class-unapp-repeatable-sections.php:955
+#: inc/customizer/class-unapp-repeatable-sections.php:1044
+#: inc/customizer/class-unapp-repeatable-sections.php:1261
+msgid "Subtitle"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:155
+#: inc/customizer/settings/fields.php:442
+msgid "Button Text"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:161
+#: inc/customizer/class-unapp-repeatable-sections.php:526
+#: inc/customizer/class-unapp-repeatable-sections.php:651
+msgid "Button Link"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:167
+msgid "Background Link"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:183
+msgid "Slider Section"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:184
+msgid "A slider section. It retrieves content from Theme Content / Slides."
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:191
+msgid "Add Slides &rarr;"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:194
+msgid "Slides to show"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:195
+#: inc/customizer/class-unapp-repeatable-sections.php:297
+#: inc/customizer/class-unapp-repeatable-sections.php:533
+#: inc/customizer/class-unapp-repeatable-sections.php:658
+#: inc/customizer/class-unapp-repeatable-sections.php:759
+#: inc/customizer/class-unapp-repeatable-sections.php:1051
+#: inc/customizer/class-unapp-repeatable-sections.php:1268
+#: inc/customizer/class-unapp-repeatable-sections.php:1511
+msgid "Only selected items will be shown in the frontend."
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:206
+#: inc/customizer/class-unapp-repeatable-sections.php:314
+#: inc/customizer/class-unapp-repeatable-sections.php:420
+#: inc/customizer/class-unapp-repeatable-sections.php:861
+#: inc/customizer/class-unapp-repeatable-sections.php:1068
+#: inc/customizer/class-unapp-repeatable-sections.php:1175
+#: inc/customizer/class-unapp-repeatable-sections.php:1285
+#: inc/customizer/class-unapp-repeatable-sections.php:1422
+#: inc/customizer/class-unapp-repeatable-sections.php:1528
+msgid "Section ID"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:222
+msgid "Services Section"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:223
+#: inc/customizer/class-unapp-repeatable-sections.php:1437
+msgid "Services section. It retrieves content from Theme Content / Services"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:296
+#: inc/customizer/class-unapp-repeatable-sections.php:1510
+msgid "Services Item To Show"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:307
+#: inc/customizer/class-unapp-repeatable-sections.php:1521
+msgid "Add Services &rarr;"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:328
+msgid "Collaborate Section"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:329
+msgid "Collaborate section retrieves content from theme options"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:414
+msgid "Youtube Link"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:434
+msgid "Featured Section Left"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:435
+#: inc/customizer/class-unapp-repeatable-sections.php:560
+msgid "Featured section retrieves content from theme options"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:514
+#: inc/customizer/class-unapp-repeatable-sections.php:639
+#: inc/customizer/class-unapp-repeatable-sections.php:1164
+msgid "Image"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:520
+#: inc/customizer/class-unapp-repeatable-sections.php:645
+msgid "Button Label"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:532
+#: inc/customizer/class-unapp-repeatable-sections.php:657
+msgid "Featured Work To Show"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:543
+#: inc/customizer/class-unapp-repeatable-sections.php:668
+msgid "Add Featured Work &rarr;"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:559
+msgid "Featured Section Right"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:684
+msgid "Counter Section"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:685
+msgid "Counter section retrieves content from theme options"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:758
+msgid "Counter To Show"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:769
+msgid "Add Counter Work &rarr;"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:785
+msgid "Blog Section"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:786
+msgid "Blog Area Section"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:841
+msgid "News from our Blog"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:847
+#: inc/customizer/class-unapp-repeatable-sections.php:1263
+msgid ""
+"Even the all-powerful Pointing has no control about the blind texts it is an "
+"almost unorthographic life One day however a small line of blind text by the "
+"name of Lorem Ipsum decided to leave for the far World of Grammar."
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:851
+msgid "Post Count"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:852
+msgid "Only posts with featured image are loaded"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:875
+msgid "Subscribe Section"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:876
+msgid "Subscribe section retrieves content from theme options"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:961
+msgid "Mailchimp Shortcode"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:976
+msgid "Pricing Section"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:977
+msgid "Pricing section. It retrieves content from Theme Content / Pricing"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1040
+#: inc/customizer/settings/sections.php:175
+msgid "Pricing"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1046
+msgid ""
+"Even the all-powerful Pointing has no control about the blind texts it is an "
+"almost unorthographic life One day however a small line of blind text by the "
+"name"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1050
+msgid "Price boxes to show"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1061
+msgid "Add Price Boxes &rarr;"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1082
+msgid "About Section"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1083
+msgid "About section. It retrieves content from Theme Content / Services"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1154
+#: inc/widget/about.php:65
+msgid "About unapp"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1158
+msgid "Information"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1160
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia "
+"velit quis sem dignissim porta. Aliquam risus lorem, ornare sed diam at, "
+"ultrices vehicula enim. Morbi pharetra ligula nulla, non blandit velit "
+"tempor vel."
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1170
+msgid "Video Link"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1189
+msgid "Team Section"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1190
+msgid ""
+"Team members section. It retrieves content from Theme Content / Portfolio"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1257
+msgid "Collaborate with your design team in a new way"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1267
+msgid "Members to show"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1278
+msgid "Add Members &rarr;"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1299
+msgid "Contact Section"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1300
+msgid "Contact section. It retrieves content from Theme Content / Services"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1369
+msgid "Shortcode"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1374
+#: inc/widget/contact_info.php:60
+msgid "Address"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1376
+msgid "198 West 21th Street, Suite 721 New York NY 10016"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1380
+msgid "Phone"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1382
+msgid "+ 1235 2355 98"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1386
+msgid "Email"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1388
+msgid "info@yoursite.com"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1392
+msgid "Web Address"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1394
+msgid "http://yourwebsite.com"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1398
+msgid "Google API KEY "
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1404
+msgid "Google Map Latitude"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1410
+msgid "Google Map Longitude"
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1416
+msgid "Google Map Longitude "
+msgstr ""
+
+#: inc/customizer/class-unapp-repeatable-sections.php:1436
+msgid "Page Services Section"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:40
+msgid "Blog Layout"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:67
+msgid "Page Layout"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:78
+msgid "Headings"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:80 inc/customizer/settings/fields.php:112
+msgid "Note: Current typography controls will only be affecting the blog."
+msgstr ""
+
+#: inc/customizer/settings/fields.php:111
+msgid "Paragraphs"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:160
+msgid "Top Bar Columns"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:174
+msgid "Go to top button"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:175
+msgid "Toggle the display of the go to top button."
+msgstr ""
+
+#: inc/customizer/settings/fields.php:184
+msgid "Footer Copyright Section"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:195
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:212
+#: inc/customizer/settings/sections.php:115
+msgid "Slides"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:213
+msgid "Add new slides"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:226
+#: inc/customizer/settings/fields.php:497
+msgid "Portrait"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:244
+#: inc/customizer/settings/fields.php:282
+#: inc/customizer/settings/sections.php:125
+msgid "Services"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:245
+#: inc/customizer/settings/fields.php:283
+msgid "Add new service"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:258
+#: inc/customizer/settings/fields.php:296
+#: inc/customizer/settings/fields.php:332
+#: inc/customizer/settings/fields.php:363
+#: inc/customizer/settings/fields.php:395 inc/widget/about.php:66
+#: inc/widget/social.php:53
+msgid "Description"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:264
+#: inc/customizer/settings/fields.php:302
+#: inc/customizer/settings/fields.php:327
+#: inc/customizer/settings/fields.php:358
+msgid "Icon"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:319
+#: inc/customizer/settings/fields.php:350
+#: inc/customizer/settings/fields.php:381
+msgid "Featured Work"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:320
+#: inc/customizer/settings/fields.php:351
+#: inc/customizer/settings/fields.php:382
+msgid "Add new items"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:413
+msgid "Price Boxes"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:414
+msgid "Add new price box"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:421
+#: inc/customizer/settings/fields.php:480
+msgid "Name"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:423
+msgid "Standard"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:427
+msgid "Currency"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:432
+msgid "Price"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:437
+msgid "Period"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:444
+msgid "Get started"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:448
+msgid "Button URL"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:454
+msgid "Features"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:456
+msgid ""
+"Far far away, behind the word mountains, far from the countries Vokalia and "
+"Consonantia, there live the blind texts."
+msgstr ""
+
+#: inc/customizer/settings/fields.php:472
+#: inc/customizer/settings/sections.php:185
+msgid "Team Members"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:473
+msgid "Add new member"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:482
+msgid "James Austin"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:486
+msgid "Designation"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:488
+msgid "Developer"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:492
+msgid "Text"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:494
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia "
+"velit quis sem dignissim porta."
+msgstr ""
+
+#: inc/customizer/settings/fields.php:503
+#: inc/libraries/epsilon-framework/customizer/sections/class-epsilon-section-recommended-actions.php:114
+msgid "Facebook"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:508
+#: inc/libraries/epsilon-framework/customizer/sections/class-epsilon-section-recommended-actions.php:116
+#: inc/widget/about.php:68
+msgid "Twitter"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:513
+msgid "Pinterest"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:518
+msgid "LinkedIn"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:533
+msgid "Available pages"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:543
+msgid "Logo Dimensions"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:557
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-section-repeater.php:376
+msgid "Sections"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:572
+msgid "Color scheme"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:573
+msgid "Select a color scheme"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:26
+msgid "General options"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:39
+msgid "Page Builder"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:51
+#: inc/libraries/epsilon-framework/classes/output/class-epsilon-repeater-templates.php:92
+msgid "Colors"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:64
+msgid "Front Page Content"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:100
+msgid "Page Sections"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:101
+msgid "Unapp theme pages are rendered through the use of these sections."
+msgstr ""
+
+#: inc/customizer/settings/sections.php:135
+msgid "Page Services"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:145
+msgid "Featured Left"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:155
+msgid "Featured Right"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:165
+msgid "Counter"
+msgstr ""
+
+#: inc/helpers/class-unapp-helper.php:256
+msgid "by "
+msgstr ""
+
+#: inc/helpers/class-unapp-helper.php:263
+msgid "Categories: "
+msgstr ""
+
+#: inc/helpers/class-unapp-helper.php:270
+msgid "Comment on Post"
+msgstr ""
+
+#: inc/helpers/class-unapp-helper.php:327
+#: inc/helpers/class-unapp-helper.php:354
+msgid "All"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/class-epsilon-framework.php:258
+#: inc/libraries/epsilon-framework/classes/output/class-epsilon-repeater-templates.php:58
+#: inc/libraries/epsilon-framework/classes/output/class-epsilon-repeater-templates.php:135
+#: inc/libraries/epsilon-framework/classes/output/class-epsilon-repeater-templates.php:321
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-image.php:118
+msgid "Remove"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/class-epsilon-framework.php:259
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-repeater.php:101
+msgid "Add"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/class-epsilon-framework.php:260
+#: inc/libraries/epsilon-framework/classes/output/class-epsilon-repeater-templates.php:311
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-image.php:110
+msgid "Upload image"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/class-epsilon-framework.php:261
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-repeater.php:242
+msgid "Row"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/backend/class-epsilon-content-backup.php:221
+msgid "This page contains the content created by the customizer."
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/backend/class-epsilon-notify-system.php:121
+#, php-format
+msgid "Install: %s"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/backend/class-epsilon-notify-system.php:123
+#, php-format
+msgid "Please install %s in order to create the demo content."
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/backend/class-epsilon-notify-system.php:127
+#, php-format
+msgid "Activate: %s"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/backend/class-epsilon-notify-system.php:129
+#, php-format
+msgid "Please activate %s in order to create the demo content."
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/backend/class-epsilon-section-navigation-menu.php:45
+msgid "Front Page Sections"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/backend/class-epsilon-section-navigation-menu.php:72
+msgid "Section"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/backend/class-epsilon-section-navigation-menu.php:78
+msgid "Select a Section"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/backend/class-epsilon-section-navigation-menu.php:87
+msgid "Label"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/backend/class-epsilon-section-navigation-menu.php:95
+msgid ""
+"Only sections that have an ID are selectable, please edit section id's to "
+"see all the sections!"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/backend/class-epsilon-section-navigation-menu.php:101
+msgid "Add to Menu"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/class-epsilon-ajax-controller.php:37
+#: inc/libraries/epsilon-framework/classes/class-epsilon-ajax-controller.php:50
+msgid "Not allowed"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/class-epsilon-ajax-controller.php:61
+msgid "Class does not exist"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/class-epsilon-customizer.php:479
+msgid "Customize"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:294
+msgid "Heading Color"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:334
+msgid "Background color"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:348
+msgid "Background color opacity"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:365
+msgid "Background image"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:380
+msgid "Background position"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:386
+msgid "Top Left"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:387
+msgid "Top"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:388
+msgid "Top Right"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:389
+msgid "Left"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:390
+msgid "Center"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:391
+msgid "Right"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:392
+msgid "Bottom Left"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:393
+msgid "Bottom"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:394
+msgid "Bottom Right"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:403
+msgid "Background repeat"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:409
+msgid "No Repeat"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:410
+msgid "Repeat"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:411
+msgid "Repeat Y"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:412
+msgid "Repeat X"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:421
+msgid "Background size"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:427
+msgid "Cover"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:428
+msgid "Contain"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:429
+msgid "Initial"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:438
+msgid "Background parallax"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:450
+msgid "Background video"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:503
+msgid "Horizontal alignment"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:518
+msgid "Vertical alignment"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:532
+msgid "Stretch"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:546
+msgid "Items spacing"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:560
+msgid "Items group"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:574
+msgid "Spacing top"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:587
+msgid "Spacing bottom"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/helpers/class-epsilon-section-repeater-helper.php:600
+msgid "Title & description alignment"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/output/class-epsilon-color-coded-categories.php:112
+msgid ""
+"This color will affect category related elements such as links, titles, etc. "
+"(defined by your theme)"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/output/class-epsilon-repeater-templates.php:59
+#: inc/libraries/epsilon-framework/classes/output/class-epsilon-repeater-templates.php:136
+#: inc/libraries/epsilon-framework/customizer/sections/class-epsilon-section-doubled.php:56
+msgid "Close"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/output/class-epsilon-repeater-templates.php:83
+msgid "Content"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/output/class-epsilon-repeater-templates.php:86
+msgid "Style"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/output/class-epsilon-repeater-templates.php:89
+msgid "Layout"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/output/class-epsilon-repeater-templates.php:313
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-image.php:112
+msgid "Recommended resolution:"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/output/class-epsilon-repeater-templates.php:325
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-image.php:126
+msgid "Select File"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/classes/output/class-epsilon-repeater-templates.php:399
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-color-picker.php:82
+msgid "(clear)"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-image-dimensions.php:88
+msgid "Width"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-image-dimensions.php:92
+msgid "Height"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-image-dimensions.php:96
+msgid "Ratio"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-image.php:122
+msgid "Default"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-layouts.php:201
+msgid "Edit column size"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-repeater.php:290
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-section-repeater.php:353
+msgid "Limit: "
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-repeater.php:290
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-section-repeater.php:354
+msgid "sections"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-section-repeater.php:189
+msgid "Section Class"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-section-repeater.php:267
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-upsell.php:70
+msgid "See what's in the PRO version"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-section-repeater.php:359
+msgid "Add a Section"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-section-repeater.php:365
+msgid "Search sections"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-section-repeater.php:366
+msgid "Search sections &hellip;"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-section-repeater.php:369
+msgid "Clear Results"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-section-repeater.php:371
+msgid "The search results will be updated as you type."
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-section-repeater.php:377
+msgid "Integrations"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-typography.php:272
+msgid "Theme default"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-typography.php:305
+msgid "Font Size"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-typography.php:314
+msgid "Line Height"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/controls/class-epsilon-control-typography.php:323
+msgid "Letter Spacing"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/sections/class-epsilon-section-doubled.php:51
+msgid "Press return or enter to open this section"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/sections/class-epsilon-section-doubled.php:64
+msgid "Help"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/sections/class-epsilon-section-recommended-actions.php:118
+msgid "Review this theme on w.org"
+msgstr ""
+
+#: inc/libraries/epsilon-framework/customizer/sections/class-epsilon-section-recommended-actions.php:291
+#: inc/libraries/epsilon-framework/customizer/sections/class-epsilon-section-recommended-actions.php:357
+msgid "Deactivate"
+msgstr ""
+
+#: inc/unapp_add_plugin.php:29
+msgid "Contact Form 7"
+msgstr ""
+
+#: inc/unapp_add_plugin.php:34
+msgid "Mailchimp"
+msgstr ""
+
+#: inc/unapp_add_plugin.php:39
+msgid "Unapp Portfolio"
+msgstr ""
+
+#: inc/unapp_functions.php:19
+msgid "Latest Blog Posts"
+msgstr ""
+
+#: inc/unapp_functions.php:68
+msgid "Your comment is awaitting moderation"
+msgstr ""
+
+#: inc/unapp_functions.php:79
+msgid "Reply"
+msgstr ""
+
+#: inc/unapp_functions.php:135
+msgid "Home"
+msgstr ""
+
+#: inc/unapp_functions.php:266
+msgid "Author archive for "
+msgstr ""
+
+#: inc/unapp_functions.php:310
+msgid "Search query for: "
+msgstr ""
+
+#: inc/unapp_functions.php:315
+msgid "Error 404"
+msgstr ""
+
+#: inc/unapp_functions.php:321
+#, php-format
+msgid " ( Page %s )"
+msgstr ""
+
+#: inc/widget/about.php:14
+msgid "Unapp About"
+msgstr ""
+
+#: inc/widget/about.php:15
+msgid "A About Widget"
+msgstr ""
+
+#: inc/widget/about.php:67
+msgid "#"
+msgstr ""
+
+#: inc/widget/about.php:69
+msgid "Linkedin"
+msgstr ""
+
+#: inc/widget/about.php:70
+msgid "Dribbdle"
+msgstr ""
+
+#: inc/widget/about.php:71
+msgid "Instagram"
+msgstr ""
+
+#: inc/widget/about.php:74 inc/widget/contact_info.php:66
+#: inc/widget/recent_post.php:71 inc/widget/social.php:56
+msgid "Title:"
+msgstr ""
+
+#: inc/widget/about.php:78 inc/widget/social.php:60
+msgid "Description:"
+msgstr ""
+
+#: inc/widget/about.php:82
+msgid "Facebook:"
+msgstr ""
+
+#: inc/widget/about.php:86
+msgid "Twitter:"
+msgstr ""
+
+#: inc/widget/about.php:90
+msgid "Linkedin:"
+msgstr ""
+
+#: inc/widget/about.php:94
+msgid "Dribbble:"
+msgstr ""
+
+#: inc/widget/about.php:98
+msgid "Instagram:"
+msgstr ""
+
+#: inc/widget/contact_info.php:14
+msgid "Unapp Contact Info"
+msgstr ""
+
+#: inc/widget/contact_info.php:15
+msgid "A contact Widget"
+msgstr ""
+
+#: inc/widget/contact_info.php:59
+msgid "Contact Info"
+msgstr ""
+
+#: inc/widget/contact_info.php:61
+msgid "Phone Number"
+msgstr ""
+
+#: inc/widget/contact_info.php:62
+msgid "email Address"
+msgstr ""
+
+#: inc/widget/contact_info.php:63
+msgid "Web Site"
+msgstr ""
+
+#: inc/widget/contact_info.php:70
+msgid "Address:"
+msgstr ""
+
+#: inc/widget/contact_info.php:74
+msgid "Phone Number:"
+msgstr ""
+
+#: inc/widget/contact_info.php:78
+msgid "Email Address:"
+msgstr ""
+
+#: inc/widget/contact_info.php:82
+msgid "Web Address:"
+msgstr ""
+
+#: inc/widget/recent_post.php:14
+msgid "Unapp Recent Post"
+msgstr ""
+
+#: inc/widget/recent_post.php:15
+msgid "A recent post Widget"
+msgstr ""
+
+#: inc/widget/recent_post.php:67
+msgid "Recent Blog"
+msgstr ""
+
+#: inc/widget/recent_post.php:68
+msgid "3"
+msgstr ""
+
+#: inc/widget/recent_post.php:75
+msgid "Post Number:"
+msgstr ""
+
+#: inc/widget/social.php:14
+msgid "Unapp Social Link"
+msgstr ""
+
+#: inc/widget/social.php:15
+msgid "Unapp social link Widget"
+msgstr ""
+
+#: inc/widget/social.php:52
+msgid "New title"
+msgstr ""
+
+#: index.php:37 search.php:25
+msgid "&laquo;"
+msgstr ""
+
+#: index.php:38 search.php:26
+msgid "&raquo;"
+msgstr ""
+
+#: page.php:33 template-parts/content-aside.php:23
+#: template-parts/content-audio.php:22 template-parts/content-gallery.php:22
+#: template-parts/content-image.php:22 template-parts/content-link.php:22
+#: template-parts/content-quote.php:22 template-parts/content-video.php:22
+#: template-parts/content.php:23
+msgid "Pages:"
+msgstr ""
+
+#: search.php:34
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: searchform.php:4
+msgid "Search &hellip;"
+msgstr ""
+
+#: template-parts/content-aside.php:41 template-parts/content-audio.php:40
+#: template-parts/content-gallery.php:40 template-parts/content-image.php:40
+#: template-parts/content-link.php:40 template-parts/content-quote.php:40
+#: template-parts/content-video.php:40 template-parts/content.php:41
+#: template-parts/frontpage/blog-section.php:56
+msgid "by"
+msgstr ""
+
+#: template-parts/content-none.php:16
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:20
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/frontpage/contact-section.php:11
+msgid "Contact Information"
+msgstr ""
+
+#: template-parts/frontpage/contact-section.php:40
+msgid "Get In Touch"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "UNAPP"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://colorlib.com/wp/themes/unapp/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Unapp is a WordPress App Landing theme"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Colorlib"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://colorlib.com/"
+msgstr ""
