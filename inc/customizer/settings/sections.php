@@ -1,8 +1,8 @@
 <?php
 /**
- * U Theme Customizer Panels & Sections
+ * MedZone_Lite Theme Customizer Panels & Sections
  *
- * @package Unapp
+ * @package MedZone_Lite
  * @since   1.0
  */
 
@@ -36,7 +36,7 @@ $panels = array(
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
 			'type'           => 'epsilon-panel-regular',
-			'title'          => esc_html__( 'Page Builder', 'unapp' ),
+			'title'          => esc_html__( 'Page sections', 'unapp' ),
 		),
 	),
 	/**
@@ -51,9 +51,6 @@ $panels = array(
 			'title'          => esc_html__( 'Colors', 'unapp' ),
 		),
 	),
-	/**
-	 * Content panel
-	 */
 	array(
 		'id'   => 'unapp_panel_section_content',
 		'args' => array(
@@ -71,18 +68,26 @@ $panels = array(
 /**
  * Register sections
  */
-$sections = array(
+$sections            = array(
 	/**
 	 * General section
 	 */
-//	array(
-//		'id'   => 'unapp_layout_section',
-//		'args' => array(
-//			'title'    => esc_html__( 'Layout & Typography', 'unapp' ),
-//			'panel'    => 'unapp_panel_general',
-//			'priority' => 3,
-//		),
-//	),
+	array(
+		'id'   => 'unapp_header_section',
+		'args' => array(
+			'title'    => esc_html__( 'Header', 'unapp' ),
+			'panel'    => 'unapp_panel_general',
+			'priority' => 1,
+		),
+	),
+	array(
+		'id'   => 'unapp_layout_section',
+		'args' => array(
+			'title'    => esc_html__( 'Layout & Typography', 'unapp' ),
+			'panel'    => 'unapp_panel_general',
+			'priority' => 3,
+		),
+	),
 	array(
 		'id'   => 'unapp_footer_section',
 		'args' => array(
@@ -91,6 +96,7 @@ $sections = array(
 			'priority' => 50,
 		),
 	),
+
 	/**
 	 * Repeatable sections container
 	 */
@@ -98,7 +104,7 @@ $sections = array(
 		'id'   => 'unapp_repeatable_section',
 		'args' => array(
 			'title'       => esc_html__( 'Page Sections', 'unapp' ),
-			'description' => esc_html__( 'Unapp theme pages are rendered through the use of these sections.', 'unapp' ),
+			'description' => esc_html__( 'The `Page sections` area will allow you to build your content with the help of our predefined set of sections. You don\'t need to write a single line of code, just select the sections you want to display in the current page and fill in the required fields .', 'unapp' ),
 			'priority'    => 0,
 			'panel'       => 'unapp_panel_content',
 		),
@@ -107,14 +113,13 @@ $sections = array(
 	/**
 	 * Theme Content Sections
 	 */
-
 	// Unapp Sliders
 	array(
 		'id'   => 'unapp_slides_section',
 		'args' => array(
 			'title'    => esc_html__( 'Slides', 'unapp' ),
 			'panel'    => 'unapp_panel_section_content',
-			'priority' => 1,
+			'priority' => 5,
 			'type'     => 'epsilon-section-doubled',
 		),
 	),
@@ -124,27 +129,17 @@ $sections = array(
 		'args'  => array(
 			'title'     => esc_html__( 'Services', 'unapp' ),
 			'panel'     => 'unapp_panel_section_content',
-			'priority'  => 2,
+			'priority'  => 6,
 			'type'      => 'epsilon-section-doubled',
 		),
 	),
-	 // Services page
-	array(
-		'id'    => 'unapp_page_services_section',
-		'args'  => array(
-			'title'     => esc_html__( 'Page Services', 'unapp' ),
-			'panel'     => 'unapp_panel_section_content',
-			'priority'  => 7,
-			'type'      => 'epsilon-section-doubled',
-		),
-	),
-	 //Featured Left
+	//Featured Left
 	array(
 		'id'    => 'unapp_featured_section_left',
 		'args'  => array(
 			'title'     => esc_html__( 'Featured Left', 'unapp' ),
 			'panel'     => 'unapp_panel_section_content',
-			'priority'  => 3,
+			'priority'  => 7,
 			'type'      => 'epsilon-section-doubled'
 		),
 	),
@@ -154,7 +149,7 @@ $sections = array(
 		'args'  => array(
 			'title'     => esc_html__( 'Featured Right', 'unapp' ),
 			'panel'     => 'unapp_panel_section_content',
-			'priority'  => 3,
+			'priority'  => 8,
 			'type'      => 'epsilon-section-doubled'
 		),
 	),
@@ -164,7 +159,7 @@ $sections = array(
 		'args'  => array(
 			'title'     => esc_html__( 'Counter', 'unapp' ),
 			'panel'     => 'unapp_panel_section_content',
-			'priority'  => 4,
+			'priority'  => 9,
 			'type'      => 'epsilon-section-doubled'
 		),
 	),
@@ -174,7 +169,7 @@ $sections = array(
 		'args'  => array(
 			'title'     => esc_html__( 'Pricing', 'unapp' ),
 			'panel'     => 'unapp_panel_section_content',
-			'priority'  => 5,
+			'priority'  => 10,
 			'type'      => 'epsilon-section-doubled',
 		),
 	),
@@ -184,13 +179,13 @@ $sections = array(
 		'args' => array(
 			'title'    => esc_html__( 'Team Members', 'unapp' ),
 			'panel'    => 'unapp_panel_section_content',
-			'priority' => 6,
+			'priority' => 11,
 			'type'     => 'epsilon-section-doubled',
 		),
 	),
 );
-
-$visible_recommended = get_option( 'unapp_recommended_actions', false );
+$stylesheet          = get_stylesheet();
+$visible_recommended = get_option( $stylesheet . '_recommended_actions', false );
 if ( $visible_recommended ) {
 	unset( $sections[0] );
 }
@@ -201,3 +196,4 @@ $collection = array(
 );
 
 Epsilon_Customizer::add_multiple( $collection );
+

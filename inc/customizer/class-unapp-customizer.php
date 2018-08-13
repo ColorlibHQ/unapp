@@ -1,8 +1,8 @@
 <?php
 /**
- * Unapp Theme Customizer settings
+ * MedZone_Lite Theme Customizer settings
  *
- * @package Unapp
+ * @package MedZone_Lite
  * @since   1.0
  */
 
@@ -11,7 +11,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Class Unapp_Customizer
+ * Class MedZone_Lite_Customizer
  */
 class Unapp_Customizer {
 
@@ -23,7 +23,6 @@ class Unapp_Customizer {
 	 */
 	public function __construct() {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customizer_enqueue_scripts' ) );
-		add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
 		/**
 		 * Customizer enqueues & controls
 		 */
@@ -59,7 +58,7 @@ class Unapp_Customizer {
 		 */
 		$wp_customize->get_section( 'header_image' )->panel      = 'unapp_panel_general';
 		$wp_customize->get_section( 'background_image' )->panel  = 'unapp_panel_general';
-		//$wp_customize->get_section( 'colors' )->panel            = 'unapp_panel_general';
+		$wp_customize->get_section( 'colors' )->panel            = 'unapp_panel_general';
 		$wp_customize->get_section( 'title_tagline' )->panel     = 'unapp_panel_general';
 		$wp_customize->get_section( 'static_front_page' )->panel = 'unapp_panel_content';
 
@@ -105,44 +104,14 @@ class Unapp_Customizer {
 	 * Dependencies: Customizer Controls script (core)
 	 */
 	public function customizer_enqueue_scripts() {
-		wp_enqueue_script( 'unapp-customizer-scripts', get_template_directory_uri() . '/inc/customizer/assets/js/customizer.js', array( 'customize-controls' ) );
-
-		wp_localize_script(
-			'unapp-customizer-scripts',
-			'unappCustomizer',
-			array(
-				'templateDirectory' => esc_url( get_template_directory_uri() ),
-				'ajaxNonce'         => wp_create_nonce( 'unapp_nonce' ),
-				'siteUrl'           => esc_url( get_site_url() ),
-				'blogPage'          => esc_url( get_permalink( get_option( 'page_for_posts', false ) ) ),
-				'frontPage'         => esc_url( get_permalink( get_option( 'page_on_front', false ) ) ),
-			)
-		);
-	}
-
-	/**
-	 * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
-	 */
-	public function customize_preview_js() {
-		wp_enqueue_script( 'unapp-previewer', get_template_directory_uri() . '/inc/customizer/assets/js/previewer.js', array( 'customize-preview' ), '211215', true );
+		wp_enqueue_script( 'customizer-scripts', get_template_directory_uri() . '/inc/customizer/assets/js/customizer.js', array( 'customize-controls' ) );
 	}
 
 	/**
 	 * Active Callback for copyright
 	 */
 	public static function copyright_enabled_callback( $control ) {
-		if ( $control->manager->get_setting( 'unapp_enable_copyright' )->value() == true ) {
-			return true;
-		}
-
-		return false;
-	}
-
-	/**
-	 * Active callback for unapp_header_top_bar
-	 */
-	public static function header_top_bar_enabled_callback( $control ) {
-		if ( $control->manager->get_setting( 'unapp_header_top_bar' )->value() == true ) {
+		if ( $control->manager->get_setting( 'medzone_lite_enable_copyright' )->value() == true ) {
 			return true;
 		}
 

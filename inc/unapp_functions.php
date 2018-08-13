@@ -343,3 +343,12 @@ if( !function_exists( 'get_unapp_breadcrumbs' ) ){
 		return $breadcrumb_output_link;
 	}
 }
+
+/**
+ * Hide epsilon framework quick bar
+ */
+add_filter( 'show_epsilon_quickie_bar', function (){
+    return false;
+} );
+
+

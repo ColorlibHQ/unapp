@@ -27,7 +27,7 @@ class Unapp_Contact_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		//echo $args['before_widget'];
 		?>
-		<div class="col-md-4 colorlib-widget">
+		<div class="sidebar-widget">
 			<h4><?php print $instance['title']; ?></h4>
 			<ul class="colorlib-footer-links">
 				<?php if( ! empty( $instance['address'] ) ) { ?>
@@ -57,10 +57,10 @@ class Unapp_Contact_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Contact Info', 'unapp' );
-		$address = ! empty( $instance['address'] ) ? $instance['address'] : esc_html__( 'Address', 'unapp' );
-		$phone = ! empty( $instance['phone'] ) ? $instance['phone'] : esc_html__( 'Phone Number', 'unapp' );
-		$email = ! empty( $instance['email'] ) ? $instance['email'] : esc_html__( 'email Address', 'unapp' );
-		$web_site = ! empty( $instance['web_site'] ) ? $instance['web_site'] : esc_html__( 'Web Site', 'unapp' );
+		$address = ! empty( $instance['address'] ) ? $instance['address'] : esc_html__( '291 South 21th Street, Suite 721 New York NY 10016', 'unapp' );
+		$phone = ! empty( $instance['phone'] ) ? $instance['phone'] : esc_html__( '+ 1235 2355 98', 'unapp' );
+		$email = ! empty( $instance['email'] ) ? $instance['email'] : esc_html__( 'info@yoursite.com', 'unapp' );
+		$web_site = ! empty( $instance['web_site'] ) ? $instance['web_site'] : esc_html__( 'yourwebsite.com', 'unapp' );
 		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'unapp' ); ?></label>
@@ -68,7 +68,7 @@ class Unapp_Contact_Widget extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'address' ) ); ?>"><?php esc_attr_e( 'Address:', 'unapp' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'address' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'address' ) ); ?>" type="text" value="<?php echo esc_attr( $address ); ?>">
+            <textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'address' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'address' ) ); ?>" type="text"><?php echo esc_attr( $address ); ?></textarea>
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>"><?php esc_attr_e( 'Phone Number:', 'unapp' ); ?></label>

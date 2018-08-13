@@ -9,6 +9,7 @@ if ( ! defined( 'WPINC' ) ) {
  * @since 1.0.0
  */
 class Epsilon_Control_Section_Repeater extends WP_Customize_Control {
+
 	/**
 	 * The type of customize control being rendered.
 	 *
@@ -107,8 +108,18 @@ class Epsilon_Control_Section_Repeater extends WP_Customize_Control {
 		$json['sortable']           = $this->sortable;
 		$json['save_as_meta']       = $this->save_as_meta;
 		$json['selective_refresh']  = $this->selective_refresh;
+		$json['importable']         = $this->importable();
 
 		return $json;
+	}
+
+	/**
+	 * Returns sections available for import
+	 *
+	 * @return array
+	 */
+	public function importable() {
+		return apply_filters( 'epsilon_section_repeater_importable_sections', array() );
 	}
 
 	/**
@@ -133,7 +144,7 @@ class Epsilon_Control_Section_Repeater extends WP_Customize_Control {
 		foreach ( $this->repeatable_sections as $section ) {
 			if ( isset( $section['integration'] ) && $section['integration']['status'] && $section['integration']['check'] ) {
 				$integration = true;
-				$this->integration_count ++;
+				$this->integration_count++;
 			}
 		}
 
@@ -144,30 +155,7 @@ class Epsilon_Control_Section_Repeater extends WP_Customize_Control {
 	 * @since 1.0.0
 	 */
 	public function get_icons() {
-		global $wp_filesystem;
-		if ( empty( $wp_filesystem ) ) {
-			require_once( ABSPATH . '/wp-admin/includes/file.php' );
-			WP_Filesystem();
-		}
-
-		$path = $this->icons;
-		/**
-		 * In case we don`t have path to icons, we load our own library
-		 */
-		if ( empty( $this->icons ) || ! file_exists( $path ) ) {
-			$path = EPSILON_PATH . '/assets/data/icons.json';
-		}
-
-		$icons = $wp_filesystem->get_contents( $path );
-		$icons = json_decode( $icons );
-
-
-		/**
-		 * In case the json could not be decoded, we return a new stdClass
-		 */
-		if ( null === $icons ) {
-			return new stdClass();
-		}
+		$icons = Epsilon_Icons::icons();
 
 		return $icons;
 	}
@@ -186,9 +174,15 @@ class Epsilon_Control_Section_Repeater extends WP_Customize_Control {
 			 * Adds the new section class
 			 */
 			$this->repeatable_sections[ $key ]['fields'][ $key . '_section_class' ] = array(
-				'label'   => esc_html__( 'Section Class', 'unapp' ),
+				'label'   => esc_html__( 'Section Class', 'epsilon-framework' ),
 				'type'    => 'epsilon-section-class',
-				'default' => 'section-' . $key . '-' . mt_rand( 1, mt_getrandmax()),
+				'default' => 'section-' . $key . '-' . mt_rand( 1, mt_getrandmax() ),
+			);
+
+			$this->repeatable_sections[ $key ]['fields'][ $key . '_section_visibility' ] = array(
+				'type'    => 'hidden',
+				'default' => 'visible',
+				'id'      => $key . '_section_visibility',
 			);
 
 			foreach ( $value['fields'] as $k => $v ) {
@@ -204,6 +198,10 @@ class Epsilon_Control_Section_Repeater extends WP_Customize_Control {
 
 				if ( 'epsilon-icon-picker' === $v['type'] ) {
 					$this->repeatable_sections[ $key ]['fields'][ $k ]['icons'] = $this->get_icons();
+
+					if ( ! isset( $this->repeatable_sections[ $key ]['fields'][ $k ]['groups'] ) ) {
+						$this->repeatable_sections[ $key ]['fields'][ $k ]['groups'] = array();
+					}
 				}
 
 				if ( 'epsilon-customizer-navigation' === $v['type'] ) {
@@ -264,7 +262,7 @@ class Epsilon_Control_Section_Repeater extends WP_Customize_Control {
 				 * Epsilon Upsell
 				 */
 				if ( 'epsilon-upsell' === $v['type'] ) {
-					$this->repeatable_sections[ $key ]['fields'][ $k ]['label']              = ! empty( $this->repeatable_sections[ $key ]['fields'][ $k ]['label'] ) ? $this->repeatable_sections[ $key ]['fields'][ $k ]['label'] : esc_html__( 'See what\'s in the PRO version', 'unapp' );
+					$this->repeatable_sections[ $key ]['fields'][ $k ]['label']              = ! empty( $this->repeatable_sections[ $key ]['fields'][ $k ]['label'] ) ? $this->repeatable_sections[ $key ]['fields'][ $k ]['label'] : __( 'See what\'s in the PRO version', 'epsilon-framework' );
 					$this->repeatable_sections[ $key ]['fields'][ $k ]['separator']          = ! empty( $this->repeatable_sections[ $key ]['fields'][ $k ]['separator'] ) ? $this->repeatable_sections[ $key ]['fields'][ $k ]['separator'] : '';
 					$this->repeatable_sections[ $key ]['fields'][ $k ]['button_text']        = ! empty( $this->repeatable_sections[ $key ]['fields'][ $k ]['button_text'] ) ? $this->repeatable_sections[ $key ]['fields'][ $k ]['button_text'] : '';
 					$this->repeatable_sections[ $key ]['fields'][ $k ]['button_url']         = ! empty( $this->repeatable_sections[ $key ]['fields'][ $k ]['button_url'] ) ? $this->repeatable_sections[ $key ]['fields'][ $k ]['button_url'] : '';
@@ -285,8 +283,7 @@ class Epsilon_Control_Section_Repeater extends WP_Customize_Control {
 			}
 
 			$this->repeatable_sections[ $key ]['customization'] = wp_parse_args(
-				$this->repeatable_sections[ $key ]['customization'],
-				array(
+				$this->repeatable_sections[ $key ]['customization'], array(
 					'enabled' => false,
 					'styling' => array(),
 					'layout'  => array(),
@@ -350,75 +347,104 @@ class Epsilon_Control_Section_Repeater extends WP_Customize_Control {
 		<ul class="repeater-sections"></ul>
 		<# if(!_.isUndefined(data.choices.limit)){ #>
 		<?php /* Translators: Section limit */ ?>
-		<p class="limit"><?php echo esc_html__( 'Limit: ', 'unapp' ); ?>
-			{{{ data.choices.limit }}} <?php echo esc_html__( 'sections', 'unapp' ); ?></p>
+		<p class="limit"><?php echo esc_html__( 'Limit: ', 'epsilon-framework' ); ?>
+			{{{ data.choices.limit }}} <?php echo esc_html__( 'sections', 'epsilon-framework' ); ?></p>
 		<# } #>
 		<div class="epsilon-add-section-buttons">
-			<input type="hidden" value="" {{{ data.link }}}/>
-			<button type="button" class="button epsilon-add-new-section" aria-expanded="false" aria-controls="available-sections">
-				<?php esc_html_e( 'Add a Section', 'unapp' ); ?>
+			<input type="hidden" value="" {{{ data.link }}} />
+
+			<!--
+			<button type="button" class="button epsilon-import-sections">
+				<?php //esc_html_e( 'Import', 'epsilon-framework' ); ?>
 			</button>
+			-->
+
+			<button type="button" class="button button-primary epsilon-add-new-section" aria-expanded="false" aria-controls="available-sections">
+				<?php esc_html_e( 'Add More Sections', 'epsilon-framework' ); ?>
+			</button>
+
+		</div>
+		<div id="importable-sections-{{ data.id }}">
+			<div class="available-sections importable">
+				<ul>
+					<# for (importSection in data.importable) { #>
+					<li>
+						{{ data.importable[importSection].thumb }}
+						<a href="#" class="epsilon-sections-import" data-import="{{ data.importable[importSection].id }}">
+							{{ data.importable[importSection].id }}
+						</a>
+					</li>
+					<# } #>
+				</ul>
+			</div>
 		</div>
 		<div id="sections-left-{{ data.id }}">
 			<div class="available-sections">
 				<div class="available-sections-filter">
-					<label class="screen-reader-text" for="sections-search-{{ data.id }}"><?php esc_html_e( 'Search sections', 'unapp' ); ?></label>
-					<input type="text" class="sections-search-input" id="sections-search-{{ data.id }}" placeholder="<?php esc_attr_e( 'Search sections &hellip;', 'unapp' ) ?>" aria-describedby="sections-search-desc"/>
+					<label class="screen-reader-text" for="sections-search-{{ data.id }}"><?php esc_html_e( 'Search sections', 'epsilon-framework' ); ?></label>
+					<input type="text" class="sections-search-input" id="sections-search-{{ data.id }}" placeholder="<?php esc_attr_e( 'Search sections &hellip;', 'epsilon-framework' ); ?>" aria-describedby="sections-search-desc" />
 					<div class="search-icon" aria-hidden="true"></div>
 					<button type="button" class="clear-results">
-						<span class="screen-reader-text"><?php esc_html_e( 'Clear Results', 'unapp' ); ?></span>
+						<span class="screen-reader-text"><?php esc_html_e( 'Clear Results', 'epsilon-framework' ); ?></span>
 					</button>
-					<p class="screen-reader-text" id="sections-search-desc-{{ data.id }}"><?php esc_html_e( 'The search results will be updated as you type.', 'unapp' ); ?></p>
+					<p class="screen-reader-text" id="sections-search-desc-{{ data.id }}"><?php esc_html_e( 'The search results will be updated as you type.', 'epsilon-framework' ); ?></p>
 				</div>
 				<div class="available-sections-list">
 					<# if ( data.integrations ) { #>
-						<nav class="available-sections-tab-nav">
-							<a href="#" data-tab="normal" class="available-sections-tab-toggler active"><span class="dashicons dashicons-menu"></span> <?php esc_html_e( 'Sections', 'unapp' ); ?></a>
-							<a href="#" data-tab="integrations" class="available-sections-tab-toggler"><span class="dashicons dashicons-admin-plugins"></span> <?php esc_html_e( 'Integrations', 'unapp' ); ?> <span class="badge">{{ data.integrations_count }}</span></a>
-						</nav>
+					<nav class="available-sections-tab-nav">
+						<a href="#" data-tab="normal" class="available-sections-tab-toggler active"><span class="dashicons dashicons-menu"></span> <?php esc_html_e( 'Sections', 'epsilon-framework' ); ?>
+						</a>
+						<a href="#" data-tab="integrations" class="available-sections-tab-toggler"><span class="dashicons dashicons-admin-plugins"></span> <?php esc_html_e( 'Integrations', 'epsilon-framework' ); ?>
+							<span class="badge">{{ data.integrations_count }}</span></a>
+					</nav>
 					<# } #>
 
 					<# if ( data.integrations ) { #>
-						<div data-tab-id="normal" class="normal-sections available-sections-tab-content active">
-					<# } #>
+					<div data-tab-id="normal" class="normal-sections available-sections-tab-content active">
+						<# } #>
 						<# for (section in data.sections) { #>
 						<# var temp = JSON.stringify(data.sections[section].fields); #>
-							<# if ( _.isUndefined(data.sections[section].integration) ) { #>
-								<div class="epsilon-section" data-id="{{ data.sections[section].id }}" >
-									<div class="epsilon-section-image-description">
-										<img src="{{ data.sections[section].image }}" />
-										<span class="epsilon-section-description">{{ data.sections[section].description }}</span>
-									</div>
-									<span class="epsilon-section-title">{{ data.sections[section].title }}</span>
-									<button class="button button-primary" data-action="add"> <i class="fa fa-plus" aria-hidden="true"></i> </button>
-									<button class="button button-info" data-action="info"> <i class="fa fa-question" aria-hidden="true"></i> </button>
-									<input type="hidden" value="{{ temp }}" data-customization="{{ data.sections[section].customization.enabled }}"/>
-								</div>
-							<# } #>
+						<# if ( _.isUndefined(data.sections[section].integration) ) { #>
+						<div class="epsilon-section" data-id="{{ data.sections[section].id }}">
+							<div class="epsilon-section-image-description">
+								<img src="{{ data.sections[section].image }}" />
+								<span class="epsilon-section-description">{{ data.sections[section].description }}</span>
+							</div>
+							<span class="epsilon-section-title">{{ data.sections[section].title }}</span>
+							<button class="button button-primary" data-action="add">
+								<i class="fa fa-plus" aria-hidden="true"></i></button>
+							<button class="button button-info" data-action="info">
+								<i class="fa fa-question" aria-hidden="true"></i></button>
+							<input type="hidden" value="{{ temp }}" data-customization="{{ data.sections[section].customization.enabled }}" />
+						</div>
+						<# } #>
 						<# } #>
 
-					<# if ( data.integrations ) { #>
+						<# if ( data.integrations ) { #>
+					</div>
+					<div data-tab-id="integrations" class="integrations-sections available-sections-tab-content">
+						<# for (section in data.sections) { #>
+						<# if ( ! _.isUndefined(data.sections[section].integration) ) { #>
+						<div class="epsilon-section" data-id="{{ data.sections[section].id }}">
+							<div class="epsilon-section-image-description">
+								<img src="{{ data.sections[section].image }}" />
+								<span class="epsilon-section-description">{{ data.sections[section].description }}</span>
+							</div>
+							<span class="epsilon-section-title">{{ data.sections[section].title }}</span>
+							<button class="button button-primary" data-action="add">
+								<i class="fa fa-plus" aria-hidden="true"></i></button>
+							<button class="button button-info" data-action="info">
+								<i class="fa fa-question" aria-hidden="true"></i></button>
+							<input type="hidden" value="{{ temp }}" data-customization="{{ data.sections[section].customization.enabled }}" />
 						</div>
-						<div data-tab-id="integrations" class="integrations-sections available-sections-tab-content">
-							<# for (section in data.sections) { #>
-								<# if ( ! _.isUndefined(data.sections[section].integration) ) { #>
-									<div class="epsilon-section" data-id="{{ data.sections[section].id }}" >
-										<div class="epsilon-section-image-description">
-											<img src="{{ data.sections[section].image }}" />
-											<span class="epsilon-section-description">{{ data.sections[section].description }}</span>
-										</div>
-										<span class="epsilon-section-title">{{ data.sections[section].title }}</span>
-										<button class="button button-primary" data-action="add"> <i class="fa fa-plus" aria-hidden="true"></i> </button>
-										<button class="button button-info" data-action="info"> <i class="fa fa-question" aria-hidden="true"></i> </button>
-										<input type="hidden" value="{{ temp }}" data-customization="{{ data.sections[section].customization.enabled }}"/>
-									</div>
-								<# } #>
-							<# } #>
-						</div>
+						<# } #>
+						<# } #>
+					</div>
 					<# } #>
 				</div>
 			</div>
 		</div>
-		<?php //@formatter:on
+		<?php
+		//@formatter:on
 	}
 }

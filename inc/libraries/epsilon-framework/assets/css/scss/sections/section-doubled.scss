@@ -4,8 +4,8 @@
   bottom: 0;
   position: absolute;
   right: 0;
-  left: -450px;
-  max-width: 450px;
+  left: -350px;
+  max-width: 350px;
   overflow-x: hidden;
   overflow-y: auto;
   background: #eee;
@@ -14,6 +14,10 @@
   border-top: 1px solid #ddd;
   border-right: 1px solid #ddd;
   padding-top: 35px;
+
+  .accordion-section-content {
+    padding: 10px 20px 15px 32px;
+  }
 
   .epsilon-close-doubled-section {
     position: absolute;
@@ -26,6 +30,7 @@
     height: 45px;
     border-top: 4px solid #eee;
     border-left: 1px solid #ddd;
+    border-bottom: 1px solid #DDD;
     -webkit-box-shadow: none;
     box-shadow: none;
     -webkit-transition: all .2s;
@@ -53,12 +58,9 @@
 
 body.adding-doubled-section {
   .wp-full-overlay-main {
-    left: 450px;
+    left: 350px;
   }
 
-  #customize-preview {
-    opacity: 0.4;
-  }
 
   .doubled-section-parent {
     left: 0;
@@ -68,7 +70,7 @@ body.adding-doubled-section {
 .customize-pane-child.control-section-epsilon-section-doubled {
   &.doubled-section-opened {
     display: inline-block;
-    max-width: 450px;
+    max-width: 350px;
     width: 100%;
     box-sizing: border-box;
     background: #eee;

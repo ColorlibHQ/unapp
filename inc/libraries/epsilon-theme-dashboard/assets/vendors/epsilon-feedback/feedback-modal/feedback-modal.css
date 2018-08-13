@@ -1,0 +1,49 @@
+.epsilon-feedback-modal {
+  position: absolute;
+  width: 500px;
+  margin: 0 auto;
+  z-index: 123123;
+  top: 10%;
+  left: 15%;
+  background: #fff;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.06);
+  transition: all .3s ease; }
+  .epsilon-feedback-modal header {
+    background-color: #3eb011;
+    color: #fff;
+    padding: 5px 30px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px; }
+    .epsilon-feedback-modal header h3 {
+      color: #fff; }
+  .epsilon-feedback-modal section {
+    padding: 15px 30px; }
+    .epsilon-feedback-modal section > div {
+      display: inline-block;
+      margin-bottom: 10px;
+      width: 100%; }
+    .epsilon-feedback-modal section input[type="radio"] {
+      margin-top: 2px; }
+    .epsilon-feedback-modal section textarea {
+      width: 100%;
+      margin-top: 5px; }
+  .epsilon-feedback-modal footer {
+    padding: 15px 30px;
+    text-align: right; }
+    .epsilon-feedback-modal footer a:first-of-type {
+      float: left; }
+
+.modal-enter {
+  opacity: 0; }
+
+.modal-leave-active {
+  opacity: 0; }
+
+.modal .epsilon-feedback-modal,
+.modal-leave-active .epsilon-feedback-modal {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1); }
+
+/*# sourceMappingURL=feedback-modal.css.map */

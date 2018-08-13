@@ -102,7 +102,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  padding: 4px 40px;
+  padding: 10px 40px;
 }
 input[type="password"]{
   box-shadow: none;
@@ -345,6 +345,7 @@ input[type=search] {
   position: relative;
   background-repeat: no-repeat;
   z-index: 0;
+  background-color: #499bea;
 }
 @media screen and (max-width: 768px) {
   .video-hero {
@@ -401,8 +402,8 @@ input[type=search] {
   position: relative;
 }
 .video-hero .display-tc h2 {
-  color: #fff;
   font-size: 60px !important;
+  color: #fff;
   margin-bottom: 20px;
   font-weight: 300;
 }
@@ -1044,7 +1045,7 @@ article p.author-wrap .author {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 .pricing p{
   color: #808080 !important;
@@ -1424,6 +1425,10 @@ input[type="text"] {
 #colorlib-footer .colorlib-social-icons li a {
   padding-left: 10px;
   padding-right: 10px;
+}
+#colorlib-footer .colorlib-social-icons li a [class^="icon-"],
+#colorlib-footer .colorlib-social-icons li a [class*=" icon-"]{
+  color: inherit;
 }
 #colorlib-footer .colorlib-social-icons li a:first-child {
   padding-left: 0;
@@ -1861,10 +1866,10 @@ input[type="text"] {
   background: url(../images/loader.gif) center no-repeat #fff;
 }
 .js .animate-box {
-  opacity: 0;
+  /*opacity: 0;*/
 }
 .js .customize-partial-edit-shortcuts-shown .animate-box{
-  opacity: 1;
+  /*opacity: 1;*/
 }
 
   /*----------------------------------------------*/
@@ -1908,4 +1913,59 @@ input[type="text"] {
     display: block;
     width: auto;
   }
+}
+
+/*-----------------------------------------------*/
+.ewf-text-align--left
+{
+  text-align: left;
+}
+
+.ewf-text-align--center
+{
+  text-align: center;
+}
+
+.ewf-text-align--right
+{
+  text-align: right;
+}
+.ewf-section--spacing-sm-top
+{
+  padding-top: 35px;
+}
+
+.ewf-section--spacing-md-top
+{
+  padding-top: 70px;
+}
+
+.ewf-section--spacing-lg-top
+{
+  padding-top: 105px;
+}
+
+.ewf-section--spacing-none-top
+{
+  padding-top: 0;
+}
+
+.ewf-section--spacing-sm-bottom
+{
+  padding-bottom: 35px;
+}
+
+.ewf-section--spacing-md-bottom
+{
+  padding-bottom: 70px;
+}
+
+.ewf-section--spacing-lg-bottom
+{
+  padding-bottom: 105px;
+}
+
+.ewf-section--spacing-none-bottom
+{
+  padding-bottom: 0;
 }

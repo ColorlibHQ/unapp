@@ -1,0 +1,44 @@
+.onboarding-step {
+  padding: 40px 70px 20px;
+  display: none; }
+  .onboarding-step.active {
+    display: block; }
+  .onboarding-step .epsilon-buttons {
+    display: block;
+    text-align: center;
+    margin-top: 60px; }
+    .onboarding-step .epsilon-buttons .button {
+      margin-right: 5px; }
+      .onboarding-step .epsilon-buttons .button .dashicons {
+        font-size: 15px;
+        line-height: 46px; }
+      .onboarding-step .epsilon-buttons .button:last-of-type {
+        margin-right: 0; }
+  .onboarding-step .button-primary.disabled {
+    background-color: #d0d0d0 !important;
+    border-color: #c3c3c3 !important;
+    color: #fff !important; }
+  .onboarding-step .permission-request a {
+    text-decoration: none; }
+    .onboarding-step .permission-request a:hover, .onboarding-step .permission-request a:focus {
+      text-decoration: none; }
+  .onboarding-step .permission-request > div {
+    display: none; }
+    .onboarding-step .permission-request > div ul li {
+      margin-bottom: 10px; }
+      .onboarding-step .permission-request > div ul li .dashicons {
+        font-size: 30px;
+        width: 30px;
+        height: 30px;
+        line-height: 39px;
+        display: inline-block; }
+      .onboarding-step .permission-request > div ul li .content {
+        display: inline-block;
+        margin-left: 10px; }
+        .onboarding-step .permission-request > div ul li .content strong, .onboarding-step .permission-request > div ul li .content small {
+          display: block; }
+
+.hasProgress .onboarding-page {
+  padding-top: 0; }
+
+/*# sourceMappingURL=steps.css.map */

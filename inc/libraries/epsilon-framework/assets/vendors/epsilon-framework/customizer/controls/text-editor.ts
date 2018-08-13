@@ -41,13 +41,13 @@ export class EpsilonTextEditor {
                 browser_spellcheck: true,
                 mediaButtons: false,
                 wp_autoresize_on: true,
-                toolbar1: 'bold,italic,link,strikethrough',
+                toolbar1: 'bold italic underline link numlist bullist',
                 setup: function (editor: any) {
                     editor.on('change', function (e: Event) {
                         editor.save();
                         jQuery(editor.getElement()).trigger('change');
                     });
-                }
+                },
             },
             quicktags: true
         });

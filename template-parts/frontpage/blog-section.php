@@ -15,8 +15,8 @@ $parent_attr = array(
 	    $attr_helper->generate_video_overlay();
 	    $attr_helper->generate_color_overlay();
 	    ?>
-	    <?php echo wp_kses( unapp_Helper::generate_pencil( 'unapp_Repeatable_Sections', 'blog' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
         <div class="container">
+	        <?php echo wp_kses( unapp_Helper::generate_pencil( 'unapp_Repeatable_Sections', 'blog' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
 	                <?php
@@ -44,9 +44,9 @@ $parent_attr = array(
 				while ( $query->have_posts() ) :
 					$query->the_post();
 					?>
-                    <div class="col-md-4 animate-box">
+                    <div class="col-md-4 animate-box" data-animate-effect="<?php echo esc_attr( $fields[ 'blog_animate' ] ); ?>">
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                            <h2><a href="<?php echo esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h2>
+                            <h2><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_title(); ?></a></h2>
                             <p class="admin"><span><?php unapp_post_date_format(); ?></span></p>
                             <p><?php echo unapp_excerpt( 20 ); ?></p>
                             <p class="author-wrap">

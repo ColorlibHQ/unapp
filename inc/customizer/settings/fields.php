@@ -1,14 +1,32 @@
 <?php
 /**
- * unapp Theme Customizer Fields
+ * MedZone_Lite Theme Customizer Fields
  *
- * @package unapp
+ * @package MedZone_Lite
  * @since   1.0
  */
 
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
+/**
+ * Register customizer fields
+ */
+
+/**
+ * General section options
+ ***************************************************************************************/
+Epsilon_Customizer::add_field(
+	'unapp_enable_go_top',
+	array(
+		'type'        => 'epsilon-toggle',
+		'label'       => esc_html__( 'Go to top button', 'unapp' ),
+		'description' => esc_html__( 'Toggle the display of the go to top button.', 'unapp' ),
+		'section'     => 'unapp_footer_section',
+		'default'     => true,
+	)
+);
 
 /**
  * Layout section options
@@ -83,7 +101,6 @@ Epsilon_Customizer::add_field(
 			'font-family',
 			'font-weight',
 			'font-style',
-			'letter-spacing',
 		),
 		'selectors'     => array(
 			'.post-title',
@@ -95,10 +112,9 @@ Epsilon_Customizer::add_field(
 			'.post-content h6',
 		),
 		'font_defaults' => array(
-			'letter-spacing' => '0',
-			'font-family'    => '',
-			'font-weight'    => '',
-			'font-style'     => '',
+			'font-family' => '',
+			'font-weight' => '',
+			'font-style'  => '',
 		),
 	)
 );
@@ -128,62 +144,81 @@ Epsilon_Customizer::add_field(
 );
 
 /**
- * Header section options
+ * Blog section options
  */
+Epsilon_Customizer::add_field(
+	'unapp_show_single_post_categories',
+	array(
+		'type'        => 'epsilon-toggle',
+		'label'       => esc_html__( 'Post Meta: Categories', 'unapp' ),
+		'description' => esc_html__( 'This will disable the category section at the beggining of the post.', 'unapp' ),
+		'section'     => 'header_image',
+		'default'     => true,
+	)
+);
+
 
 Epsilon_Customizer::add_field(
-	'unapp_header_columns',
+	'unapp_enable_author_box',
 	array(
-		'type'            => 'epsilon-layouts',
-		'section'         => 'unapp_header_section',
-		'priority'        => 2,
-		'layouts'         => array(
+		'type'        => 'epsilon-toggle',
+		'label'       => esc_html__( 'Post meta: Author', 'unapp' ),
+		'description' => esc_html__( 'Toggle the display of the author box, at the left side of the post. Will only display if the author has a description defined.', 'unapp' ),
+		'section'     => 'header_image',
+		'default'     => true,
+	)
+);
+
+Epsilon_Customizer::add_field(
+	'unapp_show_single_post_tags',
+	array(
+		'type'        => 'epsilon-toggle',
+		'label'       => esc_html__( 'Post Meta: Tags', 'unapp' ),
+		'description' => esc_html__( 'This will disable the tags zone at the end of the post.', 'unapp' ),
+		'section'     => 'header_image',
+		'default'     => true,
+	)
+);
+
+/**
+ * Footer section options
+ */
+Epsilon_Customizer::add_field(
+	'unapp_footer_columns',
+	array(
+		'type'     => 'epsilon-layouts',
+		'section'  => 'unapp_footer_section',
+		'priority' => 0,
+		'layouts'  => array(
 			1 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/one-column.png',
 			2 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/two-column.png',
 			3 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/three-column.png',
 			4 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/four-column.png',
 		),
-		'default'         => array(
-			'columnsCount' => 2,
+		'default'  => array(
+			'columnsCount' => 4,
 			'columns'      => array(
 				array(
 					'index' => 1,
-					'span'  => 6,
+					'span'  => 3,
 				),
 				array(
 					'index' => 2,
-					'span'  => 6,
+					'span'  => 3,
+				),
+				array(
+					'index' => 3,
+					'span'  => 3,
+				),
+				array(
+					'index' => 4,
+					'span'  => 3,
 				),
 			),
 		),
-		'min_span'        => 2,
-		'label'           => esc_html__( 'Top Bar Columns', 'unapp' ),
-		'active_callback' => array( 'Unapp_Customizer', 'header_top_bar_enabled_callback' ),
-	)
-);
-
-
-/**
- * Copyright contents
- */
- 
- Epsilon_Customizer::add_field(
-	'unapp_enable_go_top',
-	array(
-		'type'        => 'epsilon-toggle',
-		'label'       => esc_html__( 'Go to top button', 'unapp' ),
-		'description' => esc_html__( 'Toggle the display of the go to top button.', 'unapp' ),
-		'section'     => 'unapp_footer_section',
-		'default'     => false,
-	)
-);
-Epsilon_Customizer::add_field(
-	'unapp_enable_footer_copyright',
-	array(
-		'type'        => 'epsilon-toggle',
-		'label'       => esc_html__( 'Footer Copyright Section', 'unapp' ),
-		'section'     => 'unapp_footer_section',
-		'default'     => true,
+		'fixed'    => true,
+		'min_span' => 2,
+		'label'    => esc_html__( 'Footer Columns', 'unapp' ),
 	)
 );
 
@@ -191,11 +226,12 @@ Epsilon_Customizer::add_field(
 	'unapp_copyright_contents',
 	array(
 		'type'    => 'epsilon-text-editor',
-		'default' => 'uanpp Themes - 2018. All rights reserved.',
 		'label'   => esc_html__( 'Copyright Text', 'unapp' ),
 		'section' => 'unapp_footer_section',
 	)
 );
+
+
 /**
  * Theme Content
  */
@@ -231,10 +267,10 @@ Epsilon_Customizer::add_field(
 		),
 	)
 );
+
 /**
  * Services
  */
-
 Epsilon_Customizer::add_field(
 	'unapp_services',
 	array(
@@ -265,44 +301,16 @@ Epsilon_Customizer::add_field(
 				'type'    => 'epsilon-icon-picker',
 				'default' => 'fa fa-users',
 			),
-		),
-	)
-);
-
-/**
- * Page Services
- */
-
-Epsilon_Customizer::add_field(
-	'unapp_page_services',
-	array(
-		'type'         => 'epsilon-repeater',
-		'section'      => 'unapp_page_services_section',
-		'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-		'label'        => esc_html__( 'Services', 'unapp' ),
-		'button_label' => esc_html__( 'Add new service', 'unapp' ),
-		'row_label'    => array(
-			'type'  => 'field',
-			'field' => 'service_title',
-		),
-		'fields'       => array(
-			'service_page_title'       => array(
-				'label'             => esc_html__( 'Title', 'unapp' ),
-				'type'              => 'text',
-				'sanitize_callback' => 'wp_kses_post',
-				'default'           => 'Create your own template',
-			),
-			'service_page_desc' => array(
-				'label'             => esc_html__( 'Description', 'unapp' ),
-				'type'              => 'epsilon-text-editor',
-				'sanitize_callback' => 'wp_kses_post',
-				'default'           => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
-			),
-			'service_page_icon'        => array(
-				'label'   => esc_html__( 'Icon', 'unapp' ),
-				'type'    => 'epsilon-icon-picker',
-				'default' => 'fa fa-users',
-			),
+			'services_animate'  => array(
+				'label' => esc_html__( 'Animate', 'unapp' ),
+				'type' => 'select',
+				'choices' => array(
+					'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+					'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+					'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+					'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+				),
+			)
 		),
 	)
 );
@@ -377,6 +385,7 @@ Epsilon_Customizer::add_field(
 	array(
 		'type'          => 'epsilon-repeater',
 		'section'       => 'unapp_counter_section',
+		'transport'           => 'postMessage',
 		'save_as_meta'  => Epsilon_Content_Backup::get_instance()->setting_page,
 		'label'         => esc_html__( 'Featured Work', 'unapp' ),
 		'button_label'  => esc_html__( 'Add new items', 'unapp' ),
@@ -397,6 +406,16 @@ Epsilon_Customizer::add_field(
 				'sanitize_callback' => 'wp_kses_post',
 				'default' => 'Of customers are satisfied with our professional support',
 			),
+			'counter_animate'  => array(
+				'label' => esc_html__( 'Animate', 'unapp' ),
+				'type' => 'select',
+				'choices' => array(
+					'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+					'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+					'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+					'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+				),
+			),
 		)
 	)
 );
@@ -405,7 +424,7 @@ Epsilon_Customizer::add_field(
  * Unapp Pricing
  */
 Epsilon_Customizer::add_field(
-	'unapp_price_boxes',
+	'unapp_pricing',
 	array(
 		'type'         => 'epsilon-repeater',
 		'section'      => 'unapp_pricing_section',
@@ -456,6 +475,16 @@ Epsilon_Customizer::add_field(
 				'default'           => esc_html__( 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.', 'unapp' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
+			'pricing_animate'  => array(
+				'label' => esc_html__( 'Animate', 'unapp' ),
+				'type' => 'select',
+				'choices' => array(
+					'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+					'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+					'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+					'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+				),
+			),
 		),
 	)
 );
@@ -479,13 +508,13 @@ Epsilon_Customizer::add_field(
 			'member_title'            => array(
 				'label'             => esc_html__( 'Name', 'unapp' ),
 				'type'              => 'text',
-				'default'           => esc_html__( 'James Austin', 'unapp' ),
+				'default'           => esc_html__( 'Dorothy Murphy', 'unapp' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
 			'member_designation'            => array(
 				'label'             => esc_html__( 'Designation', 'unapp' ),
 				'type'              => 'text',
-				'default'           => esc_html__( 'Developer', 'unapp' ),
+				'default'           => esc_html__( 'Designer', 'unapp' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
 			'member_text'             => array(
@@ -519,7 +548,34 @@ Epsilon_Customizer::add_field(
 				'type'    => 'url',
 				'default' => 'https://linkedin.com',
 			),
+			'member_animate'  => array(
+				'label' => esc_html__( 'Animate', 'unapp' ),
+				'type' => 'select',
+				'choices' => array(
+					'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+					'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+					'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+					'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+				),
+			),
 		),
+	)
+);
+
+
+/**
+ * Repeatable sections
+ */
+Epsilon_Customizer::add_field(
+	'unapp_frontpage_sections',
+	array(
+		'type'                => 'epsilon-section-repeater',
+		'label'               => esc_html__( 'Sections', 'unapp' ),
+		'section'             => 'unapp_repeatable_section',
+		'selective_refresh'   => true,
+		'page_builder'        => true,
+		'transport'           => 'postMessage',
+		'repeatable_sections' => Unapp_Repeatable_Sections::get_instance()->sections,
 	)
 );
 
@@ -536,6 +592,9 @@ Epsilon_Customizer::add_field(
 	)
 );
 
+/**
+ * Logo dimensions
+ */
 Epsilon_Customizer::add_field(
 	'unapp_logo_dimensions',
 	array(
@@ -547,102 +606,4 @@ Epsilon_Customizer::add_field(
 	)
 );
 
-/**
- * Repeatable sections
- */
-Epsilon_Customizer::add_field(
-	'unapp_frontpage_sections',
-	array(
-		'type'                => 'epsilon-section-repeater',
-		'label'               => esc_html__( 'Sections', 'unapp' ),
-		'section'             => 'unapp_repeatable_section',
-		'page_builder'        => true,
-		'selective_refresh'   => true,
-		'transport'           => 'postMessage',
-		'repeatable_sections' => Unapp_Repeatable_Sections::get_instance()->sections,
-	)
-);
 
-/**
- * Color Schemes
- */
-Epsilon_Customizer::add_field(
-	'unapp_color_scheme',
-	array(
-		'label'       => esc_html__( 'Color scheme', 'unapp' ),
-		'description' => esc_html__( 'Select a color scheme', 'unapp' ),
-		'type'        => 'epsilon-color-scheme',
-		'priority'    => 0,
-		'default'     => 'primary',
-		'section'     => 'colors',
-		'transport'   => 'postMessage',
-		'choices'     => array(
-			array(
-				'id'     => 'primary',
-				'name'   => 'Primary',
-				'colors' => array(
-					// 'epsilon_general_separator'         		=> '',
-					'epsilon_accent_color'              		=> '#0385d0',
-					'epsilon_accent_color_second'       		=> '#a1083a',
-
-					// 'epsilon_text_separator'            		=> '',
-					'epsilon_title_color'               		=> '#1a171c',
-					'epsilon_text_color'               			=> '#777777',
-					'epsilon_link_color'                		=> '#0385d0',
-					'epsilon_link_hover_color'          		=> '#a1083a',
-					'epsilon_link_active_color'         		=> '#333333',
-
-					// 'epsilon_menu_separator'            		=> '',
-					'epsilon_header_background'           		=> '#151c1f',
-					'epsilon_dropdown_menu_background'          => '#a1083a',
-					'epsilon_dropdown_menu_hover_background'	=> '#940534',
-					'epsilon_menu_item_color'    				=> '#ebebeb',
-					'epsilon_menu_item_hover_color' 			=> '#ffffff',
-					'epsilon_menu_item_active_color'        	=> '#0385d0',
-
-					// 'epsilon_footer_separator'         			=> '',
-					'epsilon_footer_contact_background'         => '#0377bb',
-					'epsilon_footer_background'         		=> '#192229',
-					'epsilon_footer_title_color'         		=> '#ffffff',
-					'epsilon_footer_text_color'         		=> '#a9afb1',
-					'epsilon_footer_link_color'         		=> '#a9afb1',
-					'epsilon_footer_link_hover_color'         	=> '#ffffff',
-					'epsilon_footer_link_active_color'         	=> '#a9afb1',
-				),
-			),
-			array(
-				'id'     => 'yellow',
-				'name'   => 'Yellow',
-				'colors' => array(
-					// 'epsilon_general_separator'         		=> '',
-					'epsilon_accent_color'              		=> '#FFC000',
-					'epsilon_accent_color_second'       		=> '#3E4346',
-
-					// 'epsilon_text_separator'            		=> '',
-					'epsilon_title_color'               		=> '#3E4346',
-					'epsilon_text_color'               			=> '#777777',
-					'epsilon_link_color'                		=> '#3e4346',
-					'epsilon_link_hover_color'          		=> '#ffc000',
-					'epsilon_link_active_color'         		=> '#3e4346',
-
-					// 'epsilon_menu_separator'            		=> '',
-					'epsilon_header_background'           		=> '#ffffff',
-					'epsilon_dropdown_menu_background'          => '#ffffff',
-					'epsilon_dropdown_menu_hover_background'	=> '#ffc000',
-					'epsilon_menu_item_color'    				=> '#3e4346',
-					'epsilon_menu_item_hover_color' 			=> '#ffc000',
-					'epsilon_menu_item_active_color'        	=> '#ffc000',
-
-					// 'epsilon_footer_separator'         			=> '',
-					'epsilon_footer_contact_background'         => '#ffc000',
-					'epsilon_footer_background'         		=> '#3e4346',
-					'epsilon_footer_title_color'         		=> '#ffffff',
-					'epsilon_footer_text_color'         		=> '#a9afb1',
-					'epsilon_footer_link_color'         		=> '#a9afb1',
-					'epsilon_footer_link_hover_color'         	=> '#ffffff',
-					'epsilon_footer_link_active_color'         	=> '#a9afb1',
-				),
-			),
-		),
-	)
-);

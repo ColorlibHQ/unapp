@@ -10,7 +10,7 @@
 </head>
 <body <?php body_class(); ?>>
 
-<div class="colorlib-loader"></div>
+<!--<div class="colorlib-loader"></div>-->
 
 <div id="page">
     <nav class="colorlib-nav">
@@ -22,7 +22,7 @@
 	                        <?php
 	                        if ( function_exists( 'the_custom_logo' ) ) {
 		                        if ( has_custom_logo() ) {
-			                        Epsilon_Helper::get_image_with_custom_dimensions( 'portum_logo_dimensions' );
+			                        Epsilon_Helper::get_image_with_custom_dimensions( 'unapp_logo_dimensions' );
 		                        }
 		                        else{
 			                        ?>

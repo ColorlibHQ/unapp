@@ -9,6 +9,15 @@ if ( ! defined( 'WPINC' ) ) {
  */
 class Epsilon_Helper {
 	/**
+	 * Add description closer button to the section
+	 *
+	 * @return string
+	 */
+	public static function add_description_button() {
+		return '<button type="button" class="epsilon-button-link-close-section">' . __( 'Close', 'epsilon-framework' ) . '</button>';
+	}
+
+	/**
 	 * Generate an edit shortcut for the frontend sections
 	 */
 	public static function generate_pencil( $class_name = '', $section_type = '' ) {
@@ -147,7 +156,9 @@ class Epsilon_Helper {
 	public static function get_image_with_custom_dimensions( $control = '' ) {
 		$decoded = json_decode( get_theme_mod( $control, '{}' ), true );
 		if ( empty( $decoded ) ) {
-			return the_custom_logo();
+			the_custom_logo();
+
+			return;
 		}
 
 		$associated_image = get_theme_mod( $decoded['linked_control'], false );
@@ -179,6 +190,6 @@ class Epsilon_Helper {
 			);
 		}
 
-		print $html;
+		echo $html;
 	}
 }

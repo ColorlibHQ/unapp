@@ -14,7 +14,7 @@
 		    the_post_thumbnail( 'unapp-post-thumb' );
 	    }
 	    ?>
-        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
         <p class="admin"><span><?php unapp_post_date_format(); ?></span></p>
         <div class="post-entry"><?php the_content(); ?></div>
 		<?php
@@ -32,7 +32,7 @@
 		        the_post_thumbnail( 'unapp-post-thumb' );
 	        }
 	        ?>
-            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
             <p class="admin"><span><?php unapp_post_date_format(); ?></span></p>
             <p><?php echo unapp_excerpt( 20 ); ?></p>
             <p class="author-wrap">

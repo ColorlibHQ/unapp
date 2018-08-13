@@ -2,7 +2,7 @@
 /**
  * Page rendering
  *
- * @package Unapp
+ * @package Portum
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -70,15 +70,6 @@ class Epsilon_Page_Generator {
 	 * Get an instance of the frontpage renderer
 	 */
 	public static function get_instance( $option = '', $id = '' ) {
-		static $inst;
-		if ( ! $inst ) {
-			$inst = new Epsilon_Page_Generator( $option, $id );
-		}
-
-		return $inst;
-	}
-
-	public static function get_instance_page( $option = '', $id = '' ) {
 		static $inst;
 		if ( ! $inst ) {
 			$inst = new Epsilon_Page_Generator( $option, $id );

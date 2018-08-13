@@ -146,13 +146,21 @@ class Epsilon_Section_Repeater_Helper {
 	 */
 	public function set_column_spacing() {
 		$this->column_spacing = array(
-			'spaced' => array(
-				'value' => 'spaced',
-				'png'   => EPSILON_URI . '/assets/img/epsilon-section-colspaced.png',
+			'none' => array(
+				'value' => 'none',
+				'png'   => EPSILON_URI . '/assets/img/epsilon-section-spacing-none.png',
 			),
-			'colfit' => array(
-				'value' => 'colfit',
-				'png'   => EPSILON_URI . '/assets/img/epsilon-section-colfit.png',
+			'sm'   => array(
+				'value' => 'sm',
+				'png'   => EPSILON_URI . '/assets/img/epsilon-section-spacing-sm.png',
+			),
+			'md'   => array(
+				'value' => 'md',
+				'png'   => EPSILON_URI . '/assets/img/epsilon-section-spacing-md.png',
+			),
+			'lg'   => array(
+				'value' => 'lg',
+				'png'   => EPSILON_URI . '/assets/img/epsilon-section-spacing-lg.png',
 			),
 		);
 	}
@@ -276,7 +284,7 @@ class Epsilon_Section_Repeater_Helper {
 				case 'text-color':
 					$temp = array(
 						'id'          => $key . '_text_color',
-						'label'       => esc_html__( 'Text Color', 'unapp' ),
+						'label'       => __( 'Text Color', 'epsilon-framework' ),
 						'description' => '',
 						'default'     => isset( $values['default'] ) ? $values['default'] : '',
 						'type'        => 'epsilon-color-picker',
@@ -291,7 +299,7 @@ class Epsilon_Section_Repeater_Helper {
 				case 'heading-color':
 					$temp = array(
 						'id'          => $key . '_heading_color',
-						'label'       => esc_html__( 'Heading Color', 'unapp' ),
+						'label'       => __( 'Heading Color', 'epsilon-framework' ),
 						'description' => '',
 						'default'     => isset( $values['default'] ) ? $values['default'] : '',
 						'type'        => 'epsilon-color-picker',
@@ -331,7 +339,7 @@ class Epsilon_Section_Repeater_Helper {
 				case 'background-color':
 					$temp = array(
 						'id'          => $key . '_background_color',
-						'label'       => esc_html__( 'Background color', 'unapp' ),
+						'label'       => __( 'Background color', 'epsilon-framework' ),
 						'description' => '',
 						'default'     => isset( $values['default'] ) ? $values['default'] : '',
 						'type'        => 'epsilon-color-picker',
@@ -345,7 +353,7 @@ class Epsilon_Section_Repeater_Helper {
 				case 'background-color-opacity':
 					$temp = array(
 						'id'          => $key . '_background_color_opacity',
-						'label'       => esc_html__( 'Background color opacity', 'unapp' ),
+						'label'       => __( 'Background color opacity', 'epsilon-framework' ),
 						'description' => '',
 						'type'        => 'epsilon-slider',
 						'default'     => isset( $values['default'] ) ? $values['default'] : 1,
@@ -362,7 +370,7 @@ class Epsilon_Section_Repeater_Helper {
 				case 'background-image':
 					$temp = array(
 						'id'          => $key . '_background_image',
-						'label'       => esc_html__( 'Background image', 'unapp' ),
+						'label'       => __( 'Background image', 'epsilon-framework' ),
 						'description' => '',
 						'type'        => 'epsilon-image',
 						'default'     => isset( $values['default'] ) ? $values['default'] : '',
@@ -377,21 +385,21 @@ class Epsilon_Section_Repeater_Helper {
 				case 'background-position':
 					$temp = array(
 						'id'          => $key . '_background_position',
-						'label'       => esc_html__( 'Background position', 'unapp' ),
+						'label'       => __( 'Background position', 'epsilon-framework' ),
 						'description' => '',
 						'default'     => isset( $values['default'] ) ? $values['default'] : '',
 						'type'        => 'select',
 						'group'       => 'styling',
 						'choices'     => array(
-							'topleft'     => esc_html__( 'Top Left', 'unapp' ),
-							'top'         => esc_html__( 'Top', 'unapp' ),
-							'topright'    => esc_html__( 'Top Right', 'unapp' ),
-							'left'        => esc_html__( 'Left', 'unapp' ),
-							'center'      => esc_html__( 'Center', 'unapp' ),
-							'right'       => esc_html__( 'Right', 'unapp' ),
-							'bottomleft'  => esc_html__( 'Bottom Left', 'unapp' ),
-							'bottom'      => esc_html__( 'Bottom', 'unapp' ),
-							'bottomright' => esc_html__( 'Bottom Right', 'unapp' ),
+							'topleft'     => __( 'Top Left', 'epsilon-framework' ),
+							'top'         => __( 'Top', 'epsilon-framework' ),
+							'topright'    => __( 'Top Right', 'epsilon-framework' ),
+							'left'        => __( 'Left', 'epsilon-framework' ),
+							'center'      => __( 'Center', 'epsilon-framework' ),
+							'right'       => __( 'Right', 'epsilon-framework' ),
+							'bottomleft'  => __( 'Bottom Left', 'epsilon-framework' ),
+							'bottom'      => __( 'Bottom', 'epsilon-framework' ),
+							'bottomright' => __( 'Bottom Right', 'epsilon-framework' ),
 						),
 					);
 
@@ -400,16 +408,16 @@ class Epsilon_Section_Repeater_Helper {
 				case 'background-repeat':
 					$temp = array(
 						'id'          => $key . '_background_repeat',
-						'label'       => esc_html__( 'Background repeat', 'unapp' ),
+						'label'       => __( 'Background repeat', 'epsilon-framework' ),
 						'description' => '',
 						'default'     => isset( $values['default'] ) ? $values['default'] : '',
 						'type'        => 'select',
 						'group'       => 'styling',
 						'choices'     => array(
-							'no-repeat' => esc_html__( 'No Repeat', 'unapp' ),
-							'repeat'    => esc_html__( 'Repeat', 'unapp' ),
-							'repeat-y'  => esc_html__( 'Repeat Y', 'unapp' ),
-							'repeat-x'  => esc_html__( 'Repeat X', 'unapp' ),
+							'no-repeat' => __( 'No Repeat', 'epsilon-framework' ),
+							'repeat'    => __( 'Repeat', 'epsilon-framework' ),
+							'repeat-y'  => __( 'Repeat Y', 'epsilon-framework' ),
+							'repeat-x'  => __( 'Repeat X', 'epsilon-framework' ),
 						),
 					);
 
@@ -418,15 +426,15 @@ class Epsilon_Section_Repeater_Helper {
 				case 'background-size':
 					$temp = array(
 						'id'          => $key . '_background_size',
-						'label'       => esc_html__( 'Background size', 'unapp' ),
+						'label'       => __( 'Background size', 'epsilon-framework' ),
 						'description' => '',
 						'default'     => isset( $values['default'] ) ? $values['default'] : '',
 						'type'        => 'select',
 						'group'       => 'styling',
 						'choices'     => array(
-							'cover'   => esc_html__( 'Cover', 'unapp' ),
-							'contain' => esc_html__( 'Contain', 'unapp' ),
-							'initial' => esc_html__( 'Initial', 'unapp' ),
+							'cover'   => __( 'Cover', 'epsilon-framework' ),
+							'contain' => __( 'Contain', 'epsilon-framework' ),
+							'initial' => __( 'Initial', 'epsilon-framework' ),
 						),
 					);
 
@@ -435,7 +443,7 @@ class Epsilon_Section_Repeater_Helper {
 				case 'background-parallax':
 					$temp = array(
 						'id'          => $key . '_background_parallax',
-						'label'       => esc_html__( 'Background parallax', 'unapp' ),
+						'label'       => __( 'Background parallax', 'epsilon-framework' ),
 						'description' => '',
 						'default'     => isset( $values['default'] ) ? $values['default'] : false,
 						'type'        => 'epsilon-toggle',
@@ -447,7 +455,7 @@ class Epsilon_Section_Repeater_Helper {
 				case 'background-video':
 					$temp = array(
 						'id'          => $key . '_background_video',
-						'label'       => esc_html__( 'Background video', 'unapp' ),
+						'label'       => __( 'Background video', 'epsilon-framework' ),
 						'description' => '',
 						'default'     => isset( $values['default'] ) ? $values['default'] : '',
 						'type'        => 'text',
@@ -500,7 +508,7 @@ class Epsilon_Section_Repeater_Helper {
 					$temp = array(
 						'id'      => $key . '_column_alignment',
 						'type'    => 'epsilon-button-group',
-						'label'   => esc_html__( 'Horizontal alignment', 'unapp' ),
+						'label'   => __( 'Horizontal alignment', 'epsilon-framework' ),
 						'group'   => 'layout',
 						'choices' => $this->create_choices_array( 'column_alignment', $values['choices'] ),
 						'default' => isset( $values['default'] ) ? $values['default'] : 'center',
@@ -515,7 +523,7 @@ class Epsilon_Section_Repeater_Helper {
 					$temp              = array(
 						'id'      => $key . '_column_vertical_alignment',
 						'type'    => 'epsilon-button-group',
-						'label'   => esc_html__( 'Vertical alignment', 'unapp' ),
+						'label'   => __( 'Vertical alignment', 'epsilon-framework' ),
 						'group'   => 'layout',
 						'choices' => $this->create_choices_array( 'column_vertical_alignment', $values['choices'] ),
 						'default' => isset( $values['default'] ) ? $values['default'] : 'middle',
@@ -529,7 +537,7 @@ class Epsilon_Section_Repeater_Helper {
 					$temp              = array(
 						'id'      => $key . '_column_stretch',
 						'type'    => 'epsilon-button-group',
-						'label'   => esc_html__( 'Stretch', 'unapp' ),
+						'label'   => __( 'Stretch', 'epsilon-framework' ),
 						'group'   => 'layout',
 						'choices' => $this->create_choices_array( 'column_stretch', $values['choices'] ),
 						'default' => isset( $values['default'] ) ? $values['default'] : 'boxedin',
@@ -543,7 +551,7 @@ class Epsilon_Section_Repeater_Helper {
 					$temp              = array(
 						'id'      => $key . '_column_spacing',
 						'type'    => 'epsilon-button-group',
-						'label'   => esc_html__( 'Items spacing', 'unapp' ),
+						'label'   => __( 'Items spacing', 'epsilon-framework' ),
 						'group'   => 'layout',
 						'choices' => $this->create_choices_array( 'column_spacing', $values['choices'] ),
 						'default' => isset( $values['default'] ) ? $values['default'] : 'spaced',
@@ -557,7 +565,7 @@ class Epsilon_Section_Repeater_Helper {
 					$temp              = array(
 						'id'      => $key . '_column_group',
 						'type'    => 'epsilon-button-group',
-						'label'   => esc_html__( 'Items group', 'unapp' ),
+						'label'   => __( 'Items group', 'epsilon-framework' ),
 						'group'   => 'layout',
 						'choices' => $this->create_choices_array( 'column_group', $values['choices'] ),
 						'default' => isset( $values['default'] ) ? absint( $values['default'] ) : 4,
@@ -571,7 +579,7 @@ class Epsilon_Section_Repeater_Helper {
 					$temp              = array(
 						'id'      => $key . '_row_spacing_top',
 						'type'    => 'epsilon-button-group',
-						'label'   => esc_html__( 'Spacing top', 'unapp' ),
+						'label'   => __( 'Spacing top', 'epsilon-framework' ),
 						'group'   => 'layout',
 						'choices' => $this->create_choices_array( 'row_spacing', $values['choices'] ),
 						'default' => isset( $values['default'] ) ? $values['default'] : 'none',
@@ -584,7 +592,7 @@ class Epsilon_Section_Repeater_Helper {
 					$temp              = array(
 						'id'      => $key . '_row_spacing_bottom',
 						'type'    => 'epsilon-button-group',
-						'label'   => esc_html__( 'Spacing bottom', 'unapp' ),
+						'label'   => __( 'Spacing bottom', 'epsilon-framework' ),
 						'group'   => 'layout',
 						'choices' => $this->create_choices_array( 'row_spacing_bottom', $values['choices'] ),
 						'default' => isset( $values['default'] ) ? $values['default'] : 'none',
@@ -597,7 +605,7 @@ class Epsilon_Section_Repeater_Helper {
 					$temp              = array(
 						'id'      => $key . '_row_title_align',
 						'type'    => 'epsilon-button-group',
-						'label'   => esc_html__( 'Title & description alignment', 'unapp' ),
+						'label'   => __( 'Title & description alignment', 'epsilon-framework' ),
 						'group'   => 'layout',
 						'choices' => $this->create_choices_array( 'title_align', $values['choices'] ),
 						'default' => isset( $values['default'] ) ? $values['default'] : 'none',

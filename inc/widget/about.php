@@ -27,7 +27,7 @@ class Unapp_About_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		//echo $args['before_widget'];
 		?>
-		<div class="col-md-4 colorlib-widget">
+		<div class="sidebar-widget">
 			<h4><?php print $instance[ 'title' ]; ?></h4>
 			<p><?php print $instance[ 'description' ]; ?></p>
             <ul class="colorlib-social-icons">
@@ -60,13 +60,13 @@ class Unapp_About_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'About unapp', 'unapp' );
-		$description = ! empty( $instance['description'] ) ? $instance['description'] : esc_html__( 'Description', 'unapp' );
-		$facebook = ! empty( $instance['facebook'] ) ? $instance['facebook'] : esc_html__( '#', 'unapp' );
-		$twitter = ! empty( $instance['twitter'] ) ? $instance['twitter'] : esc_html__( 'Twitter', 'unapp' );
-		$linkedin = ! empty( $instance['linkedin'] ) ? $instance['linkedin'] : esc_html__( 'Linkedin', 'unapp' );
-		$dribbble = ! empty( $instance['dribbble'] ) ? $instance['dribbble'] : esc_html__( 'Dribbdle', 'unapp' );
-		$instagram = ! empty( $instance['instagram'] ) ? $instance['instagram'] : esc_html__( 'Instagram', 'unapp' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : 'About unapp';
+		$description = ! empty( $instance['description'] ) ? $instance['description'] : 'Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics';
+		$facebook = ! empty( $instance['facebook'] ) ? $instance['facebook'] : '#';
+		$twitter = ! empty( $instance['twitter'] ) ? $instance['twitter'] : '#';
+		$linkedin = ! empty( $instance['linkedin'] ) ? $instance['linkedin'] : '#';
+		$dribbble = ! empty( $instance['dribbble'] ) ? $instance['dribbble'] : '#';
+		$instagram = ! empty( $instance['instagram'] ) ? $instance['instagram'] : '#';
 		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'unapp' ); ?></label>
@@ -74,7 +74,7 @@ class Unapp_About_Widget extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'description' ) ); ?>"><?php esc_attr_e( 'Description:', 'unapp' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'description' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'description' ) ); ?>" type="text" value="<?php echo esc_attr( $description ); ?>">
+            <textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'description' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'description' ) ); ?>" type="text"><?php echo esc_attr( $description ); ?></textarea>
 		</p>
 
 		<p>

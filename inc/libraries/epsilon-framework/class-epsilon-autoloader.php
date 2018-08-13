@@ -20,16 +20,16 @@ class Epsilon_Autoloader {
 		$bind  = implode( '-', $parts );
 
 		$directories = array(
-			plugin_dir_path( __FILE__ ) . '/',
-			plugin_dir_path( __FILE__ ) . '/classes/',
-			plugin_dir_path( __FILE__ ) . '/classes/backend/',
-			plugin_dir_path( __FILE__ ) . '/classes/helpers/',
-			plugin_dir_path( __FILE__ ) . '/classes/output/',
-			plugin_dir_path( __FILE__ ) . '/customizer/',
-			plugin_dir_path( __FILE__ ) . '/customizer/controls/',
-			plugin_dir_path( __FILE__ ) . '/customizer/panels/',
-			plugin_dir_path( __FILE__ ) . '/customizer/sections/',
-			plugin_dir_path( __FILE__ ) . '/customizer/settings/',
+			dirname( __FILE__ ) . '/',
+			dirname( __FILE__ ) . '/classes/',
+			dirname( __FILE__ ) . '/classes/backend/',
+			dirname( __FILE__ ) . '/classes/helpers/',
+			dirname( __FILE__ ) . '/classes/output/',
+			dirname( __FILE__ ) . '/customizer/',
+			dirname( __FILE__ ) . '/customizer/controls/',
+			dirname( __FILE__ ) . '/customizer/panels/',
+			dirname( __FILE__ ) . '/customizer/sections/',
+			dirname( __FILE__ ) . '/customizer/settings/',
 		);
 
 		foreach ( $directories as $directory ) {

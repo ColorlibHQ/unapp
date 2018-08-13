@@ -14,7 +14,8 @@ get_header(); ?>
 <div class="colorlib-blog">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 animate-box">
+            <?php $layout = Unapp_Helper::get_layout(); ?>
+			<div class="<?php echo ( 1 === $layout['columnsCount'] && ! is_active_sidebar( 'sidebar-1' ) ) ? 'col-sm-12' : 'col-sm-' . esc_attr( $layout['columns']['content']['span'] ); ?> animate-box">
 				<?php
 				/* Start the Loop */
 				if( have_posts() ) :
@@ -28,7 +29,11 @@ get_header(); ?>
 				endif; // End loop
 				?>
 			</div>
-			<?php get_sidebar(); ?>
+            <?php if ( 'right-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar-1' ) ) { ?>
+            <div class="col-sm-<?php echo esc_attr( $layout['columns']['sidebar']['span'] ); ?> animate-box">
+                <?php get_sidebar(); ?>
+            </div>
+            <?php } ?>
 		</div>
 	</div>
 </div>

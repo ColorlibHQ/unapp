@@ -1,5 +1,5 @@
 /**
- * Unapp Customizer Scripts
+ * MedZoneLite Customizer Scripts
  *
  * @type {{}}
  */
@@ -8,15 +8,15 @@
  * Check if we have the object created somewhere else
  * @type {{}}
  */
-var Unapp = typeof(Unapp) ? {} : Unapp;
+var MedZoneLite = typeof( MedZoneLite ) ? {} : MedZoneLite;
 
 /**
- * Unapp Customizer functions
+ * MedZoneLite Customizer functions
  *
- * @type {{pairedSettings: Unapp.Customizer.pairedSettings, _addOptionsToSelect: Unapp.Customizer._addOptionsToSelect, _getValueFromRepeater:
- *     Unapp.Customizer._getValueFromRepeater}}
+ * @type {{pairedSettings: MedZoneLite.Customizer.pairedSettings, _addOptionsToSelect: MedZoneLite.Customizer._addOptionsToSelect, _getValueFromRepeater:
+ *     MedZoneLite.Customizer._getValueFromRepeater}}
  */
-Unapp.Customizer = {
+MedZoneLite.Customizer = {
   /**
    * Helpers array
    */
@@ -37,23 +37,6 @@ Unapp.Customizer = {
       return newArray;
     }
   },
-
-  /**
-   * Disable a select if it does not have values
-   * @param id
-   */
-  checkValuesAndDisable: function( id ) {
-    var select = jQuery( id ).find( 'select' ),
-        options = {};
-    if ( select.length ) {
-      select.val( 0 );
-      options = select.find( 'option' );
-    }
-    if ( 1 === options.length ) {
-      select.prop( 'disabled', true );
-    }
-  },
-
   /**
    * Populates selects based on another option
    *
@@ -66,7 +49,7 @@ Unapp.Customizer = {
       /**
        * Handle updates ( basically, when the user types in the doctors field -> an option is being created in the select )
        */
-      api.control(k).container.on( 'row:update', _.debounce( function() {
+      api.control( k ).container.on( 'row:update', _.debounce( function() {
         var val = api.control( k ).setting.get(),
             selects = jQuery( '.repeater-sections' ).find( '[data-field=\'' + v.field + '\']' );
 
@@ -115,17 +98,15 @@ Unapp.Customizer = {
       } );
     }
   },
-
   /**
    * Content panels should be last ( The nested panels functionality adds Panels and then Sections )
    */
   handleAwfulSorting: function() {
     jQuery( document ).on( 'epsilon-reflown-panels', function() {
-      var element = jQuery( '#accordion-panel-unapp_panel_section_content' );
+      var element = jQuery( '#accordion-panel-medzone_lite_panel_section_content' );
       element.appendTo( element.parent() );
     } );
   },
-
   /**
    * Handles active callback
    *
@@ -166,23 +147,23 @@ Unapp.Customizer = {
  * Sort'of document ready
  */
 wp.customize.bind( 'ready', function() {
-
+  /**
+   * Object that handles pairing of options in customizer
+   *
+   * KEY is the section
+   * VALUE.field -> the select field
+   * VALUE.filter -> the field from where it generates the options
+   *
+   * @type {{medzone_lite_doctors: {field: string, filter: string}, medzone_lite_specialties: {field: string, filter: string}, medzone_lite_about_info: {field: string, filter: string}}}
+   */
   var obj = {
     'unapp_slides': {
-      field: 'slider_grouping',
-      filter: 'slides_title'
-    },
-    'unapp_price_boxes': {
-      field: 'pricing_grouping',
-      filter: 'price_box_title'
+        field: 'slider_grouping',
+        filter: 'slides_title'
     },
     'unapp_services': {
-      field: 'services_grouping',
-      filter: 'service_title'
-    },
-    'unapp_page_services': {
-        field: 'services_page_grouping',
-        filter: 'service_page_title'
+        field: 'services_grouping',
+        filter: 'service_title'
     },
     'unapp_featured_left': {
         field: 'featured_grouping',
@@ -196,22 +177,29 @@ wp.customize.bind( 'ready', function() {
         field: 'counter_grouping',
         filter: 'counter_title'
     },
+    'unapp_pricing': {
+        field: 'pricing_grouping',
+        filter: 'price_box_title'
+    },
     'unapp_team_members': {
         field: 'team_grouping',
         filter: 'member_title'
     }
   };
-  Unapp.Customizer.pairedSettings( obj, wp.customize );
-
+  /**
+   *
+   * @type {{show_on_front: {value: string, fields: [string,string]}}}
+   */
   var activeCallbacked = {
     'show_on_front': {
       value: 'page',
-      fields: [ 'accordion-section-unapp_repeatable_section' ]
+      fields: [ 'accordion-panel-medzone_lite_panel_section_content', 'accordion-section-medzone_lite_repeatable_section' ]
     }
   };
-
-  Unapp.Customizer.checkValuesAndDisable( '#customize-control-unapp_contact_form' );
-
-  //Unapp.Customizer.handleActiveCallback( activeCallbacked );
-  Unapp.Customizer.handleAwfulSorting();
+  /**
+   * Fire up the paired settings function
+   */
+  MedZoneLite.Customizer.pairedSettings( obj, wp.customize );
+  MedZoneLite.Customizer.handleAwfulSorting();
+  //MedZoneLite.Customizer.handleActiveCallback( activeCallbacked );
 } );

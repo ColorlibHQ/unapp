@@ -11,16 +11,17 @@ $parent_attr = array(
 	'class' => array( 'colorlib-pricing', 'ewf-section' ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
+$span      = 12 / absint( $fields['pricing_column_group'] );
 ?>
 
 <section class="colorlib-section" data-customizer-section-id="unapp_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-<?php echo wp_kses( Unapp_Helper::generate_pencil( 'Unapp_Repeatable_Sections', 'pricing' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
     <div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 	    <?php
             $attr_helper->generate_video_overlay();
             $attr_helper->generate_color_overlay();
 	    ?>
-        <div class="container">
+        <div class="<?php echo esc_attr( Unapp_Helper::container_class( 'pricing', $fields ) ); ?>">
+	        <?php echo wp_kses( Unapp_Helper::generate_pencil( 'Unapp_Repeatable_Sections', 'pricing' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
 	                <?php
@@ -41,7 +42,7 @@ $parent_attr = array(
 				<?php
 				foreach ( $fields['pricing'] as $key => $pricing ){
 					?>
-                    <div class="col-md-3 text-center animate-box">
+                    <div class="col-md-<?php echo absint( $span ); ?> animate-box" data-animate-effect="<?php echo esc_attr( $pricing[ 'pricing_animate' ] ); ?>">
                         <div class="pricing">
                             <h2 class="pricing-heading"><?php echo wp_kses_post( $pricing[ 'price_box_title' ] ); ?></h2>
                             <div class="price"><sup class="currency"><?php echo wp_kses_post( $pricing[ 'price_box_currency' ] ); ?></sup><?php echo wp_kses_post( $pricing[ 'price_box_price' ] ); ?><small>per <?php echo wp_kses_post( $pricing[ 'price_box_period' ] ); ?></small></div>

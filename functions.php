@@ -147,11 +147,44 @@ function unapp_widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer', 'unapp' ),
-			'id'            => 'footer-1',
+			'name'          => esc_html__( 'Footer One', 'unapp' ),
+			'id'            => 'footer-sidebar-1',
 			'description'   => esc_html__( 'Add widgets here to appear in your sidebar.', 'unapp' ),
-			'before_widget' => '<div class="col-md-4 colorlib-widget"><article id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</article></div>',
+			'before_widget' => '<article id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</article>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Two', 'unapp' ),
+			'id'            => 'footer-sidebar-2',
+			'description'   => esc_html__( 'Add widgets here to appear in your sidebar.', 'unapp' ),
+			'before_widget' => '<article id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</article>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Three', 'unapp' ),
+			'id'            => 'footer-sidebar-3',
+			'description'   => esc_html__( 'Add widgets here to appear in your sidebar.', 'unapp' ),
+			'before_widget' => '<article id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</article>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Four', 'unapp' ),
+			'id'            => 'footer-sidebar-4',
+			'description'   => esc_html__( 'Add widgets here to appear in your sidebar.', 'unapp' ),
+			'before_widget' => '<article id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</article>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)
@@ -178,6 +211,10 @@ function unapp_scripts() {
 	// owl carousel
 	wp_enqueue_style( 'unapp-owl-carousel-min', get_template_directory_uri() . '/assets/css/owl.carousel.min.css', array(), false, 'all' );
 	wp_enqueue_style( 'unapp-owl-theme-default-min', get_template_directory_uri() . '/assets/css/owl.theme.default.min.css', array(), false, 'all' );
+
+	//Google Font
+	wp_enqueue_style( 'google-font', esc_url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600|Nunito:200,300,400'), array(), false, 'all' );
+
 	// Custom style
 	wp_enqueue_style( 'unapp-main', get_template_directory_uri() . '/assets/css/style.css', array(), false, 'all' );
 	// Load jQuery
@@ -206,10 +243,12 @@ function unapp_scripts() {
 	// Theme main JS
 	wp_enqueue_script( 'unapp-main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), false, true );
 	// Google Map API Js
-	$api_key = get_theme_mod('contact_map_api','AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA');
-	if($api_key != '') {
-		wp_enqueue_script('unapp-map_api', 'http://maps.googleapis.com/maps/api/js?key='.$api_key, array('jquery'),false,true );
-		wp_enqueue_script( 'unapp-map', get_template_directory_uri() . '/assets/js/map.js', array( 'jquery' ), false, true );
+	if( is_page() ){
+		$api_key = get_theme_mod('contact_map_api','AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA');
+		if($api_key != '') {
+			wp_enqueue_script('unapp-map_api', 'http://maps.googleapis.com/maps/api/js?key='.$api_key, array('jquery'),false,true );
+			wp_enqueue_script( 'unapp-map', get_template_directory_uri() . '/assets/js/map.js', array( 'jquery' ), false, true );
+		}
 	}
 	// reply comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -217,46 +256,6 @@ function unapp_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'unapp_scripts' );
-
-/**
- * One click demo data inport
- * @return array
- */
-function unapp_demo_import_files() {
-	return array(
-		array(
-			'import_file_name'             => esc_html__('Unapp Demo Data','unapp'),
-			'local_import_file'            => trailingslashit( get_template_directory() ) . 'demo_data/content.xml',
-			'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'demo_data/customizer.dat',
-			'local_import_widget_file' => trailingslashit( get_template_directory() ) . 'demo_data/widget.json',
-			'import_notice'                => esc_html__( 'Import Unapp Demo Data.', 'unapp' ),
-		),
-	);
-}
-add_filter( 'pt-ocdi/import_files', 'unapp_demo_import_files');
-
-/*
- *
- */
-function unapp_demo_page_setting() {
-	// Assign menus to their locations.
-	$main_menu = get_term_by('Header Menu');
-
-	set_theme_mod( 'nav_menu_locations', array(
-			'primary' => $main_menu->term_id,
-		)
-	);
-
-	// Assign front page and posts page (blog page).
-	$front_page_id = get_page_by_title( 'Home' );
-	$blog_page_id  = get_page_by_title( 'Blog' );
-
-	update_option( 'show_on_front', 'page' );
-	update_option( 'page_on_front', $front_page_id->ID );
-	update_option( 'page_for_posts', $blog_page_id->ID );
-
-}
-add_action( 'pt-ocdi/after_import', 'unapp_demo_page_setting' );
 
 /**
  * Registers an editor stylesheet for the theme.
@@ -272,12 +271,15 @@ require get_parent_theme_file_path() . '/inc/unapp_navwalker.php';
 // Require theme custom functions
 require get_parent_theme_file_path() . '/inc/unapp_functions.php';
 
-//Load the unapp activate plugins class
-require get_template_directory() . '/inc/class-unappwc.php';
-
 // Require theme custom widget
 require get_parent_theme_file_path() . '/inc/widget/widget_setting.php';
 
 // Require Epsilon Cutomizer API
 require get_parent_theme_file_path() . '/inc/class-unapp-autoloader.php';
-$unapp = Unapp::get_instance();
+if( class_exists( 'Epsilon_Framework' ) ){
+	$unapp = new Unapp();
+}
+
+//
+require get_parent_theme_file_path() .'/inc/class-tgm-plugin-activation.php';
+require get_parent_theme_file_path() .'/inc/unapp_add_plugin.php';

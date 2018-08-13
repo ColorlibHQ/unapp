@@ -8,11 +8,7 @@
  */
 
 if ( is_active_sidebar( 'sidebar-1' ) ) {
-	?>
-        <div class="col-md-4 animate-box">
-            <?php dynamic_sidebar( 'sidebar-1' ); ?>
-        </div>
-    <?php
+    dynamic_sidebar( 'sidebar-1' );
 }
 ?>
 

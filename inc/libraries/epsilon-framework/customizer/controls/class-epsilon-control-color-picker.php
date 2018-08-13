@@ -55,7 +55,7 @@ class Epsilon_Control_Color_Picker extends WP_Customize_Control {
 		$json['link']    = $this->get_link();
 		$json['value']   = $this->value();
 		$json['default'] = $this->setting->default;
-		$json['mode']    = '' !== $this->mode ? $this->mode : 'hex';
+		$json['mode']    = '' !== $this->mode ? $this->mode : 'rgba';
 		$json['lite']    = $this->lite;
 
 		return $json;
@@ -79,7 +79,7 @@ class Epsilon_Control_Color_Picker extends WP_Customize_Control {
 			<span class="customize-control-title epsilon-color-picker-title">
 				{{{ data.label }}}
 				<# if( data.default ){ #>
-				<a href="#" data-default="{{ data.default }}" class="epsilon-color-picker-default"><?php echo esc_html__( '(clear)', 'unapp' ); ?></a>
+				<a href="#" data-default="{{ data.default }}" class="epsilon-color-picker-default"><?php echo esc_html__( '(clear)', 'epsilon-framework' ); ?></a>
 				<# } #>
 
 				<# if( data.description ){ #>

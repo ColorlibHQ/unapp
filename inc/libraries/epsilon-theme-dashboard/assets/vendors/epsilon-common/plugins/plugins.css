@@ -1,0 +1,97 @@
+.epsilon-plugin-box {
+  height: 330px;
+  margin-top: 15px;
+  text-align: center;
+  background: #FFF;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-right: 5%; }
+  .epsilon-plugin-box:last-of-type {
+    margin-right: 0; }
+  .epsilon-plugin-box img {
+    width: 155px;
+    height: 155px;
+    padding-top: 50px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    display: block;
+    border: none; }
+  .epsilon-plugin-box--recommended {
+    background: #d25637;
+    color: #FFF;
+    text-transform: uppercase;
+    height: 28px;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    line-height: 28px;
+    font-size: 10px;
+    position: absolute;
+    font-weight: bold; }
+  .epsilon-plugin-box--action-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 15px;
+    font-weight: 600;
+    height: 18px;
+    margin: 0;
+    padding: 15px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.65);
+    text-align: left;
+    padding-right: 105px; }
+  .epsilon-plugin-box--action-info {
+    position: absolute;
+    top: 19px;
+    right: 0;
+    font-style: italic; }
+  .epsilon-plugin-box--action-button {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    padding: 9px 10px 10px;
+    background: #f6f6f6;
+    border: 1px solid rgba(0, 0, 0, 0.1); }
+    .epsilon-plugin-box--action-button .dashicons {
+      width: 27px;
+      height: 27px;
+      font-size: 27px;
+      color: #fff; }
+    .epsilon-plugin-box--action-button.completed {
+      background: #3eb011; }
+
+.epsilon-minimal-plugin-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+  .epsilon-minimal-plugin-box .epsilon-plugin-box--action-button {
+    background: transparent;
+    border: none; }
+    .epsilon-minimal-plugin-box .epsilon-plugin-box--action-button.completed {
+      background: transparent; }
+      .epsilon-minimal-plugin-box .epsilon-plugin-box--action-button.completed .dashicons {
+        color: #3eb011; }
+  .epsilon-minimal-plugin-box .epsilon-highlighted {
+    color: #d25637;
+    margin-left: 15px; }
+  .epsilon-minimal-plugin-box .checkbox_switch {
+    position: absolute;
+    right: 0;
+    top: 17px; }
+
+.epsilon-step-actions {
+  margin-top: 15px;
+  text-align: right; }
+
+/*# sourceMappingURL=plugins.css.map */

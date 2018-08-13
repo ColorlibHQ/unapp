@@ -1,0 +1,27 @@
+.epsilon-dashboard-tab {
+  padding: 20px 0;
+  display: none;
+  position: relative;
+  &.active {
+    display: block;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .col {
+      flex: 1;
+      min-width: 33%;
+    }
+  }
+
+  .standout {
+    border: 1px dashed #555;
+    background: #fff;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    margin-top: 15px;
+  }
+}

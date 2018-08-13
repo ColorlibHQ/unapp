@@ -1,8 +1,8 @@
 <?php
 /**
- * Unapp Theme Customizer repeatable sections
+ * MedZone_Lite Theme Customizer repeatable sections
  *
- * @package Unapp
+ * @package MedZone_Lite
  * @since   1.0
  */
 
@@ -57,7 +57,7 @@ class Unapp_Repeatable_Sections {
 			}
 		}
 
-		$this->sections = apply_filters( 'unapp_section_collection', $this->sections );
+		$this->sections = apply_filters( 'medzone_lite_section_collection', $this->sections );
 	}
 
 	/**
@@ -72,14 +72,6 @@ class Unapp_Repeatable_Sections {
 			'customization' => array(
 				'enabled'   => true,
 				'layout'    => array(
-					'row-title-align'           => array(
-						'default' => 'left',
-						'choices' => array( 'left', 'top', 'right', ),
-					),
-					'column-stretch'            => array(
-						'default' => 'boxedin',
-						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
-					),
 					'row-spacing-top'           => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
@@ -87,18 +79,6 @@ class Unapp_Repeatable_Sections {
 					'row-spacing-bottom'        => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
-					),
-					'column-group'              => array(
-						'default' => 3,
-						'choices' => array( 2, 3, 4, ),
-					),
-					'column-alignment'          => array(
-						'default' => 'left',
-						'choices' => array( 'left', 'center', 'right', ),
-					),
-					'column-vertical-alignment' => array(
-						'default' => 'middle',
-						'choices' => array( 'top', 'middle', 'bottom', ),
 					),
 				),
 				'styling'   => array(
@@ -126,16 +106,6 @@ class Unapp_Repeatable_Sections {
 					'background-video'         => array(
 						'default' => '',
 					),
-				),
-				'colors'    => array(
-					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', '.headline h3', '.services-item span', ),
-						'default'   => '',
-					),
-					'text-color'    => array(
-						'selectors' => array( 'p', ),
-						'default'   => '',
-					),
 				)
 			),
 			'fields'        => array(
@@ -148,7 +118,7 @@ class Unapp_Repeatable_Sections {
 				'banner_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'unapp' ),
 					'type'              => 'epsilon-text-editor',
-					'default'           => wp_kses_post( 'with Unapp\'s high quality features' ),
+					'default'           => wp_kses_post( 'with Unapp high quality features' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'banner_button_text'             => array(
@@ -169,6 +139,16 @@ class Unapp_Repeatable_Sections {
 					'default' => esc_url( 'https://www.youtube.com/watch?v=vqqt5p0q-eU' ),
 					'sanitize_callback' => 'esc_url_raw'
 				),
+				'banner_animate'  => array(
+					'label' => esc_html__( 'Animate', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+					),
+				)
 			)
 		);
 	}
@@ -198,14 +178,19 @@ class Unapp_Repeatable_Sections {
 					'choices'     => Unapp_Helper::get_group_values_from_meta( 'unapp_slides', 'slides_title' ),
 					'default'     => array( 'all' ),
 				),
+				'slider_animate'  => array(
+					'label' => esc_html__( 'Animate', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+					),
+				),
 				'slider_repeater_field'    => array(
 					'type'    => 'hidden',
 					'default' => 'unapp_slides',
-				),
-				'slider_section_unique_id' => array(
-					'label'             => esc_html__( 'Section ID', 'unapp' ),
-					'type'              => 'text',
-					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);
@@ -218,27 +203,23 @@ class Unapp_Repeatable_Sections {
 	 */
 	private function repeatable_services() {
 		return array(
-			'id'            => 'app_services',
+			'id'            => 'services',
 			'title'         => esc_html__( 'Services Section', 'unapp' ),
 			'description'   => esc_html__( 'Services section. It retrieves content from Theme Content / Services', 'unapp' ),
 			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-services-pt.png' ),
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
-					'row-title-align'           => array(
-						'default' => 'left',
-						'choices' => array( 'left', 'top', 'right', ),
-					),
 					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
 					),
 					'row-spacing-top'           => array(
-						'default' => 'md',
+						'default' => 'none',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 					'row-spacing-bottom'        => array(
-						'default' => 'md',
+						'default' => 'none',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 					'column-group'              => array(
@@ -246,12 +227,8 @@ class Unapp_Repeatable_Sections {
 						'choices' => array( 2, 3, 4, ),
 					),
 					'column-alignment'          => array(
-						'default' => 'left',
+						'default' => 'center',
 						'choices' => array( 'left', 'center', 'right', ),
-					),
-					'column-vertical-alignment' => array(
-						'default' => 'middle',
-						'choices' => array( 'top', 'middle', 'bottom', ),
 					),
 				),
 				'styling' => array(
@@ -279,17 +256,7 @@ class Unapp_Repeatable_Sections {
 					'background-video'         => array(
 						'default' => '',
 					),
-				),
-				'colors'  => array(
-					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', '.headline h3', '.services-item span', ),
-						'default'   => '',
-					),
-					'text-color'    => array(
-						'selectors' => array( 'p', ),
-						'default'   => '',
-					),
-				),
+				)
 			),
 			'fields'        => array(
 				'services_grouping'          => array(
@@ -310,11 +277,6 @@ class Unapp_Repeatable_Sections {
 					'type'    => 'hidden',
 					'default' => 'unapp_services',
 				),
-				'services_section_unique_id' => array(
-					'label'             => esc_html__( 'Section ID', 'unapp' ),
-					'type'              => 'text',
-					'sanitize_callback' => 'sanitize_key',
-				),
 			),
 		);
 	}
@@ -331,33 +293,17 @@ class Unapp_Repeatable_Sections {
 			'customization' => array(
 				'enabled'   => true,
 				'layout'    => array(
-					'row-title-align'           => array(
-						'default' => 'left',
-						'choices' => array( 'left', 'top', 'right', ),
-					),
 					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
 					),
 					'row-spacing-top'           => array(
-						'default' => 'md',
+						'default' => 'lg',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 					'row-spacing-bottom'        => array(
-						'default' => 'md',
+						'default' => 'lg',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
-					),
-					'column-group'              => array(
-						'default' => 3,
-						'choices' => array( 2, 3, 4, ),
-					),
-					'column-alignment'          => array(
-						'default' => 'left',
-						'choices' => array( 'left', 'center', 'right', ),
-					),
-					'column-vertical-alignment' => array(
-						'default' => 'middle',
-						'choices' => array( 'top', 'middle', 'bottom', ),
 					),
 				),
 				'styling'   => array(
@@ -385,16 +331,6 @@ class Unapp_Repeatable_Sections {
 					'background-video'         => array(
 						'default' => '',
 					),
-				),
-				'colors'    => array(
-					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.colorlib-heading h2', ),
-						'default'   => '',
-					),
-					'text-color'    => array(
-						'selectors' => array( '.colorlib-heading p', ),
-						'default'   => '',
-					),
 				)
 			),
 			'fields'        => array(
@@ -410,16 +346,31 @@ class Unapp_Repeatable_Sections {
 					'default'           => wp_kses_post( 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
+				'collaborate_text_animate'  => array(
+					'label' => esc_html__( 'Text Animate', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+					),
+				),
 				'collaborate_video_link' => array(
 					'label' => esc_html__( 'Youtube Link', 'unapp' ),
 					'type' => 'text',
-					'default' => esc_url( '#' ),
+					'default' => esc_url( 'https://vimeo.com/channels/staffpicks/93951774' ),
 					'sanitize_callback' => 'esc_url_raw'
 				),
-				'collaborate_section_unique_id' => array(
-					'label'             => esc_html__( 'Section ID', 'unapp' ),
-					'type'              => 'text',
-					'sanitize_callback' => 'sanitize_key',
+				'collaborate_video_animate'  => array(
+					'label' => esc_html__( 'Video Animate', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+					),
 				),
 			)
 		);
@@ -439,23 +390,19 @@ class Unapp_Repeatable_Sections {
 				'layout'    => array(
 					'row-title-align'           => array(
 						'default' => 'left',
-						'choices' => array( 'left', 'top', 'right', ),
+						'choices' => array( 'left', 'right', ),
 					),
 					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
 					),
 					'row-spacing-top'           => array(
-						'default' => 'md',
+						'default' => 'none',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 					'row-spacing-bottom'        => array(
-						'default' => 'md',
+						'default' => 'none',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
-					),
-					'column-group'              => array(
-						'default' => 3,
-						'choices' => array( 2, 3, 4, ),
 					),
 					'column-alignment'          => array(
 						'default' => 'left',
@@ -491,16 +438,6 @@ class Unapp_Repeatable_Sections {
 					'background-video'         => array(
 						'default' => '',
 					),
-				),
-				'colors'    => array(
-					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', '.headline h3', '.services-item span', ),
-						'default'   => '',
-					),
-					'text-color'    => array(
-						'selectors' => array( 'p', ),
-						'default'   => '',
-					),
 				)
 			),
 			'fields'        => array(
@@ -514,7 +451,17 @@ class Unapp_Repeatable_Sections {
 					'label'   => esc_html__( 'Image', 'unapp' ),
 					'type'    => 'epsilon-image',
 					'size'    => 'large',
-					'default' => esc_url( get_template_directory_uri() . '/assets/images/mobile-1.jpg' ),
+					'default' => esc_url( get_template_directory_uri() . '/assets/images/mobile-2.jpg' ),
+				),
+				'featured_left_image_animate'  => array(
+					'label' => esc_html__( 'Image Animate', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+					),
 				),
 				'featured_btn_text' => array(
 					'label'             => esc_html__( 'Button Label', 'unapp' ),
@@ -535,6 +482,16 @@ class Unapp_Repeatable_Sections {
 					'multiple'    => true,
 					'choices'     => Unapp_Helper::get_group_values_from_meta( 'unapp_featured_left', 'featured_icon' ),
 					'default'     => array( 'all' ),
+				),
+				'featured_left_text_animate'  => array(
+					'label' => esc_html__( 'Text Animate', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+					),
 				),
 				'featured_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
@@ -564,23 +521,11 @@ class Unapp_Repeatable_Sections {
 				'layout'    => array(
 					'row-title-align'           => array(
 						'default' => 'left',
-						'choices' => array( 'left', 'top', 'right', ),
+						'choices' => array( 'right', 'left', ),
 					),
 					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
-					),
-					'row-spacing-top'           => array(
-						'default' => 'md',
-						'choices' => array( 'lg', 'md', 'sm', 'none', ),
-					),
-					'row-spacing-bottom'        => array(
-						'default' => 'md',
-						'choices' => array( 'lg', 'md', 'sm', 'none', ),
-					),
-					'column-group'              => array(
-						'default' => 3,
-						'choices' => array( 2, 3, 4, ),
 					),
 					'column-alignment'          => array(
 						'default' => 'left',
@@ -616,30 +561,30 @@ class Unapp_Repeatable_Sections {
 					'background-video'         => array(
 						'default' => '',
 					),
-				),
-				'colors'    => array(
-					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', '.headline h3', '.services-item span', ),
-						'default'   => '',
-					),
-					'text-color'    => array(
-						'selectors' => array( 'p', ),
-						'default'   => '',
-					),
 				)
 			),
 			'fields'        => array(
 				'featured_title' => array(
 					'label'             => esc_html__( 'Title', 'unapp' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'Real template creation' ),
+					'default'           => wp_kses_post( 'Finish template creation' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'featured_image' => array(
 					'label'   => esc_html__( 'Image', 'unapp' ),
 					'type'    => 'epsilon-image',
 					'size'    => 'large',
-					'default' => esc_url( get_template_directory_uri() . '/assets/images/mobile-2.jpg' ),
+					'default' => esc_url( get_template_directory_uri() . '/assets/images/mobile-1.jpg' ),
+				),
+				'featured_right_image_animate'  => array(
+					'label' => esc_html__( 'Image Animate', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+					),
 				),
 				'featured_btn_text' => array(
 					'label'             => esc_html__( 'Button Label', 'unapp' ),
@@ -660,6 +605,16 @@ class Unapp_Repeatable_Sections {
 					'multiple'    => true,
 					'choices'     => Unapp_Helper::get_group_values_from_meta( 'unapp_featured_right', 'featured_icon' ),
 					'default'     => array( 'all' ),
+				),
+				'featured_right_text_animate'  => array(
+					'label' => esc_html__( 'Text Animate', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+					),
 				),
 				'featured_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
@@ -687,33 +642,17 @@ class Unapp_Repeatable_Sections {
 			'customization' => array(
 				'enabled'   => true,
 				'layout'    => array(
-					'row-title-align'           => array(
-						'default' => 'left',
-						'choices' => array( 'left', 'top', 'right', ),
-					),
 					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
-					),
-					'row-spacing-top'           => array(
-						'default' => 'md',
-						'choices' => array( 'lg', 'md', 'sm', 'none', ),
-					),
-					'row-spacing-bottom'        => array(
-						'default' => 'md',
-						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 					'column-group'              => array(
 						'default' => 3,
 						'choices' => array( 2, 3, 4, ),
 					),
 					'column-alignment'          => array(
-						'default' => 'left',
+						'default' => 'center',
 						'choices' => array( 'left', 'center', 'right', ),
-					),
-					'column-vertical-alignment' => array(
-						'default' => 'middle',
-						'choices' => array( 'top', 'middle', 'bottom', ),
 					),
 				),
 				'styling'   => array(
@@ -740,16 +679,6 @@ class Unapp_Repeatable_Sections {
 					),
 					'background-video'         => array(
 						'default' => '',
-					),
-				),
-				'colors'    => array(
-					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', '.headline h3', '.services-item span', ),
-						'default'   => '',
-					),
-					'text-color'    => array(
-						'selectors' => array( 'p', ),
-						'default'   => '',
 					),
 				)
 			),
@@ -822,17 +751,7 @@ class Unapp_Repeatable_Sections {
 					'background-video'         => array(
 						'default' => '',
 					),
-				),
-				'colors'  => array(
-					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
-						'default'   => '',
-					),
-					'text-color'    => array(
-						'selectors' => array( 'p', ),
-						'default'   => '',
-					),
-				),
+				)
 			),
 			'fields'        => array(
 				'blog_title'             => array(
@@ -857,17 +776,22 @@ class Unapp_Repeatable_Sections {
 						'max' => 9,
 					),
 				),
-				'blog_section_unique_id' => array(
-					'label'             => esc_html__( 'Section ID', 'unapp' ),
-					'type'              => 'text',
-					'sanitize_callback' => 'sanitize_key',
+				'blog_animate'  => array(
+					'label' => esc_html__( 'Animate', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+					),
 				),
 			),
 		);
 	}
 
 	/**
-	 * News Letter
+	 * Subscribe Section
 	 */
 	private function repeatable_subscribe(){
 		return array(
@@ -878,10 +802,7 @@ class Unapp_Repeatable_Sections {
 			'customization' => array(
 				'enabled'   => true,
 				'layout'    => array(
-					'row-title-align'           => array(
-						'default' => 'left',
-						'choices' => array( 'left', 'top', 'right', ),
-					),
+
 					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
@@ -893,18 +814,6 @@ class Unapp_Repeatable_Sections {
 					'row-spacing-bottom'        => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
-					),
-					'column-group'              => array(
-						'default' => 3,
-						'choices' => array( 2, 3, 4, ),
-					),
-					'column-alignment'          => array(
-						'default' => 'left',
-						'choices' => array( 'left', 'center', 'right', ),
-					),
-					'column-vertical-alignment' => array(
-						'default' => 'middle',
-						'choices' => array( 'top', 'middle', 'bottom', ),
 					),
 				),
 				'styling'   => array(
@@ -932,16 +841,6 @@ class Unapp_Repeatable_Sections {
 					'background-video'         => array(
 						'default' => '',
 					),
-				),
-				'colors'    => array(
-					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', '.headline h3', '.services-item span', ),
-						'default'   => '',
-					),
-					'text-color'    => array(
-						'selectors' => array( 'p', ),
-						'default'   => '',
-					),
 				)
 			),
 			'fields'        => array(
@@ -957,15 +856,36 @@ class Unapp_Repeatable_Sections {
 					'default'           => wp_kses_post( 'Subscribe to receive unapp tips from instructors right to your inbox.' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
+				'subscribe_text_animate'  => array(
+					'label' => esc_html__( 'Text Animate', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+					),
+				),
 				'subscribe_shortcode' => array(
 					'label'             => esc_html__( 'Mailchimp Shortcode', 'unapp' ),
 					'type'              => 'text',
 					//'default'           => wp_kses_post( 'Already trusted by over 10,000 users' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
+				'subscribe_btn_animate'  => array(
+					'label' => esc_html__( 'Button Animate', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+					),
+				),
 			)
 		);
 	}
+
 	/**
 	 * Repeatable pricing section
 	 *
@@ -992,8 +912,12 @@ class Unapp_Repeatable_Sections {
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 					'column-group'       => array(
-						'default' => 3,
+						'default' => 4,
 						'choices' => array( 2, 3, 4, ),
+					),
+					'column-alignment'          => array(
+						'default' => 'center',
+						'choices' => array( 'left', 'center', 'right', ),
 					),
 				),
 				'styling' => array(
@@ -1021,17 +945,7 @@ class Unapp_Repeatable_Sections {
 					'background-video'         => array(
 						'default' => '',
 					),
-				),
-				'colors'  => array(
-					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
-						'default'   => '',
-					),
-					'text-color'    => array(
-						'selectors' => array( 'p', ),
-						'default'   => '',
-					),
-				),
+				)
 			),
 			'fields'        => array(
 				'pricing_title'             => array(
@@ -1051,7 +965,7 @@ class Unapp_Repeatable_Sections {
 					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'unapp' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
-					'choices'     => Unapp_Helper::get_group_values_from_meta( 'unapp_price_boxes', 'price_box_title' ),
+					'choices'     => Unapp_Helper::get_group_values_from_meta( 'unapp_pricing', 'price_box_title' ),
 					'default'     => array( 'all' ),
 				),
 				'pricing_navigation'        => array(
@@ -1062,12 +976,7 @@ class Unapp_Repeatable_Sections {
 				),
 				'pricing_repeater_field'    => array(
 					'type'    => 'hidden',
-					'default' => 'unapp_price_boxes',
-				),
-				'pricing_section_unique_id' => array(
-					'label'             => esc_html__( 'Section ID', 'unapp' ),
-					'type'              => 'text',
-					'sanitize_callback' => 'sanitize_key',
+					'default' => 'unapp_pricing',
 				),
 			),
 		);
@@ -1086,7 +995,7 @@ class Unapp_Repeatable_Sections {
 				'enabled' => true,
 				'layout'  => array(
 					'row-title-align'           => array(
-						'default' => 'right',
+						'default' => 'left',
 						'choices' => array( 'left', 'right', ),
 					),
 					'column-stretch'            => array(
@@ -1135,17 +1044,7 @@ class Unapp_Repeatable_Sections {
 					'background-video'         => array(
 						'default' => '',
 					),
-				),
-				'colors'  => array(
-					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
-						'default'   => '',
-					),
-					'text-color'    => array(
-						'selectors' => array( 'p', ),
-						'default'   => '',
-					),
-				),
+				)
 			),
 			'fields'        => array(
 				'about_title'             => array(
@@ -1153,12 +1052,23 @@ class Unapp_Repeatable_Sections {
 					'type'              => 'text',
 					'default'           => esc_html__( 'About unapp', 'unapp' ),
 					'sanitize_callback' => 'wp_kses_post',
+
 				),
 				'about_text'              => array(
 					'label'             => esc_html__( 'Information', 'unapp' ),
 					'type'              => 'epsilon-text-editor',
 					'default'           => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia velit quis sem dignissim porta. Aliquam risus lorem, ornare sed diam at, ultrices vehicula enim. Morbi pharetra ligula nulla, non blandit velit tempor vel.', 'unapp' ),
 					'sanitize_callback' => 'wp_kses_post',
+				),
+				'about_text_animate'  => array(
+					'label' => esc_html__( 'Text Animate', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+					),
 				),
 				'about_image'             => array(
 					'label'   => esc_html__( 'Image', 'unapp' ),
@@ -1169,12 +1079,18 @@ class Unapp_Repeatable_Sections {
 				'about_video_link' => array(
 					'label'             => esc_html__( 'Video Link', 'unapp' ),
 					'type'              => 'text',
-					'sanitize_callback' => 'sanitize_key',
+					'default' => esc_url( 'https://vimeo.com/channels/staffpicks/93951774' ),
+					'sanitize_callback' => 'esc_url_raw'
 				),
-				'about_section_unique_id' => array(
-					'label'             => esc_html__( 'Section ID', 'unapp' ),
-					'type'              => 'text',
-					'sanitize_callback' => 'sanitize_key',
+				'about_image_animate'  => array(
+					'label' => esc_html__( 'Image Animate', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+					),
 				),
 			),
 		);
@@ -1185,16 +1101,16 @@ class Unapp_Repeatable_Sections {
 	 */
 	private function repeatable_team() {
 		return array(
-			'id'            => 'app_team',
+			'id'            => 'team',
 			'title'         => esc_html__( 'Team Section', 'unapp' ),
 			'description'   => esc_html__( 'Team members section. It retrieves content from Theme Content / Portfolio', 'unapp' ),
 			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-team-pt.png' ),
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
-					'row-title-align'           => array(
-						'default' => 'top',
-						'choices' => array( 'left', 'top', 'right', ),
+					'column-stretch'            => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
 					),
 					'row-spacing-top'    => array(
 						'default' => 'md',
@@ -1203,6 +1119,10 @@ class Unapp_Repeatable_Sections {
 					'row-spacing-bottom' => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-group'       => array(
+						'default' => 4,
+						'choices' => array( 2, 3, 4, ),
 					),
 					'column-alignment'          => array(
 						'default' => 'center',
@@ -1238,17 +1158,7 @@ class Unapp_Repeatable_Sections {
 					'background-video'         => array(
 						'default' => '',
 					),
-				),
-				'colors'  => array(
-					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
-						'default'   => '',
-					),
-					'text-color'    => array(
-						'selectors' => array( 'p', ),
-						'default'   => '',
-					),
-				),
+				)
 			),
 			'fields'        => array(
 				'team_title'             => array(
@@ -1281,17 +1191,12 @@ class Unapp_Repeatable_Sections {
 					'type'    => 'hidden',
 					'default' => 'unapp_team_members',
 				),
-				'team_section_unique_id' => array(
-					'label'             => esc_html__( 'Section ID', 'unapp' ),
-					'type'              => 'text',
-					'sanitize_callback' => 'sanitize_key',
-				),
 			),
 		);
 	}
 
 	/**
-	 * Repeatable About section
+	 * Repeatable Contact section
 	 */
 	private function repeatable_contact() {
 		return array(
@@ -1311,20 +1216,12 @@ class Unapp_Repeatable_Sections {
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
 					),
 					'row-spacing-top'           => array(
-						'default' => 'md',
+						'default' => 'none',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 					'row-spacing-bottom'        => array(
-						'default' => 'md',
+						'default' => 'none',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
-					),
-					'column-alignment'          => array(
-						'default' => 'left',
-						'choices' => array( 'left', 'center', 'right', ),
-					),
-					'column-vertical-alignment' => array(
-						'default' => 'middle',
-						'choices' => array( 'top', 'middle', 'bottom', ),
 					),
 				),
 				'styling' => array(
@@ -1352,17 +1249,7 @@ class Unapp_Repeatable_Sections {
 					'background-video'         => array(
 						'default' => '',
 					),
-				),
-				'colors'  => array(
-					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
-						'default'   => '',
-					),
-					'text-color'    => array(
-						'selectors' => array( 'p', ),
-						'default'   => '',
-					),
-				),
+				)
 			),
 			'fields'        => array(
 				'contact_shortcode'             => array(
@@ -1417,117 +1304,6 @@ class Unapp_Repeatable_Sections {
 					'type'    => 'text',
 					'size'    => 'large',
 					'default' => '7',
-				),
-				'contact_section_unique_id' => array(
-					'label'             => esc_html__( 'Section ID', 'unapp' ),
-					'type'              => 'text',
-					'sanitize_callback' => 'sanitize_key',
-				),
-			),
-		);
-	}
-
-	/**
-	 * Services Page Section
-	 */
-	private function repeatable_pageservices() {
-		return array(
-			'id'            => 'pageservices',
-			'title'         => esc_html__( 'Page Services Section', 'unapp' ),
-			'description'   => esc_html__( 'Services section. It retrieves content from Theme Content / Services', 'unapp' ),
-			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-services-pt.png' ),
-			'customization' => array(
-				'enabled' => true,
-				'layout'  => array(
-					'row-title-align'           => array(
-						'default' => 'left',
-						'choices' => array( 'left', 'top', 'right', ),
-					),
-					'column-stretch'            => array(
-						'default' => 'boxedin',
-						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
-					),
-					'row-spacing-top'           => array(
-						'default' => 'md',
-						'choices' => array( 'lg', 'md', 'sm', 'none', ),
-					),
-					'row-spacing-bottom'        => array(
-						'default' => 'md',
-						'choices' => array( 'lg', 'md', 'sm', 'none', ),
-					),
-					'column-group'              => array(
-						'default' => 3,
-						'choices' => array( 2, 3, 4, ),
-					),
-					'column-alignment'          => array(
-						'default' => 'left',
-						'choices' => array( 'left', 'center', 'right', ),
-					),
-					'column-vertical-alignment' => array(
-						'default' => 'middle',
-						'choices' => array( 'top', 'middle', 'bottom', ),
-					),
-				),
-				'styling' => array(
-					'background-color'         => array(
-						'default' => false,
-					),
-					'background-color-opacity' => array(
-						'default' => 1,
-					),
-					'background-image'         => array(
-						'default' => false,
-					),
-					'background-position'      => array(
-						'default' => 'center',
-					),
-					'background-size'          => array(
-						'default' => 'initial',
-					),
-					'background-repeat'        => array(
-						'default' => 'repeat'
-					),
-					'background-parallax'      => array(
-						'default' => false,
-					),
-					'background-video'         => array(
-						'default' => '',
-					),
-				),
-				'colors'  => array(
-					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', '.headline h3', '.services-item span', ),
-						'default'   => '',
-					),
-					'text-color'    => array(
-						'selectors' => array( 'p', ),
-						'default'   => '',
-					),
-				),
-			),
-			'fields'        => array(
-				'services_page_grouping'          => array(
-					'label'       => esc_html__( 'Services Item To Show', 'unapp' ),
-					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'unapp' ),
-					'type'        => 'selectize',
-					'multiple'    => true,
-					'choices'     => Unapp_Helper::get_group_values_from_meta( 'unapp_page_services', 'service_title' ),
-					'default'     => array( 'all' ),
-				),
-				'services_page_navigation'        => array(
-					'type'            => 'epsilon-customizer-navigation',
-					'opensDoubled'    => true,
-					'navigateToId'    => 'unapp_page_services_section',
-					'navigateToLabel' => esc_html__( 'Add Services &rarr;', 'unapp' ),
-				),
-				'services_page_repeater_field'    => array(
-					'type'    => 'hidden',
-					'default' => 'unapp_page_services',
-				),
-				'services_page_section_unique_id' => array(
-					'label'             => esc_html__( 'Section ID', 'unapp' ),
-					'type'              => 'text',
-					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);

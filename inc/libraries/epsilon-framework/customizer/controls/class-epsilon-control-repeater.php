@@ -98,7 +98,7 @@ class Epsilon_Control_Repeater extends WP_Customize_Control {
 		$json['fields']       = $this->get_fields();
 		$json['rowLabel']     = $this->get_row_label();
 		$json['save_as_meta'] = $this->save_as_meta;
-		$json['buttonLabel']  = ( isset( $this->button_label ) ) ? $this->button_label : esc_html__( 'Add', 'unapp' );
+		$json['buttonLabel']  = ( isset( $this->button_label ) ) ? $this->button_label : __( 'Add', 'epsilon-framework' );
 		$json['default']      = ( isset( $this->default ) ) ? $this->default : $this->setting->default;
 
 		return $json;
@@ -108,29 +108,7 @@ class Epsilon_Control_Repeater extends WP_Customize_Control {
 	 * Get custom repeater icons
 	 */
 	public function get_icons() {
-		global $wp_filesystem;
-		if ( empty( $wp_filesystem ) ) {
-			require_once( ABSPATH . '/wp-admin/includes/file.php' );
-			WP_Filesystem();
-		}
-
-		$path = $this->icons;
-		/**
-		 * In case we don`t have path to icons, we load our own library
-		 */
-		if ( empty( $this->icons ) || ! file_exists( $path ) ) {
-			$path = EPSILON_PATH . '/assets/data/icons.json';
-		}
-
-		$icons = $wp_filesystem->get_contents( $path );
-		$icons = json_decode( $icons );
-
-		/**
-		 * In case the json could not be decoded, we return a new stdClass
-		 */
-		if ( null === $icons ) {
-			return new stdClass();
-		}
+		$icons = Epsilon_Icons::icons();
 
 		return $icons;
 	}
@@ -239,7 +217,7 @@ class Epsilon_Control_Repeater extends WP_Customize_Control {
 	public function get_row_label() {
 		$default = array(
 			'type'  => 'text',
-			'value' => esc_html__( 'Row', 'unapp' ),
+			'value' => esc_html__( 'Row', 'epsilon-framework' ),
 			'field' => false,
 		);
 
@@ -287,7 +265,7 @@ class Epsilon_Control_Repeater extends WP_Customize_Control {
 		<ul class="repeater-fields"></ul>
 		<# if(!_.isUndefined(data.choices.limit)){ #>
 		<?php /* Translators: Section limit */ ?>
-		<p class="limit"><?php echo esc_html__( 'Limit: ','unapp' ); ?> {{{ data.choices.limit }}} <?php echo esc_html__( 'sections', 'unapp' ); ?></p>
+		<p class="limit"><?php echo esc_html__( 'Limit: ','epsilon-framework' ); ?> {{{ data.choices.limit }}} <?php echo esc_html__( 'sections', 'epsilon-framework' ); ?></p>
 		<# } #>
 		<div class="button-holder">
 			<input type="hidden" value="" {{{ data.link }}} />

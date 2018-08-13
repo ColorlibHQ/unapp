@@ -1,0 +1,131 @@
+/**
+	%1$s - epsilon_general_separator - 
+	%2$s - epsilon_accent_color - #0385d0
+	%3$s - epsilon_accent_color_second - #a1083a
+	%4$s - epsilon_text_separator - 
+	%5$s - epsilon_title_color - #1a171c
+	%6$s - epsilon_text_color - #777777
+	%7$s - epsilon_link_color - #0385d0
+	%8$s - epsilon_link_hover_color - #a1083a
+	%9$s - epsilon_link_active_color - #333333
+	%10$s - epsilon_menu_separator - 
+	%11$s - epsilon_header_background - #151c1f
+	%12$s - epsilon_dropdown_menu_background - #a1083a
+	%13$s - epsilon_dropdown_menu_hover_background - #940534
+	%14$s - epsilon_menu_item_color - #ebebeb
+	%15$s - epsilon_menu_item_hover_color - #ffffff
+	%16$s - epsilon_menu_item_active_color - #0385d0
+	%17$s - epsilon_footer_separator - 
+	%18$s - epsilon_footer_contact_background - #0377bb
+	%19$s - epsilon_footer_background - #192229
+	%20$s - epsilon_footer_title_color - #ffffff
+	%21$s - epsilon_footer_text_color - #a9afb1
+	%22$s - epsilon_footer_link_color - #a9afb1
+	%23$s - epsilon_footer_link_hover_color - #ffffff
+	%24$s - epsilon_footer_link_active_color - #a9afb1
+ */
+
+/* ==========================================================================
+  =Accent colors
+  ========================================================================== */
+body{
+	color: %6$s;
+}
+.pricing p,
+.about_top p{
+	color: %6$s !important;
+}
+.btn-primary {
+	background: %7$s;
+	border: 1px solid %7$s;
+}
+.mc4wp-form button{
+	background: %7$s;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+	background: %8$s !important;
+	border-color: %8$s !important;
+}
+.btn-primary.btn-outline{
+	border-color: %7$s;
+	color: %7$s;
+}
+h1, h2, h3, h4, h5, h6, figure, article h2 a, .pricing .pricing-heading, .about_top h2{
+	color: %5$s;
+}
+.colorlib-nav ul li.has-dropdown .dropdown{
+	background-color: %12$s;
+}
+.colorlib-nav ul li.has-dropdown .dropdown:before{
+	border-bottom-color: %12$s;
+}
+
+.colorlib-nav ul li.has-dropdown .dropdown li a{
+	color: %14$s;
+}
+.colorlib-nav ul li.has-dropdown .dropdown li a:hover{
+	color: %15$s;
+}
+
+article h2 a:hover,
+.pricing .price,
+.colorlib-social-icons li a{
+	color: %7$s;
+}
+.colorlib-social-icons li a:hover{
+	color: %8$s;
+}
+.services .icon i,
+.colorlib-work-featured .mobile-wrap .desc .features .icon i{
+	color: %2$s;
+}
+.colorlib-intro .play a{
+	background-color: %2$s;
+	box-shadow: 0 0 0 %2$s65;
+	-webkit-box-shadow: 0 0 0 %2$s65;
+}
+#colorlib-footer{
+	background-color: %18$s;
+}
+#colorlib-footer h4{
+	color: %20$s;
+}
+#colorlib-footer .colorlib-widget p{
+	color: %21$s;
+}
+.copy a{
+	color: %22$s;
+}
+.copy a:hover{
+	color: %23$s;
+}
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-box-shadow: 0 0 0 0 %2$s65;
+	}
+	70% {
+		-webkit-box-shadow: 0 0 0 30px %2$s00;
+	}
+	100% {
+		-webkit-box-shadow: 0 0 0 0 %2$s00;
+	}
+}
+@keyframes pulse {
+	0% {
+		-moz-box-shadow: 0 0 0 0 %2$s65;
+		-webkit-box-shadow: 0 0 0 0 %2$s65;
+		box-shadow: 0 0 0 0 %2$s65;
+	}
+	70% {
+		-moz-box-shadow: 0 0 0 30px %2$s00;
+		-webkit-box-shadow: 0 0 0 30px %2$s00;
+		box-shadow: 0 0 0 30px %2$s00;
+	}
+	100% {
+		-moz-box-shadow: 0 0 0 0 %2$s00;
+		-webkit-box-shadow: 0 0 0 0 %2$s00;
+		box-shadow: 0 0 0 0 %2$s00;
+	}
+}
+
+

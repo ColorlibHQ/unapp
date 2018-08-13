@@ -14,7 +14,8 @@ class Epsilon_Repeater_Templates {
 			<li class="repeater-row minimized" data-row="{{{ index }}}">
 				<div class="repeater-row-header">
 					<span class="repeater-row-label"></span>
-					<i class="dashicons dashicons-arrow-down repeater-minimize"></i>
+					<i class="dashicons dashicons-trash repeater-row-remove"></i>
+					<i class="dashicons dashicons-arrow-down-alt2 repeater-minimize"></i>
 				</div>
 				<div class="repeater-row-content">
 					<# _.each( data, function( field, i ) { #>
@@ -55,41 +56,45 @@ class Epsilon_Repeater_Templates {
 						</div>
 					<# } ); #>
 					<div class="repeater-row-footer">
-						<button type="button" class="button-link repeater-row-remove"><?php esc_attr_e( 'Remove', 'unapp' ); ?></button> |
-						<button type="button" class="button-link repeater-row-minimize"><?php esc_attr_e( 'Close', 'unapp' ); ?></button>
+						<button type="button" class="button-link repeater-row-remove"><?php esc_attr_e( 'Remove', 'epsilon-framework' ); ?></button> |
+						<button type="button" class="button-link repeater-row-minimize"><?php esc_attr_e( 'Close', 'epsilon-framework' ); ?></button>
 					</div>
 				</div>
 			</li>
 		</script>
-		<?php //@formatter:on
+		<?php
+		//@formatter:on
 	}
 
 	/**
 	 * Render JS Template
 	 */
 	public static function section_repeater_js_template() {
-		//@formatter:off ?>
+		//@formatter:off
+		?>
 		<script type="text/html" class="customize-control-epsilon-repeater-content-section">
 		<# var field; var index = data.index; #>
 			<li class="repeater-row minimized" data-row="{{{ index }}}">
 				<div class="repeater-row-header">
 					<span class="repeater-row-label"></span>
-					<i class="dashicons dashicons-arrow-down repeater-minimize"></i>
+					<i class="dashicons dashicons-trash repeater-row-remove"></i>
+					<i class="dashicons dashicons-arrow-down-alt2 repeater-minimize"></i>
+					<i class="dashicons dashicons-hidden repeater-row-hide"></i>
 				</div>
 				<div class="repeater-row-content">
 					<# if( data.customization.enabled ) { #>
 					<nav>
 						<# if( data.customization.enabled ) { #>
-							<a href="#" class="active" data-item="regular"><span class="dashicons dashicons-welcome-write-blog"></span> <span class="label"><?php echo esc_html__('Content' ,'unapp'); ?></span></a>
+							<a href="#" class="active" data-item="regular"><span class="dashicons dashicons-welcome-write-blog"></span> <span class="label"><?php echo __( 'Content', 'epsilon-framework' ); ?></span></a>
 						<# } #>
 						<# if( ! _.isEmpty(data.customization.styling) ) { #>
-							<a href="#" data-item="styling"><span class="dashicons dashicons-admin-customizer"></span> <span class="label"><?php echo esc_html__('Style' ,'unapp'); ?></span></a>
+							<a href="#" data-item="styling"><span class="dashicons dashicons-admin-customizer"></span> <span class="label"><?php echo __( 'Style', 'epsilon-framework' ); ?></span></a>
 						<# } #>
 						<# if( ! _.isEmpty(data.customization.layout) ) { #>
-							<a href="#" data-item="layout"><span class="dashicons dashicons-layout"></span> <span class="label"><?php echo esc_html__('Layout' ,'unapp'); ?></span></a>
+							<a href="#" data-item="layout"><span class="dashicons dashicons-layout"></span> <span class="label"><?php echo __( 'Layout', 'epsilon-framework' ); ?></span></a>
 						<# } #>
 						<# if( ! _.isEmpty(data.customization.colors) ) { #>
-							<a href="#" data-item="colors"><span class="dashicons dashicons-admin-appearance"></span> <span class="label"><?php echo esc_html__('Colors' ,'unapp'); ?></span></a>
+							<a href="#" data-item="colors"><span class="dashicons dashicons-admin-appearance"></span> <span class="label"><?php echo __( 'Colors', 'epsilon-framework' ); ?></span></a>
 						<# } #>
 					<# } #>
 					</nav>
@@ -132,13 +137,14 @@ class Epsilon_Repeater_Templates {
 					<# } ); #>
 
 					<div class="repeater-row-footer">
-						<button type="button" class="button-link repeater-row-remove"><?php esc_attr_e( 'Remove', 'unapp' ); ?></button> |
-						<button type="button" class="button-link repeater-row-minimize"><?php esc_attr_e( 'Close', 'unapp' ); ?></button>
+						<button type="button" class="button-link repeater-row-remove"><?php esc_attr_e( 'Remove', 'epsilon-framework' ); ?></button> |
+						<button type="button" class="button-link repeater-row-minimize"><?php esc_attr_e( 'Close', 'epsilon-framework' ); ?></button>
 					</div>
 				</div>
 			</li>
 		</script>
-		<?php //@formatter:on
+		<?php
+		//@formatter:on
 	}
 
 	/**
@@ -146,8 +152,10 @@ class Epsilon_Repeater_Templates {
 	 */
 	public static function section_class() {
 		?>
-		<label> <# if ( field.label ) { #><span class="customize-control-title">{{ field.label }} - {{{ field.default }}}</span><#
-			} #> <# if( field.description ){ #>
+		<label> <# if ( field.label ) { #> <span class="customize-control-title">{{ field.label }} - {{{ field.default }}}</span>
+			<# } #>
+
+			<# if( field.description ){ #>
 			<i class="dashicons dashicons-editor-help" style="vertical-align: text-bottom; position: relative;">
 				<span class="mte-tooltip">
 					{{{ field.description }}}
@@ -162,7 +170,7 @@ class Epsilon_Repeater_Templates {
 	 */
 	public static function text_field() {
 		?>
-		<# var fieldExtras = ''; #>		<# if ( 'link' === field.type ) { #>			<# field.type = 'url' #>		<# } #>
+		<# var fieldExtras = ''; #>		<# if ( 'link' === field.type ) { #>		<# field.type = 'url' #>		<# } #>
 
 		<label> <# if ( field.label ) { #><span class="customize-control-title">{{ field.label }}</span><# } #> <# if(
 			field.description ){ #>
@@ -192,8 +200,8 @@ class Epsilon_Repeater_Templates {
 			<# if ( _.contains( field.default , i) ) { #> selected="selected" <# } #>>{{ choice }}</option>
 			<# } else { #>
 			<option value="{{{ i }}}"
-			<# if ( field.default == i ) { #> selected="selected" <# } #>>{{ choice }}</option>					<# }
-			#> <# }); #>			</select>
+			<# if ( field.default == i ) { #> selected="selected" <# } #>>{{ choice }}</option>			<# } #> <#
+			}); #>			</select>
 		</label>
 		<?php
 	}
@@ -206,9 +214,9 @@ class Epsilon_Repeater_Templates {
 		<label> <# if ( field.label ) { #><span class="customize-control-title">{{ field.label }}</span><# } #> <# if(
 			field.description ){ #>
 			<i class="dashicons dashicons-editor-help" style="vertical-align: text-bottom; position: relative;">
-						<span class="mte-tooltip">
-							{{{ field.description }}}
-						</span> </i> <# } #>
+				<span class="mte-tooltip">
+					{{{ field.description }}}
+				</span> </i> <# } #>
 
 			<# _.each( field.choices, function( choice, i ) { #>
 			<label><input type="radio" name="{{{ field.id }}}{{ index }}" data-field="{{{ field.id }}}" value="{{{ i }}}"
@@ -223,11 +231,11 @@ class Epsilon_Repeater_Templates {
 	public static function textarea_field() {
 		?>
 		<# if ( field.label ) { #>
-		<span class="customize-control-title">{{ field.label }}</span><# } #>		<# if( field.description ){ #>
+		<span class="customize-control-title">{{ field.label }}</span><# } #>        <# if( field.description ){ #>
 		<i class="dashicons dashicons-editor-help" style="vertical-align: text-bottom; position: relative;">
 						<span class="mte-tooltip">
 							{{{ field.description }}}
-						</span> </i>		<# } #>			<textarea rows="5" data-field="{{{ field.id }}}">{{ field.default }}</textarea>
+						</span> </i>        <# } #>            <textarea rows="5" data-field="{{{ field.id }}}">{{ field.default }}</textarea>
 		<?php
 	}
 
@@ -308,9 +316,9 @@ class Epsilon_Repeater_Templates {
 			</div>
 			<# } else { #>
 			<div class="placeholder">
-				<?php echo esc_html__( 'Upload image', 'unapp' ); ?>
+				<?php echo esc_html__( 'Upload image', 'epsilon-framework' ); ?>
 				<# if ( ! _.isUndefined( field.sizeArray[field.size] ) ) { #>
-				<span class="recommended-size"><?php echo esc_html__( 'Recommended resolution:', 'unapp' ); ?>
+				<span class="recommended-size"><?php echo esc_html__( 'Recommended resolution:', 'epsilon-framework' ); ?>
 					{{{ field.sizeArray[field.size].width }}} x {{{ field.sizeArray[field.size].height }}}</span> <# }
 				#>
 			</div>
@@ -318,11 +326,11 @@ class Epsilon_Repeater_Templates {
 			<div class="actions">
 				<button class="button image-upload-remove-button"
 				<# if( '' === field.default ) { #> style="display:none;" <# } #>>
-				<?php esc_attr_e( 'Remove', 'unapp' ); ?>
+				<?php esc_attr_e( 'Remove', 'epsilon-framework' ); ?>
 				</button>
 
 				<button type="button" class="button-primary image-upload-button">
-					<?php echo esc_html__( 'Select File', 'unapp' ); ?>
+					<?php echo esc_html__( 'Select File', 'epsilon-framework' ); ?>
 				</button>
 			</div>
 		</div>
@@ -367,7 +375,7 @@ class Epsilon_Repeater_Templates {
 	 */
 	public static function epsilon_slider() {
 		?>
-		<# var fieldExtras = ''; #>		<# if ( ! _.isUndefined( field.choices ) && ! _.isUndefined( field.choices.min ) ) { #>			<# fieldExtras += ' data-attr-min="' + field.choices.min + '"'; #>		<# } #>		<# if ( ! _.isUndefined( field.choices ) && ! _.isUndefined( field.choices.max ) ) { #>			<# fieldExtras += ' data-attr-max="' + field.choices.max + '"'; #>		<# } #>		<# if ( ! _.isUndefined( field.choices ) && ! _.isUndefined( field.choices.step ) ) { #>			<# fieldExtras += ' data-attr-step="' + field.choices.step + '"'; #>		<# } #>
+		<# var fieldExtras = ''; #>		<# if ( ! _.isUndefined( field.choices ) && ! _.isUndefined( field.choices.min ) ) { #>		<# fieldExtras += ' data-attr-min="' + field.choices.min + '"'; #>		<# } #>		<# if ( ! _.isUndefined( field.choices ) && ! _.isUndefined( field.choices.max ) ) { #>		<# fieldExtras += ' data-attr-max="' + field.choices.max + '"'; #>		<# } #>		<# if ( ! _.isUndefined( field.choices ) && ! _.isUndefined( field.choices.step ) ) { #>		<# fieldExtras += ' data-attr-step="' + field.choices.step + '"'; #>		<# } #>
 		<div class="epsilon-slider">
 			<span class="customize-control-title">
 				{{{ field.label }}}
@@ -396,7 +404,7 @@ class Epsilon_Repeater_Templates {
 			<input class="epsilon-color-picker" data-attr-mode={{ field.mode }} data-field={{ field.id }} type="text" maxlength="7" placeholder="{{ field.default }}" value="{{ field.default }}"/>
 			<span class="customize-control-title epsilon-color-picker-title">
 				{{{ field.label }}}
-				<a href="#" data-default="{{ field.defaultVal }}" class="epsilon-color-picker-default"><?php echo esc_html__( '(clear)', 'unapp' ); ?></a>
+				<a href="#" data-default="{{ field.defaultVal }}" class="epsilon-color-picker-default"><?php echo esc_html__( '(clear)', 'epsilon-framework' ); ?></a>
 				<# if( field.description ){ #>
 					<span class="epsilon-color-picker-description">{{{ field.description }}}</span>
 				<# } #>
@@ -423,7 +431,7 @@ class Epsilon_Repeater_Templates {
 				</span>
 				<div class="epsilon-icon-container">
 					<div class="epsilon-icon-name"><i class="{{{ field.default }}}"></i>
-						<div class="icon-label">{{{ field.icons[field.default] }}}</div>
+						<div class="icon-label">{{{ field.icons[field.default].label }}}</div>
 					</div>
 					<span class="dashicons dashicons-arrow-down epsilon-open-icon-picker"></span>
 				</div>
@@ -433,10 +441,19 @@ class Epsilon_Repeater_Templates {
 				<div class="search-container">
 					<input type="text" class="widefat text"/>
 				</div>
+				<# if ( field.groups ) { #>
+				<div class="epsilon-icon-sets">
+					<select>
+						<option value=""><?php echo esc_html__( 'All', 'epsilon-framework' ); ?></option>
+						<# _.each(field.groups, function(k, v){ #>
+						<option value="{{{ k }}}">{{{ k }}}</option>
+						<# }) #> </select>
+				</div>
+				<# } #>
 				<div class="epsilon-icons-container">
 					<div class="epsilon-icons">
 						<# _.each(field.icons, function(k, v){ #>
-						<i class="{{{ v }}} <# if( data.value === v ) { #> selected <# } #>" data-icon="{{{ v }}}" data-search="{{{ k }}}"></i>
+						<i class="{{{ v }}} <# if( data.value === v ) { #> selected <# } #>" data-icon="{{{ v }}}" data-search="{{{ k.label }}}" data-group="{{{ k.group }}}"></i>
 						<# }) #>
 					</div>
 				</div>
@@ -473,17 +490,17 @@ class Epsilon_Repeater_Templates {
 		<label> <# if ( field.label ) { #><span class="customize-control-title">{{ field.label }}</span><# } #> <# if(
 			field.description ){ #>
 			<i class="dashicons dashicons-editor-help" style="vertical-align: text-bottom; position: relative;">
-				<span class="mte-tooltip">
-					{{{ field.description }}}
-				</span> </i> <# } #> <select class="epsilon-selectize" data-field="{{{ field.id }}}"<# if ( !
+						<span class="mte-tooltip">
+							{{{ field.description }}}
+						</span> </i> <# } #> <select class="epsilon-selectize" data-field="{{{ field.id }}}"<# if ( !
 			_.isUndefined( field.multiple ) && false !== field.multiple ) { #> multiple="multiple" data-multiple="{{
 			field.multiple }}"<# } #>> <# _.each( field.choices, function( choice, i ) { #> <# if( field.multiple ) { #>
 			<option value="{{{ i }}}"
 			<# if ( _.contains( field.default , i) ) { #> selected="selected" <# } #>>{{ choice }}</option>
 			<# } else { #>
 			<option value="{{{ i }}}"
-			<# if ( field.default == i ) { #> selected="selected" <# } #>>{{ choice }}</option>					<# }
-			#> <# }); #>			</select>
+			<# if ( field.default == i ) { #> selected="selected" <# } #>>{{ choice }}</option>			<# } #> <#
+			}); #>			</select>
 		</label>
 		<?php
 	}
@@ -513,7 +530,7 @@ class Epsilon_Repeater_Templates {
 					) ) { #> <i class="dashicons {{ field.choices[i].icon }}"/> <# } #>
 
 					<# if( ! _.isUndefined( field.choices[i].png ) ) { #> <img src="{{ field.choices[i].png }}"/> <# }
-					#>						</a>					<# } #>
+					#>					</a>					<# } #>
 				</div>
 			</div>
 		</div>

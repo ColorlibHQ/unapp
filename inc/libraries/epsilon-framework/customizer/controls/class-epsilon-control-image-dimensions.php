@@ -85,15 +85,15 @@ class Epsilon_Control_Image_Dimensions extends WP_Customize_Control {
 		</label>
 		<div class="epsilon-controller-image-dimensions-container">
 			<div class="col-4">
-				<label for="{{ data.id }}-width" class="mini-label"><?php esc_html_e('Width', 'unapp'); ?></label>
+				<label for="{{ data.id }}-width" class="mini-label"><?php esc_html_e('Width', 'epsilon-framework'); ?></label>
 				<input type="text" id="{{ data.id }}-width" data-type="width" value="{{ data.value.width }}"/>
 			</div>
 			<div class="col-4">
-				<label for="{{ data.id }}-height" class="mini-label"><?php esc_html_e('Height', 'unapp'); ?></label>
+				<label for="{{ data.id }}-height" class="mini-label"><?php esc_html_e('Height', 'epsilon-framework'); ?></label>
 				<input type="text" id="{{ data.id }}-height" data-type="height" value="{{ data.value.height }}"/>
 			</div>
 			<div class="col-4">
-				<label for="{{ data.id }}-ratio" class="mini-label"><?php esc_html_e('Ratio', 'unapp'); ?></label>
+				<label for="{{ data.id }}-ratio" class="mini-label"><?php esc_html_e('Ratio', 'epsilon-framework'); ?></label>
 				<input type="checkbox" id="{{ data.id }}-ratio" <# if ( data.value.ratio ){ #> checked <# } #>/>
 			</div>
 		</div>
