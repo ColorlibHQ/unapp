@@ -4,13 +4,24 @@ $fields = $frontpage->sections[ $section_id ];
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'contact', Unapp_Repeatable_Sections::get_instance() );
 $parent_attr = array(
-	'id'    => ! empty( $fields['contact_section_unique_id'] ) ? array( $fields['contact_section_unique_id'] ) : array(),
 	'class' => array( 'colorlib-contact', 'ewf-section' ),
+    'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat', 'background-parallax' ),
 );
+
+$id = '' != $fields['section_id'] ? $fields['section_id'] : Unapp_Helper::generate_section_id( 'contact' );
+
 ?>
 
-<div id="colorlib-contact" data-customizer-section-id="unapp_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-    <div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
+<div class="colorlib-section" data-customizer-section-id="unapp_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+
+    <div id="<?php echo $id ?>" <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
+
+        <?php if ( '' != $fields['contact_background_video'] ): ?>
+            <a class="player" data-property="{videoURL:'<?php echo esc_url( $fields[ 'contact_background_video' ] ); ?>',containment:'#<?php echo $id ?>', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default'}"></a>
+        <?php endif ?>
+
+        <?php $attr_helper->generate_color_overlay(); ?>
+
         <div class="<?php echo esc_attr( Unapp_Helper::container_class( 'contact', $fields ) ); ?>">
 		    <?php echo wp_kses( unapp_Helper::generate_pencil( 'unapp_Repeatable_Sections', 'contact' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
             <div class="row">
@@ -89,5 +100,3 @@ $parent_attr = array(
         </div>
     </div>
 </div>
-
-<div id="map" class="map-location colorlib-map" data-lat="<?php print $fields[ 'contact_map_lat' ]; ?>" data-lng="<?php print $fields[ 'contact_map_unapp_long' ]; ?>" data-zoom="<?php print $fields[ 'contact_map_zoom' ]; ?>"></div>

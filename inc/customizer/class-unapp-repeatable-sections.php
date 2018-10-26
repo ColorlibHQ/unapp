@@ -57,7 +57,7 @@ class Unapp_Repeatable_Sections {
 			}
 		}
 
-		$this->sections = apply_filters( 'medzone_lite_section_collection', $this->sections );
+		$this->sections = apply_filters( 'unapp_section_collection', $this->sections );
 	}
 
 	/**
@@ -95,16 +95,16 @@ class Unapp_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'initial',
+						'default' => 'cover',
 					),
 					'background-repeat'        => array(
-						'default' => 'repeat'
+						'default' => 'no-repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
 					),
 					'background-video'         => array(
-						'default' => '',
+						'default' => 'https://www.youtube.com/watch?v=vqqt5p0q-eU',
 					),
 				)
 			),
@@ -133,12 +133,6 @@ class Unapp_Repeatable_Sections {
 					'default' => esc_url( '#' ),
 					'sanitize_callback' => 'esc_url_raw'
 				),
-				'banner_bg_link' => array(
-					'label' => esc_html__( 'Background Link', 'unapp' ),
-					'type' => 'text',
-					'default' => esc_url( 'https://www.youtube.com/watch?v=vqqt5p0q-eU' ),
-					'sanitize_callback' => 'esc_url_raw'
-				),
 				'banner_animate'  => array(
 					'label' => esc_html__( 'Animate', 'unapp' ),
 					'type' => 'select',
@@ -148,7 +142,13 @@ class Unapp_Repeatable_Sections {
 						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
 						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
 					),
-				)
+				),
+				'section_id' => array(
+					'label' => esc_html__( 'Section ID', 'unapp' ),
+					'type' => 'text',
+					'default' => '',
+					'sanitize_callback' => 'esc_html',
+				),
 			)
 		);
 	}
@@ -164,6 +164,22 @@ class Unapp_Repeatable_Sections {
 			'description' => esc_html__( 'A slider section. It retrieves content from Theme Content / Slides.', 'unapp' ),
 			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-hero-pt.png'),
 			'fields'      => array(
+				'slider_animate'  => array(
+					'label' => esc_html__( 'Animate', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
+						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
+						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
+						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
+					),
+				),
+				'section_id' => array(
+					'label' => esc_html__( 'Section ID', 'unapp' ),
+					'type' => 'text',
+					'default' => '',
+					'sanitize_callback' => 'esc_html',
+				),
 				'slider_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
@@ -177,20 +193,6 @@ class Unapp_Repeatable_Sections {
 					'multiple'    => true,
 					'choices'     => Unapp_Helper::get_group_values_from_meta( 'unapp_slides', 'slides_title' ),
 					'default'     => array( 'all' ),
-				),
-				'slider_animate'  => array(
-					'label' => esc_html__( 'Animate', 'unapp' ),
-					'type' => 'select',
-					'choices' => array(
-						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
-						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
-						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
-						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
-					),
-				),
-				'slider_repeater_field'    => array(
-					'type'    => 'hidden',
-					'default' => 'unapp_slides',
 				),
 			),
 		);
@@ -215,11 +217,11 @@ class Unapp_Repeatable_Sections {
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
 					),
 					'row-spacing-top'           => array(
-						'default' => 'none',
+						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 					'row-spacing-bottom'        => array(
-						'default' => 'none',
+						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 					'column-group'              => array(
@@ -245,10 +247,10 @@ class Unapp_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'initial',
+						'default' => 'cover',
 					),
 					'background-repeat'        => array(
-						'default' => 'repeat'
+						'default' => 'no-repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -259,6 +261,12 @@ class Unapp_Repeatable_Sections {
 				)
 			),
 			'fields'        => array(
+				'section_id' => array(
+					'label' => esc_html__( 'Section ID', 'unapp' ),
+					'type' => 'text',
+					'default' => '',
+					'sanitize_callback' => 'esc_html',
+				),
 				'services_grouping'          => array(
 					'label'       => esc_html__( 'Services Item To Show', 'unapp' ),
 					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'unapp' ),
@@ -272,10 +280,6 @@ class Unapp_Repeatable_Sections {
 					'opensDoubled'    => true,
 					'navigateToId'    => 'unapp_services_section',
 					'navigateToLabel' => esc_html__( 'Add Services &rarr;', 'unapp' ),
-				),
-				'services_repeater_field'    => array(
-					'type'    => 'hidden',
-					'default' => 'unapp_services',
 				),
 			),
 		);
@@ -320,10 +324,10 @@ class Unapp_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'initial',
+						'default' => 'cover',
 					),
 					'background-repeat'        => array(
-						'default' => 'repeat'
+						'default' => 'no-repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -372,17 +376,23 @@ class Unapp_Repeatable_Sections {
 						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
 					),
 				),
+				'section_id' => array(
+					'label' => esc_html__( 'Section ID', 'unapp' ),
+					'type' => 'text',
+					'default' => '',
+					'sanitize_callback' => 'esc_html',
+				),
 			)
 		);
 	}
 
 	/**
-	 * Featured Section Left
+	 * Features Section
 	 */
-	private function repeatable_featured_left(){
+	private function repeatable_features(){
 		return array(
-			'id'            => 'featured_left',
-			'title'         => esc_html__( 'Featured Section Left', 'unapp' ),
+			'id'            => 'features',
+			'title'         => esc_html__( 'Featured Section', 'unapp' ),
 			'description'   => esc_html__( 'Featured section retrieves content from theme options', 'unapp' ),
 			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-expertise-pt.png' ),
 			'customization' => array(
@@ -397,11 +407,11 @@ class Unapp_Repeatable_Sections {
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
 					),
 					'row-spacing-top'           => array(
-						'default' => 'none',
+						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 					'row-spacing-bottom'        => array(
-						'default' => 'none',
+						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 					'column-alignment'          => array(
@@ -427,10 +437,10 @@ class Unapp_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'initial',
+						'default' => 'cover',
 					),
 					'background-repeat'        => array(
-						'default' => 'repeat'
+						'default' => 'no-repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -441,19 +451,19 @@ class Unapp_Repeatable_Sections {
 				)
 			),
 			'fields'        => array(
-				'featured_title' => array(
+				'features_title' => array(
 					'label'             => esc_html__( 'Title', 'unapp' ),
 					'type'              => 'text',
 					'default'           => wp_kses_post( 'Real template creation' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'featured_image' => array(
+				'features_image' => array(
 					'label'   => esc_html__( 'Image', 'unapp' ),
 					'type'    => 'epsilon-image',
 					'size'    => 'large',
 					'default' => esc_url( get_template_directory_uri() . '/assets/images/mobile-2.jpg' ),
 				),
-				'featured_left_image_animate'  => array(
+				'features_image_animate'  => array(
 					'label' => esc_html__( 'Image Animate', 'unapp' ),
 					'type' => 'select',
 					'choices' => array(
@@ -463,27 +473,19 @@ class Unapp_Repeatable_Sections {
 						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
 					),
 				),
-				'featured_btn_text' => array(
+				'features_btn_text' => array(
 					'label'             => esc_html__( 'Button Label', 'unapp' ),
 					'type'              => 'text',
 					'default'           => wp_kses_post( 'Start collaborating' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'featured_btn_link' => array(
+				'features_btn_link' => array(
 					'label' => esc_html__( 'Button Link', 'unapp' ),
 					'type' => 'text',
 					'default' => esc_url( '#' ),
 					'sanitize_callback' => 'esc_url_raw'
 				),
-				'featured_grouping'          => array(
-					'label'       => esc_html__( 'Featured Work To Show', 'unapp' ),
-					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'unapp' ),
-					'type'        => 'selectize',
-					'multiple'    => true,
-					'choices'     => Unapp_Helper::get_group_values_from_meta( 'unapp_featured_left', 'featured_icon' ),
-					'default'     => array( 'all' ),
-				),
-				'featured_left_text_animate'  => array(
+				'features_text_animate'  => array(
 					'label' => esc_html__( 'Text Animate', 'unapp' ),
 					'type' => 'select',
 					'choices' => array(
@@ -493,138 +495,25 @@ class Unapp_Repeatable_Sections {
 						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
 					),
 				),
-				'featured_navigation'        => array(
-					'type'            => 'epsilon-customizer-navigation',
-					'opensDoubled'    => true,
-					'navigateToId'    => 'unapp_featured_section_left',
-					'navigateToLabel' => esc_html__( 'Add Featured Work &rarr;', 'unapp' ),
-				),
-				'featured_repeater_field'    => array(
-					'type'    => 'hidden',
-					'default' => 'unapp_featured_left',
-				),
-			)
-		);
-	}
-
-	/**
-	 * Featured Section Right
-	 */
-	private function repeatable_featured_right(){
-		return array(
-			'id'            => 'featured_right',
-			'title'         => esc_html__( 'Featured Section Right', 'unapp' ),
-			'description'   => esc_html__( 'Featured section retrieves content from theme options', 'unapp' ),
-			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-services-pt.png' ),
-			'customization' => array(
-				'enabled'   => true,
-				'layout'    => array(
-					'row-title-align'           => array(
-						'default' => 'left',
-						'choices' => array( 'right', 'left', ),
-					),
-					'column-stretch'            => array(
-						'default' => 'boxedin',
-						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
-					),
-					'column-alignment'          => array(
-						'default' => 'left',
-						'choices' => array( 'left', 'center', 'right', ),
-					),
-					'column-vertical-alignment' => array(
-						'default' => 'middle',
-						'choices' => array( 'top', 'middle', 'bottom', ),
-					),
-				),
-				'styling'   => array(
-					'background-color'         => array(
-						'default' => false,
-					),
-					'background-color-opacity' => array(
-						'default' => 1,
-					),
-					'background-image'         => array(
-						'default' => false,
-					),
-					'background-position'      => array(
-						'default' => 'center',
-					),
-					'background-size'          => array(
-						'default' => 'initial',
-					),
-					'background-repeat'        => array(
-						'default' => 'repeat'
-					),
-					'background-parallax'      => array(
-						'default' => false,
-					),
-					'background-video'         => array(
-						'default' => '',
-					),
-				)
-			),
-			'fields'        => array(
-				'featured_title' => array(
-					'label'             => esc_html__( 'Title', 'unapp' ),
-					'type'              => 'text',
-					'default'           => wp_kses_post( 'Finish template creation' ),
-					'sanitize_callback' => 'wp_kses_post',
-				),
-				'featured_image' => array(
-					'label'   => esc_html__( 'Image', 'unapp' ),
-					'type'    => 'epsilon-image',
-					'size'    => 'large',
-					'default' => esc_url( get_template_directory_uri() . '/assets/images/mobile-1.jpg' ),
-				),
-				'featured_right_image_animate'  => array(
-					'label' => esc_html__( 'Image Animate', 'unapp' ),
-					'type' => 'select',
-					'choices' => array(
-						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
-						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
-						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
-						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
-					),
-				),
-				'featured_btn_text' => array(
-					'label'             => esc_html__( 'Button Label', 'unapp' ),
-					'type'              => 'text',
-					'default'           => wp_kses_post( 'Start collaborating' ),
-					'sanitize_callback' => 'wp_kses_post',
-				),
-				'featured_btn_link' => array(
-					'label' => esc_html__( 'Button Link', 'unapp' ),
+				'section_id' => array(
+					'label' => esc_html__( 'Section ID', 'unapp' ),
 					'type' => 'text',
-					'default' => esc_url( '#' ),
-					'sanitize_callback' => 'esc_url_raw'
+					'default' => '',
+					'sanitize_callback' => 'esc_html',
 				),
-				'featured_grouping'          => array(
+				'features_grouping'          => array(
 					'label'       => esc_html__( 'Featured Work To Show', 'unapp' ),
 					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'unapp' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
-					'choices'     => Unapp_Helper::get_group_values_from_meta( 'unapp_featured_right', 'featured_icon' ),
+					'choices'     => Unapp_Helper::get_group_values_from_meta( 'unapp_features', 'featured_icon' ),
 					'default'     => array( 'all' ),
 				),
-				'featured_right_text_animate'  => array(
-					'label' => esc_html__( 'Text Animate', 'unapp' ),
-					'type' => 'select',
-					'choices' => array(
-						'fadeIn' => esc_html__( 'fadeIn', 'unapp' ),
-						'fadeInLeft' => esc_html__( 'fadeInLeft', 'unapp' ),
-						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
-						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
-					),
-				),
-				'featured_navigation'        => array(
+				'features_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
-					'navigateToId'    => 'unapp_featured_section_right',
+					'navigateToId'    => 'unapp_features_section',
 					'navigateToLabel' => esc_html__( 'Add Featured Work &rarr;', 'unapp' ),
-				),
-				'featured_repeater_field'    => array(
-					'type'    => 'hidden',
-					'default' => 'unapp_featured_right',
 				),
 			)
 		);
@@ -654,10 +543,18 @@ class Unapp_Repeatable_Sections {
 						'default' => 'center',
 						'choices' => array( 'left', 'center', 'right', ),
 					),
+					'row-spacing-top'           => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom'        => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
 				),
 				'styling'   => array(
 					'background-color'         => array(
-						'default' => false,
+						'default' => '#499bea',
 					),
 					'background-color-opacity' => array(
 						'default' => 1,
@@ -669,10 +566,10 @@ class Unapp_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'initial',
+						'default' => 'cover',
 					),
 					'background-repeat'        => array(
-						'default' => 'repeat'
+						'default' => 'no-repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -683,6 +580,12 @@ class Unapp_Repeatable_Sections {
 				)
 			),
 			'fields'        => array(
+				'section_id' => array(
+					'label' => esc_html__( 'Section ID', 'unapp' ),
+					'type' => 'text',
+					'default' => '',
+					'sanitize_callback' => 'esc_html',
+				),
 				'counter_grouping'          => array(
 					'label'       => esc_html__( 'Counter To Show', 'unapp' ),
 					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'unapp' ),
@@ -740,10 +643,10 @@ class Unapp_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'initial',
+						'default' => 'cover',
 					),
 					'background-repeat'        => array(
-						'default' => 'repeat'
+						'default' => 'no-repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -786,6 +689,12 @@ class Unapp_Repeatable_Sections {
 						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
 					),
 				),
+				'section_id' => array(
+					'label' => esc_html__( 'Section ID', 'unapp' ),
+					'type' => 'text',
+					'default' => '',
+					'sanitize_callback' => 'esc_html',
+				),
 			),
 		);
 	}
@@ -802,7 +711,6 @@ class Unapp_Repeatable_Sections {
 			'customization' => array(
 				'enabled'   => true,
 				'layout'    => array(
-
 					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
@@ -818,7 +726,7 @@ class Unapp_Repeatable_Sections {
 				),
 				'styling'   => array(
 					'background-color'         => array(
-						'default' => false,
+						'default' => '#499bea',
 					),
 					'background-color-opacity' => array(
 						'default' => 1,
@@ -830,10 +738,10 @@ class Unapp_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'initial',
+						'default' => 'cover',
 					),
 					'background-repeat'        => array(
-						'default' => 'repeat'
+						'default' => 'no-repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -881,6 +789,12 @@ class Unapp_Repeatable_Sections {
 						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
 						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
 					),
+				),
+				'section_id' => array(
+					'label' => esc_html__( 'Section ID', 'unapp' ),
+					'type' => 'text',
+					'default' => '',
+					'sanitize_callback' => 'esc_html',
 				),
 			)
 		);
@@ -934,7 +848,7 @@ class Unapp_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'initial',
+						'default' => 'cover',
 					),
 					'background-repeat'        => array(
 						'default' => 'repeat'
@@ -959,6 +873,12 @@ class Unapp_Repeatable_Sections {
 					'type'              => 'text',
 					'default'           => esc_html__( 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name', 'unapp' ),
 					'sanitize_callback' => 'wp_kses_post',
+				),
+				'section_id' => array(
+					'label' => esc_html__( 'Section ID', 'unapp' ),
+					'type' => 'text',
+					'default' => '',
+					'sanitize_callback' => 'esc_html',
 				),
 				'pricing_grouping'          => array(
 					'label'       => esc_html__( 'Price boxes to show', 'unapp' ),
@@ -1033,10 +953,10 @@ class Unapp_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'initial',
+						'default' => 'cover',
 					),
 					'background-repeat'        => array(
-						'default' => 'repeat'
+						'default' => 'no-repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -1052,7 +972,6 @@ class Unapp_Repeatable_Sections {
 					'type'              => 'text',
 					'default'           => esc_html__( 'About unapp', 'unapp' ),
 					'sanitize_callback' => 'wp_kses_post',
-
 				),
 				'about_text'              => array(
 					'label'             => esc_html__( 'Information', 'unapp' ),
@@ -1091,6 +1010,12 @@ class Unapp_Repeatable_Sections {
 						'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
 						'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
 					),
+				),
+				'section_id' => array(
+					'label' => esc_html__( 'Section ID', 'unapp' ),
+					'type' => 'text',
+					'default' => '',
+					'sanitize_callback' => 'esc_html',
 				),
 			),
 		);
@@ -1147,10 +1072,10 @@ class Unapp_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'initial',
+						'default' => 'cover',
 					),
 					'background-repeat'        => array(
-						'default' => 'repeat'
+						'default' => 'no-repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -1173,6 +1098,12 @@ class Unapp_Repeatable_Sections {
 					'default'           => esc_html__( 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.', 'unapp' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
+				'section_id' => array(
+					'label' => esc_html__( 'Section ID', 'unapp' ),
+					'type' => 'text',
+					'default' => '',
+					'sanitize_callback' => 'esc_html',
+				),
 				'team_grouping'          => array(
 					'label'       => esc_html__( 'Members to show', 'unapp' ),
 					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'unapp' ),
@@ -1186,10 +1117,6 @@ class Unapp_Repeatable_Sections {
 					'opensDoubled'    => true,
 					'navigateToId'    => 'unapp_team_members_section',
 					'navigateToLabel' => esc_html__( 'Add Members &rarr;', 'unapp' ),
-				),
-				'team_repeater_field'    => array(
-					'type'    => 'hidden',
-					'default' => 'unapp_team_members',
 				),
 			),
 		);
@@ -1216,11 +1143,11 @@ class Unapp_Repeatable_Sections {
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
 					),
 					'row-spacing-top'           => array(
-						'default' => 'none',
+						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 					'row-spacing-bottom'        => array(
-						'default' => 'none',
+						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 				),
@@ -1238,10 +1165,10 @@ class Unapp_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'initial',
+						'default' => 'cover',
 					),
 					'background-repeat'        => array(
-						'default' => 'repeat'
+						'default' => 'no-repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -1281,31 +1208,191 @@ class Unapp_Repeatable_Sections {
 					'default'           => esc_html__( 'http://yourwebsite.com', 'unapp' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'contact_map_api'             => array(
-					'label'   => esc_html__( 'Google API KEY ', 'unapp' ),
+				'section_id' => array(
+					'label' => esc_html__( 'Section ID', 'unapp' ),
+					'type' => 'text',
+					'default' => '',
+					'sanitize_callback' => 'esc_html',
+				),
+			),
+		);
+	}
+
+	/**
+	 * Repeatable Google Map section
+	 */
+	private function repeatable_google_map() {
+		return array(
+			'id'            => 'google_map',
+			'title'         => esc_html__( 'Google Map', 'unapp' ),
+			'description'   => esc_html__( 'Google Map section. It retrieves content from Theme Content', 'unapp' ),
+			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png' ),
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'column-stretch'            => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedin', 'fullwidth', ),
+					),
+					'row-spacing-top'           => array(
+						'default' => 'none',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom'        => array(
+						'default' => 'none',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+				),
+			),
+			'fields'        => array(
+				'google_map_address'             => array(
+					'label'   => esc_html__( 'Google Map Address', 'unapp' ),
 					'type'    => 'text',
 					'size'    => 'large',
-					'default' => 'AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA',
+					'default' => '',
 				),
-				'contact_map_lat'             => array(
+				'google_map_lat'             => array(
 					'label'   => esc_html__( 'Google Map Latitude', 'unapp' ),
 					'type'    => 'text',
 					'size'    => 'large',
 					'default' => '40.69847032728747',
 				),
-				'contact_map_unapp_long' => array(
+				'google_map_long' => array(
 					'label'   => esc_html__( 'Google Map Longitude', 'unapp' ),
 					'type'    => 'text',
 					'size'    => 'large',
 					'default' => '-73.9514422416687',
 				),
-				'contact_map_zoom'             => array(
-					'label'   => esc_html__( 'Google Map Longitude ', 'unapp' ),
+				'google_map_zoom'             => array(
+					'label'   => esc_html__( 'Google Map Zoom ', 'unapp' ),
 					'type'    => 'text',
 					'size'    => 'large',
 					'default' => '7',
 				),
+				'google_map_height' => array(
+					'label'   => esc_html__( 'Google Map Height ', 'unapp' ),
+					'type'    => 'text',
+					'size'    => 'large',
+					'default' => '400px',
+				),
+				'section_id' => array(
+					'label' => esc_html__( 'Section ID', 'unapp' ),
+					'type' => 'text',
+					'default' => '',
+					'sanitize_callback' => 'esc_html',
+				),
 			),
 		);
 	}
+
+	/**
+	 * Repeatable Portfolio section
+	 */
+	private function repeatable_portfolio() {
+		return array(
+			'id'            => 'portfolio',
+			'title'         => esc_html__( 'Portfolio', 'unapp' ),
+			'description'   => esc_html__( 'Portfolios section. It retrieves content from Theme Content / Portfolio', 'unapp' ),
+			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-team-pt.png' ),
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'column-stretch'            => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedin', 'fullwidth', ),
+					),
+					'row-spacing-top'    => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom' => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-group'       => array(
+						'default' => 4,
+						'choices' => array( 2, 3, 4, ),
+					),
+					'column-alignment'          => array(
+						'default' => 'center',
+						'choices' => array( 'left', 'center', 'right', ),
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+						'choices' => array( 'top', 'middle', 'bottom', ),
+					),
+				),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				)
+			),
+			'fields'        => array(
+				'title'             => array(
+					'label'             => esc_html__( 'Title', 'unapp' ),
+					'type'              => 'text',
+					'default'           => esc_html__( 'Collaborate with your design team in a new way', 'unapp' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'subtitle'          => array(
+					'label'             => esc_html__( 'Subtitle', 'unapp' ),
+					'type'              => 'text',
+					'default'           => esc_html__( 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.', 'unapp' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'layout'  => array(
+					'label' => esc_html__( 'Layout', 'unapp' ),
+					'type' => 'select',
+					'choices' => array(
+						'list'         => esc_html__( 'List', 'unapp' ),
+						'grid'         => esc_html__( 'Grid with text', 'unapp' ),
+						'minimal-grid' => esc_html__( 'Grid without text', 'unapp' ),
+					),
+				),
+				'section_id' => array(
+					'label' => esc_html__( 'Section ID', 'unapp' ),
+					'type' => 'text',
+					'default' => '',
+					'sanitize_callback' => 'esc_html',
+				),
+				'grouping'          => array(
+					'label'       => esc_html__( 'Portfolios to show', 'unapp' ),
+					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'unapp' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Unapp_Helper::get_group_values_from_meta( 'unapp_portfolios', 'title' ),
+					'default'     => array( 'all' ),
+				),
+				'navigation'        => array(
+					'type'            => 'epsilon-customizer-navigation',
+					'opensDoubled'    => true,
+					'navigateToId'    => 'unapp_portfolios_section',
+					'navigateToLabel' => esc_html__( 'Add Portfolios &rarr;', 'unapp' ),
+				),
+			),
+		);
+	}
+
 }

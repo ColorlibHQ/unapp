@@ -495,7 +495,8 @@ input[type=search] {
   background: #cccccc;
 }
 .services {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
+  margin-top: 25px;
   position: relative;
   z-index: 0;
   padding: 0 1em;

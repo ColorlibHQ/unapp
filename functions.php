@@ -279,7 +279,3 @@ require get_parent_theme_file_path() . '/inc/class-unapp-autoloader.php';
 if( class_exists( 'Epsilon_Framework' ) ){
 	$unapp = new Unapp();
 }
-
-//
-require get_parent_theme_file_path() .'/inc/class-tgm-plugin-activation.php';
-require get_parent_theme_file_path() .'/inc/unapp_add_plugin.php';
