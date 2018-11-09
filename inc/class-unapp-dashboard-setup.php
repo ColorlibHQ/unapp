@@ -190,20 +190,18 @@ class Unapp_Dashboard_Setup {
 				),
 			),
 			array(
-				'id'       => 'enjoy',
-				'title'    => __( 'Almost ready', 'unapp' ),
+				'id'       => 'finish',
+				'title'    => __( 'AYou\'re ready', 'unapp' ),
 				'content'  => array(
 					'paragraphs' => array(
-						__( 'Your new theme has been all set up. Enjoy your new theme by <a href="https://www.machothemes.com">MachoThemes</a>.', 'unapp' ),
-						__( 'Allow MachoThemes to track theme usage.', 'unapp' ),
-						$this->get_permission_content(),
+						__( 'Your new theme has been all set up. Enjoy your new theme by <a href="https://colorlib.com">Colorlib</a>.', 'unapp' ),
 					),
 				),
 				'progress' => __( 'Finished', 'unapp' ),
 				'buttons'  => array(
 					'next' => array(
-						'action' => 'customizer',
-						'label'  => __( 'Allow & Finish', 'unapp' ),
+						'action' => 'finish',
+						'label'  => __( 'Finish', 'unapp' ),
 					),
 				),
 			),
@@ -326,21 +324,6 @@ class Unapp_Dashboard_Setup {
 					),
 				),
 			),
-			array(
-				'id'          => 'unapp-check-unapp-portfolio',
-				'title'       => Unapp_Notify_System::plugin_verifier( 'unapp-portfolio', 'title', 'Portfolio', 'verify_upPortfolio' ),
-				'description' => Unapp_Notify_System::plugin_verifier( 'unapp-portfolio', 'description', 'Portfolio', 'verify_upPortfolio' ),
-				'plugin_slug' => 'unapp-portfolio',
-				'state'       => false,
-				'check'       => defined( 'UPWP_VERSION' ),
-				'actions'     => array(
-					array(
-						'label'   => Unapp_Notify_System::plugin_verifier( 'unapp-portfolio', 'installed', 'Portfolio', 'verify_upPortfolio' ) ? __( 'Activate Plugin', 'unapp' ) : __( 'Install Plugin', 'unapp' ),
-						'type'    => 'handle-plugin',
-						'handler' => Unapp_Notify_System::plugin_verifier( 'unapp-portfolio', 'installed', 'Portfolio', 'verify_upPortfolio' ),
-					),
-				),
-			),
 		);
 	}
 
@@ -370,13 +353,6 @@ class Unapp_Dashboard_Setup {
 				'plugin_slug' => 'mailchimp-for-wp',
 				'check'       => defined( 'MC4WP_VERSION' ),
 			),
-			array(
-				'id'          => 'unapp-check-unapp-portfolio',
-				'title'       => Unapp_Notify_System::plugin_verifier( 'unapp-portfolio', 'title', 'Portfolio', 'verify_upPortfolio' ),
-				'description' => Unapp_Notify_System::plugin_verifier( 'unapp-portfolio', 'description', 'Portfolio', 'verify_upPortfolio' ),
-				'plugin_slug' => 'unapp-portfolio',
-				'check'       => defined( 'UPWP_VERSION' ),
-			),
 		);
 	}
 
@@ -405,24 +381,12 @@ class Unapp_Dashboard_Setup {
 					array(
 						'title'     => esc_html__( 'Step 2 - Check our documentation', 'unapp' ),
 						'paragraph' => esc_html__( 'Even if you are a long-time WordPress user, we still believe you should give our documentation a very quick Read.', 'unapp' ),
-						'action'    => '<a target="_blank" href="http://docs.machothemes.com">' . __( 'Full documentation', 'unapp' ) . '</a>',
+						'action'    => '<a target="_blank" href="https://colorlib.com/wp/forums/">' . __( 'Full documentation', 'unapp' ) . '</a>',
 					),
 					array(
 						'title'     => esc_html__( 'Step 3 - Customize everything', 'unapp' ),
 						'paragraph' => esc_html__( 'Using the WordPress Customizer you can easily customize every aspect of the theme.', 'unapp' ),
 						'action'    => '<a target="_blank" href="' . esc_url( admin_url() . 'customize.php' ) . '" class="button button-primary">' . esc_html__( 'Go to Customizer', 'unapp' ) . '</a>',
-					),
-					array(
-						'title'     => esc_html__( 'Lend a hand and share your thoughts', 'unapp' ),
-						'paragraph' => vsprintf(
-						// Translators: 1 is Theme Name, 2 is opening Anchor, 3 is closing.
-							__( 'We worked hard on making %1$s the best one out there. We are interested in hearing your thoughts about %1$s and what we could do to make it even better.<br/> <br/>', 'unapp' ),
-							array(
-								$theme->get( 'Name' ),
-							)
-						),
-						'action'    => '<a class="button button-feedback" target="_blank" href="https://bit.ly/feedback-unapp">Have your say</a><br/>',
-						'type'      => 'standout',
 					),
 				),
 			),
@@ -453,12 +417,6 @@ class Unapp_Dashboard_Setup {
 //				'type'   => 'plugins',
 //			),
 			array(
-				'id'     => 'epsilon-registration',
-				'title'  => esc_html__( 'Registration', 'unapp' ),
-				'hidden' => false,
-				'type'   => 'registration',
-			),
-			array(
 				'id'      => 'epsilon-privacy',
 				'title'   => esc_html__( 'Privacy', 'unapp' ),
 				'type'    => 'option-page',
@@ -466,11 +424,9 @@ class Unapp_Dashboard_Setup {
 				'content' => array(
 					'title'      => esc_html__( 'We believe in a better and streamlined user experiences', 'unapp' ),
 					'paragraphs' => array(
-						esc_html__( 'And as such, we\'ve made it easy for you - our user, to disable all of our theme upsells & recommendations.', 'unapp' ),
-						esc_html__( 'Mind you that we use these as a way to facilitate compatible product discovery - as in: plugins that enhance the
-		user experience with any of our products. But, in the end, the user should always have a say in it.', 'unapp' ),
-						wp_kses_post( __( 'By turning any or all of the toggles below to the <span style="color: green;">ON</span> position you\'ll be able
-		to hide all upsells & recommended plugin discovery sections & actions.', 'unapp' ) ),
+						esc_html__( 'And as such, we\'ve made it easy for you - our user, to disable all of our theme recommendations.', 'unapp' ),
+						esc_html__( 'Mind you that we use these as a way to facilitate compatible product discovery - as in: plugins that enhance the user experience with any of our products. But, in the end, the user should always have a say in it.', 'unapp' ),
+						wp_kses_post( __( 'By turning the toggle below to the <span style="color: green;">ON</span> position you\'ll be able to hide our theme recommendations.', 'unapp' ) ),
 						wp_kses_post( __( '<u>We really hope</u> you\'ll enjoy using our products as much as we\'ve enjoyed building them.', 'unapp' ) ),
 					),
 				),
@@ -481,20 +437,6 @@ class Unapp_Dashboard_Setup {
 						'value'   => true,
 						'label'   => esc_html__( 'Hide Customizer Recommended Actions', 'unapp' ),
 						'checked' => get_option( $this->theme['theme-slug'] . '_recommended_actions', false ),
-					),
-					array(
-						'id'      => $this->theme['theme-slug'] . '_recommended_plugins',
-						'type'    => 'epsilon-toggle',
-						'value'   => true,
-						'label'   => esc_html__( 'Hide Plugin Recommendations', 'unapp' ),
-						'checked' => get_option( $this->theme['theme-slug'] . '_recommended_plugins', false ),
-					),
-					array(
-						'id'      => $this->theme['theme-slug'] . '_tracking_enable',
-						'value'   => true,
-						'label'   => esc_html__( 'Allow Theme Tracking', 'unapp' ),
-						'type'    => 'epsilon-toggle',
-						'checked' => get_option( $this->theme['theme-slug'] . '_tracking_enable', false ),
 					),
 				),
 			),

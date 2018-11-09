@@ -18,7 +18,7 @@ $span      = 12 / absint( $fields['counter_column_group'] );
 $id = '' != $fields['section_id'] ? $fields['section_id'] : Unapp_Helper::generate_section_id( 'counters' );
 
 ?>
-<section class="colorlib-section" data-customizer-section-id="unapp_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+<section class="colorlib-section" <?php $attr_helper->generate_attributes( $parent_attr ); ?> data-customizer-section-id="unapp_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
     <div id="<?php echo $id ?>" <?php $attr_helper->generate_attributes( $parent_attr_2 ); ?>>
 
         <?php if ( '' != $fields['counter_background_video'] ): ?>
@@ -27,7 +27,7 @@ $id = '' != $fields['section_id'] ? $fields['section_id'] : Unapp_Helper::genera
 
         <?php $attr_helper->generate_color_overlay(); ?>
 
-        <div class="colorlib-counters" <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
+        <div class="colorlib-counters">
             <div class="<?php echo esc_attr( Unapp_Helper::container_class( 'counter', $fields ) ); ?>">
 	            <?php echo wp_kses( Unapp_Helper::generate_pencil( 'unapp_Repeatable_Sections', 'counter' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
                 <div class="row">

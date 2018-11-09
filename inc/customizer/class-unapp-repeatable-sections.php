@@ -554,7 +554,7 @@ class Unapp_Repeatable_Sections {
 				),
 				'styling'   => array(
 					'background-color'         => array(
-						'default' => '#499bea',
+						'default' => '',
 					),
 					'background-color-opacity' => array(
 						'default' => 1,
@@ -726,7 +726,7 @@ class Unapp_Repeatable_Sections {
 				),
 				'styling'   => array(
 					'background-color'         => array(
-						'default' => '#499bea',
+						'default' => '',
 					),
 					'background-color-opacity' => array(
 						'default' => 1,

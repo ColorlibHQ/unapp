@@ -20,11 +20,11 @@ $id = '' != $fields['section_id'] ? $fields['section_id'] : Unapp_Helper::genera
 <div class="colorlib-section" data-customizer-section-id="unapp_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
     <div id="<?php echo $id ?>" <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 
+        <?php $attr_helper->generate_color_overlay(); ?>
+
         <?php if ( '' != $fields['team_background_video'] ): ?>
             <a class="player" data-property="{videoURL:'<?php echo esc_url( $fields[ 'team_background_video' ] ); ?>',containment:'#<?php echo $id ?>', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default'}"></a>
         <?php endif ?>
-
-        <?php $attr_helper->generate_color_overlay(); ?>
 
         <div class="<?php echo esc_attr( Unapp_Helper::container_class( 'team', $fields ) ); ?>">
             <div class="row">

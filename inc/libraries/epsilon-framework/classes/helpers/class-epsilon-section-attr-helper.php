@@ -123,6 +123,10 @@ class Epsilon_Section_Attr_Helper {
 				$this->options[ $option ] = str_replace( array( 'top', 'bottom' ), array( 'top ', 'bottom ' ), $this->options[ $option ] );
 			}
 
+			if ( 'background-overlay' === $key ) {
+				$option = $this->key . '_background_color';
+			}
+
 			if ( empty( $this->options[ $option ] ) ) {
 				continue;
 			}
@@ -130,6 +134,8 @@ class Epsilon_Section_Attr_Helper {
 			$key = 'background-color-opacity' === $key ? 'opacity' : $key;
 
 			$key = 'background-parallax' === $key ? 'background-attachment' : $key;
+
+			$key = 'background-overlay' === $key ? 'background' : $key;
 
 			if ( 'background-image' === $key ) {
 				$css .= $key . ':url(' . esc_url( $this->options[ $option ] ) . ');';
@@ -232,14 +238,10 @@ class Epsilon_Section_Attr_Helper {
 		$arr = array(
 			'class' => array( 'ewf-section__overlay-color' ),
 			'style' => array(
-				'background-color',
+				'background-overlay',
 				'background-color-opacity',
 			),
 		);
-
-		if ( empty( $this->options[ $this->key . '_background_color' ] ) ) {
-			return '';
-		}
 
 		echo $this->generate_html_tag( 'div', $arr );
 	}

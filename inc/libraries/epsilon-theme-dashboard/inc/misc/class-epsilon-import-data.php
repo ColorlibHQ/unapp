@@ -89,7 +89,8 @@ class Epsilon_Import_Data {
 		$json = $wp_filesystem->get_contents( $this->path );
 		*/
 
-		$json = file_get_contents( $this->path );
+		// $json = file_get_contents( $this->path );
+		$json = implode( '', file( $this->path ) );
 		$json = json_decode( $json, true );
 
 		if ( null === $json ) {

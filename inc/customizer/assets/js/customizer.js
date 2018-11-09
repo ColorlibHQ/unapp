@@ -45,6 +45,9 @@ MedZoneLite.Customizer = {
    */
   pairedSettings: function( object, api ) {
     var self = this;
+
+    console.log( object );
+
     _.each( object, function( v, k ) {
       /**
        * Handle updates ( basically, when the user types in the doctors field -> an option is being created in the select )
@@ -165,13 +168,13 @@ wp.customize.bind( 'ready', function() {
         field: 'services_grouping',
         filter: 'service_title'
     },
-    'unapp_featured_left': {
-        field: 'featured_grouping',
+    'unapp_features': {
+        field: 'features_grouping',
         filter: 'featured_icon'
     },
-    'unapp_featured_right': {
-        field: 'featured_grouping',
-        filter: 'featured_icon'
+    'unapp_portfolios': {
+        field: 'grouping',
+        filter: 'title'
     },
     'unapp_counter': {
         field: 'counter_grouping',

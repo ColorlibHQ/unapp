@@ -17,13 +17,14 @@ $id = '' != $fields['section_id'] ? $fields['section_id'] : Unapp_Helper::genera
 ?>
 
 <section class="colorlib-section" data-customizer-section-id="unapp_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php $attr_helper->generate_color_overlay(); ?>
     <div id="<?php echo $id ?>" <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 
     	<?php if ( '' != $fields['services_background_video'] ): ?>
 			<a class="player" data-property="{videoURL:'<?php echo esc_url( $fields[ 'services_background_video' ] ); ?>',containment:'#<?php echo $id ?>', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default'}"></a>
 		<?php endif ?>
 
-	    <?php $attr_helper->generate_color_overlay(); ?>
+	    
 
         <div class="<?php echo esc_attr( Unapp_Helper::container_class( 'services', $fields ) ); ?>">
 		    <?php echo wp_kses( Unapp_Helper::generate_pencil( 'Unapp_Repeatable_Sections', 'services' ), Epsilon_Helper::allowed_kses_pencil() ); ?>

@@ -10,7 +10,7 @@ if( ! function_exists( 'unapp_page_header' ) ) :
 		$img = $img->url;
 		?>
 		<section id="home" class="video-hero" style="background-image: url('<?php echo esc_url( $img ); ?>');  background-size:cover; background-position: center center;background-attachment:fixed;" data-section="home">
-			<div class="overlay"></div>
+			<div class="ewf-section__overlay-color"></div>
 			<div class="display-t display-t2 text-center">
 				<div class="display-tc display-tc2">
 					<div class="container">

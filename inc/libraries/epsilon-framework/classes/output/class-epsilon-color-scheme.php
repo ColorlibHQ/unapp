@@ -117,6 +117,7 @@ class Epsilon_Color_Scheme {
 				'label'             => '',
 				'description'       => '',
 				'section'           => '',
+				'mode'              => 'rgba',
 			);
 
 			$properties = wp_parse_args( $properties, $defaults );
@@ -137,7 +138,7 @@ class Epsilon_Color_Scheme {
 				'label'       => $properties['label'],
 				'description' => $properties['description'],
 				'section'     => $properties['section'],
-				'mode'        => 'rgba',
+				'mode'        => $properties['mode'],
 				'settings'    => $control,
 				'priority'    => $i,
 				'lite'        => isset( $properties['lite'] ) ? $properties['lite'] : false,

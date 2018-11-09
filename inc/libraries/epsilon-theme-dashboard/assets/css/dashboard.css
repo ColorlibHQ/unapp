@@ -14,6 +14,7 @@
     color: #555d66;
     font-size: 15px; }
   .epsilon-dashboard-container--intro img {
+    display: none;
     background: #191E23;
     position: absolute;
     top: 0;

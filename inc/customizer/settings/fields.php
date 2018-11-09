@@ -104,12 +104,18 @@ Epsilon_Customizer::add_field(
 		),
 		'selectors'     => array(
 			'.post-title',
-			'.post-content h1',
-			'.post-content h2',
-			'.post-content h3',
-			'.post-content h4',
-			'.post-content h5',
-			'.post-content h6',
+			'h1',
+			'h2',
+			'h3',
+			'h4',
+			'h5',
+			'h6',
+			'h1 a',
+			'h2 a',
+			'h3 a',
+			'h4 a',
+			'h5 a',
+			'h6 a',
 		),
 		'font_defaults' => array(
 			'font-family' => '',
@@ -129,54 +135,13 @@ Epsilon_Customizer::add_field(
 		'stylesheet'    => 'unapp-main',
 		'choices'       => array(
 			'font-family',
-			'font-weight',
-			'font-style',
 		),
 		'selectors'     => array(
-			'.post-content p',
+			'body',
 		),
 		'font_defaults' => array(
 			'font-family' => '',
-			'font-weight' => '',
-			'font-style'  => '',
 		),
-	)
-);
-
-/**
- * Blog section options
- */
-Epsilon_Customizer::add_field(
-	'unapp_show_single_post_categories',
-	array(
-		'type'        => 'epsilon-toggle',
-		'label'       => esc_html__( 'Post Meta: Categories', 'unapp' ),
-		'description' => esc_html__( 'This will disable the category section at the beggining of the post.', 'unapp' ),
-		'section'     => 'header_image',
-		'default'     => true,
-	)
-);
-
-
-Epsilon_Customizer::add_field(
-	'unapp_enable_author_box',
-	array(
-		'type'        => 'epsilon-toggle',
-		'label'       => esc_html__( 'Post meta: Author', 'unapp' ),
-		'description' => esc_html__( 'Toggle the display of the author box, at the left side of the post. Will only display if the author has a description defined.', 'unapp' ),
-		'section'     => 'header_image',
-		'default'     => true,
-	)
-);
-
-Epsilon_Customizer::add_field(
-	'unapp_show_single_post_tags',
-	array(
-		'type'        => 'epsilon-toggle',
-		'label'       => esc_html__( 'Post Meta: Tags', 'unapp' ),
-		'description' => esc_html__( 'This will disable the tags zone at the end of the post.', 'unapp' ),
-		'section'     => 'header_image',
-		'default'     => true,
 	)
 );
 
@@ -506,11 +471,6 @@ Epsilon_Customizer::add_field(
 				'label'   => esc_html__( 'Twitter', 'unapp' ),
 				'type'    => 'url',
 				'default' => 'https://twitter.com',
-			),
-			'member_social_pinterest' => array(
-				'label'   => esc_html__( 'Pinterest', 'unapp' ),
-				'type'    => 'url',
-				'default' => 'https://pinterest.com',
 			),
 			'member_social_linkedin'  => array(
 				'label'   => esc_html__( 'LinkedIn', 'unapp' ),
