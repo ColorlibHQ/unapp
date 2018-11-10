@@ -33,8 +33,14 @@ class Unapp_Customizer {
 	/**
 	 * Loads the settings for the panels
 	 */
-	public function add_theme_options() {
+	public function add_theme_options( $wp_customize ) {
 		$path = get_template_directory() . '/inc/customizer/settings';
+
+		// Hide Background Color
+		$background = $wp_customize->get_control( 'background_color' );
+		if ( $background ) {
+			$wp_customize->remove_control( 'background_color' );
+		}
 
 		require_once $path . '/sections.php';
 		require_once $path . '/fields.php';

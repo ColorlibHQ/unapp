@@ -26,6 +26,14 @@ class Unapp_Recent_Post_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		//echo $args['before_widget'];
+
+		$defaults = array(
+			'title'       => esc_html__( 'Recent Blog', 'unapp' ),
+			'post_number' => 3
+		);
+
+		$instance = wp_parse_args( $instance, $defaults );
+
 		?>
 		<div class="sidebar-widget">
 			<h4><?php print $instance['title']; ?></h4>
@@ -64,16 +72,20 @@ class Unapp_Recent_Post_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Recent Blog', 'unapp' );
-		$post_number = ! empty( $instance['post_number'] ) ? $instance['post_number'] : esc_html__( '3', 'unapp' );
+		$defaults = array(
+			'title'       => esc_html__( 'Recent Blog', 'unapp' ),
+			'post_number' => 3
+		);
+
+		$instance = wp_parse_args( $instance, $defaults );
 		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'unapp' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>">
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'post_number' ) ); ?>"><?php esc_attr_e( 'Post Number:', 'unapp' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'post_number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'post_number' ) ); ?>" type="text" value="<?php echo esc_attr( $post_number ); ?>">
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'post_number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'post_number' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['post_number'] ); ?>">
 		</p>
 		<?php
 	}

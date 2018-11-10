@@ -135,21 +135,11 @@ $sections            = array(
 	),
 	//Featured Left
 	array(
-		'id'    => 'unapp_featured_section_left',
+		'id'    => 'unapp_features_section',
 		'args'  => array(
-			'title'     => esc_html__( 'Featured Left', 'unapp' ),
+			'title'     => esc_html__( 'Features', 'unapp' ),
 			'panel'     => 'unapp_panel_section_content',
 			'priority'  => 7,
-			'type'      => 'epsilon-section-doubled'
-		),
-	),
-	//Featured Right
-	array(
-		'id'    => 'unapp_featured_section_right',
-		'args'  => array(
-			'title'     => esc_html__( 'Featured Right', 'unapp' ),
-			'panel'     => 'unapp_panel_section_content',
-			'priority'  => 8,
 			'type'      => 'epsilon-section-doubled'
 		),
 	),
@@ -178,6 +168,16 @@ $sections            = array(
 		'id'   => 'unapp_team_members_section',
 		'args' => array(
 			'title'    => esc_html__( 'Team Members', 'unapp' ),
+			'panel'    => 'unapp_panel_section_content',
+			'priority' => 11,
+			'type'     => 'epsilon-section-doubled',
+		),
+	),
+	// Unapp Portfolio
+	array(
+		'id'   => 'unapp_portfolios_section',
+		'args' => array(
+			'title'    => esc_html__( 'Portfolios', 'unapp' ),
 			'panel'    => 'unapp_panel_section_content',
 			'priority' => 11,
 			'type'     => 'epsilon-section-doubled',

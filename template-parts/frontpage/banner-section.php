@@ -4,20 +4,22 @@ $fields = $frontpage->sections[ $section_id ];
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'banner', Unapp_Repeatable_Sections::get_instance() );
 
+$id = '' != $fields['section_id'] ? $fields['section_id'] : Unapp_Helper::generate_section_id( 'home' );
+
 $parent_attr = array(
-	'id'    => ! empty( $fields['banner_section_unique_id'] ) ? array( $fields['banner_section_unique_id'] ) : array(),
 	'class' => array( 'video-hero', 'ewf-section' ),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
+	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat', 'background-parallax' ),
 );
 
 ?>
 
-<section id="home" <?php $attr_helper->generate_attributes( $parent_attr ); ?> style="height: 700px; background-size:cover; background-position: center center;background-attachment:fixed;" data-customizer-section-id="unapp_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php
-        $attr_helper->generate_video_overlay();
-	    $attr_helper->generate_color_overlay();
-	?>
-	<a class="player" data-property="{videoURL:'<?php echo esc_url( $fields[ 'banner_bg_link' ] ); ?>',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default'}"></a>
+<section id="<?php echo $id ?>" <?php $attr_helper->generate_attributes( $parent_attr ); ?> data-customizer-section-id="unapp_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php $attr_helper->generate_color_overlay(); ?>
+	
+	<?php if ( '' != $fields['banner_background_video'] ): ?>
+		<a class="player" data-property="{videoURL:'<?php echo esc_url( $fields[ 'banner_background_video' ] ); ?>',containment:'#<?php echo $id ?>', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default'}"></a>
+	<?php endif ?>
+	
 	<div class="display-t text-center">
 		<div class="display-tc">
 			<div class="container">

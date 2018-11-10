@@ -150,10 +150,10 @@ function unapp_widgets_init() {
 			'name'          => esc_html__( 'Footer One', 'unapp' ),
 			'id'            => 'footer-sidebar-1',
 			'description'   => esc_html__( 'Add widgets here to appear in your sidebar.', 'unapp' ),
-			'before_widget' => '<article id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</article>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
 		)
 	);
 	register_sidebar(
@@ -161,10 +161,10 @@ function unapp_widgets_init() {
 			'name'          => esc_html__( 'Footer Two', 'unapp' ),
 			'id'            => 'footer-sidebar-2',
 			'description'   => esc_html__( 'Add widgets here to appear in your sidebar.', 'unapp' ),
-			'before_widget' => '<article id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</article>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
 		)
 	);
 	register_sidebar(
@@ -172,10 +172,10 @@ function unapp_widgets_init() {
 			'name'          => esc_html__( 'Footer Three', 'unapp' ),
 			'id'            => 'footer-sidebar-3',
 			'description'   => esc_html__( 'Add widgets here to appear in your sidebar.', 'unapp' ),
-			'before_widget' => '<article id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</article>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
 		)
 	);
 	register_sidebar(
@@ -183,10 +183,10 @@ function unapp_widgets_init() {
 			'name'          => esc_html__( 'Footer Four', 'unapp' ),
 			'id'            => 'footer-sidebar-4',
 			'description'   => esc_html__( 'Add widgets here to appear in your sidebar.', 'unapp' ),
-			'before_widget' => '<article id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</article>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
 		)
 	);
 }
@@ -242,14 +242,6 @@ function unapp_scripts() {
 	wp_enqueue_script( 'unapp-countTo', get_template_directory_uri() . '/assets/js/jquery.countTo.js', array( 'jquery' ), false, true );
 	// Theme main JS
 	wp_enqueue_script( 'unapp-main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), false, true );
-	// Google Map API Js
-	if( is_page() ){
-		$api_key = get_theme_mod('contact_map_api','AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA');
-		if($api_key != '') {
-			wp_enqueue_script('unapp-map_api', 'http://maps.googleapis.com/maps/api/js?key='.$api_key, array('jquery'),false,true );
-			wp_enqueue_script( 'unapp-map', get_template_directory_uri() . '/assets/js/map.js', array( 'jquery' ), false, true );
-		}
-	}
 	// reply comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -279,7 +271,3 @@ require get_parent_theme_file_path() . '/inc/class-unapp-autoloader.php';
 if( class_exists( 'Epsilon_Framework' ) ){
 	$unapp = new Unapp();
 }
-
-//
-require get_parent_theme_file_path() .'/inc/class-tgm-plugin-activation.php';
-require get_parent_theme_file_path() .'/inc/unapp_add_plugin.php';

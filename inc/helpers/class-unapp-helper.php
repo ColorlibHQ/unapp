@@ -14,6 +14,28 @@ if ( ! defined( 'WPINC' ) ) {
  * Class Unapp_Helper
  */
 class Unapp_Helper {
+
+	public static $section_ids = array();
+
+	/**
+	 * Generate different ids for each section
+	 */
+	public static function generate_section_id( $key ) {
+
+		$random = rand( 1, 999999 );
+		$id     = $key . '-' . $random;
+
+		while ( in_array( $id, self::$section_ids ) ) {
+			$random = rand( 1, 999999 );
+			$id     = $key . '-' . $random;
+		}
+
+		self::$section_ids[] = $id;
+
+		return $id;
+
+	}
+
 	/**
 	 * Create a "default" value for the footer layout
 	 */

@@ -37,9 +37,6 @@ class Epsilon_Section_Attr_Helper {
 	 * @param array $fields
 	 */
 	public function set_options( $fields = array() ) {
-		$defaults = array(
-			$this->key . '_background_parallax' => $this->section_manager[ $this->key ]['customization']['styling']['background-parallax']['default'],
-		);
 
 		foreach ( $this->section_manager[ $this->key ]['customization']['layout'] as $k => $v ) {
 			$defaults[ $this->key . '_' . str_replace( '-', '_', $k ) ] = $v['default'];
@@ -126,13 +123,28 @@ class Epsilon_Section_Attr_Helper {
 				$this->options[ $option ] = str_replace( array( 'top', 'bottom' ), array( 'top ', 'bottom ' ), $this->options[ $option ] );
 			}
 
+			if ( 'background-overlay' === $key ) {
+				$option = $this->key . '_background_color';
+			}
+
 			if ( empty( $this->options[ $option ] ) ) {
 				continue;
 			}
 
 			$key = 'background-color-opacity' === $key ? 'opacity' : $key;
 
-			$css .= 'background-image' === $key ? $key . ':url(' . esc_url( $this->options[ $option ] ) . ');' : $key . ':' . esc_attr( $this->options[ $option ] ) . ';';
+			$key = 'background-parallax' === $key ? 'background-attachment' : $key;
+
+			$key = 'background-overlay' === $key ? 'background' : $key;
+
+			if ( 'background-image' === $key ) {
+				$css .= $key . ':url(' . esc_url( $this->options[ $option ] ) . ');';
+			}elseif ( 'background-attachment' === $key ) {
+				$css .= $key . ': fixed;';
+			}else{
+				$css .= $key . ':' . esc_attr( $this->options[ $option ] ) . ';';
+			}
+
 		}
 		$css .= '" ';
 
@@ -226,14 +238,10 @@ class Epsilon_Section_Attr_Helper {
 		$arr = array(
 			'class' => array( 'ewf-section__overlay-color' ),
 			'style' => array(
-				'background-color',
+				'background-overlay',
 				'background-color-opacity',
 			),
 		);
-
-		if ( empty( $this->options[ $this->key . '_background_color' ] ) ) {
-			return '';
-		}
 
 		echo $this->generate_html_tag( 'div', $arr );
 	}

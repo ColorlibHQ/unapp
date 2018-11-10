@@ -104,12 +104,18 @@ Epsilon_Customizer::add_field(
 		),
 		'selectors'     => array(
 			'.post-title',
-			'.post-content h1',
-			'.post-content h2',
-			'.post-content h3',
-			'.post-content h4',
-			'.post-content h5',
-			'.post-content h6',
+			'h1',
+			'h2',
+			'h3',
+			'h4',
+			'h5',
+			'h6',
+			'h1 a',
+			'h2 a',
+			'h3 a',
+			'h4 a',
+			'h5 a',
+			'h6 a',
 		),
 		'font_defaults' => array(
 			'font-family' => '',
@@ -129,54 +135,13 @@ Epsilon_Customizer::add_field(
 		'stylesheet'    => 'unapp-main',
 		'choices'       => array(
 			'font-family',
-			'font-weight',
-			'font-style',
 		),
 		'selectors'     => array(
-			'.post-content p',
+			'body',
 		),
 		'font_defaults' => array(
 			'font-family' => '',
-			'font-weight' => '',
-			'font-style'  => '',
 		),
-	)
-);
-
-/**
- * Blog section options
- */
-Epsilon_Customizer::add_field(
-	'unapp_show_single_post_categories',
-	array(
-		'type'        => 'epsilon-toggle',
-		'label'       => esc_html__( 'Post Meta: Categories', 'unapp' ),
-		'description' => esc_html__( 'This will disable the category section at the beggining of the post.', 'unapp' ),
-		'section'     => 'header_image',
-		'default'     => true,
-	)
-);
-
-
-Epsilon_Customizer::add_field(
-	'unapp_enable_author_box',
-	array(
-		'type'        => 'epsilon-toggle',
-		'label'       => esc_html__( 'Post meta: Author', 'unapp' ),
-		'description' => esc_html__( 'Toggle the display of the author box, at the left side of the post. Will only display if the author has a description defined.', 'unapp' ),
-		'section'     => 'header_image',
-		'default'     => true,
-	)
-);
-
-Epsilon_Customizer::add_field(
-	'unapp_show_single_post_tags',
-	array(
-		'type'        => 'epsilon-toggle',
-		'label'       => esc_html__( 'Post Meta: Tags', 'unapp' ),
-		'description' => esc_html__( 'This will disable the tags zone at the end of the post.', 'unapp' ),
-		'section'     => 'header_image',
-		'default'     => true,
 	)
 );
 
@@ -316,58 +281,27 @@ Epsilon_Customizer::add_field(
 );
 
 /**
- * Featured Left
+ * Features
  */
 Epsilon_Customizer::add_field(
-	'unapp_featured_left',
+	'unapp_features',
 	array(
 		'type'          => 'epsilon-repeater',
-		'section'       => 'unapp_featured_section_left',
+		'section'       => 'unapp_features_section',
 		'save_as_meta'  => Epsilon_Content_Backup::get_instance()->setting_page,
 		'label'         => esc_html__( 'Featured Work', 'unapp' ),
 		'button_label'  => esc_html__( 'Add new items', 'unapp' ),
 		'row_label'     => array(
 			'type'  => 'field',
-			'field' => 'featured_icon'
+			'field' => 'features_icon'
 		),
 		'fields' => array(
-			'featured_icon'        => array(
+			'features_icon'        => array(
 				'label'   => esc_html__( 'Icon', 'unapp' ),
 				'type'    => 'epsilon-icon-picker',
 				'default' => 'fa fa-users',
 			),
-			'featured_description' => array(
-				'label' => esc_html__( 'Description', 'unapp' ),
-				'type' => 'epsilon-text-editor',
-				'sanitize_callback' => 'wp_kses_post',
-				'default' => 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.',
-			),
-		),
-	)
-);
-
-/**
- * Featured Right
- */
-Epsilon_Customizer::add_field(
-	'unapp_featured_right',
-	array(
-		'type'          => 'epsilon-repeater',
-		'section'       => 'unapp_featured_section_right',
-		'save_as_meta'  => Epsilon_Content_Backup::get_instance()->setting_page,
-		'label'         => esc_html__( 'Featured Work', 'unapp' ),
-		'button_label'  => esc_html__( 'Add new items', 'unapp' ),
-		'row_label'     => array(
-			'type'  => 'field',
-			'field' => 'featured_icon'
-		),
-		'fields' => array(
-			'featured_icon'        => array(
-				'label'   => esc_html__( 'Icon', 'unapp' ),
-				'type'    => 'epsilon-icon-picker',
-				'default' => 'fa fa-users',
-			),
-			'featured_description' => array(
+			'features_description' => array(
 				'label' => esc_html__( 'Description', 'unapp' ),
 				'type' => 'epsilon-text-editor',
 				'sanitize_callback' => 'wp_kses_post',
@@ -538,11 +472,6 @@ Epsilon_Customizer::add_field(
 				'type'    => 'url',
 				'default' => 'https://twitter.com',
 			),
-			'member_social_pinterest' => array(
-				'label'   => esc_html__( 'Pinterest', 'unapp' ),
-				'type'    => 'url',
-				'default' => 'https://pinterest.com',
-			),
 			'member_social_linkedin'  => array(
 				'label'   => esc_html__( 'LinkedIn', 'unapp' ),
 				'type'    => 'url',
@@ -557,6 +486,48 @@ Epsilon_Customizer::add_field(
 					'fadeInRight' => esc_html__( 'fadeInRight', 'unapp' ),
 					'fadeInUp' => esc_html__( 'fadeInUp', 'unapp' ),
 				),
+			),
+		),
+	)
+);
+
+/**
+ * Unapp Portfolios
+ */
+Epsilon_Customizer::add_field(
+	'unapp_portfolios',
+	array(
+		'type'         => 'epsilon-repeater',
+		'section'      => 'unapp_portfolios_section',
+		'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
+		'label'        => esc_html__( 'Portfolios', 'unapp' ),
+		'button_label' => esc_html__( 'Add new portfolio', 'unapp' ),
+		'row_label'    => array(
+			'type'  => 'field',
+			'field' => 'title',
+		),
+		'fields'       => array(
+			'title'            => array(
+				'label'             => esc_html__( 'Title', 'unapp' ),
+				'type'              => 'text',
+				'default'           => esc_html__( 'A beige chair at a basket', 'unapp' ),
+				'sanitize_callback' => 'wp_kses_post',
+			),
+			'content'             => array(
+				'label'   => esc_html__( 'Content', 'unapp' ),
+				'type'    => 'epsilon-text-editor',
+				'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia velit quis sem dignissim porta.', 'unapp' ),
+			),
+			'featured_image'            => array(
+				'label'   => esc_html__( 'Featured Image', 'unapp' ),
+				'type'    => 'epsilon-image',
+				'size'    => 'unapp-team-image',
+				'default' => esc_url( get_template_directory_uri() . '/assets/images/about.jpg' ),
+			),
+			'url'  => array(
+				'label'   => esc_html__( 'URL', 'unapp' ),
+				'type'    => 'url',
+				'default' => 'https://facebook.com',
 			),
 		),
 	)
