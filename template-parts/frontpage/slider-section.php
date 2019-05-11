@@ -11,7 +11,7 @@ $id = '' != $fields['section_id'] ? $fields['section_id'] : Unapp_Helper::genera
 	<?php echo wp_kses( Unapp_Helper::generate_pencil( 'Unapp_Repeatable_Sections', 'slider' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
     <div class="row animate-box" data-animate-effect="<?php echo esc_attr( $fields[ 'slider_animate' ] ); ?>">
 		<div class="featured-wrap">
-			<div class="owl-carousel">
+			<div class="unapp_slider">
                 <?php
                 foreach ( $fields['slider'] as $key => $value ){
                 ?>

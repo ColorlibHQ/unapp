@@ -104,7 +104,7 @@ class Unapp_Repeatable_Sections {
 						'default' => false,
 					),
 					'background-video'         => array(
-						'default' => 'https://www.youtube.com/watch?v=vqqt5p0q-eU',
+						'default' => false,
 					),
 				)
 			),
@@ -506,7 +506,7 @@ class Unapp_Repeatable_Sections {
 					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'unapp' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
-					'choices'     => Unapp_Helper::get_group_values_from_meta( 'unapp_features', 'featured_icon' ),
+					'choices'     => Unapp_Helper::get_group_values_from_meta( 'unapp_features', 'features_icon' ),
 					'default'     => array( 'all' ),
 				),
 				'features_navigation'        => array(

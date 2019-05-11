@@ -139,7 +139,7 @@ class Unapp {
 	 
 	public function get_color_scheme() {
 
-        return 	array(
+        return array(
             'epsilon_general_separator' => array(
                 'label'     => esc_html__( 'Accent Colors', 'unapp' ),
                 'section'   => 'colors',
@@ -149,6 +149,7 @@ class Unapp {
             'epsilon_accent_color' => array(
                 'label'       => esc_html__( 'Accent Color #1', 'unapp' ),
                 'description' => esc_html__( 'Theme main color.', 'unapp' ),
+                'transport'   => 'postMessage',
                 'default'     => '#798eea',
                 'section'     => 'colors',
                 'hover-state' => false,
@@ -181,6 +182,7 @@ class Unapp {
                 'default'     => '#303133',
                 'section'     => 'colors',
                 'hover-state' => false,
+                'transport'   => 'postMessage',
             ),
 
             'epsilon_text_color' => array(
@@ -189,6 +191,7 @@ class Unapp {
                 'default'     => '#808080',
                 'section'     => 'colors',
                 'hover-state' => false,
+                'transport'      => 'postMessage',
             ),
 
             'epsilon_link_color' => array(
@@ -197,6 +200,7 @@ class Unapp {
                 'default'     => '#4aca85',
                 'section'     => 'colors',
                 'hover-state' => false,
+                'transport'           => 'postMessage',
             ),
 
             'epsilon_link_hover_color' => array(
@@ -213,7 +217,6 @@ class Unapp {
                 'separator' => true,
             ),
 
-            
 
             'epsilon_menu_item_color' => array(
                 'label'       => esc_html__( 'Menu item color', 'unapp' ),
@@ -340,6 +343,7 @@ class Unapp {
 		);
 
 		Epsilon_Color_Scheme::get_instance( $handler, $args );
+
 	}
 
 	/**

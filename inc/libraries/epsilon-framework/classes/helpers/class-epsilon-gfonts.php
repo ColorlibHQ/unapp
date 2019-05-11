@@ -97,8 +97,8 @@ class Epsilon_GFonts {
 						'latin',
 					),
 				),
-				'Slabo 27px'          => array(
-					'family'   => 'Slabo 27px',
+				'Slabo'          => array(
+					'family'   => 'Slabo',
 					'import'   => 'Slabo+27px:400&subset=latin-ext',
 					'variants' => array(
 						'400',

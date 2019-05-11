@@ -26,7 +26,7 @@ jQuery(document).ready(function ( $ ) {
 	var mobileMenuOutsideClick = function() {
 
 		$(document).click(function (e) {
-	    var container = $("#colorlib-offcanvas, .js-colorlib-nav-toggle");
+	    var container = $('#colorlib-offcanvas, .js-colorlib-nav-toggle');
 	    if (!container.is(e.target) && container.has(e.target).length === 0) {
 
 	    	if ( $('body').hasClass('offcanvas') ) {
@@ -191,7 +191,7 @@ jQuery(document).ready(function ( $ ) {
 
 	// Loading page
 	var loaderPage = function() {
-		$(".colorlib-loader").fadeOut("slow");
+		$('.colorlib-loader').fadeOut('slow');
 	};
 
 
@@ -211,7 +211,7 @@ jQuery(document).ready(function ( $ ) {
 		$('.js-counter').countTo({
 			 formatter: function (value, options) {
 	      return value.toFixed(options.decimals);
-	    },
+	    }
 		});
 	};
 
@@ -230,13 +230,14 @@ jQuery(document).ready(function ( $ ) {
 
 	// Owl Carousel
 	var owlCrouselFeatureSlide = function() {
-		var owl = $('.owl-carousel');
+
+		var owl = $('.unapp_slider');
 		owl.owlCarousel({
 			animateOut: 'fadeOut',
 		   animateIn: 'fadeIn',
 			autoplay: true,
 			items: 1,
-		   loop: true,
+		   loop: false,
 		   margin: 0,
 		   responsiveClass: true,
 		   nav: false,
@@ -269,6 +270,7 @@ jQuery(document).ready(function ( $ ) {
 		counterWayPoint();
 		owlCrouselFeatureSlide();
 		bgVideo();
+
 	});
 
 

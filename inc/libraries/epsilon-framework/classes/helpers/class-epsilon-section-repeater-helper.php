@@ -457,7 +457,7 @@ class Epsilon_Section_Repeater_Helper {
 						'id'          => $key . '_background_video',
 						'label'       => __( 'Background video', 'epsilon-framework' ),
 						'description' => '',
-						'default'     => isset( $values['default'] ) ? $values['default'] : '',
+						'default'     => '',
 						'type'        => 'text',
 						'group'       => 'styling',
 					);

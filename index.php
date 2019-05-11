@@ -19,6 +19,11 @@ get_header(); ?>
 	<div class="colorlib-blog">
 		<div class="container">
 			<div class="row">
+				<?php $layout = Unapp_Helper::get_layout(); ?>
+                <div class="<?php echo ( 1 === $layout['columnsCount'] && ! is_active_sidebar( 'sidebar-1' ) ) ? 'col-sm-12' : 'col-sm-' . esc_attr( $layout['columns']['content']['span'] ); ?> animate-box">
+
+
+
                 <?php
                     if( have_posts() ) :
 	                    /*
@@ -46,6 +51,12 @@ get_header(); ?>
 	                        get_template_part( 'template-parts/content', 'none' );
                     endif;
                 ?>
+                </div>
+				<?php if ( 'right-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar-1' ) ) { ?>
+                    <div class="col-sm-<?php echo esc_attr( $layout['columns']['sidebar']['span'] ); ?> animate-box">
+						<?php get_sidebar(); ?>
+                    </div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
