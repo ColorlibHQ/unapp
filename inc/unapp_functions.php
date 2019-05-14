@@ -352,3 +352,16 @@ add_filter( 'show_epsilon_quickie_bar', function (){
 } );
 
 
+// theme option callback
+function unapp_opt( $id = null, $default = '' ) {
+
+	$opt = get_theme_mod( $id, $default );
+
+	$data = '';
+
+	if( $opt ) {
+		$data = $opt;
+	}
+
+	return $data;
+}

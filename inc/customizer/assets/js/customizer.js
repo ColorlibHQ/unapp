@@ -46,7 +46,7 @@ MedZoneLite.Customizer = {
   pairedSettings: function( object, api ) {
     var self = this;
 
-    console.log( object );
+    // console.log( object );
 
     _.each( object, function( v, k ) {
       /**

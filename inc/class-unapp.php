@@ -109,7 +109,7 @@ class Unapp {
 		new Epsilon_Framework();
 
 		$this->start_typography_controls();
-		$this->start_color_schemes();
+
 	}
 
 	/**
@@ -133,218 +133,7 @@ class Unapp {
 		//new Epsilon_Section_Styling( 'unapp-main', 'unapp_frontpage_sections_', Unapp_Repeatable_Sections::get_instance() );
 	}
 
-	/**
-	 * Set color scheme controls
-	 */
-	 
-	public function get_color_scheme() {
 
-        return array(
-            'epsilon_general_separator' => array(
-                'label'     => esc_html__( 'Accent Colors', 'unapp' ),
-                'section'   => 'colors',
-                'separator' => true,
-            ),
-
-            'epsilon_accent_color' => array(
-                'label'       => esc_html__( 'Accent Color #1', 'unapp' ),
-                'description' => esc_html__( 'Theme main color.', 'unapp' ),
-                'transport'   => 'postMessage',
-                'default'     => '#798eea',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_accent_color_second' => array(
-                'label'       => esc_html__( 'Accent Color #2', 'unapp' ),
-                'description' => esc_html__( 'The second main color.', 'unapp' ),
-                'default'     => '#4aca85',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-            'epsilon_accent_color_third' => array(
-                'label'       => esc_html__( 'Accent Color #3', 'unapp' ),
-                'description' => esc_html__( 'The third main color.', 'unapp' ),
-                'default'     => '#499bea',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_text_separator' => array(
-                'label'     => esc_html__( 'Typography Colors', 'unapp' ),
-                'section'   => 'colors',
-                'separator' => true,
-            ),
-
-            'epsilon_title_color' => array(
-                'label'       => esc_html__( 'Title Color', 'unapp' ),
-                'description' => esc_html__( 'The color used for titles.', 'unapp' ),
-                'default'     => '#303133',
-                'section'     => 'colors',
-                'hover-state' => false,
-                'transport'   => 'postMessage',
-            ),
-
-            'epsilon_text_color' => array(
-                'label'       => esc_html__( 'Text Color', 'unapp' ),
-                'description' => esc_html__( 'The color used for paragraphs.', 'unapp' ),
-                'default'     => '#808080',
-                'section'     => 'colors',
-                'hover-state' => false,
-                'transport'      => 'postMessage',
-            ),
-
-            'epsilon_link_color' => array(
-                'label'       => esc_html__( 'Link Color', 'unapp' ),
-                'description' => esc_html__( 'The color used for links.', 'unapp' ),
-                'default'     => '#4aca85',
-                'section'     => 'colors',
-                'hover-state' => false,
-                'transport'           => 'postMessage',
-            ),
-
-            'epsilon_link_hover_color' => array(
-                'label'       => esc_html__( 'Link Hover Color', 'unapp' ),
-                'description' => esc_html__( 'The color used for hovered links.', 'unapp' ),
-                'default'     => '#5ed092',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_menu_separator' => array(
-                'label'     => esc_html__( 'Navigation Colors', 'unapp' ),
-                'section'   => 'colors',
-                'separator' => true,
-            ),
-
-
-            'epsilon_menu_item_color' => array(
-                'label'       => esc_html__( 'Menu item color', 'unapp' ),
-                'description' => esc_html__( 'The color used for the menu item color.', 'unapp' ),
-                'default'     => '#ffffff',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_menu_item_hover_color' => array(
-                'label'       => esc_html__( 'Menu item hover color', 'unapp' ),
-                'description' => esc_html__( 'The color used for the menu item hover color.', 'unapp' ),
-                'default'     => '#ffffff',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_menu_item_active_color' => array(
-                'label'       => esc_html__( 'Menu item active color', 'unapp' ),
-                'description' => esc_html__( 'The color used for the menu item active color.', 'unapp' ),
-                'default'     => '#ffffff',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_dropdown_menu_background' => array(
-                'label'       => esc_html__( 'Dropdown background', 'unapp' ),
-                'description' => esc_html__( 'The color used for the menu background.', 'unapp' ),
-                'default'     => '#000000',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_dropdown_menu_item_color' => array(
-                'label'       => esc_html__( 'Dropdown menu item color', 'unapp' ),
-                'description' => esc_html__( 'The color used for the menu item color.', 'unapp' ),
-                'default'     => '#999999',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_dropdown_menu_item_hover_color' => array(
-                'label'       => esc_html__( 'Dropdown menu item hover color', 'unapp' ),
-                'description' => esc_html__( 'The color used for the menu item hover color.', 'unapp' ),
-                'default'     => '#ffffff',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_dropdown_menu_item_active_color' => array(
-                'label'       => esc_html__( 'Dropdown menu item active color', 'unapp' ),
-                'description' => esc_html__( 'The color used for the menu item active color.', 'unapp' ),
-                'default'     => '#ffffff',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_footer_separator' => array(
-                'label'     => esc_html__( 'Footer Colors', 'unapp' ),
-                'section'   => 'colors',
-                'separator' => true,
-            ),
-
-            'epsilon_footer_contact_background' => array(
-                'label'       => esc_html__( 'Footer Widget Background', 'unapp' ),
-                'description' => esc_html__( 'The color used for the footer widget background.', 'unapp' ),
-                'default'     => '#303133',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_footer_background' => array(
-                'label'       => esc_html__( 'Footer Copyright Background', 'unapp' ),
-                'description' => esc_html__( 'The color used for the footer copyright background.', 'unapp' ),
-                'default'     => '#262626',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_footer_title_color' => array(
-                'label'       => esc_html__( 'Footer Title Color', 'unapp' ),
-                'description' => esc_html__( 'The color used for the footer widget title.', 'unapp' ),
-                'default'     => '#e6e6e6',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_footer_text_color' => array(
-                'label'       => esc_html__( 'Text Color', 'unapp' ),
-                'description' => esc_html__( 'The color used for the footer text.', 'unapp' ),
-                'default'     => '#808080',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_footer_link_color' => array(
-                'label'       => esc_html__( 'Link Color', 'unapp' ),
-                'description' => esc_html__( 'The color used for the footer link.', 'unapp' ),
-                'default'     => '#4aca85',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-            'epsilon_footer_link_hover_color' => array(
-                'label'       => esc_html__( 'Link Hover Color', 'unapp' ),
-                'description' => esc_html__( 'The color used for the footer link hover.', 'unapp' ),
-                'default'     => '#5ed092',
-                'section'     => 'colors',
-                'hover-state' => false,
-            ),
-
-        );
-	}
-	
-	/**
-	 * Load color scheme controls
-	 */
-	private function start_color_schemes() {
-		$handler = 'unapp-style-overrides';
-
-		$args = array(
-			'fields' => $this->get_color_scheme(),
-			'css' => Epsilon_Color_Scheme::load_css_overrides( get_template_directory() . '/assets/css/style-overrides.css' ),
-		);
-
-		Epsilon_Color_Scheme::get_instance( $handler, $args );
-
-	}
 
 	/**
 	 * Loads the typography controls required scripts
@@ -426,7 +215,7 @@ class Unapp {
 	}
 
 	public function enqueues(){
-        wp_enqueue_style( 'unapp-style-overrides', get_template_directory_uri() . '/assets/css/overrides.css' );
+        
     }
 
 	/**

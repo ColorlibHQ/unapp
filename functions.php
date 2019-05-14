@@ -266,6 +266,9 @@ require get_parent_theme_file_path() . '/inc/unapp_functions.php';
 // Require theme custom widget
 require get_parent_theme_file_path() . '/inc/widget/widget_setting.php';
 
+// Require theme dynamic css
+require get_parent_theme_file_path() . '/inc/dynamiccss.php';
+
 // Require Epsilon Cutomizer API
 require get_parent_theme_file_path() . '/inc/class-unapp-autoloader.php';
 if( class_exists( 'Epsilon_Framework' ) ){
