@@ -1,0 +1,45 @@
+.epsilon-registration-container {
+  .epsilon-field-control-group {
+    position: relative;
+
+    .epsilon-license-info {
+      position: absolute;
+      top: 0;
+      left: 400px;
+      background: #fff;
+      border: solid 1px rgba(219, 219, 219, 0.9);
+      -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .06);
+      -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .06);
+      box-shadow: 0 0 4px rgba(0, 0, 0, .06);
+      padding: 15px;
+      p {
+        &:first-of-type {
+          margin-top: 0;
+        }
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+    label {
+      min-width: 100px;
+      display: inline-block;
+    }
+
+    input {
+      border: solid 1px rgba(219, 219, 219, 0.9);
+      -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.06);
+      -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.06);
+      padding: 7px;
+      position: relative;
+      top: 4px;
+      border-radius: 4px;
+      min-width: 260px;
+    }
+  }
+
+  .button {
+    margin-top: 25px;
+  }
+}

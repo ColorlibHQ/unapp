@@ -1,0 +1,24 @@
+.epsilon-dashboard-container {
+  position: relative;
+  margin: 25px 40px 0 20px;
+  max-width: 1050px; }
+  .epsilon-dashboard-container h1 {
+    margin: 0.2em 200px 0 0;
+    padding: 0;
+    color: #32373c;
+    line-height: 1.2em;
+    font-size: 2.8em; }
+  .epsilon-dashboard-container--intro p {
+    margin: 1em 200px 1em 0;
+    min-height: 90px;
+    color: #555d66;
+    font-size: 15px; }
+  .epsilon-dashboard-container--intro img {
+    background: #191E23;
+    position: absolute;
+    top: 0;
+    right: 0; }
+  .epsilon-dashboard-container h3 {
+    margin-top: 0; }
+
+/*# sourceMappingURL=dashboard-container.css.map */

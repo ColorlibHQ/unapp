@@ -1,0 +1,62 @@
+.epsilon-feedback-modal {
+  // Main Container Styles
+  position: absolute;
+  width: 500px;
+  margin: 0 auto;
+  z-index: 123123;
+  top: 10%;
+  left: 15%;
+  background: #fff;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.06);
+  transition: all .3s ease;
+  header {
+    background-color: #3eb011;
+    color: #fff;
+    padding: 5px 30px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    h3 {
+      color: #fff;
+    }
+  }
+
+  section {
+    padding: 15px 30px;
+    > div {
+      display: inline-block;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    input[type="radio"] {
+      margin-top: 2px;
+    }
+    textarea {
+      width: 100%;
+      margin-top: 5px;
+    }
+  }
+
+  footer {
+    padding: 15px 30px;
+    text-align: right;
+    a:first-of-type {
+      float: left;
+    }
+  }
+}
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal .epsilon-feedback-modal,
+.modal-leave-active .epsilon-feedback-modal {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}

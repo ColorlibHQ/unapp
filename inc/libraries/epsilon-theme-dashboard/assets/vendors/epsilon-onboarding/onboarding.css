@@ -1,0 +1,25 @@
+.dashboard_page_epsilon-onboarding #wpbody-content {
+  padding-top: 65px; }
+.dashboard_page_epsilon-onboarding #adminmenuback, .dashboard_page_epsilon-onboarding #adminmenuwrap, .dashboard_page_epsilon-onboarding #adminmenu, .dashboard_page_epsilon-onboarding #adminmenu .wp-submenu {
+  -webkit-transition: all .3s;
+  /* Safari 3.1 to 6.0 */
+  transition: all .3s; }
+.dashboard_page_epsilon-onboarding.nodistraction #adminmenu {
+  opacity: 0; }
+.dashboard_page_epsilon-onboarding.nodistraction #adminmenuback, .dashboard_page_epsilon-onboarding.nodistraction #adminmenuwrap, .dashboard_page_epsilon-onboarding.nodistraction #adminmenu, .dashboard_page_epsilon-onboarding.nodistraction #adminmenu .wp-submenu {
+  -webkit-transition: all .3s;
+  /* Safari 3.1 to 6.0 */
+  transition: all .3s;
+  width: 0 !important; }
+.dashboard_page_epsilon-onboarding.nodistraction #wpcontent, .dashboard_page_epsilon-onboarding.nodistraction #wpfooter {
+  margin-left: 0; }
+.dashboard_page_epsilon-onboarding.nodistraction #wpcontent {
+  padding-left: 0;
+  height: initial; }
+.dashboard_page_epsilon-onboarding.nodistraction #wpwrap {
+  height: initial;
+  min-height: initial; }
+.dashboard_page_epsilon-onboarding.nodistraction #wpfooter {
+  display: none; }
+
+/*# sourceMappingURL=onboarding.css.map */

@@ -59,7 +59,7 @@ function unapp_common_custom_css() {
 			.colorlib-counters .ewf-section__overlay-color,
 			.colorlib-subscribe .ewf-section__overlay-color {
 				background: {$accent_color_3};
-			    background: -moz-linear-gradient(-45deg, {$accent_color_3} 0%%, {$accent_color_1} 100%%);
+			    background: -moz-linear-gradient(-45deg, {$accent_color_3} 0%, {$accent_color_1} 100%);
 			    background: -webkit-gradient(left top, right bottom, color-stop(0%%, {$accent_color_3}), color-stop(100%%, #798eea));
 			    background: -webkit-linear-gradient(-45deg, {$accent_color_3} 0%%, {$accent_color_1} 100%%);
 			    background: -o-linear-gradient(-45deg, {$accent_color_3} 0%%, {$accent_color_1} 100%%);

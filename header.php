@@ -17,7 +17,7 @@
         <div class="top-menu">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <div id="colorlib-logo">
 	                        <?php
 	                        if ( function_exists( 'the_custom_logo' ) ) {
@@ -27,13 +27,14 @@
 		                        else{
 			                        ?>
                                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo('name')?></a>
+                                    <span class="tagline"><?php echo esc_html( get_bloginfo('description') ) ?></span>
 			                        <?php
 		                        }
 	                        }
 	                        ?>
                         </div>
                     </div>
-                    <div class="col-md-10 text-right menu-1">
+                    <div class="col-md-9 text-right menu-1">
 						<?php
 						wp_nav_menu( array(
 							'theme_location'    => 'header_menu',

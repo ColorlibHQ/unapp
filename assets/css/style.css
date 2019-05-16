@@ -1966,3 +1966,10 @@ input[type="text"] {
 {
   padding-bottom: 0;
 }
+
+#colorlib-logo span.tagline{
+  font-size: 13px;
+  color: #fff;
+  display: block;
+  line-height: 13px;
+}

@@ -191,7 +191,7 @@ class Unapp_Dashboard_Setup {
 			),
 			array(
 				'id'       => 'finish',
-				'title'    => __( 'AYou\'re ready', 'unapp' ),
+				'title'    => __( 'You\'re ready', 'unapp' ),
 				'content'  => array(
 					'paragraphs' => array(
 						__( 'Your new theme has been all set up. Enjoy your new theme by <a href="https://colorlib.com">Colorlib</a>.', 'unapp' ),

@@ -1,0 +1,36 @@
+.epsilon-free-pro-table {
+  border-spacing: 0;
+  width: 100%;
+  th {
+    padding-bottom: 20px;
+  }
+  td {
+    border-top: 1px solid #ccc;
+    padding: 20px 0 25px;
+  }
+  h3 {
+    margin: 0;
+  }
+  td p {
+    margin: 0;
+  }
+  .epsilon-feature {
+    text-align: center;
+    width: 15%;
+  }
+  .dashicons-yes {
+    color: #00A878;
+  }
+  .dashicons-no-alt {
+    color: #ff3439;
+  }
+  .dashicons-before:before {
+    font-size: 35px;
+    height: 35px;
+    width: 35px;
+  }
+  .button-hero .dashicons {
+    font-size: 16px;
+    vertical-align: middle;
+  }
+}

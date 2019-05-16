@@ -1,0 +1,28 @@
+.epsilon-free-pro-table {
+  border-spacing: 0;
+  width: 100%; }
+  .epsilon-free-pro-table th {
+    padding-bottom: 20px; }
+  .epsilon-free-pro-table td {
+    border-top: 1px solid #ccc;
+    padding: 20px 0 25px; }
+  .epsilon-free-pro-table h3 {
+    margin: 0; }
+  .epsilon-free-pro-table td p {
+    margin: 0; }
+  .epsilon-free-pro-table .epsilon-feature {
+    text-align: center;
+    width: 15%; }
+  .epsilon-free-pro-table .dashicons-yes {
+    color: #00A878; }
+  .epsilon-free-pro-table .dashicons-no-alt {
+    color: #ff3439; }
+  .epsilon-free-pro-table .dashicons-before:before {
+    font-size: 35px;
+    height: 35px;
+    width: 35px; }
+  .epsilon-free-pro-table .button-hero .dashicons {
+    font-size: 16px;
+    vertical-align: middle; }
+
+/*# sourceMappingURL=comparison-table.css.map */

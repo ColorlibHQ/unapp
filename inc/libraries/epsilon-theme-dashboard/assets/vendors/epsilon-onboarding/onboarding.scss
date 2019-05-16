@@ -1,0 +1,34 @@
+.dashboard_page_epsilon-onboarding {
+  #wpbody-content {
+    padding-top: 65px;
+  }
+  #adminmenuback, #adminmenuwrap, #adminmenu, #adminmenu .wp-submenu {
+    -webkit-transition: all .3s; /* Safari 3.1 to 6.0 */
+    transition: all .3s;
+  }
+
+  &.nodistraction {
+    #adminmenu {
+      opacity: 0;
+    }
+    #adminmenuback, #adminmenuwrap, #adminmenu, #adminmenu .wp-submenu {
+      -webkit-transition: all .3s; /* Safari 3.1 to 6.0 */
+      transition: all .3s;
+      width: 0 !important;
+    }
+    #wpcontent, #wpfooter {
+      margin-left: 0;
+    }
+    #wpcontent {
+      padding-left: 0;
+      height: initial;
+    }
+    #wpwrap {
+      height: initial;
+      min-height: initial;
+    }
+    #wpfooter {
+      display: none;
+    }
+  }
+}

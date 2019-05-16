@@ -1,0 +1,69 @@
+.onboarding-step {
+  padding: 40px 70px 20px;
+  display: none;
+  &.active {
+    display: block;
+  }
+
+  .epsilon-buttons {
+    display: block;
+    text-align: center;
+    margin-top: 60px;
+    .button {
+      margin-right: 5px;
+      .dashicons {
+        font-size: 15px;
+        line-height: 46px;
+      }
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .button-primary.disabled {
+    background-color: #d0d0d0 !important;
+    border-color: darken(#d0d0d0, 5%) !important;
+    color: #fff !important;
+  }
+
+  .permission-request {
+    a {
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    > div {
+      display: none;
+
+      ul {
+        li {
+          margin-bottom: 10px;
+          .dashicons {
+            font-size: 30px;
+            width: 30px;
+            height: 30px;
+            line-height: 39px;
+            display: inline-block;
+          }
+          .content {
+            display: inline-block;
+            margin-left: 10px;
+            strong, small {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.hasProgress {
+  .onboarding-page {
+    padding-top: 0;
+  }
+}

@@ -1,0 +1,45 @@
+#customize-controls .control-section-epsilon-section-pro {
+
+  .accordion-section-title{
+
+    &:hover,
+    &:focus {
+
+      background-color: #fff;
+    }
+
+    .button {
+      margin-top: -3px;
+      font-weight: 400;
+      margin-left: 8px;
+    }
+  }
+
+  .epsilon-pro-section-title {
+
+    background: #F8F8F9;
+
+    &:hover {
+      background: #f5f5f5;
+      cursor: pointer;
+    }
+
+  }
+
+}
+
+
+.rtl .control-section-epsilon-section-pro .accordion-section-title .button {
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+.epsilon-full-section-button {
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
