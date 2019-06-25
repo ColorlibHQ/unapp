@@ -27,7 +27,7 @@
 		                        else{
 			                        ?>
                                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo('name')?></a>
-                                    <span class="tagline"><?php echo esc_html( get_bloginfo('description') ) ?></span>
+                                    <span class="header_tagline"><?php echo get_bloginfo('description'); ?></span>
 			                        <?php
 		                        }
 	                        }

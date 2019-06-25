@@ -171,27 +171,27 @@ class Unapp_Dashboard_Setup {
 					),
 				),
 			),
-			array(
-				'id'       => 'demos',
-				'title'    => __( 'Import Demo Content', 'unapp' ),
-				'content'  => array(
-					'paragraphs' => array(
-						wp_kses_post( __( 'We\'ve made it easy for you to get up and running in a jiffy. Just pick any of the theme demos below, click on Select, Import and you\'ll be ready in no time. Feel free to skip this step if you\'d like to create the content yourself.', 'unapp' ) ),
-						wp_kses_post( __( '<em>Note: This is the easiest way to see what goes where. After you\'ve finished the import, you can edit the content using the built-in Customizer, available under Appearance -> Customize.</em>', 'unapp' ) )
-					),
-				),
-				'progress' => __( 'Demos', 'unapp' ),
-				'demos'    => get_template_directory() . '/inc/customizer/demo/demo.json',
-				'buttons'  => array(
-					'next' => array(
-						'action' => 'next',
-						'label'  => __( 'Next <span class="dashicons dashicons-arrow-right-alt2"></span>', 'unapp' ),
-					),
-				),
-			),
+//			array(
+//				'id'       => 'demos',
+//				'title'    => __( 'Import Demo Content', 'unapp' ),
+//				'content'  => array(
+//					'paragraphs' => array(
+//						wp_kses_post( __( 'We\'ve made it easy for you to get up and running in a jiffy. Just pick any of the theme demos below, click on Select, Import and you\'ll be ready in no time. Feel free to skip this step if you\'d like to create the content yourself.', 'unapp' ) ),
+//						wp_kses_post( __( '<em>Note: This is the easiest way to see what goes where. After you\'ve finished the import, you can edit the content using the built-in Customizer, available under Appearance -> Customize.</em>', 'unapp' ) )
+//					),
+//				),
+//				'progress' => __( 'Demos', 'unapp' ),
+//				'demos'    => get_template_directory() . '/inc/customizer/demo/demo.json',
+//				'buttons'  => array(
+//					'next' => array(
+//						'action' => 'next',
+//						'label'  => __( 'Next <span class="dashicons dashicons-arrow-right-alt2"></span>', 'unapp' ),
+//					),
+//				),
+//			),
 			array(
 				'id'       => 'finish',
-				'title'    => __( 'You\'re ready', 'unapp' ),
+				'title'    => __( 'AYou\'re ready', 'unapp' ),
 				'content'  => array(
 					'paragraphs' => array(
 						__( 'Your new theme has been all set up. Enjoy your new theme by <a href="https://colorlib.com">Colorlib</a>.', 'unapp' ),
@@ -261,11 +261,17 @@ class Unapp_Dashboard_Setup {
 				'integration' => true,
 				'recommended' => false,
 			),
+            'one-click-demo-import' => array(
+                'integration' => true,
+                'recommended' => false,
+            ),
 		);
 
 		if ( ! $integrated ) {
 			unset( $arr['contact-form-7'] );
 			unset( $arr['mailchimp-for-wp'] );
+			unset( $arr['one-click-demo-import'] );
+
 		}
 
 		return $arr;
@@ -280,20 +286,20 @@ class Unapp_Dashboard_Setup {
 		}
 
 		return array(
-			array(
-				'id'          => 'unapp-import-data',
-				'title'       => esc_html__( 'Add sample content', 'unapp' ),
-				'description' => esc_html__( 'Clicking the button below will add content/sections/settings and recommended plugins to your WordPress installation. Click advanced to customize the import process in the dedicated tab.', 'unapp' ),
-				'check'       => Unapp_Notify_System::check_installed_data(),
-				'state'       => false,
-				'actions'     => array(
-					array(
-						'label'   => esc_html__( 'Advanced', 'unapp' ),
-						'type'    => 'change-page',
-						'handler' => 'epsilon-demo',
-					),
-				),
-			),
+//			array(
+//				'id'          => 'unapp-import-data',
+//				'title'       => esc_html__( 'Add sample content', 'unapp' ),
+//				'description' => esc_html__( 'Clicking the button below will add content/sections/settings and recommended plugins to your WordPress installation. Click advanced to customize the import process in the dedicated tab.', 'unapp' ),
+//				'check'       => Unapp_Notify_System::check_installed_data(),
+//				'state'       => false,
+//				'actions'     => array(
+//					array(
+//						'label'   => esc_html__( 'Advanced', 'unapp' ),
+//						'type'    => 'change-page',
+//						'handler' => 'epsilon-demo',
+//					),
+//				),
+//			),
 			array(
 				'id'          => 'unapp-check-cf7',
 				'title'       => Unapp_Notify_System::plugin_verifier( 'contact-form-7', 'title', 'Contact Form 7', 'verify_cf7' ),
@@ -324,6 +330,21 @@ class Unapp_Dashboard_Setup {
 					),
 				),
 			),
+            array(
+                'id'          => 'unapp-check-ocdi',
+                'title'       => Unapp_Notify_System::plugin_verifier( 'one-click-demo-import', 'title', 'One Click Demo Import' ),
+                'description' => Unapp_Notify_System::plugin_verifier( 'one-click-demo-import', 'description', 'One Click Demo Import' ),
+                'plugin_slug' => 'one-click-demo-import',
+                'state'       => false,
+                'check'       => defined( 'PT_OCDI_VERSION' ),
+                'actions'     => array(
+                    array(
+                        'label'   => Unapp_Notify_System::plugin_verifier( 'one-click-demo-import', 'installed', 'One Click Demo Import' ) ? __( 'Activate Plugin', 'unapp' ) : __( 'Install Plugin', 'unapp' ),
+                        'type'    => 'handle-plugin',
+                        'handler' => Unapp_Notify_System::plugin_verifier( 'one-click-demo-import', 'installed', 'One Click Demo Import' ),
+                    ),
+                ),
+            ),
 		);
 	}
 
@@ -332,13 +353,13 @@ class Unapp_Dashboard_Setup {
 	 */
 	private function _customizer_actions() {
 		return array(
-			array(
-				'id'          => 'unapp-import-data',
-				'title'       => esc_html__( 'Add sample content', 'unapp' ),
-				'description' => esc_html__( 'Clicking the button below will add content/sections/settings and recommended plugins to your WordPress installation. Click advanced to customize the import process in the dedicated tab.', 'unapp' ),
-				'check'       => Unapp_Notify_System::check_installed_data(),
-				'help'        => '<a class="button button-primary" id="" href="' . esc_url( admin_url( sprintf( 'themes.php?page=%1$s-dashboard', 'unapp' ) ) ) . '">' . __( 'Import Demo Content', 'unapp' ) . '</a>',
-			),
+//			array(
+//				'id'          => 'unapp-import-data',
+//				'title'       => esc_html__( 'Add sample content', 'unapp' ),
+//				'description' => esc_html__( 'Clicking the button below will add content/sections/settings and recommended plugins to your WordPress installation. Click advanced to customize the import process in the dedicated tab.', 'unapp' ),
+//				'check'       => Unapp_Notify_System::check_installed_data(),
+//				'help'        => '<a class="button button-primary" id="" href="' . esc_url( admin_url( sprintf( 'themes.php?page=%1$s-dashboard', 'unapp' ) ) ) . '">' . __( 'Import Demo Content', 'unapp' ) . '</a>',
+//			),
 			array(
 				'id'          => 'unapp-check-cf7',
 				'title'       => Unapp_Notify_System::plugin_verifier( 'contact-form-7', 'title', 'Contact Form 7', 'verify_cf7' ),
@@ -353,6 +374,13 @@ class Unapp_Dashboard_Setup {
 				'plugin_slug' => 'mailchimp-for-wp',
 				'check'       => defined( 'MC4WP_VERSION' ),
 			),
+            array(
+                'id'          => 'unapp-check-ocdi',
+                'title'       => Unapp_Notify_System::plugin_verifier( 'one-click-demo-import', 'title', 'One Click Demo Import' ),
+                'description' => Unapp_Notify_System::plugin_verifier( 'one-click-demo-import', 'description', 'One Click Demo Import' ),
+                'plugin_slug' => 'one-click-demo-import',
+                'check'       => defined( 'PT_OCDI_VERSION' ),
+            ),
 		);
 	}
 
@@ -390,19 +418,19 @@ class Unapp_Dashboard_Setup {
 					),
 				),
 			),
-			array(
-				'id'      => 'epsilon-demo',
-				'title'   => esc_html__( 'Demo Content', 'unapp' ),
-				'type'    => 'demos',
-				'hidden'  => false,
-				'content' => array(
-					'title'          => esc_html__( 'Install your demo content', 'unapp' ),
-					'titleAlternate' => esc_html__( 'Demo content already installed', 'unapp' ),
-					'paragraph'      => esc_html__( 'Since Unapp is a versatile theme we provided a few sample demo styles for you, please choose one from the following pages so you will have to work as little as you should. Click on the style and press next!', 'unapp' ),
-					'check'          => Unapp_Notify_System::check_installed_data(),
-					'demos'          => get_template_directory() . '/inc/customizer/demo/demo.json',
-				),
-			),
+//			array(
+//				'id'      => 'epsilon-demo',
+//				'title'   => esc_html__( 'Demo Content', 'unapp' ),
+//				'type'    => 'demos',
+//				'hidden'  => false,
+//				'content' => array(
+//					'title'          => esc_html__( 'Install your demo content', 'unapp' ),
+//					'titleAlternate' => esc_html__( 'Demo content already installed', 'unapp' ),
+//					'paragraph'      => esc_html__( 'Since Unapp is a versatile theme we provided a few sample demo styles for you, please choose one from the following pages so you will have to work as little as you should. Click on the style and press next!', 'unapp' ),
+//					'check'          => Unapp_Notify_System::check_installed_data(),
+//					'demos'          => get_template_directory() . '/inc/customizer/demo/demo.json',
+//				),
+//			),
 			array(
 				'id'      => 'epsilon-actions',
 				'title'   => esc_html__( 'Actions', 'unapp' ),

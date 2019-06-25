@@ -68,19 +68,27 @@ $id = '' != $fields['section_id'] ? $fields['section_id'] : Unapp_Helper::genera
                             <?php
                             break;
                         default:
+                            if( $portfolio['image_align'] == 'right' ){
+                                $pushClass = 'col-md-push-12';
+                                $pullClass = 'col-md-pull-12';
+                            }else{
+                                $pushClass = '';
+                                $pullClass = '';
+                            }
+
                             ?>
                             <div class="col-md-12">
                                 <div class="work-flex">
                                     <div class="half animate-box">
                                         <div class="row no-gutters">
-                                            <div class="col-md-12 col-md-push-12 no-gutters">
+                                            <div class="col-md-12 no-gutters <?php echo esc_attr( $pushClass ) ?>">
                                                 <a href="<?php echo esc_url( $portfolio['url'] ) ?>" class="work-img" style="background-image: url(<?php echo esc_url( $portfolio['featured_image'] ) ?>)"></a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="half animate-box">
                                         <div class="row no-gutters">
-                                            <div class="col-md-12 col-md-pull-12 no-gutters">
+                                            <div class="col-md-12 no-gutters <?php echo esc_attr( $pullClass ) ?>">
                                                 <div class="display-t desc">
                                                     <div class="display-tc">
                                                         <h2><a href="<?php echo esc_url( $portfolio['url'] ) ?>"><?php echo esc_html( $portfolio['title'] ) ?></a></h2>

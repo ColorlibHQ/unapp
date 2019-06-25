@@ -13,8 +13,8 @@ $id = '' != $fields['section_id'] ? $fields['section_id'] : Unapp_Helper::genera
 
 ?>
 
-<section class="colorlib-section"  data-customizer-section-id="unapp_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-    <div id="<?php echo $id ?>" data-stellar-background-ratio="0.5" <?php $attr_helper->generate_attributes( $parent_attr ); ?> >
+<section class="colorlib-section" data-customizer-section-id="unapp_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+    <div id="<?php echo $id ?>" <?php $attr_helper->generate_attributes( $parent_attr ); ?> >
 
         <?php $attr_helper->generate_color_overlay(); ?>
 

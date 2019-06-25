@@ -41,13 +41,13 @@ $id = '' != $fields['section_id'] ? $fields['section_id'] : Unapp_Helper::genera
                     </div>
                     <div class="col-md-<?php print $section_content_col; ?> animate-box" data-animate-effect="<?php echo esc_attr( $fields[ 'about_text_animate' ] ); ?>">
                         <h2><?php print $fields['about_title']; ?></h2>
-                        <p><?php print $fields['about_text']; ?></p>
+                        <p><?php echo wp_kses_post( $fields['about_text'] ); ?></p>
                     </div>
 				<?php } else {
 					?>
                     <div class="col-md-<?php print $section_content_col; ?> animate-box" data-animate-effect="<?php echo esc_attr( $fields[ 'about_text_animate' ] ); ?>">
                         <h2><?php print $fields['about_title']; ?></h2>
-                        <p><?php print $fields['about_text']; ?></p>
+                        <p><?php echo wp_kses_post( $fields['about_text'] ); ?></p>
                     </div>
                     <div class="col-md-6 animate-box" data-animate-effect="<?php echo esc_attr( $fields[ 'about_image_animate' ] ); ?>">
                         <div class="video colorlib-video" style="background-image: url(<?php echo esc_url( $fields[ 'about_image' ] ); ?>);">

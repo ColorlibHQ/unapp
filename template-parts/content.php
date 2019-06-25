@@ -25,16 +25,8 @@
 		) );
 		?>
 	</article>
-<?php else :
-	$layout = Unapp_Helper::get_layout();
-	if( 'right-sidebar' === $layout['type'] ){
-	    $colClass = 'col-md-6';
-    }else{
-		$colClass = 'col-md-4';
-    }
-
-    ?>
-<div class="<?php echo esc_attr( $colClass ) ?> animate-box">
+<?php else : ?>
+<div class="col-md-4 animate-box">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<?php
 		if( has_post_thumbnail() ){

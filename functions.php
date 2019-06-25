@@ -110,7 +110,7 @@ if( ! function_exists( 'unapp_setup' ) ) {
 			'custom-header',
 			array(
 				'width'              => 1920,
-				'default-image'      => '',
+				'default-image'      => get_template_directory_uri() . '/assets/images/00_header_01.jpg',
 				'height'             => 600,
 				'flex-height'        => true,
 				'flex-width'         => true,
@@ -266,19 +266,11 @@ require get_parent_theme_file_path() . '/inc/unapp_functions.php';
 // Require theme custom widget
 require get_parent_theme_file_path() . '/inc/widget/widget_setting.php';
 
-// Require theme dynamic css
-require get_parent_theme_file_path() . '/inc/dynamiccss.php';
+// Require theme Demo Data
+require get_parent_theme_file_path() . '/inc/demo-data/demo-import.php';
 
 // Require Epsilon Cutomizer API
 require get_parent_theme_file_path() . '/inc/class-unapp-autoloader.php';
 if( class_exists( 'Epsilon_Framework' ) ){
 	$unapp = new Unapp();
 }
-
-
-
-// Admin Enqueue Style
-function unapp_admin_style() {
-	wp_enqueue_style( 'custom_wp_admin_css', get_template_directory_uri() . '/assets/css/admin-style.css', false, '1.0.0' );
-}
-add_action( 'admin_enqueue_scripts', 'unapp_admin_style' );

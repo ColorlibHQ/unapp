@@ -7,11 +7,11 @@ $id = '' != $fields['section_id'] ? $fields['section_id'] : Unapp_Helper::genera
 
 ?>
 
-<div id="<?php echo $id ?>" class="colorlib-featured" data-customizer-section-id="unapp_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+<div id="<?php echo $id ?>" class="colorlib-featured" data-customizer-section-id="unapp_repeatable_section" data-saection="<?php echo esc_attr( $section_id ); ?>">
 	<?php echo wp_kses( Unapp_Helper::generate_pencil( 'Unapp_Repeatable_Sections', 'slider' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
     <div class="row animate-box" data-animate-effect="<?php echo esc_attr( $fields[ 'slider_animate' ] ); ?>">
 		<div class="featured-wrap">
-			<div class="unapp_slider">
+			<div class="unapp_slider owl-carousel">
                 <?php
                 foreach ( $fields['slider'] as $key => $value ){
                 ?>

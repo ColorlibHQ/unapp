@@ -18,9 +18,8 @@ $span      = 12 / absint( $fields['counter_column_group'] );
 $id = '' != $fields['section_id'] ? $fields['section_id'] : Unapp_Helper::generate_section_id( 'counters' );
 
 ?>
-<section class="colorlib-section" data-stellar-background-ratio="0.5" <?php $attr_helper->generate_attributes( $parent_attr ); ?> data-customizer-section-id="unapp_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-
-    <div data-stellar-ratio="2" id="<?php echo $id ?>" <?php $attr_helper->generate_attributes( $parent_attr_2 ); ?>>
+<section class="colorlib-section" <?php $attr_helper->generate_attributes( $parent_attr ); ?> data-customizer-section-id="unapp_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+    <div id="<?php echo $id ?>" <?php $attr_helper->generate_attributes( $parent_attr_2 ); ?>>
 
         <?php if ( '' != $fields['counter_background_video'] ): ?>
             <a class="player" data-property="{videoURL:'<?php echo esc_url( $fields[ 'counter_background_video' ] ); ?>',containment:'#<?php echo $id ?>', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default'}"></a>

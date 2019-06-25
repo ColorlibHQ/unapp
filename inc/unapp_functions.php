@@ -351,17 +351,19 @@ add_filter( 'show_epsilon_quickie_bar', function (){
     return false;
 } );
 
+// Set contact form 7 default form template
+function unapp_contact7_form_content( $template, $prop ) {
 
-// theme option callback
-function unapp_opt( $id = null, $default = '' ) {
+    if ( 'form' == $prop ) {
 
-	$opt = get_theme_mod( $id, $default );
+        $template =
+            '<div class="row form-group"><div class="col-md-6">[text* your-name id:fname class:form-control placeholder "First Name"]</div><div class="col-md-6">[text last-name id:lname class:form-control placeholder "Last Name"]</div></div><div class="row form-group"><div class="col-md-12">[email* your-email id:email class:form-control placeholder "Your email"]</div></div><div class="row form-group"><div class="col-md-12">[text subject id:subject class:form-control placeholder "Your subject of this message"]</div></div><div class="row form-group"><div class="col-md-12">[textarea* message id:message class:form-control placeholder rows:10 cols:30 "Say some thing about us"]</div></div><div class="form-group">[submit class:btn class:btn-primary "Send Message"]</div>';
 
-	$data = '';
+        return $template;
 
-	if( $opt ) {
-		$data = $opt;
-	}
-
-	return $data;
+    } else {
+        return $template;
+    }
 }
+add_filter( 'wpcf7_default_template', 'unapp_contact7_form_content', 10, 2 );
+

@@ -49,7 +49,6 @@ $panels = array(
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
 			'title'          => esc_html__( 'Colors', 'unapp' ),
-			'transport'      => 'postMessage',
 		),
 	),
 	array(
@@ -62,7 +61,6 @@ $panels = array(
 			'title'          => esc_html__( 'Front Page Content', 'unapp' ),
 			'panel'          => 'unapp_panel_content',
 			'hidden'         => true,
-			'transport'      => 'postMessage',
 		),
 	),
 );
