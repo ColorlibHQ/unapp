@@ -1,0 +1,7 @@
+/* Device frame block style for core/image: rounded dark bezel + soft shadow, for app screenshots. */
+.wp-block-image.is-style-device img {
+	border: 10px solid var(--wp--preset--color--contrast, #232323);
+	border-radius: 2rem;
+	box-shadow: var(--wp--preset--shadow--card-strong, 0 28px 56px -20px rgba(48, 49, 51, 0.3));
+	box-sizing: border-box;
+}

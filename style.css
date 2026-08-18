@@ -1,0 +1,50 @@
+/*
+Theme Name: Unapp
+Theme URI: https://colorlib.com/wp/themes/unapp/
+Author: Colorlib
+Author URI: https://colorlib.com
+Description: Unapp is a lightweight, block-based WordPress theme for app and SaaS landing pages. Built for the Site Editor with a full set of patterns — hero, features, pricing, team, stats, portfolio, blog and contact sections — plus section styles and color variations. No page-builder framework, no jQuery, no icon fonts.
+Version: 2.0.0
+Requires at least: 6.6
+Tested up to: 7.0
+Requires PHP: 7.4
+License: GNU General Public License v3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: unapp
+Tags: blog, one-column, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, style-variations, template-editing, threaded-comments, translation-ready
+
+Unapp WordPress Theme, (C) 2018-2026 Colorlib
+Unapp is distributed under the terms of the GNU GPL.
+*/
+
+/*
+ * All visual styling lives in theme.json (global styles), styles/*.json (section
+ * and color variations) and assets/css/*.css (per-block styles loaded on demand
+ * via wp_enqueue_block_style). This file intentionally holds only the theme
+ * header plus the few rules that have no theme.json equivalent.
+ */
+
+/* Post card thumbnails: clip and gently zoom on hover. */
+.wp-block-post-featured-image {
+	overflow: hidden;
+}
+
+.wp-block-post-featured-image img {
+	transition: transform 0.4s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.wp-block-post:hover .wp-block-post-featured-image img {
+		transform: scale(1.03);
+	}
+}
+
+/* Keep phone/app screenshots from stretching in narrow flex columns. */
+.wp-block-image img {
+	height: auto;
+}
+
+/* Buttons placed in a flex row (e.g. the header) must not get squeezed by long menus. */
+.is-layout-flex > .wp-block-buttons {
+	flex-shrink: 0;
+}

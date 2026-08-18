@@ -1,0 +1,29 @@
+/* Checklist block style for core/list: coloured check bullets. */
+.wp-block-list.is-style-checklist {
+	list-style: none;
+	padding-left: 0;
+}
+
+.wp-block-list.is-style-checklist > li {
+	position: relative;
+	padding-left: 2.1em;
+}
+
+.wp-block-list.is-style-checklist > li + li {
+	margin-top: 0.6em;
+}
+
+.wp-block-list.is-style-checklist > li::before {
+	content: "";
+	position: absolute;
+	top: 0.15em;
+	left: 0;
+	width: 1.4em;
+	height: 1.4em;
+	border-radius: 50%;
+	background-color: var(--wp--preset--color--secondary, #4aca85);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 60%;
+}
