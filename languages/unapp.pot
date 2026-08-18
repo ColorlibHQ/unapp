@@ -1,0 +1,1152 @@
+# Copyright (C) 2026 Colorlib
+# This file is distributed under the GNU General Public License v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Unapp 2.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/unapp\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-08-18T14:02:45+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: make-pot.py (Unapp)\n"
+"X-Domain: unapp\n"
+
+#: functions.php:93
+msgid "Landing page sections designed for Unapp: hero, features, pricing, team, stats and more."
+msgstr ""
+
+#: functions.php:100
+msgid "Full page layouts. Insert one into an empty page to start from a complete design."
+msgstr ""
+
+#: functions.php:53
+msgctxt "Block style label"
+msgid "Checklist"
+msgstr ""
+
+#: functions.php:70
+msgctxt "Block style label"
+msgid "Device frame"
+msgstr ""
+
+#: functions.php:92
+msgctxt "Block pattern category"
+msgid "Unapp"
+msgstr ""
+
+#: functions.php:99
+msgctxt "Block pattern category"
+msgid "Pages"
+msgstr ""
+
+#: patterns/blog-posts.php:22
+msgid "News from our blog"
+msgstr ""
+
+#: patterns/blog-posts.php:25
+#: patterns/hidden-blog-heading.php:18
+msgid "Product updates, customer stories and practical tips on running projects with less friction."
+msgstr ""
+
+#: patterns/blog-posts.php:44
+msgid "No posts yet. Publish your first post and it will appear here."
+msgstr ""
+
+#: patterns/blog-posts.php:19
+msgctxt "Section eyebrow label"
+msgid "Blog"
+msgstr ""
+
+#: patterns/blog-posts.php:38
+#: patterns/hidden-posts-grid.php:25
+msgctxt "Post excerpt read more link"
+msgid "Read more"
+msgstr ""
+
+#: patterns/blog-posts.php:53
+msgctxt "Button text"
+msgid "View all posts"
+msgstr ""
+
+#. Pattern title
+#: patterns/blog-posts.php
+#: patterns/hidden-blog-heading.php:15
+msgid "Latest blog posts"
+msgstr ""
+
+#. Pattern description
+#: patterns/blog-posts.php
+msgid "Section intro, a three-column grid of the latest posts and a link to the blog."
+msgstr ""
+
+#: patterns/collaborate.php:17
+msgid "Bright open-plan office with a large shared table"
+msgstr ""
+
+#: patterns/collaborate.php:22
+msgid "Collaborate with your design team in a new way"
+msgstr ""
+
+#: patterns/collaborate.php:25
+msgid "Share boards, leave feedback directly on the canvas and turn decisions into tasks without ever leaving Unapp."
+msgstr ""
+
+#: patterns/collaborate.php:30
+msgid "Unlimited boards and projects"
+msgstr ""
+
+#: patterns/collaborate.php:33
+msgid "Real-time comments and mentions"
+msgstr ""
+
+#: patterns/collaborate.php:36
+msgid "Version history for every file"
+msgstr ""
+
+#: patterns/collaborate.php:19
+msgctxt "Section eyebrow label"
+msgid "Teamwork"
+msgstr ""
+
+#: patterns/collaborate.php:43
+msgctxt "Button text"
+msgid "Start collaborating"
+msgstr ""
+
+#. Pattern title
+#: patterns/collaborate.php
+msgid "Collaborate (image and text)"
+msgstr ""
+
+#. Pattern description
+#: patterns/collaborate.php
+msgid "Media & Text section with a photo, headline, checklist and call-to-action on a soft background."
+msgstr ""
+
+#: patterns/contact.php:39
+msgid "Get in touch"
+msgstr ""
+
+#: patterns/contact.php:42
+msgid "Questions about plans, security or a custom rollout? Our team is happy to help."
+msgstr ""
+
+#: patterns/contact.php:16
+msgctxt "Contact card title"
+msgid "Visit us"
+msgstr ""
+
+#: patterns/contact.php:17
+msgctxt "Contact card address line 1"
+msgid "198 West 21th Street, Suite 721"
+msgstr ""
+
+#: patterns/contact.php:17
+msgctxt "Contact card address line 2"
+msgid "New York, NY 10016"
+msgstr ""
+
+#: patterns/contact.php:21
+msgctxt "Contact card title"
+msgid "Call us"
+msgstr ""
+
+#: patterns/contact.php:22
+msgctxt "Contact card opening hours"
+msgid "Mon–Fri, 9:00–18:00"
+msgstr ""
+
+#: patterns/contact.php:26
+msgctxt "Contact card title"
+msgid "Email us"
+msgstr ""
+
+#: patterns/contact.php:27
+msgctxt "Contact card email note"
+msgid "We reply within one business day"
+msgstr ""
+
+#: patterns/contact.php:36
+msgctxt "Section eyebrow label"
+msgid "Contact"
+msgstr ""
+
+#: patterns/contact.php:78
+msgctxt "Button text"
+msgid "Send us a message"
+msgstr ""
+
+#. Pattern title
+#: patterns/contact.php
+msgid "Contact details"
+msgstr ""
+
+#. Pattern description
+#: patterns/contact.php
+msgid "Section intro and three contact cards (address, phone, email) followed by a call-to-action button. Add a form block from your contact-form plugin below it if needed."
+msgstr ""
+
+#: patterns/cta-subscribe.php:17
+msgid "Already trusted by over 10,000 teams"
+msgstr ""
+
+#: patterns/cta-subscribe.php:20
+msgid "Subscribe to receive product updates and productivity tips straight to your inbox. No spam, unsubscribe any time."
+msgstr ""
+
+#: patterns/cta-subscribe.php:25
+msgctxt "Button text"
+msgid "Subscribe"
+msgstr ""
+
+#. Pattern title
+#: patterns/cta-subscribe.php
+msgid "Call to action with background image"
+msgstr ""
+
+#. Pattern description
+#: patterns/cta-subscribe.php
+msgid "Full-width cover with a tinted photo, headline, supporting text and a subscribe button. Replace the button with a form block from your newsletter plugin if you have one."
+msgstr ""
+
+#: patterns/features.php:77
+msgid "Powerful features, thoughtfully designed"
+msgstr ""
+
+#: patterns/features.php:80
+msgid "Everything you need to plan, track and deliver — on desktop and in your pocket."
+msgstr ""
+
+#: patterns/features.php:100
+msgid "Unapp mobile app showing a body-weight goal chart"
+msgstr ""
+
+#: patterns/features.php:16
+msgctxt "Feature title"
+msgid "Native mobile apps"
+msgstr ""
+
+#: patterns/features.php:17
+msgctxt "Feature description"
+msgid "iOS and Android apps that work offline and sync the moment you are back online."
+msgstr ""
+
+#: patterns/features.php:21
+msgctxt "Feature title"
+msgid "Cloud sync"
+msgstr ""
+
+#: patterns/features.php:22
+msgctxt "Feature description"
+msgid "Every change is saved automatically and mirrored across all of your devices in seconds."
+msgstr ""
+
+#: patterns/features.php:28
+msgctxt "Feature title"
+msgid "Private by design"
+msgstr ""
+
+#: patterns/features.php:29
+msgctxt "Feature description"
+msgid "Granular sharing controls, two-factor authentication and audit logs on every plan."
+msgstr ""
+
+#: patterns/features.php:33
+msgctxt "Feature title"
+msgid "Insightful reports"
+msgstr ""
+
+#: patterns/features.php:34
+msgctxt "Feature description"
+msgid "Understand velocity, workload and progress with analytics built right in."
+msgstr ""
+
+#: patterns/features.php:74
+msgctxt "Section eyebrow label"
+msgid "Features"
+msgstr ""
+
+#. Pattern title
+#: patterns/features.php
+msgid "Features around a phone"
+msgstr ""
+
+#. Pattern description
+#: patterns/features.php
+msgid "Two columns of icon features flanking a mobile app screenshot in a device frame."
+msgstr ""
+
+#: patterns/footer.php:21
+msgid "One calm workspace for planning, files and conversations. Take on your biggest projects and goals with Unapp."
+msgstr ""
+
+#: patterns/footer.php:37
+msgid "Company"
+msgstr ""
+
+#: patterns/footer.php:51
+msgid "Latest posts"
+msgstr ""
+
+#: patterns/footer.php:60
+msgid "Contact"
+msgstr ""
+
+#: patterns/footer.php:63
+msgid "198 West 21th Street, Suite 721"
+msgstr ""
+
+#: patterns/footer.php:63
+msgid "New York, NY 10016"
+msgstr ""
+
+#. translators: 1: current year, 2: site name.
+#: patterns/footer.php:80
+msgid "© %1$s %2$s. All rights reserved."
+msgstr ""
+
+#. translators: %s: link to Colorlib.
+#: patterns/footer.php:92
+msgid "Unapp theme by %s"
+msgstr ""
+
+#: patterns/footer.php:40
+msgctxt "Footer menu link"
+msgid "About"
+msgstr ""
+
+#: patterns/footer.php:41
+msgctxt "Footer menu link"
+msgid "Pricing"
+msgstr ""
+
+#: patterns/footer.php:42
+msgctxt "Footer menu link"
+msgid "Careers"
+msgstr ""
+
+#: patterns/footer.php:43
+msgctxt "Footer menu link"
+msgid "Contact"
+msgstr ""
+
+#. Pattern title
+#. Template part name
+#: patterns/footer.php
+#: theme.json
+msgid "Footer"
+msgstr ""
+
+#. Pattern description
+#: patterns/footer.php
+msgid "Dark four-column footer with brand, links, latest posts, contact details and copyright bar."
+msgstr ""
+
+#: patterns/header.php:30
+msgctxt "Header call-to-action button"
+msgid "Get Premium"
+msgstr ""
+
+#. Pattern title
+#. Template part name
+#: patterns/header.php
+#: theme.json
+msgid "Header"
+msgstr ""
+
+#. Pattern description
+#: patterns/header.php
+msgid "Logo or site title on the left, primary navigation and a call-to-action button on the right."
+msgstr ""
+
+#: patterns/hero.php:17
+msgid "Take on your biggest projects and goals"
+msgstr ""
+
+#: patterns/hero.php:21
+msgid "Unapp brings planning, files and conversations into one calm workspace, so your team ships faster with less back-and-forth."
+msgstr ""
+
+#: patterns/hero.php:38
+msgid "Unapp dashboard showing project analytics and portfolio insights"
+msgstr ""
+
+#: patterns/hero.php:27
+msgctxt "Hero primary button"
+msgid "Get Premium"
+msgstr ""
+
+#: patterns/hero.php:30
+msgctxt "Hero secondary button"
+msgid "See how it works"
+msgstr ""
+
+#. Pattern title
+#: patterns/hero.php
+msgid "Hero with app screenshot"
+msgstr ""
+
+#. Pattern description
+#: patterns/hero.php
+msgid "Full-width gradient hero with headline, two buttons and a large product screenshot anchored to the bottom edge."
+msgstr ""
+
+#: patterns/hidden-404.php:18
+msgid "Page not found"
+msgstr ""
+
+#: patterns/hidden-404.php:21
+msgid "The page you are looking for may have been moved, renamed or never existed. Try a search, or head back to the start."
+msgstr ""
+
+#: patterns/hidden-404.php:27
+msgctxt "Button text"
+msgid "Back to homepage"
+msgstr ""
+
+#. Pattern title
+#: patterns/hidden-404.php
+msgid "404 content"
+msgstr ""
+
+#. Pattern description
+#: patterns/hidden-404.php
+msgid "Big 404, friendly message, search form and a button back home."
+msgstr ""
+
+#. Pattern title
+#: patterns/hidden-blog-heading.php
+msgid "Blog heading"
+msgstr ""
+
+#. Pattern description
+#: patterns/hidden-blog-heading.php
+msgid "Heading and intro shown above the posts grid on the blog home."
+msgstr ""
+
+#. Pattern title
+#: patterns/hidden-comments.php
+msgid "Comments"
+msgstr ""
+
+#. Pattern description
+#: patterns/hidden-comments.php
+msgid "Comments list, pagination and comment form."
+msgstr ""
+
+#. Pattern title
+#: patterns/hidden-post-meta.php
+msgid "Post meta"
+msgstr ""
+
+#. Pattern description
+#: patterns/hidden-post-meta.php
+msgid "Author avatar, name and publish date shown under the post title."
+msgstr ""
+
+#: patterns/hidden-post-tags.php:12
+msgctxt "Prefix before the list of tags on a single post"
+msgid "Tagged: "
+msgstr ""
+
+#. Pattern title
+#: patterns/hidden-post-tags.php
+msgid "Post tags"
+msgstr ""
+
+#. Pattern description
+#: patterns/hidden-post-tags.php
+msgid "Tag list with a translated prefix."
+msgstr ""
+
+#: patterns/hidden-posts-grid.php:40
+msgid "Nothing found. Try a different search term or browse the latest posts from the menu."
+msgstr ""
+
+#. Pattern title
+#: patterns/hidden-posts-grid.php
+msgid "Posts grid (inherits query)"
+msgstr ""
+
+#. Pattern description
+#: patterns/hidden-posts-grid.php
+msgid "Three-column post grid with pagination used by the blog, archive and search templates."
+msgstr ""
+
+#: patterns/hidden-search.php:12
+msgctxt "Search form label"
+msgid "Search"
+msgstr ""
+
+#: patterns/hidden-search.php:12
+msgctxt "Search input placeholder"
+msgid "Search…"
+msgstr ""
+
+#: patterns/hidden-search.php:12
+msgctxt "Search button text"
+msgid "Search"
+msgstr ""
+
+#. Pattern title
+#: patterns/hidden-search.php
+msgid "Search form"
+msgstr ""
+
+#. Pattern description
+#: patterns/hidden-search.php
+msgid "Search form with translated labels."
+msgstr ""
+
+#. Pattern title
+#: patterns/page-about.php
+msgid "About page"
+msgstr ""
+
+#. Pattern description
+#: patterns/page-about.php
+msgid "Company story, team members, key numbers and a call to action. Best used with the \"Page (No Title)\" template."
+msgstr ""
+
+#. Pattern title
+#: patterns/page-home.php
+msgid "Home landing page"
+msgstr ""
+
+#. Pattern description
+#: patterns/page-home.php
+msgid "The complete Unapp landing page: hero, services, collaboration, features, stats, screens, pricing, team, blog, call to action and contact. Best used with the \"Page (No Title)\" template."
+msgstr ""
+
+#. Pattern title
+#: patterns/page-pricing.php
+msgid "Pricing page"
+msgstr ""
+
+#. Pattern description
+#: patterns/page-pricing.php
+msgid "Pricing table, trust stats, newsletter call to action and contact cards. Best used with the \"Page (No Title)\" template."
+msgstr ""
+
+#: patterns/pricing.php:64
+msgid "Simple, transparent pricing"
+msgstr ""
+
+#: patterns/pricing.php:67
+msgid "Start free and upgrade when your team grows. No hidden fees, cancel any time."
+msgstr ""
+
+#: patterns/pricing.php:15
+msgctxt "Pricing plan name"
+msgid "Starter"
+msgstr ""
+
+#: patterns/pricing.php:16
+msgctxt "Pricing plan tagline"
+msgid "For individuals getting started"
+msgstr ""
+
+#: patterns/pricing.php:17
+msgctxt "Pricing plan price"
+msgid "$0"
+msgstr ""
+
+#: patterns/pricing.php:18
+msgctxt "Pricing plan billing period"
+msgid "/ month"
+msgstr ""
+
+#: patterns/pricing.php:20
+msgctxt "Pricing plan feature"
+msgid "3 projects"
+msgstr ""
+
+#: patterns/pricing.php:21
+msgctxt "Pricing plan feature"
+msgid "1 GB storage"
+msgstr ""
+
+#: patterns/pricing.php:22
+msgctxt "Pricing plan feature"
+msgid "Community support"
+msgstr ""
+
+#: patterns/pricing.php:24
+msgctxt "Pricing plan button"
+msgid "Get started"
+msgstr ""
+
+#: patterns/pricing.php:28
+msgctxt "Pricing plan name"
+msgid "Pro"
+msgstr ""
+
+#: patterns/pricing.php:29
+msgctxt "Pricing plan tagline"
+msgid "For growing teams"
+msgstr ""
+
+#: patterns/pricing.php:30
+msgctxt "Pricing plan price"
+msgid "$12"
+msgstr ""
+
+#: patterns/pricing.php:31
+#: patterns/pricing.php:45
+msgctxt "Pricing plan billing period"
+msgid "/ user / month"
+msgstr ""
+
+#: patterns/pricing.php:33
+msgctxt "Pricing plan feature"
+msgid "Unlimited projects"
+msgstr ""
+
+#: patterns/pricing.php:34
+msgctxt "Pricing plan feature"
+msgid "100 GB storage"
+msgstr ""
+
+#: patterns/pricing.php:35
+msgctxt "Pricing plan feature"
+msgid "Priority support"
+msgstr ""
+
+#: patterns/pricing.php:36
+msgctxt "Pricing plan feature"
+msgid "Advanced reports"
+msgstr ""
+
+#: patterns/pricing.php:38
+msgctxt "Pricing plan button"
+msgid "Start free trial"
+msgstr ""
+
+#: patterns/pricing.php:42
+msgctxt "Pricing plan name"
+msgid "Business"
+msgstr ""
+
+#: patterns/pricing.php:43
+msgctxt "Pricing plan tagline"
+msgid "For organisations at scale"
+msgstr ""
+
+#: patterns/pricing.php:44
+msgctxt "Pricing plan price"
+msgid "$29"
+msgstr ""
+
+#: patterns/pricing.php:47
+msgctxt "Pricing plan feature"
+msgid "Everything in Pro"
+msgstr ""
+
+#: patterns/pricing.php:48
+msgctxt "Pricing plan feature"
+msgid "SSO and audit logs"
+msgstr ""
+
+#: patterns/pricing.php:49
+msgctxt "Pricing plan feature"
+msgid "Dedicated success manager"
+msgstr ""
+
+#: patterns/pricing.php:51
+msgctxt "Pricing plan button"
+msgid "Contact sales"
+msgstr ""
+
+#: patterns/pricing.php:61
+msgctxt "Section eyebrow label"
+msgid "Pricing"
+msgstr ""
+
+#. Pattern title
+#: patterns/pricing.php
+msgid "Pricing table"
+msgstr ""
+
+#. Pattern description
+#: patterns/pricing.php
+msgid "Three pricing cards with a highlighted middle plan, feature checklists and call-to-action buttons."
+msgstr ""
+
+#: patterns/screens.php:39
+msgid "A closer look at Unapp"
+msgstr ""
+
+#: patterns/screens.php:42
+msgid "Clean dashboards that surface what matters. Click any screen to enlarge it."
+msgstr ""
+
+#: patterns/screens.php:16
+msgctxt "Gallery caption"
+msgid "Portfolio overview"
+msgstr ""
+
+#: patterns/screens.php:17
+msgctxt "Image alt text"
+msgid "Dashboard with balance history chart and project risk gauge"
+msgstr ""
+
+#: patterns/screens.php:21
+msgctxt "Gallery caption"
+msgid "Analytics and reports"
+msgstr ""
+
+#: patterns/screens.php:22
+msgctxt "Image alt text"
+msgid "Dashboard with analytics widgets and charts"
+msgstr ""
+
+#: patterns/screens.php:26
+msgctxt "Gallery caption"
+msgid "Project timeline"
+msgstr ""
+
+#: patterns/screens.php:27
+msgctxt "Image alt text"
+msgid "Dashboard with project timeline and task list"
+msgstr ""
+
+#: patterns/screens.php:36
+msgctxt "Section eyebrow label"
+msgid "Screens"
+msgstr ""
+
+#. Pattern title
+#: patterns/screens.php
+msgid "App screens gallery"
+msgstr ""
+
+#. Pattern description
+#: patterns/screens.php
+msgid "Section intro and a three-column gallery of product screenshots that open in the built-in lightbox."
+msgstr ""
+
+#: patterns/services.php:44
+msgid "Everything your team needs to move faster"
+msgstr ""
+
+#: patterns/services.php:47
+msgid "From the first idea to the final release, Unapp keeps every project, person and file in sync."
+msgstr ""
+
+#: patterns/services.php:16
+msgctxt "Service title"
+msgid "Real template creation"
+msgstr ""
+
+#: patterns/services.php:17
+msgctxt "Service description"
+msgid "Start every project from proven templates and adapt them to your workflow in minutes."
+msgstr ""
+
+#: patterns/services.php:21
+msgctxt "Service title"
+msgid "Built for collaboration"
+msgstr ""
+
+#: patterns/services.php:22
+msgctxt "Service description"
+msgid "Comment, assign and resolve work together, in real time, from any device."
+msgstr ""
+
+#: patterns/services.php:26
+msgctxt "Service title"
+msgid "Fast by default"
+msgstr ""
+
+#: patterns/services.php:27
+msgctxt "Service description"
+msgid "Instant search, offline mode and background sync keep your team moving."
+msgstr ""
+
+#: patterns/services.php:31
+msgctxt "Service title"
+msgid "Secure at every layer"
+msgstr ""
+
+#: patterns/services.php:32
+msgctxt "Service description"
+msgid "Encryption in transit and at rest, single sign-on and granular permissions."
+msgstr ""
+
+#: patterns/services.php:41
+msgctxt "Section eyebrow label"
+msgid "Why Unapp"
+msgstr ""
+
+#. Pattern title
+#: patterns/services.php
+msgid "Services grid"
+msgstr ""
+
+#. Pattern description
+#: patterns/services.php
+msgid "Section intro followed by four icon cards in a responsive grid."
+msgstr ""
+
+#: patterns/stats.php:16
+msgctxt "Stat label"
+msgid "Active teams"
+msgstr ""
+
+#: patterns/stats.php:20
+msgctxt "Stat label"
+msgid "Tasks completed"
+msgstr ""
+
+#: patterns/stats.php:24
+msgctxt "Stat label"
+msgid "Uptime last 12 months"
+msgstr ""
+
+#: patterns/stats.php:28
+msgctxt "Stat label"
+msgid "Average customer rating"
+msgstr ""
+
+#. Pattern title
+#: patterns/stats.php
+msgid "Stats counter"
+msgstr ""
+
+#. Pattern description
+#: patterns/stats.php
+msgid "Four key numbers on a soft background. Numbers animate upward when scrolled into view (respects reduced-motion)."
+msgstr ""
+
+#: patterns/team.php:40
+msgid "Meet the people behind Unapp"
+msgstr ""
+
+#: patterns/team.php:43
+msgid "A small, senior team that has shipped products used by millions — and answers support tickets personally."
+msgstr ""
+
+#: patterns/team.php:15
+msgctxt "Team member name"
+msgid "Dorothy Murphy"
+msgstr ""
+
+#: patterns/team.php:16
+msgctxt "Team member role"
+msgid "Product Designer"
+msgstr ""
+
+#: patterns/team.php:19
+msgctxt "Team member name"
+msgid "James Carter"
+msgstr ""
+
+#: patterns/team.php:20
+msgctxt "Team member role"
+msgid "Lead Engineer"
+msgstr ""
+
+#: patterns/team.php:23
+msgctxt "Team member name"
+msgid "Aisha Rahman"
+msgstr ""
+
+#: patterns/team.php:24
+msgctxt "Team member role"
+msgid "Head of Growth"
+msgstr ""
+
+#: patterns/team.php:27
+msgctxt "Team member name"
+msgid "Leo Novak"
+msgstr ""
+
+#: patterns/team.php:28
+msgctxt "Team member role"
+msgid "Customer Success"
+msgstr ""
+
+#: patterns/team.php:37
+msgctxt "Section eyebrow label"
+msgid "Our team"
+msgstr ""
+
+#. Pattern title
+#: patterns/team.php
+msgid "Team members"
+msgstr ""
+
+#. Pattern description
+#: patterns/team.php
+msgid "Four team members with round portraits, roles and social links."
+msgstr ""
+
+#. Theme Name of the theme
+#: style.css
+msgid "Unapp"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://colorlib.com/wp/themes/unapp/"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Unapp is a lightweight, block-based WordPress theme for app and SaaS landing pages. Built for the Site Editor with a full set of patterns — hero, features, pricing, team, stats, portfolio, blog and contact sections — plus section styles and color variations. No page-builder framework, no jQuery, no icon fonts."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Colorlib"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://colorlib.com"
+msgstr ""
+
+#. Color name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Base"
+msgstr ""
+
+#. Color name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Contrast"
+msgstr ""
+
+#. Color name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Primary"
+msgstr ""
+
+#. Color name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Secondary"
+msgstr ""
+
+#. Color name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Accent"
+msgstr ""
+
+#. Color name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Surface"
+msgstr ""
+
+#. Color name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Muted"
+msgstr ""
+
+#. Color name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Border"
+msgstr ""
+
+#. Color name
+#. Style variation name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/section-dark.json
+#: styles/sunset.json
+msgid "Dark"
+msgstr ""
+
+#. Gradient name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Primary to Accent"
+msgstr ""
+
+#. Gradient name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Secondary to Accent"
+msgstr ""
+
+#. Gradient name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Primary overlay"
+msgstr ""
+
+#. Gradient name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Dark overlay"
+msgstr ""
+
+#. Shadow name
+#. Style variation name
+#: theme.json
+#: styles/card.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Card"
+msgstr ""
+
+#. Shadow name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Card strong"
+msgstr ""
+
+#. Shadow name
+#: theme.json
+#: styles/emerald.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Glow"
+msgstr ""
+
+#. Space size name
+#: theme.json
+msgid "1"
+msgstr ""
+
+#. Space size name
+#: theme.json
+msgid "2"
+msgstr ""
+
+#. Space size name
+#: theme.json
+msgid "3"
+msgstr ""
+
+#. Space size name
+#: theme.json
+msgid "4"
+msgstr ""
+
+#. Space size name
+#: theme.json
+msgid "5"
+msgstr ""
+
+#. Space size name
+#: theme.json
+msgid "6"
+msgstr ""
+
+#. Space size name
+#: theme.json
+msgid "7"
+msgstr ""
+
+#. Font size name
+#: theme.json
+msgid "Small"
+msgstr ""
+
+#. Font size name
+#: theme.json
+msgid "Medium"
+msgstr ""
+
+#. Font size name
+#: theme.json
+msgid "Large"
+msgstr ""
+
+#. Font size name
+#: theme.json
+msgid "Extra Large"
+msgstr ""
+
+#. Font size name
+#: theme.json
+msgid "2X Large"
+msgstr ""
+
+#. Font size name
+#: theme.json
+msgid "3X Large"
+msgstr ""
+
+#. Font family name
+#: theme.json
+msgid "Nunito"
+msgstr ""
+
+#. Font family name
+#: theme.json
+msgid "Poppins"
+msgstr ""
+
+#. Font family name
+#: theme.json
+msgid "System"
+msgstr ""
+
+#. Custom template name
+#: theme.json
+msgid "Page (No Title)"
+msgstr ""
+
+#. Style variation name
+#: styles/emerald.json
+msgid "Emerald"
+msgstr ""
+
+#. Style variation name
+#: styles/midnight.json
+msgid "Midnight"
+msgstr ""
+
+#. Style variation name
+#: styles/section-gradient.json
+msgid "Gradient"
+msgstr ""
+
+#. Style variation name
+#: styles/section-soft.json
+msgid "Soft background"
+msgstr ""
+
+#. Style variation name
+#: styles/sunset.json
+msgid "Sunset"
+msgstr ""
