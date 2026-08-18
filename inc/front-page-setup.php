@@ -72,6 +72,22 @@ function unapp_get_pattern_markup( $slug, $depth = 0 ) {
 function unapp_setup_front_page() {
 	$state = get_option( UNAPP_SETUP_OPTION, array() );
 
+	// Pages need an author even when this runs without a logged-in user (WP-CLI, cron):
+	// fall back to the first administrator.
+	$author_id = get_current_user_id();
+	if ( ! $author_id ) {
+		$admins    = get_users(
+			array(
+				'role'    => 'administrator',
+				'number'  => 1,
+				'orderby' => 'ID',
+				'order'   => 'ASC',
+				'fields'  => 'ID',
+			)
+		);
+		$author_id = $admins ? (int) $admins[0] : 0;
+	}
+
 	// The theme's own markup is trusted; keep kses from mangling block markup when
 	// this runs without a logged-in user (WP-CLI, cron).
 	$kses_active = has_filter( 'content_save_pre', 'wp_filter_post_kses' );
@@ -96,6 +112,7 @@ function unapp_setup_front_page() {
 				'post_status'    => 'publish',
 				'post_title'     => _x( 'Home', 'Title of the front page created on activation', 'unapp' ),
 				'post_name'      => 'home',
+				'post_author'    => $author_id,
 				'post_content'   => $content,
 				'comment_status' => 'closed',
 				'ping_status'    => 'closed',
@@ -127,6 +144,7 @@ function unapp_setup_front_page() {
 				'post_status'    => 'publish',
 				'post_title'     => _x( 'Blog', 'Title of the posts page created on activation', 'unapp' ),
 				'post_name'      => 'blog',
+				'post_author'    => $author_id,
 				'post_content'   => '',
 				'comment_status' => 'closed',
 				'ping_status'    => 'closed',
