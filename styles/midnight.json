@@ -1,0 +1,138 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Midnight",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"color": "#12141c",
+					"name": "Base"
+				},
+				{
+					"slug": "contrast",
+					"color": "#f3f4f8",
+					"name": "Contrast"
+				},
+				{
+					"slug": "primary",
+					"color": "#8b9df0",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"color": "#4fd391",
+					"name": "Secondary"
+				},
+				{
+					"slug": "accent",
+					"color": "#5aa7f0",
+					"name": "Accent"
+				},
+				{
+					"slug": "surface",
+					"color": "#1a1d28",
+					"name": "Surface"
+				},
+				{
+					"slug": "muted",
+					"color": "#a3a9b8",
+					"name": "Muted"
+				},
+				{
+					"slug": "border",
+					"color": "#2b3040",
+					"name": "Border"
+				},
+				{
+					"slug": "dark",
+					"color": "#0b0d13",
+					"name": "Dark"
+				}
+			],
+			"gradients": [
+				{
+					"slug": "primary-to-accent",
+					"gradient": "linear-gradient(135deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--accent) 100%)",
+					"name": "Primary to Accent"
+				},
+				{
+					"slug": "secondary-to-accent",
+					"gradient": "linear-gradient(135deg, var(--wp--preset--color--secondary) 0%, var(--wp--preset--color--accent) 100%)",
+					"name": "Secondary to Accent"
+				},
+				{
+					"slug": "primary-overlay",
+					"gradient": "linear-gradient(135deg, rgba(139,157,240,0.9) 0%, rgba(90,167,240,0.85) 100%)",
+					"name": "Primary overlay"
+				},
+				{
+					"slug": "dark-overlay",
+					"gradient": "linear-gradient(180deg, rgba(35,35,35,0.55) 0%, rgba(35,35,35,0.85) 100%)",
+					"name": "Dark overlay"
+				}
+			]
+		},
+		"shadow": {
+			"presets": [
+				{
+					"slug": "card",
+					"shadow": "0 12px 32px -8px rgba(0,0,0,0.45)",
+					"name": "Card"
+				},
+				{
+					"slug": "card-strong",
+					"shadow": "0 28px 56px -20px rgba(0,0,0,0.6)",
+					"name": "Card strong"
+				},
+				{
+					"slug": "glow",
+					"shadow": "0 24px 64px -24px rgba(139,157,240,0.55)",
+					"name": "Glow"
+				}
+			]
+		}
+	},
+	"styles": {
+		"elements": {
+			"button": {
+				":hover": {
+					"color": {
+						"background": "var:preset|color|primary",
+						"text": "var:preset|color|base"
+					}
+				},
+				":focus": {
+					"color": {
+						"background": "var:preset|color|primary",
+						"text": "var:preset|color|base"
+					}
+				},
+				":active": {
+					"color": {
+						"background": "var:preset|color|primary",
+						"text": "var:preset|color|base"
+					}
+				}
+			}
+		},
+		"blocks": {
+			"core/button": {
+				"variations": {
+					"outline": {
+						":hover": {
+							"color": {
+								"background": "var:preset|color|primary",
+								"text": "var:preset|color|base"
+							},
+							"border": {
+								"color": "var:preset|color|primary"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

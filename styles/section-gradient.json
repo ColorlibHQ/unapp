@@ -1,0 +1,47 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Gradient",
+	"slug": "section-gradient",
+	"blockTypes": [
+		"core/group",
+		"core/columns",
+		"core/column"
+	],
+	"styles": {
+		"color": {
+			"gradient": "var:preset|gradient|primary-to-accent",
+			"text": "var:preset|color|base"
+		},
+		"css": "& { --wp--preset--color--muted: rgba(255,255,255,0.8); --wp--preset--color--border: rgba(255,255,255,0.2); }",
+		"elements": {
+			"heading": {
+				"color": {
+					"text": "var:preset|color|base"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "var:preset|color|base"
+				},
+				":hover": {
+					"color": {
+						"text": "var:preset|color|base"
+					}
+				}
+			},
+			"button": {
+				"color": {
+					"background": "var:preset|color|base",
+					"text": "var:preset|color|primary"
+				},
+				":hover": {
+					"color": {
+						"background": "var:preset|color|contrast",
+						"text": "var:preset|color|base"
+					}
+				}
+			}
+		}
+	}
+}
