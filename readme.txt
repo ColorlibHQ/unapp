@@ -29,11 +29,12 @@ Unapp is a modern, block-based WordPress theme for presenting an app, SaaS produ
 
 1. In your WordPress dashboard go to Appearance → Themes → Add New → Upload Theme.
 2. Upload the zip file, click Install Now, then Activate.
-3. Your front page immediately shows the Unapp landing page. Open Appearance → Editor to change texts, images, colors and sections.
+3. On a site without a static front page Unapp immediately creates a "Home" page (the landing page, template "Page (No Title)") and a "Blog" page and assigns them under Settings → Reading. Both are ordinary pages: edit the front page like any other page, or open Appearance → Editor for the header, footer, colors and templates.
+4. If your site already has a static front page it is left untouched; a notice on the Dashboard/Themes screen offers a one-click "Set up the Unapp front page" instead. You can always switch back under Settings → Reading.
 
-**Using your own page as the front page**
+**Building the landing page by hand**
 
-The theme ships a Front Page template so the landing page appears without any setup. If you would rather use a page you created (Settings → Reading → A static page), open Appearance → Editor → Templates → Front Page, delete the pattern sections and insert a Post Content block — or simply insert the "Home landing page" pattern into your page and set that page's template to "Page (No Title)".
+Create a page, choose the "Home landing page" pattern from the pattern modal (Patterns → Pages), set the template to "Page (No Title)" and select it under Settings → Reading → A static page. Developers can disable the automatic setup with `add_filter( 'unapp_auto_setup_front_page', '__return_false' );`.
 
 == Frequently Asked Questions ==
 
@@ -53,6 +54,7 @@ Yes. Every section is a pattern: open the block inserter, choose the Patterns ta
 
 = 2.0.0 - 2026-08-18 =
 * Complete rewrite as a block theme (Full Site Editing) — see CHANGELOG.md for details.
+* Front page and blog page are created and assigned automatically on activation (or via a one-click notice).
 
 = 1.0 =
 * Initial release (classic theme).

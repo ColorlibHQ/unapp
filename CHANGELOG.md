@@ -15,9 +15,10 @@ Complete rewrite as a WordPress block theme (Full Site Editing). Nothing from 1.
 
 ### Added
 - `theme.json` v3: palette (base, contrast, primary, secondary, accent, surface, muted, border, dark), gradients, shadow presets, spacing scale, fluid font sizes, self-hosted Poppins + Nunito font faces, global element and block styles, `Page (No Title)` template.
-- Block templates: `index`, `home`, `front-page`, `single`, `page`, `page-no-title`, `archive`, `search`, `404`; template parts `header` and `footer` (backed by PHP patterns for translation).
+- Block templates: `index`, `home`, `single`, `page`, `page-no-title`, `archive`, `search`, `404`; template parts `header` and `footer` (backed by PHP patterns for translation).
 - Section patterns: hero, services, collaborate (media & text), features around a phone, stats counter, app screens gallery, pricing table, team, latest blog posts, call to action, contact details.
 - Page starters: Home landing page, About page, Pricing page.
+- `inc/front-page-setup.php`: on activation creates a Home page (expanded Home landing page pattern, Page (No Title) template) and a Blog page and assigns them in Settings → Reading — automatically when no static front page exists, otherwise via a one-click admin notice; idempotent, filterable (`unapp_auto_setup_front_page`).
 - Hidden template partials: posts grid, blog heading, search form, 404 content, post meta, post tags, comments.
 - Section styles (Group/Columns/Column/Cover): Card, Soft background, Dark, Gradient. Block styles: List → Checklist, Image → Device frame.
 - Color variations: Emerald, Sunset, Midnight.
@@ -26,7 +27,9 @@ Complete rewrite as a WordPress block theme (Full Site Editing). Nothing from 1.
 - `readme.txt` (WordPress.org format), `README.md`, `languages/unapp.pot`, `.gitignore`.
 
 ### Changed
+- Palette tuned for WCAG AA: primary `#5468d8`, accent `#2a74ca` (≥4.7:1 on white); buttons use dark text on the green secondary (7.5:1 instead of 2.1:1); Emerald/Sunset variations adjusted likewise; white text on gradients raised to 92% opacity.
 - Version bumped to 2.0.0; requires WordPress 6.6+ and PHP 7.4+; tested up to WordPress 7.0.
+- Styled the password-protected post form; comment content is constrained (headings scaled down, tables/pre scroll, flex item min-width 0); mobile navigation overlay is left-aligned with proper padding.
 - Screenshot regenerated from the new landing page.
 
 ## 1.0

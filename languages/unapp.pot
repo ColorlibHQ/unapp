@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-18T14:02:45+00:00\n"
+"POT-Creation-Date: 2026-08-18T15:36:30+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: make-pot.py (Unapp)\n"
 "X-Domain: unapp\n"
@@ -40,6 +40,71 @@ msgstr ""
 #: functions.php:99
 msgctxt "Block pattern category"
 msgid "Pages"
+msgstr ""
+
+#: inc/front-page-setup.php:90
+msgid "The \"Home landing page\" pattern could not be loaded."
+msgstr ""
+
+#: inc/front-page-setup.php:227
+#: inc/front-page-setup.php:244
+msgid "You are not allowed to change the front page."
+msgstr ""
+
+#: inc/front-page-setup.php:277
+msgid "Unapp is ready."
+msgstr ""
+
+#: inc/front-page-setup.php:278
+msgid "A \"Home\" page with the Unapp landing page and a \"Blog\" page were created and assigned in Settings → Reading. Everything on the front page is editable as normal page content."
+msgstr ""
+
+#: inc/front-page-setup.php:280
+msgid "View front page"
+msgstr ""
+
+#: inc/front-page-setup.php:282
+msgid "Edit front page"
+msgstr ""
+
+#: inc/front-page-setup.php:284
+msgid "Open Site Editor"
+msgstr ""
+
+#: inc/front-page-setup.php:289
+msgid "Unapp could not create the front page automatically. Create a page, insert the \"Home landing page\" pattern and choose it under Settings → Reading."
+msgstr ""
+
+#: inc/front-page-setup.php:306
+msgid "Thanks for choosing Unapp!"
+msgstr ""
+
+#. translators: %s: title of the current front page.
+#: inc/front-page-setup.php:309
+msgid "Your site already uses \"%s\" as its front page, so it was left untouched. Unapp can create a \"Home\" page with its landing-page design and make it the front page — you can switch back any time under Settings → Reading."
+msgstr ""
+
+#. translators: %s: title of the current front page.
+#: inc/front-page-setup.php:310
+msgid "Unapp can create a \"Home\" page with its landing-page design and a \"Blog\" page, and set them under Settings → Reading."
+msgstr ""
+
+#: inc/front-page-setup.php:312
+msgid "Set up the Unapp front page"
+msgstr ""
+
+#: inc/front-page-setup.php:314
+msgid "Not now"
+msgstr ""
+
+#: inc/front-page-setup.php:97
+msgctxt "Title of the front page created on activation"
+msgid "Home"
+msgstr ""
+
+#: inc/front-page-setup.php:128
+msgctxt "Title of the posts page created on activation"
+msgid "Blog"
 msgstr ""
 
 #: patterns/blog-posts.php:22

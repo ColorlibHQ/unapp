@@ -6,7 +6,7 @@ Unapp is a lightweight WordPress **block theme** for app, SaaS and startup landi
 
 ## Highlights
 
-- **Complete landing page on activation** – gradient hero with product screenshot, services grid, image & text, features around a phone, animated stats, screenshot gallery (core lightbox), pricing table, team, latest posts, call to action and contact cards.
+- **Complete landing page on activation** – a real "Home" page (editable page content, *Page (No Title)* template) and a "Blog" page are created and assigned in Settings → Reading; existing front pages are never overridden (a one-click notice is shown instead). Gradient hero with product screenshot, services grid, image & text, features around a phone, animated stats, screenshot gallery (core lightbox), pricing table, team, latest posts, call to action and contact cards.
 - **14 patterns + 3 page starters** (Home, About, Pricing) — every section is reusable on any page.
 - **Section styles** for Group blocks: Card, Soft background, Dark, Gradient. **Block styles**: Checklist (List), Device frame (Image).
 - **Color variations**: default, Emerald, Sunset, Midnight (dark).
@@ -25,7 +25,8 @@ unapp/
 ├── style.css            theme header + a few rules theme.json can't express
 ├── theme.json           palette, gradients, shadows, spacing, fonts, global styles, templates
 ├── functions.php        block styles, pattern categories, lazy counter script
-├── templates/           index, home, front-page, single, page, page-no-title, archive, search, 404
+├── inc/front-page-setup.php  Home/Blog page creation + Reading settings on activation
+├── templates/           index, home, single, page, page-no-title, archive, search, 404
 ├── parts/               header, footer (each references a PHP pattern for i18n)
 ├── patterns/            section patterns, page starters and hidden template partials
 ├── styles/              section styles (blockTypes) and color variations
@@ -45,7 +46,7 @@ unapp/
 
 ## Front page behaviour
 
-`templates/front-page.html` renders the landing page regardless of the Reading settings, so a fresh install looks finished. To use your own page as the front page, edit the Front Page template and replace the pattern sections with a Post Content block, or insert the *Home landing page* pattern into a page using the *Page (No Title)* template.
+There is deliberately **no `front-page.html`**. On activation `inc/front-page-setup.php` creates a *Home* page whose content is the fully expanded "Home landing page" pattern (template *Page (No Title)*) plus a *Blog* page, and sets `show_on_front`, `page_on_front`, `page_for_posts`. It only does this automatically when the site has no static front page; otherwise an admin notice offers a one-click setup. The run is recorded in the `unapp_front_page_setup` option and never repeated. Disable with `add_filter( 'unapp_auto_setup_front_page', '__return_false' )`.
 
 ## Development
 
