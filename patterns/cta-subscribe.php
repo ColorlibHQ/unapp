@@ -16,8 +16,8 @@
 	<!-- wp:heading {"textAlign":"center","textColor":"base"} -->
 	<h2 class="wp-block-heading has-text-align-center has-base-color has-text-color"><?php esc_html_e( 'Already trusted by over 10,000 teams', 'unapp' ); ?></h2>
 	<!-- /wp:heading -->
-	<!-- wp:paragraph {"align":"center","style":{"color":{"text":"rgba(255,255,255,0.85)"}},"fontSize":"large"} -->
-	<p class="has-text-align-center has-text-color has-large-font-size" style="color:rgba(255,255,255,0.85)"><?php esc_html_e( 'Subscribe to receive product updates and productivity tips straight to your inbox. No spam, unsubscribe any time.', 'unapp' ); ?></p>
+	<!-- wp:paragraph {"align":"center","textColor":"base","fontSize":"large"} -->
+	<p class="has-text-align-center has-base-color has-text-color has-large-font-size"><?php esc_html_e( 'Subscribe to receive product updates and productivity tips straight to your inbox. No spam, unsubscribe any time.', 'unapp' ); ?></p>
 	<!-- /wp:paragraph -->
 	<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
 	<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">

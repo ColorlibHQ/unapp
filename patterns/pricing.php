@@ -80,16 +80,16 @@ $unapp_plans = array(
 				<!-- wp:heading {"level":3,"fontSize":"large"} -->
 				<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_plan['name'] ); ?></h3>
 				<!-- /wp:heading -->
-				<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.8)"}},"fontSize":"small"} -->
-				<p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.8)"><?php echo esc_html( $unapp_plan['tagline'] ); ?></p>
+				<!-- wp:paragraph {"fontSize":"small"} -->
+				<p class="has-small-font-size"><?php echo esc_html( $unapp_plan['tagline'] ); ?></p>
 				<!-- /wp:paragraph -->
 				<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"bottom"}} -->
 				<div class="wp-block-group">
 					<!-- wp:paragraph {"style":{"typography":{"fontWeight":"600","lineHeight":"1"}},"fontSize":"xx-large","fontFamily":"heading"} -->
 					<p class="has-heading-font-family has-xx-large-font-size" style="font-weight:600;line-height:1"><?php echo esc_html( $unapp_plan['price'] ); ?></p>
 					<!-- /wp:paragraph -->
-					<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.8)"}},"fontSize":"small"} -->
-					<p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.8)"><?php echo esc_html( $unapp_plan['period'] ); ?></p>
+					<!-- wp:paragraph {"fontSize":"small"} -->
+					<p class="has-small-font-size"><?php echo esc_html( $unapp_plan['period'] ); ?></p>
 					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->

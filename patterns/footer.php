@@ -17,8 +17,8 @@
 		<!-- wp:column {"width":"34%"} -->
 		<div class="wp-block-column" style="flex-basis:34%">
 			<!-- wp:site-title {"level":0,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}}} /-->
-			<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.7)"}}} -->
-			<p class="has-text-color" style="color:rgba(255,255,255,0.7)"><?php esc_html_e( 'One calm workspace for planning, files and conversations. Take on your biggest projects and goals with Unapp.', 'unapp' ); ?></p>
+			<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.75)"}}} -->
+			<p class="has-text-color" style="color:rgba(255,255,255,0.75)"><?php esc_html_e( 'One calm workspace for planning, files and conversations. Take on your biggest projects and goals with Unapp.', 'unapp' ); ?></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:social-links {"iconColor":"base","iconColorValue":"#ffffff","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
 			<ul class="wp-block-social-links has-icon-color is-style-logos-only">
@@ -59,11 +59,11 @@
 			<!-- wp:heading {"level":4,"fontSize":"medium"} -->
 			<h4 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Contact', 'unapp' ); ?></h4>
 			<!-- /wp:heading -->
-			<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.7)"}}} -->
-			<p class="has-text-color" style="color:rgba(255,255,255,0.7)"><?php esc_html_e( '198 West 21th Street, Suite 721', 'unapp' ); ?><br><?php esc_html_e( 'New York, NY 10016', 'unapp' ); ?></p>
+			<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.75)"}}} -->
+			<p class="has-text-color" style="color:rgba(255,255,255,0.75)"><?php esc_html_e( '198 West 21th Street, Suite 721', 'unapp' ); ?><br><?php esc_html_e( 'New York, NY 10016', 'unapp' ); ?></p>
 			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.7)"}}} -->
-			<p class="has-text-color" style="color:rgba(255,255,255,0.7)"><a href="tel:+1235235598">+1 235 2355 98</a><br><a href="mailto:info@example.com">info@example.com</a></p>
+			<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.75)"}}} -->
+			<p class="has-text-color" style="color:rgba(255,255,255,0.75)"><a href="tel:+1235235598">+1 235 2355 98</a><br><a href="mailto:info@example.com">info@example.com</a></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
@@ -72,8 +72,8 @@
 
 	<!-- wp:group {"align":"wide","style":{"border":{"top":{"color":"rgba(255,255,255,0.15)","width":"1px","style":"solid"}},"spacing":{"padding":{"top":"var:preset|spacing|40"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 	<div class="wp-block-group alignwide" style="border-top-color:rgba(255,255,255,0.15);border-top-style:solid;border-top-width:1px;padding-top:var(--wp--preset--spacing--40)">
-		<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.7)"}},"fontSize":"small"} -->
-		<p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.7)">
+		<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.75)"}},"fontSize":"small"} -->
+		<p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.75)">
 		<?php
 		printf(
 			/* translators: 1: current year, 2: site name. */
@@ -84,8 +84,8 @@
 		?>
 		</p>
 		<!-- /wp:paragraph -->
-		<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.7)"}},"fontSize":"small"} -->
-		<p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.7)">
+		<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.75)"}},"fontSize":"small"} -->
+		<p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.75)">
 		<?php
 		printf(
 			/* translators: %s: link to Colorlib. */

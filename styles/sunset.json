@@ -17,7 +17,7 @@
 				},
 				{
 					"slug": "primary",
-					"color": "#f2664f",
+					"color": "#c9412c",
 					"name": "Primary"
 				},
 				{
@@ -27,7 +27,7 @@
 				},
 				{
 					"slug": "accent",
-					"color": "#d64f7a",
+					"color": "#b93c65",
 					"name": "Accent"
 				},
 				{
@@ -64,7 +64,7 @@
 				},
 				{
 					"slug": "primary-overlay",
-					"gradient": "linear-gradient(135deg, rgba(242,102,79,0.9) 0%, rgba(214,79,122,0.85) 100%)",
+					"gradient": "linear-gradient(135deg, rgba(201,65,44,0.9) 0%, rgba(185,60,101,0.85) 100%)",
 					"name": "Primary overlay"
 				},
 				{
@@ -88,7 +88,7 @@
 				},
 				{
 					"slug": "glow",
-					"shadow": "0 24px 64px -24px rgba(242,102,79,0.55)",
+					"shadow": "0 24px 64px -24px rgba(201,65,44,0.5)",
 					"name": "Glow"
 				}
 			]

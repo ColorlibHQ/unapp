@@ -17,8 +17,8 @@
 	<h1 class="wp-block-heading has-text-align-center has-xxx-large-font-size"><?php esc_html_e( 'Take on your biggest projects and goals', 'unapp' ); ?></h1>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"align":"center","style":{"color":{"text":"rgba(255,255,255,0.85)"}},"fontSize":"large"} -->
-	<p class="has-text-align-center has-text-color has-large-font-size" style="color:rgba(255,255,255,0.85)"><?php esc_html_e( 'Unapp brings planning, files and conversations into one calm workspace, so your team ships faster with less back-and-forth.', 'unapp' ); ?></p>
+	<!-- wp:paragraph {"align":"center","fontSize":"large"} -->
+	<p class="has-text-align-center has-large-font-size"><?php esc_html_e( 'Unapp brings planning, files and conversations into one calm workspace, so your team ships faster with less back-and-forth.', 'unapp' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons {"style":{"spacing":{"blockGap":"var:preset|spacing|30","margin":{"top":"var:preset|spacing|40"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
