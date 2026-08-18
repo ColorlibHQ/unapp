@@ -44,6 +44,354 @@ Unapp is distributed under the terms of the GNU GPL.
 	height: auto;
 }
 
+/* ==========================================================================
+   Post grids (Query Loop)
+   Cards in a row share one height, so meta, titles and "Read more" line up
+   whether or not a post has a featured image.
+   ========================================================================== */
+.wp-block-post-template.is-layout-grid > li {
+	display: flex;
+}
+
+.wp-block-post-template.is-layout-grid > li > .wp-block-group {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+}
+
+.wp-block-post-template.is-layout-grid .wp-block-post-excerpt {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+}
+
+.wp-block-post-template.is-layout-grid .wp-block-post-excerpt__more-text {
+	margin-top: auto;
+	padding-top: 0.75em;
+}
+
+/* Query pagination reads as one control group. */
+.wp-block-query-pagination {
+	gap: 0.4rem;
+}
+
+.wp-block-query-pagination-numbers {
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+.wp-block-query-pagination :is(.page-numbers, .wp-block-query-pagination-previous, .wp-block-query-pagination-next) {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2.5em;
+	padding: 0.45em 0.85em;
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 999px;
+	text-decoration: none;
+	line-height: 1;
+}
+
+.wp-block-query-pagination .page-numbers.dots {
+	min-width: 0;
+	padding-inline: 0.35em;
+	border-color: transparent;
+}
+
+.wp-block-query-pagination .page-numbers.current {
+	background-color: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+}
+
+.wp-block-query-pagination :is(a.page-numbers, a.wp-block-query-pagination-previous, a.wp-block-query-pagination-next):hover {
+	background-color: var(--wp--preset--color--surface);
+	border-color: var(--wp--preset--color--muted);
+}
+
+/* ==========================================================================
+   Content alignment
+   Post content is a full-width constrained container so wide/full blocks can
+   bleed. Core floats legacy left/right aligned direct children to the edge of
+   that container (= the viewport); pull them back to the content column so
+   left, right, center, wide and full stay predictable.
+   ========================================================================== */
+.wp-block-post-content.wp-block-post-content.is-layout-constrained > .alignleft {
+	margin-inline-start: max(0px, calc((100% - var(--wp--style--global--content-size)) / 2));
+}
+
+.wp-block-post-content.wp-block-post-content.is-layout-constrained > .alignright {
+	margin-inline-end: max(0px, calc((100% - var(--wp--style--global--content-size)) / 2));
+}
+
+/* Full-width text containers without their own padding must not touch the viewport edge. */
+.wp-block-post-content > .alignfull.wp-block-columns:not([style*="padding"]),
+.wp-block-post-content > .alignfull.wp-block-group:not(.has-global-padding):not([style*="padding"]),
+.wp-block-post-content > .alignfull.wp-block-gallery > figcaption,
+.wp-block-post-content > .alignfull.wp-block-image > figcaption {
+	padding-left: var(--wp--style--root--padding-left, 1.5rem);
+	padding-right: var(--wp--style--root--padding-right, 1.5rem);
+}
+
+/* Legacy paginated posts (<!--nextpage-->). */
+.post-nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: var(--wp--preset--spacing--50);
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 600;
+}
+
+.post-nav-links .post-page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2.25em;
+	padding: 0.35em 0.6em;
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 999px;
+	text-decoration: none;
+}
+
+.post-nav-links .post-page-numbers.current {
+	background: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+}
+
+/* Classic (freeform) markup has no block gap, so give it the same vertical
+   rhythm as block content. Elements rendered by blocks carry a wp-block-*
+   class and keep using blockGap. */
+:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) :is(h1, h2, h3, h4, h5, h6):not([class*="wp-block-"]) {
+	margin-top: 1.8em;
+	margin-bottom: 0.6em;
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) :is(p, ul, ol, dl, table, pre, blockquote, address, figure, form):not([class*="wp-block-"]) {
+	margin-top: 0;
+	margin-bottom: 1.5em;
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) li > :is(ul, ol) {
+	margin-top: 0.35em;
+	margin-bottom: 0.35em;
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) li {
+	margin-bottom: 0.35em;
+}
+
+/* Consecutive headings stay tight together. */
+:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) :is(h1, h2, h3, h4, h5, h6):not([class*="wp-block-"]) + :is(h1, h2, h3, h4, h5, h6):not([class*="wp-block-"]) {
+	margin-top: 0.8em;
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content) > :first-child {
+	margin-top: 0;
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content) > :last-child {
+	margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Classic (non-block) content: shortcodes, captions, HTML tags
+   Scoped to post/comment content and the editor canvas.
+   ========================================================================== */
+:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) img {
+	max-width: 100%;
+	height: auto;
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) :where(figure) {
+	margin-inline: 0;
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) .aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) img.alignleft,
+:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) .wp-caption.alignleft {
+	float: left;
+	margin: 0.5em 1.5em 1em 0;
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) img.alignright,
+:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) .wp-caption.alignright {
+	float: right;
+	margin: 0.5em 0 1em 1.5em;
+}
+
+/* Classic captions ([caption]) match block captions. */
+.wp-caption {
+	max-width: 100%;
+	margin-bottom: 1.5em;
+}
+
+.wp-caption img {
+	display: block;
+}
+
+.wp-caption-text,
+.gallery-caption {
+	margin-top: 0.5em;
+	color: var(--wp--preset--color--muted);
+	font-size: var(--wp--preset--font-size--small);
+	line-height: 1.5;
+}
+
+/* Classic [gallery] shortcode → responsive grid. */
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+	margin: 1.5em 0;
+}
+
+.gallery-columns-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.gallery-columns-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.gallery-columns-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.gallery-columns-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.gallery-columns-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.gallery-columns-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.gallery-columns-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+.gallery-columns-9 { grid-template-columns: repeat(9, minmax(0, 1fr)); }
+
+.gallery-item {
+	margin: 0;
+	text-align: center;
+}
+
+.gallery-icon img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+/* A single-column classic gallery keeps the image's own proportions. */
+.gallery-columns-1 .gallery-icon img {
+	aspect-ratio: auto;
+}
+
+@media (max-width: 600px) {
+	.gallery-columns-4,
+	.gallery-columns-5,
+	.gallery-columns-6,
+	.gallery-columns-7,
+	.gallery-columns-8,
+	.gallery-columns-9 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+/* Classic blockquote (block quotes are styled by theme.json). */
+:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) blockquote:not([class*="wp-block-"]):not(.wp-block-pullquote *) {
+	margin: 1.5em 0;
+	padding-left: var(--wp--preset--spacing--40);
+	border-left: 4px solid var(--wp--preset--color--primary);
+	font-size: var(--wp--preset--font-size--large);
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) blockquote:not([class*="wp-block-"]) cite {
+	display: block;
+	margin-top: 0.5em;
+	color: var(--wp--preset--color--muted);
+	font-size: var(--wp--preset--font-size--small);
+	font-style: normal;
+}
+
+/* Tables — classic and block share the same rhythm. */
+:is(.wp-block-post-content, .wp-block-comment-content) table {
+	width: 100%;
+	margin: 1.5em 0;
+	border-collapse: collapse;
+	font-size: var(--wp--preset--font-size--small);
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content) :is(td, th) {
+	padding: 0.75rem;
+	border: 1px solid var(--wp--preset--color--border);
+	text-align: start;
+	vertical-align: top;
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content) th {
+	font-weight: 600;
+}
+
+/* Preformatted / code — classic tags match the Code block. */
+:is(.wp-block-post-content, .wp-block-comment-content) pre:not([class*="wp-block-"]) {
+	margin: 1.5em 0;
+	padding: var(--wp--preset--spacing--40);
+	overflow-x: auto;
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 8px;
+	background: var(--wp--preset--color--surface);
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: var(--wp--preset--font-size--small);
+	line-height: 1.6;
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content) :is(:not(pre) > code, kbd, samp) {
+	padding: 0.15em 0.4em;
+	border-radius: 4px;
+	background: var(--wp--preset--color--surface);
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 0.9em;
+}
+
+/* Definition lists, rules, addresses. */
+:is(.wp-block-post-content, .wp-block-comment-content) dt {
+	font-weight: 600;
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content) dd {
+	margin: 0 0 1em var(--wp--preset--spacing--40);
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content) hr:not([class*="wp-block-"]) {
+	margin: 2em 0;
+	border: 0;
+	border-top: 1px solid var(--wp--preset--color--border);
+}
+
+:is(.wp-block-post-content, .wp-block-comment-content) address {
+	margin-bottom: 1.5em;
+	font-style: normal;
+}
+
+/* Media embeds never overflow the column. */
+:is(.wp-block-post-content, .wp-block-comment-content) :is(iframe, embed, object, video) {
+	max-width: 100%;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+/* Core's "Square" style targets the wrapper, but the radius is set on the link
+   by global styles, so it needs re-applying here. */
+.wp-block-button.is-style-squared > .wp-block-button__link,
+.wp-block-button.is-style-squared .wp-element-button {
+	border-radius: 0;
+}
+
+/* Aligned single buttons should still line up with the text column. */
+.wp-block-button.aligncenter {
+	text-align: center;
+}
+
 /* Buttons placed in a flex row (e.g. the header) must not get squeezed by long menus. */
 .is-layout-flex > .wp-block-buttons {
 	flex-shrink: 0;
