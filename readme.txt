@@ -22,6 +22,7 @@ Unapp is a modern, block-based WordPress theme for presenting an app, SaaS produ
 * Block styles: Checklist (List) and Device frame (Image).
 * Four color variations: default (blue/green), Emerald, Sunset and Midnight (dark).
 * Blog, archive, search, single, page, no-title page and 404 templates with comments and pagination.
+* Consistent content styling: block and classic (shortcode) content share the same alignment ladder, captions, galleries, tables, code and vertical rhythm.
 * Locally hosted Poppins and Nunito fonts (no external requests), fluid typography and a consistent spacing scale.
 * No jQuery, no icon fonts, no framework. The only JavaScript is a 2 KB stat counter, loaded solely on pages that use the Stats pattern.
 

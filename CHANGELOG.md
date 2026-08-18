@@ -29,6 +29,7 @@ Complete rewrite as a WordPress block theme (Full Site Editing). Nothing from 1.
 ### Changed
 - Palette tuned for WCAG AA: primary `#5468d8`, accent `#2a74ca` (≥4.7:1 on white); buttons use dark text on the green secondary (7.5:1 instead of 2.1:1); Emerald/Sunset variations adjusted likewise; white text on gradients raised to 92% opacity.
 - Version bumped to 2.0.0; requires WordPress 6.6+ and PHP 7.4+; tested up to WordPress 7.0.
+- **Content consistency pass.** Left/right aligned blocks (buttons, images, galleries) now align to the content column instead of the viewport edge, so the alignment ladder is predictable everywhere: content 800px → wide 1200px → full 100%. Query Loop cards share one height per row with "Read more" pinned to the bottom, and query pagination renders as a pill control group with the current page highlighted. Classic (non-block) content — `[gallery]` shortcodes, `[caption]`, floats, tables, `pre`/`code`, definition lists, `hr`, `address`, blockquotes and heading rhythm — now matches the block equivalents, in the editor as well as the front end. Core's "Square" button style works again (it targets the wrapper while the radius lives on the link), and legacy paginated posts (`<!--nextpage-->`) get styled page links.
 - Styled the password-protected post form; comment content is constrained (headings scaled down, tables/pre scroll, flex item min-width 0); mobile navigation overlay is left-aligned with proper padding.
 - Screenshot regenerated from the new landing page.
 
