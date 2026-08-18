@@ -130,3 +130,8 @@ function unapp_maybe_enqueue_counter( $block_content, $block ) {
 	return $block_content;
 }
 add_filter( 'render_block_core/paragraph', 'unapp_maybe_enqueue_counter', 10, 2 );
+
+/**
+ * Front page setup (Home + Blog pages, Settings → Reading) on activation.
+ */
+require get_theme_file_path( 'inc/front-page-setup.php' );
