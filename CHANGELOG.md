@@ -14,6 +14,8 @@ All notable changes to the Unapp theme are documented here.
 - Assets: 37 more SVG icons (55 total), six more gradient avatars, eight placeholder wordmark logos for logo clouds and press sections, and star-rating graphics.
 
 ### Fixed
+- **The header never wraps.** Core swaps the menu for the overlay toggle only below 600px, so a real menu plus a call-to-action button stacked onto two or three rows between roughly 600 and 1000 pixels. The swap now happens at 1000px and the header row itself is `nowrap`, so the header is a single 72px line at every width.
+- **No orphaned wraps.** Grid sections used auto-fill column widths that left one tile alone on the last row (integrations 5+3, documentation 5+1, logo cloud 5+1, security 3+1). Grids now step through column counts that divide their item count evenly — 4 → 2 → 1 for four and eight items, 3 → 2 → 1 for six, 6 → 3 → 2 for the logo cloud — and a three-image gallery goes to one column instead of 2+1 on small screens. Audited across 50 sections at eight widths from 390 to 1440 pixels: zero orphans.
 - Social links in the logos-only style now keep the palette colour they are given; core paints each service its brand colour at the same specificity, so the winner depended on stylesheet order.
 
 ## 2.0.0 – 2026-08-18

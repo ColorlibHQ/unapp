@@ -1,4 +1,4 @@
-import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import sys; sys.path.insert(0,'.')
 from pgen import *
 COMPANY = "unapp, unapp_company, about, text"
 
@@ -150,7 +150,7 @@ body = section(
           title=t("Boring where it counts"),
           lead=t("The controls your security review will ask about, ready before you do.")) + "\n" +
     group('<?php foreach ( $unapp_trust as $unapp_trust_item ) : ?>\n' + trust_tile + '\n<?php endforeach; ?>',
-          align="wide", layout="grid", gap="40") + "\n" +
+          align="wide", layout="grid", gap="40", col_count=4, class_name="unapp-grid-4") + "\n" +
     buttons([{"text": t("Read the security overview"), "style": "is-style-outline"}], justify="center"),
     pad=("70", "70"), gap="50")
 write_pattern("security", title="Security and compliance", cats="unapp, unapp_features, featured",

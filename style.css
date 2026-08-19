@@ -45,6 +45,50 @@ Unapp is distributed under the terms of the GNU GPL.
 }
 
 /* ==========================================================================
+   Header navigation
+   Core swaps the menu for the overlay toggle below 600px. With a real menu
+   plus a call-to-action button that is far too late: between roughly 600 and
+   1000 pixels the items wrap onto two or three lines. Move the swap up so the
+   header always stays on one line.
+   ========================================================================== */
+@media (max-width: 999px) {
+	.unapp-header-row .wp-block-navigation__responsive-container-open:not(.always-shown) {
+		display: flex;
+	}
+
+	.unapp-header-row .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+		display: none;
+	}
+}
+
+/* Never let the header row wrap: the logo stays left, the menu and button stay
+   right. Works wherever the header pattern is used — template part or page. */
+.unapp-header-row {
+	flex-wrap: nowrap;
+}
+
+.unapp-header-row > .wp-block-group {
+	min-width: 0;
+}
+
+.unapp-header-row .wp-block-navigation:not(.is-vertical) > .wp-block-navigation__container {
+	flex-wrap: nowrap;
+}
+
+.unapp-header-row .wp-block-navigation:not(.is-vertical) .wp-block-navigation-item__content {
+	white-space: nowrap;
+}
+
+.unapp-header-row .wp-block-site-title {
+	white-space: nowrap;
+}
+
+/* The mobile overlay is the one place the menu should stack. */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+	flex-wrap: wrap;
+}
+
+/* ==========================================================================
    Pattern utilities
    Small helpers used by patterns that theme.json cannot express. Each is a
    plain class set on the block, so block markup stays valid.
@@ -67,6 +111,65 @@ Unapp is distributed under the terms of the GNU GPL.
 
 .wp-block-social-links.is-style-logos-only .wp-social-link.has-primary-color.has-primary-color {
 	color: var(--wp--preset--color--primary);
+}
+
+/* Galleries: core drops to two across on small screens, which leaves a third
+   image alone on the last row. Go to a single column instead. */
+@media (max-width: 600px) {
+	.wp-block-gallery.has-nested-images.columns-3 > figure.wp-block-image:not(#individual-image),
+	.wp-block-gallery.has-nested-images.columns-default > figure.wp-block-image:not(#individual-image) {
+		width: 100%;
+	}
+}
+
+/* Even grids. WP's grid layout keeps a fixed column count at every width, which
+   strands the last item on its own row on smaller screens. These classes step
+   the columns down through counts that always divide the item count evenly. */
+.wp-block-group.unapp-grid-4 {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.wp-block-group.unapp-grid-3 {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1000px) {
+	.wp-block-group.unapp-grid-4,
+	.wp-block-group.unapp-grid-3 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 560px) {
+	.wp-block-group.unapp-grid-4,
+	.wp-block-group.unapp-grid-3 {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+/* Logo cloud: an even grid so no logo is left stranded on its own row —
+   six across, then three, then two. */
+.wp-block-group.unapp-logo-cloud {
+	display: grid;
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+	align-items: center;
+	justify-items: center;
+}
+
+@media (max-width: 900px) {
+	.wp-block-group.unapp-logo-cloud {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 480px) {
+	.wp-block-group.unapp-logo-cloud {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+.unapp-logo-cloud img {
+	max-width: 100%;
 }
 
 /* Logo cloud: quiet, monochrome marks that pick up the palette on hover. */

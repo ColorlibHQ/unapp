@@ -1,4 +1,4 @@
-import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import sys; sys.path.insert(0,'.')
 from pgen import *
 CONTENT = "unapp, unapp_content, posts, query"
 
@@ -171,7 +171,7 @@ body = section(
           title=t("Browse by topic"),
           lead=t("Short guides, written by the people who build the thing.")) + "\n" +
     group('<?php foreach ( $unapp_docs as $unapp_doc ) : ?>\n' + doc_tile + '\n<?php endforeach; ?>',
-          align="wide", layout="grid", gap="40"),
+          align="wide", layout="grid", gap="40", col_count=3, class_name="unapp-grid-3"),
     pad=("70", "70"), gap="50")
 write_pattern("docs-topics", title="Documentation topics", cats="unapp, unapp_content, unapp_utility",
               keywords="docs, help, support, knowledge base, topics, cards",

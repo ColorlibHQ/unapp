@@ -6,7 +6,7 @@ save() produces, so patterns validate in the editor.
 """
 import json, os, re
 
-THEME = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+THEME = "/Users/silkalns/Fresh Projects/unapp"
 DOM = "unapp"
 
 
@@ -68,7 +68,8 @@ def _pad_css(pad):
 def group(inner, *, align=None, style_variation=None, class_name=None, bg=None, text=None,
           gradient=None, pad=None, gap=None, layout="constrained", content_size=None,
           wide_size=None, radius=None, shadow=None, extra_style="", tag="div",
-          justify=None, orientation=None, wrap=None, vertical_align=None, elements=None):
+          justify=None, orientation=None, wrap=None, vertical_align=None, elements=None,
+          min_col=None, col_count=None):
     a, classes, css = {}, ["wp-block-group"], ""
     if align:
         a["align"] = align
@@ -115,6 +116,12 @@ def group(inner, *, align=None, style_variation=None, class_name=None, bg=None, 
             lay["contentSize"] = content_size
         if wide_size:
             lay["wideSize"] = wide_size
+    if layout == "grid":
+        if col_count:
+            lay["columnCount"] = col_count
+        if min_col:
+            lay["minimumColumnWidth"] = min_col
+            lay["columnCount"] = None
     if layout == "flex":
         if orientation:
             lay["orientation"] = orientation

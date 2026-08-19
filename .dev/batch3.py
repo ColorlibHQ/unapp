@@ -1,4 +1,4 @@
-import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import sys; sys.path.insert(0,'.')
 from pgen import *
 FEAT = "unapp, unapp_features, features, columns"
 
@@ -114,7 +114,7 @@ body = section(
           title=t("Plays nicely with your stack"),
           lead=t("Two-way sync with the tools your team already opens every morning.")) + "\n" +
     group('<?php foreach ( $unapp_integrations as $unapp_integration ) : ?>\n' + tile + '\n<?php endforeach; ?>',
-          align="wide", layout="grid", gap="40") + "\n" +
+          align="wide", layout="grid", gap="40", col_count=4, class_name="unapp-grid-4") + "\n" +
     buttons([{"text": t("Browse all integrations"), "style": "is-style-outline"}], justify="center"),
     pad=("70", "70"), gap="60")
 write_pattern("integrations", title="Integrations grid", cats=FEAT,
