@@ -3,7 +3,7 @@ Contributors: colorlib
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.0.0
+Stable tag: 2.1.0
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, one-column, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, style-variations, template-editing, threaded-comments, translation-ready
@@ -16,11 +16,12 @@ Unapp is a modern, block-based WordPress theme for presenting an app, SaaS produ
 
 **What's included**
 
-* A complete landing page out of the box: gradient hero with product screenshot, services grid, image & text feature, features around a phone, animated stats, screenshot gallery with lightbox, pricing table, team, latest posts, call to action and contact cards.
-* 14 insertable patterns plus three full-page starters (Home, About, Pricing) under Patterns → Pages.
-* Section styles for any Group: Card, Soft background, Dark and Gradient — switch the look of a section with one click.
-* Block styles: Checklist (List) and Device frame (Image).
-* Four color variations: default (blue/green), Emerald, Sunset and Midnight (dark).
+* **47 section patterns** covering everything a product site needs: five heroes, nine feature layouts, testimonials, logo clouds, ratings, case studies, press, three pricing layouts, FAQ, five calls to action, timeline, values, careers, offices, security, changelog, documentation, contact and more.
+* **13 full-page starters** — SaaS landing page, Features, Pricing, Customers, About, Contact, Careers, Help centre, Changelog, Legal, Coming soon and two more — inserted from the pattern modal when you create a page.
+* **Ten pattern categories** in the inserter (Heroes, Features, Social proof, Pricing, Calls to action, Content & blog, Company, Utility, Full pages) so a big library stays findable.
+* Section styles for any Group, Columns or Column: Card, Soft background, Dark, Gradient, Frosted glass, Outline and Elevated — switch the look of a section with one click.
+* Block styles: Checklist, Dashed, Numbered steps and Two columns (List); Device frame, Browser frame and Framed (Image); Testimonial card (Quote); FAQ card (Details); Comparison (Table); Gradient line (Separator); Text link with arrow (Button); Divided (Columns).
+* **Six color variations**: default (indigo/green), Emerald, Sunset, Graphite, Violet and Midnight (dark).
 * Blog, archive, search, single, page, no-title page and 404 templates with comments and pagination.
 * Consistent content styling: block and classic (shortcode) content share the same alignment ladder, captions, galleries, tables, code and vertical rhythm.
 * Locally hosted Poppins and Nunito fonts (no external requests), fluid typography and a consistent spacing scale.
@@ -49,9 +50,16 @@ Appearance → Editor → Styles. Pick one of the built-in variations (Emerald, 
 
 = Can I use the sections on other pages? =
 
-Yes. Every section is a pattern: open the block inserter, choose the Patterns tab and look under "Unapp" or "Pages".
+Yes. Every section is a pattern: open the block inserter, choose the Patterns tab and look under "Unapp" for the whole library, or one of the narrower categories — Heroes, Features, Social proof, Pricing, Calls to action, Content & blog, Company and Utility.
+
+= Where are the placeholder logos and avatars from? =
+
+They are simple SVGs drawn for this theme — invented brand names for the logo cloud and gradient portraits for the team and testimonials. Nothing is licensed from a third party, so replace them with your own at any time.
 
 == Changelog ==
+
+= 2.1.0 - 2026-08-19 =
+* 36 new section patterns, 10 new page starters, 11 new block styles, 3 new section styles and 2 new colour variations. See CHANGELOG.md.
 
 = 2.0.0 - 2026-08-18 =
 * Complete rewrite as a block theme (Full Site Editing) — see CHANGELOG.md for details.

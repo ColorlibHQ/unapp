@@ -2,6 +2,20 @@
 
 All notable changes to the Unapp theme are documented here.
 
+## 2.1.0 – 2026-08-19
+
+### Added
+- **36 new section patterns**, bringing the library to 47: heroes (split, email capture, photo cover, search), logo cloud, testimonials grid, single testimonial, case study, review scores, press mentions, alternating feature rows, bento grid, numbered steps, integrations grid, two-column checklist, security & compliance, two-plan pricing, pricing comparison table, FAQ accordion, colour-band CTA, app download, newsletter, waitlist, timeline, values, careers, offices, featured blog layout, blog list, author box, related posts, changelog, documentation topics, contact split, legal document, centred header and slim footer.
+- **10 new full-page starters**: SaaS landing page, Features, Customers, Contact, Careers, Help centre, Changelog, Legal, Coming soon and a detailed Pricing page.
+- **Nine pattern categories** (Heroes, Features, Social proof, Pricing, Calls to action, Content & blog, Company, Utility, Full pages) alongside the catch-all Unapp category.
+- **11 new block styles**: List → Dashed, Numbered steps, Two columns; Image → Browser frame, Framed; Quote → Testimonial card; Details → FAQ card; Table → Comparison; Separator → Gradient line; Button → Text link with arrow; Columns → Divided.
+- **Three new section styles**: Frosted glass, Outline, Elevated (Group, Columns, Column).
+- **Two new colour variations**: Graphite and Violet.
+- Assets: 37 more SVG icons (55 total), six more gradient avatars, eight placeholder wordmark logos for logo clouds and press sections, and star-rating graphics.
+
+### Fixed
+- Social links in the logos-only style now keep the palette colour they are given; core paints each service its brand colour at the same specificity, so the winner depended on stylesheet order.
+
 ## 2.0.0 – 2026-08-18
 
 Complete rewrite as a WordPress block theme (Full Site Editing). Nothing from 1.x is carried over except the visual identity (Poppins/Nunito, blue-green palette, gradient hero) and the bundled screenshots.

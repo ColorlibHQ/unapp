@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-**Unapp 2.x** is a Colorlib **WordPress block theme** (Full Site Editing) for app/SaaS landing pages — text domain `unapp`, upstream `github.com/ColorlibHQ/unapp`. Version 2.0.0 (Aug 2026) is a from-scratch rewrite: the Epsilon Framework, Customizer section builder, Bootstrap 3, jQuery and icon fonts from 1.x are gone. It is *not* a static HTML template — the Colorlib R2 preview/download publishing flow and the HTML-template upgrade phases in the global instructions do not apply here.
+**Unapp 2.1** is a Colorlib **WordPress block theme** (Full Site Editing) for app/SaaS landing pages — 47 section patterns, 13 page starters, 7 section styles, 11 block styles, 6 palettes — text domain `unapp`, upstream `github.com/ColorlibHQ/unapp`. Version 2.0.0 (Aug 2026) is a from-scratch rewrite: the Epsilon Framework, Customizer section builder, Bootstrap 3, jQuery and icon fonts from 1.x are gone. It is *not* a static HTML template — the Colorlib R2 preview/download publishing flow and the HTML-template upgrade phases in the global instructions do not apply here.
 
 Requires WP 6.6+ (theme.json v3, section styles); tested on WP 7.0. No build step, no npm, no SCSS — every file is committed as-is.
 
@@ -44,11 +44,11 @@ Useful checks with it: `wp eval 'echo do_blocks("<!-- wp:pattern {\"slug\":\"una
 | Concern | File(s) |
 | --- | --- |
 | Palette, gradients, shadows, spacing scale, fluid font sizes, self-hosted fonts, element/block styles, custom template + part registration | `theme.json` (v3) |
-| Section styles (Group/Columns/Column/Cover): `card`, `section-soft`, `section-dark`, `section-gradient` | `styles/*.json` files **with** `blockTypes` |
-| Color variations: Emerald, Sunset, Midnight | `styles/*.json` files **without** `blockTypes` |
+| Section styles (Group/Columns/Column/Cover): `card`, `section-soft`, `section-dark`, `section-gradient`, `frosted`, `outline`, `elevated` | `styles/*.json` files **with** `blockTypes` |
+| Color variations: Emerald, Sunset, Graphite, Violet, Midnight | `styles/*.json` files **without** `blockTypes` |
 | Templates | `templates/*.html` — index, home, single, page, page-no-title, archive, search, 404 (deliberately **no** front-page.html) |
 | Template parts | `parts/header.html`, `parts/footer.html` — each is a single `<!-- wp:pattern -->` reference to `patterns/header.php` / `patterns/footer.php` so header/footer text is translatable and images use `get_theme_file_uri()` |
-| Sections, page starters, hidden template partials | `patterns/*.php` |
+| Sections, page starters, hidden template partials | `patterns/*.php` (70 files) |
 | Front page setup on activation (Home + Blog pages, Reading settings, admin notices) | `inc/front-page-setup.php` |
 | Block styles + per-block CSS, pattern categories, lazy counter script | `functions.php`, `assets/css/list-checklist.css`, `assets/css/image-device.css`, `assets/js/counter.js` |
 | Rules theme.json cannot express: content alignment (`.alignleft/right` pulled back to the content column), Query Loop card equal-heights + pagination pills, classic/shortcode content (galleries, captions, floats, tables, code, rhythm), button `is-style-squared`, `post-nav-links` | `style.css` (also loaded in the editor via `add_editor_style`) |
@@ -63,7 +63,10 @@ Useful checks with it: `wp eval 'echo do_blocks("<!-- wp:pattern {\"slug\":\"una
 - **Stats counter**: paragraphs with class `unapp-count`; `functions.php` enqueues `assets/js/counter.js` (defer, footer) from a `render_block_core/paragraph` filter only when such a paragraph renders. Number formats supported: `10,000+`, `1.2M`, `99.9%`, `4.9/5` (prefix/number/suffix regex).
 - **Front page**: no HTML template. `inc/front-page-setup.php` hooks `after_switch_theme` (fires on `init` 99) → sets a pending flag → `init` 100 runs `unapp_setup_front_page()`: expands `unapp/page-home` (nested `wp:pattern` refs resolved by `unapp_get_pattern_markup()`), inserts a published "Home" page (template `page-no-title`, kses filters temporarily removed) and a "Blog" page, sets `show_on_front/page_on_front/page_for_posts`, records IDs in option `unapp_front_page_setup` (never re-runs). Automatic only when the site has no static front page; otherwise option `unapp_offer_front_page_setup` shows an admin notice with an admin-post button (nonce + `edit_theme_options`). Filter `unapp_auto_setup_front_page` disables auto-run. `home.html` is the posts page.
 - **Hidden patterns** (`Inserter: no`) carry translatable text for templates: `hidden-blog-heading`, `hidden-posts-grid`, `hidden-search`, `hidden-404`, `hidden-post-meta`, `hidden-post-tags`, `hidden-comments`. Page starters (`page-home`, `page-about`, `page-pricing`) are `wp:pattern` lists in category `unapp_page` with `Block Types: core/post-content`.
-- Pattern categories registered: `unapp` (sections) and `unapp_page` (page starters); core categories are also used in headers.
+- Pattern categories registered in `functions.php`: `unapp` (everything), `unapp_hero`, `unapp_features`, `unapp_proof`, `unapp_pricing`, `unapp_cta`, `unapp_content`, `unapp_company`, `unapp_utility`, `unapp_page`; core categories are used alongside them.
+- **Patterns are generated, not hand-typed.** `pgen.py` (session scratchpad, copied to `.dev/pgen.py`) emits PHP pattern files from composable block emitters — `section()`, `intro()`, `columns()/column()`, `icon_badge()`, `buttons()`, `lst()`, `image()` — so every pattern uses markup that matches core's `save()`. When adding a pattern, extend the generator rather than writing markup by hand, then re-run the batch script and re-validate.
+- **Three markup rules the validator caught during the 2.1 build**, worth remembering: (1) never emit raw inline CSS that no block attribute backs — e.g. `style="opacity:…"` on a Group fails validation; use a `className` plus theme CSS. (2) An icon badge (flex Group) stretches full width inside a `default`-layout parent; put it in a parent with `layout: flex, orientation: vertical`, which WP renders as `align-items: flex-start`. (3) A Query Loop with `sticky: ""` prepends sticky posts *on top of* `perPage`; use `sticky: "exclude"` for featured/list layouts.
+- **New pattern files are cached.** `WP_Theme::get_block_patterns()` caches the file scan per theme, so a newly added `patterns/*.php` will not appear until the cache is cleared. The Local site now has `WP_DEVELOPMENT_MODE = 'theme'` in wp-config.php, which bypasses that cache — keep it while developing patterns.
 - **Alignment model**: post content is `alignfull` + constrained, so core floats `.alignleft/.alignright` direct children to the *container* edge (= viewport). `style.css` pulls them back with `margin-inline-start/end: max(0px, calc((100% - content-size) / 2))`. Verified ladder on `/block-image/`: normal l=300 w=800, alignwide l=100 w=1200, alignfull l=0 w=1400 at a 1400px viewport.
 - **Classic content** (freeform HTML, shortcodes) gets no blockGap, so `style.css` supplies the rhythm and styles `[gallery]`/`[caption]`/floats/tables/pre/dl to match block output. Selectors are scoped with `:is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper)` — in the iframed editor the canvas `<body>` carries `editor-styles-wrapper` and theme CSS is injected unprefixed, so the same rules work in both places. Elements rendered by blocks carry a `wp-block-*` class and are excluded via `:not([class*="wp-block-"])`.
 - Core's `is-style-squared` button style targets the *wrapper* while global styles put the radius on the link, so the theme re-applies `border-radius: 0` to the link.
@@ -80,6 +83,6 @@ Useful checks with it: `wp eval 'echo do_blocks("<!-- wp:pattern {\"slug\":\"una
 ## Release checklist
 
 1. `php -l` all PHP, validate JSON, bump `Version:` in `style.css` and `Stable tag` in `readme.txt`, add a CHANGELOG entry.
-2. Activate on the Local site, load `/`, `/blog/`, a single post, a category, `?s=`; check `wp-content/debug.log` (enable `WP_DEBUG_LOG` temporarily — remember to revert wp-config.php).
+2. Activate on the Local site, load `/`, `/blog/`, a single post, a category, `?s=`; render every pattern (`wp eval` loop over the registry) and check `wp-content/debug.log` (enable `WP_DEBUG_LOG` temporarily — remember to revert wp-config.php).
 3. Run Theme Check from wp-admin (only expected notice: single text domain INFO).
 4. Regenerate `languages/unapp.pot` and `screenshot.png` if strings or the hero changed.

@@ -9,17 +9,49 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-18T19:21:19+00:00\n"
+"POT-Creation-Date: 2026-08-19T08:40:09+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: make-pot.py (Unapp)\n"
 "X-Domain: unapp\n"
 
-#: functions.php:93
-msgid "Landing page sections designed for Unapp: hero, features, pricing, team, stats and more."
+#: functions.php:140
+msgid "Every Unapp section: heroes, features, pricing, social proof, company and calls to action."
 msgstr ""
 
-#: functions.php:100
-msgid "Full page layouts. Insert one into an empty page to start from a complete design."
+#: functions.php:144
+msgid "Opening sections for a landing page."
+msgstr ""
+
+#: functions.php:148
+msgid "Ways to explain what the product does."
+msgstr ""
+
+#: functions.php:152
+msgid "Testimonials, logos, ratings and customer stories."
+msgstr ""
+
+#: functions.php:156
+msgid "Plan tables and comparisons."
+msgstr ""
+
+#: functions.php:160
+msgid "Conversion sections: sign-up bands, newsletters and app downloads."
+msgstr ""
+
+#: functions.php:164
+msgid "Post loops, author boxes, changelogs and documentation."
+msgstr ""
+
+#: functions.php:168
+msgid "About, team, values, careers, offices and press."
+msgstr ""
+
+#: functions.php:172
+msgid "Contact, FAQ, legal and help-centre sections."
+msgstr ""
+
+#: functions.php:176
+msgid "Complete page layouts. Insert one into an empty page to start from a finished design."
 msgstr ""
 
 #: functions.php:53
@@ -27,19 +59,114 @@ msgctxt "Block style label"
 msgid "Checklist"
 msgstr ""
 
-#: functions.php:70
+#: functions.php:54
+msgctxt "Block style label"
+msgid "Dashed"
+msgstr ""
+
+#: functions.php:55
+msgctxt "Block style label"
+msgid "Numbered steps"
+msgstr ""
+
+#: functions.php:56
+msgctxt "Block style label"
+msgid "Two columns"
+msgstr ""
+
+#: functions.php:62
 msgctxt "Block style label"
 msgid "Device frame"
 msgstr ""
 
-#: functions.php:92
+#: functions.php:63
+msgctxt "Block style label"
+msgid "Browser frame"
+msgstr ""
+
+#: functions.php:64
+msgctxt "Block style label"
+msgid "Framed"
+msgstr ""
+
+#: functions.php:70
+msgctxt "Block style label"
+msgid "Testimonial card"
+msgstr ""
+
+#: functions.php:76
+msgctxt "Block style label"
+msgid "FAQ card"
+msgstr ""
+
+#: functions.php:82
+msgctxt "Block style label"
+msgid "Comparison"
+msgstr ""
+
+#: functions.php:88
+msgctxt "Block style label"
+msgid "Gradient line"
+msgstr ""
+
+#: functions.php:94
+msgctxt "Block style label"
+msgid "Text link with arrow"
+msgstr ""
+
+#: functions.php:100
+msgctxt "Block style label"
+msgid "Divided"
+msgstr ""
+
+#: functions.php:139
 msgctxt "Block pattern category"
 msgid "Unapp"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:143
 msgctxt "Block pattern category"
-msgid "Pages"
+msgid "Unapp: Heroes"
+msgstr ""
+
+#: functions.php:147
+msgctxt "Block pattern category"
+msgid "Unapp: Features"
+msgstr ""
+
+#: functions.php:151
+msgctxt "Block pattern category"
+msgid "Unapp: Social proof"
+msgstr ""
+
+#: functions.php:155
+msgctxt "Block pattern category"
+msgid "Unapp: Pricing"
+msgstr ""
+
+#: functions.php:159
+msgctxt "Block pattern category"
+msgid "Unapp: Calls to action"
+msgstr ""
+
+#: functions.php:163
+msgctxt "Block pattern category"
+msgid "Unapp: Content & blog"
+msgstr ""
+
+#: functions.php:167
+msgctxt "Block pattern category"
+msgid "Unapp: Company"
+msgstr ""
+
+#: functions.php:171
+msgctxt "Block pattern category"
+msgid "Unapp: Utility"
+msgstr ""
+
+#: functions.php:175
+msgctxt "Block pattern category"
+msgid "Unapp: Full pages"
 msgstr ""
 
 #: inc/front-page-setup.php:106
@@ -107,6 +234,50 @@ msgctxt "Title of the posts page created on activation"
 msgid "Blog"
 msgstr ""
 
+#. Pattern title
+#: patterns/author-box.php
+msgid "Author box"
+msgstr ""
+
+#. Pattern description
+#: patterns/author-box.php
+msgid "Author avatar, name, biography and links — drop it under the post content in the Single template."
+msgstr ""
+
+#: patterns/blog-featured.php:22
+msgid "Fresh from the team"
+msgstr ""
+
+#: patterns/blog-featured.php:19
+#: patterns/blog-posts.php:19
+msgctxt "Section eyebrow label"
+msgid "Blog"
+msgstr ""
+
+#. Pattern title
+#: patterns/blog-featured.php
+msgid "Blog: featured post + list"
+msgstr ""
+
+#. Pattern description
+#: patterns/blog-featured.php
+msgid "One large lead post beside a compact list of the next three."
+msgstr ""
+
+#: patterns/blog-list.php:48
+msgid "No posts yet — the first one is on its way."
+msgstr ""
+
+#. Pattern title
+#: patterns/blog-list.php
+msgid "Blog: list with thumbnails"
+msgstr ""
+
+#. Pattern description
+#: patterns/blog-list.php
+msgid "Post rows with a thumbnail beside the title and excerpt. Inherits the page query, so it works on archives too."
+msgstr ""
+
 #: patterns/blog-posts.php:22
 msgid "News from our blog"
 msgstr ""
@@ -118,11 +289,6 @@ msgstr ""
 
 #: patterns/blog-posts.php:44
 msgid "No posts yet. Publish your first post and it will appear here."
-msgstr ""
-
-#: patterns/blog-posts.php:19
-msgctxt "Section eyebrow label"
-msgid "Blog"
 msgstr ""
 
 #: patterns/blog-posts.php:38
@@ -145,6 +311,220 @@ msgstr ""
 #. Pattern description
 #: patterns/blog-posts.php
 msgid "Section intro, a three-column grid of the latest posts and a link to the blog."
+msgstr ""
+
+#: patterns/careers.php:28
+msgid "Open roles"
+msgstr ""
+
+#: patterns/careers.php:31
+msgid "We hire slowly, pay at the top of the band and work asynchronously."
+msgstr ""
+
+#: patterns/careers.php:57
+msgid "View role"
+msgstr ""
+
+#: patterns/careers.php:71
+msgid "Nothing that fits? Send us a note anyway — we keep good people in mind."
+msgstr ""
+
+#: patterns/careers.php:14
+msgctxt "Job title"
+msgid "Senior Product Engineer"
+msgstr ""
+
+#: patterns/careers.php:14
+msgctxt "Job team"
+msgid "Engineering"
+msgstr ""
+
+#: patterns/careers.php:14
+msgctxt "Job location"
+msgid "Remote · Europe"
+msgstr ""
+
+#: patterns/careers.php:15
+msgctxt "Job title"
+msgid "Product Designer"
+msgstr ""
+
+#: patterns/careers.php:15
+msgctxt "Job team"
+msgid "Design"
+msgstr ""
+
+#: patterns/careers.php:15
+msgctxt "Job location"
+msgid "Berlin or remote"
+msgstr ""
+
+#: patterns/careers.php:16
+msgctxt "Job title"
+msgid "Customer Engineer"
+msgstr ""
+
+#: patterns/careers.php:16
+msgctxt "Job team"
+msgid "Support"
+msgstr ""
+
+#: patterns/careers.php:16
+msgctxt "Job location"
+msgid "Remote · Americas"
+msgstr ""
+
+#: patterns/careers.php:17
+msgctxt "Job title"
+msgid "Technical Writer"
+msgstr ""
+
+#: patterns/careers.php:17
+msgctxt "Job team"
+msgid "Documentation"
+msgstr ""
+
+#: patterns/careers.php:17
+msgctxt "Job location"
+msgid "Part-time · Remote"
+msgstr ""
+
+#: patterns/careers.php:25
+msgctxt "Section eyebrow label"
+msgid "Careers"
+msgstr ""
+
+#. Pattern title
+#: patterns/careers.php
+msgid "Open positions"
+msgstr ""
+
+#. Pattern description
+#: patterns/careers.php
+msgid "A list of open roles with team, location and a link on each row."
+msgstr ""
+
+#: patterns/case-study.php:22
+msgid "How Meridian cut release cycles in half"
+msgstr ""
+
+#: patterns/case-study.php:31
+msgid "Meridian's studio"
+msgstr ""
+
+#: patterns/case-study.php:38
+msgid "Meridian ships a design system used by nine product teams. Before Unapp, every release meant a week of chasing status in chat."
+msgstr ""
+
+#: patterns/case-study.php:43
+msgid "One shared roadmap across nine teams"
+msgstr ""
+
+#: patterns/case-study.php:46
+msgid "Automatic release notes from completed work"
+msgstr ""
+
+#: patterns/case-study.php:49
+msgid "Reporting the leadership team actually reads"
+msgstr ""
+
+#: patterns/case-study.php:58
+msgid "2×"
+msgstr ""
+
+#: patterns/case-study.php:61
+msgid "faster releases"
+msgstr ""
+
+#: patterns/case-study.php:68
+msgid "40%"
+msgstr ""
+
+#: patterns/case-study.php:71
+msgid "fewer meetings"
+msgstr ""
+
+#: patterns/case-study.php:19
+msgctxt "Section eyebrow label"
+msgid "Case study"
+msgstr ""
+
+#. Pattern title
+#: patterns/case-study.php
+msgid "Case study"
+msgstr ""
+
+#. Pattern description
+#: patterns/case-study.php
+msgid "Customer story with a photo, outcome checklist and two headline metrics."
+msgstr ""
+
+#: patterns/changelog.php:43
+msgid "What shipped recently"
+msgstr ""
+
+#: patterns/changelog.php:46
+msgid "Every release, in plain language."
+msgstr ""
+
+#: patterns/changelog.php:16
+msgctxt "Changelog date"
+msgid "12 August 2026"
+msgstr ""
+
+#: patterns/changelog.php:17
+msgctxt "Changelog entry title"
+msgid "Timeline view and faster search"
+msgstr ""
+
+#: patterns/changelog.php:19
+msgctxt "Changelog item"
+msgid "New timeline view for any project or roadmap"
+msgstr ""
+
+#: patterns/changelog.php:20
+msgctxt "Changelog item"
+msgid "Search results now return in under 50ms for workspaces up to 100k tasks"
+msgstr ""
+
+#: patterns/changelog.php:21
+msgctxt "Changelog item"
+msgid "Fixed: recurring tasks skipped a week when the month rolled over"
+msgstr ""
+
+#: patterns/changelog.php:26
+msgctxt "Changelog date"
+msgid "29 July 2026"
+msgstr ""
+
+#: patterns/changelog.php:27
+msgctxt "Changelog entry title"
+msgid "Quality of life"
+msgstr ""
+
+#: patterns/changelog.php:29
+msgctxt "Changelog item"
+msgid "Keyboard shortcuts for every board action"
+msgstr ""
+
+#: patterns/changelog.php:30
+msgctxt "Changelog item"
+msgid "Bulk edit up to 500 tasks at a time"
+msgstr ""
+
+#: patterns/changelog.php:40
+msgctxt "Section eyebrow label"
+msgid "Changelog"
+msgstr ""
+
+#. Pattern title
+#: patterns/changelog.php
+msgid "Changelog entries"
+msgstr ""
+
+#. Pattern description
+#: patterns/changelog.php
+msgid "Dated release entries with a version chip and a list of changes."
 msgstr ""
 
 #: patterns/collaborate.php:17
@@ -191,6 +571,58 @@ msgstr ""
 msgid "Media & Text section with a photo, headline, checklist and call-to-action on a soft background."
 msgstr ""
 
+#: patterns/contact-split.php:24
+msgid "Tell us what you are building"
+msgstr ""
+
+#: patterns/contact-split.php:27
+msgid "Sales questions, security reviews or a bug you cannot shake — this reaches a person, not a queue."
+msgstr ""
+
+#: patterns/contact-split.php:43
+msgid "Email"
+msgstr ""
+
+#: patterns/contact-split.php:64
+msgid "Phone"
+msgstr ""
+
+#: patterns/contact-split.php:85
+msgid "Hours"
+msgstr ""
+
+#: patterns/contact-split.php:88
+msgid "Mon–Fri, 9:00–18:00 CET"
+msgstr ""
+
+#: patterns/contact-split.php:103
+msgid "Send a message"
+msgstr ""
+
+#: patterns/contact-split.php:106
+msgid "Add your form plugin's block here — Contact Form 7, WPForms, Kali Forms and Gravity Forms all provide one."
+msgstr ""
+
+#: patterns/contact-split.php:111
+msgid "Email us instead"
+msgstr ""
+
+#: patterns/contact-split.php:21
+#: patterns/contact.php:36
+msgctxt "Section eyebrow label"
+msgid "Contact"
+msgstr ""
+
+#. Pattern title
+#: patterns/contact-split.php
+msgid "Contact: details and form"
+msgstr ""
+
+#. Pattern description
+#: patterns/contact-split.php
+msgid "Contact details on the left and a card for your form plugin's block on the right."
+msgstr ""
+
 #: patterns/contact.php:39
 msgid "Get in touch"
 msgstr ""
@@ -234,11 +666,6 @@ msgctxt "Contact card email note"
 msgid "We reply within one business day"
 msgstr ""
 
-#: patterns/contact.php:36
-msgctxt "Section eyebrow label"
-msgid "Contact"
-msgstr ""
-
 #: patterns/contact.php:78
 msgctxt "Button text"
 msgid "Send us a message"
@@ -252,6 +679,66 @@ msgstr ""
 #. Pattern description
 #: patterns/contact.php
 msgid "Section intro and three contact cards (address, phone, email) followed by a call-to-action button. Add a form block from your contact-form plugin below it if needed."
+msgstr ""
+
+#: patterns/cta-app.php:21
+msgid "Unapp mobile app"
+msgstr ""
+
+#: patterns/cta-app.php:31
+msgid "Take the roadmap with you"
+msgstr ""
+
+#: patterns/cta-app.php:34
+msgid "Review work, approve requests and reply to comments from the train. Everything syncs the moment you are back online."
+msgstr ""
+
+#: patterns/cta-app.php:39
+msgid "App Store"
+msgstr ""
+
+#: patterns/cta-app.php:42
+msgid "Google Play"
+msgstr ""
+
+#: patterns/cta-app.php:28
+msgctxt "Section eyebrow label"
+msgid "Mobile"
+msgstr ""
+
+#. Pattern title
+#: patterns/cta-app.php
+msgid "Call to action: mobile app"
+msgstr ""
+
+#. Pattern description
+#: patterns/cta-app.php
+msgid "App download call to action with a phone screenshot and two store buttons."
+msgstr ""
+
+#: patterns/cta-band.php:21
+msgid "Ready to see it with your own projects?"
+msgstr ""
+
+#: patterns/cta-band.php:24
+msgid "Import a board and watch it come to life. It takes about five minutes."
+msgstr ""
+
+#: patterns/cta-band.php:33
+#: patterns/hero-split.php:32
+#: patterns/pricing-compare.php:39
+#: patterns/pricing-two.php:117
+msgid "Start free trial"
+msgstr ""
+
+#. Pattern title
+#: patterns/cta-band.php
+msgid "Call to action: colour band"
+msgstr ""
+
+#. Pattern description
+#: patterns/cta-band.php
+msgid "A compact full-width gradient band with a headline and one button."
 msgstr ""
 
 #: patterns/cta-subscribe.php:17
@@ -275,6 +762,363 @@ msgstr ""
 #. Pattern description
 #: patterns/cta-subscribe.php
 msgid "Full-width cover with a tinted photo, headline, supporting text and a subscribe button. Replace the button with a form block from your newsletter plugin if you have one."
+msgstr ""
+
+#: patterns/docs-topics.php:30
+msgid "Browse by topic"
+msgstr ""
+
+#: patterns/docs-topics.php:33
+msgid "Short guides, written by the people who build the thing."
+msgstr ""
+
+#: patterns/docs-topics.php:14
+msgctxt "Docs category"
+msgid "Getting started"
+msgstr ""
+
+#: patterns/docs-topics.php:14
+msgctxt "Docs category description"
+msgid "Install, import your data and invite the team."
+msgstr ""
+
+#: patterns/docs-topics.php:15
+msgctxt "Docs category"
+msgid "Workspace settings"
+msgstr ""
+
+#: patterns/docs-topics.php:15
+msgctxt "Docs category description"
+msgid "Roles, permissions, billing and branding."
+msgstr ""
+
+#: patterns/docs-topics.php:16
+msgctxt "Docs category"
+msgid "API reference"
+msgstr ""
+
+#: patterns/docs-topics.php:16
+msgctxt "Docs category description"
+msgid "REST endpoints, webhooks and rate limits."
+msgstr ""
+
+#: patterns/docs-topics.php:17
+msgctxt "Docs category"
+msgid "Troubleshooting"
+msgstr ""
+
+#: patterns/docs-topics.php:17
+msgctxt "Docs category description"
+msgid "Sync problems, imports and account recovery."
+msgstr ""
+
+#: patterns/docs-topics.php:18
+msgctxt "Docs category"
+msgid "Teams and projects"
+msgstr ""
+
+#: patterns/docs-topics.php:18
+msgctxt "Docs category description"
+msgid "Structure work the way your company runs."
+msgstr ""
+
+#: patterns/docs-topics.php:19
+msgctxt "Docs category"
+msgid "Security"
+msgstr ""
+
+#: patterns/docs-topics.php:19
+msgctxt "Docs category description"
+msgid "SSO, audit logs and data residency."
+msgstr ""
+
+#: patterns/docs-topics.php:27
+msgctxt "Section eyebrow label"
+msgid "Help centre"
+msgstr ""
+
+#. Pattern title
+#: patterns/docs-topics.php
+msgid "Documentation topics"
+msgstr ""
+
+#. Pattern description
+#: patterns/docs-topics.php
+msgid "A grid of help-centre categories with icons."
+msgstr ""
+
+#: patterns/faq.php:44
+msgid "Questions we get a lot"
+msgstr ""
+
+#: patterns/faq.php:47
+msgid "Still stuck? The support team answers in under an hour on weekdays."
+msgstr ""
+
+#: patterns/faq.php:15
+msgctxt "FAQ question"
+msgid "Can I try Unapp before paying?"
+msgstr ""
+
+#: patterns/faq.php:16
+msgctxt "FAQ answer"
+msgid "Yes. Every plan starts with a 14-day trial of the Team tier — no card, no sales call. When the trial ends you drop to the free plan rather than losing your data."
+msgstr ""
+
+#: patterns/faq.php:19
+msgctxt "FAQ question"
+msgid "What happens to my data if I cancel?"
+msgstr ""
+
+#: patterns/faq.php:20
+msgctxt "FAQ answer"
+msgid "You can export everything as CSV or through the API at any time. We keep a backup for 30 days after cancellation, then delete it for good."
+msgstr ""
+
+#: patterns/faq.php:23
+msgctxt "FAQ question"
+msgid "Do you offer discounts for non-profits?"
+msgstr ""
+
+#: patterns/faq.php:24
+msgctxt "FAQ answer"
+msgid "We do — registered non-profits and educational institutions get 50% off any paid plan. Email us from your organisation address and we will set it up."
+msgstr ""
+
+#: patterns/faq.php:27
+msgctxt "FAQ question"
+msgid "Where is my data stored?"
+msgstr ""
+
+#: patterns/faq.php:28
+msgctxt "FAQ answer"
+msgid "In the region you choose when the workspace is created: the EU, the United States or Australia. Data never leaves that region."
+msgstr ""
+
+#: patterns/faq.php:31
+msgctxt "FAQ question"
+msgid "Can I move my team from another tool?"
+msgstr ""
+
+#: patterns/faq.php:32
+msgctxt "FAQ answer"
+msgid "Importers are built in for the usual suspects, and our team will run the migration with you on Business plans."
+msgstr ""
+
+#: patterns/faq.php:41
+msgctxt "Section eyebrow label"
+msgid "FAQ"
+msgstr ""
+
+#. Pattern title
+#: patterns/faq.php
+msgid "FAQ accordion"
+msgstr ""
+
+#. Pattern description
+#: patterns/faq.php
+msgid "Expandable question-and-answer list built on the core Details block."
+msgstr ""
+
+#: patterns/feature-checklist.php:24
+msgid "Everything the old tool made hard"
+msgstr ""
+
+#: patterns/feature-checklist.php:33
+#: patterns/features-bento.php:43
+#: patterns/pricing-two.php:98
+msgid "Unlimited projects"
+msgstr ""
+
+#: patterns/feature-checklist.php:36
+msgid "Custom fields"
+msgstr ""
+
+#: patterns/feature-checklist.php:39
+msgid "Offline mode"
+msgstr ""
+
+#: patterns/feature-checklist.php:42
+msgid "Time tracking"
+msgstr ""
+
+#: patterns/feature-checklist.php:53
+msgid "Guest access"
+msgstr ""
+
+#: patterns/feature-checklist.php:56
+msgid "Automations"
+msgstr ""
+
+#: patterns/feature-checklist.php:59
+msgid "Public roadmaps"
+msgstr ""
+
+#: patterns/feature-checklist.php:62
+msgid "Audit logs"
+msgstr ""
+
+#: patterns/feature-checklist.php:73
+msgid "See the full feature list"
+msgstr ""
+
+#: patterns/feature-checklist.php:82
+msgid "Unapp project board"
+msgstr ""
+
+#: patterns/feature-checklist.php:21
+msgctxt "Section eyebrow label"
+msgid "Why teams switch"
+msgstr ""
+
+#. Pattern title
+#: patterns/feature-checklist.php
+msgid "Features: two-column checklist"
+msgstr ""
+
+#. Pattern description
+#: patterns/feature-checklist.php
+msgid "A double checklist of capabilities beside a product screenshot."
+msgstr ""
+
+#: patterns/features-bento.php:22
+msgid "A toolkit, not a straitjacket"
+msgstr ""
+
+#: patterns/features-bento.php:25
+msgid "Start with the basics and switch on the rest when your team is ready."
+msgstr ""
+
+#: patterns/features-bento.php:46
+msgid "Group work by product, client or squad — nesting included."
+msgstr ""
+
+#: patterns/features-bento.php:64
+msgid "Instant search"
+msgstr ""
+
+#: patterns/features-bento.php:67
+msgid "Find any task, file or comment as fast as you can type."
+msgstr ""
+
+#: patterns/features-bento.php:89
+msgid "Developer friendly"
+msgstr ""
+
+#: patterns/features-bento.php:92
+msgid "Branches, commits and pull requests attach themselves to the right task."
+msgstr ""
+
+#: patterns/features-bento.php:110
+msgid "Live reporting"
+msgstr ""
+
+#: patterns/features-bento.php:113
+msgid "Dashboards update as work moves. No exports."
+msgstr ""
+
+#: patterns/features-bento.php:131
+msgid "Enterprise ready"
+msgstr ""
+
+#: patterns/features-bento.php:134
+msgid "SSO, audit logs and regional data residency."
+msgstr ""
+
+#: patterns/features-bento.php:19
+msgctxt "Section eyebrow label"
+msgid "Platform"
+msgstr ""
+
+#. Pattern title
+#: patterns/features-bento.php
+msgid "Features: bento grid"
+msgstr ""
+
+#. Pattern description
+#: patterns/features-bento.php
+msgid "An asymmetric grid of feature cards — one wide cell above three equal ones."
+msgstr ""
+
+#: patterns/features-zigzag.php:22
+msgid "Everything in one place, finally"
+msgstr ""
+
+#: patterns/features-zigzag.php:25
+msgid "Three views of the same work — plan it, build it, report on it."
+msgstr ""
+
+#: patterns/features-zigzag.php:34
+msgid "Planning board in Unapp"
+msgstr ""
+
+#: patterns/features-zigzag.php:44
+msgid "Plan the quarter in an afternoon"
+msgstr ""
+
+#: patterns/features-zigzag.php:47
+msgid "Drag work into place, set a target date and let Unapp keep the roadmap honest as things move."
+msgstr ""
+
+#: patterns/features-zigzag.php:52
+msgid "Roadmap, board and timeline from one backlog"
+msgstr ""
+
+#: patterns/features-zigzag.php:55
+msgid "Automatic capacity warnings"
+msgstr ""
+
+#: patterns/features-zigzag.php:58
+msgid "Shareable read-only views"
+msgstr ""
+
+#: patterns/features-zigzag.php:74
+msgid "Reports that answer the real question"
+msgstr ""
+
+#: patterns/features-zigzag.php:77
+msgid "Velocity, workload and progress are calculated as you work — no spreadsheet exports, no Friday scramble."
+msgstr ""
+
+#: patterns/features-zigzag.php:82
+msgid "Live dashboards for every team"
+msgstr ""
+
+#: patterns/features-zigzag.php:85
+msgid "Weekly digests by email"
+msgstr ""
+
+#: patterns/features-zigzag.php:88
+msgid "Export to CSV or the API"
+msgstr ""
+
+#: patterns/features-zigzag.php:97
+msgid "Analytics view in Unapp"
+msgstr ""
+
+#: patterns/features-zigzag.php:19
+msgctxt "Section eyebrow label"
+msgid "Product tour"
+msgstr ""
+
+#: patterns/features-zigzag.php:41
+msgctxt "Feature eyebrow"
+msgid "Plan"
+msgstr ""
+
+#: patterns/features-zigzag.php:71
+msgctxt "Feature eyebrow"
+msgid "Measure"
+msgstr ""
+
+#. Pattern title
+#: patterns/features-zigzag.php
+msgid "Features: alternating rows"
+msgstr ""
+
+#. Pattern description
+#: patterns/features-zigzag.php
+msgid "Two alternating image-and-text rows with checklists — the classic product tour layout."
 msgstr ""
 
 #: patterns/features.php:77
@@ -344,6 +1188,35 @@ msgstr ""
 msgid "Two columns of icon features flanking a mobile app screenshot in a device frame."
 msgstr ""
 
+#: patterns/footer-slim.php:30
+msgid "© %1$s %2$s"
+msgstr ""
+
+#: patterns/footer-slim.php:21
+msgctxt "Footer menu link"
+msgid "Privacy"
+msgstr ""
+
+#: patterns/footer-slim.php:22
+msgctxt "Footer menu link"
+msgid "Terms"
+msgstr ""
+
+#: patterns/footer-slim.php:23
+msgctxt "Footer menu link"
+msgid "Status"
+msgstr ""
+
+#. Pattern title
+#: patterns/footer-slim.php
+msgid "Footer: slim"
+msgstr ""
+
+#. Pattern description
+#: patterns/footer-slim.php
+msgid "A one-row footer with the site title, a short menu, copyright and social links."
+msgstr ""
+
 #: patterns/footer.php:21
 msgid "One calm workspace for planning, files and conversations. Take on your biggest projects and goals with Unapp."
 msgstr ""
@@ -410,6 +1283,16 @@ msgstr ""
 msgid "Dark four-column footer with brand, links, latest posts, contact details and copyright bar."
 msgstr ""
 
+#. Pattern title
+#: patterns/header-centered.php
+msgid "Header: centred"
+msgstr ""
+
+#. Pattern description
+#: patterns/header-centered.php
+msgid "Centred site title above a centred menu — an alternative header template part."
+msgstr ""
+
 #: patterns/header.php:30
 msgctxt "Header call-to-action button"
 msgid "Get Premium"
@@ -425,6 +1308,148 @@ msgstr ""
 #. Pattern description
 #: patterns/header.php
 msgid "Logo or site title on the left, primary navigation and a call-to-action button on the right."
+msgstr ""
+
+#: patterns/hero-cover.php:17
+msgid "Built for teams who ship every week"
+msgstr ""
+
+#: patterns/hero-cover.php:20
+msgid "From first sketch to release notes, Unapp keeps everyone pointed at the same goal."
+msgstr ""
+
+#: patterns/hero-cover.php:25
+msgid "Get Premium"
+msgstr ""
+
+#: patterns/hero-cover.php:28
+msgid "Watch the tour"
+msgstr ""
+
+#. Pattern title
+#: patterns/hero-cover.php
+msgid "Hero: photo background"
+msgstr ""
+
+#. Pattern description
+#: patterns/hero-cover.php
+msgid "Full-height Cover hero with a tinted photograph behind the headline and buttons."
+msgstr ""
+
+#: patterns/hero-email.php:22
+msgid "The workspace your team will actually use"
+msgstr ""
+
+#: patterns/hero-email.php:25
+msgid "Join 10,000 teams planning, shipping and reporting in one calm place."
+msgstr ""
+
+#: patterns/hero-email.php:31
+#: patterns/newsletter.php:30
+#: patterns/waitlist.php:31
+msgid "you@company.com"
+msgstr ""
+
+#: patterns/hero-email.php:35
+msgid "Free while in beta. Unsubscribe any time."
+msgstr ""
+
+#: patterns/hero-email.php:38
+msgid "Unapp analytics dashboard"
+msgstr ""
+
+#: patterns/hero-email.php:19
+msgctxt "Hero eyebrow"
+msgid "Early access"
+msgstr ""
+
+#: patterns/hero-email.php:31
+msgctxt "Hero email capture label"
+msgid "Email address"
+msgstr ""
+
+#: patterns/hero-email.php:31
+msgctxt "Hero email capture button"
+msgid "Get early access"
+msgstr ""
+
+#. Pattern title
+#: patterns/hero-email.php
+msgid "Hero: email capture"
+msgstr ""
+
+#. Pattern description
+#: patterns/hero-email.php
+msgid "Centred hero with an inline email capture field, a reassurance line and a product screenshot."
+msgstr ""
+
+#: patterns/hero-minimal.php:19
+msgid "Documentation, changelog and everything in between"
+msgstr ""
+
+#: patterns/hero-minimal.php:22
+msgid "Everything you need to run Unapp day to day — guides, API reference and release notes."
+msgstr ""
+
+#: patterns/hero-minimal.php:28
+msgid "Search the docs…"
+msgstr ""
+
+#: patterns/hero-minimal.php:28
+#: patterns/hidden-search.php:12
+msgctxt "Search form label"
+msgid "Search"
+msgstr ""
+
+#: patterns/hero-minimal.php:28
+#: patterns/hidden-search.php:12
+msgctxt "Search button text"
+msgid "Search"
+msgstr ""
+
+#. Pattern title
+#: patterns/hero-minimal.php
+msgid "Hero: heading and search"
+msgstr ""
+
+#. Pattern description
+#: patterns/hero-minimal.php
+msgid "Compact type-only hero with a search field — good for documentation, help centres and blog homes."
+msgstr ""
+
+#: patterns/hero-split.php:24
+msgid "Ship your product, not your project plan"
+msgstr ""
+
+#: patterns/hero-split.php:27
+msgid "Unapp keeps roadmaps, files and conversations in one place, so the work moves forward while you sleep."
+msgstr ""
+
+#: patterns/hero-split.php:35
+msgid "Book a demo"
+msgstr ""
+
+#: patterns/hero-split.php:40
+msgid "No credit card required · 14-day trial"
+msgstr ""
+
+#: patterns/hero-split.php:47
+msgid "Unapp dashboard with project analytics"
+msgstr ""
+
+#: patterns/hero-split.php:21
+msgctxt "Hero eyebrow"
+msgid "New in 2.0"
+msgstr ""
+
+#. Pattern title
+#: patterns/hero-split.php
+msgid "Hero: split with screenshot"
+msgstr ""
+
+#. Pattern description
+#: patterns/hero-split.php
+msgid "Two-column hero: copy and buttons on the left, a product screenshot on the right."
 msgstr ""
 
 #: patterns/hero.php:17
@@ -542,18 +1567,8 @@ msgid "Three-column post grid with pagination used by the blog, archive and sear
 msgstr ""
 
 #: patterns/hidden-search.php:12
-msgctxt "Search form label"
-msgid "Search"
-msgstr ""
-
-#: patterns/hidden-search.php:12
 msgctxt "Search input placeholder"
 msgid "Search…"
-msgstr ""
-
-#: patterns/hidden-search.php:12
-msgctxt "Search button text"
-msgid "Search"
 msgstr ""
 
 #. Pattern title
@@ -564,6 +1579,317 @@ msgstr ""
 #. Pattern description
 #: patterns/hidden-search.php
 msgid "Search form with translated labels."
+msgstr ""
+
+#: patterns/how-it-works.php:36
+msgid "Live in three steps"
+msgstr ""
+
+#: patterns/how-it-works.php:39
+msgid "Most teams are running their first sprint in Unapp before lunch."
+msgstr ""
+
+#: patterns/how-it-works.php:15
+msgctxt "Step title"
+msgid "Import your work"
+msgstr ""
+
+#: patterns/how-it-works.php:16
+msgctxt "Step description"
+msgid "Bring boards, issues and documents across from the tools you already use. Nothing is lost in translation."
+msgstr ""
+
+#: patterns/how-it-works.php:19
+msgctxt "Step title"
+msgid "Invite the team"
+msgstr ""
+
+#: patterns/how-it-works.php:20
+msgctxt "Step description"
+msgid "Roles, permissions and notification rules are set once and inherited by every new project."
+msgstr ""
+
+#: patterns/how-it-works.php:23
+msgctxt "Step title"
+msgid "Ship, then report"
+msgstr ""
+
+#: patterns/how-it-works.php:24
+msgctxt "Step description"
+msgid "Progress rolls up automatically, so status meetings turn into two-minute reads."
+msgstr ""
+
+#: patterns/how-it-works.php:33
+msgctxt "Section eyebrow label"
+msgid "How it works"
+msgstr ""
+
+#. Pattern title
+#: patterns/how-it-works.php
+msgid "How it works: numbered steps"
+msgstr ""
+
+#. Pattern description
+#: patterns/how-it-works.php
+msgid "Three numbered steps describing a process, in equal columns."
+msgstr ""
+
+#: patterns/integrations.php:32
+msgid "Plays nicely with your stack"
+msgstr ""
+
+#: patterns/integrations.php:35
+msgid "Two-way sync with the tools your team already opens every morning."
+msgstr ""
+
+#: patterns/integrations.php:62
+msgid "Browse all integrations"
+msgstr ""
+
+#: patterns/integrations.php:14
+msgctxt "Integration label"
+msgid "Code hosting"
+msgstr ""
+
+#: patterns/integrations.php:15
+msgctxt "Integration label"
+msgid "Design files"
+msgstr ""
+
+#: patterns/integrations.php:16
+msgctxt "Integration label"
+msgid "Team chat"
+msgstr ""
+
+#: patterns/integrations.php:17
+msgctxt "Integration label"
+msgid "Calendars"
+msgstr ""
+
+#: patterns/integrations.php:18
+msgctxt "Integration label"
+msgid "Email"
+msgstr ""
+
+#: patterns/integrations.php:19
+msgctxt "Integration label"
+msgid "Data warehouse"
+msgstr ""
+
+#: patterns/integrations.php:20
+msgctxt "Integration label"
+msgid "Billing"
+msgstr ""
+
+#: patterns/integrations.php:21
+msgctxt "Integration label"
+msgid "CLI and API"
+msgstr ""
+
+#: patterns/integrations.php:29
+msgctxt "Section eyebrow label"
+msgid "Integrations"
+msgstr ""
+
+#. Pattern title
+#: patterns/integrations.php
+msgid "Integrations grid"
+msgstr ""
+
+#. Pattern description
+#: patterns/integrations.php
+msgid "A grid of integration tiles with icons, plus a link to a full directory."
+msgstr ""
+
+#: patterns/legal.php:37
+msgid "Last updated: 12 August 2026"
+msgstr ""
+
+#: patterns/legal.php:40
+msgid "Privacy policy"
+msgstr ""
+
+#: patterns/legal.php:43
+msgid "A plain-language summary of how this site handles your information."
+msgstr ""
+
+#: patterns/legal.php:15
+msgctxt "Legal section title"
+msgid "Who we are"
+msgstr ""
+
+#: patterns/legal.php:16
+msgctxt "Legal section body"
+msgid "This policy explains what we collect, why we collect it and what you can ask us to do with it. Replace this placeholder with your own wording before you publish."
+msgstr ""
+
+#: patterns/legal.php:19
+msgctxt "Legal section title"
+msgid "Information we collect"
+msgstr ""
+
+#: patterns/legal.php:20
+msgctxt "Legal section body"
+msgid "Account details you give us, usage data from the product itself, and the technical information your browser sends with every request."
+msgstr ""
+
+#: patterns/legal.php:23
+msgctxt "Legal section title"
+msgid "How we use it"
+msgstr ""
+
+#: patterns/legal.php:24
+msgctxt "Legal section body"
+msgid "To run the service, to answer your questions and to work out which parts of the product deserve more attention. We do not sell it."
+msgstr ""
+
+#: patterns/legal.php:27
+msgctxt "Legal section title"
+msgid "Your rights"
+msgstr ""
+
+#: patterns/legal.php:28
+msgctxt "Legal section body"
+msgid "You can ask for a copy of your data, ask us to correct it, or ask us to delete it. Write to the address at the bottom of this page and we will reply within 30 days."
+msgstr ""
+
+#. Pattern title
+#: patterns/legal.php
+msgid "Legal document"
+msgstr ""
+
+#. Pattern description
+#: patterns/legal.php
+msgid "A readable legal page: title, last-updated line and numbered sections."
+msgstr ""
+
+#: patterns/logo-cloud.php:25
+msgid "Trusted by product teams at"
+msgstr ""
+
+#: patterns/logo-cloud.php:14
+msgctxt "Placeholder customer name"
+msgid "Northwind"
+msgstr ""
+
+#: patterns/logo-cloud.php:15
+msgctxt "Placeholder customer name"
+msgid "Vertex"
+msgstr ""
+
+#: patterns/logo-cloud.php:16
+msgctxt "Placeholder customer name"
+msgid "Lumen"
+msgstr ""
+
+#: patterns/logo-cloud.php:17
+msgctxt "Placeholder customer name"
+msgid "Cobalt"
+msgstr ""
+
+#: patterns/logo-cloud.php:18
+msgctxt "Placeholder customer name"
+msgid "Harbor"
+msgstr ""
+
+#: patterns/logo-cloud.php:19
+msgctxt "Placeholder customer name"
+msgid "Meridian"
+msgstr ""
+
+#. Pattern title
+#: patterns/logo-cloud.php
+msgid "Logo cloud"
+msgstr ""
+
+#. Pattern description
+#: patterns/logo-cloud.php
+msgid "A row of customer logos under a small label. Replace the placeholder marks with your own."
+msgstr ""
+
+#: patterns/newsletter.php:21
+msgid "The Friday changelog"
+msgstr ""
+
+#: patterns/newsletter.php:24
+msgid "One short email a week: what shipped, what broke, what we learned. No marketing."
+msgstr ""
+
+#: patterns/newsletter.php:32
+msgid "Roughly 900 readers. Unsubscribe in one click."
+msgstr ""
+
+#: patterns/newsletter.php:30
+msgctxt "Newsletter field label"
+msgid "Email address"
+msgstr ""
+
+#: patterns/newsletter.php:30
+msgctxt "Newsletter button"
+msgid "Subscribe"
+msgstr ""
+
+#. Pattern title
+#: patterns/newsletter.php
+msgid "Newsletter sign-up"
+msgstr ""
+
+#. Pattern description
+#: patterns/newsletter.php
+msgid "Inline newsletter row: pitch on the left, email field on the right. Swap the field for your mail plugin's block."
+msgstr ""
+
+#: patterns/offices.php:27
+msgid "Where you will find us"
+msgstr ""
+
+#: patterns/offices.php:30
+msgid "Remote-first, with three places to drop in for coffee."
+msgstr ""
+
+#: patterns/offices.php:14
+msgctxt "Office city"
+msgid "Berlin"
+msgstr ""
+
+#: patterns/offices.php:14
+msgctxt "Office address"
+msgid "Prenzlauer Allee 12<br>10405 Berlin, Germany"
+msgstr ""
+
+#: patterns/offices.php:15
+msgctxt "Office city"
+msgid "New York"
+msgstr ""
+
+#: patterns/offices.php:15
+msgctxt "Office address"
+msgid "198 West 21th Street, Suite 721<br>New York, NY 10016"
+msgstr ""
+
+#: patterns/offices.php:16
+msgctxt "Office city"
+msgid "Melbourne"
+msgstr ""
+
+#: patterns/offices.php:16
+msgctxt "Office address"
+msgid "45 Collins Street<br>Melbourne VIC 3000, Australia"
+msgstr ""
+
+#: patterns/offices.php:24
+msgctxt "Section eyebrow label"
+msgid "Offices"
+msgstr ""
+
+#. Pattern title
+#: patterns/offices.php
+msgid "Office locations"
+msgstr ""
+
+#. Pattern description
+#: patterns/offices.php
+msgid "Three office locations with pin icons and addresses."
 msgstr ""
 
 #. Pattern title
@@ -577,6 +1903,76 @@ msgid "Company story, team members, key numbers and a call to action. Best used 
 msgstr ""
 
 #. Pattern title
+#: patterns/page-careers.php
+msgid "Careers page"
+msgstr ""
+
+#. Pattern description
+#: patterns/page-careers.php
+msgid "Culture first, then the open roles: values, team, timeline, positions and a closing note."
+msgstr ""
+
+#. Pattern title
+#: patterns/page-changelog.php
+msgid "Changelog page"
+msgstr ""
+
+#. Pattern description
+#: patterns/page-changelog.php
+msgid "Product release notes with a newsletter sign-up at the end."
+msgstr ""
+
+#. Pattern title
+#: patterns/page-coming-soon.php
+msgid "Coming soon page"
+msgstr ""
+
+#. Pattern description
+#: patterns/page-coming-soon.php
+msgid "A one-screen pre-launch page: waitlist panel, a few features and review scores."
+msgstr ""
+
+#. Pattern title
+#: patterns/page-contact.php
+msgid "Contact page"
+msgstr ""
+
+#. Pattern description
+#: patterns/page-contact.php
+msgid "Contact details with room for your form block, office locations and the FAQ."
+msgstr ""
+
+#. Pattern title
+#: patterns/page-customers.php
+msgid "Customers page"
+msgstr ""
+
+#. Pattern description
+#: patterns/page-customers.php
+msgid "Social proof end to end: logos, ratings, a case study, testimonials and press mentions."
+msgstr ""
+
+#. Pattern title
+#: patterns/page-features.php
+msgid "Features page"
+msgstr ""
+
+#. Pattern description
+#: patterns/page-features.php
+msgid "A full product tour: bento grid, alternating rows, integrations, security and a call to action."
+msgstr ""
+
+#. Pattern title
+#: patterns/page-help.php
+msgid "Help centre"
+msgstr ""
+
+#. Pattern description
+#: patterns/page-help.php
+msgid "Documentation landing page: search hero, topic cards, FAQ and a support call to action."
+msgstr ""
+
+#. Pattern title
 #: patterns/page-home.php
 msgid "Home landing page"
 msgstr ""
@@ -587,6 +1983,26 @@ msgid "The complete Unapp landing page: hero, services, collaboration, features,
 msgstr ""
 
 #. Pattern title
+#: patterns/page-legal.php
+msgid "Legal page"
+msgstr ""
+
+#. Pattern description
+#: patterns/page-legal.php
+msgid "A single-column legal document — privacy policy, terms or a data processing agreement."
+msgstr ""
+
+#. Pattern title
+#: patterns/page-pricing-full.php
+msgid "Pricing page (detailed)"
+msgstr ""
+
+#. Pattern description
+#: patterns/page-pricing-full.php
+msgid "Plans, a full comparison table, security notes and the pricing FAQ."
+msgstr ""
+
+#. Pattern title
 #: patterns/page-pricing.php
 msgid "Pricing page"
 msgstr ""
@@ -594,6 +2010,269 @@ msgstr ""
 #. Pattern description
 #: patterns/page-pricing.php
 msgid "Pricing table, trust stats, newsletter call to action and contact cards. Best used with the \"Page (No Title)\" template."
+msgstr ""
+
+#. Pattern title
+#: patterns/page-saas.php
+msgid "SaaS landing page"
+msgstr ""
+
+#. Pattern description
+#: patterns/page-saas.php
+msgid "A conversion-focused landing page: split hero, logo cloud, features, proof, pricing and a closing call to action."
+msgstr ""
+
+#: patterns/press.php:27
+msgid "What people are writing"
+msgstr ""
+
+#: patterns/press.php:14
+msgctxt "Press quote"
+msgid "“The most opinionated project tool since the original Basecamp — and that is a compliment.”"
+msgstr ""
+
+#: patterns/press.php:15
+msgctxt "Press quote"
+msgid "“Unapp has quietly become the default for small product teams who hate ceremony.”"
+msgstr ""
+
+#: patterns/press.php:16
+msgctxt "Press quote"
+msgid "“Reporting that a chief executive can read without a translator.”"
+msgstr ""
+
+#: patterns/press.php:24
+msgctxt "Section eyebrow label"
+msgid "Press"
+msgstr ""
+
+#. Pattern title
+#: patterns/press.php
+msgid "Press mentions"
+msgstr ""
+
+#. Pattern description
+#: patterns/press.php
+msgid "Publication logos with a pull quote from each."
+msgstr ""
+
+#: patterns/pricing-compare.php:22
+msgid "Everything, side by side"
+msgstr ""
+
+#: patterns/pricing-compare.php:25
+msgid "The full breakdown of what each plan includes."
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Feature"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+#: patterns/pricing-two.php:36
+msgid "Free"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+#: patterns/pricing-two.php:80
+msgid "Team"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Business"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Projects"
+msgstr ""
+
+#. Space size name
+#: patterns/pricing-compare.php:32
+#: theme.json
+msgid "3"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Unlimited"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Storage"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "1 GB"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "100 GB"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "1 TB"
+msgstr ""
+
+#. Pattern title
+#: patterns/pricing-compare.php:32
+#: patterns/team.php
+msgid "Team members"
+msgstr ""
+
+#. Space size name
+#: patterns/pricing-compare.php:32
+#: theme.json
+msgid "2"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Up to 50"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Reporting"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Basic"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Advanced"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Advanced + API"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Single sign-on"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "—"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Yes"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Support"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Community"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Priority"
+msgstr ""
+
+#: patterns/pricing-compare.php:32
+msgid "Dedicated manager"
+msgstr ""
+
+#: patterns/pricing-compare.php:42
+msgid "Talk to sales"
+msgstr ""
+
+#: patterns/pricing-compare.php:19
+msgctxt "Section eyebrow label"
+msgid "Compare"
+msgstr ""
+
+#. Pattern title
+#: patterns/pricing-compare.php
+msgid "Pricing: comparison table"
+msgstr ""
+
+#. Pattern description
+#: patterns/pricing-compare.php
+msgid "A feature comparison table across three plans, with calls to action beneath."
+msgstr ""
+
+#: patterns/pricing-two.php:22
+msgid "Two plans. No surprises."
+msgstr ""
+
+#: patterns/pricing-two.php:25
+msgid "Start free forever. Upgrade the day your team outgrows it."
+msgstr ""
+
+#: patterns/pricing-two.php:39
+msgid "For solo makers and side projects"
+msgstr ""
+
+#: patterns/pricing-two.php:44
+msgid "$0"
+msgstr ""
+
+#: patterns/pricing-two.php:47
+msgid "forever"
+msgstr ""
+
+#: patterns/pricing-two.php:54
+msgid "3 projects"
+msgstr ""
+
+#: patterns/pricing-two.php:57
+msgid "1 GB storage"
+msgstr ""
+
+#: patterns/pricing-two.php:60
+msgid "Community support"
+msgstr ""
+
+#: patterns/pricing-two.php:67
+msgid "Create an account"
+msgstr ""
+
+#: patterns/pricing-two.php:83
+msgid "For teams shipping every week"
+msgstr ""
+
+#: patterns/pricing-two.php:88
+msgid "$12"
+msgstr ""
+
+#: patterns/pricing-two.php:91
+msgid "per user / month"
+msgstr ""
+
+#: patterns/pricing-two.php:101
+msgid "100 GB storage"
+msgstr ""
+
+#: patterns/pricing-two.php:104
+msgid "Priority support"
+msgstr ""
+
+#: patterns/pricing-two.php:107
+msgid "Advanced reporting"
+msgstr ""
+
+#: patterns/pricing-two.php:110
+msgid "SSO and audit logs"
+msgstr ""
+
+#: patterns/pricing-two.php:128
+msgid "Prices exclude VAT. Annual billing saves 20%."
+msgstr ""
+
+#: patterns/pricing-two.php:19
+#: patterns/pricing.php:61
+msgctxt "Section eyebrow label"
+msgid "Pricing"
+msgstr ""
+
+#. Pattern title
+#: patterns/pricing-two.php
+msgid "Pricing: two plans"
+msgstr ""
+
+#. Pattern description
+#: patterns/pricing-two.php
+msgid "A two-plan pricing block for products with one paid tier."
 msgstr ""
 
 #: patterns/pricing.php:64
@@ -725,11 +2404,6 @@ msgctxt "Pricing plan button"
 msgid "Contact sales"
 msgstr ""
 
-#: patterns/pricing.php:61
-msgctxt "Section eyebrow label"
-msgid "Pricing"
-msgstr ""
-
 #. Pattern title
 #: patterns/pricing.php
 msgid "Pricing table"
@@ -738,6 +2412,54 @@ msgstr ""
 #. Pattern description
 #: patterns/pricing.php
 msgid "Three pricing cards with a highlighted middle plan, feature checklists and call-to-action buttons."
+msgstr ""
+
+#: patterns/ratings.php:28
+msgid "Five star rating"
+msgstr ""
+
+#: patterns/ratings.php:14
+msgctxt "Review source"
+msgid "G2 · 480 reviews"
+msgstr ""
+
+#: patterns/ratings.php:15
+msgctxt "Review source"
+msgid "Capterra · 310 reviews"
+msgstr ""
+
+#: patterns/ratings.php:16
+msgctxt "Review source"
+msgid "App Store · 12k ratings"
+msgstr ""
+
+#: patterns/ratings.php:17
+msgctxt "Review source"
+msgid "Google Play · 9k ratings"
+msgstr ""
+
+#. Pattern title
+#: patterns/ratings.php
+msgid "Review scores"
+msgstr ""
+
+#. Pattern description
+#: patterns/ratings.php
+msgid "A band of review-platform scores with star graphics."
+msgstr ""
+
+#: patterns/related-posts.php:17
+msgid "Keep reading"
+msgstr ""
+
+#. Pattern title
+#: patterns/related-posts.php
+msgid "Related posts"
+msgstr ""
+
+#. Pattern description
+#: patterns/related-posts.php
+msgid "Three more posts in a soft band — for the end of the Single template."
 msgstr ""
 
 #: patterns/screens.php:39
@@ -791,6 +2513,73 @@ msgstr ""
 #. Pattern description
 #: patterns/screens.php
 msgid "Section intro and a three-column gallery of product screenshots that open in the built-in lightbox."
+msgstr ""
+
+#: patterns/security.php:28
+msgid "Boring where it counts"
+msgstr ""
+
+#: patterns/security.php:31
+msgid "The controls your security review will ask about, ready before you do."
+msgstr ""
+
+#: patterns/security.php:61
+msgid "Read the security overview"
+msgstr ""
+
+#: patterns/security.php:14
+msgctxt "Trust item title"
+msgid "SOC 2 Type II"
+msgstr ""
+
+#: patterns/security.php:14
+msgctxt "Trust item description"
+msgid "Audited annually. Report available under NDA."
+msgstr ""
+
+#: patterns/security.php:15
+msgctxt "Trust item title"
+msgid "Encrypted throughout"
+msgstr ""
+
+#: patterns/security.php:15
+msgctxt "Trust item description"
+msgid "TLS 1.3 in transit, AES-256 at rest, keys rotated quarterly."
+msgstr ""
+
+#: patterns/security.php:16
+msgctxt "Trust item title"
+msgid "Data residency"
+msgstr ""
+
+#: patterns/security.php:16
+msgctxt "Trust item description"
+msgid "Choose the EU, the US or Australia. Data never leaves the region."
+msgstr ""
+
+#: patterns/security.php:17
+msgctxt "Trust item title"
+msgid "SSO and SCIM"
+msgstr ""
+
+#: patterns/security.php:17
+msgctxt "Trust item description"
+msgid "Okta, Entra ID and Google Workspace, with automated provisioning."
+msgstr ""
+
+#: patterns/security.php:25
+msgctxt "Section eyebrow label"
+msgid "Security"
+msgstr ""
+
+#. Pattern title
+#: patterns/security.php
+msgid "Security and compliance"
+msgstr ""
+
+#. Pattern description
+#: patterns/security.php
+msgid "A grid of trust and compliance points — useful on pricing and enterprise pages."
 msgstr ""
 
 #: patterns/services.php:44
@@ -939,14 +2728,256 @@ msgctxt "Section eyebrow label"
 msgid "Our team"
 msgstr ""
 
-#. Pattern title
-#: patterns/team.php
-msgid "Team members"
-msgstr ""
-
 #. Pattern description
 #: patterns/team.php
 msgid "Four team members with round portraits, roles and social links."
+msgstr ""
+
+#: patterns/testimonial-feature.php:21
+msgid "Portrait of the quoted customer"
+msgstr ""
+
+#: patterns/testimonial-feature.php:28
+msgid "Harbor logo"
+msgstr ""
+
+#: patterns/testimonial-feature.php:31
+msgid "“Unapp gave us one calendar, one backlog and one source of truth. Six months in, nobody asks for the old spreadsheets.”"
+msgstr ""
+
+#: patterns/testimonial-feature.php:34
+msgid "Nadia Okafor · VP Engineering, Harbor"
+msgstr ""
+
+#: patterns/testimonial-feature.php:39
+msgid "Read the case study"
+msgstr ""
+
+#. Pattern title
+#: patterns/testimonial-feature.php
+msgid "Testimonial: single quote"
+msgstr ""
+
+#. Pattern description
+#: patterns/testimonial-feature.php
+msgid "One large customer quote with a portrait, logo and a link to the full story."
+msgstr ""
+
+#: patterns/testimonials.php:42
+msgid "Teams don't go back"
+msgstr ""
+
+#: patterns/testimonials.php:45
+msgid "A few words from the people who run their week inside Unapp."
+msgstr ""
+
+#: patterns/testimonials.php:57
+msgid "Rated 5 out of 5"
+msgstr ""
+
+#: patterns/testimonials.php:15
+msgctxt "Testimonial quote"
+msgid "We replaced three tools with Unapp in a fortnight. Our release notes now write themselves from the board."
+msgstr ""
+
+#: patterns/testimonials.php:16
+msgctxt "Testimonial author"
+msgid "Priya Raman"
+msgstr ""
+
+#: patterns/testimonials.php:17
+msgctxt "Testimonial author role"
+msgid "Head of Product, Northwind"
+msgstr ""
+
+#: patterns/testimonials.php:21
+msgctxt "Testimonial quote"
+msgid "Onboarding used to take a week. New engineers now ship something real on day two."
+msgstr ""
+
+#: patterns/testimonials.php:22
+msgctxt "Testimonial author"
+msgid "Tom Alvarez"
+msgstr ""
+
+#: patterns/testimonials.php:23
+msgctxt "Testimonial author role"
+msgid "Engineering Manager, Vertex"
+msgstr ""
+
+#: patterns/testimonials.php:27
+msgctxt "Testimonial quote"
+msgid "The reporting alone paid for the year. I can finally answer \"where is it?\" without a meeting."
+msgstr ""
+
+#: patterns/testimonials.php:28
+msgctxt "Testimonial author"
+msgid "Béatrice Laurent"
+msgstr ""
+
+#: patterns/testimonials.php:29
+msgctxt "Testimonial author role"
+msgid "COO, Lumen Studio"
+msgstr ""
+
+#: patterns/testimonials.php:39
+msgctxt "Section eyebrow label"
+msgid "Customers"
+msgstr ""
+
+#. Pattern title
+#: patterns/testimonials.php
+msgid "Testimonials grid"
+msgstr ""
+
+#. Pattern description
+#: patterns/testimonials.php
+msgid "Three testimonial cards with a rating, quote, portrait and role."
+msgstr ""
+
+#: patterns/timeline.php:28
+msgid "Five years of shipping on Fridays"
+msgstr ""
+
+#: patterns/timeline.php:31
+msgid "A short history of how Unapp got here."
+msgstr ""
+
+#: patterns/timeline.php:14
+msgctxt "Milestone title"
+msgid "Two people and a whiteboard"
+msgstr ""
+
+#: patterns/timeline.php:14
+msgctxt "Milestone description"
+msgid "Unapp started as an internal tool for our own studio. It fitted on one screen and did three things well."
+msgstr ""
+
+#: patterns/timeline.php:15
+msgctxt "Milestone title"
+msgid "Opened to everyone"
+msgstr ""
+
+#: patterns/timeline.php:15
+msgctxt "Milestone description"
+msgid "The public beta filled in a week. We spent the year saying no to features and yes to speed."
+msgstr ""
+
+#: patterns/timeline.php:16
+msgctxt "Milestone title"
+msgid "10,000 teams"
+msgstr ""
+
+#: patterns/timeline.php:16
+msgctxt "Milestone description"
+msgid "Teams in 40 countries now plan their week in Unapp, from two-person studios to listed companies."
+msgstr ""
+
+#: patterns/timeline.php:17
+msgctxt "Milestone title"
+msgid "Built for the long run"
+msgstr ""
+
+#: patterns/timeline.php:17
+msgctxt "Milestone description"
+msgid "Profitable, independent and still shipping every Friday."
+msgstr ""
+
+#: patterns/timeline.php:25
+msgctxt "Section eyebrow label"
+msgid "Our story"
+msgstr ""
+
+#. Pattern title
+#: patterns/timeline.php
+msgid "Timeline / milestones"
+msgstr ""
+
+#. Pattern description
+#: patterns/timeline.php
+msgid "A dated list of milestones with a rule between each entry."
+msgstr ""
+
+#: patterns/values.php:27
+msgid "Three rules we hold to"
+msgstr ""
+
+#: patterns/values.php:14
+msgctxt "Value title"
+msgid "Opinionated, not rigid"
+msgstr ""
+
+#: patterns/values.php:14
+msgctxt "Value description"
+msgid "We ship a strong default and let you change it. Blank screens help nobody."
+msgstr ""
+
+#: patterns/values.php:15
+msgctxt "Value title"
+msgid "Support is everyone's job"
+msgstr ""
+
+#: patterns/values.php:15
+msgctxt "Value description"
+msgid "Every engineer spends a day a month answering tickets. It shows in the product."
+msgstr ""
+
+#: patterns/values.php:16
+msgctxt "Value title"
+msgid "Work in the open"
+msgstr ""
+
+#: patterns/values.php:16
+msgctxt "Value description"
+msgid "Public roadmap, public changelog, public post-mortems when we get it wrong."
+msgstr ""
+
+#: patterns/values.php:24
+msgctxt "Section eyebrow label"
+msgid "What we believe"
+msgstr ""
+
+#. Pattern title
+#: patterns/values.php
+msgid "Company values"
+msgstr ""
+
+#. Pattern description
+#: patterns/values.php
+msgid "Three value cards with icons — for an About or Careers page."
+msgstr ""
+
+#: patterns/waitlist.php:22
+msgid "Something new is nearly ready"
+msgstr ""
+
+#: patterns/waitlist.php:25
+msgid "We are putting the finishing touches to the next version of Unapp. Leave your address and you will be first through the door."
+msgstr ""
+
+#: patterns/waitlist.php:19
+msgctxt "Section eyebrow label"
+msgid "Coming soon"
+msgstr ""
+
+#: patterns/waitlist.php:31
+msgctxt "Waitlist field label"
+msgid "Email address"
+msgstr ""
+
+#: patterns/waitlist.php:31
+msgctxt "Waitlist button"
+msgid "Join the waitlist"
+msgstr ""
+
+#. Pattern title
+#: patterns/waitlist.php
+msgid "Waitlist / coming soon"
+msgstr ""
+
+#. Pattern description
+#: patterns/waitlist.php
+msgid "Full-bleed gradient panel with a waitlist field and social links — the whole page for a pre-launch site."
 msgstr ""
 
 #. Theme Name of the theme
@@ -961,7 +2992,7 @@ msgstr ""
 
 #. Description of the theme
 #: style.css
-msgid "Unapp is a lightweight, block-based WordPress theme for app and SaaS landing pages. Built for the Site Editor with a full set of patterns — hero, features, pricing, team, stats, portfolio, blog and contact sections — plus section styles and color variations. No page-builder framework, no jQuery, no icon fonts."
+msgid "Unapp is a lightweight, block-based WordPress theme for app and SaaS landing pages. Built for the Site Editor with 47 section patterns, 13 full-page starters, seven section styles, eleven block styles and six color variations. No page-builder framework, no jQuery, no icon fonts."
 msgstr ""
 
 #. Author of the theme
@@ -977,64 +3008,80 @@ msgstr ""
 #. Color name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Base"
 msgstr ""
 
 #. Color name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Contrast"
 msgstr ""
 
 #. Color name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Primary"
 msgstr ""
 
 #. Color name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Secondary"
 msgstr ""
 
 #. Color name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Accent"
 msgstr ""
 
 #. Color name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Surface"
 msgstr ""
 
 #. Color name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Muted"
 msgstr ""
 
 #. Color name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Border"
 msgstr ""
 
@@ -1042,41 +3089,51 @@ msgstr ""
 #. Style variation name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/section-dark.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Dark"
 msgstr ""
 
 #. Gradient name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Primary to Accent"
 msgstr ""
 
 #. Gradient name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Secondary to Accent"
 msgstr ""
 
 #. Gradient name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Primary overlay"
 msgstr ""
 
 #. Gradient name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Dark overlay"
 msgstr ""
 
@@ -1085,40 +3142,36 @@ msgstr ""
 #: theme.json
 #: styles/card.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Card"
 msgstr ""
 
 #. Shadow name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Card strong"
 msgstr ""
 
 #. Shadow name
 #: theme.json
 #: styles/emerald.json
+#: styles/graphite.json
 #: styles/midnight.json
 #: styles/sunset.json
+#: styles/violet.json
 msgid "Glow"
 msgstr ""
 
 #. Space size name
 #: theme.json
 msgid "1"
-msgstr ""
-
-#. Space size name
-#: theme.json
-msgid "2"
-msgstr ""
-
-#. Space size name
-#: theme.json
-msgid "3"
 msgstr ""
 
 #. Space size name
@@ -1192,13 +3245,33 @@ msgid "Page (No Title)"
 msgstr ""
 
 #. Style variation name
+#: styles/elevated.json
+msgid "Elevated"
+msgstr ""
+
+#. Style variation name
 #: styles/emerald.json
 msgid "Emerald"
 msgstr ""
 
 #. Style variation name
+#: styles/frosted.json
+msgid "Frosted glass"
+msgstr ""
+
+#. Style variation name
+#: styles/graphite.json
+msgid "Graphite"
+msgstr ""
+
+#. Style variation name
 #: styles/midnight.json
 msgid "Midnight"
+msgstr ""
+
+#. Style variation name
+#: styles/outline.json
+msgid "Outline"
 msgstr ""
 
 #. Style variation name
@@ -1214,4 +3287,9 @@ msgstr ""
 #. Style variation name
 #: styles/sunset.json
 msgid "Sunset"
+msgstr ""
+
+#. Style variation name
+#: styles/violet.json
+msgid "Violet"
 msgstr ""
