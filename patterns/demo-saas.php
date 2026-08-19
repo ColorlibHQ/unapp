@@ -17,6 +17,7 @@
 <!-- wp:pattern {"slug":"unapp/logo-cloud"} /-->
 <!-- wp:pattern {"slug":"unapp/features-zigzag"} /-->
 <!-- wp:pattern {"slug":"unapp/how-it-works"} /-->
+<!-- wp:pattern {"slug":"unapp/screens"} /-->
 <!-- wp:pattern {"slug":"unapp/testimonials"} /-->
 <!-- wp:pattern {"slug":"unapp/pricing"} /-->
 <!-- wp:pattern {"slug":"unapp/faq-accordion"} /-->

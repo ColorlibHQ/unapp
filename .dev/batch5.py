@@ -68,7 +68,7 @@ role_row = group(
         column(buttons([{"text": t("View role"), "style": "is-style-outline"}], justify="right"),
                width="30%", vertical_align="center"),
     ], gap="40", vertical_align="center"),
-    style_variation="is-style-card", radius="16px", layout="default",
+    style_variation="is-style-card", radius="20px", layout="default",
     pad={"top": "40", "bottom": "40", "left": "50", "right": "50"})
 body = section(
     intro(eyebrow_text=t("Careers", "Section eyebrow label"),
@@ -141,10 +141,10 @@ prelude = """$unapp_trust = array(
 );"""
 trust_tile = group(
     icon_badge_expr("$unapp_trust_item['icon']", bg="primary", pad=12) + "\n" +
-    heading("<?php echo esc_html( $unapp_trust_item['title'] ); ?>", level=3, size="medium") + "\n" +
+    heading("<?php echo esc_html( $unapp_trust_item['title'] ); ?>", level=3, size="large") + "\n" +
     para("<?php echo esc_html( $unapp_trust_item['text'] ); ?>", color="muted", size="small"),
-    style_variation="is-style-card", radius="16px", gap="20", layout="flex", orientation="vertical",
-    pad={"top": "40", "bottom": "40", "left": "40", "right": "40"})
+    style_variation="is-style-card", radius="20px", gap="20", layout="flex", orientation="vertical",
+    pad={"top": "50", "bottom": "50", "left": "50", "right": "50"})
 body = section(
     intro(eyebrow_text=t("Security", "Section eyebrow label"),
           title=t("Boring where it counts"),

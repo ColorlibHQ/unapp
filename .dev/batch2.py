@@ -29,7 +29,7 @@ card_inner = (
     para("<?php echo esc_html( $unapp_quote['quote'] ); ?>", size="large") + "\n" +
     group(
         image("<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/' . $unapp_quote['avatar'] . '.svg' ) ); ?>",
-              "<?php echo esc_attr( $unapp_quote['name'] ); ?>", width="44px", height="44px", radius="999px") + "\n" +
+              "<?php echo esc_attr( $unapp_quote['name'] ); ?>", width="56px", height="56px", radius="999px") + "\n" +
         group(
             para("<?php echo esc_html( $unapp_quote['name'] ); ?>", weight="600", font="heading", size="medium") + "\n" +
             para("<?php echo esc_html( $unapp_quote['role'] ); ?>", color="muted", size="small"),
@@ -77,7 +77,7 @@ body = section(
     intro(eyebrow_text=t("Case study", "Section eyebrow label"),
           title=t("How Meridian cut release cycles in half")) + "\n" +
     columns([
-        column(image(uri("assets/images/office.avif"), tattr("Meridian's studio"), radius="16px"),
+        column(image(uri("assets/images/office.avif"), tattr("Meridian's studio"), radius="20px"),
                width="46%", vertical_align="center"),
         column(
             para(t("Meridian ships a design system used by nine product teams. Before Unapp, every release meant a week of chasing status in chat."), size="large") + "\n" +

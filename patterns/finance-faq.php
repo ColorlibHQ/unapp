@@ -11,8 +11,8 @@
  */
 
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|50"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull is-style-section-soft" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"680px"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"align":"center","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
@@ -23,7 +23,7 @@
 <!-- /wp:heading -->
 </div>
 <!-- /wp:group -->
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|16"}},"layout":{"type":"constrained","contentSize":"760px"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained","contentSize":"760px"}} -->
 <div class="wp-block-group">
 <!-- wp:details {"summary":"<?php echo esc_html_x( 'Are you actually independent?', 'FAQ question', 'unapp' ); ?>","className":"is-style-faq-card"} -->
 <details class="wp-block-details is-style-faq-card"><summary><?php echo esc_html_x( 'Are you actually independent?', 'FAQ question', 'unapp' ); ?></summary>
@@ -35,7 +35,7 @@
 <!-- wp:details {"summary":"<?php echo esc_html_x( 'Is there a minimum I need to invest?', 'FAQ question', 'unapp' ); ?>","className":"is-style-faq-card"} -->
 <details class="wp-block-details is-style-faq-card"><summary><?php echo esc_html_x( 'Is there a minimum I need to invest?', 'FAQ question', 'unapp' ); ?></summary>
 <!-- wp:paragraph {"textColor":"muted"} -->
-<p class="has-muted-color has-text-color"><?php echo esc_html_x( 'For ongoing advice, around £150,000 — below that our percentage fee is poor value for you and we will say so. One-off planning work has no minimum at all.', 'FAQ answer', 'unapp' ); ?></p>
+<p class="has-muted-color has-text-color"><?php echo esc_html_x( 'For ongoing advice, around £150,000 — below that our percentage fee is poor value for you, and we will say so. One-off planning work has no minimum at all.', 'FAQ answer', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 </details>
 <!-- /wp:details -->
@@ -49,7 +49,7 @@
 <!-- wp:details {"summary":"<?php echo esc_html_x( 'What if I want to leave?', 'FAQ question', 'unapp' ); ?>","className":"is-style-faq-card"} -->
 <details class="wp-block-details is-style-faq-card"><summary><?php echo esc_html_x( 'What if I want to leave?', 'FAQ question', 'unapp' ); ?></summary>
 <!-- wp:paragraph {"textColor":"muted"} -->
-<p class="has-muted-color has-text-color"><?php echo esc_html_x( 'You give us a month\'s notice, we hand over everything to your new adviser, and there is no exit charge. Your investments stay exactly where they are.', 'FAQ answer', 'unapp' ); ?></p>
+<p class="has-muted-color has-text-color"><?php echo esc_html_x( 'You give us a month\'s notice, we hand everything over to your new adviser, and there is no exit charge. Your investments stay exactly where they are.', 'FAQ answer', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 </details>
 <!-- /wp:details -->

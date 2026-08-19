@@ -11,11 +11,11 @@
  */
 
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|0"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:columns {"verticalAlignment":"top","align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|60","left":"var:preset|spacing|60"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-top alignwide">
-<!-- wp:column {"verticalAlignment":"top","width":"52%","style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
+<!-- wp:column {"verticalAlignment":"top","width":"52%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:52%;">
 <!-- wp:paragraph {"align":"left","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
 <p class="has-text-align-left has-primary-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'Talk to us', 'Section eyebrow label', 'unapp' ); ?></p>
@@ -24,10 +24,10 @@
 <h2 class="wp-block-heading"><?php esc_html_e( 'The first conversation costs nothing', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"large"} -->
-<p class="has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'An hour, on the phone or at the office on Rodney Street, with whichever of us is the right fit. If we are not the right firm for you we will tell you, and where possible we will tell you who is.', 'unapp' ); ?></p>
+<p class="has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'An hour, on the phone or at the office on Rodney Street, with whichever of us is the right fit. If we are not the right firm for you we will say so, and where we can we will tell you who is.', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|10"}}}} -->
-<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--10);">
+<!-- wp:buttons -->
+<div class="wp-block-buttons">
 <!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#book"><?php esc_html_e( 'Book a call', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
@@ -38,10 +38,10 @@
 <!-- /wp:buttons -->
 </div>
 <!-- /wp:column -->
-<!-- wp:column {"verticalAlignment":"top","width":"48%"} -->
+<!-- wp:column {"verticalAlignment":"top","width":"48%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:48%;">
-<!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"18px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|12"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-card" style="border-radius:18px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40);">
+<!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group is-style-card" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}}} -->
 <p style="font-weight:600;"><?php esc_html_e( 'Office', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->

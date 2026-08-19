@@ -15,8 +15,10 @@
 ?>
 <!-- wp:pattern {"slug":"unapp/logo-cloud"} /-->
 <!-- wp:pattern {"slug":"unapp/ratings"} /-->
+<!-- wp:pattern {"slug":"unapp/collaborate"} /-->
 <!-- wp:pattern {"slug":"unapp/case-study"} /-->
 <!-- wp:pattern {"slug":"unapp/testimonials"} /-->
+<!-- wp:pattern {"slug":"unapp/screens"} /-->
 <!-- wp:pattern {"slug":"unapp/testimonial-feature"} /-->
 <!-- wp:pattern {"slug":"unapp/press"} /-->
 <!-- wp:pattern {"slug":"unapp/cta-band"} /-->

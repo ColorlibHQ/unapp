@@ -12,24 +12,24 @@
 
 $unapp_portfolio_steps = array(
 	array(
-		'when'  => _x( 'Week one', 'Project stage timing', 'unapp' ),
-		'title' => _x( 'Reading', 'Project stage title', 'unapp' ),
-		'text'  => _x( 'Everything you have already written down, plus conversations with the people who will have to live with the result.', 'Project stage text', 'unapp' ),
+		'when' => _x( "Week one", 'Project stage', 'unapp' ),
+		'title' => _x( "Reading", 'Project stage', 'unapp' ),
+		'text' => _x( "Everything you have already written down, plus conversations with the people who will have to live with the result.", 'Project stage', 'unapp' ),
 	),
 	array(
-		'when'  => _x( 'Weeks two to four', 'Project stage timing', 'unapp' ),
-		'title' => _x( 'Drawing', 'Project stage title', 'unapp' ),
-		'text'  => _x( 'Two directions, shown early and shown rough. We kill one together before either gets expensive.', 'Project stage text', 'unapp' ),
+		'when' => _x( "Weeks two to four", 'Project stage', 'unapp' ),
+		'title' => _x( "Drawing", 'Project stage', 'unapp' ),
+		'text' => _x( "Two directions, shown early and shown rough. We kill one together before either gets expensive.", 'Project stage', 'unapp' ),
 	),
 	array(
-		'when'  => _x( 'Weeks five to eight', 'Project stage timing', 'unapp' ),
-		'title' => _x( 'Building', 'Project stage title', 'unapp' ),
-		'text'  => _x( 'Type, colour, layout and every state of every component, in a file your developers can actually open.', 'Project stage text', 'unapp' ),
+		'when' => _x( "Weeks five to eight", 'Project stage', 'unapp' ),
+		'title' => _x( "Building", 'Project stage', 'unapp' ),
+		'text' => _x( "Type, colour, layout and every state of every component, in a file your developers can actually open.", 'Project stage', 'unapp' ),
 	),
 );
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|50"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"680px"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"align":"center","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
@@ -43,10 +43,10 @@ $unapp_portfolio_steps = array(
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
-<!-- wp:group {"align":"wide","className":"unapp-grid-3","style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"grid","columnCount":3}} -->
+<!-- wp:group {"align":"wide","className":"unapp-grid-3","style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"grid","columnCount":3}} -->
 <div class="wp-block-group alignwide unapp-grid-3">
 <?php foreach ( $unapp_portfolio_steps as $unapp_portfolio_step ) : ?>
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|12"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"textColor":"primary","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
 <p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo $unapp_portfolio_step['when']; ?></p>

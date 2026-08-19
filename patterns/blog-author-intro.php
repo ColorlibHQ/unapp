@@ -11,14 +11,14 @@
  */
 
 ?>
-<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"},"blockGap":"var:preset|spacing|0"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull is-style-section-soft" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center alignwide">
 <!-- wp:column {"verticalAlignment":"center","width":"26%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:26%;">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","width":"180px","height":"180px","style":{"border":{"radius":"999px"}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/avatar-4.svg' ) ); ?>" alt="<?php esc_attr_e( 'Author portrait placeholder', 'unapp' ); ?>" style="border-radius:999px;width:180px;height:180px;"/></figure>
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","width":"96px","height":"96px","style":{"border":{"radius":"999px"}}} -->
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/avatar-4.svg' ) ); ?>" alt="<?php esc_attr_e( 'Author portrait placeholder', 'unapp' ); ?>" style="border-radius:999px;width:96px;height:96px;"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->
@@ -27,8 +27,8 @@
 <!-- wp:paragraph {"align":"left","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
 <p class="has-text-align-left has-primary-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'Written by', 'Section eyebrow label', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:heading {"fontSize":"xx-large"} -->
-<h2 class="wp-block-heading has-xx-large-font-size"><?php esc_html_e( 'Ines Kovač', 'unapp' ); ?></h2>
+<!-- wp:heading -->
+<h2 class="wp-block-heading"><?php esc_html_e( 'Ines Kovač', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"large"} -->
 <p class="has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Fifteen years building products, most of them too quickly. This is where I write down what I would do differently.', 'unapp' ); ?></p>

@@ -17,7 +17,7 @@ $unapp_projects = array(
 	array( 'image' => 'gathering', 'title' => _x( 'Common Ground', 'Project title', 'unapp' ), 'meta' => _x( 'Campaign · 2024', 'Project meta', 'unapp' ) ),
 );
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|50"}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"680px"}} -->
 <div class="wp-block-group">
@@ -29,13 +29,13 @@ $unapp_projects = array(
 <!-- /wp:heading -->
 </div>
 <!-- /wp:group -->
-<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
+<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
 <div class="wp-block-columns alignwide">
 <?php foreach ( array_slice( $unapp_projects, 0, 2 ) as $unapp_project ) : ?>
 <!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
 <div class="wp-block-column">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","aspectRatio":"4/3","scale":"cover","style":{"border":{"radius":"14px"}}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/' . $unapp_project['image'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_project['title'] ); ?>" style="border-radius:14px;aspect-ratio:4/3;object-fit:cover;"/></figure>
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","aspectRatio":"4/3","scale":"cover","style":{"border":{"radius":"20px"}}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/' . $unapp_project['image'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_project['title'] ); ?>" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;"/></figure>
 <!-- /wp:image -->
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
 <h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_project['title'] ); ?></h3>
@@ -48,13 +48,13 @@ $unapp_projects = array(
 <?php endforeach; ?>
 </div>
 <!-- /wp:columns -->
-<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
+<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
 <div class="wp-block-columns alignwide">
 <?php foreach ( array_slice( $unapp_projects, 2, 2 ) as $unapp_project ) : ?>
 <!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
 <div class="wp-block-column">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","aspectRatio":"4/3","scale":"cover","style":{"border":{"radius":"14px"}}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/' . $unapp_project['image'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_project['title'] ); ?>" style="border-radius:14px;aspect-ratio:4/3;object-fit:cover;"/></figure>
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","aspectRatio":"4/3","scale":"cover","style":{"border":{"radius":"20px"}}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/' . $unapp_project['image'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_project['title'] ); ?>" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;"/></figure>
 <!-- /wp:image -->
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
 <h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_project['title'] ); ?></h3>

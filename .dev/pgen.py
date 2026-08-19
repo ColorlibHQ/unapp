@@ -39,12 +39,53 @@ def _attrs(d):
     return json.dumps(d, separators=(",", ":"), ensure_ascii=False)
 
 
+# The only spacing presets theme.json registers. A value outside this set
+# serialises to var(--wp--preset--spacing--16), which is undefined, so the
+# declaration is dropped and the element silently falls back to the inherited
+# gap — the cause of the ragged spacing in the first cut of the niche patterns.
+SPACING_SLUGS = {"20", "30", "40", "50", "60", "70", "80"}
+
+
+def _space(n):
+    n = str(n)
+    if n in SPACING_SLUGS:
+        return None  # preset
+    if n == "0" or n.endswith(("px", "rem", "em", "%", "vw", "vh")):
+        return n     # explicit length, deliberate
+    raise ValueError(
+        f"spacing {n!r} is not a registered preset {sorted(SPACING_SLUGS)} "
+        "and not an explicit length; pick a step on the scale"
+    )
+
+
 def sp(n):
-    return f"var:preset|spacing|{n}"
+    literal = _space(n)
+    return literal if literal else f"var:preset|spacing|{n}"
 
 
 def spc(n):
-    return f"var(--wp--preset--spacing--{n})"
+    literal = _space(n)
+    return literal if literal else f"var(--wp--preset--spacing--{n})"
+
+
+# --------------------------------------------------------------- house style
+# Derived from the patterns the theme shipped with; every pattern follows these
+# so sections stack in one rhythm regardless of which niche wrote them.
+SECTION_PAD = ("70", "70")   # top/bottom of every full-width section
+SECTION_GAP = "60"           # intro -> content
+TIGHT_GAP = "50"             # content -> footnote inside a section
+CARD_RADIUS = "20px"
+CARD_PAD = "50"              # all four sides of a card
+CARD_GAP = "30"              # between blocks inside a card
+ROW_GAP = "40"               # between cards in a grid
+SPLIT_GAP = "60"             # between the two halves of a split section
+STACK_GAP = "30"             # between stacked text blocks in a column
+INTRO_WIDTH = "680px"        # eyebrow + title + lead
+READ_WIDTH = "760px"         # FAQ lists, legal text, single-column content
+CARD_TITLE_SIZE = "large"    # every card heading is an h3 at this size
+AVATAR_GRID = "96px"         # portrait in a card grid
+AVATAR_ROW = "56px"          # portrait beside a name in a row
+AVATAR_FEATURE = "140px"     # portrait in a team/feature card
 
 
 def _pad_attr(pad):
@@ -552,3 +593,89 @@ def write_pattern(slug, *, title, cats, keywords, desc, body, php_prelude="", vi
     path = os.path.join(THEME, "patterns", slug + ".php")
     open(path, "w").write(head + body + "\n")
     return path
+
+
+# --------------------------------------------------------------- components
+# One implementation per repeated shape. Patterns describe what a thing *is*;
+# the measurements live here, so a change lands everywhere at once.
+
+def card(inner, *, variation="is-style-card", pad=CARD_PAD, gap=CARD_GAP,
+         radius=CARD_RADIUS, vertical=True):
+    """A surface with the house padding, radius and internal rhythm."""
+    return group(inner, style_variation=variation, radius=radius, gap=gap,
+                 layout="flex" if vertical else "constrained",
+                 orientation="vertical" if vertical else None,
+                 pad={"top": pad, "bottom": pad, "left": pad, "right": pad})
+
+
+def stack(inner, *, gap=STACK_GAP, justify=None):
+    """A vertical run of blocks. Also what makes an icon badge shrink to content."""
+    return group(inner, layout="flex", orientation="vertical", gap=gap, justify=justify)
+
+
+def card_title(text, *, size=CARD_TITLE_SIZE):
+    return heading(text, level=3, size=size)
+
+
+def label(text, *, color="primary"):
+    """The small uppercase line above a title inside a card or row."""
+    return para(text, color=color, size="small", weight="600", letter="0.06em",
+                transform="uppercase")
+
+
+def icon_card(icon_expr, title, body, *, bg="primary", variation=None, expr=True):
+    """Icon badge, h3 and a paragraph — the theme's workhorse feature cell."""
+    badge = icon_badge_expr(icon_expr, bg=bg) if expr else icon_badge(icon_expr, bg=bg)
+    inner = badge + "\n" + card_title(title) + "\n" + para(body, color="muted")
+    return card(inner, variation=variation) if variation else stack(inner, gap=CARD_GAP)
+
+
+def avatar(src, alt, *, size=AVATAR_GRID):
+    return image(src, alt, width=size, height=size, radius="999px")
+
+
+def grid(inner, *, cols, gap=ROW_GAP):
+    """A wide grid that steps down through counts that divide the item count."""
+    return group(inner, align="wide", layout="grid", col_count=cols, gap=gap,
+                 class_name=f"unapp-grid-{cols}" if cols in (3, 4) else None)
+
+
+def split(left, right, *, left_width="52%", right_width="48%", align="center",
+          gap=SPLIT_GAP):
+    """Two columns, vertically centred, at the house gutter."""
+    # Both columns carry the stack gap: a column with no blockGap falls back to
+    # the default paragraph margin, which is off the spacing scale.
+    return columns([
+        column(left, width=left_width, vertical_align=align, gap=STACK_GAP),
+        column(right, width=right_width, vertical_align=align, gap=STACK_GAP),
+    ], align="wide", gap=gap, vertical_align=align)
+
+
+def faq_list(pairs):
+    """Question/answer pairs as Details cards in the reading column."""
+    items = [details(q, para(a, color="muted"), class_name="is-style-faq-card")
+             for q, a in pairs]
+    return group("\n".join(items), layout="constrained", content_size=READ_WIDTH, gap="30")
+
+
+def section_std(inner, *, variation=None, bg=None, gradient=None, text=None,
+                pad=SECTION_PAD, gap=SECTION_GAP, elements=None):
+    """Every section: same padding, same intro-to-content gap."""
+    return section(inner, pad=pad, gap=gap, style_variation=variation, bg=bg,
+                   gradient=gradient, text=text, elements=elements)
+
+
+GRADIENT_ELEMENTS = {
+    "link": {"color": {"text": "var:preset|color|base"}},
+    "heading": {"color": {"text": "var:preset|color|base"}},
+}
+
+
+def band(title, body, buttons_list, *, width="720px"):
+    """A closing call-to-action on the palette gradient."""
+    inner = (heading(title, align="center", size="xx-large", color="base") + "\n" +
+             para(body, align="center", custom_color="rgba(255,255,255,0.86)", size="large") + "\n" +
+             buttons(buttons_list, justify="center", margin={"top": "20"}))
+    return section_std(
+        group(inner, layout="constrained", content_size=width, gap=STACK_GAP),
+        gradient="primary-to-accent", text="base", gap="0", elements=GRADIENT_ELEMENTS)

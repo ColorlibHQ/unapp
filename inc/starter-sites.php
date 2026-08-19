@@ -98,11 +98,11 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'visit'   => array(
 					'title'    => __( 'Plan your visit', 'unapp' ),
-					'patterns' => array( 'unapp/church-visit', 'unapp/church-times', 'unapp/church-faq', 'unapp/church-contact' ),
+					'patterns' => array( 'unapp/church-visit', 'unapp/church-times', 'unapp/church-story', 'unapp/church-faq', 'unapp/church-contact' ),
 				),
 				'about'   => array(
 					'title'    => __( 'About us', 'unapp' ),
-					'patterns' => array( 'unapp/church-story', 'unapp/church-beliefs', 'unapp/church-staff', 'unapp/church-cta' ),
+					'patterns' => array( 'unapp/church-story', 'unapp/church-events', 'unapp/church-beliefs', 'unapp/church-staff', 'unapp/church-cta' ),
 				),
 				'give'    => array(
 					'title'    => __( 'Give', 'unapp' ),
@@ -154,7 +154,7 @@ function unapp_get_starter_sites() {
 				),
 				'memberships' => array(
 					'title'    => __( 'Memberships', 'unapp' ),
-					'patterns' => array( 'unapp/fitness-memberships', 'unapp/fitness-testimonials', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
+					'patterns' => array( 'unapp/fitness-memberships', 'unapp/fitness-testimonials', 'unapp/fitness-location', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
 				),
 				'contact'     => array(
 					'title'    => __( 'Contact', 'unapp' ),
@@ -176,7 +176,7 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'services' => array(
 					'title'    => __( 'Services', 'unapp' ),
-					'patterns' => array( 'unapp/finance-services', 'unapp/finance-process', 'unapp/finance-fees', 'unapp/finance-faq', 'unapp/finance-disclaimer' ),
+					'patterns' => array( 'unapp/finance-services', 'unapp/finance-process', 'unapp/finance-team', 'unapp/finance-fees', 'unapp/finance-faq', 'unapp/finance-disclaimer' ),
 				),
 				'about'    => array(
 					'title'    => __( 'About', 'unapp' ),
@@ -184,7 +184,7 @@ function unapp_get_starter_sites() {
 				),
 				'contact'  => array(
 					'title'    => __( 'Contact', 'unapp' ),
-					'patterns' => array( 'unapp/finance-contact', 'unapp/finance-faq', 'unapp/finance-disclaimer' ),
+					'patterns' => array( 'unapp/finance-contact', 'unapp/finance-process', 'unapp/finance-faq', 'unapp/finance-disclaimer' ),
 				),
 			),
 		),

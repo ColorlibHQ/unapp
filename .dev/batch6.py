@@ -8,7 +8,7 @@ big_post = ('<!-- wp:query {"queryId":21,"query":{"perPage":1,"pages":0,"offset"
             '<div class="wp-block-query">\n'
             '<!-- wp:post-template -->\n'
             + group(
-                '<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":"16px"}}} /-->\n'
+                '<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":"20px"}}} /-->\n'
                 + '<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->\n'
                   '<div class="wp-block-group">\n'
                   '<!-- wp:post-terms {"term":"category","fontSize":"small"} /-->\n'
@@ -40,7 +40,7 @@ write_pattern("blog-featured", title="Blog: featured post + list", cats=CONTENT,
 
 # ------------------------------------------------------------- blog list (rows)
 row_inner = columns([
-    column('<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"border":{"radius":"12px"}}} /-->',
+    column('<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"border":{"radius":"20px"}}} /-->',
            width="30%", vertical_align="center"),
     column('<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->\n'
            '<div class="wp-block-group">\n'
@@ -94,7 +94,7 @@ body = section(
     '"orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false},"align":"wide","layout":{"type":"default"}} -->\n'
     '<div class="wp-block-query alignwide">\n'
     '<!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"grid","columnCount":3}} -->\n'
-    + group('<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/10","style":{"border":{"radius":"12px"}}} /-->\n'
+    + group('<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/10","style":{"border":{"radius":"20px"}}} /-->\n'
             '<!-- wp:post-date {"fontSize":"small"} /-->\n'
             '<!-- wp:post-title {"isLink":true,"level":3,"fontSize":"large"} /-->',
             layout="default", gap="20") +
@@ -133,7 +133,7 @@ entry = group(
              weight="600", color="primary") + "\n" +
         para("<?php echo esc_html( $unapp_release['date'] ); ?>", size="small", color="muted"),
         layout="flex", wrap="wrap", gap="30") + "\n" +
-    heading("<?php echo esc_html( $unapp_release['title'] ); ?>", level=3, size="x-large") + "\n" +
+    heading("<?php echo esc_html( $unapp_release['title'] ); ?>", level=3, size="large") + "\n" +
     '<!-- wp:list {"className":"is-style-dash"} -->\n<ul class="wp-block-list is-style-dash">\n'
     '<?php foreach ( $unapp_release[\'items\'] as $unapp_item ) : ?>\n'
     '<!-- wp:list-item -->\n<li><?php echo esc_html( $unapp_item ); ?></li>\n<!-- /wp:list-item -->\n'
@@ -164,8 +164,8 @@ doc_tile = group(
     icon_badge_expr("$unapp_doc['icon']", bg="primary", pad=12) + "\n" +
     heading("<?php echo esc_html( $unapp_doc['title'] ); ?>", level=3, size="large") + "\n" +
     para("<?php echo esc_html( $unapp_doc['text'] ); ?>", color="muted", size="small"),
-    style_variation="is-style-card", radius="16px", gap="20", layout="flex", orientation="vertical",
-    pad={"top": "40", "bottom": "40", "left": "40", "right": "40"})
+    style_variation="is-style-card", radius="20px", gap="20", layout="flex", orientation="vertical",
+    pad={"top": "50", "bottom": "50", "left": "50", "right": "50"})
 body = section(
     intro(eyebrow_text=t("Help centre", "Section eyebrow label"),
           title=t("Browse by topic"),

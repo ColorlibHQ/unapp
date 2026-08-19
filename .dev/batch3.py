@@ -4,9 +4,9 @@ FEAT = "unapp, unapp_features, features, columns"
 
 # ------------------------------------------------------------- features zig-zag
 def zig(img_file, alt, eyebrow_text, title, text, bullets, reverse=False):
-    media = column(image(uri(f"assets/images/{img_file}"), tattr(alt), radius="16px", shadow="card"),
+    media = column(image(uri(f"assets/images/{img_file}"), tattr(alt), radius="20px", shadow="card"),
                    width="52%", vertical_align="center")
-    copy = column(eyebrow(eyebrow_text, align="left") + "\n" + heading(title, level=3, size="x-large") + "\n" +
+    copy = column(eyebrow(eyebrow_text, align="left") + "\n" + heading(title, level=3, size="large") + "\n" +
                   para(text, color="muted", size="large") + "\n" + lst(bullets),
                   width="48%", vertical_align="center", gap="30")
     cols = [copy, media] if reverse else [media, copy]
@@ -107,8 +107,8 @@ prelude = """$unapp_integrations = array(
 tile = group(
     icon_badge_expr("$unapp_integration['icon']", bg="primary") + "\n" +
     para("<?php echo esc_html( $unapp_integration['label'] ); ?>", weight="600", font="heading", size="small"),
-    style_variation="is-style-card", radius="16px", gap="30", layout="flex", orientation="vertical",
-    justify="center", pad={"top": "40", "bottom": "40", "left": "40", "right": "40"})
+    style_variation="is-style-card", radius="20px", gap="30", layout="flex", orientation="vertical",
+    justify="center", pad={"top": "50", "bottom": "50", "left": "50", "right": "50"})
 body = section(
     intro(eyebrow_text=t("Integrations", "Section eyebrow label"),
           title=t("Plays nicely with your stack"),

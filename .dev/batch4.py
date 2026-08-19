@@ -3,7 +3,7 @@ from pgen import *
 
 # ------------------------------------------------------------- pricing: two plans
 def plan(name, price, period, tagline, features, button, featured=False):
-    inner = (heading(name, level=3, size="x-large") + "\n" +
+    inner = (heading(name, level=3, size="large") + "\n" +
              para(tagline, color=None if featured else "muted", size="small") + "\n" +
              group(para(price, size="xxx-large", font="heading", weight="600", line_height="1") + "\n" +
                    para(period, color=None if featured else "muted", size="small"),
@@ -139,7 +139,7 @@ write_pattern("cta-app", title="Call to action: mobile app", cats="unapp, unapp_
 # ------------------------------------------------------------- newsletter inline
 body = section(
     columns([
-        column(heading(t("The Friday changelog"), level=3, size="x-large") + "\n" +
+        column(heading(t("The Friday changelog"), level=3, size="large") + "\n" +
                para(t("One short email a week: what shipped, what broke, what we learned. No marketing."), color="muted"),
                width="52%", vertical_align="center", gap="20"),
         column('<!-- wp:search {"label":"' + t("Email address", ctx="Newsletter field label").replace('"', "'") +

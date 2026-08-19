@@ -29,21 +29,21 @@ prelude = """$unapp_projects = array(
 );"""
 project = column(
     image("<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/' . $unapp_project['image'] . '.svg' ) ); ?>",
-          "<?php echo esc_attr( $unapp_project['title'] ); ?>", radius="14px", aspect="4/3", scale="cover") + "\n" +
+          "<?php echo esc_attr( $unapp_project['title'] ); ?>", radius="20px", aspect="4/3", scale="cover") + "\n" +
     heading("<?php echo esc_html( $unapp_project['title'] ); ?>", level=3, size="large") + "\n" +
     para("<?php echo esc_html( $unapp_project['meta'] ); ?>", color="muted", size="small"),
     gap="20")
 body = section(
     intro(eyebrow_text=t("Selected work", "Section eyebrow label"), title=t("Recent projects")) + "\n" +
-    columns([project], align="wide", gap="50")
+    columns([project], align="wide", gap="40")
         .replace('<div class="wp-block-columns alignwide">\n',
                  '<div class="wp-block-columns alignwide">\n<?php foreach ( array_slice( $unapp_projects, 0, 2 ) as $unapp_project ) : ?>\n')
         .replace('\n</div>\n<!-- /wp:columns -->', '\n<?php endforeach; ?>\n</div>\n<!-- /wp:columns -->') + "\n" +
-    columns([project], align="wide", gap="50")
+    columns([project], align="wide", gap="40")
         .replace('<div class="wp-block-columns alignwide">\n',
                  '<div class="wp-block-columns alignwide">\n<?php foreach ( array_slice( $unapp_projects, 2, 2 ) as $unapp_project ) : ?>\n')
         .replace('\n</div>\n<!-- /wp:columns -->', '\n<?php endforeach; ?>\n</div>\n<!-- /wp:columns -->'),
-    pad=("70", "70"), gap="50")
+    pad=("70", "70"), gap="60")
 write_pattern("portfolio-work", title="Portfolio: work grid", cats=P,
               keywords="portfolio, work, projects, grid, gallery, case studies",
               desc="Four projects in a two-by-two grid with title and credits under each.",
@@ -51,11 +51,11 @@ write_pattern("portfolio-work", title="Portfolio: work grid", cats=P,
 
 body = section(
     columns([
-        column(image(uri("assets/images/abstract/desk.svg"), tattr("Studio placeholder"), radius="16px"),
+        column(image(uri("assets/images/abstract/desk.svg"), tattr("Studio placeholder"), radius="20px"),
                width="45%", vertical_align="center"),
         column(
             eyebrow(t("About", "Section eyebrow label"), align="left") + "\n" +
-            heading(t("Fifteen years, three cities, one obsession"), size="xx-large") + "\n" +
+            heading(t("Fifteen years, three cities, one obsession")) + "\n" +
             para(t("I started in editorial, spent a decade in agencies and now work directly with founders. Most projects run six to ten weeks, start to finish."), color="muted", size="large") + "\n" +
             columns([
                 column(lst([t("Brand identity"), t("Packaging"), t("Art direction")], style="dash")),
@@ -75,17 +75,17 @@ prelude = """$unapp_offers = array(
 	array( 'title' => _x( 'Art direction', 'Service title', 'unapp' ), 'price' => _x( 'day rate', 'Service price', 'unapp' ), 'text' => _x( 'Photography, campaigns and the taste to say no to the wrong idea.', 'Service description', 'unapp' ) ),
 );"""
 offer = column(
-    heading("<?php echo esc_html( $unapp_offer['title'] ); ?>", level=3, size="x-large") + "\n" +
+    heading("<?php echo esc_html( $unapp_offer['title'] ); ?>", level=3, size="large") + "\n" +
     para("<?php echo esc_html( $unapp_offer['price'] ); ?>", color="primary", font="heading", weight="600", size="small") + "\n" +
     para("<?php echo esc_html( $unapp_offer['text'] ); ?>", color="muted"),
     gap="20")
 body = section(
     intro(eyebrow_text=t("Services", "Section eyebrow label"), title=t("How we can work together")) + "\n" +
-    columns([offer], align="wide", gap="50", class_name="is-style-divided")
+    columns([offer], align="wide", gap="40", class_name="is-style-divided")
         .replace('<div class="wp-block-columns alignwide is-style-divided">\n',
                  '<div class="wp-block-columns alignwide is-style-divided">\n<?php foreach ( $unapp_offers as $unapp_offer ) : ?>\n')
         .replace('\n</div>\n<!-- /wp:columns -->', '\n<?php endforeach; ?>\n</div>\n<!-- /wp:columns -->'),
-    pad=("70", "70"), gap="50")
+    pad=("70", "70"), gap="60")
 write_pattern("portfolio-services", title="Portfolio: services and rates", cats=P,
               keywords="portfolio, services, rates, pricing, freelance",
               desc="Three services with an indicative price, separated by hairline rules.",
@@ -129,8 +129,8 @@ body = section(
           title=t("When we gather"),
           lead=t("Come as you are. Every service is signed and the building is step-free.")) + "\n" +
     group('<?php foreach ( $unapp_services_times as $unapp_time ) : ?>\n' + row + '\n<?php endforeach; ?>',
-          layout="constrained", content_size="820px", gap="40"),
-    style_variation="is-style-section-soft", pad=("70", "70"), gap="50")
+          layout="constrained", content_size="760px", gap="40"),
+    style_variation="is-style-section-soft", pad=("70", "70"), gap="60")
 write_pattern("church-times", title="Church: service times", cats="unapp, unapp_church, text",
               keywords="church, service times, schedule, worship, sunday",
               desc="Service times with a short description of each gathering.",
@@ -146,15 +146,15 @@ tile = group(
     icon_badge_expr("$unapp_ministry['icon']", bg="primary", pad=12) + "\n" +
     heading("<?php echo esc_html( $unapp_ministry['title'] ); ?>", level=3, size="large") + "\n" +
     para("<?php echo esc_html( $unapp_ministry['text'] ); ?>", color="muted", size="small"),
-    style_variation="is-style-card", radius="16px", gap="20", layout="flex", orientation="vertical",
-    pad={"top": "40", "bottom": "40", "left": "40", "right": "40"})
+    style_variation="is-style-card", radius="20px", gap="20", layout="flex", orientation="vertical",
+    pad={"top": "50", "bottom": "50", "left": "50", "right": "50"})
 body = section(
     intro(eyebrow_text=t("Life together", "Section eyebrow label"),
           title=t("More than a Sunday"),
           lead=t("There is a place for you here on the other six days too.")) + "\n" +
     group('<?php foreach ( $unapp_ministries as $unapp_ministry ) : ?>\n' + tile + '\n<?php endforeach; ?>',
           align="wide", layout="grid", gap="40", col_count=4, class_name="unapp-grid-4"),
-    pad=("70", "70"), gap="50")
+    pad=("70", "70"), gap="60")
 write_pattern("church-ministries", title="Church: ministries", cats=C,
               keywords="church, ministries, groups, community, grid",
               desc="Four ministries or groups as icon cards.",
@@ -171,7 +171,7 @@ body = section(
                         {"text": t("Set up monthly"), "style": "is-style-outline", "color": "base"}],
                        justify="right", gap="30"), width="38%", vertical_align="center"),
     ], align="wide", gap="50", vertical_align="center"),
-    style_variation="is-style-section-gradient", pad=("60", "60"), gap="0")
+    style_variation="is-style-section-gradient", pad=("70", "70"), gap="0")
 write_pattern("church-giving", title="Church: giving", cats="unapp, unapp_church, call-to-action",
               keywords="church, giving, donate, offering, tithe",
               desc="A giving band that says where the money goes, with two donation buttons.",

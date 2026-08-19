@@ -20,7 +20,7 @@
 <div class="wp-block-columns are-vertically-aligned-center">
 <!-- wp:column {"verticalAlignment":"center","width":"30%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:30%;">
-<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"border":{"radius":"12px"}}} /-->
+<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"border":{"radius":"20px"}}} /-->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"center","width":"70%","style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->

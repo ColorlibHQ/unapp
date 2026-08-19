@@ -11,8 +11,8 @@
  */
 
 ?>
-<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull is-style-section-soft" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)">
 	<!-- wp:media-text {"align":"wide","mediaType":"image","mediaWidth":52,"imageFill":false,"style":{"spacing":{"blockGap":"var:preset|spacing|60"}}} -->
 	<div class="wp-block-media-text alignwide is-stacked-on-mobile" style="grid-template-columns:52% auto"><figure class="wp-block-media-text__media"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/office.avif' ) ); ?>" alt="<?php esc_attr_e( 'Bright open-plan office with a large shared table', 'unapp' ); ?>"/></figure><div class="wp-block-media-text__content">
 		<!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.12em","fontWeight":"600"}},"textColor":"primary","fontSize":"small","fontFamily":"heading"} -->

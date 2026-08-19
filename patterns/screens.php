@@ -47,8 +47,8 @@ $unapp_screens = array(
 	<!-- wp:gallery {"columns":3,"linkTo":"none","align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
 	<figure class="wp-block-gallery alignwide has-nested-images columns-3 is-cropped">
 		<?php foreach ( $unapp_screens as $unapp_screen ) : ?>
-		<!-- wp:image {"lightbox":{"enabled":true},"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"12px"},"shadow":"var:preset|shadow|card"}} -->
-		<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/' . $unapp_screen['file'] ) ); ?>" alt="<?php echo esc_attr( $unapp_screen['alt'] ); ?>" style="border-radius:12px;box-shadow:var(--wp--preset--shadow--card)"/><figcaption class="wp-element-caption"><?php echo esc_html( $unapp_screen['caption'] ); ?></figcaption></figure>
+		<!-- wp:image {"lightbox":{"enabled":true},"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"},"shadow":"var:preset|shadow|card"}} -->
+		<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/' . $unapp_screen['file'] ) ); ?>" alt="<?php echo esc_attr( $unapp_screen['alt'] ); ?>" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card)"/><figcaption class="wp-element-caption"><?php echo esc_html( $unapp_screen['caption'] ); ?></figcaption></figure>
 		<!-- /wp:image -->
 		<?php endforeach; ?>
 	</figure>

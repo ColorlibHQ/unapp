@@ -30,8 +30,8 @@
 <div class="wp-block-columns are-vertically-aligned-center alignwide">
 <!-- wp:column {"verticalAlignment":"center","width":"52%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:52%;">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"16px"},"shadow":"var:preset|shadow|card"}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/dashboard-1.avif' ) ); ?>" alt="<?php esc_attr_e( 'Planning board in Unapp', 'unapp' ); ?>" style="border-radius:16px;box-shadow:var(--wp--preset--shadow--card);"/></figure>
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"},"shadow":"var:preset|shadow|card"}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/dashboard-1.avif' ) ); ?>" alt="<?php esc_attr_e( 'Planning board in Unapp', 'unapp' ); ?>" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card);"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->
@@ -40,8 +40,8 @@
 <!-- wp:paragraph {"align":"left","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
 <p class="has-text-align-left has-primary-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'Plan', 'Feature eyebrow', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:heading {"level":3,"fontSize":"x-large"} -->
-<h3 class="wp-block-heading has-x-large-font-size"><?php esc_html_e( 'Plan the quarter in an afternoon', 'unapp' ); ?></h3>
+<!-- wp:heading {"level":3,"fontSize":"large"} -->
+<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'Plan the quarter in an afternoon', 'unapp' ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"large"} -->
 <p class="has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Drag work into place, set a target date and let Unapp keep the roadmap honest as things move.', 'unapp' ); ?></p>
@@ -70,8 +70,8 @@
 <!-- wp:paragraph {"align":"left","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
 <p class="has-text-align-left has-primary-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'Measure', 'Feature eyebrow', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:heading {"level":3,"fontSize":"x-large"} -->
-<h3 class="wp-block-heading has-x-large-font-size"><?php esc_html_e( 'Reports that answer the real question', 'unapp' ); ?></h3>
+<!-- wp:heading {"level":3,"fontSize":"large"} -->
+<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'Reports that answer the real question', 'unapp' ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"large"} -->
 <p class="has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Velocity, workload and progress are calculated as you work — no spreadsheet exports, no Friday scramble.', 'unapp' ); ?></p>
@@ -93,8 +93,8 @@
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"center","width":"52%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:52%;">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"16px"},"shadow":"var:preset|shadow|card"}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/dashboard-2.avif' ) ); ?>" alt="<?php esc_attr_e( 'Analytics view in Unapp', 'unapp' ); ?>" style="border-radius:16px;box-shadow:var(--wp--preset--shadow--card);"/></figure>
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"},"shadow":"var:preset|shadow|card"}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/dashboard-2.avif' ) ); ?>" alt="<?php esc_attr_e( 'Analytics view in Unapp', 'unapp' ); ?>" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card);"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->

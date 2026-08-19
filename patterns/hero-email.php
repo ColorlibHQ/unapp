@@ -34,8 +34,8 @@
 <!-- wp:paragraph {"align":"center","textColor":"muted","fontSize":"small"} -->
 <p class="has-text-align-center has-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'Free while in beta. Unsubscribe any time.', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","align":"wide","style":{"border":{"radius":"16px"},"shadow":"var:preset|shadow|card-strong"}} -->
-<figure class="wp-block-image alignwide size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/dashboard-2.avif' ) ); ?>" alt="<?php esc_attr_e( 'Unapp analytics dashboard', 'unapp' ); ?>" style="border-radius:16px;box-shadow:var(--wp--preset--shadow--card-strong);"/></figure>
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","align":"wide","style":{"border":{"radius":"20px"},"shadow":"var:preset|shadow|card-strong"}} -->
+<figure class="wp-block-image alignwide size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/dashboard-2.avif' ) ); ?>" alt="<?php esc_attr_e( 'Unapp analytics dashboard', 'unapp' ); ?>" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card-strong);"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:group -->

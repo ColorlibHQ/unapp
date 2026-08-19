@@ -62,8 +62,8 @@ $unapp_releases = array(
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
-<!-- wp:heading {"level":3,"fontSize":"x-large"} -->
-<h3 class="wp-block-heading has-x-large-font-size"><?php echo esc_html( $unapp_release['title'] ); ?></h3>
+<!-- wp:heading {"level":3,"fontSize":"large"} -->
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_release['title'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:list {"className":"is-style-dash"} -->
 <ul class="wp-block-list is-style-dash">

@@ -1,4 +1,4 @@
-"""A footer per starter, so a church site does not sign off with SaaS pricing links."""
+"""A footer per starter, on the house style."""
 import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pgen import *
 
@@ -21,52 +21,48 @@ CREDIT = '''<!-- wp:paragraph {"align":"right","style":{"color":{"text":"rgba(25
 <p class="has-text-align-right has-text-color has-small-font-size" style="color:rgba(255,255,255,0.75)"><?php esc_html_e( 'Built with the Unapp theme', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->'''
 
-
-def col_head(text):
-    return heading(t(text, "Footer column heading"), level=2, size="small", weight="600",
-                   letter="0.06em")
+FOOTER_ELEMENTS = {
+    "link": {"color": {"text": "var:preset|color|base"},
+             ":hover": {"color": {"text": "var:preset|color|secondary"}}},
+    "heading": {"color": {"text": "var:preset|color|base"}},
+}
 
 
 def niche_footer(slug, *, title, cats, keywords, desc, blurb, links_head, links,
                  contact_head, contact_lines, socials, posts_head):
     link_items = "\n".join(
-        f'<!-- wp:navigation-link {{"label":"{tattr(label)}","url":"{url}","kind":"custom","isTopLevelLink":true}} /-->'
-        for label, url in links)
+        f'<!-- wp:navigation-link {{"label":"{tattr(text)}","url":"{url}","kind":"custom","isTopLevelLink":true}} /-->'
+        for text, url in links)
     nav = ('<!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},'
            '"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->\n'
            + link_items + '\n<!-- /wp:navigation -->')
-
     contact = "\n".join(para(t(line, "Footer contact line"), custom_color=DIM, size="small")
                         for line in contact_lines)
+    posts = '<!-- wp:latest-posts {"postsToShow":3,"displayPostDate":true,"fontSize":"small"} /-->'
 
-    posts = ('<!-- wp:latest-posts {"postsToShow":3,"displayPostDate":true,"fontSize":"small"} /-->')
+    def head(text):
+        return heading(t(text, "Footer column heading"), level=2, size="small", weight="600",
+                       letter="0.06em")
 
     cols = columns([
         column('<!-- wp:site-title {"level":0,"fontSize":"large"} /-->' + "\n" +
                para(t(blurb, "Footer tagline"), custom_color=DIM, size="small") + "\n" +
                social(socials, size="has-small-icon-size", color="base", value="#ffffff", gap="30"),
-               width="34%", gap="20"),
-        column(col_head(links_head) + "\n" + nav, width="22%", gap="20"),
-        column(col_head(posts_head) + "\n" + posts, width="22%", gap="20"),
-        column(col_head(contact_head) + "\n" + contact, width="22%", gap="20"),
+               width="34%", gap=CARD_GAP),
+        column(head(links_head) + "\n" + nav, width="22%", gap=CARD_GAP),
+        column(head(posts_head) + "\n" + posts, width="22%", gap=CARD_GAP),
+        column(head(contact_head) + "\n" + contact, width="22%", gap=CARD_GAP),
     ], align="wide", gap="50")
 
     bar = group(
         columns([
             column(COPYRIGHT, width="60%", vertical_align="center"),
             column(CREDIT, width="40%", vertical_align="center"),
-        ], align="wide", gap="20", vertical_align="center", is_stacked=False),
-        align="wide",
-        border_top=("rgba(255,255,255,0.15)", "1px", "solid"),
-        pad={"top": "40"})
+        ], align="wide", gap="30", vertical_align="center", is_stacked=False),
+        align="wide", border_top=("rgba(255,255,255,0.15)", "1px", "solid"), pad={"top": "40"})
 
-    body = section(
-        cols + "\n" + bar, bg="dark", text="base", pad=("70", "40"), gap="50",
-        elements={
-            "link": {"color": {"text": "var:preset|color|base"},
-                     ":hover": {"color": {"text": "var:preset|color|secondary"}}},
-            "heading": {"color": {"text": "var:preset|color|base"}},
-        })
+    body = section_std(cols + "\n" + bar, bg="dark", text="base", pad=("70", "40"),
+                       elements=FOOTER_ELEMENTS)
     write_pattern(slug, title=title, cats=cats, keywords=keywords, desc=desc, body=body,
                   block_types="core/template-part/footer")
 
@@ -134,4 +130,4 @@ niche_footer(
     socials=[("x", "https://x.com"), ("mastodon", "https://mastodon.social"),
              ("rss", "https://example.com/feed")], posts_head="Recent essays")
 
-print("batch 17 written: 5 niche footers")
+print("batch 17 rewritten: 5 niche footers on the house style")

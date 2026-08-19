@@ -12,24 +12,24 @@
 
 $unapp_finance_fees = array(
 	array(
-		'label'  => _x( 'Initial advice', 'Fee label', 'unapp' ),
-		'amount' => _x( '£1,800', 'Fee amount', 'unapp' ),
-		'text'   => _x( 'Fixed, quoted before we start and payable only once you have the written plan in your hands.', 'Fee description', 'unapp' ),
+		'label' => _x( "Initial advice", 'Fee', 'unapp' ),
+		'amount' => _x( "£1,800", 'Fee', 'unapp' ),
+		'text' => _x( "Fixed, quoted before we start and payable only once you have the written plan in your hands.", 'Fee', 'unapp' ),
 	),
 	array(
-		'label'  => _x( 'Ongoing advice', 'Fee label', 'unapp' ),
-		'amount' => _x( '0.65%', 'Fee amount', 'unapp' ),
-		'text'   => _x( 'A year on the money we look after, billed monthly. It covers the annual review and everything in between.', 'Fee description', 'unapp' ),
+		'label' => _x( "Ongoing advice", 'Fee', 'unapp' ),
+		'amount' => _x( "0.65%", 'Fee', 'unapp' ),
+		'text' => _x( "A year on the money we look after, billed monthly. It covers the annual review and everything in between.", 'Fee', 'unapp' ),
 	),
 	array(
-		'label'  => _x( 'Nothing else', 'Fee label', 'unapp' ),
-		'amount' => _x( '£0', 'Fee amount', 'unapp' ),
-		'text'   => _x( 'No commission, no product kickbacks, no charge for phoning us with a question.', 'Fee description', 'unapp' ),
+		'label' => _x( "Nothing else", 'Fee', 'unapp' ),
+		'amount' => _x( "£0", 'Fee', 'unapp' ),
+		'text' => _x( "No commission, no product kickbacks, and no charge for phoning us with a question.", 'Fee', 'unapp' ),
 	),
 );
 ?>
-<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|50"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull is-style-section-soft" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull is-style-section-soft" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"680px"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"align":"center","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
@@ -46,7 +46,7 @@ $unapp_finance_fees = array(
 <!-- wp:group {"align":"wide","className":"unapp-grid-3","style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"grid","columnCount":3}} -->
 <div class="wp-block-group alignwide unapp-grid-3">
 <?php foreach ( $unapp_finance_fees as $unapp_finance_fee ) : ?>
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
 <p class="has-muted-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo $unapp_finance_fee['label']; ?></p>

@@ -84,7 +84,7 @@ They are simple SVGs drawn for this theme — invented brand names for the logo 
 == Changelog ==
 
 = 2.3.0 - 2026-08-19 =
-* Six one-click starter sites with a selector under Appearance → Starter Sites. Forty-six niche patterns and a footer per starter, so every page of every starter is written for that kind of site. Four new palettes, redrawn avatar placeholders, and button-contrast fixes in the Midnight and Mono palettes.
+* Six one-click starter sites with a selector under Appearance → Starter Sites. Forty-six niche patterns and a footer per starter, so every page of every starter is written for that kind of site. One measurement system across all 99 sections, sections that alternate ground by role, redrawn placeholder artwork, four new palettes, and button-contrast fixes in the Midnight and Mono palettes.
 
 = 2.2.0 - 2026-08-19 =
 * Colour and typography style variations you can mix (6 × 5), five typography presets with four new variable fonts, author/category/tag/date and sidebar templates, a sidebar template part, a native Accordion FAQ, breadcrumbs, result counts, reading time, sticky-header support, WooCommerce compatibility styles, post formats, RTL-safe CSS and an accessibility statement.

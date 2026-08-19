@@ -32,7 +32,7 @@
 		<!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"grid","columnCount":3}} -->
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"}} -->
 			<div class="wp-block-group">
-				<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/10","style":{"border":{"radius":"12px"}}} /-->
+				<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/10","style":{"border":{"radius":"20px"}}} /-->
 				<!-- wp:post-date {"fontSize":"small"} /-->
 				<!-- wp:post-title {"isLink":true,"level":3,"fontSize":"large"} /-->
 				<!-- wp:post-excerpt {"moreText":"<?php echo esc_html_x( 'Read more', 'Post excerpt read more link', 'unapp' ); ?>","excerptLength":18} /-->

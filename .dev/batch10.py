@@ -40,7 +40,7 @@ body = section(
           lead=t("Twelve people per class. Book through the app up to seven days ahead.")) + "\n" +
     group(table, align="wide", layout="constrained") + "\n" +
     buttons([{"text": t("Book a class")}], justify="center"),
-    pad=("70", "70"), gap="50")
+    pad=("70", "70"), gap="60")
 write_pattern("fitness-schedule", title="Fitness: class timetable", cats="unapp, unapp_fitness, text",
               keywords="fitness, timetable, schedule, classes, gym",
               desc="A weekly class timetable using the Comparison table style.",
@@ -53,7 +53,7 @@ prelude = """$unapp_coaches = array(
 );"""
 coach = column(
     image("<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/' . $unapp_coach['avatar'] . '.svg' ) ); ?>",
-          "<?php echo esc_attr( $unapp_coach['name'] ); ?>", radius="16px", aspect="1", scale="cover") + "\n" +
+          "<?php echo esc_attr( $unapp_coach['name'] ); ?>", radius="20px", aspect="1", scale="cover") + "\n" +
     heading("<?php echo esc_html( $unapp_coach['name'] ); ?>", level=3, size="large") + "\n" +
     para("<?php echo esc_html( $unapp_coach['role'] ); ?>", color="primary", size="small", weight="600", font="heading") + "\n" +
     para("<?php echo esc_html( $unapp_coach['bio'] ); ?>", color="muted", size="small"),
@@ -65,7 +65,7 @@ body = section(
         .replace('<div class="wp-block-columns alignwide">\n',
                  '<div class="wp-block-columns alignwide">\n<?php foreach ( $unapp_coaches as $unapp_coach ) : ?>\n')
         .replace('\n</div>\n<!-- /wp:columns -->', '\n<?php endforeach; ?>\n</div>\n<!-- /wp:columns -->'),
-    style_variation="is-style-section-soft", pad=("70", "70"), gap="50")
+    style_variation="is-style-section-soft", pad=("70", "70"), gap="60")
 write_pattern("fitness-coaches", title="Fitness: coaches", cats="unapp, unapp_fitness, team",
               keywords="fitness, coaches, trainers, team, staff",
               desc="Three coaches with a portrait, discipline and a one-line biography.",
@@ -84,7 +84,7 @@ body = section(
             para(t("Regulated by the Financial Conduct Authority · No commission, ever"), color="muted", size="small"),
             width="52%", vertical_align="center", gap="30"),
         column(image(uri("assets/images/abstract/ledger.svg"), tattr("Planning document placeholder"),
-                     radius="16px", shadow="card"), width="48%", vertical_align="center"),
+                     radius="20px", shadow="card"), width="48%", vertical_align="center"),
     ], align="wide", gap="60", vertical_align="center"),
     pad=("70", "70"), gap="0")
 write_pattern("finance-hero", title="Finance: trust-led hero", cats=FI + ", banner",
@@ -104,15 +104,15 @@ tile = group(
     icon_badge_expr("$unapp_service_item['icon']", bg="primary", pad=12) + "\n" +
     heading("<?php echo esc_html( $unapp_service_item['title'] ); ?>", level=3, size="large") + "\n" +
     para("<?php echo esc_html( $unapp_service_item['text'] ); ?>", color="muted", size="small"),
-    style_variation="is-style-card", radius="16px", gap="20", layout="flex", orientation="vertical",
-    pad={"top": "40", "bottom": "40", "left": "40", "right": "40"})
+    style_variation="is-style-card", radius="20px", gap="20", layout="flex", orientation="vertical",
+    pad={"top": "50", "bottom": "50", "left": "50", "right": "50"})
 body = section(
     intro(eyebrow_text=t("What we do", "Section eyebrow label"),
           title=t("Six ways we help"),
           lead=t("Most clients start with one and end up with a plan that covers all six.")) + "\n" +
     group('<?php foreach ( $unapp_offer_list as $unapp_service_item ) : ?>\n' + tile + '\n<?php endforeach; ?>',
           align="wide", layout="grid", gap="40", col_count=3, class_name="unapp-grid-3"),
-    pad=("70", "70"), gap="50")
+    pad=("70", "70"), gap="60")
 write_pattern("finance-services", title="Finance: services", cats=FI + ", services",
               keywords="finance, services, advice, planning, grid",
               desc="Six advisory services as icon cards in a three-column grid.",
@@ -128,7 +128,7 @@ body = section(
         metric(t("0%"), t("commission taken")),
         metric(t("4.9/5"), t("client review score")),
     ], align="wide", gap="50"),
-    style_variation="is-style-section-soft", pad=("60", "60"), gap="0")
+    style_variation="is-style-section-soft", pad=("70", "70"), gap="0")
 write_pattern("finance-credentials", title="Finance: credentials", cats=FI + ", text",
               keywords="finance, credentials, trust, numbers, stats",
               desc="Four trust numbers in a quiet band — years, assets, commission, rating.",
@@ -140,9 +140,9 @@ body = section(
              transform="uppercase", letter="0.08em", color="muted") + "\n" +
         para(t("The value of investments can fall as well as rise and you may get back less than you invested. Past performance is not a guide to future returns. Tax treatment depends on individual circumstances and may change. This page is a placeholder — replace it with your own regulated wording before publishing."),
              color="muted", size="small"),
-        style_variation="is-style-outline", radius="12px", layout="default", gap="20",
-        pad={"top": "40", "bottom": "40", "left": "40", "right": "40"}),
-    pad=("50", "60"), gap="0", content_size="820px")
+        style_variation="is-style-outline", radius="20px", layout="default", gap="20",
+        pad={"top": "50", "bottom": "50", "left": "50", "right": "50"}),
+    pad=("70", "70"), gap="0", content_size="760px")
 write_pattern("finance-disclaimer", title="Finance: risk warning", cats=FI + ", text",
               keywords="finance, disclaimer, risk, compliance, legal",
               desc="A bordered compliance note for regulated firms — replace with your own wording.",

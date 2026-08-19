@@ -43,8 +43,8 @@
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"center","width":"54%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:54%;">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"16px"},"shadow":"var:preset|shadow|card-strong"}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/dashboard-1.avif' ) ); ?>" alt="<?php esc_attr_e( 'Unapp dashboard with project analytics', 'unapp' ); ?>" style="border-radius:16px;box-shadow:var(--wp--preset--shadow--card-strong);"/></figure>
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"},"shadow":"var:preset|shadow|card-strong"}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/dashboard-1.avif' ) ); ?>" alt="<?php esc_attr_e( 'Unapp dashboard with project analytics', 'unapp' ); ?>" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card-strong);"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->

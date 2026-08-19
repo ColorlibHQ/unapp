@@ -11,14 +11,14 @@
  */
 
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"},"blockGap":"var:preset|spacing|0"}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);">
 <!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center alignwide">
 <!-- wp:column {"verticalAlignment":"center","width":"52%","style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:52%;">
-<!-- wp:heading {"level":3,"fontSize":"x-large"} -->
-<h3 class="wp-block-heading has-x-large-font-size"><?php esc_html_e( 'The Friday changelog', 'unapp' ); ?></h3>
+<!-- wp:heading {"level":3,"fontSize":"large"} -->
+<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'The Friday changelog', 'unapp' ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted"} -->
 <p class="has-muted-color has-text-color"><?php esc_html_e( 'One short email a week: what shipped, what broke, what we learned. No marketing.', 'unapp' ); ?></p>

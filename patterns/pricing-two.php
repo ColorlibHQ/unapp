@@ -32,8 +32,8 @@
 <div class="wp-block-column">
 <!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group is-style-card" style="border-radius:20px;">
-<!-- wp:heading {"level":3,"fontSize":"x-large"} -->
-<h3 class="wp-block-heading has-x-large-font-size"><?php esc_html_e( 'Free', 'unapp' ); ?></h3>
+<!-- wp:heading {"level":3,"fontSize":"large"} -->
+<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'Free', 'unapp' ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
 <p class="has-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'For solo makers and side projects', 'unapp' ); ?></p>
@@ -76,8 +76,8 @@
 <div class="wp-block-column">
 <!-- wp:group {"className":"is-style-section-gradient","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"},"shadow":"var:preset|shadow|glow"},"layout":{"type":"default"}} -->
 <div class="wp-block-group is-style-section-gradient" style="border-radius:20px;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50);box-shadow:var(--wp--preset--shadow--glow);">
-<!-- wp:heading {"level":3,"fontSize":"x-large"} -->
-<h3 class="wp-block-heading has-x-large-font-size"><?php esc_html_e( 'Team', 'unapp' ); ?></h3>
+<!-- wp:heading {"level":3,"fontSize":"large"} -->
+<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'Team', 'unapp' ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size"><?php esc_html_e( 'For teams shipping every week', 'unapp' ); ?></p>

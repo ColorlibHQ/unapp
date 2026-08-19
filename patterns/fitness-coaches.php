@@ -16,8 +16,8 @@ $unapp_coaches = array(
 	array( 'avatar' => 'avatar-9', 'name' => _x( 'Ruth Okonkwo', 'Coach name', 'unapp' ), 'role' => _x( 'Mobility and rehab', 'Coach role', 'unapp' ), 'bio' => _x( 'Physiotherapist who would rather you never needed a physiotherapist.', 'Coach bio', 'unapp' ) ),
 );
 ?>
-<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|50"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull is-style-section-soft" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"680px"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"align":"center","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
@@ -33,8 +33,8 @@ $unapp_coaches = array(
 <?php foreach ( $unapp_coaches as $unapp_coach ) : ?>
 <!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
 <div class="wp-block-column">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","aspectRatio":"1","scale":"cover","style":{"border":{"radius":"16px"}}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/' . $unapp_coach['avatar'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_coach['name'] ); ?>" style="border-radius:16px;aspect-ratio:1;object-fit:cover;"/></figure>
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","aspectRatio":"1","scale":"cover","style":{"border":{"radius":"20px"}}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/' . $unapp_coach['avatar'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_coach['name'] ); ?>" style="border-radius:20px;aspect-ratio:1;object-fit:cover;"/></figure>
 <!-- /wp:image -->
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
 <h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_coach['name'] ); ?></h3>

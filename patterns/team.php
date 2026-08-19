@@ -50,8 +50,8 @@ $unapp_members = array(
 		<?php foreach ( $unapp_members as $unapp_index => $unapp_member ) : ?>
 		<!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 		<div class="wp-block-column">
-			<!-- wp:image {"width":"140px","height":"140px","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"999px"}}} -->
-			<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/avatar-' . ( $unapp_index + 1 ) . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_member['name'] ); ?>" style="border-radius:999px;width:140px;height:140px"/></figure>
+			<!-- wp:image {"width":"96px","height":"96px","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"999px"}}} -->
+			<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/avatar-' . ( $unapp_index + 1 ) . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_member['name'] ); ?>" style="border-radius:999px;width:96px;height:96px"/></figure>
 			<!-- /wp:image -->
 			<!-- wp:heading {"textAlign":"center","level":3,"fontSize":"large"} -->
 			<h3 class="wp-block-heading has-text-align-center has-large-font-size"><?php echo esc_html( $unapp_member['name'] ); ?></h3>

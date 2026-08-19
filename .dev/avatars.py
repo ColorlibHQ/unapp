@@ -14,19 +14,13 @@ import os
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "images", "avatars")
 
-# Desaturated pairs (ground, figure). Muted enough to sit under any of the ten palettes.
-TONES = [
-    ("#dfe3ec", "#7c8699"),  # slate
-    ("#e9e1d9", "#9a8672"),  # clay
-    ("#dee7e0", "#78998a"),  # sage
-    ("#ece2dc", "#a8837a"),  # rosewood
-    ("#e0e5ec", "#828da3"),  # steel
-    ("#eae4d6", "#9d9068"),  # olive
-    ("#e4e1ea", "#8d8399"),  # heather
-    ("#dde8e9", "#7a9599"),  # teal
-    ("#ece6dd", "#a29079"),  # sand
-    ("#e2e4e1", "#87908a"),  # stone
-]
+# One neutral ground for the whole set: four portraits side by side in a grid
+# looked arbitrary when each carried its own tint. The figure tone varies
+# instead, across a narrow, low-chroma range that sits under any palette.
+GROUND = "#e8e6e1"
+FIGURES = ["#7c8699", "#9a8672", "#78998a", "#a8837a", "#828da3",
+           "#9d9068", "#8d8399", "#7a9599", "#a29079", "#87908a"]
+TONES = [(GROUND, f) for f in FIGURES]
 
 HEAD_CX, HEAD_CY, HEAD_R = 200, 170, 62
 

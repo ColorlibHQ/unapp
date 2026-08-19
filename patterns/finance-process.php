@@ -12,26 +12,26 @@
 
 $unapp_finance_steps = array(
 	array(
-		'title' => _x( 'A conversation', 'Advice step title', 'unapp' ),
-		'text'  => _x( 'An hour on the phone or in the office, at our cost. You describe what you are worried about; we tell you honestly whether we can help.', 'Advice step text', 'unapp' ),
+		'title' => _x( "A conversation", 'Advice step', 'unapp' ),
+		'text' => _x( "An hour on the phone or in the office, at our cost. You describe what you are worried about; we tell you honestly whether we can help.", 'Advice step', 'unapp' ),
 	),
 	array(
-		'title' => _x( 'A written plan', 'Advice step title', 'unapp' ),
-		'text'  => _x( 'Where you stand today, what you want, and the gap between the two — in a document your family could read without us in the room.', 'Advice step text', 'unapp' ),
+		'title' => _x( "A written plan", 'Advice step', 'unapp' ),
+		'text' => _x( "Where you stand today, what you want, and the gap between the two — in a document your family could read without us in the room.", 'Advice step', 'unapp' ),
 	),
 	array(
-		'title' => _x( 'Putting it in place', 'Advice step title', 'unapp' ),
-		'text'  => _x( 'We do the paperwork, the transfers and the chasing. You sign things and otherwise get on with your life.', 'Advice step text', 'unapp' ),
+		'title' => _x( "Putting it in place", 'Advice step', 'unapp' ),
+		'text' => _x( "We do the paperwork, the transfers and the chasing. You sign things and otherwise get on with your life.", 'Advice step', 'unapp' ),
 	),
 	array(
-		'title' => _x( 'A review every year', 'Advice step title', 'unapp' ),
-		'text'  => _x( 'Markets move, tax rules change and so do you. We meet each year and adjust, or confirm that nothing needs adjusting.', 'Advice step text', 'unapp' ),
+		'title' => _x( "A review every year", 'Advice step', 'unapp' ),
+		'text' => _x( "Markets move, tax rules change and so do you. We meet each year and adjust, or confirm that nothing needs adjusting.", 'Advice step', 'unapp' ),
 	),
 );
 $unapp_finance_step_number = 0;
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|50"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull is-style-section-soft" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"680px"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"align":"center","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
@@ -48,13 +48,13 @@ $unapp_finance_step_number = 0;
 <!-- wp:group {"align":"wide","className":"unapp-grid-4","style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"grid","columnCount":4}} -->
 <div class="wp-block-group alignwide unapp-grid-4">
 <?php foreach ( $unapp_finance_steps as $unapp_finance_step ) : ?>
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|12"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group">
-<!-- wp:paragraph {"textColor":"primary","fontSize":"large","style":{"typography":{"fontWeight":"700","letterSpacing":"0.06em"}}} -->
-<p class="has-primary-color has-text-color has-large-font-size" style="font-weight:700;letter-spacing:0.06em;"><?php echo str_pad( (string) ++$unapp_finance_step_number, 2, '0', STR_PAD_LEFT ); ?></p>
+<!-- wp:paragraph {"textColor":"primary","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo str_pad( (string) ++$unapp_finance_step_number, 2, '0', STR_PAD_LEFT ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:heading {"level":3,"fontSize":"medium"} -->
-<h3 class="wp-block-heading has-medium-font-size"><?php echo $unapp_finance_step['title']; ?></h3>
+<!-- wp:heading {"level":3,"fontSize":"large"} -->
+<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_finance_step['title']; ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
 <p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_finance_step['text']; ?></p>

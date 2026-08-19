@@ -15,7 +15,7 @@ body = section(
             width="46%", vertical_align="center", gap="30"),
         column(
             image(uri("assets/images/dashboard-1.avif"), tattr("Unapp dashboard with project analytics"),
-                  radius="16px", shadow="card-strong"),
+                  radius="20px", shadow="card-strong"),
             width="54%", vertical_align="center"),
     ], align="wide", gap="60", vertical_align="center"),
     pad=("70", "70"), gap="60")
@@ -38,7 +38,7 @@ body = section(
         layout="constrained", content_size="460px") + "\n" +
     para(t("Free while in beta. Unsubscribe any time."), align="center", color="muted", size="small") + "\n" +
     image(uri("assets/images/dashboard-2.avif"), tattr("Unapp analytics dashboard"),
-          align="wide", radius="16px", shadow="card-strong"),
+          align="wide", radius="20px", shadow="card-strong"),
     pad=("70", "70"), gap="40", content_size="760px", wide_size="1100px")
 write_pattern("hero-email", title="Hero: email capture", cats=C,
               keywords="hero, email, signup, waitlist, capture, form",

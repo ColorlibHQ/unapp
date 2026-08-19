@@ -21,6 +21,20 @@ Every starter carries its own patterns end to end — its home page, its inner p
 
 Add your own with the `unapp_starter_sites` filter. Nothing is deleted when you apply or switch.
 
+## Design system
+
+Every section is built from the same measurements, held in one place (`.dev/pgen.py`) and enforced by the generator:
+
+| | |
+|---|---|
+| Section padding · gap | `70` / `60` on the theme's spacing scale |
+| Card padding · gap · radius | `50` / `30` / `20px` |
+| Grid gutter · stacked blocks | `40` / `30` |
+| Radii in the whole theme | `14px` badges, `20px` cards and images, `999px` pills |
+| Reading column · intro column | `760px` / `680px` |
+
+Spacing that is not on the scale is refused at build time, sections alternate their ground by role (explanation on the page ground; proof, prices, answers and contact on the tinted one), and where two same-ground sections meet a hairline seam separates them. `.dev/cdp-rhythm.mjs` measures the rendered result: all 101 patterns sit on the scale.
+
 ## Highlights
 
 - **Complete landing page on activation** – a real "Home" page (editable page content, *Page (No Title)* template) and a "Blog" page are created and assigned in Settings → Reading; existing front pages are never overridden (a one-click notice is shown instead). Gradient hero with product screenshot, services grid, image & text, features around a phone, animated stats, screenshot gallery (core lightbox), pricing table, team, latest posts, call to action and contact cards.

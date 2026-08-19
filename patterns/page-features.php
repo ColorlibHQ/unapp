@@ -15,6 +15,7 @@
 ?>
 <!-- wp:pattern {"slug":"unapp/hero-minimal"} /-->
 <!-- wp:pattern {"slug":"unapp/features-bento"} /-->
+<!-- wp:pattern {"slug":"unapp/how-it-works"} /-->
 <!-- wp:pattern {"slug":"unapp/features-zigzag"} /-->
 <!-- wp:pattern {"slug":"unapp/feature-checklist"} /-->
 <!-- wp:pattern {"slug":"unapp/integrations"} /-->

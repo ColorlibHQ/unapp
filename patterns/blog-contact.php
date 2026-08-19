@@ -11,11 +11,11 @@
  */
 
 ?>
-<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|0"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull is-style-section-soft" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull is-style-section-soft" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:columns {"verticalAlignment":"top","align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|60","left":"var:preset|spacing|60"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-top alignwide">
-<!-- wp:column {"verticalAlignment":"top","width":"55%","style":{"spacing":{"blockGap":"var:preset|spacing|18"}}} -->
+<!-- wp:column {"verticalAlignment":"top","width":"55%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:55%;">
 <!-- wp:paragraph {"align":"left","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
 <p class="has-text-align-left has-primary-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'Get in touch', 'Section eyebrow label', 'unapp' ); ?></p>
@@ -24,17 +24,17 @@
 <h2 class="wp-block-heading"><?php esc_html_e( 'Pitches, corrections and arguments', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"large"} -->
-<p class="has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'All three are welcome, in that order of enthusiasm. Corrections get published as corrections, with a note at the top of the piece — not quietly edited in overnight.', 'unapp' ); ?></p>
+<p class="has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'All three are welcome, in that order of enthusiasm. Corrections are published as corrections, with a note at the top of the piece — not quietly edited in overnight.', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"large","style":{"typography":{"fontWeight":"600"}}} -->
 <p class="has-large-font-size" style="font-weight:600;"><?php esc_html_e( 'editor@theslowbuild.example', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->
-<!-- wp:column {"verticalAlignment":"top","width":"45%"} -->
+<!-- wp:column {"verticalAlignment":"top","width":"45%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:45%;">
-<!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"18px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|14"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-card" style="border-radius:18px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40);">
+<!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group is-style-card" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}}} -->
 <p style="font-weight:600;"><?php esc_html_e( 'Pitching an essay', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->

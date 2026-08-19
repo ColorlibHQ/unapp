@@ -14,7 +14,7 @@
 <div class="wp-block-group alignfull has-base-color has-dark-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--40)">
 	<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
 	<div class="wp-block-columns alignwide">
-		<!-- wp:column {"width":"34%"} -->
+		<!-- wp:column {"width":"34%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 		<div class="wp-block-column" style="flex-basis:34%">
 			<!-- wp:site-title {"level":0,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}}} /-->
 			<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.75)"}}} -->
@@ -31,7 +31,7 @@
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"width":"18%"} -->
+		<!-- wp:column {"width":"18%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 		<div class="wp-block-column" style="flex-basis:18%">
 			<!-- wp:heading {"fontSize":"medium"} -->
 			<h2 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Company', 'unapp' ); ?></h2>
@@ -45,7 +45,7 @@
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"width":"24%"} -->
+		<!-- wp:column {"width":"24%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 		<div class="wp-block-column" style="flex-basis:24%">
 			<!-- wp:heading {"fontSize":"medium"} -->
 			<h2 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Latest posts', 'unapp' ); ?></h2>
@@ -54,7 +54,7 @@
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"width":"24%"} -->
+		<!-- wp:column {"width":"24%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 		<div class="wp-block-column" style="flex-basis:24%">
 			<!-- wp:heading {"fontSize":"medium"} -->
 			<h2 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Contact', 'unapp' ); ?></h2>

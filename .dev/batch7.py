@@ -54,7 +54,7 @@ body = section(
             buttons([{"text": t("See the full feature list"), "style": "is-style-outline"}], margin={"top": "30"}),
             width="55%", vertical_align="center", gap="30"),
         column(image(uri("assets/images/dashboard-3.avif"), tattr("Unapp project board"),
-                     radius="16px", shadow="card"), width="45%", vertical_align="center"),
+                     radius="20px", shadow="card"), width="45%", vertical_align="center"),
     ], align="wide", gap="60", vertical_align="center"),
     pad=("70", "70"), gap="0")
 write_pattern("feature-checklist", title="Features: two-column checklist", cats="unapp, unapp_features, features",

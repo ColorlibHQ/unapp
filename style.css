@@ -611,3 +611,15 @@ Unapp is distributed under the terms of the GNU GPL.
 .is-layout-flex > .wp-block-buttons {
 	flex-shrink: 0;
 }
+
+/* Section seams
+   ------------------------------------------------------------------------
+   Sections are separated by their ground: explanation on the page ground,
+   proof and prices on the tinted one. Where two sections share a ground they
+   would otherwise read as one long column, so the second takes a hairline. */
+:is(.wp-block-post-content, .editor-styles-wrapper) > .wp-block-group.alignfull:not(.is-style-section-soft):not(.has-background):not(.wp-block-cover)
+	+ .wp-block-group.alignfull:not(.is-style-section-soft):not(.has-background):not(.wp-block-cover),
+:is(.wp-block-post-content, .editor-styles-wrapper) > .wp-block-group.alignfull.is-style-section-soft
+	+ .wp-block-group.alignfull.is-style-section-soft {
+	border-top: 1px solid var(--wp--preset--color--border);
+}
