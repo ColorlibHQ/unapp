@@ -33,7 +33,7 @@ Every section is built from the same measurements, held in one place (`.dev/pgen
 | Radii in the whole theme | `14px` badges, `20px` cards and images, `999px` pills |
 | Reading column · intro column | `760px` / `680px` |
 
-Spacing that is not on the scale is refused at build time, sections alternate their ground by role (explanation on the page ground; proof, prices, answers and contact on the tinted one), and where two same-ground sections meet a hairline seam separates them. `.dev/cdp-rhythm.mjs` measures the rendered result: all 101 patterns sit on the scale.
+Spacing that is not on the scale is refused at build time, sections alternate their ground by role (explanation on the page ground; proof, prices, answers and contact on the tinted one), and where two same-ground sections meet a hairline seam separates them. Two audits keep it honest: `.dev/cdp-rhythm.mjs` renders each pattern and measures every gap between sibling blocks against the scale (0 of 101 off-scale), and `.dev/rhythm_audit.py` fails any composition that puts four sections on one ground or two full-bleed bands together.
 
 ## Highlights
 
