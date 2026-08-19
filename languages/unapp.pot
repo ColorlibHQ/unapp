@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-19T19:00:59+00:00\n"
+"POT-Creation-Date: 2026-08-19T19:08:11+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: make-pot.py (Unapp)\n"
 "X-Domain: unapp\n"
@@ -2689,6 +2689,108 @@ msgstr ""
 msgid "An asymmetric grid of feature cards — one wide cell above three equal ones."
 msgstr ""
 
+#: patterns/features-offset.php:24
+msgid "One place to plan, decide and ship"
+msgstr ""
+
+#: patterns/features-offset.php:27
+msgid "Everything about a project lives in one thread: the brief, the argument about the brief, the file that settled it and the date it shipped."
+msgstr ""
+
+#: patterns/features-offset.php:47
+msgid "Plans that survive contact"
+msgstr ""
+
+#: patterns/features-offset.php:50
+msgid "Move a date and everything downstream moves with it, including the people who need telling."
+msgstr ""
+
+#: patterns/features-offset.php:68
+msgid "Files where the decision was made"
+msgstr ""
+
+#: patterns/features-offset.php:71
+msgid "Attached to the thread that produced them, not buried in a drive nobody opens."
+msgstr ""
+
+#: patterns/features-offset.php:89
+msgid "A record you can hand to anyone"
+msgstr ""
+
+#: patterns/features-offset.php:92
+msgid "Every project writes its own history as it goes, so the handover is already written when someone leaves."
+msgstr ""
+
+#: patterns/features-offset.php:21
+msgctxt "Section eyebrow label"
+msgid "Why teams move"
+msgstr ""
+
+#. Pattern title
+#: patterns/features-offset.php
+msgid "Features: asymmetric"
+msgstr ""
+
+#. Pattern description
+#: patterns/features-offset.php
+msgid "A narrow column of copy beside an offset stack of three cards — a change of shape from the even grid."
+msgstr ""
+
+#: patterns/features-sticky.php:41
+msgid "Three moves, and the second one is the hard one"
+msgstr ""
+
+#: patterns/features-sticky.php:44
+msgid "Scroll — the explanation keeps up on its own."
+msgstr ""
+
+#: patterns/features-sticky.php:15
+msgctxt "Sticky step"
+msgid "Capture"
+msgstr ""
+
+#: patterns/features-sticky.php:16
+msgctxt "Sticky step"
+msgid "Anything anyone says in passing goes in the same inbox, so it stops living in someone's head."
+msgstr ""
+
+#: patterns/features-sticky.php:19
+msgctxt "Sticky step"
+msgid "Decide"
+msgstr ""
+
+#: patterns/features-sticky.php:20
+msgctxt "Sticky step"
+msgid "Turn the noise into a short list with owners and dates. The rest is archived, not deleted."
+msgstr ""
+
+#: patterns/features-sticky.php:23
+msgctxt "Sticky step"
+msgid "Ship"
+msgstr ""
+
+#: patterns/features-sticky.php:24
+msgctxt "Sticky step"
+msgid "The plan updates itself as the work moves, and the people who need telling are told."
+msgstr ""
+
+#: patterns/features-sticky.php:38
+#: patterns/finance-process.php:38
+#: patterns/how-it-works.php:33
+msgctxt "Section eyebrow label"
+msgid "How it works"
+msgstr ""
+
+#. Pattern title
+#: patterns/features-sticky.php
+msgid "Features: sticky explanation"
+msgstr ""
+
+#. Pattern description
+#: patterns/features-sticky.php
+msgid "The explanation sticks while the steps scroll past it. Falls back to a plain two-column layout where sticky is unsupported."
+msgstr ""
+
 #: patterns/features-zigzag.php:22
 msgid "Everything in one place, finally"
 msgstr ""
@@ -3164,12 +3266,6 @@ msgstr ""
 #: patterns/finance-process.php:28
 msgctxt "Advice step"
 msgid "Markets move, tax rules change and so do you. We meet each year and adjust, or confirm that nothing needs adjusting."
-msgstr ""
-
-#: patterns/finance-process.php:38
-#: patterns/how-it-works.php:33
-msgctxt "Section eyebrow label"
-msgid "How it works"
 msgstr ""
 
 #. Pattern title
@@ -5133,6 +5229,7 @@ msgid "A readable legal page: title, last-updated line and numbered sections."
 msgstr ""
 
 #: patterns/logo-cloud.php:25
+#: patterns/logo-marquee.php:17
 msgid "Trusted by product teams at"
 msgstr ""
 
@@ -5174,6 +5271,16 @@ msgstr ""
 #. Pattern description
 #: patterns/logo-cloud.php
 msgid "A row of customer logos under a small label. Replace the placeholder marks with your own."
+msgstr ""
+
+#. Pattern title
+#: patterns/logo-marquee.php
+msgid "Logo marquee"
+msgstr ""
+
+#. Pattern description
+#: patterns/logo-marquee.php
+msgid "Customer logos scrolling slowly across the full width. Stops for anyone who prefers reduced motion."
 msgstr ""
 
 #: patterns/newsletter.php:21
@@ -5901,6 +6008,135 @@ msgstr ""
 msgid "A feature comparison table across three plans, with calls to action beneath."
 msgstr ""
 
+#: patterns/pricing-toggle.php:48
+msgid "Two sizes of team, and one of you"
+msgstr ""
+
+#: patterns/pricing-toggle.php:51
+msgid "Yearly is two months cheaper. No card to look around."
+msgstr ""
+
+#: patterns/pricing-toggle.php:60
+msgid "Show yearly prices"
+msgstr ""
+
+#: patterns/pricing-toggle.php:60
+msgid "Show monthly prices"
+msgstr ""
+
+#: patterns/pricing-toggle.php:100
+#: patterns/pricing-toggle.php:137
+msgid "Start free"
+msgstr ""
+
+#: patterns/pricing-toggle.php:15
+msgctxt "Plan name"
+msgid "Free"
+msgstr ""
+
+#: patterns/pricing-toggle.php:18
+msgctxt "Plan note"
+msgid "For one person keeping track of one thing."
+msgstr ""
+
+#: patterns/pricing-toggle.php:20
+msgctxt "Plan feature"
+msgid "Three projects"
+msgstr ""
+
+#: patterns/pricing-toggle.php:20
+msgctxt "Plan feature"
+msgid "Two weeks of history"
+msgstr ""
+
+#: patterns/pricing-toggle.php:20
+msgctxt "Plan feature"
+msgid "Community support"
+msgstr ""
+
+#: patterns/pricing-toggle.php:23
+msgctxt "Plan name"
+msgid "Team"
+msgstr ""
+
+#: patterns/pricing-toggle.php:26
+msgctxt "Plan note"
+msgid "For a team that has outgrown a group chat."
+msgstr ""
+
+#: patterns/pricing-toggle.php:28
+msgctxt "Plan feature"
+msgid "Unlimited projects"
+msgstr ""
+
+#: patterns/pricing-toggle.php:28
+msgctxt "Plan feature"
+msgid "Full history"
+msgstr ""
+
+#: patterns/pricing-toggle.php:28
+msgctxt "Plan feature"
+msgid "Roles and permissions"
+msgstr ""
+
+#: patterns/pricing-toggle.php:28
+msgctxt "Plan feature"
+msgid "Priority support"
+msgstr ""
+
+#: patterns/pricing-toggle.php:31
+msgctxt "Plan name"
+msgid "Company"
+msgstr ""
+
+#: patterns/pricing-toggle.php:34
+msgctxt "Plan note"
+msgid "For several teams that have to agree with each other."
+msgstr ""
+
+#: patterns/pricing-toggle.php:36
+msgctxt "Plan feature"
+msgid "Everything in Team"
+msgstr ""
+
+#: patterns/pricing-toggle.php:36
+msgctxt "Plan feature"
+msgid "Single sign-on"
+msgstr ""
+
+#: patterns/pricing-toggle.php:36
+msgctxt "Plan feature"
+msgid "Audit log"
+msgstr ""
+
+#: patterns/pricing-toggle.php:36
+msgctxt "Plan feature"
+msgid "A named contact"
+msgstr ""
+
+#: patterns/pricing-toggle.php:45
+#: patterns/pricing-two.php:19
+#: patterns/pricing.php:61
+msgctxt "Section eyebrow label"
+msgid "Pricing"
+msgstr ""
+
+#: patterns/pricing-toggle.php:84
+#: patterns/pricing-toggle.php:121
+msgctxt "Plan period"
+msgid "per person, per month"
+msgstr ""
+
+#. Pattern title
+#: patterns/pricing-toggle.php
+msgid "Pricing: monthly and yearly"
+msgstr ""
+
+#. Pattern description
+#: patterns/pricing-toggle.php
+msgid "Three plans with a switch between monthly and yearly prices. Falls back to monthly with no JavaScript."
+msgstr ""
+
 #: patterns/pricing-two.php:22
 msgid "Two plans. No surprises."
 msgstr ""
@@ -5967,12 +6203,6 @@ msgstr ""
 
 #: patterns/pricing-two.php:128
 msgid "Prices exclude VAT. Annual billing saves 20%."
-msgstr ""
-
-#: patterns/pricing-two.php:19
-#: patterns/pricing.php:61
-msgctxt "Section eyebrow label"
-msgid "Pricing"
 msgstr ""
 
 #. Pattern title
@@ -6122,6 +6352,24 @@ msgstr ""
 #. Pattern description
 #: patterns/pricing.php
 msgid "Three pricing cards with a highlighted middle plan, feature checklists and call-to-action buttons."
+msgstr ""
+
+#: patterns/pull-quote.php:19
+msgid "&#8220;We stopped having the same meeting every Monday. That is the whole review.&#8221;"
+msgstr ""
+
+#: patterns/pull-quote.php:22
+msgid "Elena Marsh · Head of Delivery, Northbank"
+msgstr ""
+
+#. Pattern title
+#: patterns/pull-quote.php
+msgid "Pull quote"
+msgstr ""
+
+#. Pattern description
+#: patterns/pull-quote.php
+msgid "A single oversized quote set in the display face, for breaking up a long page."
 msgstr ""
 
 #: patterns/ratings.php:28
@@ -6909,6 +7157,29 @@ msgstr ""
 msgid "Search, recent posts and categories — the sidebar used by the two sidebar templates."
 msgstr ""
 
+#: patterns/statement.php:22
+msgid "Software should make the work smaller, not the week longer"
+msgstr ""
+
+#: patterns/statement.php:25
+msgid "Everything else on this page is detail underneath that sentence."
+msgstr ""
+
+#: patterns/statement.php:19
+msgctxt "Section eyebrow label"
+msgid "The short version"
+msgstr ""
+
+#. Pattern title
+#: patterns/statement.php
+msgid "Statement"
+msgstr ""
+
+#. Pattern description
+#: patterns/statement.php
+msgid "One sentence, full bleed on the dark ground. A pause between two busy sections."
+msgstr ""
+
 #: patterns/stats.php:16
 msgctxt "Stat label"
 msgid "Active teams"
@@ -7097,6 +7368,40 @@ msgstr ""
 #. Pattern description
 #: patterns/testimonials.php
 msgid "Three testimonial cards with a rating, quote, portrait and role."
+msgstr ""
+
+#. Color name
+#. Style variation name
+#: patterns/theme-toggle.php:17
+#: theme.json
+#: styles/ember.json
+#: styles/emerald.json
+#: styles/graphite.json
+#: styles/harvest.json
+#: styles/indigo.json
+#: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/section-dark.json
+#: styles/slate.json
+#: styles/stone.json
+#: styles/sunset.json
+#: styles/violet.json
+msgid "Dark"
+msgstr ""
+
+#: patterns/theme-toggle.php:17
+msgid "Light"
+msgstr ""
+
+#. Pattern title
+#: patterns/theme-toggle.php
+msgid "Dark mode toggle"
+msgstr ""
+
+#. Pattern description
+#: patterns/theme-toggle.php
+msgid "A button that lets a visitor read the site light or dark and remembers the choice. Add it to the header; the dark tokens and script load only where it appears."
 msgstr ""
 
 #: patterns/timeline.php:28
@@ -7393,25 +7698,6 @@ msgstr ""
 #: styles/sunset.json
 #: styles/violet.json
 msgid "Border"
-msgstr ""
-
-#. Color name
-#. Style variation name
-#: theme.json
-#: styles/ember.json
-#: styles/emerald.json
-#: styles/graphite.json
-#: styles/harvest.json
-#: styles/indigo.json
-#: styles/midnight.json
-#: styles/mono.json
-#: styles/navy.json
-#: styles/section-dark.json
-#: styles/slate.json
-#: styles/stone.json
-#: styles/sunset.json
-#: styles/violet.json
-msgid "Dark"
 msgstr ""
 
 #. Gradient name

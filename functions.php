@@ -336,3 +336,25 @@ require get_theme_file_path( 'inc/forms.php' );
  * Visitor colour-scheme toggle, active only where the toggle pattern is used.
  */
 require get_theme_file_path( 'inc/scheme.php' );
+
+/**
+ * Load the monthly/yearly price switch only on pages that render one.
+ *
+ * @param string $content Rendered block content.
+ * @param array  $block   Parsed block.
+ * @return string
+ */
+function unapp_period_toggle_script( $content, $block ) {
+	if ( isset( $block['attrs']['className'] ) && false !== strpos( $block['attrs']['className'], 'unapp-period' ) ) {
+		wp_enqueue_script(
+			'unapp-period-toggle',
+			get_theme_file_uri( 'assets/js/period-toggle.js' ),
+			array(),
+			UNAPP_VERSION,
+			true
+		);
+	}
+
+	return $content;
+}
+add_filter( 'render_block_core/button', 'unapp_period_toggle_script', 10, 2 );
