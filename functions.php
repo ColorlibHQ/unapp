@@ -46,60 +46,140 @@ add_action( 'wp_enqueue_scripts', 'unapp_enqueue_styles' );
  * because a `path` is given) on pages that actually render that block.
  */
 function unapp_block_styles() {
-	register_block_style(
-		'core/list',
-		array(
-			'name'  => 'checklist',
-			'label' => _x( 'Checklist', 'Block style label', 'unapp' ),
-		)
-	);
-	wp_enqueue_block_style(
-		'core/list',
-		array(
-			'handle' => 'unapp-list-checklist',
-			'src'    => get_theme_file_uri( 'assets/css/list-checklist.css' ),
-			'path'   => get_theme_file_path( 'assets/css/list-checklist.css' ),
-			'ver'    => UNAPP_VERSION,
-		)
+	$styles = array(
+		'core/list'      => array(
+			'stylesheet' => 'list-styles',
+			'variations' => array(
+				'checklist' => _x( 'Checklist', 'Block style label', 'unapp' ),
+				'dash'      => _x( 'Dashed', 'Block style label', 'unapp' ),
+				'steps'     => _x( 'Numbered steps', 'Block style label', 'unapp' ),
+				'two-col'   => _x( 'Two columns', 'Block style label', 'unapp' ),
+			),
+		),
+		'core/image'     => array(
+			'stylesheet' => 'image-styles',
+			'variations' => array(
+				'device'  => _x( 'Device frame', 'Block style label', 'unapp' ),
+				'browser' => _x( 'Browser frame', 'Block style label', 'unapp' ),
+				'framed'  => _x( 'Framed', 'Block style label', 'unapp' ),
+			),
+		),
+		'core/quote'     => array(
+			'stylesheet' => 'quote-styles',
+			'variations' => array(
+				'testimonial' => _x( 'Testimonial card', 'Block style label', 'unapp' ),
+			),
+		),
+		'core/details'   => array(
+			'stylesheet' => 'details-styles',
+			'variations' => array(
+				'faq-card' => _x( 'FAQ card', 'Block style label', 'unapp' ),
+			),
+		),
+		'core/table'     => array(
+			'stylesheet' => 'table-styles',
+			'variations' => array(
+				'compare' => _x( 'Comparison', 'Block style label', 'unapp' ),
+			),
+		),
+		'core/separator' => array(
+			'stylesheet' => 'separator-styles',
+			'variations' => array(
+				'gradient' => _x( 'Gradient line', 'Block style label', 'unapp' ),
+			),
+		),
+		'core/button'    => array(
+			'stylesheet' => 'button-styles',
+			'variations' => array(
+				'arrow' => _x( 'Text link with arrow', 'Block style label', 'unapp' ),
+			),
+		),
+		'core/columns'   => array(
+			'stylesheet' => 'columns-styles',
+			'variations' => array(
+				'divided' => _x( 'Divided', 'Block style label', 'unapp' ),
+			),
+		),
 	);
 
-	register_block_style(
-		'core/image',
-		array(
-			'name'  => 'device',
-			'label' => _x( 'Device frame', 'Block style label', 'unapp' ),
-		)
-	);
-	wp_enqueue_block_style(
-		'core/image',
-		array(
-			'handle' => 'unapp-image-device',
-			'src'    => get_theme_file_uri( 'assets/css/image-device.css' ),
-			'path'   => get_theme_file_path( 'assets/css/image-device.css' ),
-			'ver'    => UNAPP_VERSION,
-		)
-	);
+	foreach ( $styles as $block => $config ) {
+		foreach ( $config['variations'] as $name => $label ) {
+			register_block_style(
+				$block,
+				array(
+					'name'  => $name,
+					'label' => $label,
+				)
+			);
+		}
+
+		$handle = 'unapp-' . $config['stylesheet'];
+		wp_enqueue_block_style(
+			$block,
+			array(
+				'handle' => $handle,
+				'src'    => get_theme_file_uri( 'assets/css/' . $config['stylesheet'] . '.css' ),
+				'path'   => get_theme_file_path( 'assets/css/' . $config['stylesheet'] . '.css' ),
+				'ver'    => UNAPP_VERSION,
+			)
+		);
+	}
 }
 add_action( 'init', 'unapp_block_styles' );
 
 /**
  * Register pattern categories used by the theme's patterns.
+ *
+ * `unapp` holds every section so the whole library can be browsed in one place;
+ * the rest narrow it down by job.
  */
 function unapp_pattern_categories() {
-	register_block_pattern_category(
-		'unapp',
-		array(
+	$categories = array(
+		'unapp'          => array(
 			'label'       => _x( 'Unapp', 'Block pattern category', 'unapp' ),
-			'description' => __( 'Landing page sections designed for Unapp: hero, features, pricing, team, stats and more.', 'unapp' ),
-		)
+			'description' => __( 'Every Unapp section: heroes, features, pricing, social proof, company and calls to action.', 'unapp' ),
+		),
+		'unapp_hero'     => array(
+			'label'       => _x( 'Unapp: Heroes', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Opening sections for a landing page.', 'unapp' ),
+		),
+		'unapp_features' => array(
+			'label'       => _x( 'Unapp: Features', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Ways to explain what the product does.', 'unapp' ),
+		),
+		'unapp_proof'    => array(
+			'label'       => _x( 'Unapp: Social proof', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Testimonials, logos, ratings and customer stories.', 'unapp' ),
+		),
+		'unapp_pricing'  => array(
+			'label'       => _x( 'Unapp: Pricing', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Plan tables and comparisons.', 'unapp' ),
+		),
+		'unapp_cta'      => array(
+			'label'       => _x( 'Unapp: Calls to action', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Conversion sections: sign-up bands, newsletters and app downloads.', 'unapp' ),
+		),
+		'unapp_content'  => array(
+			'label'       => _x( 'Unapp: Content & blog', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Post loops, author boxes, changelogs and documentation.', 'unapp' ),
+		),
+		'unapp_company'  => array(
+			'label'       => _x( 'Unapp: Company', 'Block pattern category', 'unapp' ),
+			'description' => __( 'About, team, values, careers, offices and press.', 'unapp' ),
+		),
+		'unapp_utility'  => array(
+			'label'       => _x( 'Unapp: Utility', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Contact, FAQ, legal and help-centre sections.', 'unapp' ),
+		),
+		'unapp_page'     => array(
+			'label'       => _x( 'Unapp: Full pages', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Complete page layouts. Insert one into an empty page to start from a finished design.', 'unapp' ),
+		),
 	);
-	register_block_pattern_category(
-		'unapp_page',
-		array(
-			'label'       => _x( 'Pages', 'Block pattern category', 'unapp' ),
-			'description' => __( 'Full page layouts. Insert one into an empty page to start from a complete design.', 'unapp' ),
-		)
-	);
+
+	foreach ( $categories as $slug => $args ) {
+		register_block_pattern_category( $slug, $args );
+	}
 }
 add_action( 'init', 'unapp_pattern_categories' );
 

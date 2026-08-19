@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Frosted glass",
+	"slug": "frosted",
+	"blockTypes": [
+		"core/group",
+		"core/column",
+		"core/columns"
+	],
+	"styles": {
+		"color": {
+			"background": "rgba(255,255,255,0.14)",
+			"text": "var:preset|color|base"
+		},
+		"border": {
+			"color": "rgba(255,255,255,0.25)",
+			"radius": "20px",
+			"style": "solid",
+			"width": "1px"
+		},
+		"css": "& { backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); --wp--preset--color--muted: rgba(255,255,255,0.78); }",
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|50",
+				"right": "var:preset|spacing|50",
+				"bottom": "var:preset|spacing|50",
+				"left": "var:preset|spacing|50"
+			}
+		},
+		"elements": {
+			"heading": {
+				"color": {
+					"text": "var:preset|color|base"
+				}
+			}
+		}
+	}
+}

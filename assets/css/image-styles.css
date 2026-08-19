@@ -1,0 +1,55 @@
+/* Image block styles: Device frame, Browser frame, Framed. */
+
+/* Phone bezel for app screenshots. */
+.wp-block-image.is-style-device img {
+	border: 10px solid var(--wp--preset--color--contrast, #232323);
+	border-radius: 2rem;
+	box-shadow: var(--wp--preset--shadow--card-strong, 0 28px 56px -20px rgba(48, 49, 51, 0.3));
+	box-sizing: border-box;
+}
+
+/* Browser chrome for product screenshots. */
+.wp-block-image.is-style-browser {
+	position: relative;
+	border: 1px solid var(--wp--preset--color--border, #e4e7f0);
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: var(--wp--preset--shadow--card, 0 12px 32px -8px rgba(48, 49, 51, 0.12));
+	background: var(--wp--preset--color--surface, #f5f7fc);
+	padding-top: 34px;
+}
+
+.wp-block-image.is-style-browser::before {
+	content: "";
+	position: absolute;
+	inset: 0 0 auto 0;
+	height: 34px;
+	background: var(--wp--preset--color--surface, #f5f7fc);
+	border-bottom: 1px solid var(--wp--preset--color--border, #e4e7f0);
+}
+
+.wp-block-image.is-style-browser::after {
+	content: "";
+	position: absolute;
+	top: 13px;
+	left: 14px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--wp--preset--color--border, #e4e7f0);
+	box-shadow: 14px 0 0 var(--wp--preset--color--border, #e4e7f0), 28px 0 0 var(--wp--preset--color--border, #e4e7f0);
+}
+
+.wp-block-image.is-style-browser img {
+	display: block;
+	width: 100%;
+}
+
+/* Simple inset frame. */
+.wp-block-image.is-style-framed img {
+	border: 1px solid var(--wp--preset--color--border, #e4e7f0);
+	border-radius: 12px;
+	padding: 10px;
+	background: var(--wp--preset--color--base, #fff);
+	box-sizing: border-box;
+}

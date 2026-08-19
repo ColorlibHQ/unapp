@@ -1,0 +1,97 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Graphite",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"color": "#ffffff",
+					"name": "Base"
+				},
+				{
+					"slug": "contrast",
+					"color": "#16181d",
+					"name": "Contrast"
+				},
+				{
+					"slug": "primary",
+					"color": "#3d4351",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"color": "#22c8b4",
+					"name": "Secondary"
+				},
+				{
+					"slug": "accent",
+					"color": "#5b6472",
+					"name": "Accent"
+				},
+				{
+					"slug": "surface",
+					"color": "#f4f5f7",
+					"name": "Surface"
+				},
+				{
+					"slug": "muted",
+					"color": "#5f6672",
+					"name": "Muted"
+				},
+				{
+					"slug": "border",
+					"color": "#e2e4e9",
+					"name": "Border"
+				},
+				{
+					"slug": "dark",
+					"color": "#16181d",
+					"name": "Dark"
+				}
+			],
+			"gradients": [
+				{
+					"slug": "primary-to-accent",
+					"gradient": "linear-gradient(135deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--accent) 100%)",
+					"name": "Primary to Accent"
+				},
+				{
+					"slug": "secondary-to-accent",
+					"gradient": "linear-gradient(135deg, var(--wp--preset--color--secondary) 0%, var(--wp--preset--color--accent) 100%)",
+					"name": "Secondary to Accent"
+				},
+				{
+					"slug": "primary-overlay",
+					"gradient": "linear-gradient(135deg, rgba(61,67,81,0.92) 0%, rgba(91,100,114,0.88) 100%)",
+					"name": "Primary overlay"
+				},
+				{
+					"slug": "dark-overlay",
+					"gradient": "linear-gradient(180deg, rgba(35,35,35,0.55) 0%, rgba(35,35,35,0.85) 100%)",
+					"name": "Dark overlay"
+				}
+			]
+		},
+		"shadow": {
+			"presets": [
+				{
+					"slug": "card",
+					"shadow": "0 12px 32px -8px rgba(22,24,29,0.12)",
+					"name": "Card"
+				},
+				{
+					"slug": "card-strong",
+					"shadow": "0 28px 56px -20px rgba(22,24,29,0.30)",
+					"name": "Card strong"
+				},
+				{
+					"slug": "glow",
+					"shadow": "0 24px 64px -24px rgba(61,67,81,0.45)",
+					"name": "Glow"
+				}
+			]
+		}
+	}
+}

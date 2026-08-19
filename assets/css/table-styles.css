@@ -1,0 +1,34 @@
+/* Table block style: Comparison. */
+.wp-block-table.is-style-compare table {
+	border-collapse: separate;
+	border-spacing: 0;
+	width: 100%;
+}
+
+.wp-block-table.is-style-compare :is(th, td) {
+	padding: 0.85rem 1rem;
+	border: 0;
+	border-bottom: 1px solid var(--wp--preset--color--border, #e4e7f0);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.wp-block-table.is-style-compare :is(th:first-child, td:first-child) {
+	text-align: start;
+	font-weight: 600;
+}
+
+.wp-block-table.is-style-compare thead th {
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: var(--wp--preset--font-size--medium);
+	border-bottom-width: 2px;
+	border-bottom-color: var(--wp--preset--color--contrast, #232323);
+}
+
+.wp-block-table.is-style-compare tbody tr:nth-child(odd) {
+	background: var(--wp--preset--color--surface, #f5f7fc);
+}
+
+.wp-block-table.is-style-compare tbody tr:last-child :is(th, td) {
+	border-bottom: 0;
+}

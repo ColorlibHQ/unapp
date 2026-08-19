@@ -1,0 +1,35 @@
+/* Quote block style: Testimonial card. */
+.wp-block-quote.is-style-testimonial {
+	position: relative;
+	border: 1px solid var(--wp--preset--color--border, #e4e7f0);
+	border-left-width: 1px;
+	border-radius: 20px;
+	background: var(--wp--preset--color--base, #fff);
+	box-shadow: var(--wp--preset--shadow--card, 0 12px 32px -8px rgba(48, 49, 51, 0.12));
+	padding: var(--wp--preset--spacing--50, 2rem);
+	padding-top: calc(var(--wp--preset--spacing--50, 2rem) + 1.2em);
+}
+
+.wp-block-quote.is-style-testimonial::before {
+	content: "\201C";
+	position: absolute;
+	top: 0.16em;
+	left: 0.4em;
+	color: var(--wp--preset--color--primary, #5468d8);
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: 3.5em;
+	line-height: 1;
+	opacity: 0.28;
+}
+
+.wp-block-quote.is-style-testimonial p {
+	font-size: var(--wp--preset--font-size--large);
+}
+
+.wp-block-quote.is-style-testimonial cite {
+	display: block;
+	margin-top: 1em;
+	color: var(--wp--preset--color--muted, #6b7280);
+	font-size: var(--wp--preset--font-size--small);
+	font-style: normal;
+}

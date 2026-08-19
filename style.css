@@ -3,8 +3,8 @@ Theme Name: Unapp
 Theme URI: https://colorlib.com/wp/themes/unapp/
 Author: Colorlib
 Author URI: https://colorlib.com
-Description: Unapp is a lightweight, block-based WordPress theme for app and SaaS landing pages. Built for the Site Editor with a full set of patterns — hero, features, pricing, team, stats, portfolio, blog and contact sections — plus section styles and color variations. No page-builder framework, no jQuery, no icon fonts.
-Version: 2.0.0
+Description: Unapp is a lightweight, block-based WordPress theme for app and SaaS landing pages. Built for the Site Editor with 47 section patterns, 13 full-page starters, seven section styles, eleven block styles and six color variations. No page-builder framework, no jQuery, no icon fonts.
+Version: 2.1.0
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 7.4
@@ -42,6 +42,42 @@ Unapp is distributed under the terms of the GNU GPL.
 /* Keep phone/app screenshots from stretching in narrow flex columns. */
 .wp-block-image img {
 	height: auto;
+}
+
+/* ==========================================================================
+   Pattern utilities
+   Small helpers used by patterns that theme.json cannot express. Each is a
+   plain class set on the block, so block markup stays valid.
+   ========================================================================== */
+
+/* Social links: core paints each service its brand colour in the logos-only
+   style at the same specificity as the block's own colour class, so the winner
+   depends on stylesheet order. Make the chosen palette colour win outright. */
+.wp-block-social-links.is-style-logos-only .wp-social-link.has-base-color.has-base-color {
+	color: var(--wp--preset--color--base);
+}
+
+.wp-block-social-links.is-style-logos-only .wp-social-link.has-muted-color.has-muted-color {
+	color: var(--wp--preset--color--muted);
+}
+
+.wp-block-social-links.is-style-logos-only .wp-social-link.has-contrast-color.has-contrast-color {
+	color: var(--wp--preset--color--contrast);
+}
+
+.wp-block-social-links.is-style-logos-only .wp-social-link.has-primary-color.has-primary-color {
+	color: var(--wp--preset--color--primary);
+}
+
+/* Logo cloud: quiet, monochrome marks that pick up the palette on hover. */
+.unapp-logo-cloud img {
+	opacity: 0.55;
+	filter: grayscale(1);
+	transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.unapp-logo-cloud:hover img {
+	opacity: 0.75;
 }
 
 /* ==========================================================================

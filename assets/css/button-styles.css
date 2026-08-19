@@ -1,0 +1,33 @@
+/* Button block style: text link with a trailing arrow. */
+.wp-block-button.is-style-arrow > .wp-block-button__link {
+	background: none;
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+	color: var(--wp--preset--color--primary, #5468d8);
+	font-weight: 600;
+}
+
+.wp-block-button.is-style-arrow > .wp-block-button__link::after {
+	content: "";
+	display: inline-block;
+	width: 0.85em;
+	height: 0.85em;
+	margin-left: 0.5em;
+	vertical-align: -0.08em;
+	background-color: currentColor;
+	transition: transform 0.2s ease;
+	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'/%3E%3Cpolyline points='12 5 19 12 12 19'/%3E%3C/svg%3E") center / contain no-repeat;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'/%3E%3Cpolyline points='12 5 19 12 12 19'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.wp-block-button.is-style-arrow > .wp-block-button__link:hover {
+	background: none;
+	color: var(--wp--preset--color--accent, #2a74ca);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.wp-block-button.is-style-arrow > .wp-block-button__link:hover::after {
+		transform: translateX(3px);
+	}
+}

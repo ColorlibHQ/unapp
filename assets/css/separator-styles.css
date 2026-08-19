@@ -1,0 +1,14 @@
+/* Separator block style: Gradient line. */
+.wp-block-separator.is-style-gradient {
+	width: 100%;
+	max-width: none;
+	height: 2px;
+	border: 0;
+	opacity: 1;
+	background: linear-gradient(
+		90deg,
+		transparent 0%,
+		var(--wp--preset--color--primary, #5468d8) 50%,
+		transparent 100%
+	);
+}
