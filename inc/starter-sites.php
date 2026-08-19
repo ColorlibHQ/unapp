@@ -214,7 +214,7 @@ function unapp_apply_starter_site( $slug ) {
 	}
 
 	$site    = $sites[ $slug ];
-	$content = unapp_get_pattern_markup( $site['home'] );
+	$content = unapp_lock_starter_sections( unapp_get_pattern_markup( $site['home'] ) );
 
 	if ( '' === $content ) {
 		return new WP_Error( 'unapp_missing_pattern', __( 'The starter site’s home page pattern could not be loaded.', 'unapp' ) );
@@ -333,7 +333,40 @@ function unapp_get_starter_page_markup( $page ) {
 		}
 	}
 
-	return implode( "\n\n", $parts );
+	return unapp_lock_starter_sections( implode( "\n\n", $parts ) );
+}
+
+/**
+ * Lock the structure of a starter page, leaving its text and images editable.
+ *
+ * A starter page is a stack of finished sections. Without this, opening one in
+ * the editor exposes every group, column and spacer, and the usual result is a
+ * layout pulled apart by accident. Marking each top-level section
+ * 'contentOnly' turns the page into fields to fill in: headings, paragraphs,
+ * images and buttons stay editable, the scaffolding does not move.
+ *
+ * A user who wants the structure back can unlock a section from the block
+ * toolbar, so this is a default rather than a restriction.
+ *
+ * Note: core/cover accepts the attribute but does not pass it to its inner
+ * blocks, so a Cover hero stays fully editable. Its children are a heading, a
+ * paragraph and buttons — content rather than scaffolding — so little is lost.
+ *
+ * @param string $markup Serialized block markup.
+ * @return string Markup with top-level sections locked.
+ */
+function unapp_lock_starter_sections( $markup ) {
+	$blocks = parse_blocks( $markup );
+	$locked = array();
+
+	foreach ( $blocks as $block ) {
+		if ( in_array( $block['blockName'], array( 'core/group', 'core/cover', 'core/columns' ), true ) ) {
+			$block['attrs']['templateLock'] = 'contentOnly';
+		}
+		$locked[] = $block;
+	}
+
+	return serialize_blocks( $locked );
 }
 
 /**
