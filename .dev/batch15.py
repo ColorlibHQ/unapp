@@ -118,8 +118,10 @@ body = section_std(
         para(t("An hour, on the phone or at the office on Rodney Street, with whichever of us is the right fit. If we are not the right firm for you we will say so, and where we can we will tell you who is."),
              color="muted", size="large") + "\n" +
         buttons([{"text": t("Book a call"), "url": "#book"},
-                 {"text": t("Send an email"), "url": "#email", "style": "outline"}]),
-        details_card, align="top"),
+                 {"text": t("Send an email"), "url": "#email", "style": "outline"}]) + "\n" +
+        details_card,
+        card(contact_form("Request a callback", "advice@rodneystreet.example")),
+        align="top"),
     gap="0")
 write_pattern("finance-contact", title="Finance: book a call", cats=N + ", unapp_utility, contact",
               keywords="finance, contact, book, call, office, regulated",

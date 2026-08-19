@@ -177,8 +177,10 @@ body = section_std(
         heading(t("Mill Lane, and the door is open")) + "\n" +
         para(t("Riverside Church, 12 Mill Lane, Chesterfield S40 1RT. The 43 and 44 buses stop at the end of the road; the car park is behind the building."),
              color="muted", size="large") + "\n" +
-        buttons([{"text": t("Get directions"), "url": "#map"}]),
-        details_card, align="top"),
+        buttons([{"text": t("Get directions"), "url": "#map"}]) + "\n" +
+        details_card,
+        card(contact_form("Send a message", "hello@riverside.example")),
+        align="top"),
     variation="is-style-section-soft", gap="0")
 write_pattern("church-contact", title="Church: contact and directions", cats=C + ", unapp_utility, contact",
               keywords="church, contact, directions, address, office hours, parking",

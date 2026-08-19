@@ -679,3 +679,11 @@ def band(title, body, buttons_list, *, width="720px"):
     return section_std(
         group(inner, layout="constrained", content_size=width, gap=STACK_GAP),
         gradient="primary-to-accent", text="base", gap="0", elements=GRADIENT_ELEMENTS)
+
+
+def contact_form(title, email):
+    """Whichever form plugin is active, rendered inside a card."""
+    return ("<?php\necho unapp_contact_form(\n\tarray(\n"
+            f"\t\t'title' => _x( '{esc(title)}', 'Contact form heading', '{DOM}' ),\n"
+            f"\t\t'email' => '{email}',\n"
+            "\t)\n);\n?>")

@@ -1,0 +1,122 @@
+/**
+ * Contact form styling.
+ *
+ * Form plugins ship their own field styling, which lands on top of the theme
+ * and rarely matches it. Rather than chase each plugin's class names, the
+ * theme wraps whatever the plugin renders in .unapp-form (see inc/forms.php)
+ * and styles the fields inside it, so an unfamiliar plugin still inherits the
+ * palette, the radius and the type scale.
+ *
+ * Loaded only on pages where a form actually renders.
+ */
+
+.unapp-form {
+	font-family: var(--wp--preset--font-family--body);
+	font-size: var(--wp--preset--font-size--small);
+}
+
+/* The plugin's own form title duplicates the section heading above it. */
+.unapp-form > form > :is(h1, h2, h3):first-child {
+	font-size: var(--wp--preset--font-size--medium);
+	margin-block-start: 0;
+}
+
+.unapp-form label,
+.unapp-form .gfield_label,
+.unapp-form .forminator-label {
+	display: block;
+	margin-block-end: 0.4rem;
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 600;
+	color: var(--wp--preset--color--contrast);
+}
+
+.unapp-form :is(
+	input[type="text"], input[type="email"], input[type="url"], input[type="tel"],
+	input[type="number"], input[type="date"], input[type="time"], input[type="search"],
+	input[type="password"], select, textarea
+) {
+	inline-size: 100%;
+	padding: 0.75rem 1rem;
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 10px;
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	font-family: inherit;
+	font-size: var(--wp--preset--font-size--small);
+	line-height: 1.5;
+	box-shadow: none;
+	transition: border-color 120ms ease;
+}
+
+.unapp-form textarea {
+	min-block-size: 9rem;
+	resize: vertical;
+}
+
+.unapp-form :is(input, select, textarea):focus {
+	border-color: var(--wp--preset--color--primary);
+	outline: 2px solid var(--wp--preset--color--primary);
+	outline-offset: 1px;
+}
+
+.unapp-form :is(input, select, textarea)::placeholder {
+	color: var(--wp--preset--color--muted);
+	opacity: 1;
+}
+
+.unapp-form :is(button, input[type="submit"], input[type="button"], .wp-element-button) {
+	padding: 0.8rem 1.6rem;
+	border: 0;
+	border-radius: 999px;
+	background: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: 0.9375rem;
+	font-weight: 500;
+	line-height: 1.2;
+	cursor: pointer;
+	transition: filter 120ms ease;
+}
+
+.unapp-form :is(button, input[type="submit"]):is(:hover, :focus-visible) {
+	filter: brightness(0.94);
+}
+
+/* Checkboxes and radios keep their native size and sit beside their label. */
+.unapp-form :is(input[type="checkbox"], input[type="radio"]) {
+	inline-size: auto;
+	margin-inline-end: 0.5rem;
+}
+
+.unapp-form :is(input[type="checkbox"], input[type="radio"]) + label {
+	display: inline;
+	font-weight: 400;
+}
+
+/* Rhythm between fields, whatever the plugin calls its rows. */
+.unapp-form > form > * + *,
+.unapp-form :is(.wpforms-field, .gfield, .ff-el-group, .forminator-row, .nf-field-container,
+	.kali-form-field-row, .evf-form-row, .happyforms-part) + :is(.wpforms-field, .gfield,
+	.ff-el-group, .forminator-row, .nf-field-container, .kali-form-field-row, .evf-form-row,
+	.happyforms-part) {
+	margin-block-start: var(--wp--preset--spacing--30);
+}
+
+/* Validation and confirmation messages. */
+.unapp-form :is(.wpforms-error, .validation_message, .wpcf7-not-valid-tip, .error,
+	.forminator-error-message, .nf-error-msg, .global-error-message) {
+	color: var(--wp--preset--color--accent);
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.unapp-form :is(.wpforms-confirmation-container, .wpcf7-response-output, .ff-message-success,
+	.forminator-response-message, .nf-response-msg) {
+	margin-block-start: 1rem;
+	padding: 0.9rem 1.1rem;
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 12px;
+	background: var(--wp--preset--color--surface);
+	font-size: var(--wp--preset--font-size--small);
+}

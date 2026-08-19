@@ -314,3 +314,8 @@ require get_theme_file_path( 'inc/front-page-setup.php' );
  * Starter sites: complete designs for different kinds of website.
  */
 require get_theme_file_path( 'inc/starter-sites.php' );
+
+/**
+ * Contact forms: render whichever form plugin is active, styled to the palette.
+ */
+require get_theme_file_path( 'inc/forms.php' );

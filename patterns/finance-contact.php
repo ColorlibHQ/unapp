@@ -36,10 +36,6 @@
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
-</div>
-<!-- /wp:column -->
-<!-- wp:column {"verticalAlignment":"top","width":"48%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:48%;">
 <!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group is-style-card" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}}} -->
@@ -75,6 +71,22 @@
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
 <p class="has-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'Authorised and regulated by the Financial Conduct Authority, firm reference 000000.', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"verticalAlignment":"top","width":"48%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:48%;">
+<!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group is-style-card" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
+<?php
+echo unapp_contact_form(
+	array(
+		'title' => _x( 'Request a callback', 'Contact form heading', 'unapp' ),
+		'email' => 'advice@rodneystreet.example',
+	)
+);
+?>
 </div>
 <!-- /wp:group -->
 </div>
