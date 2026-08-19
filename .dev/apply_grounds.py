@@ -31,6 +31,7 @@ SOFT = {
     "church-times", "church-events", "fitness-schedule", "blog-categories",
     "portfolio-about", "restaurant-menu", "restaurant-hours", "restaurant-reviews",
     "agency-clients", "agency-engagements", "agency-contact",
+    "shop-promise", "shop-faq",
 }
 
 SECTION_RE = re.compile(r'(<!-- wp:group (\{"align":"full".*?\}) -->\s*\n\s*<div class="([^"]*)")')

@@ -3,7 +3,7 @@ Contributors: colorlib
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.3.0
+Stable tag: 2.4.0
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, one-column, rtl-language-support, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, style-variations, template-editing, threaded-comments, translation-ready
@@ -14,13 +14,17 @@ Unapp is a lightweight block theme with six one-click starter sites, built entir
 
 Unapp is a modern, block-based WordPress theme for presenting an app, SaaS product or startup. Everything is built with core blocks and configured through theme.json, so the whole site — colors, fonts, spacing, header, footer and every landing-page section — can be edited visually in the Site Editor without touching code.
 
+**WooCommerce**
+
+Unapp ships its own shop, product, cart, checkout, order-confirmation and product-search templates, plus storefront patterns and a Shop starter site, so a store looks like the rest of your site rather than like the plugin's defaults.
+
 **Starter sites**
 
-Appearance → Starter Sites offers six complete designs, each with its own palette, typeface, home page, supporting pages and menu: SaaS & app, Portfolio, Church, Blog & magazine, Fitness studio, and Finance & advisory. Applying one creates the pages and sets your front page. Nothing is ever deleted — switching starter adds new pages and leaves your old ones in the Pages list.
+Appearance → Starter Sites offers nine complete designs, each with its own palette, typeface, home page, supporting pages and menu: SaaS & app, Portfolio, Church, Blog & magazine, Fitness studio, Restaurant, Agency, Shop and Finance & advisory. Applying one creates the pages and sets your front page. Nothing is ever deleted — switching starter adds new pages and leaves your old ones in the Pages list.
 
 **What's included**
 
-* **70+ section patterns** covering everything a product site needs: five heroes, nine feature layouts, testimonials, logo clouds, ratings, case studies, press, three pricing layouts, FAQ, five calls to action, timeline, values, careers, offices, security, changelog, documentation, contact and more.
+* **110+ section patterns** covering everything a product site needs: five heroes, nine feature layouts, testimonials, logo clouds, ratings, case studies, press, three pricing layouts, FAQ, five calls to action, timeline, values, careers, offices, security, changelog, documentation, contact and more.
 * **13 full-page starters** — SaaS landing page, Features, Pricing, Customers, About, Contact, Careers, Help centre, Changelog, Legal, Coming soon and two more — inserted from the pattern modal when you create a page.
 * **Ten pattern categories** in the inserter (Heroes, Features, Social proof, Pricing, Calls to action, Content & blog, Company, Utility, Full pages) so a big library stays findable.
 * Section styles for any Group, Columns or Column: Card, Soft background, Dark, Gradient, Frosted glass, Outline and Elevated — switch the look of a section with one click.
@@ -92,6 +96,9 @@ Yes. Every section is a pattern: open the block inserter, choose the Patterns ta
 They are simple SVGs drawn for this theme — invented brand names for the logo cloud and gradient portraits for the team and testimonials. Nothing is licensed from a third party, so replace them with your own at any time.
 
 == Changelog ==
+
+= 2.4.0 - 2026-08-20 =
+* Contact forms that render whichever form plugin you have; WooCommerce templates and a Shop starter; Restaurant and Agency starters; starter pages locked to their content; documentation and a child theme. Fixes a header overflow at 390px and a shop grid that dropped to two columns.
 
 = 2.3.0 - 2026-08-19 =
 * Six one-click starter sites with a selector under Appearance → Starter Sites. Forty-six niche patterns and a footer per starter, so every page of every starter is written for that kind of site. One measurement system across all 99 sections, sections that alternate ground by role, redrawn placeholder artwork, four new palettes, and button-contrast fixes in the Midnight and Mono palettes.

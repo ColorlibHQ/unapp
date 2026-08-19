@@ -4,7 +4,7 @@ Theme URI: https://colorlib.com/wp/themes/unapp/
 Author: Colorlib
 Author URI: https://colorlib.com
 Description: Unapp is a lightweight, block-based WordPress theme with six one-click starter sites — SaaS, portfolio, church, blog, fitness and finance. Built for the Site Editor with 70+ section patterns, ten colour palettes and five typography presets you can mix, seven section styles and eleven block styles. Self-hosted variable fonts, no page-builder framework, no jQuery, no icon fonts.
-Version: 2.3.0
+Version: 2.4.0
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 7.4
@@ -622,4 +622,36 @@ Unapp is distributed under the terms of the GNU GPL.
 :is(.wp-block-post-content, .editor-styles-wrapper) > .wp-block-group.alignfull.is-style-section-soft
 	+ .wp-block-group.alignfull.is-style-section-soft {
 	border-top: 1px solid var(--wp--preset--color--border);
+}
+
+/* Header on small screens
+   ------------------------------------------------------------------------
+   The header row is nowrap by contract, so its children have to be allowed to
+   shrink or they push past the viewport. With a long call-to-action label — or
+   with WooCommerce adding account and cart icons to the row — the button was
+   overflowing by about 36px at 390px. */
+@media (max-width: 599px) {
+	.unapp-header-row > .wp-block-group {
+		min-width: 0;
+	}
+
+	/* The row's gaps come from block spacing presets; at this width they are
+	   most of the overflow. */
+	.unapp-header-row,
+	.unapp-header-row > .wp-block-group {
+		gap: 0.6rem !important;
+	}
+
+	.unapp-header-row .wp-block-site-title {
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	/* The header pattern sets this padding inline, so only !important reaches it. */
+	.unapp-header-row .wp-block-button__link {
+		padding-inline: 0.9rem !important;
+		font-size: 0.8125rem;
+	}
 }

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-19T18:47:56+00:00\n"
+"POT-Creation-Date: 2026-08-19T19:00:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: make-pot.py (Unapp)\n"
 "X-Domain: unapp\n"
@@ -75,10 +75,14 @@ msgid "Sections for studios and agencies: capabilities, clients, engagements and
 msgstr ""
 
 #: functions.php:228
-msgid "Editorial furniture: mastheads, category tiles, author introductions and subscribe panels."
+msgid "Storefront sections for WooCommerce: featured products, promises, the workshop and delivery answers."
 msgstr ""
 
 #: functions.php:232
+msgid "Editorial furniture: mastheads, category tiles, author introductions and subscribe panels."
+msgstr ""
+
+#: functions.php:236
 msgid "Complete page layouts. Insert one into an empty page to start from a finished design."
 msgstr ""
 
@@ -224,10 +228,15 @@ msgstr ""
 
 #: functions.php:227
 msgctxt "Block pattern category"
-msgid "Unapp: Blog & magazine"
+msgid "Unapp: Shop"
 msgstr ""
 
 #: functions.php:231
+msgctxt "Block pattern category"
+msgid "Unapp: Blog & magazine"
+msgstr ""
+
+#: functions.php:235
 msgctxt "Block pattern category"
 msgid "Unapp: Full pages"
 msgstr ""
@@ -313,7 +322,7 @@ msgid "Home"
 msgstr ""
 
 #: inc/front-page-setup.php:145
-#: inc/starter-sites.php:463
+#: inc/starter-sites.php:486
 msgctxt "Title of the posts page created on activation"
 msgid "Blog"
 msgstr ""
@@ -337,7 +346,7 @@ msgstr ""
 #: inc/starter-sites.php:52
 #: inc/starter-sites.php:78
 #: inc/starter-sites.php:130
-#: inc/starter-sites.php:234
+#: inc/starter-sites.php:257
 #: patterns/footer-blog.php:42
 #: patterns/footer-portfolio.php:42
 msgid "About"
@@ -348,7 +357,7 @@ msgstr ""
 #: inc/starter-sites.php:112
 #: inc/starter-sites.php:134
 #: inc/starter-sites.php:160
-#: inc/starter-sites.php:238
+#: inc/starter-sites.php:261
 #: patterns/footer.php:60
 msgid "Contact"
 msgstr ""
@@ -478,43 +487,68 @@ msgid "Studio"
 msgstr ""
 
 #: inc/starter-sites.php:218
-msgid "Finance & advisory"
+msgid "Shop"
 msgstr ""
 
 #: inc/starter-sites.php:219
-msgid "Credentials, plain-English services, how advice works, fees, advisers and the risk warning."
+msgid "A storefront: hero, newest products, the promises that matter, how it is made and delivery answers. Needs WooCommerce."
 msgstr ""
 
 #: inc/starter-sites.php:220
+#: patterns/shop-cta.php:27
+#: patterns/shop-hero.php:32
+msgid "Shop everything"
+msgstr ""
+
+#: inc/starter-sites.php:231
+#: patterns/footer-shop.php:41
+#: patterns/shop-hero.php:35
+msgid "How it is made"
+msgstr ""
+
+#: inc/starter-sites.php:235
+#: patterns/footer-shop.php:42
+msgid "Delivery and returns"
+msgstr ""
+
+#: inc/starter-sites.php:241
+msgid "Finance & advisory"
+msgstr ""
+
+#: inc/starter-sites.php:242
+msgid "Credentials, plain-English services, how advice works, fees, advisers and the risk warning."
+msgstr ""
+
+#: inc/starter-sites.php:243
 #: patterns/finance-contact.php:32
 #: patterns/footer-finance.php:42
 msgid "Book a call"
 msgstr ""
 
-#: inc/starter-sites.php:230
+#: inc/starter-sites.php:253
 #: patterns/footer-finance.php:39
 msgid "Services"
 msgstr ""
 
-#: inc/starter-sites.php:265
+#: inc/starter-sites.php:288
 msgid "That starter site does not exist."
 msgstr ""
 
-#: inc/starter-sites.php:272
+#: inc/starter-sites.php:295
 msgid "The starter site’s home page pattern could not be loaded."
 msgstr ""
 
-#: inc/starter-sites.php:538
+#: inc/starter-sites.php:561
 msgid "Blog"
 msgstr ""
 
-#: inc/starter-sites.php:566
+#: inc/starter-sites.php:589
 msgid "Navigation"
 msgstr ""
 
 #. Pattern title
 #. Template part name
-#: inc/starter-sites.php:670
+#: inc/starter-sites.php:693
 #: patterns/footer.php
 #: theme.json
 msgid "Footer"
@@ -522,58 +556,58 @@ msgstr ""
 
 #. Pattern title
 #. Template part name
-#: inc/starter-sites.php:711
+#: inc/starter-sites.php:734
 #: patterns/header.php
 #: theme.json
 msgid "Header"
 msgstr ""
 
-#: inc/starter-sites.php:738
-#: inc/starter-sites.php:739
+#: inc/starter-sites.php:761
+#: inc/starter-sites.php:762
 msgid "Starter Sites"
 msgstr ""
 
-#: inc/starter-sites.php:754
+#: inc/starter-sites.php:777
 msgid "You are not allowed to change the site design."
 msgstr ""
 
-#: inc/starter-sites.php:779
+#: inc/starter-sites.php:802
 msgid "Unapp starter sites"
 msgstr ""
 
-#: inc/starter-sites.php:781
+#: inc/starter-sites.php:804
 msgid "Each starter builds a complete site for one kind of business: a colour palette, a typeface, a home page and its supporting pages, and a matching menu. Your existing pages are never deleted — applying a starter adds new ones and points the front page at them."
 msgstr ""
 
 #. translators: %s: link to the site front page.
-#: inc/starter-sites.php:789
+#: inc/starter-sites.php:812
 msgid "Starter site applied. <a href=\"%s\">View your site</a>."
 msgstr ""
 
 #. translators: %s: link to the site front page.
-#: inc/starter-sites.php:795
+#: inc/starter-sites.php:818
 msgid "That starter site could not be applied. Please try again."
 msgstr ""
 
 #. translators: %s: starter site name.
-#: inc/starter-sites.php:808
+#: inc/starter-sites.php:831
 msgid "The home page the %s starter builds"
 msgstr ""
 
-#: inc/starter-sites.php:815
+#: inc/starter-sites.php:838
 msgid "Applied"
 msgstr ""
 
-#: inc/starter-sites.php:837
+#: inc/starter-sites.php:860
 msgid "Apply again"
 msgstr ""
 
-#: inc/starter-sites.php:837
+#: inc/starter-sites.php:860
 msgid "Apply this starter"
 msgstr ""
 
 #: inc/starter-sites.php:35
-#: inc/starter-sites.php:684
+#: inc/starter-sites.php:707
 #: patterns/header.php:30
 msgctxt "Header call-to-action button"
 msgid "Get Premium"
@@ -2348,6 +2382,16 @@ msgstr ""
 msgid "The home page for the SaaS starter site: split hero, logo cloud, features, steps, proof, pricing and a closing call to action."
 msgstr ""
 
+#. Pattern title
+#: patterns/demo-shop.php
+msgid "Starter site: Shop"
+msgstr ""
+
+#. Pattern description
+#: patterns/demo-shop.php
+msgid "The home page for the Shop starter site: storefront hero, newest products, promises, the workshop, delivery answers and a closing band."
+msgstr ""
+
 #: patterns/docs-topics.php:30
 msgid "Browse by topic"
 msgstr ""
@@ -3986,6 +4030,7 @@ msgstr ""
 #: patterns/footer-fitness.php:87
 #: patterns/footer-portfolio.php:84
 #: patterns/footer-restaurant.php:87
+#: patterns/footer-shop.php:87
 msgid "&copy; %1$s %2$s. All rights reserved."
 msgstr ""
 
@@ -3996,6 +4041,7 @@ msgstr ""
 #: patterns/footer-fitness.php:99
 #: patterns/footer-portfolio.php:96
 #: patterns/footer-restaurant.php:99
+#: patterns/footer-shop.php:99
 msgid "Built with the Unapp theme"
 msgstr ""
 
@@ -4010,6 +4056,7 @@ msgid "Studio"
 msgstr ""
 
 #: patterns/footer-agency.php:50
+#: patterns/footer-shop.php:50
 msgctxt "Footer column heading"
 msgid "Journal"
 msgstr ""
@@ -4394,6 +4441,59 @@ msgstr ""
 #. Pattern description
 #: patterns/footer-restaurant.php
 msgid "A restaurant footer: what the kitchen does, opening nights and where to find the room."
+msgstr ""
+
+#: patterns/footer-shop.php:40
+msgid "Everything in stock"
+msgstr ""
+
+#: patterns/footer-shop.php:43
+msgid "Repairs"
+msgstr ""
+
+#: patterns/footer-shop.php:23
+msgctxt "Footer tagline"
+msgid "A small workshop in Leeds making bags and aprons in runs of about two hundred. Cut, stitched and finished here."
+msgstr ""
+
+#: patterns/footer-shop.php:37
+msgctxt "Footer column heading"
+msgid "Shop"
+msgstr ""
+
+#: patterns/footer-shop.php:58
+msgctxt "Footer column heading"
+msgid "The workshop"
+msgstr ""
+
+#: patterns/footer-shop.php:61
+msgctxt "Footer contact line"
+msgid "Unit 4, Sheaf Works, Leeds LS10 1EE"
+msgstr ""
+
+#: patterns/footer-shop.php:64
+msgctxt "Footer contact line"
+msgid "0113 555 0177"
+msgstr ""
+
+#: patterns/footer-shop.php:67
+msgctxt "Footer contact line"
+msgid "Sixty-day returns, postage paid"
+msgstr ""
+
+#: patterns/footer-shop.php:70
+msgctxt "Footer contact line"
+msgid "workshop@sheafworks.example"
+msgstr ""
+
+#. Pattern title
+#: patterns/footer-shop.php
+msgid "Footer: shop"
+msgstr ""
+
+#. Pattern description
+#: patterns/footer-shop.php
+msgid "A storefront footer: what the workshop makes, shop links, and the delivery and returns lines buyers look for."
 msgstr ""
 
 #: patterns/footer-slim.php:30
@@ -4784,6 +4884,75 @@ msgstr ""
 #. Pattern description
 #: patterns/hidden-search.php
 msgid "Search form with translated labels."
+msgstr ""
+
+#: patterns/hidden-shop-empty-cart.php:16
+msgid "Your cart is empty"
+msgstr ""
+
+#: patterns/hidden-shop-empty-cart.php:19
+msgid "Nothing here yet. Have a look at what is in stock."
+msgstr ""
+
+#: patterns/hidden-shop-empty-cart.php:24
+msgid "Browse the shop"
+msgstr ""
+
+#. Pattern title
+#: patterns/hidden-shop-empty-cart.php
+msgid "Shop: empty cart"
+msgstr ""
+
+#. Pattern description
+#: patterns/hidden-shop-empty-cart.php
+msgid "The empty-cart message used by the Cart template."
+msgstr ""
+
+#: patterns/hidden-shop-no-results.php:16
+msgid "No products match that. Try a different filter, or browse everything."
+msgstr ""
+
+#. Pattern title
+#: patterns/hidden-shop-no-results.php
+msgid "Shop: no products found"
+msgstr ""
+
+#. Pattern description
+#: patterns/hidden-shop-no-results.php
+msgid "Shown when a product query returns nothing."
+msgstr ""
+
+#: patterns/hidden-shop-related.php:16
+msgid "You may also like"
+msgstr ""
+
+#. Pattern title
+#: patterns/hidden-shop-related.php
+msgid "Shop: related products heading"
+msgstr ""
+
+#. Pattern description
+#: patterns/hidden-shop-related.php
+msgid "The heading above related products on a single product."
+msgstr ""
+
+#: patterns/hidden-shop-search.php:15
+msgid "Search products…"
+msgstr ""
+
+#: patterns/hidden-shop-search.php:15
+#: patterns/sidebar.php:20
+msgid "Search"
+msgstr ""
+
+#. Pattern title
+#: patterns/hidden-shop-search.php
+msgid "Shop: product search"
+msgstr ""
+
+#. Pattern description
+#: patterns/hidden-shop-search.php
+msgid "The product search form used by the shop search template."
 msgstr ""
 
 #: patterns/how-it-works.php:36
@@ -6070,7 +6239,7 @@ msgstr ""
 
 #: patterns/restaurant-hours.php:56
 msgctxt "Opening day"
-msgid "Wednesday – Friday"
+msgid "Wed – Fri"
 msgstr ""
 
 #: patterns/restaurant-hours.php:63
@@ -6080,7 +6249,7 @@ msgstr ""
 
 #: patterns/restaurant-hours.php:84
 msgctxt "Opening hours"
-msgid "Lunch 12:00 – 14:30 · Dinner 18:00 – 22:30"
+msgid "Lunch and dinner, 12:00 – 22:30"
 msgstr ""
 
 #: patterns/restaurant-hours.php:105
@@ -6090,7 +6259,7 @@ msgstr ""
 
 #: patterns/restaurant-hours.php:119
 msgctxt "Opening day"
-msgid "Monday & Tuesday"
+msgid "Mon & Tue"
 msgstr ""
 
 #: patterns/restaurant-hours.php:126
@@ -6470,8 +6639,245 @@ msgstr ""
 msgid "Section intro followed by four icon cards in a responsive grid."
 msgstr ""
 
-#: patterns/sidebar.php:20
-msgid "Search"
+#: patterns/shop-cta.php:19
+msgid "Everything is made in runs of about two hundred"
+msgstr ""
+
+#: patterns/shop-cta.php:22
+msgid "When something sells out we decide whether to make it again. The newsletter is the only warning you get."
+msgstr ""
+
+#: patterns/shop-cta.php:30
+msgid "Join the list"
+msgstr ""
+
+#. Pattern title
+#: patterns/shop-cta.php
+msgid "Shop: closing band"
+msgstr ""
+
+#. Pattern description
+#: patterns/shop-cta.php
+msgid "A closing band about small production runs, on the palette gradient."
+msgstr ""
+
+#: patterns/shop-faq.php:22
+msgid "Delivery, returns and repairs"
+msgstr ""
+
+#: patterns/shop-faq.php:19
+msgctxt "Section eyebrow label"
+msgid "Before you order"
+msgstr ""
+
+#: patterns/shop-faq.php:28
+#: patterns/shop-faq.php:29
+msgctxt "FAQ question"
+msgid "When will it arrive?"
+msgstr ""
+
+#: patterns/shop-faq.php:31
+msgctxt "FAQ answer"
+msgid "Ordered before 2pm on a weekday, it leaves the same afternoon and usually lands the next day in the UK. Europe is three to five days, the rest of the world a week or so. Tracking goes out with the dispatch email."
+msgstr ""
+
+#: patterns/shop-faq.php:35
+#: patterns/shop-faq.php:36
+msgctxt "FAQ question"
+msgid "What if it is not right?"
+msgstr ""
+
+#: patterns/shop-faq.php:38
+msgctxt "FAQ answer"
+msgid "Send it back within sixty days, unworn and unwashed, and we refund the lot including what you paid to have it delivered. The return postage is on us."
+msgstr ""
+
+#: patterns/shop-faq.php:42
+#: patterns/shop-faq.php:43
+msgctxt "FAQ question"
+msgid "Do you repair things?"
+msgstr ""
+
+#: patterns/shop-faq.php:45
+msgctxt "FAQ answer"
+msgid "Yes, at cost, for as long as we are still here. Post it to the workshop with a note about what happened and we will quote before doing anything."
+msgstr ""
+
+#: patterns/shop-faq.php:49
+#: patterns/shop-faq.php:50
+msgctxt "FAQ question"
+msgid "Is it really made where you say?"
+msgstr ""
+
+#: patterns/shop-faq.php:52
+msgctxt "FAQ answer"
+msgid "Cut, stitched and finished in Leeds by four people whose names are on the About page. Materials come from Devon, Dundee and one German thread mill."
+msgstr ""
+
+#. Pattern title
+#: patterns/shop-faq.php
+msgid "Shop: delivery and returns"
+msgstr ""
+
+#. Pattern description
+#: patterns/shop-faq.php
+msgid "The four questions asked before every online order."
+msgstr ""
+
+#: patterns/shop-featured.php:22
+msgid "The four most recent things"
+msgstr ""
+
+#: patterns/shop-featured.php:25
+msgid "Everything is made in small runs, so this changes more often than we plan for."
+msgstr ""
+
+#: patterns/shop-featured.php:41
+msgid "See everything in stock"
+msgstr ""
+
+#: patterns/shop-featured.php:19
+msgctxt "Section eyebrow label"
+msgid "New in"
+msgstr ""
+
+#. Pattern title
+#: patterns/shop-featured.php
+msgid "Shop: featured products"
+msgstr ""
+
+#. Pattern description
+#: patterns/shop-featured.php
+msgid "Four newest products from the store, with a link to the full shop. Needs WooCommerce."
+msgstr ""
+
+#: patterns/shop-hero.php:24
+msgid "Things we make, in numbers we can stand behind"
+msgstr ""
+
+#: patterns/shop-hero.php:27
+msgid "A small workshop in Leeds making bags, aprons and a few things that did not fit either category. Two hundred of anything, then we stop and think about it."
+msgstr ""
+
+#: patterns/shop-hero.php:44
+msgid "The workshop"
+msgstr ""
+
+#: patterns/shop-hero.php:21
+msgctxt "Shop hero eyebrow"
+msgid "Workshop and shop"
+msgstr ""
+
+#. Pattern title
+#: patterns/shop-hero.php
+msgid "Shop: hero"
+msgstr ""
+
+#. Pattern description
+#: patterns/shop-hero.php
+msgid "A storefront introduction with two calls to action and an image."
+msgstr ""
+
+#: patterns/shop-promise.php:44
+msgid "The boring promises that matter"
+msgstr ""
+
+#: patterns/shop-promise.php:16
+msgctxt "Shop promise"
+msgid "Sent within a day"
+msgstr ""
+
+#: patterns/shop-promise.php:17
+msgctxt "Shop promise"
+msgid "Ordered before 2pm on a weekday, it leaves the same afternoon."
+msgstr ""
+
+#: patterns/shop-promise.php:21
+msgctxt "Shop promise"
+msgid "Sixty days to change your mind"
+msgstr ""
+
+#: patterns/shop-promise.php:22
+msgctxt "Shop promise"
+msgid "Unworn, unwashed, and we pay the return postage."
+msgstr ""
+
+#: patterns/shop-promise.php:26
+msgctxt "Shop promise"
+msgid "Made to last"
+msgstr ""
+
+#: patterns/shop-promise.php:27
+msgctxt "Shop promise"
+msgid "Two-year guarantee on everything, repairs at cost after that."
+msgstr ""
+
+#: patterns/shop-promise.php:31
+msgctxt "Shop promise"
+msgid "Made in small runs"
+msgstr ""
+
+#: patterns/shop-promise.php:32
+msgctxt "Shop promise"
+msgid "Roughly two hundred of anything. When it is gone we make it again, or we do not."
+msgstr ""
+
+#: patterns/shop-promise.php:41
+msgctxt "Section eyebrow label"
+msgid "Why buy here"
+msgstr ""
+
+#. Pattern title
+#: patterns/shop-promise.php
+msgid "Shop: promises"
+msgstr ""
+
+#. Pattern description
+#: patterns/shop-promise.php
+msgid "Four reassurance cards: delivery, returns, guarantee and how the run sizes work."
+msgstr ""
+
+#: patterns/shop-workshop.php:21
+msgid "The bench"
+msgstr ""
+
+#: patterns/shop-workshop.php:31
+msgid "Four people, two benches, no factory"
+msgstr ""
+
+#: patterns/shop-workshop.php:34
+msgid "Leather from a tannery in Devon that has been at it since 1863, canvas from Dundee, and thread we buy in quantities that embarrass our accountant."
+msgstr ""
+
+#: patterns/shop-workshop.php:39
+msgid "Cut, stitched and finished in Leeds"
+msgstr ""
+
+#: patterns/shop-workshop.php:42
+msgid "Every piece signed by whoever made it"
+msgstr ""
+
+#: patterns/shop-workshop.php:45
+msgid "Repairs at cost, for as long as we exist"
+msgstr ""
+
+#: patterns/shop-workshop.php:48
+msgid "Offcuts go to a bookbinder down the road"
+msgstr ""
+
+#: patterns/shop-workshop.php:28
+msgctxt "Section eyebrow label"
+msgid "How it is made"
+msgstr ""
+
+#. Pattern title
+#: patterns/shop-workshop.php
+msgid "Shop: the workshop"
+msgstr ""
+
+#. Pattern description
+#: patterns/shop-workshop.php
+msgid "Where the goods are made and what from, beside a photograph."
 msgstr ""
 
 #: patterns/sidebar.php:29

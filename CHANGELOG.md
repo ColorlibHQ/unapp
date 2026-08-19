@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.4.0 – 2026-08-20
+
+### Added
+- **A real contact form in every contact section.** Every starter previously built a Contact page that ended at a card reading "add your form plugin's block here". `inc/forms.php` now finds whichever form plugin is active — ten are recognised — renders its first form, and wraps it in `.unapp-form` so `assets/css/forms.css` can style the fields to the palette without knowing each plugin's class names. With no form plugin installed the sections fall back to an email panel.
+- **WooCommerce templates.** `archive-product`, `single-product`, `page-cart`, `page-checkout`, `order-confirmation` and `product-search-results`, all in the theme's section rhythm, with their text in hidden patterns so it stays translatable. The stylesheet grew to cover product grids, the gallery, tabs, cart and checkout panels, badges and breadcrumbs.
+- **Three more starter sites** — Restaurant, Agency and Shop — taking the theme to nine, with nineteen new sections and two new palettes (Harvest and Slate, both contrast-checked).
+- **Starter pages are locked to their content.** Each top-level section is marked `contentOnly`, so headings, paragraphs, images and buttons stay editable while groups, columns and separators are protected. Measured in the editor: 41 paragraphs, 25 headings, 12 images and 2 buttons editable; 33 groups, 24 columns and 7 separators locked.
+- **Documentation** in `docs/` (getting started, design tokens, extending) and a ready-made child theme in `child-theme/`. Neither ships inside the theme zip.
+
+### Fixed
+- **The header overflowed the viewport at 390px** by 36 pixels. The row is `nowrap` by contract but its children could not shrink, so a long call-to-action label — or WooCommerce adding account and cart icons — pushed the button off-screen. The groups now shrink, the site title truncates, and the button's padding and gaps tighten below 600px.
+- **A three-column shop rendered as two.** WooCommerce sizes its product grid with `auto-fill` and a percentage that assumes its own 1.25em gap; widening the gap to the theme's spacing scale pushed the third column out. The theme now sets the tracks explicitly and steps them 3 → 2 → 1.
+- WooCommerce centred the add-to-cart button while the title and price sat left, which read as a mistake.
+
+
 All notable changes to the Unapp theme are documented here.
 
 ## 2.3.0 – 2026-08-19

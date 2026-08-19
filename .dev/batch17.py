@@ -155,4 +155,16 @@ niche_footer(
     socials=[("linkedin", "https://linkedin.com"), ("instagram", "https://instagram.com"),
              ("x", "https://x.com")], posts_head="Journal")
 
-print("batch 17 rewritten: 7 niche footers on the house style")
+niche_footer(
+    "footer-shop", title="Footer: shop", cats="unapp, unapp_shop, footer",
+    keywords="footer, shop, store, delivery, returns, ecommerce",
+    desc="A storefront footer: what the workshop makes, shop links, and the delivery and returns lines buyers look for.",
+    blurb="A small workshop in Leeds making bags and aprons in runs of about two hundred. Cut, stitched and finished here.",
+    links_head="Shop", links=[("Everything in stock", "/shop/"), ("How it is made", "#making"),
+                              ("Delivery and returns", "#delivery"), ("Repairs", "#repairs")],
+    contact_head="The workshop",
+    contact_lines=["Unit 4, Sheaf Works, Leeds LS10 1EE", "0113 555 0177",
+                   "Sixty-day returns, postage paid", "workshop@sheafworks.example"],
+    socials=SOCIAL_STD + [("pinterest", "https://pinterest.com")], posts_head="Journal")
+
+print("batch 17 rewritten: 8 niche footers on the house style")

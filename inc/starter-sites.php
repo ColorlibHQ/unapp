@@ -214,6 +214,29 @@ function unapp_get_starter_sites() {
 				),
 			),
 		),
+		'shop'      => array(
+			'title'    => __( 'Shop', 'unapp' ),
+			'summary'  => __( 'A storefront: hero, newest products, the promises that matter, how it is made and delivery answers. Needs WooCommerce.', 'unapp' ),
+			'cta'      => __( 'Shop everything', 'unapp' ),
+			'style'    => 'emerald',
+			'colors'   => 'colors-2-emerald',
+			'type'     => 'typography-5-geometric',
+			'swatches' => array( '#12805a', '#f7b32b' ),
+			'home'     => 'unapp/demo-shop',
+			'thumb'    => 'shop',
+			'footer'   => 'unapp/footer-shop',
+			'requires' => 'woocommerce/woocommerce.php',
+			'pages'    => array(
+				'about'   => array(
+					'title'    => __( 'How it is made', 'unapp' ),
+					'patterns' => array( 'unapp/shop-workshop', 'unapp/shop-promise', 'unapp/shop-cta' ),
+				),
+				'help'    => array(
+					'title'    => __( 'Delivery and returns', 'unapp' ),
+					'patterns' => array( 'unapp/shop-faq', 'unapp/shop-promise', 'unapp/contact-split' ),
+				),
+			),
+		),
 		'finance'   => array(
 			'title'    => __( 'Finance & advisory', 'unapp' ),
 			'summary'  => __( 'Credentials, plain-English services, how advice works, fees, advisers and the risk warning.', 'unapp' ),

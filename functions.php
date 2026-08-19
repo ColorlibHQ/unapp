@@ -223,6 +223,10 @@ function unapp_pattern_categories() {
 			'label'       => _x( 'Unapp: Agency', 'Block pattern category', 'unapp' ),
 			'description' => __( 'Sections for studios and agencies: capabilities, clients, engagements and enquiries.', 'unapp' ),
 		),
+		'unapp_shop'     => array(
+			'label'       => _x( 'Unapp: Shop', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Storefront sections for WooCommerce: featured products, promises, the workshop and delivery answers.', 'unapp' ),
+		),
 		'unapp_blog'     => array(
 			'label'       => _x( 'Unapp: Blog & magazine', 'Block pattern category', 'unapp' ),
 			'description' => __( 'Editorial furniture: mastheads, category tiles, author introductions and subscribe panels.', 'unapp' ),

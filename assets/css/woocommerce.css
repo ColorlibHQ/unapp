@@ -116,3 +116,185 @@
 .wc-block-cart .wc-block-components-sidebar-layout .wc-block-components-sidebar {
 	border-radius: 16px;
 }
+
+/* Product grid and single product
+   ------------------------------------------------------------------------
+   The theme now ships its own archive-product, single-product, cart,
+   checkout, order-confirmation and product-search templates. These rules put
+   the blocks those templates use on the theme's spacing scale, radii and type
+   roles, so a shop looks like the rest of the site rather than like the
+   plugin's defaults. */
+
+/* Woo sizes its grid with auto-fill and a percentage that assumes its own
+   1.25em gap; widening the gap to the theme's scale pushed the last column out
+   and silently dropped a three-column shop to two. Set the tracks explicitly
+   and step them down the way the theme's own grids do. */
+.wc-block-product-template__responsive {
+	gap: var(--wp--preset--spacing--50);
+}
+
+.wc-block-product-template__responsive.columns-3 {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.wc-block-product-template__responsive.columns-4 {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 999px) {
+	.wc-block-product-template__responsive.columns-3,
+	.wc-block-product-template__responsive.columns-4 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 600px) {
+	.wc-block-product-template__responsive.columns-3,
+	.wc-block-product-template__responsive.columns-4 {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+.wc-block-product-template__responsive .wc-block-product,
+.wc-block-product-template .wc-block-product {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--20);
+}
+
+.wc-block-product-template .wp-block-woocommerce-product-image img,
+.wc-block-grid__product-image img {
+	border-radius: 20px;
+}
+
+.wc-block-product-template .wp-block-post-title {
+	margin-block: 0;
+}
+
+.wc-block-product-template .wp-block-post-title a {
+	text-decoration: none;
+	color: var(--wp--preset--color--contrast);
+}
+
+.wc-block-product-template .wp-block-post-title a:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+.wc-block-components-product-price__value {
+	font-family: var(--wp--preset--font-family--heading);
+	font-weight: 600;
+}
+
+.wc-block-components-product-price del {
+	color: var(--wp--preset--color--muted);
+	margin-inline-end: 0.4em;
+}
+
+/* Sale badge sits on the image corner rather than floating over the title. */
+.wc-block-components-product-sale-badge {
+	border-radius: 999px;
+	background: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 600;
+	padding: 0.25rem 0.7rem;
+}
+
+/* Buttons the plugin renders, wherever they appear. */
+.woocommerce .button,
+.wc-block-components-button,
+.wp-block-woocommerce-product-button .wp-block-button__link,
+.wc-block-cart__submit-button,
+.wc-block-components-checkout-place-order-button {
+	border-radius: 999px !important;
+	font-family: var(--wp--preset--font-family--heading);
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+.wp-block-woocommerce-product-button .wp-block-button__link {
+	background: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--contrast);
+	padding: 0.7rem 1.4rem;
+}
+
+/* Single product */
+.wp-block-woocommerce-product-image-gallery img,
+.woocommerce-product-gallery__image img {
+	border-radius: 20px;
+}
+
+.wp-block-woocommerce-add-to-cart-form .quantity input[type="number"],
+.wc-block-components-quantity-selector input {
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 10px;
+	padding: 0.6rem 0.8rem;
+}
+
+.woocommerce-tabs ul.tabs {
+	border-bottom: 1px solid var(--wp--preset--color--border);
+	padding-inline-start: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--wp--preset--spacing--30);
+	list-style: none;
+}
+
+.woocommerce-tabs ul.tabs li a {
+	font-family: var(--wp--preset--font-family--heading);
+	font-weight: 600;
+	text-decoration: none;
+	color: var(--wp--preset--color--muted);
+}
+
+.woocommerce-tabs ul.tabs li.active a {
+	color: var(--wp--preset--color--contrast);
+}
+
+/* Cart and checkout panels take the theme's card treatment. */
+.wp-block-woocommerce-cart-order-summary-block,
+.wc-block-components-order-summary,
+.wc-block-checkout__sidebar .wc-block-components-sidebar {
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 20px;
+	background: var(--wp--preset--color--surface);
+	padding: var(--wp--preset--spacing--50);
+}
+
+.wc-block-components-totals-item__value {
+	font-family: var(--wp--preset--font-family--heading);
+	font-weight: 600;
+}
+
+.wc-block-components-notice-banner {
+	border-radius: 12px;
+}
+
+/* Breadcrumbs, results count and sorting all read as small print. */
+.wc-block-breadcrumbs,
+.wc-block-product-results-count,
+.wc-block-catalog-sorting {
+	color: var(--wp--preset--color--muted);
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.wc-block-breadcrumbs a {
+	color: var(--wp--preset--color--muted);
+}
+
+.wc-block-breadcrumbs a:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+/* The plugin centres the add-to-cart button while the title and price sit
+   left, which reads as a mistake. Let the card decide. */
+.wc-block-product-template .wp-block-woocommerce-product-button,
+.wc-block-product-template .wc-block-components-product-button {
+	text-align: start;
+}
+
+/* The tab panel heading repeats the tab label at h2 size. */
+.woocommerce-Tabs-panel > h2:first-child {
+	font-size: var(--wp--preset--font-size--large);
+}
