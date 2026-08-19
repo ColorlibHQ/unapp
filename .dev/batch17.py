@@ -167,4 +167,36 @@ niche_footer(
                    "Sixty-day returns, postage paid", "workshop@sheafworks.example"],
     socials=SOCIAL_STD + [("pinterest", "https://pinterest.com")], posts_head="Journal")
 
-print("batch 17 rewritten: 8 niche footers on the house style")
+for slug, title, cat, blurb, lh, links, ch, clines, socials, ph in [
+    ("footer-realestate", "Footer: property", "unapp_realestate",
+     "A small agency covering Bath and the villages east of it. Twelve properties at a time, so we can show them all properly.",
+     "Property", [("For sale", "#listings"), ("To let", "#lettings"), ("Our fees", "#fees"), ("Book a valuation", "#valuation")],
+     "The office", ["9 Lansdown Road, Bath BA1 5DZ", "01225 555 0163", "hello@lansdown.example",
+                    "Mon–Fri 9:00–17:30 · Sat 10:00–14:00"],
+     [("facebook", "https://facebook.com"), ("instagram", "https://instagram.com")], "Market notes"),
+    ("footer-medical", "Footer: practice", "unapp_medical",
+     "Six surgeries on Fore Street, NHS and private, with emergency slots held back every weekday morning.",
+     "Patients", [("Treatments", "#treatments"), ("Fees", "#fees"), ("Register", "#register"), ("Emergencies", "#emergency")],
+     "The practice", ["42 Fore Street, Exeter EX4 3AT", "01392 555 0146", "reception@forestreetdental.example",
+                      "Level access · Hearing loop · Free patient parking"],
+     [("facebook", "https://facebook.com")], "Practice news"),
+    ("footer-education", "Footer: courses", "unapp_education",
+     "Short courses in woodwork, letterpress, ceramics and bookbinding, taught by people who do it for a living.",
+     "Learn", [("This term", "#courses"), ("Tutors", "#tutors"), ("Gift vouchers", "#vouchers"), ("Questions", "#faq")],
+     "The school", ["The Old School Hall, Sheffield S3 8HL", "0114 555 0128", "hello@oldschoolhall.example",
+                    "Eight benches, eight places, every course"],
+     [("instagram", "https://instagram.com"), ("facebook", "https://facebook.com")], "From the workshop"),
+    ("footer-events", "Footer: conference", "unapp_events",
+     "Two days about building things that outlast the team that built them. Bristol, 14–15 May 2027.",
+     "Attend", [("Programme", "#programme"), ("Speakers", "#speakers"), ("Tickets", "#tickets"), ("Access and travel", "#access")],
+     "The venue", ["The Assembly Rooms, Prince Street", "Bristol BS1 4QD", "hello@thelongrewrite.example",
+                   "Step-free · Live captions · Quiet room"],
+     [("x", "https://x.com"), ("linkedin", "https://linkedin.com")], "Announcements"),
+]:
+    niche_footer(slug, title=title, cats="unapp, " + cat + ", footer",
+                 keywords=cat.replace("unapp_", "") + ", footer, contact",
+                 desc="A footer for the " + title.split(": ")[1] + " starter.",
+                 blurb=blurb, links_head=lh, links=links, contact_head=ch, contact_lines=clines,
+                 socials=socials, posts_head=ph)
+
+print("batch 17 rewritten: 12 niche footers on the house style")

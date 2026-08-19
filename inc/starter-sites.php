@@ -237,6 +237,110 @@ function unapp_get_starter_sites() {
 				),
 			),
 		),
+		'realestate' => array(
+			'title'    => __( 'Property', 'unapp' ),
+			'summary'  => __( 'An estate agency: current listings with prices on them, published fees and a valuation enquiry.', 'unapp' ),
+			'cta'      => __( 'Book a valuation', 'unapp' ),
+			'style'    => 'graphite',
+			'colors'   => 'colors-4-graphite',
+			'type'     => 'typography-3-editorial',
+			'swatches' => array( '#3d4351', '#22c8b4' ),
+			'home'     => 'unapp/demo-realestate',
+			'thumb'    => 'realestate',
+			'footer'   => 'unapp/footer-realestate',
+			'pages'    => array(
+				'listings' => array(
+					'title'    => __( 'For sale', 'unapp' ),
+					'patterns' => array( 'unapp/realestate-listings', 'unapp/realestate-fees', 'unapp/realestate-valuation' ),
+				),
+				'fees'     => array(
+					'title'    => __( 'Our fees', 'unapp' ),
+					'patterns' => array( 'unapp/realestate-fees', 'unapp/faq', 'unapp/realestate-valuation' ),
+				),
+				'contact'  => array(
+					'title'    => __( 'Book a valuation', 'unapp' ),
+					'patterns' => array( 'unapp/realestate-valuation', 'unapp/realestate-fees' ),
+				),
+			),
+		),
+		'medical'   => array(
+			'title'    => __( 'Practice', 'unapp' ),
+			'summary'  => __( 'A clinic or dental practice: treatments in plain English, clinicians with qualifications, patient questions and opening hours.', 'unapp' ),
+			'cta'      => __( 'Book an appointment', 'unapp' ),
+			'style'    => 'slate',
+			'colors'   => 'colors-12-slate',
+			'type'     => 'typography-2-interface',
+			'swatches' => array( '#1f4e56', '#57c2b4' ),
+			'home'     => 'unapp/demo-medical',
+			'thumb'    => 'medical',
+			'footer'   => 'unapp/footer-medical',
+			'pages'    => array(
+				'treatments' => array(
+					'title'    => __( 'Treatments', 'unapp' ),
+					'patterns' => array( 'unapp/medical-services', 'unapp/medical-team', 'unapp/medical-faq' ),
+				),
+				'team'       => array(
+					'title'    => __( 'The team', 'unapp' ),
+					'patterns' => array( 'unapp/medical-team', 'unapp/medical-services', 'unapp/medical-hours' ),
+				),
+				'contact'    => array(
+					'title'    => __( 'Find us', 'unapp' ),
+					'patterns' => array( 'unapp/medical-hours', 'unapp/contact-split', 'unapp/medical-faq' ),
+				),
+			),
+		),
+		'education' => array(
+			'title'    => __( 'Courses', 'unapp' ),
+			'summary'  => __( 'A course provider: the term\u2019s timetable with prices, the tutors who teach it and how booking works.', 'unapp' ),
+			'cta'      => __( 'See the courses', 'unapp' ),
+			'style'    => 'violet',
+			'colors'   => 'colors-5-violet',
+			'type'     => 'typography-1-product',
+			'swatches' => array( '#7c3aed', '#0ea5a5' ),
+			'home'     => 'unapp/demo-education',
+			'thumb'    => 'education',
+			'footer'   => 'unapp/footer-education',
+			'pages'    => array(
+				'courses' => array(
+					'title'    => __( 'Courses', 'unapp' ),
+					'patterns' => array( 'unapp/education-courses', 'unapp/education-tutors', 'unapp/education-faq', 'unapp/education-cta' ),
+				),
+				'tutors'  => array(
+					'title'    => __( 'Tutors', 'unapp' ),
+					'patterns' => array( 'unapp/education-tutors', 'unapp/education-courses', 'unapp/education-cta' ),
+				),
+				'contact' => array(
+					'title'    => __( 'Contact', 'unapp' ),
+					'patterns' => array( 'unapp/contact-split', 'unapp/education-faq' ),
+				),
+			),
+		),
+		'events'    => array(
+			'title'    => __( 'Conference', 'unapp' ),
+			'summary'  => __( 'A two-day event: the programme, announced speakers, three ticket tiers and the venue with its access provision.', 'unapp' ),
+			'cta'      => __( 'Buy a ticket', 'unapp' ),
+			'style'    => 'midnight',
+			'colors'   => 'colors-6-midnight',
+			'type'     => 'typography-4-technical',
+			'swatches' => array( '#8b9df0', '#4fd391' ),
+			'home'     => 'unapp/demo-events',
+			'thumb'    => 'events',
+			'footer'   => 'unapp/footer-events',
+			'pages'    => array(
+				'programme' => array(
+					'title'    => __( 'Programme', 'unapp' ),
+					'patterns' => array( 'unapp/events-programme', 'unapp/events-speakers', 'unapp/events-tickets' ),
+				),
+				'tickets'   => array(
+					'title'    => __( 'Tickets', 'unapp' ),
+					'patterns' => array( 'unapp/events-tickets', 'unapp/events-venue', 'unapp/events-programme' ),
+				),
+				'venue'     => array(
+					'title'    => __( 'Venue and access', 'unapp' ),
+					'patterns' => array( 'unapp/events-venue', 'unapp/events-programme' ),
+				),
+			),
+		),
 		'finance'   => array(
 			'title'    => __( 'Finance & advisory', 'unapp' ),
 			'summary'  => __( 'Credentials, plain-English services, how advice works, fees, advisers and the risk warning.', 'unapp' ),

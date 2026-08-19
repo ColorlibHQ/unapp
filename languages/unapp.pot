@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-19T19:08:11+00:00\n"
+"POT-Creation-Date: 2026-08-19T19:15:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: make-pot.py (Unapp)\n"
 "X-Domain: unapp\n"
@@ -79,10 +79,26 @@ msgid "Storefront sections for WooCommerce: featured products, promises, the wor
 msgstr ""
 
 #: functions.php:232
-msgid "Editorial furniture: mastheads, category tiles, author introductions and subscribe panels."
+msgid "Sections for estate agents: listings, published fees and valuation enquiries."
 msgstr ""
 
 #: functions.php:236
+msgid "Sections for clinics and practices: treatments, clinicians, patient questions and opening hours."
+msgstr ""
+
+#: functions.php:240
+msgid "Sections for course providers: timetables, tutors and booking answers."
+msgstr ""
+
+#: functions.php:244
+msgid "Sections for conferences and events: programmes, speakers, tickets and venue details."
+msgstr ""
+
+#: functions.php:248
+msgid "Editorial furniture: mastheads, category tiles, author introductions and subscribe panels."
+msgstr ""
+
+#: functions.php:252
 msgid "Complete page layouts. Insert one into an empty page to start from a finished design."
 msgstr ""
 
@@ -233,10 +249,30 @@ msgstr ""
 
 #: functions.php:231
 msgctxt "Block pattern category"
-msgid "Unapp: Blog & magazine"
+msgid "Unapp: Property"
 msgstr ""
 
 #: functions.php:235
+msgctxt "Block pattern category"
+msgid "Unapp: Practice"
+msgstr ""
+
+#: functions.php:239
+msgctxt "Block pattern category"
+msgid "Unapp: Courses"
+msgstr ""
+
+#: functions.php:243
+msgctxt "Block pattern category"
+msgid "Unapp: Events"
+msgstr ""
+
+#: functions.php:247
+msgctxt "Block pattern category"
+msgid "Unapp: Blog & magazine"
+msgstr ""
+
+#: functions.php:251
 msgctxt "Block pattern category"
 msgid "Unapp: Full pages"
 msgstr ""
@@ -322,7 +358,7 @@ msgid "Home"
 msgstr ""
 
 #: inc/front-page-setup.php:145
-#: inc/starter-sites.php:486
+#: inc/starter-sites.php:590
 msgctxt "Title of the posts page created on activation"
 msgid "Blog"
 msgstr ""
@@ -346,7 +382,7 @@ msgstr ""
 #: inc/starter-sites.php:52
 #: inc/starter-sites.php:78
 #: inc/starter-sites.php:130
-#: inc/starter-sites.php:257
+#: inc/starter-sites.php:361
 #: patterns/footer-blog.php:42
 #: patterns/footer-portfolio.php:42
 msgid "About"
@@ -357,7 +393,8 @@ msgstr ""
 #: inc/starter-sites.php:112
 #: inc/starter-sites.php:134
 #: inc/starter-sites.php:160
-#: inc/starter-sites.php:261
+#: inc/starter-sites.php:313
+#: inc/starter-sites.php:365
 #: patterns/footer.php:60
 msgid "Contact"
 msgstr ""
@@ -512,43 +549,144 @@ msgid "Delivery and returns"
 msgstr ""
 
 #: inc/starter-sites.php:241
-msgid "Finance & advisory"
+msgid "Property"
 msgstr ""
 
 #: inc/starter-sites.php:242
-msgid "Credentials, plain-English services, how advice works, fees, advisers and the risk warning."
+msgid "An estate agency: current listings with prices on them, published fees and a valuation enquiry."
 msgstr ""
 
 #: inc/starter-sites.php:243
+#: inc/starter-sites.php:261
+#: patterns/footer-realestate.php:42
+#: patterns/realestate-hero.php:35
+msgid "Book a valuation"
+msgstr ""
+
+#: inc/starter-sites.php:253
+#: patterns/footer-realestate.php:39
+msgid "For sale"
+msgstr ""
+
+#: inc/starter-sites.php:257
+#: patterns/footer-finance.php:40
+#: patterns/footer-realestate.php:41
+msgid "Our fees"
+msgstr ""
+
+#: inc/starter-sites.php:267
+msgid "Practice"
+msgstr ""
+
+#: inc/starter-sites.php:268
+msgid "A clinic or dental practice: treatments in plain English, clinicians with qualifications, patient questions and opening hours."
+msgstr ""
+
+#: inc/starter-sites.php:269
+#: patterns/medical-hero.php:32
+#: patterns/medical-hours.php:35
+msgid "Book an appointment"
+msgstr ""
+
+#: inc/starter-sites.php:279
+#: patterns/footer-medical.php:38
+msgid "Treatments"
+msgstr ""
+
+#: inc/starter-sites.php:283
+#: patterns/footer-finance.php:41
+msgid "The team"
+msgstr ""
+
+#: inc/starter-sites.php:287
+msgid "Find us"
+msgstr ""
+
+#: inc/starter-sites.php:293
+#: inc/starter-sites.php:305
+msgid "Courses"
+msgstr ""
+
+#: inc/starter-sites.php:294
+msgid "A course provider: the term\\u2019s timetable with prices, the tutors who teach it and how booking works."
+msgstr ""
+
+#: inc/starter-sites.php:295
+#: patterns/education-cta.php:27
+#: patterns/education-hero.php:32
+msgid "See the courses"
+msgstr ""
+
+#: inc/starter-sites.php:309
+#: patterns/footer-education.php:40
+msgid "Tutors"
+msgstr ""
+
+#: inc/starter-sites.php:319
+msgid "Conference"
+msgstr ""
+
+#: inc/starter-sites.php:320
+msgid "A two-day event: the programme, announced speakers, three ticket tiers and the venue with its access provision."
+msgstr ""
+
+#: inc/starter-sites.php:321
+#: patterns/events-hero.php:28
+msgid "Buy a ticket"
+msgstr ""
+
+#: inc/starter-sites.php:331
+#: patterns/footer-events.php:39
+msgid "Programme"
+msgstr ""
+
+#: inc/starter-sites.php:335
+#: patterns/footer-events.php:41
+msgid "Tickets"
+msgstr ""
+
+#: inc/starter-sites.php:339
+msgid "Venue and access"
+msgstr ""
+
+#: inc/starter-sites.php:345
+msgid "Finance & advisory"
+msgstr ""
+
+#: inc/starter-sites.php:346
+msgid "Credentials, plain-English services, how advice works, fees, advisers and the risk warning."
+msgstr ""
+
+#: inc/starter-sites.php:347
 #: patterns/finance-contact.php:32
 #: patterns/footer-finance.php:42
 msgid "Book a call"
 msgstr ""
 
-#: inc/starter-sites.php:253
+#: inc/starter-sites.php:357
 #: patterns/footer-finance.php:39
 msgid "Services"
 msgstr ""
 
-#: inc/starter-sites.php:288
+#: inc/starter-sites.php:392
 msgid "That starter site does not exist."
 msgstr ""
 
-#: inc/starter-sites.php:295
+#: inc/starter-sites.php:399
 msgid "The starter site’s home page pattern could not be loaded."
 msgstr ""
 
-#: inc/starter-sites.php:561
+#: inc/starter-sites.php:665
 msgid "Blog"
 msgstr ""
 
-#: inc/starter-sites.php:589
+#: inc/starter-sites.php:693
 msgid "Navigation"
 msgstr ""
 
 #. Pattern title
 #. Template part name
-#: inc/starter-sites.php:693
+#: inc/starter-sites.php:797
 #: patterns/footer.php
 #: theme.json
 msgid "Footer"
@@ -556,58 +694,58 @@ msgstr ""
 
 #. Pattern title
 #. Template part name
-#: inc/starter-sites.php:734
+#: inc/starter-sites.php:838
 #: patterns/header.php
 #: theme.json
 msgid "Header"
 msgstr ""
 
-#: inc/starter-sites.php:761
-#: inc/starter-sites.php:762
+#: inc/starter-sites.php:865
+#: inc/starter-sites.php:866
 msgid "Starter Sites"
 msgstr ""
 
-#: inc/starter-sites.php:777
+#: inc/starter-sites.php:881
 msgid "You are not allowed to change the site design."
 msgstr ""
 
-#: inc/starter-sites.php:802
+#: inc/starter-sites.php:906
 msgid "Unapp starter sites"
 msgstr ""
 
-#: inc/starter-sites.php:804
+#: inc/starter-sites.php:908
 msgid "Each starter builds a complete site for one kind of business: a colour palette, a typeface, a home page and its supporting pages, and a matching menu. Your existing pages are never deleted — applying a starter adds new ones and points the front page at them."
 msgstr ""
 
 #. translators: %s: link to the site front page.
-#: inc/starter-sites.php:812
+#: inc/starter-sites.php:916
 msgid "Starter site applied. <a href=\"%s\">View your site</a>."
 msgstr ""
 
 #. translators: %s: link to the site front page.
-#: inc/starter-sites.php:818
+#: inc/starter-sites.php:922
 msgid "That starter site could not be applied. Please try again."
 msgstr ""
 
 #. translators: %s: starter site name.
-#: inc/starter-sites.php:831
+#: inc/starter-sites.php:935
 msgid "The home page the %s starter builds"
 msgstr ""
 
-#: inc/starter-sites.php:838
+#: inc/starter-sites.php:942
 msgid "Applied"
 msgstr ""
 
-#: inc/starter-sites.php:860
+#: inc/starter-sites.php:964
 msgid "Apply again"
 msgstr ""
 
-#: inc/starter-sites.php:860
+#: inc/starter-sites.php:964
 msgid "Apply this starter"
 msgstr ""
 
 #: inc/starter-sites.php:35
-#: inc/starter-sites.php:707
+#: inc/starter-sites.php:811
 #: patterns/header.php:30
 msgctxt "Header call-to-action button"
 msgid "Get Premium"
@@ -1652,6 +1790,7 @@ msgstr ""
 
 #: patterns/church-faq.php:19
 #: patterns/finance-faq.php:19
+#: patterns/medical-faq.php:19
 msgctxt "Section eyebrow label"
 msgid "Questions"
 msgstr ""
@@ -2333,6 +2472,26 @@ msgid "The home page for the Church starter site: welcome, service times, what t
 msgstr ""
 
 #. Pattern title
+#: patterns/demo-education.php
+msgid "Starter site: Courses"
+msgstr ""
+
+#. Pattern description
+#: patterns/demo-education.php
+msgid "The home page for the Courses starter site: introduction, the term's courses, tutors, questions and a booking band."
+msgstr ""
+
+#. Pattern title
+#: patterns/demo-events.php
+msgid "Starter site: Conference"
+msgstr ""
+
+#. Pattern description
+#: patterns/demo-events.php
+msgid "The home page for the Conference starter site: cover hero, programme, speakers, tickets and the venue."
+msgstr ""
+
+#. Pattern title
 #: patterns/demo-finance.php
 msgid "Starter site: Finance & advisory"
 msgstr ""
@@ -2353,6 +2512,16 @@ msgid "The home page for the Fitness starter site: hero, the studio, timetable, 
 msgstr ""
 
 #. Pattern title
+#: patterns/demo-medical.php
+msgid "Starter site: Practice"
+msgstr ""
+
+#. Pattern description
+#: patterns/demo-medical.php
+msgid "The home page for the Practice starter site: introduction, treatments, clinicians, patient questions and opening hours."
+msgstr ""
+
+#. Pattern title
 #: patterns/demo-portfolio.php
 msgid "Starter site: Portfolio"
 msgstr ""
@@ -2360,6 +2529,16 @@ msgstr ""
 #. Pattern description
 #: patterns/demo-portfolio.php
 msgid "The home page for the Portfolio starter site: introduction, selected work, about, process, rates, a client quote and current availability."
+msgstr ""
+
+#. Pattern title
+#: patterns/demo-realestate.php
+msgid "Starter site: Property"
+msgstr ""
+
+#. Pattern description
+#: patterns/demo-realestate.php
+msgid "The home page for the Property starter site: introduction, current listings, published fees and a valuation enquiry."
 msgstr ""
 
 #. Pattern title
@@ -2473,6 +2652,637 @@ msgstr ""
 #. Pattern description
 #: patterns/docs-topics.php
 msgid "A grid of help-centre categories with icons."
+msgstr ""
+
+#: patterns/education-courses.php:48
+msgid "Four courses, and a waiting list for two of them"
+msgstr ""
+
+#: patterns/education-courses.php:51
+msgid "Everything is capped at eight people, because that is how many benches there are."
+msgstr ""
+
+#: patterns/education-courses.php:15
+msgctxt "Course name"
+msgid "Woodwork: the first joint"
+msgstr ""
+
+#: patterns/education-courses.php:16
+msgctxt "Course length"
+msgid "6 evenings"
+msgstr ""
+
+#: patterns/education-courses.php:17
+msgctxt "Course price"
+msgid "£320"
+msgstr ""
+
+#: patterns/education-courses.php:18
+msgctxt "Course description"
+msgid "Hand tools only. You leave with a stool you made and did not glue in a panic."
+msgstr ""
+
+#: patterns/education-courses.php:21
+msgctxt "Course name"
+msgid "Letterpress"
+msgstr ""
+
+#: patterns/education-courses.php:22
+msgctxt "Course length"
+msgid "2 days"
+msgstr ""
+
+#: patterns/education-courses.php:23
+msgctxt "Course price"
+msgid "£210"
+msgstr ""
+
+#: patterns/education-courses.php:24
+msgctxt "Course description"
+msgid "Setting metal type, mixing ink and printing a run of fifty cards to take home."
+msgstr ""
+
+#: patterns/education-courses.php:27
+msgctxt "Course name"
+msgid "Wheel-thrown ceramics"
+msgstr ""
+
+#: patterns/education-courses.php:28
+msgctxt "Course length"
+msgid "8 evenings"
+msgstr ""
+
+#: patterns/education-courses.php:29
+msgctxt "Course price"
+msgid "£420"
+msgstr ""
+
+#: patterns/education-courses.php:30
+msgctxt "Course description"
+msgid "Throwing, trimming and glazing. Everything you make gets fired."
+msgstr ""
+
+#: patterns/education-courses.php:33
+msgctxt "Course name"
+msgid "Bookbinding"
+msgstr ""
+
+#: patterns/education-courses.php:34
+msgctxt "Course length"
+msgid "1 day"
+msgstr ""
+
+#: patterns/education-courses.php:35
+msgctxt "Course price"
+msgid "£140"
+msgstr ""
+
+#: patterns/education-courses.php:36
+msgctxt "Course description"
+msgid "Two sewn bindings in a day, in the good cloth rather than the practice stuff."
+msgstr ""
+
+#: patterns/education-courses.php:45
+msgctxt "Section eyebrow label"
+msgid "This term"
+msgstr ""
+
+#. Pattern title
+#: patterns/education-courses.php
+msgid "Courses: the timetable"
+msgstr ""
+
+#. Pattern description
+#: patterns/education-courses.php
+msgid "Four courses with length, price and what you leave with."
+msgstr ""
+
+#: patterns/education-cta.php:19
+msgid "The autumn term opens for booking on 1 September"
+msgstr ""
+
+#: patterns/education-cta.php:22
+msgid "Courses fill in about a fortnight. The mailing list gets a day's head start, which is the only perk it has."
+msgstr ""
+
+#: patterns/education-cta.php:30
+#: patterns/shop-cta.php:30
+msgid "Join the list"
+msgstr ""
+
+#. Pattern title
+#: patterns/education-cta.php
+msgid "Courses: booking band"
+msgstr ""
+
+#. Pattern description
+#: patterns/education-cta.php
+msgid "A closing band about when booking opens, on the palette gradient."
+msgstr ""
+
+#: patterns/education-faq.php:22
+msgid "The usual questions"
+msgstr ""
+
+#: patterns/education-faq.php:19
+msgctxt "Section eyebrow label"
+msgid "Before you book"
+msgstr ""
+
+#: patterns/education-faq.php:28
+#: patterns/education-faq.php:29
+msgctxt "FAQ question"
+msgid "Do I need to bring anything?"
+msgstr ""
+
+#: patterns/education-faq.php:31
+msgctxt "FAQ answer"
+msgid "Only clothes you do not mind ruining. Tools, timber, clay, ink and paper are all included, and there is an apron on the back of every door."
+msgstr ""
+
+#: patterns/education-faq.php:35
+#: patterns/education-faq.php:36
+msgctxt "FAQ question"
+msgid "I have never done this before."
+msgstr ""
+
+#: patterns/education-faq.php:38
+msgctxt "FAQ answer"
+msgid "Good — most people have not. Every course starts from nothing and the first evening is deliberately slow. If you have done some before, say so when you book and we will give you harder work."
+msgstr ""
+
+#: patterns/education-faq.php:42
+#: patterns/education-faq.php:43
+msgctxt "FAQ question"
+msgid "What if I miss a week?"
+msgstr ""
+
+#: patterns/education-faq.php:45
+msgctxt "FAQ answer"
+msgid "Tell us and we will run through what you missed at the start of the next one. Miss more than two of six and we will move you to the following term rather than have you fall behind."
+msgstr ""
+
+#: patterns/education-faq.php:49
+#: patterns/education-faq.php:50
+msgctxt "FAQ question"
+msgid "Can I buy someone a place?"
+msgstr ""
+
+#: patterns/education-faq.php:52
+msgctxt "FAQ answer"
+msgid "Yes — gift vouchers do not expire, and they are for a value rather than a specific course, so the recipient picks what and when."
+msgstr ""
+
+#. Pattern title
+#: patterns/education-faq.php
+msgid "Courses: questions"
+msgstr ""
+
+#. Pattern description
+#: patterns/education-faq.php
+msgid "What to bring, starting from nothing, missed weeks and gift vouchers."
+msgstr ""
+
+#: patterns/education-hero.php:24
+msgid "Learn a trade properly, from someone who does it"
+msgstr ""
+
+#: patterns/education-hero.php:27
+msgid "Short courses in woodwork, letterpress, ceramics and bookbinding, taught in a Victorian school hall by people who make their living at it."
+msgstr ""
+
+#: patterns/education-hero.php:35
+msgid "How booking works"
+msgstr ""
+
+#: patterns/education-hero.php:44
+#: patterns/shop-hero.php:44
+msgid "The workshop"
+msgstr ""
+
+#: patterns/education-hero.php:21
+msgctxt "School hero eyebrow"
+msgid "Evening and weekend courses"
+msgstr ""
+
+#. Pattern title
+#: patterns/education-hero.php
+msgid "Courses: introduction"
+msgstr ""
+
+#. Pattern description
+#: patterns/education-hero.php
+msgid "A course provider's introduction with two calls to action."
+msgstr ""
+
+#: patterns/education-tutors.php:42
+msgid "People who do it for a living"
+msgstr ""
+
+#: patterns/education-tutors.php:16
+msgctxt "Tutor"
+msgid "Rob Feeny"
+msgstr ""
+
+#: patterns/education-tutors.php:17
+msgctxt "Tutor"
+msgid "Woodwork"
+msgstr ""
+
+#: patterns/education-tutors.php:18
+msgctxt "Tutor"
+msgid "Furniture maker for twenty-two years. Teaches the way he was taught, minus the shouting."
+msgstr ""
+
+#: patterns/education-tutors.php:22
+msgctxt "Tutor"
+msgid "Ivy Sandoval"
+msgstr ""
+
+#: patterns/education-tutors.php:23
+msgctxt "Tutor"
+msgid "Letterpress and bookbinding"
+msgstr ""
+
+#: patterns/education-tutors.php:24
+msgctxt "Tutor"
+msgid "Runs a two-person press in the same building. Owns more type than sense."
+msgstr ""
+
+#: patterns/education-tutors.php:28
+msgctxt "Tutor"
+msgid "Kwame Boakye"
+msgstr ""
+
+#: patterns/education-tutors.php:29
+msgctxt "Tutor"
+msgid "Ceramics"
+msgstr ""
+
+#: patterns/education-tutors.php:30
+msgctxt "Tutor"
+msgid "Production potter. Fires the kiln on Wednesdays, which is why glazing is on Tuesday."
+msgstr ""
+
+#: patterns/education-tutors.php:39
+msgctxt "Section eyebrow label"
+msgid "Who teaches"
+msgstr ""
+
+#. Pattern title
+#: patterns/education-tutors.php
+msgid "Courses: tutors"
+msgstr ""
+
+#. Pattern description
+#: patterns/education-tutors.php
+msgid "Three tutors with what they make when they are not teaching."
+msgstr ""
+
+#: patterns/events-hero.php:20
+msgid "Two days about building things that outlast the team that built them"
+msgstr ""
+
+#: patterns/events-hero.php:23
+msgid "Sixteen talks, no sponsor keynotes, four hundred people and a bar that opens at five."
+msgstr ""
+
+#: patterns/events-hero.php:31
+msgid "See the programme"
+msgstr ""
+
+#: patterns/events-hero.php:17
+msgctxt "Conference hero eyebrow"
+msgid "Bristol · 14–15 May 2027"
+msgstr ""
+
+#. Pattern title
+#: patterns/events-hero.php
+msgid "Event: hero"
+msgstr ""
+
+#. Pattern description
+#: patterns/events-hero.php
+msgid "A full-bleed conference cover with the dates, the shape of the event and a ticket button."
+msgstr ""
+
+#: patterns/events-programme.php:49
+msgid "The programme"
+msgstr ""
+
+#: patterns/events-programme.php:52
+msgid "Day two is the same shape with different people. The full grid goes out a month before."
+msgstr ""
+
+#: patterns/events-programme.php:15
+msgctxt "Programme item"
+msgid "09:30"
+msgstr ""
+
+#: patterns/events-programme.php:16
+msgctxt "Programme item"
+msgid "Doors and coffee"
+msgstr ""
+
+#: patterns/events-programme.php:17
+msgctxt "Programme item"
+msgid "The good coffee, from the cart outside, until it runs out at eleven."
+msgstr ""
+
+#: patterns/events-programme.php:20
+msgctxt "Programme item"
+msgid "10:00"
+msgstr ""
+
+#: patterns/events-programme.php:21
+msgctxt "Programme item"
+msgid "Opening: the ten-year codebase"
+msgstr ""
+
+#: patterns/events-programme.php:22
+msgctxt "Programme item"
+msgid "What survives, what gets rewritten, and how to tell the difference early."
+msgstr ""
+
+#: patterns/events-programme.php:25
+msgctxt "Programme item"
+msgid "11:30"
+msgstr ""
+
+#: patterns/events-programme.php:26
+msgctxt "Programme item"
+msgid "Three short talks"
+msgstr ""
+
+#: patterns/events-programme.php:27
+msgctxt "Programme item"
+msgid "Twenty minutes each, on testing, on hiring, and on saying no to a roadmap."
+msgstr ""
+
+#: patterns/events-programme.php:30
+msgctxt "Programme item"
+msgid "14:00"
+msgstr ""
+
+#: patterns/events-programme.php:31
+msgctxt "Programme item"
+msgid "Workshops"
+msgstr ""
+
+#: patterns/events-programme.php:32
+msgctxt "Programme item"
+msgid "Four rooms, sign up on the day, capped at thirty each."
+msgstr ""
+
+#: patterns/events-programme.php:35
+msgctxt "Programme item"
+msgid "17:00"
+msgstr ""
+
+#: patterns/events-programme.php:36
+msgctxt "Programme item"
+msgid "The bar"
+msgstr ""
+
+#: patterns/events-programme.php:37
+msgctxt "Programme item"
+msgid "Which is, historically, where the useful conversations happen."
+msgstr ""
+
+#: patterns/events-programme.php:46
+msgctxt "Section eyebrow label"
+msgid "Day one"
+msgstr ""
+
+#. Pattern title
+#: patterns/events-programme.php
+msgid "Event: programme"
+msgstr ""
+
+#. Pattern description
+#: patterns/events-programme.php
+msgid "A timed programme for one day, with a note about the other."
+msgstr ""
+
+#: patterns/events-speakers.php:44
+msgid "Four of the sixteen"
+msgstr ""
+
+#: patterns/events-speakers.php:47
+msgid "The rest are announced in February, once they have all said yes in writing."
+msgstr ""
+
+#: patterns/events-speakers.php:16
+msgctxt "Speaker"
+msgid "Tess Oduya"
+msgstr ""
+
+#: patterns/events-speakers.php:17
+msgctxt "Speaker"
+msgid "Principal engineer, Halden"
+msgstr ""
+
+#: patterns/events-speakers.php:21
+msgctxt "Speaker"
+msgid "Ben Marchetti"
+msgstr ""
+
+#: patterns/events-speakers.php:22
+msgctxt "Speaker"
+msgid "CTO, Pier & Post"
+msgstr ""
+
+#: patterns/events-speakers.php:26
+msgctxt "Speaker"
+msgid "Amara Nwosu"
+msgstr ""
+
+#: patterns/events-speakers.php:27
+msgctxt "Speaker"
+msgid "Head of platform, Verity"
+msgstr ""
+
+#: patterns/events-speakers.php:31
+msgctxt "Speaker"
+msgid "Joachim Reiss"
+msgstr ""
+
+#: patterns/events-speakers.php:32
+msgctxt "Speaker"
+msgid "Author, The Long Rewrite"
+msgstr ""
+
+#: patterns/events-speakers.php:41
+msgctxt "Section eyebrow label"
+msgid "Speaking"
+msgstr ""
+
+#. Pattern title
+#: patterns/events-speakers.php
+msgid "Event: speakers"
+msgstr ""
+
+#. Pattern description
+#: patterns/events-speakers.php
+msgid "Four announced speakers with their day jobs."
+msgstr ""
+
+#: patterns/events-tickets.php:45
+msgid "Three prices, one of them nothing"
+msgstr ""
+
+#: patterns/events-tickets.php:48
+msgid "Supported tickets come out of the standard ones. That is the whole funding model."
+msgstr ""
+
+#: patterns/events-tickets.php:79
+#: patterns/events-tickets.php:109
+msgid "Buy"
+msgstr ""
+
+#: patterns/events-tickets.php:15
+msgctxt "Ticket name"
+msgid "Early"
+msgstr ""
+
+#: patterns/events-tickets.php:16
+msgctxt "Ticket price"
+msgid "£180"
+msgstr ""
+
+#: patterns/events-tickets.php:17
+msgctxt "Ticket note"
+msgid "Until 31 January, or until three hundred have gone."
+msgstr ""
+
+#: patterns/events-tickets.php:19
+#: patterns/events-tickets.php:26
+#: patterns/events-tickets.php:33
+msgctxt "Ticket feature"
+msgid "Both days"
+msgstr ""
+
+#: patterns/events-tickets.php:19
+#: patterns/events-tickets.php:26
+#: patterns/events-tickets.php:33
+msgctxt "Ticket feature"
+msgid "Lunch and coffee"
+msgstr ""
+
+#: patterns/events-tickets.php:19
+#: patterns/events-tickets.php:26
+msgctxt "Ticket feature"
+msgid "The bar"
+msgstr ""
+
+#: patterns/events-tickets.php:22
+msgctxt "Ticket name"
+msgid "Standard"
+msgstr ""
+
+#: patterns/events-tickets.php:23
+msgctxt "Ticket price"
+msgid "£240"
+msgstr ""
+
+#: patterns/events-tickets.php:24
+msgctxt "Ticket note"
+msgid "From February, and on the door if any are left."
+msgstr ""
+
+#: patterns/events-tickets.php:26
+msgctxt "Ticket feature"
+msgid "Talk recordings"
+msgstr ""
+
+#: patterns/events-tickets.php:29
+msgctxt "Ticket name"
+msgid "Supported"
+msgstr ""
+
+#: patterns/events-tickets.php:30
+msgctxt "Ticket price"
+msgid "£0"
+msgstr ""
+
+#: patterns/events-tickets.php:31
+msgctxt "Ticket note"
+msgid "Thirty places, no questions asked beyond a sentence about why."
+msgstr ""
+
+#: patterns/events-tickets.php:33
+msgctxt "Ticket feature"
+msgid "Travel help if needed"
+msgstr ""
+
+#: patterns/events-tickets.php:42
+msgctxt "Section eyebrow label"
+msgid "Tickets"
+msgstr ""
+
+#. Pattern title
+#: patterns/events-tickets.php
+msgid "Event: tickets"
+msgstr ""
+
+#. Pattern description
+#: patterns/events-tickets.php
+msgid "Three ticket tiers including free supported places, with what each includes."
+msgstr ""
+
+#: patterns/events-venue.php:24
+msgid "The Assembly Rooms, Bristol"
+msgstr ""
+
+#: patterns/events-venue.php:27
+msgid "Ten minutes from Temple Meads on foot. Step-free throughout, a quiet room off the main hall, and live captions on every talk."
+msgstr ""
+
+#: patterns/events-venue.php:30
+msgid "hello@thelongrewrite.example"
+msgstr ""
+
+#: patterns/events-venue.php:35
+msgid "Accessibility and travel"
+msgstr ""
+
+#: patterns/events-venue.php:46
+msgid "Dates"
+msgstr ""
+
+#: patterns/events-venue.php:49
+msgid "14–15 May 2027, 09:30 to 18:00 both days"
+msgstr ""
+
+#: patterns/events-venue.php:55
+msgid "Venue"
+msgstr ""
+
+#: patterns/events-venue.php:58
+msgid "The Assembly Rooms, Prince Street, Bristol BS1 4QD"
+msgstr ""
+
+#: patterns/events-venue.php:64
+msgid "Access"
+msgstr ""
+
+#: patterns/events-venue.php:67
+msgid "Step-free, hearing loop, live captions, quiet room"
+msgstr ""
+
+#: patterns/events-venue.php:21
+msgctxt "Section eyebrow label"
+msgid "Getting there"
+msgstr ""
+
+#. Pattern title
+#: patterns/events-venue.php
+msgid "Event: venue and access"
+msgstr ""
+
+#. Pattern description
+#: patterns/events-venue.php
+msgid "Where the event is, when, and what access provision it makes."
 msgstr ""
 
 #: patterns/faq-accordion.php:40
@@ -3410,6 +4220,7 @@ msgid "Writes the plans, models the scenarios and finds the pension nobody remem
 msgstr ""
 
 #: patterns/finance-team.php:39
+#: patterns/medical-team.php:39
 msgctxt "Section eyebrow label"
 msgid "The team"
 msgstr ""
@@ -3658,6 +4469,7 @@ msgid "hello@archtwelve.example · 0131 555 0142"
 msgstr ""
 
 #: patterns/fitness-location.php:49
+#: patterns/medical-hours.php:46
 msgid "Opening hours"
 msgstr ""
 
@@ -3677,6 +4489,7 @@ msgid "06:00 – 21:00"
 msgstr ""
 
 #: patterns/fitness-location.php:77
+#: patterns/medical-hours.php:74
 msgctxt "Opening day"
 msgid "Friday"
 msgstr ""
@@ -3687,6 +4500,7 @@ msgid "06:00 – 20:00"
 msgstr ""
 
 #: patterns/fitness-location.php:98
+#: patterns/medical-hours.php:95
 #: patterns/restaurant-hours.php:77
 msgctxt "Opening day"
 msgid "Saturday"
@@ -3704,6 +4518,7 @@ msgid "Sunday"
 msgstr ""
 
 #: patterns/fitness-location.php:126
+#: patterns/medical-hours.php:102
 msgctxt "Opening hours"
 msgid "09:00 – 13:00"
 msgstr ""
@@ -4122,9 +4937,13 @@ msgstr ""
 #: patterns/footer-agency.php:87
 #: patterns/footer-blog.php:84
 #: patterns/footer-church.php:87
+#: patterns/footer-education.php:86
+#: patterns/footer-events.php:86
 #: patterns/footer-finance.php:86
 #: patterns/footer-fitness.php:87
+#: patterns/footer-medical.php:85
 #: patterns/footer-portfolio.php:84
+#: patterns/footer-realestate.php:86
 #: patterns/footer-restaurant.php:87
 #: patterns/footer-shop.php:87
 msgid "&copy; %1$s %2$s. All rights reserved."
@@ -4133,9 +4952,13 @@ msgstr ""
 #: patterns/footer-agency.php:99
 #: patterns/footer-blog.php:96
 #: patterns/footer-church.php:99
+#: patterns/footer-education.php:98
+#: patterns/footer-events.php:98
 #: patterns/footer-finance.php:98
 #: patterns/footer-fitness.php:99
+#: patterns/footer-medical.php:97
 #: patterns/footer-portfolio.php:96
+#: patterns/footer-realestate.php:98
 #: patterns/footer-restaurant.php:99
 #: patterns/footer-shop.php:99
 msgid "Built with the Unapp theme"
@@ -4308,12 +5131,124 @@ msgstr ""
 msgid "A church footer: what the church is, quick links, recent news and where to find it."
 msgstr ""
 
-#: patterns/footer-finance.php:40
-msgid "Our fees"
+#: patterns/footer-education.php:39
+msgid "This term"
 msgstr ""
 
-#: patterns/footer-finance.php:41
-msgid "The team"
+#: patterns/footer-education.php:41
+msgid "Gift vouchers"
+msgstr ""
+
+#: patterns/footer-education.php:42
+msgid "Questions"
+msgstr ""
+
+#: patterns/footer-education.php:23
+msgctxt "Footer tagline"
+msgid "Short courses in woodwork, letterpress, ceramics and bookbinding, taught by people who do it for a living."
+msgstr ""
+
+#: patterns/footer-education.php:36
+msgctxt "Footer column heading"
+msgid "Learn"
+msgstr ""
+
+#: patterns/footer-education.php:49
+msgctxt "Footer column heading"
+msgid "From the workshop"
+msgstr ""
+
+#: patterns/footer-education.php:57
+msgctxt "Footer column heading"
+msgid "The school"
+msgstr ""
+
+#: patterns/footer-education.php:60
+msgctxt "Footer contact line"
+msgid "The Old School Hall, Sheffield S3 8HL"
+msgstr ""
+
+#: patterns/footer-education.php:63
+msgctxt "Footer contact line"
+msgid "0114 555 0128"
+msgstr ""
+
+#: patterns/footer-education.php:66
+msgctxt "Footer contact line"
+msgid "hello@oldschoolhall.example"
+msgstr ""
+
+#: patterns/footer-education.php:69
+msgctxt "Footer contact line"
+msgid "Eight benches, eight places, every course"
+msgstr ""
+
+#. Pattern title
+#: patterns/footer-education.php
+msgid "Footer: courses"
+msgstr ""
+
+#. Pattern description
+#: patterns/footer-education.php
+msgid "A footer for the courses starter."
+msgstr ""
+
+#: patterns/footer-events.php:40
+msgid "Speakers"
+msgstr ""
+
+#: patterns/footer-events.php:42
+msgid "Access and travel"
+msgstr ""
+
+#: patterns/footer-events.php:23
+msgctxt "Footer tagline"
+msgid "Two days about building things that outlast the team that built them. Bristol, 14–15 May 2027."
+msgstr ""
+
+#: patterns/footer-events.php:36
+msgctxt "Footer column heading"
+msgid "Attend"
+msgstr ""
+
+#: patterns/footer-events.php:49
+msgctxt "Footer column heading"
+msgid "Announcements"
+msgstr ""
+
+#: patterns/footer-events.php:57
+msgctxt "Footer column heading"
+msgid "The venue"
+msgstr ""
+
+#: patterns/footer-events.php:60
+msgctxt "Footer contact line"
+msgid "The Assembly Rooms, Prince Street"
+msgstr ""
+
+#: patterns/footer-events.php:63
+msgctxt "Footer contact line"
+msgid "Bristol BS1 4QD"
+msgstr ""
+
+#: patterns/footer-events.php:66
+msgctxt "Footer contact line"
+msgid "hello@thelongrewrite.example"
+msgstr ""
+
+#: patterns/footer-events.php:69
+msgctxt "Footer contact line"
+msgid "Step-free · Live captions · Quiet room"
+msgstr ""
+
+#. Pattern title
+#: patterns/footer-events.php
+msgid "Footer: conference"
+msgstr ""
+
+#. Pattern description
+#: patterns/footer-events.php
+msgid "A footer for the conference starter."
 msgstr ""
 
 #: patterns/footer-finance.php:23
@@ -4424,6 +5359,68 @@ msgstr ""
 msgid "A gym footer: the studio in a sentence, timetable links, opening hours and the address."
 msgstr ""
 
+#: patterns/footer-medical.php:39
+msgid "Fees"
+msgstr ""
+
+#: patterns/footer-medical.php:40
+msgid "Register"
+msgstr ""
+
+#: patterns/footer-medical.php:41
+msgid "Emergencies"
+msgstr ""
+
+#: patterns/footer-medical.php:23
+msgctxt "Footer tagline"
+msgid "Six surgeries on Fore Street, NHS and private, with emergency slots held back every weekday morning."
+msgstr ""
+
+#: patterns/footer-medical.php:35
+msgctxt "Footer column heading"
+msgid "Patients"
+msgstr ""
+
+#: patterns/footer-medical.php:48
+msgctxt "Footer column heading"
+msgid "Practice news"
+msgstr ""
+
+#: patterns/footer-medical.php:56
+msgctxt "Footer column heading"
+msgid "The practice"
+msgstr ""
+
+#: patterns/footer-medical.php:59
+msgctxt "Footer contact line"
+msgid "42 Fore Street, Exeter EX4 3AT"
+msgstr ""
+
+#: patterns/footer-medical.php:62
+msgctxt "Footer contact line"
+msgid "01392 555 0146"
+msgstr ""
+
+#: patterns/footer-medical.php:65
+msgctxt "Footer contact line"
+msgid "reception@forestreetdental.example"
+msgstr ""
+
+#: patterns/footer-medical.php:68
+msgctxt "Footer contact line"
+msgid "Level access · Hearing loop · Free patient parking"
+msgstr ""
+
+#. Pattern title
+#: patterns/footer-medical.php
+msgid "Footer: practice"
+msgstr ""
+
+#. Pattern description
+#: patterns/footer-medical.php
+msgid "A footer for the practice starter."
+msgstr ""
+
 #: patterns/footer-portfolio.php:40
 msgid "Selected work"
 msgstr ""
@@ -4479,6 +5476,60 @@ msgstr ""
 #. Pattern description
 #: patterns/footer-portfolio.php
 msgid "A freelancer's footer: what you do, what you are booking, and the one email address that matters."
+msgstr ""
+
+#: patterns/footer-realestate.php:40
+msgid "To let"
+msgstr ""
+
+#: patterns/footer-realestate.php:23
+msgctxt "Footer tagline"
+msgid "A small agency covering Bath and the villages east of it. Twelve properties at a time, so we can show them all properly."
+msgstr ""
+
+#: patterns/footer-realestate.php:36
+msgctxt "Footer column heading"
+msgid "Property"
+msgstr ""
+
+#: patterns/footer-realestate.php:49
+msgctxt "Footer column heading"
+msgid "Market notes"
+msgstr ""
+
+#: patterns/footer-realestate.php:57
+msgctxt "Footer column heading"
+msgid "The office"
+msgstr ""
+
+#: patterns/footer-realestate.php:60
+msgctxt "Footer contact line"
+msgid "9 Lansdown Road, Bath BA1 5DZ"
+msgstr ""
+
+#: patterns/footer-realestate.php:63
+msgctxt "Footer contact line"
+msgid "01225 555 0163"
+msgstr ""
+
+#: patterns/footer-realestate.php:66
+msgctxt "Footer contact line"
+msgid "hello@lansdown.example"
+msgstr ""
+
+#: patterns/footer-realestate.php:69
+msgctxt "Footer contact line"
+msgid "Mon–Fri 9:00–17:30 · Sat 10:00–14:00"
+msgstr ""
+
+#. Pattern title
+#: patterns/footer-realestate.php
+msgid "Footer: property"
+msgstr ""
+
+#. Pattern description
+#: patterns/footer-realestate.php
+msgid "A footer for the property starter."
 msgstr ""
 
 #: patterns/footer-restaurant.php:40
@@ -5281,6 +6332,273 @@ msgstr ""
 #. Pattern description
 #: patterns/logo-marquee.php
 msgid "Customer logos scrolling slowly across the full width. Stops for anyone who prefers reduced motion."
+msgstr ""
+
+#: patterns/medical-faq.php:22
+msgid "Asked at reception most days"
+msgstr ""
+
+#: patterns/medical-faq.php:28
+#: patterns/medical-faq.php:29
+msgctxt "FAQ question"
+msgid "Are you taking NHS patients?"
+msgstr ""
+
+#: patterns/medical-faq.php:31
+msgctxt "FAQ answer"
+msgid "For children, always. For adults the list opens a few times a year and we announce it here and on the door — there is no waiting list to join, which we know is annoying, but it is fairer than a list nobody moves up."
+msgstr ""
+
+#: patterns/medical-faq.php:35
+#: patterns/medical-faq.php:36
+msgctxt "FAQ question"
+msgid "What if something happens at the weekend?"
+msgstr ""
+
+#: patterns/medical-faq.php:38
+msgctxt "FAQ answer"
+msgid "Ring the practice number and the answerphone gives you the out-of-hours service. For anything involving swelling that is spreading, or difficulty swallowing, go to A&E rather than waiting for us."
+msgstr ""
+
+#: patterns/medical-faq.php:42
+#: patterns/medical-faq.php:43
+msgctxt "FAQ question"
+msgid "I have not been to a dentist in years."
+msgstr ""
+
+#: patterns/medical-faq.php:45
+msgctxt "FAQ answer"
+msgid "Then you are in good company, and nobody here will make a thing of it. Book a check-up, say on the phone that it has been a while, and we will give you a longer appointment."
+msgstr ""
+
+#: patterns/medical-faq.php:49
+#: patterns/medical-faq.php:50
+msgctxt "FAQ question"
+msgid "Do you take card, and can I pay monthly?"
+msgstr ""
+
+#: patterns/medical-faq.php:52
+msgctxt "FAQ answer"
+msgid "Card, yes. There is also a monthly plan that covers check-ups, hygiene and a discount on everything else — ask at reception for the current price."
+msgstr ""
+
+#. Pattern title
+#: patterns/medical-faq.php
+msgid "Practice: patient questions"
+msgstr ""
+
+#. Pattern description
+#: patterns/medical-faq.php
+msgid "The four questions asked at reception most days, answered without jargon."
+msgstr ""
+
+#: patterns/medical-hero.php:24
+msgid "A dental practice that runs on time"
+msgstr ""
+
+#: patterns/medical-hero.php:27
+msgid "Six surgeries on Fore Street, open six days a week, with emergency slots kept back every morning for the people who need them that day."
+msgstr ""
+
+#: patterns/medical-hero.php:35
+msgid "Our treatments"
+msgstr ""
+
+#: patterns/medical-hero.php:44
+msgid "The practice"
+msgstr ""
+
+#: patterns/medical-hero.php:21
+msgctxt "Practice hero eyebrow"
+msgid "NHS and private · Est. 1994"
+msgstr ""
+
+#. Pattern title
+#: patterns/medical-hero.php
+msgid "Practice: introduction"
+msgstr ""
+
+#. Pattern description
+#: patterns/medical-hero.php
+msgid "A practice introduction with booking and treatments calls to action."
+msgstr ""
+
+#: patterns/medical-hours.php:24
+msgid "42 Fore Street, with parking behind"
+msgstr ""
+
+#: patterns/medical-hours.php:27
+msgid "Level access from the street, a hearing loop at reception and a lift to the first-floor surgeries. The car park is free for patients for two hours."
+msgstr ""
+
+#: patterns/medical-hours.php:30
+msgid "reception@forestreetdental.example · 01392 555 0146"
+msgstr ""
+
+#: patterns/medical-hours.php:21
+msgctxt "Section eyebrow label"
+msgid "Find the practice"
+msgstr ""
+
+#: patterns/medical-hours.php:53
+msgctxt "Opening day"
+msgid "Monday – Thursday"
+msgstr ""
+
+#: patterns/medical-hours.php:60
+msgctxt "Opening hours"
+msgid "08:30 – 17:30"
+msgstr ""
+
+#: patterns/medical-hours.php:81
+msgctxt "Opening hours"
+msgid "08:30 – 16:00"
+msgstr ""
+
+#: patterns/medical-hours.php:116
+msgctxt "Opening day"
+msgid "Emergencies"
+msgstr ""
+
+#: patterns/medical-hours.php:123
+msgctxt "Opening hours"
+msgid "Ring before 09:00 any weekday"
+msgstr ""
+
+#. Pattern title
+#: patterns/medical-hours.php
+msgid "Practice: hours and access"
+msgstr ""
+
+#. Pattern description
+#: patterns/medical-hours.php
+msgid "Where the practice is, how accessible it is, and when it is open."
+msgstr ""
+
+#: patterns/medical-services.php:44
+msgid "What we do, in plain English"
+msgstr ""
+
+#: patterns/medical-services.php:47
+msgid "Prices for everything are on the fees page, including the ones nobody likes talking about."
+msgstr ""
+
+#: patterns/medical-services.php:16
+msgctxt "Treatment"
+msgid "Check-ups and hygiene"
+msgstr ""
+
+#: patterns/medical-services.php:17
+msgctxt "Treatment"
+msgid "Twenty minutes, every six months, and a plan you can actually follow."
+msgstr ""
+
+#: patterns/medical-services.php:21
+msgctxt "Treatment"
+msgid "Fillings and crowns"
+msgstr ""
+
+#: patterns/medical-services.php:22
+msgctxt "Treatment"
+msgid "White fillings as standard. Crowns milled here, so it is one visit not three."
+msgstr ""
+
+#: patterns/medical-services.php:26
+msgctxt "Treatment"
+msgid "Straightening"
+msgstr ""
+
+#: patterns/medical-services.php:27
+msgctxt "Treatment"
+msgid "Clear aligners and fixed braces, for adults as often as teenagers now."
+msgstr ""
+
+#: patterns/medical-services.php:31
+msgctxt "Treatment"
+msgid "Emergencies"
+msgstr ""
+
+#: patterns/medical-services.php:32
+msgctxt "Treatment"
+msgid "Slots held back every morning. Ring before nine and you will be seen that day."
+msgstr ""
+
+#: patterns/medical-services.php:41
+msgctxt "Section eyebrow label"
+msgid "Treatments"
+msgstr ""
+
+#. Pattern title
+#: patterns/medical-services.php
+msgid "Practice: treatments"
+msgstr ""
+
+#. Pattern description
+#: patterns/medical-services.php
+msgid "Four treatment cards written for patients rather than for clinicians."
+msgstr ""
+
+#: patterns/medical-team.php:42
+msgid "Who will be treating you"
+msgstr ""
+
+#: patterns/medical-team.php:45
+msgid "Every clinician's registration number is on the wall in reception and on their page here."
+msgstr ""
+
+#: patterns/medical-team.php:16
+msgctxt "Clinician"
+msgid "Dr Anna Petrou"
+msgstr ""
+
+#: patterns/medical-team.php:17
+msgctxt "Clinician"
+msgid "Principal dentist · BDS, MFDS RCS"
+msgstr ""
+
+#: patterns/medical-team.php:18
+msgctxt "Clinician"
+msgid "Here since 2004. Special interest in nervous patients, which is most of us."
+msgstr ""
+
+#: patterns/medical-team.php:22
+msgctxt "Clinician"
+msgid "Dr Samuel Oyelaran"
+msgstr ""
+
+#: patterns/medical-team.php:23
+msgctxt "Clinician"
+msgid "Dentist · BDS, MSc"
+msgstr ""
+
+#: patterns/medical-team.php:24
+msgctxt "Clinician"
+msgid "Implants and restorative work. Trains other dentists on Fridays."
+msgstr ""
+
+#: patterns/medical-team.php:28
+msgctxt "Clinician"
+msgid "Marie Colbert"
+msgstr ""
+
+#: patterns/medical-team.php:29
+msgctxt "Clinician"
+msgid "Hygienist · RDH"
+msgstr ""
+
+#: patterns/medical-team.php:30
+msgctxt "Clinician"
+msgid "Runs the hygiene programme and the school visits."
+msgstr ""
+
+#. Pattern title
+#: patterns/medical-team.php
+msgid "Practice: clinicians"
+msgstr ""
+
+#. Pattern description
+#: patterns/medical-team.php
+msgid "Three clinicians with qualifications — the credential check a patient makes first."
 msgstr ""
 
 #: patterns/newsletter.php:21
@@ -6406,6 +7724,216 @@ msgstr ""
 msgid "A band of review-platform scores with star graphics."
 msgstr ""
 
+#: patterns/realestate-fees.php:39
+msgid "Our fees, in public"
+msgstr ""
+
+#: patterns/realestate-fees.php:15
+msgctxt "Agency fee"
+msgid "Sole agency"
+msgstr ""
+
+#: patterns/realestate-fees.php:16
+msgctxt "Agency fee"
+msgid "1.2%"
+msgstr ""
+
+#: patterns/realestate-fees.php:17
+msgctxt "Agency fee"
+msgid "Plus VAT, payable on completion and nothing before it."
+msgstr ""
+
+#: patterns/realestate-fees.php:20
+msgctxt "Agency fee"
+msgid "Photography and floor plan"
+msgstr ""
+
+#: patterns/realestate-fees.php:21
+msgctxt "Agency fee"
+msgid "Included"
+msgstr ""
+
+#: patterns/realestate-fees.php:22
+msgctxt "Agency fee"
+msgid "Taken by a photographer, not by whoever is free that morning."
+msgstr ""
+
+#: patterns/realestate-fees.php:25
+msgctxt "Agency fee"
+msgid "Lettings management"
+msgstr ""
+
+#: patterns/realestate-fees.php:26
+msgctxt "Agency fee"
+msgid "8%"
+msgstr ""
+
+#: patterns/realestate-fees.php:27
+msgctxt "Agency fee"
+msgid "Of the rent, monthly. Tenant find only is one month's rent."
+msgstr ""
+
+#: patterns/realestate-fees.php:36
+msgctxt "Section eyebrow label"
+msgid "What we charge"
+msgstr ""
+
+#. Pattern title
+#: patterns/realestate-fees.php
+msgid "Property: fees"
+msgstr ""
+
+#. Pattern description
+#: patterns/realestate-fees.php
+msgid "Three published agency fees, so a seller knows the cost before the valuation."
+msgstr ""
+
+#: patterns/realestate-hero.php:24
+msgid "We only take on houses we would live in ourselves"
+msgstr ""
+
+#: patterns/realestate-hero.php:27
+msgid "A small agency covering Bath and the villages east of it. Twelve properties on the books at a time, because that is how many we can show properly."
+msgstr ""
+
+#: patterns/realestate-hero.php:32
+msgid "See what is for sale"
+msgstr ""
+
+#: patterns/realestate-hero.php:44
+msgid "Bath rooftops"
+msgstr ""
+
+#: patterns/realestate-hero.php:21
+msgctxt "Estate agent hero eyebrow"
+msgid "Sales and lettings, Bath"
+msgstr ""
+
+#. Pattern title
+#: patterns/realestate-hero.php
+msgid "Property: introduction"
+msgstr ""
+
+#. Pattern description
+#: patterns/realestate-hero.php
+msgid "An estate agency introduction with a valuation call to action."
+msgstr ""
+
+#: patterns/realestate-listings.php:48
+msgid "On the books this week"
+msgstr ""
+
+#: patterns/realestate-listings.php:51
+msgid "Everything we are selling, with the price on it. No 'guide price on application'."
+msgstr ""
+
+#: patterns/realestate-listings.php:16
+msgctxt "Property name"
+msgid "Lansdown Crescent"
+msgstr ""
+
+#: patterns/realestate-listings.php:17
+msgctxt "Property price"
+msgid "£1,250,000"
+msgstr ""
+
+#: patterns/realestate-listings.php:18
+msgctxt "Property details"
+msgid "4 bed · 2 bath · Grade I listed"
+msgstr ""
+
+#: patterns/realestate-listings.php:22
+msgctxt "Property name"
+msgid "Walcot Street"
+msgstr ""
+
+#: patterns/realestate-listings.php:23
+msgctxt "Property price"
+msgid "£465,000"
+msgstr ""
+
+#: patterns/realestate-listings.php:24
+msgctxt "Property details"
+msgid "2 bed · 1 bath · Top-floor flat"
+msgstr ""
+
+#: patterns/realestate-listings.php:28
+msgctxt "Property name"
+msgid "Bathford Mill"
+msgstr ""
+
+#: patterns/realestate-listings.php:29
+msgctxt "Property price"
+msgid "£720,000"
+msgstr ""
+
+#: patterns/realestate-listings.php:30
+msgctxt "Property details"
+msgid "3 bed · 2 bath · Converted mill"
+msgstr ""
+
+#: patterns/realestate-listings.php:34
+msgctxt "Property name"
+msgid "Bear Flat"
+msgstr ""
+
+#: patterns/realestate-listings.php:35
+msgctxt "Property price"
+msgid "£389,000"
+msgstr ""
+
+#: patterns/realestate-listings.php:36
+msgctxt "Property details"
+msgid "2 bed · 1 bath · Victorian terrace"
+msgstr ""
+
+#: patterns/realestate-listings.php:45
+msgctxt "Section eyebrow label"
+msgid "For sale"
+msgstr ""
+
+#. Pattern title
+#: patterns/realestate-listings.php
+msgid "Property: listings"
+msgstr ""
+
+#. Pattern description
+#: patterns/realestate-listings.php
+msgid "Four properties with photograph, price and the room count."
+msgstr ""
+
+#: patterns/realestate-valuation.php:24
+msgid "An hour, and an honest number"
+msgstr ""
+
+#: patterns/realestate-valuation.php:27
+msgid "We will tell you what your house is worth and what it would take to get there — including the jobs worth doing and the ones that are not."
+msgstr ""
+
+#: patterns/realestate-valuation.php:30
+msgid "hello@lansdown.example · 01225 555 0163"
+msgstr ""
+
+#: patterns/realestate-valuation.php:21
+msgctxt "Section eyebrow label"
+msgid "Book a valuation"
+msgstr ""
+
+#: patterns/realestate-valuation.php:41
+msgctxt "Contact form heading"
+msgid "Book a valuation"
+msgstr ""
+
+#. Pattern title
+#: patterns/realestate-valuation.php
+msgid "Property: book a valuation"
+msgstr ""
+
+#. Pattern description
+#: patterns/realestate-valuation.php
+msgid "A valuation enquiry section with the contact form."
+msgstr ""
+
 #: patterns/related-posts.php:17
 msgid "Keep reading"
 msgstr ""
@@ -6895,10 +8423,6 @@ msgstr ""
 msgid "When something sells out we decide whether to make it again. The newsletter is the only warning you get."
 msgstr ""
 
-#: patterns/shop-cta.php:30
-msgid "Join the list"
-msgstr ""
-
 #. Pattern title
 #: patterns/shop-cta.php
 msgid "Shop: closing band"
@@ -7005,10 +8529,6 @@ msgstr ""
 
 #: patterns/shop-hero.php:27
 msgid "A small workshop in Leeds making bags, aprons and a few things that did not fit either category. Two hundred of anything, then we stop and think about it."
-msgstr ""
-
-#: patterns/shop-hero.php:44
-msgid "The workshop"
 msgstr ""
 
 #: patterns/shop-hero.php:21

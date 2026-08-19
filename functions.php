@@ -227,6 +227,22 @@ function unapp_pattern_categories() {
 			'label'       => _x( 'Unapp: Shop', 'Block pattern category', 'unapp' ),
 			'description' => __( 'Storefront sections for WooCommerce: featured products, promises, the workshop and delivery answers.', 'unapp' ),
 		),
+		'unapp_realestate' => array(
+			'label'       => _x( 'Unapp: Property', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Sections for estate agents: listings, published fees and valuation enquiries.', 'unapp' ),
+		),
+		'unapp_medical'  => array(
+			'label'       => _x( 'Unapp: Practice', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Sections for clinics and practices: treatments, clinicians, patient questions and opening hours.', 'unapp' ),
+		),
+		'unapp_education' => array(
+			'label'       => _x( 'Unapp: Courses', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Sections for course providers: timetables, tutors and booking answers.', 'unapp' ),
+		),
+		'unapp_events'   => array(
+			'label'       => _x( 'Unapp: Events', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Sections for conferences and events: programmes, speakers, tickets and venue details.', 'unapp' ),
+		),
 		'unapp_blog'     => array(
 			'label'       => _x( 'Unapp: Blog & magazine', 'Block pattern category', 'unapp' ),
 			'description' => __( 'Editorial furniture: mastheads, category tiles, author introductions and subscribe panels.', 'unapp' ),

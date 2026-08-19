@@ -20,11 +20,11 @@ Unapp ships its own shop, product, cart, checkout, order-confirmation and produc
 
 **Starter sites**
 
-Appearance → Starter Sites offers nine complete designs, each with its own palette, typeface, home page, supporting pages and menu: SaaS & app, Portfolio, Church, Blog & magazine, Fitness studio, Restaurant, Agency, Shop and Finance & advisory. Applying one creates the pages and sets your front page. Nothing is ever deleted — switching starter adds new pages and leaves your old ones in the Pages list.
+Appearance → Starter Sites offers thirteen complete designs, each with its own palette, typeface, home page, supporting pages and menu: SaaS & app, Portfolio, Church, Blog & magazine, Fitness studio, Restaurant, Agency, Shop, Property, Practice, Courses, Conference and Finance & advisory. Applying one creates the pages and sets your front page. Nothing is ever deleted — switching starter adds new pages and leaves your old ones in the Pages list.
 
 **What's included**
 
-* **110+ section patterns** covering everything a product site needs: five heroes, nine feature layouts, testimonials, logo clouds, ratings, case studies, press, three pricing layouts, FAQ, five calls to action, timeline, values, careers, offices, security, changelog, documentation, contact and more.
+* **140+ section patterns** covering everything a product site needs: five heroes, nine feature layouts, testimonials, logo clouds, ratings, case studies, press, three pricing layouts, FAQ, five calls to action, timeline, values, careers, offices, security, changelog, documentation, contact and more.
 * **13 full-page starters** — SaaS landing page, Features, Pricing, Customers, About, Contact, Careers, Help centre, Changelog, Legal, Coming soon and two more — inserted from the pattern modal when you create a page.
 * **Ten pattern categories** in the inserter (Heroes, Features, Social proof, Pricing, Calls to action, Content & blog, Company, Utility, Full pages) so a big library stays findable.
 * Section styles for any Group, Columns or Column: Card, Soft background, Dark, Gradient, Frosted glass, Outline and Elevated — switch the look of a section with one click.
