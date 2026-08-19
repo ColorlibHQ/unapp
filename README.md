@@ -17,12 +17,14 @@ Appearance → **Starter Sites** applies a complete design for one kind of websi
 | Fitness studio | Ember · Manrope | Home, Timetable, Memberships, Contact |
 | Finance & advisory | Navy · Fraunces & Inter | Home, Services, About, Contact |
 
+Every starter carries its own patterns end to end — its home page, its inner pages and its footer. A church site does not sign off with SaaS pricing links, and its Contact page does not answer questions about free trials.
+
 Add your own with the `unapp_starter_sites` filter. Nothing is deleted when you apply or switch.
 
 ## Highlights
 
 - **Complete landing page on activation** – a real "Home" page (editable page content, *Page (No Title)* template) and a "Blog" page are created and assigned in Settings → Reading; existing front pages are never overridden (a one-click notice is shown instead). Gradient hero with product screenshot, services grid, image & text, features around a phone, animated stats, screenshot gallery (core lightbox), pricing table, team, latest posts, call to action and contact cards.
-- **70+ section patterns + 19 page starters**, grouped into ten inserter categories (Heroes, Features, Social proof, Pricing, Calls to action, Content & blog, Company, Utility, Full pages).
+- **99 section patterns + 19 page starters**, grouped into fifteen inserter categories (Heroes, Features, Social proof, Pricing, Calls to action, Content & blog, Company, Utility, Portfolio, Church, Fitness, Finance, Blog & magazine, Full pages).
 - **Section styles** for Group/Columns/Column: Card, Soft background, Dark, Gradient, Frosted glass, Outline, Elevated. **Block styles**: List (Checklist, Dashed, Numbered steps, Two columns), Image (Device frame, Browser frame, Framed), Quote (Testimonial card), Details (FAQ card), Table (Comparison), Separator (Gradient line), Button (Text link with arrow), Columns (Divided).
 - **Mix-and-match styles**: 10 colour palettes × 5 typography presets = 50 combinations, plus 10 curated looks. Colour and typography are separate partials in `styles/colors/` and `styles/typography/`.
 - **Performance**: six self-hosted font families (woff2, latin + latin-ext subsets, ~530 KB total, only the active pair downloads), AVIF images, fluid type, one 2 KB script loaded only where the Stats pattern is used, per-block CSS loaded on demand.

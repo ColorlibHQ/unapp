@@ -31,93 +31,161 @@ function unapp_get_starter_sites() {
 	$sites = array(
 		'saas'      => array(
 			'title'    => __( 'SaaS & app', 'unapp' ),
-			'summary'  => __( 'The default: a product landing page with pricing, proof and a free-trial call to action.', 'unapp' ),
+			'summary'  => __( 'The default: a product landing page with features, proof, pricing and a free-trial call to action.', 'unapp' ),
 			'cta'      => _x( 'Get Premium', 'Header call-to-action button', 'unapp' ),
 			'style'    => 'indigo',
 			'colors'   => 'colors-1-indigo',
 			'type'     => 'typography-1-product',
 			'swatches' => array( '#5468d8', '#4aca85' ),
 			'home'     => 'unapp/demo-saas',
+			'thumb'    => 'saas',
 			'pages'    => array(
-				'features' => array( 'title' => __( 'Features', 'unapp' ), 'pattern' => 'unapp/page-features' ),
-				'pricing'  => array( 'title' => __( 'Pricing', 'unapp' ), 'pattern' => 'unapp/page-pricing-full' ),
-				'about'    => array( 'title' => __( 'About', 'unapp' ), 'pattern' => 'unapp/page-about' ),
-				'contact'  => array( 'title' => __( 'Contact', 'unapp' ), 'pattern' => 'unapp/page-contact' ),
+				'features' => array(
+					'title'    => __( 'Features', 'unapp' ),
+					'patterns' => array( 'unapp/page-features' ),
+				),
+				'pricing'  => array(
+					'title'    => __( 'Pricing', 'unapp' ),
+					'patterns' => array( 'unapp/page-pricing-full' ),
+				),
+				'about'    => array(
+					'title'    => __( 'About', 'unapp' ),
+					'patterns' => array( 'unapp/page-about' ),
+				),
+				'contact'  => array(
+					'title'    => __( 'Contact', 'unapp' ),
+					'patterns' => array( 'unapp/page-contact' ),
+				),
 			),
 		),
 		'portfolio' => array(
 			'title'    => __( 'Portfolio', 'unapp' ),
-			'summary'  => __( 'A designer or studio portfolio: work grid, about, services and rates.', 'unapp' ),
+			'summary'  => __( 'Work first: a project grid, how you run a job, rates, a client quote and what you are booking.', 'unapp' ),
 			'cta'      => __( 'Start a project', 'unapp' ),
 			'style'    => 'mono',
 			'colors'   => 'colors-10-mono',
 			'type'     => 'typography-2-interface',
 			'swatches' => array( '#111111', '#e8e6e1' ),
 			'home'     => 'unapp/demo-portfolio',
+			'thumb'    => 'portfolio',
+			'footer'   => 'unapp/footer-portfolio',
 			'pages'    => array(
-				'work'    => array( 'title' => __( 'Work', 'unapp' ), 'pattern' => 'unapp/portfolio-work' ),
-				'about'   => array( 'title' => __( 'About', 'unapp' ), 'pattern' => 'unapp/page-about' ),
-				'contact' => array( 'title' => __( 'Contact', 'unapp' ), 'pattern' => 'unapp/page-contact' ),
+				'work'    => array(
+					'title'    => __( 'Work', 'unapp' ),
+					'patterns' => array( 'unapp/portfolio-work', 'unapp/portfolio-process', 'unapp/portfolio-testimonial', 'unapp/portfolio-contact' ),
+				),
+				'about'   => array(
+					'title'    => __( 'About', 'unapp' ),
+					'patterns' => array( 'unapp/portfolio-about', 'unapp/portfolio-process', 'unapp/portfolio-services', 'unapp/portfolio-testimonial' ),
+				),
+				'contact' => array(
+					'title'    => __( 'Contact', 'unapp' ),
+					'patterns' => array( 'unapp/portfolio-contact', 'unapp/portfolio-services' ),
+				),
 			),
 		),
 		'church'    => array(
 			'title'    => __( 'Church', 'unapp' ),
-			'summary'  => __( 'A welcoming church site: service times, ministries, staff, giving and directions.', 'unapp' ),
+			'summary'  => __( 'Service times, what to expect on a first visit, ministries, staff, events, giving and directions.', 'unapp' ),
 			'cta'      => __( 'Plan your visit', 'unapp' ),
 			'style'    => 'stone',
 			'colors'   => 'colors-7-stone',
 			'type'     => 'typography-3-editorial',
 			'swatches' => array( '#7d5f38', '#5cb39a' ),
 			'home'     => 'unapp/demo-church',
+			'thumb'    => 'church',
+			'footer'   => 'unapp/footer-church',
 			'pages'    => array(
-				'visit'   => array( 'title' => __( 'Plan your visit', 'unapp' ), 'pattern' => 'unapp/church-times' ),
-				'about'   => array( 'title' => __( 'About us', 'unapp' ), 'pattern' => 'unapp/page-about' ),
-				'give'    => array( 'title' => __( 'Give', 'unapp' ), 'pattern' => 'unapp/church-giving' ),
-				'contact' => array( 'title' => __( 'Contact', 'unapp' ), 'pattern' => 'unapp/page-contact' ),
+				'visit'   => array(
+					'title'    => __( 'Plan your visit', 'unapp' ),
+					'patterns' => array( 'unapp/church-visit', 'unapp/church-times', 'unapp/church-faq', 'unapp/church-contact' ),
+				),
+				'about'   => array(
+					'title'    => __( 'About us', 'unapp' ),
+					'patterns' => array( 'unapp/church-story', 'unapp/church-beliefs', 'unapp/church-staff', 'unapp/church-cta' ),
+				),
+				'give'    => array(
+					'title'    => __( 'Give', 'unapp' ),
+					'patterns' => array( 'unapp/church-giving', 'unapp/church-faq', 'unapp/church-contact' ),
+				),
+				'contact' => array(
+					'title'    => __( 'Contact', 'unapp' ),
+					'patterns' => array( 'unapp/church-contact', 'unapp/church-times', 'unapp/church-visit' ),
+				),
 			),
 		),
 		'blog'      => array(
 			'title'    => __( 'Blog & magazine', 'unapp' ),
-			'summary'  => __( 'A writer’s publication: masthead, featured post, topics and a newsletter.', 'unapp' ),
+			'summary'  => __( 'A masthead, a featured post, category tiles that read your real categories, and a subscribe band.', 'unapp' ),
 			'cta'      => __( 'Subscribe', 'unapp' ),
 			'style'    => 'sunset',
 			'colors'   => 'colors-3-sunset',
 			'type'     => 'typography-3-editorial',
 			'swatches' => array( '#c9412c', '#f9a826' ),
 			'home'     => 'unapp/demo-blog',
+			'thumb'    => 'blog',
+			'footer'   => 'unapp/footer-blog',
 			'pages'    => array(
-				'about'   => array( 'title' => __( 'About', 'unapp' ), 'pattern' => 'unapp/page-about' ),
-				'contact' => array( 'title' => __( 'Contact', 'unapp' ), 'pattern' => 'unapp/page-contact' ),
+				'about'   => array(
+					'title'    => __( 'About', 'unapp' ),
+					'patterns' => array( 'unapp/blog-about', 'unapp/blog-author-intro', 'unapp/blog-subscribe' ),
+				),
+				'contact' => array(
+					'title'    => __( 'Contact', 'unapp' ),
+					'patterns' => array( 'unapp/blog-contact', 'unapp/blog-subscribe' ),
+				),
 			),
 		),
 		'fitness'   => array(
 			'title'    => __( 'Fitness studio', 'unapp' ),
-			'summary'  => __( 'A gym or studio: timetable, coaches, memberships and a free-trial band.', 'unapp' ),
+			'summary'  => __( 'A class timetable, coaches, membership prices, member stories and a free first session.', 'unapp' ),
 			'cta'      => __( 'Book a class', 'unapp' ),
 			'style'    => 'ember',
 			'colors'   => 'colors-8-ember',
 			'type'     => 'typography-5-geometric',
 			'swatches' => array( '#c23b26', '#f2b705' ),
 			'home'     => 'unapp/demo-fitness',
+			'thumb'    => 'fitness',
+			'footer'   => 'unapp/footer-fitness',
 			'pages'    => array(
-				'timetable'   => array( 'title' => __( 'Timetable', 'unapp' ), 'pattern' => 'unapp/fitness-schedule' ),
-				'memberships' => array( 'title' => __( 'Memberships', 'unapp' ), 'pattern' => 'unapp/page-pricing' ),
-				'contact'     => array( 'title' => __( 'Contact', 'unapp' ), 'pattern' => 'unapp/page-contact' ),
+				'timetable'   => array(
+					'title'    => __( 'Timetable', 'unapp' ),
+					'patterns' => array( 'unapp/fitness-schedule', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
+				),
+				'memberships' => array(
+					'title'    => __( 'Memberships', 'unapp' ),
+					'patterns' => array( 'unapp/fitness-memberships', 'unapp/fitness-testimonials', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
+				),
+				'contact'     => array(
+					'title'    => __( 'Contact', 'unapp' ),
+					'patterns' => array( 'unapp/fitness-location', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
+				),
 			),
 		),
 		'finance'   => array(
 			'title'    => __( 'Finance & advisory', 'unapp' ),
-			'summary'  => __( 'A professional practice: credentials, services, process, advisers and a risk warning.', 'unapp' ),
+			'summary'  => __( 'Credentials, plain-English services, how advice works, fees, advisers and the risk warning.', 'unapp' ),
 			'cta'      => __( 'Book a call', 'unapp' ),
 			'style'    => 'navy',
 			'colors'   => 'colors-9-navy',
 			'type'     => 'typography-3-editorial',
 			'swatches' => array( '#1e4272', '#d1a33f' ),
 			'home'     => 'unapp/demo-finance',
+			'thumb'    => 'finance',
+			'footer'   => 'unapp/footer-finance',
 			'pages'    => array(
-				'services' => array( 'title' => __( 'Services', 'unapp' ), 'pattern' => 'unapp/finance-services' ),
-				'about'    => array( 'title' => __( 'About', 'unapp' ), 'pattern' => 'unapp/page-about' ),
-				'contact'  => array( 'title' => __( 'Contact', 'unapp' ), 'pattern' => 'unapp/page-contact' ),
+				'services' => array(
+					'title'    => __( 'Services', 'unapp' ),
+					'patterns' => array( 'unapp/finance-services', 'unapp/finance-process', 'unapp/finance-fees', 'unapp/finance-faq', 'unapp/finance-disclaimer' ),
+				),
+				'about'    => array(
+					'title'    => __( 'About', 'unapp' ),
+					'patterns' => array( 'unapp/finance-team', 'unapp/finance-credentials', 'unapp/finance-process', 'unapp/finance-disclaimer' ),
+				),
+				'contact'  => array(
+					'title'    => __( 'Contact', 'unapp' ),
+					'patterns' => array( 'unapp/finance-contact', 'unapp/finance-faq', 'unapp/finance-disclaimer' ),
+				),
 			),
 		),
 	);
@@ -184,7 +252,7 @@ function unapp_apply_starter_site( $slug ) {
 	$created['home'] = $home_id;
 
 	foreach ( $site['pages'] as $key => $page ) {
-		$markup = unapp_get_pattern_markup( $page['pattern'] );
+		$markup = unapp_get_starter_page_markup( $page );
 		if ( '' === $markup ) {
 			continue;
 		}
@@ -224,6 +292,7 @@ function unapp_apply_starter_site( $slug ) {
 	unapp_apply_starter_styles( $site );
 	unapp_build_starter_menu( $site, $created );
 	unapp_apply_starter_header( $site );
+	unapp_apply_starter_footer( $site );
 
 	update_option( UNAPP_STARTER_OPTION, array( 'slug' => $slug, 'pages' => $created, 'time' => time() ) );
 	update_option(
@@ -233,6 +302,38 @@ function unapp_apply_starter_site( $slug ) {
 	delete_option( UNAPP_OFFER_OPTION );
 
 	return $created;
+}
+
+/**
+ * Build the content of one starter page.
+ *
+ * A page is defined either as a single 'pattern' or as a 'patterns' list of
+ * section slugs, which are concatenated in order. Missing patterns are skipped
+ * so a page still renders on WordPress versions where one of its blocks is
+ * unavailable.
+ *
+ * @param array $page Page definition from the starter registry.
+ * @return string Block markup, or an empty string when nothing resolved.
+ */
+function unapp_get_starter_page_markup( $page ) {
+	$slugs = array();
+
+	if ( ! empty( $page['patterns'] ) && is_array( $page['patterns'] ) ) {
+		$slugs = $page['patterns'];
+	} elseif ( ! empty( $page['pattern'] ) ) {
+		$slugs = array( $page['pattern'] );
+	}
+
+	$parts = array();
+
+	foreach ( $slugs as $slug ) {
+		$markup = unapp_get_pattern_markup( $slug );
+		if ( '' !== $markup ) {
+			$parts[] = $markup;
+		}
+	}
+
+	return implode( "\n\n", $parts );
 }
 
 /**
@@ -394,16 +495,17 @@ function unapp_build_starter_menu( $site, $created ) {
 }
 
 /**
- * The customised header template part saved by a starter site, if any.
+ * A template part saved into the database by a starter site, if any.
  *
+ * @param string $name Part slug: 'header' or 'footer'.
  * @return WP_Post|null
  */
-function unapp_get_customised_header() {
+function unapp_get_customised_part( $name ) {
 	$parts = get_posts(
 		array(
 			'post_type'      => 'wp_template_part',
 			'post_status'    => 'publish',
-			'name'           => 'header',
+			'name'           => $name,
 			'posts_per_page' => 1,
 			'tax_query'      => array(
 				array(
@@ -416,6 +518,71 @@ function unapp_get_customised_header() {
 	);
 
 	return $parts ? $parts[0] : null;
+}
+
+/**
+ * The customised header template part saved by a starter site, if any.
+ *
+ * @return WP_Post|null
+ */
+function unapp_get_customised_header() {
+	return unapp_get_customised_part( 'header' );
+}
+
+/**
+ * Point a template part at one of the theme's own patterns.
+ *
+ * Starters swap the footer this way: the saved part is a single pattern
+ * reference, exactly what parts/footer.html contains, so the wording stays
+ * translatable and the user can still edit it in the Site Editor afterwards.
+ *
+ * @param string $name    Part slug: 'header' or 'footer'.
+ * @param string $title   Part title.
+ * @param string $pattern Pattern slug to reference, or '' to restore the theme file.
+ */
+function unapp_set_part_to_pattern( $name, $title, $pattern ) {
+	$existing = unapp_get_customised_part( $name );
+
+	if ( '' === $pattern ) {
+		if ( $existing ) {
+			wp_delete_post( $existing->ID, true );
+		}
+		return;
+	}
+
+	if ( ! WP_Block_Patterns_Registry::get_instance()->is_registered( $pattern ) ) {
+		return;
+	}
+
+	$args = array(
+		'post_type'    => 'wp_template_part',
+		'post_status'  => 'publish',
+		'post_title'   => $title,
+		'post_name'    => $name,
+		'post_content' => wp_slash( '<!-- wp:pattern {"slug":"' . $pattern . '"} /-->' ),
+	);
+
+	if ( $existing ) {
+		$args['ID'] = $existing->ID;
+		$part_id    = wp_update_post( $args );
+	} else {
+		$part_id = wp_insert_post( $args );
+	}
+
+	if ( $part_id && ! is_wp_error( $part_id ) ) {
+		wp_set_object_terms( $part_id, get_stylesheet(), 'wp_theme' );
+		wp_set_object_terms( $part_id, $name, 'wp_template_part_area' );
+	}
+}
+
+/**
+ * Give the footer the starter's own wording, links and contact details.
+ *
+ * @param array $site Starter site definition.
+ */
+function unapp_apply_starter_footer( $site ) {
+	$pattern = isset( $site['footer'] ) ? $site['footer'] : '';
+	unapp_set_part_to_pattern( 'footer', __( 'Footer', 'unapp' ), $pattern );
 }
 
 /**
@@ -547,12 +714,25 @@ function unapp_render_starter_screen() {
 			<?php foreach ( $sites as $slug => $site ) : ?>
 				<?php $is_active = isset( $active['slug'] ) && $active['slug'] === $slug; ?>
 				<div class="unapp-starter<?php echo $is_active ? ' is-active' : ''; ?>">
-					<div class="unapp-starter__preview" aria-hidden="true"
+					<div class="unapp-starter__preview"
 						style="background:linear-gradient(135deg, <?php echo esc_attr( $site['swatches'][0] ); ?> 0%, <?php echo esc_attr( $site['swatches'][1] ); ?> 100%)">
-						<span class="unapp-starter__preview-card"></span>
+						<?php if ( ! empty( $site['thumb'] ) && file_exists( get_theme_file_path( 'assets/images/starters/' . $site['thumb'] . '.webp' ) ) ) : ?>
+							<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/starters/' . $site['thumb'] . '.webp' ) ); ?>"
+								alt="<?php
+								/* translators: %s: starter site name. */
+								echo esc_attr( sprintf( __( 'The home page the %s starter builds', 'unapp' ), $site['title'] ) );
+								?>" loading="lazy" decoding="async" width="640" height="480">
+						<?php else : ?>
+							<span class="unapp-starter__preview-card" aria-hidden="true"></span>
+						<?php endif; ?>
 					</div>
 					<div class="unapp-starter__body">
 						<h2><?php echo esc_html( $site['title'] ); ?><?php echo $is_active ? ' <span class="unapp-starter__badge">' . esc_html__( 'Applied', 'unapp' ) . '</span>' : ''; ?></h2>
+						<p class="unapp-starter__swatches" aria-hidden="true">
+							<?php foreach ( $site['swatches'] as $unapp_swatch ) : ?>
+								<span style="background:<?php echo esc_attr( $unapp_swatch ); ?>"></span>
+							<?php endforeach; ?>
+						</p>
 						<p><?php echo esc_html( $site['summary'] ); ?></p>
 						<?php $unapp_page_count = count( $site['pages'] ) + 1; ?>
 						<p class="unapp-starter__meta">
@@ -582,7 +762,10 @@ function unapp_render_starter_screen() {
 		.unapp-starters__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 24px; }
 		.unapp-starter { background: #fff; border: 1px solid #dcdcde; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
 		.unapp-starter.is-active { border-color: #2271b1; box-shadow: 0 0 0 1px #2271b1; }
-		.unapp-starter__preview { height: 140px; display: flex; align-items: flex-end; justify-content: center; padding: 0 24px; }
+		.unapp-starter__preview { height: 190px; display: flex; align-items: flex-end; justify-content: center; padding: 0 24px; overflow: hidden; }
+		.unapp-starter__preview img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; padding: 0; }
+		.unapp-starter__swatches { display: flex; gap: 4px; margin: 0 0 2px !important; }
+		.unapp-starter__swatches span { width: 13px; height: 13px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0,0,0,.12); }
 		.unapp-starter__preview-card { display: block; width: 100%; height: 62px; background: #fff; border-radius: 8px 8px 0 0; box-shadow: 0 -6px 18px rgba(0,0,0,.12); }
 		.unapp-starter__body { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 		.unapp-starter__body h2 { font-size: 15px; margin: 0; }

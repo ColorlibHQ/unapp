@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-19T11:45:39+00:00\n"
+"POT-Creation-Date: 2026-08-19T13:10:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: make-pot.py (Unapp)\n"
 "X-Domain: unapp\n"
@@ -51,6 +51,26 @@ msgid "Contact, FAQ, legal and help-centre sections."
 msgstr ""
 
 #: functions.php:204
+msgid "Sections for designers, studios and freelancers: work grids, rates and process."
+msgstr ""
+
+#: functions.php:208
+msgid "Sections for a church site: service times, ministries, staff, giving and first-visit answers."
+msgstr ""
+
+#: functions.php:212
+msgid "Sections for gyms and studios: timetables, coaches, memberships and member stories."
+msgstr ""
+
+#: functions.php:216
+msgid "Sections for advisers and accountants: services, process, fees, credentials and risk warnings."
+msgstr ""
+
+#: functions.php:220
+msgid "Editorial furniture: mastheads, category tiles, author introductions and subscribe panels."
+msgstr ""
+
+#: functions.php:224
 msgid "Complete page layouts. Insert one into an empty page to start from a finished design."
 msgstr ""
 
@@ -166,6 +186,31 @@ msgstr ""
 
 #: functions.php:203
 msgctxt "Block pattern category"
+msgid "Unapp: Portfolio"
+msgstr ""
+
+#: functions.php:207
+msgctxt "Block pattern category"
+msgid "Unapp: Church"
+msgstr ""
+
+#: functions.php:211
+msgctxt "Block pattern category"
+msgid "Unapp: Fitness"
+msgstr ""
+
+#: functions.php:215
+msgctxt "Block pattern category"
+msgid "Unapp: Finance"
+msgstr ""
+
+#: functions.php:219
+msgctxt "Block pattern category"
+msgid "Unapp: Blog & magazine"
+msgstr ""
+
+#: functions.php:223
+msgctxt "Block pattern category"
 msgid "Unapp: Full pages"
 msgstr ""
 
@@ -234,7 +279,7 @@ msgid "Home"
 msgstr ""
 
 #: inc/front-page-setup.php:145
-#: inc/starter-sites.php:277
+#: inc/starter-sites.php:378
 msgctxt "Title of the posts page created on activation"
 msgid "Blog"
 msgstr ""
@@ -244,186 +289,212 @@ msgid "SaaS & app"
 msgstr ""
 
 #: inc/starter-sites.php:34
-msgid "The default: a product landing page with pricing, proof and a free-trial call to action."
-msgstr ""
-
-#: inc/starter-sites.php:42
-msgid "Features"
-msgstr ""
-
-#: inc/starter-sites.php:43
-msgid "Pricing"
+msgid "The default: a product landing page with features, proof, pricing and a free-trial call to action."
 msgstr ""
 
 #: inc/starter-sites.php:44
-#: inc/starter-sites.php:59
-#: inc/starter-sites.php:89
-#: inc/starter-sites.php:119
+msgid "Features"
+msgstr ""
+
+#: inc/starter-sites.php:48
+msgid "Pricing"
+msgstr ""
+
+#: inc/starter-sites.php:52
+#: inc/starter-sites.php:78
+#: inc/starter-sites.php:130
+#: inc/starter-sites.php:182
+#: patterns/footer-blog.php:42
+#: patterns/footer-portfolio.php:42
 msgid "About"
 msgstr ""
 
-#: inc/starter-sites.php:45
-#: inc/starter-sites.php:60
-#: inc/starter-sites.php:76
-#: inc/starter-sites.php:90
-#: inc/starter-sites.php:105
-#: inc/starter-sites.php:120
+#: inc/starter-sites.php:56
+#: inc/starter-sites.php:82
+#: inc/starter-sites.php:112
+#: inc/starter-sites.php:134
+#: inc/starter-sites.php:160
+#: inc/starter-sites.php:186
 #: patterns/footer.php:60
 msgid "Contact"
 msgstr ""
 
-#: inc/starter-sites.php:49
+#: inc/starter-sites.php:62
 msgid "Portfolio"
 msgstr ""
 
-#: inc/starter-sites.php:50
-msgid "A designer or studio portfolio: work grid, about, services and rates."
-msgstr ""
-
-#: inc/starter-sites.php:51
-msgid "Start a project"
-msgstr ""
-
-#: inc/starter-sites.php:58
-msgid "Work"
+#: inc/starter-sites.php:63
+msgid "Work first: a project grid, how you run a job, rates, a client quote and what you are booking."
 msgstr ""
 
 #: inc/starter-sites.php:64
-msgid "Church"
-msgstr ""
-
-#: inc/starter-sites.php:65
-msgid "A welcoming church site: service times, ministries, staff, giving and directions."
-msgstr ""
-
-#: inc/starter-sites.php:66
-#: inc/starter-sites.php:73
-#: patterns/church-hero.php:28
-msgid "Plan your visit"
+msgid "Start a project"
 msgstr ""
 
 #: inc/starter-sites.php:74
+msgid "Work"
+msgstr ""
+
+#: inc/starter-sites.php:88
+msgid "Church"
+msgstr ""
+
+#: inc/starter-sites.php:89
+msgid "Service times, what to expect on a first visit, ministries, staff, events, giving and directions."
+msgstr ""
+
+#: inc/starter-sites.php:90
+#: inc/starter-sites.php:100
+#: patterns/church-cta.php:27
+#: patterns/church-hero.php:28
+#: patterns/church-story.php:42
+#: patterns/footer-church.php:40
+msgid "Plan your visit"
+msgstr ""
+
+#: inc/starter-sites.php:104
 msgid "About us"
 msgstr ""
 
-#: inc/starter-sites.php:75
+#: inc/starter-sites.php:108
+#: patterns/footer-church.php:43
 msgid "Give"
 msgstr ""
 
-#: inc/starter-sites.php:80
+#: inc/starter-sites.php:118
 msgid "Blog & magazine"
 msgstr ""
 
-#: inc/starter-sites.php:81
-msgid "A writer’s publication: masthead, featured post, topics and a newsletter."
+#: inc/starter-sites.php:119
+msgid "A masthead, a featured post, category tiles that read your real categories, and a subscribe band."
 msgstr ""
 
-#: inc/starter-sites.php:82
+#: inc/starter-sites.php:120
+#: patterns/blog-about.php:45
+#: patterns/blog-subscribe.php:24
 msgid "Subscribe"
 msgstr ""
 
-#: inc/starter-sites.php:94
+#: inc/starter-sites.php:140
 msgid "Fitness studio"
 msgstr ""
 
-#: inc/starter-sites.php:95
-msgid "A gym or studio: timetable, coaches, memberships and a free-trial band."
+#: inc/starter-sites.php:141
+msgid "A class timetable, coaches, membership prices, member stories and a free first session."
 msgstr ""
 
-#: inc/starter-sites.php:96
+#: inc/starter-sites.php:142
 #: patterns/fitness-schedule.php:39
 msgid "Book a class"
 msgstr ""
 
-#: inc/starter-sites.php:103
+#: inc/starter-sites.php:152
+#: patterns/footer-fitness.php:40
 msgid "Timetable"
 msgstr ""
 
-#: inc/starter-sites.php:104
+#: inc/starter-sites.php:156
+#: patterns/footer-fitness.php:41
 msgid "Memberships"
 msgstr ""
 
-#: inc/starter-sites.php:109
+#: inc/starter-sites.php:166
 msgid "Finance & advisory"
 msgstr ""
 
-#: inc/starter-sites.php:110
-msgid "A professional practice: credentials, services, process, advisers and a risk warning."
+#: inc/starter-sites.php:167
+msgid "Credentials, plain-English services, how advice works, fees, advisers and the risk warning."
 msgstr ""
 
-#: inc/starter-sites.php:111
+#: inc/starter-sites.php:168
+#: patterns/finance-contact.php:32
+#: patterns/footer-finance.php:42
 msgid "Book a call"
 msgstr ""
 
-#: inc/starter-sites.php:118
+#: inc/starter-sites.php:178
+#: patterns/footer-finance.php:39
 msgid "Services"
 msgstr ""
 
-#: inc/starter-sites.php:145
+#: inc/starter-sites.php:213
 msgid "That starter site does not exist."
 msgstr ""
 
-#: inc/starter-sites.php:152
+#: inc/starter-sites.php:220
 msgid "The starter site’s home page pattern could not be loaded."
 msgstr ""
 
-#: inc/starter-sites.php:352
+#: inc/starter-sites.php:453
 msgid "Blog"
 msgstr ""
 
-#: inc/starter-sites.php:380
+#: inc/starter-sites.php:481
 msgid "Navigation"
 msgstr ""
 
 #. Pattern title
 #. Template part name
-#: inc/starter-sites.php:459
+#: inc/starter-sites.php:585
+#: patterns/footer.php
+#: theme.json
+msgid "Footer"
+msgstr ""
+
+#. Pattern title
+#. Template part name
+#: inc/starter-sites.php:626
 #: patterns/header.php
 #: theme.json
 msgid "Header"
 msgstr ""
 
-#: inc/starter-sites.php:486
-#: inc/starter-sites.php:487
+#: inc/starter-sites.php:653
+#: inc/starter-sites.php:654
 msgid "Starter Sites"
 msgstr ""
 
-#: inc/starter-sites.php:502
+#: inc/starter-sites.php:669
 msgid "You are not allowed to change the site design."
 msgstr ""
 
-#: inc/starter-sites.php:527
+#: inc/starter-sites.php:694
 msgid "Unapp starter sites"
 msgstr ""
 
-#: inc/starter-sites.php:529
+#: inc/starter-sites.php:696
 msgid "Each starter builds a complete site for one kind of business: a colour palette, a typeface, a home page and its supporting pages, and a matching menu. Your existing pages are never deleted — applying a starter adds new ones and points the front page at them."
 msgstr ""
 
 #. translators: %s: link to the site front page.
-#: inc/starter-sites.php:537
+#: inc/starter-sites.php:704
 msgid "Starter site applied. <a href=\"%s\">View your site</a>."
 msgstr ""
 
 #. translators: %s: link to the site front page.
-#: inc/starter-sites.php:543
+#: inc/starter-sites.php:710
 msgid "That starter site could not be applied. Please try again."
 msgstr ""
 
-#: inc/starter-sites.php:555
+#. translators: %s: starter site name.
+#: inc/starter-sites.php:723
+msgid "The home page the %s starter builds"
+msgstr ""
+
+#: inc/starter-sites.php:730
 msgid "Applied"
 msgstr ""
 
-#: inc/starter-sites.php:572
+#: inc/starter-sites.php:752
 msgid "Apply again"
 msgstr ""
 
-#: inc/starter-sites.php:572
+#: inc/starter-sites.php:752
 msgid "Apply this starter"
 msgstr ""
 
 #: inc/starter-sites.php:35
-#: inc/starter-sites.php:432
+#: inc/starter-sites.php:599
 #: patterns/header.php:30
 msgctxt "Header call-to-action button"
 msgid "Get Premium"
@@ -437,6 +508,42 @@ msgstr ""
 #. Pattern description
 #: patterns/author-box.php
 msgid "Author avatar, name, biography and links — drop it under the post content in the Single template."
+msgstr ""
+
+#: patterns/blog-about.php:21
+msgid "Reading"
+msgstr ""
+
+#: patterns/blog-about.php:31
+msgid "Why this exists"
+msgstr ""
+
+#: patterns/blog-about.php:34
+msgid "The Slow Build started in 2019 as an argument with a former colleague about whether software has to be made the way it usually is. He has since conceded, partially."
+msgstr ""
+
+#: patterns/blog-about.php:37
+msgid "One essay most Fridays, about a thousand words, on the parts of building software that do not fit in a conference talk: estimation, rewrites, hiring, and the quiet cost of moving fast. No sponsorship, no affiliate links, no course at the end of it."
+msgstr ""
+
+#: patterns/blog-about.php:42
+msgid "Read the archive"
+msgstr ""
+
+#: patterns/blog-about.php:28
+#: patterns/portfolio-about.php:28
+msgctxt "Section eyebrow label"
+msgid "About"
+msgstr ""
+
+#. Pattern title
+#: patterns/blog-about.php
+msgid "Blog: about the publication"
+msgstr ""
+
+#. Pattern description
+#: patterns/blog-about.php
+msgid "What the publication is, how often it appears and how it is paid for."
 msgstr ""
 
 #: patterns/blog-author-intro.php:21
@@ -483,6 +590,49 @@ msgstr ""
 #. Pattern description
 #: patterns/blog-categories.php
 msgid "Category tiles with post counts, built on the Terms Query block from WordPress 7.0."
+msgstr ""
+
+#: patterns/blog-contact.php:24
+msgid "Pitches, corrections and arguments"
+msgstr ""
+
+#: patterns/blog-contact.php:27
+msgid "All three are welcome, in that order of enthusiasm. Corrections get published as corrections, with a note at the top of the piece — not quietly edited in overnight."
+msgstr ""
+
+#: patterns/blog-contact.php:30
+msgid "editor@theslowbuild.example"
+msgstr ""
+
+#: patterns/blog-contact.php:39
+msgid "Pitching an essay"
+msgstr ""
+
+#: patterns/blog-contact.php:42
+msgid "Two or three paragraphs on the argument you want to make, plus one thing you have written before. We pay £250 on publication and we do not commission on spec."
+msgstr ""
+
+#: patterns/blog-contact.php:48
+msgid "Response time"
+msgstr ""
+
+#: patterns/blog-contact.php:51
+msgid "Ten working days. If you have not heard by then, chase — it means the email got lost, not that the answer is no."
+msgstr ""
+
+#: patterns/blog-contact.php:21
+msgctxt "Section eyebrow label"
+msgid "Get in touch"
+msgstr ""
+
+#. Pattern title
+#: patterns/blog-contact.php
+msgid "Blog: pitches and contact"
+msgstr ""
+
+#. Pattern description
+#: patterns/blog-contact.php
+msgid "Contact details for a publication, including what a pitch should contain and what it pays."
 msgstr ""
 
 #: patterns/blog-featured.php:22
@@ -570,6 +720,32 @@ msgstr ""
 #. Pattern description
 #: patterns/blog-posts.php
 msgid "Section intro, a three-column grid of the latest posts and a link to the blog."
+msgstr ""
+
+#: patterns/blog-subscribe.php:19
+msgid "One essay, most Fridays"
+msgstr ""
+
+#: patterns/blog-subscribe.php:22
+msgid "Four thousand people read it over coffee. No tracking pixels, no sequence, one click to leave."
+msgstr ""
+
+#: patterns/blog-subscribe.php:24
+msgid "you@example.com"
+msgstr ""
+
+#: patterns/blog-subscribe.php:26
+msgid "Or follow the RSS feed, if you are that sort of person. Many of us are."
+msgstr ""
+
+#. Pattern title
+#: patterns/blog-subscribe.php
+msgid "Blog: subscribe band"
+msgstr ""
+
+#. Pattern description
+#: patterns/blog-subscribe.php
+msgid "A newsletter band in an editorial voice, with an email field and a nod to RSS."
 msgstr ""
 
 #: patterns/careers.php:28
@@ -786,6 +962,280 @@ msgstr ""
 msgid "Dated release entries with a version chip and a list of changes."
 msgstr ""
 
+#: patterns/church-beliefs.php:39
+msgid "Three things, honestly held"
+msgstr ""
+
+#: patterns/church-beliefs.php:42
+msgid "There is a longer statement of faith and we will happily send it to you. This is the short version."
+msgstr ""
+
+#: patterns/church-beliefs.php:16
+msgctxt "Church belief title"
+msgid "The Bible"
+msgstr ""
+
+#: patterns/church-beliefs.php:17
+msgctxt "Church belief text"
+msgid "We read it together, in order, and we do not skip the parts that are hard to hear."
+msgstr ""
+
+#: patterns/church-beliefs.php:21
+msgctxt "Church belief title"
+msgid "Grace"
+msgstr ""
+
+#: patterns/church-beliefs.php:22
+msgctxt "Church belief text"
+msgid "Nobody here has earned their place. That is rather the point of the whole thing."
+msgstr ""
+
+#: patterns/church-beliefs.php:26
+msgctxt "Church belief title"
+msgid "One another"
+msgstr ""
+
+#: patterns/church-beliefs.php:27
+msgctxt "Church belief text"
+msgid "Christianity is a team sport. Sunday is where it starts, not where it stops."
+msgstr ""
+
+#: patterns/church-beliefs.php:36
+#: patterns/values.php:24
+msgctxt "Section eyebrow label"
+msgid "What we believe"
+msgstr ""
+
+#. Pattern title
+#: patterns/church-beliefs.php
+msgid "Church: what we believe"
+msgstr ""
+
+#. Pattern description
+#: patterns/church-beliefs.php
+msgid "Three belief cards in plain language, for an About page that does not read like a doctrinal statement."
+msgstr ""
+
+#: patterns/church-contact.php:24
+msgid "Mill Lane, and the door is open"
+msgstr ""
+
+#: patterns/church-contact.php:27
+msgid "Riverside Church, 12 Mill Lane, Chesterfield S40 1RT. The 43 and 44 buses stop at the end of the road; the car park is behind the building."
+msgstr ""
+
+#: patterns/church-contact.php:32
+#: patterns/fitness-location.php:35
+msgid "Get directions"
+msgstr ""
+
+#: patterns/church-contact.php:43
+msgid "Office hours"
+msgstr ""
+
+#: patterns/church-contact.php:46
+msgid "Tuesday to Friday, 9:30–14:30. Ruth is usually in; if the door is locked, ring the bell."
+msgstr ""
+
+#: patterns/church-contact.php:52
+#: patterns/finance-contact.php:55
+msgid "Telephone"
+msgstr ""
+
+#: patterns/church-contact.php:55
+msgid "01246 555 0114"
+msgstr ""
+
+#: patterns/church-contact.php:61
+#: patterns/contact-split.php:43
+#: patterns/finance-contact.php:64
+msgid "Email"
+msgstr ""
+
+#: patterns/church-contact.php:64
+msgid "hello@riverside.example"
+msgstr ""
+
+#: patterns/church-contact.php:21
+msgctxt "Section eyebrow label"
+msgid "Find us"
+msgstr ""
+
+#. Pattern title
+#: patterns/church-contact.php
+msgid "Church: contact and directions"
+msgstr ""
+
+#. Pattern description
+#: patterns/church-contact.php
+msgid "Address, transport and office hours — the church equivalent of a contact page, without a form."
+msgstr ""
+
+#: patterns/church-cta.php:19
+msgid "There is a service this Sunday at 9:30 and 11:15"
+msgstr ""
+
+#: patterns/church-cta.php:22
+msgid "Come on your own, come late, come and sit at the back. All of that is completely normal here."
+msgstr ""
+
+#: patterns/church-cta.php:30
+msgid "Watch a service online"
+msgstr ""
+
+#. Pattern title
+#: patterns/church-cta.php
+msgid "Church: closing invitation"
+msgstr ""
+
+#. Pattern description
+#: patterns/church-cta.php
+msgid "A warm closing band inviting a visit, on the palette gradient."
+msgstr ""
+
+#: patterns/church-events.php:44
+msgid "Coming up"
+msgstr ""
+
+#: patterns/church-events.php:15
+msgctxt "Church event date"
+msgid "Sat 14 Sep"
+msgstr ""
+
+#: patterns/church-events.php:16
+msgctxt "Church event title"
+msgid "Community lunch"
+msgstr ""
+
+#: patterns/church-events.php:17
+msgctxt "Church event description"
+msgid "Everyone eats, nobody pays. Twelve o'clock in the hall."
+msgstr ""
+
+#: patterns/church-events.php:20
+msgctxt "Church event date"
+msgid "Thu 26 Sep"
+msgstr ""
+
+#: patterns/church-events.php:21
+msgctxt "Church event title"
+msgid "Job club"
+msgstr ""
+
+#: patterns/church-events.php:22
+msgctxt "Church event description"
+msgid "CVs, applications and interview practice with people who hire for a living."
+msgstr ""
+
+#: patterns/church-events.php:25
+msgctxt "Church event date"
+msgid "Sun 6 Oct"
+msgstr ""
+
+#: patterns/church-events.php:26
+msgctxt "Church event title"
+msgid "Harvest service"
+msgstr ""
+
+#: patterns/church-events.php:27
+msgctxt "Church event description"
+msgid "Bring tinned food if you can; the whole lot goes to the foodbank on Mill Lane."
+msgstr ""
+
+#: patterns/church-events.php:30
+msgctxt "Church event date"
+msgid "Sun 22 Dec"
+msgstr ""
+
+#: patterns/church-events.php:31
+msgctxt "Church event title"
+msgid "Carols by candlelight"
+msgstr ""
+
+#: patterns/church-events.php:32
+msgctxt "Church event description"
+msgid "The one service a year that fills the balcony. Come early."
+msgstr ""
+
+#: patterns/church-events.php:41
+msgctxt "Section eyebrow label"
+msgid "Diary"
+msgstr ""
+
+#. Pattern title
+#: patterns/church-events.php
+msgid "Church: upcoming events"
+msgstr ""
+
+#. Pattern description
+#: patterns/church-events.php
+msgid "A dated list of what is on: community lunch, job club, harvest and carols."
+msgstr ""
+
+#: patterns/church-faq.php:22
+msgid "The ones people ask us"
+msgstr ""
+
+#: patterns/church-faq.php:19
+#: patterns/finance-faq.php:19
+msgctxt "Section eyebrow label"
+msgid "Questions"
+msgstr ""
+
+#: patterns/church-faq.php:28
+#: patterns/church-faq.php:29
+msgctxt "FAQ question"
+msgid "I am not religious. Is that a problem?"
+msgstr ""
+
+#: patterns/church-faq.php:31
+msgctxt "FAQ answer"
+msgid "Not in the least. A good number of people here would say the same thing, some of them for years. You are welcome to come, listen and make your own mind up in your own time."
+msgstr ""
+
+#: patterns/church-faq.php:35
+#: patterns/church-faq.php:36
+msgctxt "FAQ question"
+msgid "Will I be asked for money?"
+msgstr ""
+
+#: patterns/church-faq.php:38
+msgctxt "FAQ answer"
+msgid "No. The offering is taken during the service and visitors are asked, genuinely, not to give to it. Giving is for people who have decided this is their church."
+msgstr ""
+
+#: patterns/church-faq.php:42
+#: patterns/church-faq.php:43
+msgctxt "FAQ question"
+msgid "Is the building accessible?"
+msgstr ""
+
+#: patterns/church-faq.php:45
+msgctxt "FAQ answer"
+msgid "Step-free from the Mill Lane entrance, a hearing loop throughout, and an accessible toilet by the hall. Large-print orders of service are on the table as you come in."
+msgstr ""
+
+#: patterns/church-faq.php:49
+#: patterns/church-faq.php:50
+msgctxt "FAQ question"
+msgid "What happens to my children?"
+msgstr ""
+
+#: patterns/church-faq.php:52
+msgctxt "FAQ answer"
+msgid "They stay with you for the first twenty minutes, then go out to groups by school year. Every leader is DBS-checked. Under-3s can go straight to the creche."
+msgstr ""
+
+#. Pattern title
+#: patterns/church-faq.php
+msgid "Church: first-visit questions"
+msgstr ""
+
+#. Pattern description
+#: patterns/church-faq.php
+msgid "The four questions a newcomer is too polite to ask, answered without church jargon."
+msgstr ""
+
 #: patterns/church-giving.php:24
 msgid "Every gift stays close to home"
 msgstr ""
@@ -907,6 +1357,125 @@ msgstr ""
 msgid "Four ministries or groups as icon cards."
 msgstr ""
 
+#: patterns/church-staff.php:48
+msgid "The people here on a Sunday"
+msgstr ""
+
+#: patterns/church-staff.php:51
+msgid "Four of us are paid; most of what happens here is done by people who are not."
+msgstr ""
+
+#: patterns/church-staff.php:16
+msgctxt "Church staff name"
+msgid "Tom Iredale"
+msgstr ""
+
+#: patterns/church-staff.php:17
+msgctxt "Church staff role"
+msgid "Lead pastor"
+msgstr ""
+
+#: patterns/church-staff.php:18
+msgctxt "Church staff note"
+msgid "Here since 2014. Preaches most Sundays and answers every email eventually."
+msgstr ""
+
+#: patterns/church-staff.php:22
+msgctxt "Church staff name"
+msgid "Grace Okonjo"
+msgstr ""
+
+#: patterns/church-staff.php:23
+msgctxt "Church staff role"
+msgid "Families and children"
+msgstr ""
+
+#: patterns/church-staff.php:24
+msgctxt "Church staff note"
+msgid "Runs the Sunday groups and the Tuesday toddler morning."
+msgstr ""
+
+#: patterns/church-staff.php:28
+msgctxt "Church staff name"
+msgid "Danny Ferreira"
+msgstr ""
+
+#: patterns/church-staff.php:29
+msgctxt "Church staff role"
+msgid "Music"
+msgstr ""
+
+#: patterns/church-staff.php:30
+msgctxt "Church staff note"
+msgid "Leads the band and will teach anyone who asks to play."
+msgstr ""
+
+#: patterns/church-staff.php:34
+msgctxt "Church staff name"
+msgid "Ruth Nakamura"
+msgstr ""
+
+#: patterns/church-staff.php:35
+msgctxt "Church staff role"
+msgid "Church administrator"
+msgstr ""
+
+#: patterns/church-staff.php:36
+msgctxt "Church staff note"
+msgid "Bookings, the building, and the person who knows where everything is."
+msgstr ""
+
+#: patterns/church-staff.php:45
+msgctxt "Section eyebrow label"
+msgid "Who you will meet"
+msgstr ""
+
+#. Pattern title
+#: patterns/church-staff.php
+msgid "Church: staff"
+msgstr ""
+
+#. Pattern description
+#: patterns/church-staff.php
+msgid "The four people a visitor is likely to meet, with what each of them actually does."
+msgstr ""
+
+#: patterns/church-story.php:21
+msgid "The church building"
+msgstr ""
+
+#: patterns/church-story.php:31
+msgid "A hundred and forty years of Tuesdays"
+msgstr ""
+
+#: patterns/church-story.php:34
+msgid "The building went up in 1886 for a congregation of mill workers. The mill closed in 1974; the church did not. We have been a school hall, a night shelter and briefly a bicycle repair shop, and on Sundays we have kept doing the same thing the whole time."
+msgstr ""
+
+#: patterns/church-story.php:37
+msgid "There are around two hundred of us now, from about thirty streets, and we would be glad to make it two hundred and one."
+msgstr ""
+
+#: patterns/church-story.php:45
+msgid "Meet the staff"
+msgstr ""
+
+#: patterns/church-story.php:28
+#: patterns/timeline.php:25
+msgctxt "Section eyebrow label"
+msgid "Our story"
+msgstr ""
+
+#. Pattern title
+#: patterns/church-story.php
+msgid "Church: our story"
+msgstr ""
+
+#. Pattern description
+#: patterns/church-story.php
+msgid "A short history of the church beside a photograph — the opening of an About page."
+msgstr ""
+
 #: patterns/church-times.php:27
 msgid "When we gather"
 msgstr ""
@@ -975,6 +1544,69 @@ msgstr ""
 msgid "Service times with a short description of each gathering."
 msgstr ""
 
+#: patterns/church-visit.php:44
+msgid "What actually happens"
+msgstr ""
+
+#: patterns/church-visit.php:47
+msgid "Nobody will ask you to stand up, introduce yourself or give anything."
+msgstr ""
+
+#: patterns/church-visit.php:16
+msgctxt "Church first-visit card title"
+msgid "Ninety minutes"
+msgstr ""
+
+#: patterns/church-visit.php:17
+msgctxt "Church first-visit card text"
+msgid "Songs, a talk and coffee afterwards. You are free to leave whenever you like."
+msgstr ""
+
+#: patterns/church-visit.php:21
+msgctxt "Church first-visit card title"
+msgid "Parking is free"
+msgstr ""
+
+#: patterns/church-visit.php:22
+msgctxt "Church first-visit card text"
+msgid "Behind the building, entrance on Mill Lane. Ten spaces are reserved for visitors."
+msgstr ""
+
+#: patterns/church-visit.php:26
+msgctxt "Church first-visit card title"
+msgid "Children are welcome"
+msgstr ""
+
+#: patterns/church-visit.php:27
+msgctxt "Church first-visit card text"
+msgid "Creche for under-3s, groups up to Year 6, and nobody minds noise in the service."
+msgstr ""
+
+#: patterns/church-visit.php:31
+msgctxt "Church first-visit card title"
+msgid "Wear whatever you own"
+msgstr ""
+
+#: patterns/church-visit.php:32
+msgctxt "Church first-visit card text"
+msgid "You will see suits and you will see trainers. Both are fine."
+msgstr ""
+
+#: patterns/church-visit.php:41
+msgctxt "Section eyebrow label"
+msgid "Your first Sunday"
+msgstr ""
+
+#. Pattern title
+#: patterns/church-visit.php
+msgid "Church: what to expect"
+msgstr ""
+
+#. Pattern description
+#: patterns/church-visit.php
+msgid "Four answers a first-time visitor actually wants: how long it lasts, where to park, what happens to the children and what to wear."
+msgstr ""
+
 #: patterns/collaborate.php:17
 msgid "Bright open-plan office with a large shared table"
 msgstr ""
@@ -1025,10 +1657,6 @@ msgstr ""
 
 #: patterns/contact-split.php:27
 msgid "Sales questions, security reviews or a bug you cannot shake — this reaches a person, not a queue."
-msgstr ""
-
-#: patterns/contact-split.php:43
-msgid "Email"
 msgstr ""
 
 #: patterns/contact-split.php:64
@@ -1219,7 +1847,7 @@ msgstr ""
 
 #. Pattern description
 #: patterns/demo-blog.php
-msgid "The home page for the Blog starter site: masthead, featured post, category tiles, author introduction and a newsletter."
+msgid "The home page for the Blog starter site: masthead, featured post, category tiles, author introduction and a subscribe band."
 msgstr ""
 
 #. Pattern title
@@ -1229,7 +1857,7 @@ msgstr ""
 
 #. Pattern description
 #: patterns/demo-church.php
-msgid "The home page for the Church starter site: welcome, service times, ministries, staff, giving and directions."
+msgid "The home page for the Church starter site: welcome, service times, what to expect, ministries, staff, events, giving and an invitation."
 msgstr ""
 
 #. Pattern title
@@ -1239,7 +1867,7 @@ msgstr ""
 
 #. Pattern description
 #: patterns/demo-finance.php
-msgid "The home page for the Finance starter site: trust-led hero, credentials, services, process, advisors, FAQ and the risk warning."
+msgid "The home page for the Finance starter site: trust-led hero, credentials, services, process, advisers, questions, contact and the risk warning."
 msgstr ""
 
 #. Pattern title
@@ -1249,7 +1877,7 @@ msgstr ""
 
 #. Pattern description
 #: patterns/demo-fitness.php
-msgid "The home page for the Fitness starter site: hero, class timetable, coaches, memberships, results and a join band."
+msgid "The home page for the Fitness starter site: hero, the studio, timetable, coaches, numbers, member stories, memberships and a join band."
 msgstr ""
 
 #. Pattern title
@@ -1259,7 +1887,7 @@ msgstr ""
 
 #. Pattern description
 #: patterns/demo-portfolio.php
-msgid "The home page for the Portfolio starter site: introduction, selected work, about, services and a quiet contact band."
+msgid "The home page for the Portfolio starter site: introduction, selected work, about, process, rates, a client quote and current availability."
 msgstr ""
 
 #. Pattern title
@@ -1717,6 +2345,57 @@ msgstr ""
 msgid "Two columns of icon features flanking a mobile app screenshot in a device frame."
 msgstr ""
 
+#: patterns/finance-contact.php:24
+msgid "The first conversation costs nothing"
+msgstr ""
+
+#: patterns/finance-contact.php:27
+msgid "An hour, on the phone or at the office on Rodney Street, with whichever of us is the right fit. If we are not the right firm for you we will tell you, and where possible we will tell you who is."
+msgstr ""
+
+#: patterns/finance-contact.php:35
+msgid "Send an email"
+msgstr ""
+
+#: patterns/finance-contact.php:46
+msgid "Office"
+msgstr ""
+
+#: patterns/finance-contact.php:49
+msgid "14 Rodney Street, Liverpool L1 2TE"
+msgstr ""
+
+#: patterns/finance-contact.php:58
+msgid "0151 555 0188, 9:00–17:00 weekdays"
+msgstr ""
+
+#: patterns/finance-contact.php:67
+msgid "advice@rodneystreet.example"
+msgstr ""
+
+#: patterns/finance-contact.php:73
+msgid "Regulation"
+msgstr ""
+
+#: patterns/finance-contact.php:76
+msgid "Authorised and regulated by the Financial Conduct Authority, firm reference 000000."
+msgstr ""
+
+#: patterns/finance-contact.php:21
+msgctxt "Section eyebrow label"
+msgid "Talk to us"
+msgstr ""
+
+#. Pattern title
+#: patterns/finance-contact.php
+msgid "Finance: book a call"
+msgstr ""
+
+#. Pattern description
+#: patterns/finance-contact.php
+msgid "An invitation to a free first conversation beside the office, phone, email and FCA registration details."
+msgstr ""
+
 #: patterns/finance-credentials.php:21
 msgid "28 years"
 msgstr ""
@@ -1777,6 +2456,132 @@ msgstr ""
 msgid "A bordered compliance note for regulated firms — replace with your own wording."
 msgstr ""
 
+#: patterns/finance-faq.php:22
+msgid "The four we are asked most"
+msgstr ""
+
+#: patterns/finance-faq.php:28
+#: patterns/finance-faq.php:29
+msgctxt "FAQ question"
+msgid "Are you actually independent?"
+msgstr ""
+
+#: patterns/finance-faq.php:31
+msgctxt "FAQ answer"
+msgid "Yes. We are independent financial advisers, which is a defined term: we consider the whole of the market and we take no commission from any provider. Our only income is the fee you pay us."
+msgstr ""
+
+#: patterns/finance-faq.php:35
+#: patterns/finance-faq.php:36
+msgctxt "FAQ question"
+msgid "Is there a minimum I need to invest?"
+msgstr ""
+
+#: patterns/finance-faq.php:38
+msgctxt "FAQ answer"
+msgid "For ongoing advice, around £150,000 — below that our percentage fee is poor value for you and we will say so. One-off planning work has no minimum at all."
+msgstr ""
+
+#: patterns/finance-faq.php:42
+#: patterns/finance-faq.php:43
+msgctxt "FAQ question"
+msgid "Who actually holds my money?"
+msgstr ""
+
+#: patterns/finance-faq.php:45
+msgctxt "FAQ answer"
+msgid "Never us. Your money sits with the platform or provider in your own name, and we only ever have permission to advise on it. You can see every account yourself, at any time."
+msgstr ""
+
+#: patterns/finance-faq.php:49
+#: patterns/finance-faq.php:50
+msgctxt "FAQ question"
+msgid "What if I want to leave?"
+msgstr ""
+
+#: patterns/finance-faq.php:52
+msgctxt "FAQ answer"
+msgid "You give us a month's notice, we hand over everything to your new adviser, and there is no exit charge. Your investments stay exactly where they are."
+msgstr ""
+
+#. Pattern title
+#: patterns/finance-faq.php
+msgid "Finance: questions"
+msgstr ""
+
+#. Pattern description
+#: patterns/finance-faq.php
+msgid "Independence, minimums, custody of your money and how to leave — answered plainly."
+msgstr ""
+
+#: patterns/finance-fees.php:39
+msgid "Our fees, on the website, like a plumber"
+msgstr ""
+
+#: patterns/finance-fees.php:42
+msgid "You should not have to sit through a meeting to find out what advice costs."
+msgstr ""
+
+#: patterns/finance-fees.php:15
+msgctxt "Fee label"
+msgid "Initial advice"
+msgstr ""
+
+#: patterns/finance-fees.php:16
+msgctxt "Fee amount"
+msgid "£1,800"
+msgstr ""
+
+#: patterns/finance-fees.php:17
+msgctxt "Fee description"
+msgid "Fixed, quoted before we start and payable only once you have the written plan in your hands."
+msgstr ""
+
+#: patterns/finance-fees.php:20
+msgctxt "Fee label"
+msgid "Ongoing advice"
+msgstr ""
+
+#: patterns/finance-fees.php:21
+msgctxt "Fee amount"
+msgid "0.65%"
+msgstr ""
+
+#: patterns/finance-fees.php:22
+msgctxt "Fee description"
+msgid "A year on the money we look after, billed monthly. It covers the annual review and everything in between."
+msgstr ""
+
+#: patterns/finance-fees.php:25
+msgctxt "Fee label"
+msgid "Nothing else"
+msgstr ""
+
+#: patterns/finance-fees.php:26
+msgctxt "Fee amount"
+msgid "£0"
+msgstr ""
+
+#: patterns/finance-fees.php:27
+msgctxt "Fee description"
+msgid "No commission, no product kickbacks, no charge for phoning us with a question."
+msgstr ""
+
+#: patterns/finance-fees.php:36
+msgctxt "Section eyebrow label"
+msgid "What it costs"
+msgstr ""
+
+#. Pattern title
+#: patterns/finance-fees.php
+msgid "Finance: fees"
+msgstr ""
+
+#. Pattern description
+#: patterns/finance-fees.php
+msgid "Three fee cards stating the initial charge, the ongoing percentage and the fact that nothing else is charged."
+msgstr ""
+
 #: patterns/finance-hero.php:24
 msgid "Advice you could explain to your family"
 msgstr ""
@@ -1814,6 +2619,70 @@ msgstr ""
 #. Pattern description
 #: patterns/finance-hero.php
 msgid "A restrained hero that leads with independence and a regulatory line."
+msgstr ""
+
+#: patterns/finance-process.php:41
+msgid "Four steps, and you can stop after any of them"
+msgstr ""
+
+#: patterns/finance-process.php:44
+msgid "Nothing is charged until you have seen the plan and agreed to it in writing."
+msgstr ""
+
+#: patterns/finance-process.php:15
+msgctxt "Advice step title"
+msgid "A conversation"
+msgstr ""
+
+#: patterns/finance-process.php:16
+msgctxt "Advice step text"
+msgid "An hour on the phone or in the office, at our cost. You describe what you are worried about; we tell you honestly whether we can help."
+msgstr ""
+
+#: patterns/finance-process.php:19
+msgctxt "Advice step title"
+msgid "A written plan"
+msgstr ""
+
+#: patterns/finance-process.php:20
+msgctxt "Advice step text"
+msgid "Where you stand today, what you want, and the gap between the two — in a document your family could read without us in the room."
+msgstr ""
+
+#: patterns/finance-process.php:23
+msgctxt "Advice step title"
+msgid "Putting it in place"
+msgstr ""
+
+#: patterns/finance-process.php:24
+msgctxt "Advice step text"
+msgid "We do the paperwork, the transfers and the chasing. You sign things and otherwise get on with your life."
+msgstr ""
+
+#: patterns/finance-process.php:27
+msgctxt "Advice step title"
+msgid "A review every year"
+msgstr ""
+
+#: patterns/finance-process.php:28
+msgctxt "Advice step text"
+msgid "Markets move, tax rules change and so do you. We meet each year and adjust, or confirm that nothing needs adjusting."
+msgstr ""
+
+#: patterns/finance-process.php:38
+#: patterns/how-it-works.php:33
+msgctxt "Section eyebrow label"
+msgid "How it works"
+msgstr ""
+
+#. Pattern title
+#: patterns/finance-process.php
+msgid "Finance: how advice works"
+msgstr ""
+
+#. Pattern description
+#: patterns/finance-process.php
+msgid "The four stages of an advice relationship, numbered, with the reassurance that you can stop at any of them."
 msgstr ""
 
 #: patterns/finance-services.php:30
@@ -1899,6 +2768,85 @@ msgstr ""
 msgid "Six advisory services as icon cards in a three-column grid."
 msgstr ""
 
+#: patterns/finance-team.php:45
+msgid "Three people, and you will deal with all of them"
+msgstr ""
+
+#: patterns/finance-team.php:48
+msgid "No call centre, no account manager who leaves every eighteen months."
+msgstr ""
+
+#: patterns/finance-team.php:16
+msgctxt "Adviser name"
+msgid "Helen Ashworth"
+msgstr ""
+
+#: patterns/finance-team.php:17
+msgctxt "Adviser role"
+msgid "Chartered Financial Planner"
+msgstr ""
+
+#: patterns/finance-team.php:18
+msgctxt "Adviser qualifications"
+msgid "FCII, CFP"
+msgstr ""
+
+#: patterns/finance-team.php:19
+msgctxt "Adviser note"
+msgid "Twenty-eight years advising families through retirement, divorce and inheritance. Founded the firm in 2009."
+msgstr ""
+
+#: patterns/finance-team.php:23
+msgctxt "Adviser name"
+msgid "Idris Mahmood"
+msgstr ""
+
+#: patterns/finance-team.php:24
+msgctxt "Adviser role"
+msgid "Financial Planner"
+msgstr ""
+
+#: patterns/finance-team.php:25
+#: patterns/finance-team.php:32
+msgctxt "Adviser qualifications"
+msgid "DipPFS"
+msgstr ""
+
+#: patterns/finance-team.php:26
+msgctxt "Adviser note"
+msgid "Specialises in company directors and the awkward business of extracting money from your own company sensibly."
+msgstr ""
+
+#: patterns/finance-team.php:30
+msgctxt "Adviser name"
+msgid "Sarah Whitcombe"
+msgstr ""
+
+#: patterns/finance-team.php:31
+msgctxt "Adviser role"
+msgid "Paraplanner"
+msgstr ""
+
+#: patterns/finance-team.php:33
+msgctxt "Adviser note"
+msgid "Writes the plans, models the scenarios and finds the pension nobody remembered they had."
+msgstr ""
+
+#: patterns/finance-team.php:42
+msgctxt "Section eyebrow label"
+msgid "The team"
+msgstr ""
+
+#. Pattern title
+#: patterns/finance-team.php
+msgid "Finance: advisers"
+msgstr ""
+
+#. Pattern description
+#: patterns/finance-team.php
+msgid "Three advisers with their qualifications spelled out — the credential check a prospective client makes first."
+msgstr ""
+
 #: patterns/fitness-coaches.php:27
 msgid "Who you will be training with"
 msgstr ""
@@ -1963,6 +2911,96 @@ msgstr ""
 msgid "Three coaches with a portrait, discipline and a one-line biography."
 msgstr ""
 
+#: patterns/fitness-cta.php:19
+msgid "Your first session is free, and it always will be"
+msgstr ""
+
+#: patterns/fitness-cta.php:22
+msgid "An hour with a coach, an empty bar and no obligation to join anything at the end of it."
+msgstr ""
+
+#: patterns/fitness-cta.php:27
+msgid "Book your free session"
+msgstr ""
+
+#: patterns/fitness-cta.php:30
+#: patterns/fitness-hero.php:31
+msgid "See the timetable"
+msgstr ""
+
+#. Pattern title
+#: patterns/fitness-cta.php
+msgid "Fitness: join band"
+msgstr ""
+
+#. Pattern description
+#: patterns/fitness-cta.php
+msgid "A closing band offering the free first session, on the palette gradient."
+msgstr ""
+
+#: patterns/fitness-faq.php:22
+msgid "Fair questions"
+msgstr ""
+
+#: patterns/fitness-faq.php:19
+msgctxt "Section eyebrow label"
+msgid "Before you join"
+msgstr ""
+
+#: patterns/fitness-faq.php:28
+#: patterns/fitness-faq.php:29
+msgctxt "FAQ question"
+msgid "I have never lifted before. Where do I start?"
+msgstr ""
+
+#: patterns/fitness-faq.php:31
+msgctxt "FAQ answer"
+msgid "With the free session. A coach walks you through the four main lifts using an empty bar, and you leave with a plan for your first month. Roughly half the people in any class started exactly this way."
+msgstr ""
+
+#: patterns/fitness-faq.php:35
+#: patterns/fitness-faq.php:36
+msgctxt "FAQ question"
+msgid "Do I have to book, or can I turn up?"
+msgstr ""
+
+#: patterns/fitness-faq.php:38
+msgctxt "FAQ answer"
+msgid "Book. Classes cap at twelve and the 18:30 slots fill by Sunday night. Booking opens seven days ahead in the app, and cancelling before 12:00 on the day costs you nothing."
+msgstr ""
+
+#: patterns/fitness-faq.php:42
+#: patterns/fitness-faq.php:43
+msgctxt "FAQ question"
+msgid "Can I pause my membership?"
+msgstr ""
+
+#: patterns/fitness-faq.php:45
+msgctxt "FAQ answer"
+msgid "Yes — up to two months a year for any reason at all, and longer for injury, pregnancy or a spell working away. Email the studio; there is no form and no retention call."
+msgstr ""
+
+#: patterns/fitness-faq.php:49
+#: patterns/fitness-faq.php:50
+msgctxt "FAQ question"
+msgid "Is there parking, and are there showers?"
+msgstr ""
+
+#: patterns/fitness-faq.php:52
+msgctxt "FAQ answer"
+msgid "Eighteen free spaces at the rear, plus bike racks inside the door. Four showers in each changing room, towels included, and lockers that do not need a pound coin."
+msgstr ""
+
+#. Pattern title
+#: patterns/fitness-faq.php
+msgid "Fitness: questions"
+msgstr ""
+
+#. Pattern description
+#: patterns/fitness-faq.php
+msgid "Four questions people ask before joining a gym, answered without a sales pitch."
+msgstr ""
+
 #: patterns/fitness-hero.php:20
 msgid "Stronger than last week"
 msgstr ""
@@ -1972,11 +3010,9 @@ msgid "Small-group strength and conditioning in the old print works. Forty-five 
 msgstr ""
 
 #: patterns/fitness-hero.php:28
+#: patterns/fitness-intro.php:48
+#: patterns/fitness-location.php:38
 msgid "Book a free session"
-msgstr ""
-
-#: patterns/fitness-hero.php:31
-msgid "See the timetable"
 msgstr ""
 
 #: patterns/fitness-hero.php:17
@@ -1992,6 +3028,326 @@ msgstr ""
 #. Pattern description
 #: patterns/fitness-hero.php
 msgid "A high-contrast cover hero with a free-trial call to action."
+msgstr ""
+
+#: patterns/fitness-intro.php:24
+msgid "A barbell gym that will not make you feel stupid"
+msgstr ""
+
+#: patterns/fitness-intro.php:27
+msgid "Two rooms, sixteen platforms and a coach on the floor at every session. No mirrors down the long wall, no music you have to shout over, and no one filming themselves in the squat rack."
+msgstr ""
+
+#: patterns/fitness-intro.php:32
+msgid "Every class capped at twelve people"
+msgstr ""
+
+#: patterns/fitness-intro.php:35
+msgid "Programmes written for your first year, not your first week"
+msgstr ""
+
+#: patterns/fitness-intro.php:38
+msgid "Coaches who lift, and who have all coached beginners"
+msgstr ""
+
+#: patterns/fitness-intro.php:41
+msgid "Open gym hours on your membership at no extra cost"
+msgstr ""
+
+#: patterns/fitness-intro.php:57
+msgid "The training floor"
+msgstr ""
+
+#: patterns/fitness-intro.php:21
+msgctxt "Section eyebrow label"
+msgid "The studio"
+msgstr ""
+
+#. Pattern title
+#: patterns/fitness-intro.php
+msgid "Fitness: about the studio"
+msgstr ""
+
+#. Pattern description
+#: patterns/fitness-intro.php
+msgid "What the gym is and is not, with a checklist and a photograph of the floor."
+msgstr ""
+
+#: patterns/fitness-location.php:24
+msgid "Arch 12, Bonnington Yard"
+msgstr ""
+
+#: patterns/fitness-location.php:27
+msgid "Under the railway on Bonnington Road, five minutes from the station. Look for the roller door — the sign is small and the music is not."
+msgstr ""
+
+#: patterns/fitness-location.php:30
+msgid "hello@archtwelve.example · 0131 555 0142"
+msgstr ""
+
+#: patterns/fitness-location.php:49
+msgid "Opening hours"
+msgstr ""
+
+#: patterns/fitness-location.php:21
+msgctxt "Section eyebrow label"
+msgid "Find the studio"
+msgstr ""
+
+#: patterns/fitness-location.php:56
+msgctxt "Opening day"
+msgid "Monday to Thursday"
+msgstr ""
+
+#: patterns/fitness-location.php:63
+msgctxt "Opening hours"
+msgid "06:00 – 21:00"
+msgstr ""
+
+#: patterns/fitness-location.php:77
+msgctxt "Opening day"
+msgid "Friday"
+msgstr ""
+
+#: patterns/fitness-location.php:84
+msgctxt "Opening hours"
+msgid "06:00 – 20:00"
+msgstr ""
+
+#: patterns/fitness-location.php:98
+msgctxt "Opening day"
+msgid "Saturday"
+msgstr ""
+
+#: patterns/fitness-location.php:105
+msgctxt "Opening hours"
+msgid "08:00 – 14:00"
+msgstr ""
+
+#: patterns/fitness-location.php:119
+msgctxt "Opening day"
+msgid "Sunday"
+msgstr ""
+
+#: patterns/fitness-location.php:126
+msgctxt "Opening hours"
+msgid "09:00 – 13:00"
+msgstr ""
+
+#. Pattern title
+#: patterns/fitness-location.php
+msgid "Fitness: location and hours"
+msgstr ""
+
+#. Pattern description
+#: patterns/fitness-location.php
+msgid "Where the studio is and when it is open, with the hours in a card."
+msgstr ""
+
+#: patterns/fitness-memberships.php:51
+msgid "Three ways to train here"
+msgstr ""
+
+#: patterns/fitness-memberships.php:54
+msgid "Monthly rolling, cancel with a month's notice, no joining fee and no twelve-month contract to sign."
+msgstr ""
+
+#: patterns/fitness-memberships.php:150
+msgid "Students, NHS staff and over-65s take 20% off any membership — just ask at the desk."
+msgstr ""
+
+#: patterns/fitness-memberships.php:15
+msgctxt "Membership name"
+msgid "Off-peak"
+msgstr ""
+
+#: patterns/fitness-memberships.php:16
+msgctxt "Membership price"
+msgid "39"
+msgstr ""
+
+#: patterns/fitness-memberships.php:17
+#: patterns/fitness-memberships.php:26
+#: patterns/fitness-memberships.php:35
+msgctxt "Membership period"
+msgid "a month"
+msgstr ""
+
+#: patterns/fitness-memberships.php:18
+msgctxt "Membership note"
+msgid "Weekdays before 16:00 and all weekend."
+msgstr ""
+
+#: patterns/fitness-memberships.php:19
+msgctxt "Membership button"
+msgid "Join off-peak"
+msgstr ""
+
+#: patterns/fitness-memberships.php:21
+msgctxt "Membership feature"
+msgid "Every off-peak class"
+msgstr ""
+
+#: patterns/fitness-memberships.php:21
+#: patterns/fitness-memberships.php:30
+msgctxt "Membership feature"
+msgid "Open gym whenever we are open"
+msgstr ""
+
+#: patterns/fitness-memberships.php:21
+#: patterns/fitness-memberships.php:30
+msgctxt "Membership feature"
+msgid "Programme reviewed each month"
+msgstr ""
+
+#: patterns/fitness-memberships.php:24
+msgctxt "Membership name"
+msgid "Full"
+msgstr ""
+
+#: patterns/fitness-memberships.php:25
+msgctxt "Membership price"
+msgid "59"
+msgstr ""
+
+#: patterns/fitness-memberships.php:27
+msgctxt "Membership note"
+msgid "Any class, any hour we are open."
+msgstr ""
+
+#: patterns/fitness-memberships.php:28
+msgctxt "Membership button"
+msgid "Join full"
+msgstr ""
+
+#: patterns/fitness-memberships.php:30
+msgctxt "Membership feature"
+msgid "Every class on the timetable"
+msgstr ""
+
+#: patterns/fitness-memberships.php:30
+msgctxt "Membership feature"
+msgid "Bring a friend once a month"
+msgstr ""
+
+#: patterns/fitness-memberships.php:33
+msgctxt "Membership name"
+msgid "Coached"
+msgstr ""
+
+#: patterns/fitness-memberships.php:34
+msgctxt "Membership price"
+msgid "120"
+msgstr ""
+
+#: patterns/fitness-memberships.php:36
+msgctxt "Membership note"
+msgid "Small-group coaching, four to a coach."
+msgstr ""
+
+#: patterns/fitness-memberships.php:37
+msgctxt "Membership button"
+msgid "Talk to a coach"
+msgstr ""
+
+#: patterns/fitness-memberships.php:39
+msgctxt "Membership feature"
+msgid "Everything in Full"
+msgstr ""
+
+#: patterns/fitness-memberships.php:39
+msgctxt "Membership feature"
+msgid "Two coached sessions a week"
+msgstr ""
+
+#: patterns/fitness-memberships.php:39
+msgctxt "Membership feature"
+msgid "Written programme, updated fortnightly"
+msgstr ""
+
+#: patterns/fitness-memberships.php:39
+msgctxt "Membership feature"
+msgid "Video review of your lifts"
+msgstr ""
+
+#: patterns/fitness-memberships.php:48
+msgctxt "Section eyebrow label"
+msgid "Memberships"
+msgstr ""
+
+#: patterns/fitness-memberships.php:66
+#: patterns/fitness-memberships.php:108
+msgctxt "Highlighted membership badge"
+msgid "Most members choose this"
+msgstr ""
+
+#. Pattern title
+#: patterns/fitness-memberships.php
+msgid "Fitness: memberships"
+msgstr ""
+
+#. Pattern description
+#: patterns/fitness-memberships.php
+msgid "Three membership tiers with real gym pricing, a highlighted middle option and a concessions line."
+msgstr ""
+
+#: patterns/fitness-results.php:44
+msgid "Small on purpose"
+msgstr ""
+
+#: patterns/fitness-results.php:16
+msgctxt "Studio statistic label"
+msgid "members"
+msgstr ""
+
+#: patterns/fitness-results.php:17
+msgctxt "Studio statistic note"
+msgid "Most of whom had never touched a barbell before they walked in."
+msgstr ""
+
+#: patterns/fitness-results.php:21
+msgctxt "Studio statistic label"
+msgid "classes a week"
+msgstr ""
+
+#: patterns/fitness-results.php:22
+msgctxt "Studio statistic note"
+msgid "Across two rooms, from 06:00 to 20:30."
+msgstr ""
+
+#: patterns/fitness-results.php:26
+msgctxt "Studio statistic label"
+msgid "people per class"
+msgstr ""
+
+#: patterns/fitness-results.php:27
+msgctxt "Studio statistic note"
+msgid "The number we cap it at, permanently. It is the whole point."
+msgstr ""
+
+#: patterns/fitness-results.php:31
+msgctxt "Studio statistic label"
+msgid "coaches"
+msgstr ""
+
+#: patterns/fitness-results.php:32
+msgctxt "Studio statistic note"
+msgid "All of them qualified, all of them still competing or still learning."
+msgstr ""
+
+#: patterns/fitness-results.php:41
+msgctxt "Section eyebrow label"
+msgid "The studio in numbers"
+msgstr ""
+
+#. Pattern title
+#: patterns/fitness-results.php
+msgid "Fitness: the studio in numbers"
+msgstr ""
+
+#. Pattern description
+#: patterns/fitness-results.php
+msgid "Four counting numbers about the studio, each with a line explaining why it matters."
 msgstr ""
 
 #: patterns/fitness-schedule.php:22
@@ -2097,6 +3453,376 @@ msgstr ""
 msgid "A weekly class timetable using the Comparison table style."
 msgstr ""
 
+#: patterns/fitness-testimonials.php:42
+msgid "People who were nervous on day one"
+msgstr ""
+
+#: patterns/fitness-testimonials.php:16
+msgctxt "Member name"
+msgid "Priya Raman"
+msgstr ""
+
+#: patterns/fitness-testimonials.php:17
+msgctxt "Member since"
+msgid "Member for 2 years"
+msgstr ""
+
+#: patterns/fitness-testimonials.php:18
+msgctxt "Member quote"
+msgid "I joined at forty-one having never lifted anything heavier than a toddler. I deadlift a hundred kilos now. Nobody was ever weird about it."
+msgstr ""
+
+#: patterns/fitness-testimonials.php:22
+msgctxt "Member name"
+msgid "Mark Ellison"
+msgstr ""
+
+#: patterns/fitness-testimonials.php:23
+msgctxt "Member since"
+msgid "Member for 8 months"
+msgstr ""
+
+#: patterns/fitness-testimonials.php:24
+msgctxt "Member quote"
+msgid "I have had three gym memberships and used none of them. This is the first place where a coach noticed I had stopped coming and messaged me."
+msgstr ""
+
+#: patterns/fitness-testimonials.php:28
+msgctxt "Member name"
+msgid "Chloe Boateng"
+msgstr ""
+
+#: patterns/fitness-testimonials.php:29
+msgctxt "Member since"
+msgid "Member for 4 years"
+msgstr ""
+
+#: patterns/fitness-testimonials.php:30
+msgctxt "Member quote"
+msgid "I came back six weeks after having my son. They rewrote the whole programme around what my body could actually do that month."
+msgstr ""
+
+#: patterns/fitness-testimonials.php:39
+msgctxt "Section eyebrow label"
+msgid "Members"
+msgstr ""
+
+#. Pattern title
+#: patterns/fitness-testimonials.php
+msgid "Fitness: member stories"
+msgstr ""
+
+#. Pattern description
+#: patterns/fitness-testimonials.php
+msgid "Three member quotes with portraits and how long each has trained here."
+msgstr ""
+
+#: patterns/footer-blog.php:40
+msgid "Archive"
+msgstr ""
+
+#: patterns/footer-blog.php:41
+#: patterns/sidebar.php:38
+msgid "Topics"
+msgstr ""
+
+#: patterns/footer-blog.php:43
+msgid "Pitch an essay"
+msgstr ""
+
+#. translators: 1: current year, 2: site name.
+#: patterns/footer-blog.php:84
+#: patterns/footer-church.php:87
+#: patterns/footer-finance.php:86
+#: patterns/footer-fitness.php:87
+#: patterns/footer-portfolio.php:84
+msgid "&copy; %1$s %2$s. All rights reserved."
+msgstr ""
+
+#: patterns/footer-blog.php:96
+#: patterns/footer-church.php:99
+#: patterns/footer-finance.php:98
+#: patterns/footer-fitness.php:99
+#: patterns/footer-portfolio.php:96
+msgid "Built with the Unapp theme"
+msgstr ""
+
+#: patterns/footer-blog.php:23
+msgctxt "Footer tagline"
+msgid "Essays on making software carefully. One most Fridays, about a thousand words, no sponsorship."
+msgstr ""
+
+#: patterns/footer-blog.php:37
+msgctxt "Footer column heading"
+msgid "Read"
+msgstr ""
+
+#: patterns/footer-blog.php:50
+msgctxt "Footer column heading"
+msgid "Recent essays"
+msgstr ""
+
+#: patterns/footer-blog.php:58
+msgctxt "Footer column heading"
+msgid "Elsewhere"
+msgstr ""
+
+#: patterns/footer-blog.php:61
+msgctxt "Footer contact line"
+msgid "editor@theslowbuild.example"
+msgstr ""
+
+#: patterns/footer-blog.php:64
+msgctxt "Footer contact line"
+msgid "RSS feed"
+msgstr ""
+
+#: patterns/footer-blog.php:67
+msgctxt "Footer contact line"
+msgid "Corrections published as corrections"
+msgstr ""
+
+#. Pattern title
+#: patterns/footer-blog.php
+msgid "Footer: blog and magazine"
+msgstr ""
+
+#. Pattern description
+#: patterns/footer-blog.php
+msgid "A publication footer: what it is, how often it appears, and where to subscribe."
+msgstr ""
+
+#: patterns/footer-church.php:41
+msgid "Service times"
+msgstr ""
+
+#: patterns/footer-church.php:42
+msgid "Ministries"
+msgstr ""
+
+#: patterns/footer-church.php:23
+msgctxt "Footer tagline"
+msgid "A church on Mill Lane since 1886. Services at 9:30 and 11:15 every Sunday, and coffee from 9:00."
+msgstr ""
+
+#: patterns/footer-church.php:37
+msgctxt "Footer column heading"
+msgid "Visit"
+msgstr ""
+
+#: patterns/footer-church.php:50
+msgctxt "Footer column heading"
+msgid "Church news"
+msgstr ""
+
+#: patterns/footer-church.php:58
+msgctxt "Footer column heading"
+msgid "Find us"
+msgstr ""
+
+#: patterns/footer-church.php:61
+msgctxt "Footer contact line"
+msgid "Riverside Church, 12 Mill Lane"
+msgstr ""
+
+#: patterns/footer-church.php:64
+msgctxt "Footer contact line"
+msgid "Chesterfield S40 1RT"
+msgstr ""
+
+#: patterns/footer-church.php:67
+msgctxt "Footer contact line"
+msgid "01246 555 0114"
+msgstr ""
+
+#: patterns/footer-church.php:70
+msgctxt "Footer contact line"
+msgid "hello@riverside.example"
+msgstr ""
+
+#. Pattern title
+#: patterns/footer-church.php
+msgid "Footer: church"
+msgstr ""
+
+#. Pattern description
+#: patterns/footer-church.php
+msgid "A church footer: what the church is, quick links, recent news and where to find it."
+msgstr ""
+
+#: patterns/footer-finance.php:40
+msgid "Our fees"
+msgstr ""
+
+#: patterns/footer-finance.php:41
+msgid "The team"
+msgstr ""
+
+#: patterns/footer-finance.php:23
+msgctxt "Footer tagline"
+msgid "Independent financial planning for families and company directors. Chartered, fee-only, no commission."
+msgstr ""
+
+#: patterns/footer-finance.php:36
+msgctxt "Footer column heading"
+msgid "Advice"
+msgstr ""
+
+#: patterns/footer-finance.php:49
+msgctxt "Footer column heading"
+msgid "Insights"
+msgstr ""
+
+#: patterns/footer-finance.php:57
+msgctxt "Footer column heading"
+msgid "Office"
+msgstr ""
+
+#: patterns/footer-finance.php:60
+msgctxt "Footer contact line"
+msgid "14 Rodney Street, Liverpool L1 2TE"
+msgstr ""
+
+#: patterns/footer-finance.php:63
+msgctxt "Footer contact line"
+msgid "0151 555 0188"
+msgstr ""
+
+#: patterns/footer-finance.php:66
+msgctxt "Footer contact line"
+msgid "advice@rodneystreet.example"
+msgstr ""
+
+#: patterns/footer-finance.php:69
+msgctxt "Footer contact line"
+msgid "Authorised and regulated by the Financial Conduct Authority, firm reference 000000."
+msgstr ""
+
+#. Pattern title
+#: patterns/footer-finance.php
+msgid "Footer: finance and advisory"
+msgstr ""
+
+#. Pattern description
+#: patterns/footer-finance.php
+msgid "An adviser footer carrying the regulatory line every financial firm has to display."
+msgstr ""
+
+#: patterns/footer-fitness.php:42
+msgid "Coaches"
+msgstr ""
+
+#: patterns/footer-fitness.php:43
+msgid "Book a session"
+msgstr ""
+
+#: patterns/footer-fitness.php:23
+msgctxt "Footer tagline"
+msgid "A barbell gym under the arches. Twelve people per class, a coach on the floor at every session."
+msgstr ""
+
+#: patterns/footer-fitness.php:37
+msgctxt "Footer column heading"
+msgid "Train"
+msgstr ""
+
+#: patterns/footer-fitness.php:50
+msgctxt "Footer column heading"
+msgid "From the blog"
+msgstr ""
+
+#: patterns/footer-fitness.php:58
+msgctxt "Footer column heading"
+msgid "The studio"
+msgstr ""
+
+#: patterns/footer-fitness.php:61
+msgctxt "Footer contact line"
+msgid "Arch 12, Bonnington Yard"
+msgstr ""
+
+#: patterns/footer-fitness.php:64
+msgctxt "Footer contact line"
+msgid "Edinburgh EH6 5NX"
+msgstr ""
+
+#: patterns/footer-fitness.php:67
+msgctxt "Footer contact line"
+msgid "Mon–Thu 06:00–21:00, Fri to 20:00"
+msgstr ""
+
+#: patterns/footer-fitness.php:70
+msgctxt "Footer contact line"
+msgid "hello@archtwelve.example"
+msgstr ""
+
+#. Pattern title
+#: patterns/footer-fitness.php
+msgid "Footer: fitness studio"
+msgstr ""
+
+#. Pattern description
+#: patterns/footer-fitness.php
+msgid "A gym footer: the studio in a sentence, timetable links, opening hours and the address."
+msgstr ""
+
+#: patterns/footer-portfolio.php:40
+msgid "Selected work"
+msgstr ""
+
+#: patterns/footer-portfolio.php:41
+msgid "Services and rates"
+msgstr ""
+
+#: patterns/footer-portfolio.php:43
+msgid "Enquiries"
+msgstr ""
+
+#: patterns/footer-portfolio.php:23
+msgctxt "Footer tagline"
+msgid "Brand and product design for teams between five and fifty people. Four or five projects a year."
+msgstr ""
+
+#: patterns/footer-portfolio.php:37
+msgctxt "Footer column heading"
+msgid "Work"
+msgstr ""
+
+#: patterns/footer-portfolio.php:50
+msgctxt "Footer column heading"
+msgid "Writing"
+msgstr ""
+
+#: patterns/footer-portfolio.php:58
+msgctxt "Footer column heading"
+msgid "Say hello"
+msgstr ""
+
+#: patterns/footer-portfolio.php:61
+msgctxt "Footer contact line"
+msgid "mara@lindqvist.example"
+msgstr ""
+
+#: patterns/footer-portfolio.php:64
+msgctxt "Footer contact line"
+msgid "Booking from February"
+msgstr ""
+
+#: patterns/footer-portfolio.php:67
+msgctxt "Footer contact line"
+msgid "Stockholm, and remote"
+msgstr ""
+
+#. Pattern title
+#: patterns/footer-portfolio.php
+msgid "Footer: portfolio"
+msgstr ""
+
+#. Pattern description
+#: patterns/footer-portfolio.php
+msgid "A freelancer's footer: what you do, what you are booking, and the one email address that matters."
+msgstr ""
+
 #: patterns/footer-slim.php:30
 msgid "© %1$s %2$s"
 msgstr ""
@@ -2174,13 +3900,6 @@ msgstr ""
 #: patterns/footer.php:43
 msgctxt "Footer menu link"
 msgid "Contact"
-msgstr ""
-
-#. Pattern title
-#. Template part name
-#: patterns/footer.php
-#: theme.json
-msgid "Footer"
 msgstr ""
 
 #. Pattern description
@@ -2530,11 +4249,6 @@ msgstr ""
 #: patterns/how-it-works.php:24
 msgctxt "Step description"
 msgid "Progress rolls up automatically, so status meetings turn into two-minute reads."
-msgstr ""
-
-#: patterns/how-it-works.php:33
-msgctxt "Section eyebrow label"
-msgid "How it works"
 msgstr ""
 
 #. Pattern title
@@ -2971,11 +4685,6 @@ msgstr ""
 msgid "Print"
 msgstr ""
 
-#: patterns/portfolio-about.php:28
-msgctxt "Section eyebrow label"
-msgid "About"
-msgstr ""
-
 #. Pattern title
 #: patterns/portfolio-about.php
 msgid "Portfolio: about"
@@ -2984,6 +4693,57 @@ msgstr ""
 #. Pattern description
 #: patterns/portfolio-about.php
 msgid "A short biography beside a photograph, with two columns of disciplines."
+msgstr ""
+
+#: patterns/portfolio-contact.php:24
+msgid "Booking from February"
+msgstr ""
+
+#: patterns/portfolio-contact.php:27
+msgid "I take on four or five projects a year, usually branding and product design for teams between five and fifty people. If the dates do not work I will say so straight away rather than keep you waiting."
+msgstr ""
+
+#: patterns/portfolio-contact.php:30
+msgid "mara@lindqvist.example"
+msgstr ""
+
+#: patterns/portfolio-contact.php:46
+msgid "What to send"
+msgstr ""
+
+#: patterns/portfolio-contact.php:51
+msgid "Roughly what you are making, in a paragraph"
+msgstr ""
+
+#: patterns/portfolio-contact.php:54
+msgid "Who it is for, and who you are competing with"
+msgstr ""
+
+#: patterns/portfolio-contact.php:57
+msgid "When you need it live"
+msgstr ""
+
+#: patterns/portfolio-contact.php:60
+msgid "A budget range, even a wide one"
+msgstr ""
+
+#: patterns/portfolio-contact.php:65
+msgid "You will hear back within two working days, always from me."
+msgstr ""
+
+#: patterns/portfolio-contact.php:21
+msgctxt "Section eyebrow label"
+msgid "Working together"
+msgstr ""
+
+#. Pattern title
+#: patterns/portfolio-contact.php
+msgid "Portfolio: availability and enquiries"
+msgstr ""
+
+#. Pattern description
+#: patterns/portfolio-contact.php
+msgid "Current availability, an email address and a short brief of what to include in a first message."
 msgstr ""
 
 #: patterns/portfolio-hero.php:24
@@ -3015,6 +4775,74 @@ msgstr ""
 #. Pattern description
 #: patterns/portfolio-hero.php
 msgid "A personal introduction with a portrait — name, discipline and a one-line statement."
+msgstr ""
+
+#: patterns/portfolio-process.php:39
+msgid "Eight weeks, three stages, no surprises"
+msgstr ""
+
+#: patterns/portfolio-process.php:42
+msgid "Every project I take on runs the same way, and you see work in the first fortnight."
+msgstr ""
+
+#: patterns/portfolio-process.php:15
+msgctxt "Project stage timing"
+msgid "Week one"
+msgstr ""
+
+#: patterns/portfolio-process.php:16
+msgctxt "Project stage title"
+msgid "Reading"
+msgstr ""
+
+#: patterns/portfolio-process.php:17
+msgctxt "Project stage text"
+msgid "Everything you have already written down, plus conversations with the people who will have to live with the result."
+msgstr ""
+
+#: patterns/portfolio-process.php:20
+msgctxt "Project stage timing"
+msgid "Weeks two to four"
+msgstr ""
+
+#: patterns/portfolio-process.php:21
+msgctxt "Project stage title"
+msgid "Drawing"
+msgstr ""
+
+#: patterns/portfolio-process.php:22
+msgctxt "Project stage text"
+msgid "Two directions, shown early and shown rough. We kill one together before either gets expensive."
+msgstr ""
+
+#: patterns/portfolio-process.php:25
+msgctxt "Project stage timing"
+msgid "Weeks five to eight"
+msgstr ""
+
+#: patterns/portfolio-process.php:26
+msgctxt "Project stage title"
+msgid "Building"
+msgstr ""
+
+#: patterns/portfolio-process.php:27
+msgctxt "Project stage text"
+msgid "Type, colour, layout and every state of every component, in a file your developers can actually open."
+msgstr ""
+
+#: patterns/portfolio-process.php:36
+msgctxt "Section eyebrow label"
+msgid "How a project runs"
+msgstr ""
+
+#. Pattern title
+#: patterns/portfolio-process.php
+msgid "Portfolio: how a project runs"
+msgstr ""
+
+#. Pattern description
+#: patterns/portfolio-process.php
+msgid "Three stages of a design engagement with the week numbers attached, so a client knows what they are buying."
 msgstr ""
 
 #: patterns/portfolio-services.php:27
@@ -3079,6 +4907,32 @@ msgstr ""
 #. Pattern description
 #: patterns/portfolio-services.php
 msgid "Three services with an indicative price, separated by hairline rules."
+msgstr ""
+
+#: patterns/portfolio-testimonial.php:19
+msgid "&#8220;She showed us two directions in a fortnight and then argued us out of the one we liked. She was right. The thing we shipped is the thing people can actually use.&#8221;"
+msgstr ""
+
+#: patterns/portfolio-testimonial.php:22
+msgid "Client portrait placeholder"
+msgstr ""
+
+#: patterns/portfolio-testimonial.php:25
+msgid "Ollie Trent"
+msgstr ""
+
+#: patterns/portfolio-testimonial.php:28
+msgid "Founder, Nordwell Coffee"
+msgstr ""
+
+#. Pattern title
+#: patterns/portfolio-testimonial.php
+msgid "Portfolio: client quote"
+msgstr ""
+
+#. Pattern description
+#: patterns/portfolio-testimonial.php
+msgid "A single client quote, centred, with a portrait and attribution."
 msgstr ""
 
 #: patterns/portfolio-work.php:28
@@ -3771,10 +5625,6 @@ msgstr ""
 msgid "Recent posts"
 msgstr ""
 
-#: patterns/sidebar.php:38
-msgid "Topics"
-msgstr ""
-
 #: patterns/sidebar.php:47
 msgid "Try Unapp free"
 msgstr ""
@@ -4038,11 +5888,6 @@ msgctxt "Milestone description"
 msgid "Profitable, independent and still shipping every Friday."
 msgstr ""
 
-#: patterns/timeline.php:25
-msgctxt "Section eyebrow label"
-msgid "Our story"
-msgstr ""
-
 #. Pattern title
 #: patterns/timeline.php
 msgid "Timeline / milestones"
@@ -4085,11 +5930,6 @@ msgstr ""
 #: patterns/values.php:16
 msgctxt "Value description"
 msgid "Public roadmap, public changelog, public post-mortems when we get it wrong."
-msgstr ""
-
-#: patterns/values.php:24
-msgctxt "Section eyebrow label"
-msgid "What we believe"
 msgstr ""
 
 #. Pattern title

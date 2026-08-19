@@ -7,7 +7,7 @@
  * Block Types: core/post-content
  * Post Types: page, wp_template
  * Viewport Width: 1400
- * Description: The home page for the Portfolio starter site: introduction, selected work, about, services and a quiet contact band.
+ * Description: The home page for the Portfolio starter site: introduction, selected work, about, process, rates, a client quote and current availability.
  *
  * @package Unapp
  */
@@ -16,6 +16,7 @@
 <!-- wp:pattern {"slug":"unapp/portfolio-hero"} /-->
 <!-- wp:pattern {"slug":"unapp/portfolio-work"} /-->
 <!-- wp:pattern {"slug":"unapp/portfolio-about"} /-->
+<!-- wp:pattern {"slug":"unapp/portfolio-process"} /-->
 <!-- wp:pattern {"slug":"unapp/portfolio-services"} /-->
-<!-- wp:pattern {"slug":"unapp/testimonial-feature"} /-->
-<!-- wp:pattern {"slug":"unapp/cta-band"} /-->
+<!-- wp:pattern {"slug":"unapp/portfolio-testimonial"} /-->
+<!-- wp:pattern {"slug":"unapp/portfolio-contact"} /-->

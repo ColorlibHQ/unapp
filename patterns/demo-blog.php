@@ -7,7 +7,7 @@
  * Block Types: core/post-content
  * Post Types: page, wp_template
  * Viewport Width: 1400
- * Description: The home page for the Blog starter site: masthead, featured post, category tiles, author introduction and a newsletter.
+ * Description: The home page for the Blog starter site: masthead, featured post, category tiles, author introduction and a subscribe band.
  *
  * @package Unapp
  */
@@ -17,4 +17,4 @@
 <!-- wp:pattern {"slug":"unapp/blog-featured"} /-->
 <!-- wp:pattern {"slug":"unapp/blog-categories"} /-->
 <!-- wp:pattern {"slug":"unapp/blog-author-intro"} /-->
-<!-- wp:pattern {"slug":"unapp/newsletter"} /-->
+<!-- wp:pattern {"slug":"unapp/blog-subscribe"} /-->

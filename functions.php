@@ -199,6 +199,26 @@ function unapp_pattern_categories() {
 			'label'       => _x( 'Unapp: Utility', 'Block pattern category', 'unapp' ),
 			'description' => __( 'Contact, FAQ, legal and help-centre sections.', 'unapp' ),
 		),
+		'unapp_portfolio' => array(
+			'label'       => _x( 'Unapp: Portfolio', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Sections for designers, studios and freelancers: work grids, rates and process.', 'unapp' ),
+		),
+		'unapp_church'   => array(
+			'label'       => _x( 'Unapp: Church', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Sections for a church site: service times, ministries, staff, giving and first-visit answers.', 'unapp' ),
+		),
+		'unapp_fitness'  => array(
+			'label'       => _x( 'Unapp: Fitness', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Sections for gyms and studios: timetables, coaches, memberships and member stories.', 'unapp' ),
+		),
+		'unapp_finance'  => array(
+			'label'       => _x( 'Unapp: Finance', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Sections for advisers and accountants: services, process, fees, credentials and risk warnings.', 'unapp' ),
+		),
+		'unapp_blog'     => array(
+			'label'       => _x( 'Unapp: Blog & magazine', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Editorial furniture: mastheads, category tiles, author introductions and subscribe panels.', 'unapp' ),
+		),
 		'unapp_page'     => array(
 			'label'       => _x( 'Unapp: Full pages', 'Block pattern category', 'unapp' ),
 			'description' => __( 'Complete page layouts. Insert one into an empty page to start from a finished design.', 'unapp' ),

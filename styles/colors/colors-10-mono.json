@@ -1,79 +1,79 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 3,
-	"title": "Mono",
-	"slug": "colors-10-mono",
-	"settings": {
-		"color": {
-			"palette": [
-				{
-					"slug": "base",
-					"color": "#ffffff",
-					"name": "Base"
-				},
-				{
-					"slug": "contrast",
-					"color": "#111111",
-					"name": "Contrast"
-				},
-				{
-					"slug": "primary",
-					"color": "#111111",
-					"name": "Primary"
-				},
-				{
-					"slug": "secondary",
-					"color": "#e8e6e1",
-					"name": "Secondary"
-				},
-				{
-					"slug": "accent",
-					"color": "#4a4a4a",
-					"name": "Accent"
-				},
-				{
-					"slug": "surface",
-					"color": "#f6f5f3",
-					"name": "Surface"
-				},
-				{
-					"slug": "muted",
-					"color": "#6b6b6b",
-					"name": "Muted"
-				},
-				{
-					"slug": "border",
-					"color": "#e6e4e0",
-					"name": "Border"
-				},
-				{
-					"slug": "dark",
-					"color": "#111111",
-					"name": "Dark"
-				}
-			],
-			"gradients": [
-				{
-					"slug": "primary-to-accent",
-					"name": "Primary to Accent",
-					"gradient": "linear-gradient(135deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--accent) 100%)"
-				},
-				{
-					"slug": "secondary-to-accent",
-					"name": "Secondary to Accent",
-					"gradient": "linear-gradient(135deg, var(--wp--preset--color--secondary) 0%, var(--wp--preset--color--accent) 100%)"
-				},
-				{
-					"slug": "primary-overlay",
-					"name": "Primary overlay",
-					"gradient": "linear-gradient(135deg, rgba(17,17,17,0.9) 0%, rgba(74,74,74,0.85) 100%)"
-				},
-				{
-					"slug": "dark-overlay",
-					"name": "Dark overlay",
-					"gradient": "linear-gradient(180deg, rgba(35,35,35,0.55) 0%, rgba(35,35,35,0.85) 100%)"
-				}
-			]
-		}
-	}
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Mono",
+  "slug": "colors-10-mono",
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "base",
+          "color": "#ffffff",
+          "name": "Base"
+        },
+        {
+          "slug": "contrast",
+          "color": "#111111",
+          "name": "Contrast"
+        },
+        {
+          "slug": "primary",
+          "color": "#111111",
+          "name": "Primary"
+        },
+        {
+          "slug": "secondary",
+          "color": "#e07a4f",
+          "name": "Secondary"
+        },
+        {
+          "slug": "accent",
+          "color": "#c9542b",
+          "name": "Accent"
+        },
+        {
+          "slug": "surface",
+          "color": "#f6f5f3",
+          "name": "Surface"
+        },
+        {
+          "slug": "muted",
+          "color": "#6b6b6b",
+          "name": "Muted"
+        },
+        {
+          "slug": "border",
+          "color": "#e6e4e0",
+          "name": "Border"
+        },
+        {
+          "slug": "dark",
+          "color": "#111111",
+          "name": "Dark"
+        }
+      ],
+      "gradients": [
+        {
+          "slug": "primary-to-accent",
+          "name": "Primary to Accent",
+          "gradient": "linear-gradient(135deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--accent) 100%)"
+        },
+        {
+          "slug": "secondary-to-accent",
+          "name": "Secondary to Accent",
+          "gradient": "linear-gradient(135deg, var(--wp--preset--color--secondary) 0%, var(--wp--preset--color--accent) 100%)"
+        },
+        {
+          "slug": "primary-overlay",
+          "name": "Primary overlay",
+          "gradient": "linear-gradient(135deg, rgba(17,17,17,0.9) 0%, rgba(74,74,74,0.85) 100%)"
+        },
+        {
+          "slug": "dark-overlay",
+          "name": "Dark overlay",
+          "gradient": "linear-gradient(180deg, rgba(35,35,35,0.55) 0%, rgba(35,35,35,0.85) 100%)"
+        }
+      ]
+    }
+  }
 }

@@ -67,7 +67,7 @@ def _pad_css(pad):
 # --------------------------------------------------------------------------- blocks
 def group(inner, *, align=None, style_variation=None, class_name=None, bg=None, text=None,
           gradient=None, pad=None, gap=None, layout="constrained", content_size=None,
-          wide_size=None, radius=None, shadow=None, extra_style="", tag="div",
+          wide_size=None, radius=None, border_top=None, shadow=None, extra_style="", tag="div",
           justify=None, orientation=None, wrap=None, vertical_align=None, elements=None,
           min_col=None, col_count=None):
     a, classes, css = {}, ["wp-block-group"], ""
@@ -93,6 +93,12 @@ def group(inner, *, align=None, style_variation=None, class_name=None, bg=None, 
     if radius:
         style.setdefault("border", {})["radius"] = radius
         css += f"border-radius:{radius};"
+    if border_top:
+        # (color, width, style) -> a real block attribute, so save() and the
+        # serialized markup agree. Raw CSS here fails block validation.
+        col, wid, sty = border_top
+        style.setdefault("border", {})["top"] = {"color": col, "width": wid, "style": sty}
+        css += f"border-top-color:{col};border-top-style:{sty};border-top-width:{wid};"
     spacing = {}
     if pad is not None:
         spacing["padding"] = _pad_attr(pad)
@@ -324,8 +330,14 @@ def buttons(items, *, justify=None, margin=None, gap=None):
     for it in items:
         ba, bclasses, acls = {}, ["wp-block-button"], ["wp-block-button__link"]
         if it.get("style"):
-            ba["className"] = it["style"]
-            bclasses.append(it["style"])
+            # Accept "outline" as shorthand: the class core's save() emits is
+            # always is-style-<name>, and a bare name silently renders as the
+            # default fill.
+            variation = it["style"]
+            if not variation.startswith("is-style-"):
+                variation = "is-style-" + variation
+            ba["className"] = variation
+            bclasses.append(variation)
         if it.get("width"):
             ba["width"] = it["width"]
             bclasses += ["has-custom-width", f'wp-block-button__width-{it["width"]}']

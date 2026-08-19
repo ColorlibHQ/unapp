@@ -5,13 +5,26 @@ All notable changes to the Unapp theme are documented here.
 ## 2.3.0 – 2026-08-19
 
 ### Added
+- **Every starter site now speaks its own language.** The first cut dressed SaaS sections in a new palette: a church home page introduced "Dorothy Murphy, Product Designer" and three international sales offices, and its Contact page closed with a FAQ about 14-day trials and CSV export. Twenty-six further patterns replace every borrowed section, so each starter's home *and* its inner pages are written for that kind of site — church staff, beliefs, events, first-visit answers and directions; gym memberships, member stories and opening hours; adviser process, fees, credentials and the questions a client actually asks; a designer's process, rates, client quote and availability; a publication's about, subscribe and pitch pages.
+- **A footer per starter.** The footer is a template part shared by every page, so SaaS wording followed all six starters everywhere. Each starter now swaps in its own — `unapp_set_part_to_pattern()` points the part at a pattern, and clearing it restores the theme file.
+- **Starter pages are compositions.** A page definition takes a `patterns` list rather than a single slug, so "Plan your visit" is four sections rather than one, and every inner page is a real page.
 - **Starter sites.** Appearance → Starter Sites offers six complete designs — SaaS & app, Portfolio, Church, Blog & magazine, Fitness studio, Finance & advisory. Applying one writes the matching style variation into Global Styles, creates the home page and its supporting pages from patterns, builds a navigation menu, sets Settings → Reading and gives the header the starter's own call-to-action wording. Nothing is deleted; switching starter adds pages and reverts the header when the wording matches the theme default. Extendable through the `unapp_starter_sites` filter.
 - **Twenty niche patterns**: portfolio (introduction, work grid, about, services and rates), church (welcome, service times, ministries, giving), fitness (hero, class timetable, coaches), finance (trust-led hero, services, credentials, risk warning) and blog (masthead, category tiles built on the WordPress 7.0 Terms Query block, author introduction).
 - **Six starter home pages** as full-page patterns, so the same layouts can be inserted by hand from Patterns → Pages.
 - **Four palettes** — Stone, Ember, Navy and Mono — bringing the total to ten, each contrast-checked, plus matching curated looks.
 - Ten abstract SVG placeholder images (10 KB in total) for the niches the bundled photography does not suit.
 
+### Changed
+- **Avatar placeholders redrawn.** They were the default user glyph — a white head-and-shoulders on a saturated gradient — which clashed with every palette. They are now duotone silhouettes in muted tones, each with a different hair and shoulder shape, so a row of four reads as four people. Ten files, 5 KB in total.
+- The five niche pattern categories (`unapp_portfolio`, `unapp_church`, `unapp_fitness`, `unapp_finance`, `unapp_blog`) are registered, so those patterns are grouped and labelled in the inserter instead of landing in an unnamed category.
+
 ### Fixed
+- **Buttons were illegible in the Midnight palette** — 1.73:1. Buttons take their background from `secondary` and their text from `contrast`, which is light in a dark palette, so light text sat on a light green pill. Midnight now takes its button text from `base`: 9.68:1. All ten palettes were audited; the other nine already passed.
+- **The Mono palette's call to action looked disabled.** Its `secondary` was a near-white `#e8e6e1`, so every button rendered as a pale grey pill. Mono now uses a rust `#e07a4f` (6.35:1 with the dark button text), which is also what its swatch always claimed.
+- Headings and links vanished on new dark sections: `theme.json` sets headings to `contrast` (near-black), and the niche footers did not override it, so the column headings and site title rendered black on near-black. They now carry the same `elements` override the original footer uses.
+- Outline buttons on gradient bands rendered with dark text against the gradient; they now take `base` like the rest of the theme's gradient sections.
+- `buttons()` in the pattern generator accepted a bare style name (`outline`) and emitted it verbatim as a class, so the button silently rendered as a default fill. It now normalises to `is-style-outline`.
+- The footer's copyright rule was raw CSS with no backing block attribute, which failed block validation. `group()` takes a `border_top` argument that writes both the attribute and the matching CSS.
 - Pattern previews of `vh`-height cover heroes were captured against a full-page viewport, which stretched them. The capture now keeps a realistic viewport and captures beyond it.
 
 ## 2.2.0 – 2026-08-19
