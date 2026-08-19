@@ -162,6 +162,58 @@ function unapp_get_starter_sites() {
 				),
 			),
 		),
+		'restaurant' => array(
+			'title'    => __( 'Restaurant', 'unapp' ),
+			'summary'  => __( 'A cover hero, the week\u2019s menu, the kitchen, reviews, opening hours and a booking band.', 'unapp' ),
+			'cta'      => __( 'Book a table', 'unapp' ),
+			'style'    => 'harvest',
+			'colors'   => 'colors-11-harvest',
+			'type'     => 'typography-3-editorial',
+			'swatches' => array( '#6b6122', '#e2a33c' ),
+			'home'     => 'unapp/demo-restaurant',
+			'thumb'    => 'restaurant',
+			'footer'   => 'unapp/footer-restaurant',
+			'pages'    => array(
+				'menu'    => array(
+					'title'    => __( 'Menu', 'unapp' ),
+					'patterns' => array( 'unapp/restaurant-menu', 'unapp/restaurant-kitchen', 'unapp/restaurant-cta' ),
+				),
+				'about'   => array(
+					'title'    => __( 'The kitchen', 'unapp' ),
+					'patterns' => array( 'unapp/restaurant-kitchen', 'unapp/restaurant-reviews', 'unapp/restaurant-hours' ),
+				),
+				'contact' => array(
+					'title'    => __( 'Book a table', 'unapp' ),
+					'patterns' => array( 'unapp/restaurant-hours', 'unapp/contact-split', 'unapp/restaurant-cta' ),
+				),
+			),
+		),
+		'agency'    => array(
+			'title'    => __( 'Agency', 'unapp' ),
+			'summary'  => __( 'A studio introduction, capabilities, a client list, published rates, the team and an enquiry form.', 'unapp' ),
+			'cta'      => __( 'Start a project', 'unapp' ),
+			'style'    => 'slate',
+			'colors'   => 'colors-12-slate',
+			'type'     => 'typography-4-technical',
+			'swatches' => array( '#1f4e56', '#57c2b4' ),
+			'home'     => 'unapp/demo-agency',
+			'thumb'    => 'agency',
+			'footer'   => 'unapp/footer-agency',
+			'pages'    => array(
+				'work'    => array(
+					'title'    => __( 'Work', 'unapp' ),
+					'patterns' => array( 'unapp/agency-clients', 'unapp/case-study', 'unapp/agency-services', 'unapp/agency-contact' ),
+				),
+				'studio'  => array(
+					'title'    => __( 'Studio', 'unapp' ),
+					'patterns' => array( 'unapp/agency-team', 'unapp/agency-services', 'unapp/agency-engagements' ),
+				),
+				'contact' => array(
+					'title'    => __( 'Start a project', 'unapp' ),
+					'patterns' => array( 'unapp/agency-contact', 'unapp/agency-engagements' ),
+				),
+			),
+		),
 		'finance'   => array(
 			'title'    => __( 'Finance & advisory', 'unapp' ),
 			'summary'  => __( 'Credentials, plain-English services, how advice works, fees, advisers and the risk warning.', 'unapp' ),

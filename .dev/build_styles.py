@@ -153,6 +153,12 @@ PALETTES = [
     ("colors-10-mono", "Mono", dict(base="#ffffff", contrast="#111111", primary="#111111", secondary="#e8e6e1",
                                     accent="#4a4a4a", surface="#f6f5f3", muted="#6b6b6b", border="#e6e4e0", dark="#111111"),
      ("rgba(17,17,17,0.9)", "rgba(74,74,74,0.85)"), None, None),
+    ("colors-11-harvest", "Harvest", dict(base="#ffffff", contrast="#221d14", primary="#6b6122", secondary="#e2a33c",
+                                          accent="#8a5a1f", surface="#faf7ee", muted="#655e4d", border="#ece5d3", dark="#221d14"),
+     ("rgba(107,97,34,0.9)", "rgba(138,90,31,0.85)"), None, None),
+    ("colors-12-slate", "Slate", dict(base="#ffffff", contrast="#13181d", primary="#1f4e56", secondary="#57c2b4",
+                                      accent="#2f6f79", surface="#f2f7f7", muted="#586268", border="#dfe8e9", dark="#13181d"),
+     ("rgba(31,78,86,0.9)", "rgba(47,111,121,0.85)"), None, None),
 ]
 
 DARK_BUTTON_STYLES = {
@@ -191,6 +197,8 @@ FULL = [
     ("ember", "colors-8-ember", "typography-5-geometric", "Ember"),
     ("navy", "colors-9-navy", "typography-3-editorial", "Navy"),
     ("mono", "colors-10-mono", "typography-2-interface", "Mono"),
+    ("harvest", "colors-11-harvest", "typography-3-editorial", "Harvest"),
+    ("slate", "colors-12-slate", "typography-4-technical", "Slate"),
 ]
 
 

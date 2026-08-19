@@ -29,7 +29,8 @@ SOFT = {
     "values", "timeline", "related-posts", "author-box",
     # niche schedules and listings
     "church-times", "church-events", "fitness-schedule", "blog-categories",
-    "portfolio-about",
+    "portfolio-about", "restaurant-menu", "restaurant-hours", "restaurant-reviews",
+    "agency-clients", "agency-engagements", "agency-contact",
 }
 
 SECTION_RE = re.compile(r'(<!-- wp:group (\{"align":"full".*?\}) -->\s*\n\s*<div class="([^"]*)")')

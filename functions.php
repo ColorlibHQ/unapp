@@ -215,6 +215,14 @@ function unapp_pattern_categories() {
 			'label'       => _x( 'Unapp: Finance', 'Block pattern category', 'unapp' ),
 			'description' => __( 'Sections for advisers and accountants: services, process, fees, credentials and risk warnings.', 'unapp' ),
 		),
+		'unapp_restaurant' => array(
+			'label'       => _x( 'Unapp: Restaurant', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Sections for restaurants and cafés: menus, opening hours, the kitchen and reviews.', 'unapp' ),
+		),
+		'unapp_agency'   => array(
+			'label'       => _x( 'Unapp: Agency', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Sections for studios and agencies: capabilities, clients, engagements and enquiries.', 'unapp' ),
+		),
 		'unapp_blog'     => array(
 			'label'       => _x( 'Unapp: Blog & magazine', 'Block pattern category', 'unapp' ),
 			'description' => __( 'Editorial furniture: mastheads, category tiles, author introductions and subscribe panels.', 'unapp' ),

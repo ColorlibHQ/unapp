@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-19T15:33:44+00:00\n"
+"POT-Creation-Date: 2026-08-19T18:47:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: make-pot.py (Unapp)\n"
 "X-Domain: unapp\n"
@@ -67,10 +67,18 @@ msgid "Sections for advisers and accountants: services, process, fees, credentia
 msgstr ""
 
 #: functions.php:220
-msgid "Editorial furniture: mastheads, category tiles, author introductions and subscribe panels."
+msgid "Sections for restaurants and cafés: menus, opening hours, the kitchen and reviews."
 msgstr ""
 
 #: functions.php:224
+msgid "Sections for studios and agencies: capabilities, clients, engagements and enquiries."
+msgstr ""
+
+#: functions.php:228
+msgid "Editorial furniture: mastheads, category tiles, author introductions and subscribe panels."
+msgstr ""
+
+#: functions.php:232
 msgid "Complete page layouts. Insert one into an empty page to start from a finished design."
 msgstr ""
 
@@ -206,12 +214,38 @@ msgstr ""
 
 #: functions.php:219
 msgctxt "Block pattern category"
-msgid "Unapp: Blog & magazine"
+msgid "Unapp: Restaurant"
 msgstr ""
 
 #: functions.php:223
 msgctxt "Block pattern category"
+msgid "Unapp: Agency"
+msgstr ""
+
+#: functions.php:227
+msgctxt "Block pattern category"
+msgid "Unapp: Blog & magazine"
+msgstr ""
+
+#: functions.php:231
+msgctxt "Block pattern category"
 msgid "Unapp: Full pages"
+msgstr ""
+
+#: inc/forms.php:301
+msgid "Only you can see this: install any form plugin — WPForms, Contact Form 7, Gravity Forms, Fluent Forms and several others are recognised — and its form replaces this panel automatically."
+msgstr ""
+
+#: inc/forms.php:266
+#: patterns/church-contact.php:73
+#: patterns/contact-split.php:105
+msgctxt "Contact form heading"
+msgid "Send a message"
+msgstr ""
+
+#: inc/forms.php:268
+msgctxt "Contact fallback text"
+msgid "The quickest way to reach us is email — we answer within two working days."
 msgstr ""
 
 #: inc/front-page-setup.php:106
@@ -279,7 +313,7 @@ msgid "Home"
 msgstr ""
 
 #: inc/front-page-setup.php:145
-#: inc/starter-sites.php:378
+#: inc/starter-sites.php:463
 msgctxt "Title of the posts page created on activation"
 msgid "Blog"
 msgstr ""
@@ -303,7 +337,7 @@ msgstr ""
 #: inc/starter-sites.php:52
 #: inc/starter-sites.php:78
 #: inc/starter-sites.php:130
-#: inc/starter-sites.php:182
+#: inc/starter-sites.php:234
 #: patterns/footer-blog.php:42
 #: patterns/footer-portfolio.php:42
 msgid "About"
@@ -314,7 +348,7 @@ msgstr ""
 #: inc/starter-sites.php:112
 #: inc/starter-sites.php:134
 #: inc/starter-sites.php:160
-#: inc/starter-sites.php:186
+#: inc/starter-sites.php:238
 #: patterns/footer.php:60
 msgid "Contact"
 msgstr ""
@@ -328,10 +362,16 @@ msgid "Work first: a project grid, how you run a job, rates, a client quote and 
 msgstr ""
 
 #: inc/starter-sites.php:64
+#: inc/starter-sites.php:194
+#: inc/starter-sites.php:212
+#: patterns/agency-hero.php:35
+#: patterns/footer-agency.php:43
 msgid "Start a project"
 msgstr ""
 
 #: inc/starter-sites.php:74
+#: inc/starter-sites.php:204
+#: patterns/footer-agency.php:40
 msgid "Work"
 msgstr ""
 
@@ -399,43 +439,82 @@ msgid "Memberships"
 msgstr ""
 
 #: inc/starter-sites.php:166
-msgid "Finance & advisory"
+msgid "Restaurant"
 msgstr ""
 
 #: inc/starter-sites.php:167
-msgid "Credentials, plain-English services, how advice works, fees, advisers and the risk warning."
+msgid "A cover hero, the week\\u2019s menu, the kitchen, reviews, opening hours and a booking band."
 msgstr ""
 
 #: inc/starter-sites.php:168
+#: inc/starter-sites.php:186
+#: patterns/footer-restaurant.php:41
+#: patterns/restaurant-cta.php:27
+#: patterns/restaurant-hero.php:28
+#: patterns/restaurant-hours.php:35
+msgid "Book a table"
+msgstr ""
+
+#: inc/starter-sites.php:178
+msgid "Menu"
+msgstr ""
+
+#: inc/starter-sites.php:182
+#: patterns/footer-restaurant.php:42
+msgid "The kitchen"
+msgstr ""
+
+#: inc/starter-sites.php:192
+msgid "Agency"
+msgstr ""
+
+#: inc/starter-sites.php:193
+msgid "A studio introduction, capabilities, a client list, published rates, the team and an enquiry form."
+msgstr ""
+
+#: inc/starter-sites.php:208
+#: patterns/agency-hero.php:44
+msgid "Studio"
+msgstr ""
+
+#: inc/starter-sites.php:218
+msgid "Finance & advisory"
+msgstr ""
+
+#: inc/starter-sites.php:219
+msgid "Credentials, plain-English services, how advice works, fees, advisers and the risk warning."
+msgstr ""
+
+#: inc/starter-sites.php:220
 #: patterns/finance-contact.php:32
 #: patterns/footer-finance.php:42
 msgid "Book a call"
 msgstr ""
 
-#: inc/starter-sites.php:178
+#: inc/starter-sites.php:230
 #: patterns/footer-finance.php:39
 msgid "Services"
 msgstr ""
 
-#: inc/starter-sites.php:213
+#: inc/starter-sites.php:265
 msgid "That starter site does not exist."
 msgstr ""
 
-#: inc/starter-sites.php:220
+#: inc/starter-sites.php:272
 msgid "The starter site’s home page pattern could not be loaded."
 msgstr ""
 
-#: inc/starter-sites.php:453
+#: inc/starter-sites.php:538
 msgid "Blog"
 msgstr ""
 
-#: inc/starter-sites.php:481
+#: inc/starter-sites.php:566
 msgid "Navigation"
 msgstr ""
 
 #. Pattern title
 #. Template part name
-#: inc/starter-sites.php:585
+#: inc/starter-sites.php:670
 #: patterns/footer.php
 #: theme.json
 msgid "Footer"
@@ -443,61 +522,420 @@ msgstr ""
 
 #. Pattern title
 #. Template part name
-#: inc/starter-sites.php:626
+#: inc/starter-sites.php:711
 #: patterns/header.php
 #: theme.json
 msgid "Header"
 msgstr ""
 
-#: inc/starter-sites.php:653
-#: inc/starter-sites.php:654
+#: inc/starter-sites.php:738
+#: inc/starter-sites.php:739
 msgid "Starter Sites"
 msgstr ""
 
-#: inc/starter-sites.php:669
+#: inc/starter-sites.php:754
 msgid "You are not allowed to change the site design."
 msgstr ""
 
-#: inc/starter-sites.php:694
+#: inc/starter-sites.php:779
 msgid "Unapp starter sites"
 msgstr ""
 
-#: inc/starter-sites.php:696
+#: inc/starter-sites.php:781
 msgid "Each starter builds a complete site for one kind of business: a colour palette, a typeface, a home page and its supporting pages, and a matching menu. Your existing pages are never deleted — applying a starter adds new ones and points the front page at them."
 msgstr ""
 
 #. translators: %s: link to the site front page.
-#: inc/starter-sites.php:704
+#: inc/starter-sites.php:789
 msgid "Starter site applied. <a href=\"%s\">View your site</a>."
 msgstr ""
 
 #. translators: %s: link to the site front page.
-#: inc/starter-sites.php:710
+#: inc/starter-sites.php:795
 msgid "That starter site could not be applied. Please try again."
 msgstr ""
 
 #. translators: %s: starter site name.
-#: inc/starter-sites.php:723
+#: inc/starter-sites.php:808
 msgid "The home page the %s starter builds"
 msgstr ""
 
-#: inc/starter-sites.php:730
+#: inc/starter-sites.php:815
 msgid "Applied"
 msgstr ""
 
-#: inc/starter-sites.php:752
+#: inc/starter-sites.php:837
 msgid "Apply again"
 msgstr ""
 
-#: inc/starter-sites.php:752
+#: inc/starter-sites.php:837
 msgid "Apply this starter"
 msgstr ""
 
 #: inc/starter-sites.php:35
-#: inc/starter-sites.php:599
+#: inc/starter-sites.php:684
 #: patterns/header.php:30
 msgctxt "Header call-to-action button"
 msgid "Get Premium"
+msgstr ""
+
+#: patterns/agency-clients.php:48
+msgid "Who we have done it for"
+msgstr ""
+
+#: patterns/agency-clients.php:15
+msgctxt "Agency client"
+msgid "Northbank"
+msgstr ""
+
+#: patterns/agency-clients.php:16
+msgctxt "Agency client"
+msgid "Brand and product · 2026"
+msgstr ""
+
+#: patterns/agency-clients.php:19
+msgctxt "Agency client"
+msgid "Halden Rail"
+msgstr ""
+
+#: patterns/agency-clients.php:20
+msgctxt "Agency client"
+msgid "Identity · 2025"
+msgstr ""
+
+#: patterns/agency-clients.php:23
+msgctxt "Agency client"
+msgid "Pier & Post"
+msgstr ""
+
+#: patterns/agency-clients.php:24
+msgctxt "Agency client"
+msgid "Website and CMS · 2025"
+msgstr ""
+
+#: patterns/agency-clients.php:27
+msgctxt "Agency client"
+msgid "Verity Health"
+msgstr ""
+
+#: patterns/agency-clients.php:28
+msgctxt "Agency client"
+msgid "Design system · 2024"
+msgstr ""
+
+#: patterns/agency-clients.php:31
+msgctxt "Agency client"
+msgid "Brightwater"
+msgstr ""
+
+#: patterns/agency-clients.php:32
+msgctxt "Agency client"
+msgid "Campaign · 2024"
+msgstr ""
+
+#: patterns/agency-clients.php:35
+msgctxt "Agency client"
+msgid "Foldline"
+msgstr ""
+
+#: patterns/agency-clients.php:36
+msgctxt "Agency client"
+msgid "Naming and brand · 2023"
+msgstr ""
+
+#: patterns/agency-clients.php:45
+msgctxt "Section eyebrow label"
+msgid "Selected clients"
+msgstr ""
+
+#. Pattern title
+#: patterns/agency-clients.php
+msgid "Agency: selected clients"
+msgstr ""
+
+#. Pattern description
+#: patterns/agency-clients.php
+msgid "A dated client list with the discipline beside each name."
+msgstr ""
+
+#: patterns/agency-contact.php:24
+msgid "Tell us what you are trying to do"
+msgstr ""
+
+#: patterns/agency-contact.php:27
+msgid "We take on about fourteen projects a year and we are usually booked six weeks out. If the timing does not work we will say so in the first reply rather than the third meeting."
+msgstr ""
+
+#: patterns/agency-contact.php:30
+msgid "studio@northgate.example · 0161 555 0134"
+msgstr ""
+
+#: patterns/agency-contact.php:35
+msgid "What to include"
+msgstr ""
+
+#: patterns/agency-contact.php:40
+msgid "What you are making, and who for"
+msgstr ""
+
+#: patterns/agency-contact.php:43
+msgid "What has already been tried"
+msgstr ""
+
+#: patterns/agency-contact.php:46
+msgid "When it has to be live"
+msgstr ""
+
+#: patterns/agency-contact.php:49
+#: patterns/portfolio-contact.php:60
+msgid "A budget range, even a wide one"
+msgstr ""
+
+#: patterns/agency-contact.php:54
+msgid "We reply to everything within two working days, including the noes."
+msgstr ""
+
+#: patterns/agency-contact.php:21
+msgctxt "Section eyebrow label"
+msgid "Start a project"
+msgstr ""
+
+#: patterns/agency-contact.php:67
+msgctxt "Contact form heading"
+msgid "Start a project"
+msgstr ""
+
+#. Pattern title
+#: patterns/agency-contact.php
+msgid "Agency: start a project"
+msgstr ""
+
+#. Pattern description
+#: patterns/agency-contact.php
+msgid "An enquiry section with a brief checklist and the contact form."
+msgstr ""
+
+#: patterns/agency-engagements.php:39
+msgid "Three ways to buy an agency"
+msgstr ""
+
+#: patterns/agency-engagements.php:42
+msgid "Published, because you should not have to sit through a call to find out whether we are affordable."
+msgstr ""
+
+#: patterns/agency-engagements.php:15
+msgctxt "Agency engagement"
+msgid "Sprint"
+msgstr ""
+
+#: patterns/agency-engagements.php:16
+msgctxt "Agency engagement"
+msgid "£8,000"
+msgstr ""
+
+#: patterns/agency-engagements.php:17
+msgctxt "Agency engagement"
+msgid "Two weeks, one question answered — a positioning test, a prototype, a pitch that has to land."
+msgstr ""
+
+#: patterns/agency-engagements.php:20
+msgctxt "Agency engagement"
+msgid "Project"
+msgstr ""
+
+#: patterns/agency-engagements.php:21
+msgctxt "Agency engagement"
+msgid "from £30,000"
+msgstr ""
+
+#: patterns/agency-engagements.php:22
+msgctxt "Agency engagement"
+msgid "Six to twelve weeks with a named team. Most brand and product work sits here."
+msgstr ""
+
+#: patterns/agency-engagements.php:25
+msgctxt "Agency engagement"
+msgid "Retained"
+msgstr ""
+
+#: patterns/agency-engagements.php:26
+msgctxt "Agency engagement"
+msgid "£9,000 a month"
+msgstr ""
+
+#: patterns/agency-engagements.php:27
+msgctxt "Agency engagement"
+msgid "Two days a week of the studio, for companies shipping continuously."
+msgstr ""
+
+#: patterns/agency-engagements.php:36
+msgctxt "Section eyebrow label"
+msgid "How we work together"
+msgstr ""
+
+#. Pattern title
+#: patterns/agency-engagements.php
+msgid "Agency: engagements"
+msgstr ""
+
+#. Pattern description
+#: patterns/agency-engagements.php
+msgid "Three engagement shapes with real prices, from a two-week sprint to a monthly retainer."
+msgstr ""
+
+#: patterns/agency-hero.php:24
+msgid "We make the thing, not the deck about the thing"
+msgstr ""
+
+#: patterns/agency-hero.php:27
+msgid "A studio of nine in Manchester. Brand, product and the software to run both — for companies that have outgrown the website they built themselves."
+msgstr ""
+
+#: patterns/agency-hero.php:32
+msgid "See the work"
+msgstr ""
+
+#: patterns/agency-hero.php:21
+msgctxt "Agency hero eyebrow"
+msgid "Independent since 2011"
+msgstr ""
+
+#. Pattern title
+#: patterns/agency-hero.php
+msgid "Agency: introduction"
+msgstr ""
+
+#. Pattern description
+#: patterns/agency-hero.php
+msgid "A studio introduction with two calls to action and an image."
+msgstr ""
+
+#: patterns/agency-services.php:44
+msgid "Four things, done properly"
+msgstr ""
+
+#: patterns/agency-services.php:47
+msgid "Most projects use two or three of them. We will tell you which, and talk you out of the rest."
+msgstr ""
+
+#: patterns/agency-services.php:16
+msgctxt "Agency capability"
+msgid "Strategy"
+msgstr ""
+
+#: patterns/agency-services.php:17
+msgctxt "Agency capability"
+msgid "Positioning, naming and the argument for why anyone should care. Usually two weeks."
+msgstr ""
+
+#: patterns/agency-services.php:21
+msgctxt "Agency capability"
+msgid "Brand"
+msgstr ""
+
+#: patterns/agency-services.php:22
+msgctxt "Agency capability"
+msgid "Identity, type, art direction and a system your team can run without us."
+msgstr ""
+
+#: patterns/agency-services.php:26
+msgctxt "Agency capability"
+msgid "Product"
+msgstr ""
+
+#: patterns/agency-services.php:27
+msgctxt "Agency capability"
+msgid "Interface design and front-end build, from the first sketch to the day it ships."
+msgstr ""
+
+#: patterns/agency-services.php:31
+msgctxt "Agency capability"
+msgid "Growth"
+msgstr ""
+
+#: patterns/agency-services.php:32
+msgctxt "Agency capability"
+msgid "Landing pages, lifecycle email and the measurement to know which worked."
+msgstr ""
+
+#: patterns/agency-services.php:41
+#: patterns/finance-services.php:27
+msgctxt "Section eyebrow label"
+msgid "What we do"
+msgstr ""
+
+#. Pattern title
+#: patterns/agency-services.php
+msgid "Agency: capabilities"
+msgstr ""
+
+#. Pattern description
+#: patterns/agency-services.php
+msgid "Four capability cards with icons, and a line admitting most projects need only two."
+msgstr ""
+
+#: patterns/agency-team.php:44
+msgid "Nine people, four of whom you will meet"
+msgstr ""
+
+#: patterns/agency-team.php:47
+msgid "No account layer. The people who design the work are the people in the room."
+msgstr ""
+
+#: patterns/agency-team.php:16
+msgctxt "Studio member"
+msgid "Nadia Feld"
+msgstr ""
+
+#: patterns/agency-team.php:17
+msgctxt "Studio member"
+msgid "Founder, strategy"
+msgstr ""
+
+#: patterns/agency-team.php:21
+msgctxt "Studio member"
+msgid "Callum Reece"
+msgstr ""
+
+#: patterns/agency-team.php:22
+msgctxt "Studio member"
+msgid "Design director"
+msgstr ""
+
+#: patterns/agency-team.php:26
+msgctxt "Studio member"
+msgid "Yumi Adeyemi"
+msgstr ""
+
+#: patterns/agency-team.php:27
+msgctxt "Studio member"
+msgid "Product design"
+msgstr ""
+
+#: patterns/agency-team.php:31
+msgctxt "Studio member"
+msgid "Marek Stolar"
+msgstr ""
+
+#: patterns/agency-team.php:32
+msgctxt "Studio member"
+msgid "Engineering"
+msgstr ""
+
+#: patterns/agency-team.php:41
+#: patterns/fitness-intro.php:21
+msgctxt "Section eyebrow label"
+msgid "The studio"
+msgstr ""
+
+#. Pattern title
+#: patterns/agency-team.php
+msgid "Agency: the studio"
+msgstr ""
+
+#. Pattern description
+#: patterns/agency-team.php
+msgid "Four of the studio with portraits and roles, and a note that there is no account layer."
 msgstr ""
 
 #. Pattern title
@@ -1026,37 +1464,39 @@ msgstr ""
 
 #: patterns/church-contact.php:32
 #: patterns/fitness-location.php:35
+#: patterns/restaurant-hours.php:38
 msgid "Get directions"
 msgstr ""
 
-#: patterns/church-contact.php:43
+#: patterns/church-contact.php:39
 msgid "Office hours"
 msgstr ""
 
-#: patterns/church-contact.php:46
+#: patterns/church-contact.php:42
 msgid "Tuesday to Friday, 9:30–14:30. Ruth is usually in; if the door is locked, ring the bell."
 msgstr ""
 
-#: patterns/church-contact.php:52
-#: patterns/finance-contact.php:55
+#: patterns/church-contact.php:48
+#: patterns/finance-contact.php:51
 msgid "Telephone"
 msgstr ""
 
-#: patterns/church-contact.php:55
+#: patterns/church-contact.php:51
 msgid "01246 555 0114"
 msgstr ""
 
-#: patterns/church-contact.php:61
+#: patterns/church-contact.php:57
 #: patterns/contact-split.php:43
-#: patterns/finance-contact.php:64
+#: patterns/finance-contact.php:60
 msgid "Email"
 msgstr ""
 
-#: patterns/church-contact.php:64
+#: patterns/church-contact.php:60
 msgid "hello@riverside.example"
 msgstr ""
 
 #: patterns/church-contact.php:21
+#: patterns/restaurant-hours.php:21
 msgctxt "Section eyebrow label"
 msgid "Find us"
 msgstr ""
@@ -1671,18 +2111,6 @@ msgstr ""
 msgid "Mon–Fri, 9:00–18:00 CET"
 msgstr ""
 
-#: patterns/contact-split.php:103
-msgid "Send a message"
-msgstr ""
-
-#: patterns/contact-split.php:106
-msgid "Add your form plugin's block here — Contact Form 7, WPForms, Kali Forms and Gravity Forms all provide one."
-msgstr ""
-
-#: patterns/contact-split.php:111
-msgid "Email us instead"
-msgstr ""
-
 #: patterns/contact-split.php:21
 #: patterns/contact.php:36
 msgctxt "Section eyebrow label"
@@ -1841,6 +2269,16 @@ msgid "Full-width cover with a tinted photo, headline, supporting text and a sub
 msgstr ""
 
 #. Pattern title
+#: patterns/demo-agency.php
+msgid "Starter site: Agency"
+msgstr ""
+
+#. Pattern description
+#: patterns/demo-agency.php
+msgid "The home page for the Agency starter site: introduction, capabilities, clients, engagements, the studio and an enquiry form."
+msgstr ""
+
+#. Pattern title
 #: patterns/demo-blog.php
 msgid "Starter site: Blog & magazine"
 msgstr ""
@@ -1888,6 +2326,16 @@ msgstr ""
 #. Pattern description
 #: patterns/demo-portfolio.php
 msgid "The home page for the Portfolio starter site: introduction, selected work, about, process, rates, a client quote and current availability."
+msgstr ""
+
+#. Pattern title
+#: patterns/demo-restaurant.php
+msgid "Starter site: Restaurant"
+msgstr ""
+
+#. Pattern description
+#: patterns/demo-restaurant.php
+msgid "The home page for the Restaurant starter site: cover hero, the week's menu, the kitchen, reviews, hours and a booking band."
 msgstr ""
 
 #. Pattern title
@@ -2357,33 +2805,38 @@ msgstr ""
 msgid "Send an email"
 msgstr ""
 
-#: patterns/finance-contact.php:46
+#: patterns/finance-contact.php:42
 msgid "Office"
 msgstr ""
 
-#: patterns/finance-contact.php:49
+#: patterns/finance-contact.php:45
 msgid "14 Rodney Street, Liverpool L1 2TE"
 msgstr ""
 
-#: patterns/finance-contact.php:58
+#: patterns/finance-contact.php:54
 msgid "0151 555 0188, 9:00–17:00 weekdays"
 msgstr ""
 
-#: patterns/finance-contact.php:67
+#: patterns/finance-contact.php:63
 msgid "advice@rodneystreet.example"
 msgstr ""
 
-#: patterns/finance-contact.php:73
+#: patterns/finance-contact.php:69
 msgid "Regulation"
 msgstr ""
 
-#: patterns/finance-contact.php:76
+#: patterns/finance-contact.php:72
 msgid "Authorised and regulated by the Financial Conduct Authority, firm reference 000000."
 msgstr ""
 
 #: patterns/finance-contact.php:21
 msgctxt "Section eyebrow label"
 msgid "Talk to us"
+msgstr ""
+
+#: patterns/finance-contact.php:85
+msgctxt "Contact form heading"
+msgid "Request a callback"
 msgstr ""
 
 #. Pattern title
@@ -2753,11 +3206,6 @@ msgctxt "Finance service description"
 msgid "One picture of your money for the next thirty years, updated every year."
 msgstr ""
 
-#: patterns/finance-services.php:27
-msgctxt "Section eyebrow label"
-msgid "What we do"
-msgstr ""
-
 #. Pattern title
 #: patterns/finance-services.php
 msgid "Finance: services"
@@ -3047,11 +3495,6 @@ msgstr ""
 msgid "The training floor"
 msgstr ""
 
-#: patterns/fitness-intro.php:21
-msgctxt "Section eyebrow label"
-msgid "The studio"
-msgstr ""
-
 #. Pattern title
 #: patterns/fitness-intro.php
 msgid "Fitness: about the studio"
@@ -3104,6 +3547,7 @@ msgid "06:00 – 20:00"
 msgstr ""
 
 #: patterns/fitness-location.php:98
+#: patterns/restaurant-hours.php:77
 msgctxt "Opening day"
 msgid "Saturday"
 msgstr ""
@@ -3114,6 +3558,7 @@ msgid "08:00 – 14:00"
 msgstr ""
 
 #: patterns/fitness-location.php:119
+#: patterns/restaurant-hours.php:98
 msgctxt "Opening day"
 msgid "Sunday"
 msgstr ""
@@ -3525,6 +3970,85 @@ msgstr ""
 msgid "Three member quotes with portraits and how long each has trained here."
 msgstr ""
 
+#: patterns/footer-agency.php:41
+msgid "Capabilities"
+msgstr ""
+
+#: patterns/footer-agency.php:42
+msgid "Engagements"
+msgstr ""
+
+#. translators: 1: current year, 2: site name.
+#: patterns/footer-agency.php:87
+#: patterns/footer-blog.php:84
+#: patterns/footer-church.php:87
+#: patterns/footer-finance.php:86
+#: patterns/footer-fitness.php:87
+#: patterns/footer-portfolio.php:84
+#: patterns/footer-restaurant.php:87
+msgid "&copy; %1$s %2$s. All rights reserved."
+msgstr ""
+
+#: patterns/footer-agency.php:99
+#: patterns/footer-blog.php:96
+#: patterns/footer-church.php:99
+#: patterns/footer-finance.php:98
+#: patterns/footer-fitness.php:99
+#: patterns/footer-portfolio.php:96
+#: patterns/footer-restaurant.php:99
+msgid "Built with the Unapp theme"
+msgstr ""
+
+#: patterns/footer-agency.php:23
+msgctxt "Footer tagline"
+msgid "An independent studio of nine in Manchester. Brand, product, and the software to run both."
+msgstr ""
+
+#: patterns/footer-agency.php:37
+msgctxt "Footer column heading"
+msgid "Studio"
+msgstr ""
+
+#: patterns/footer-agency.php:50
+msgctxt "Footer column heading"
+msgid "Journal"
+msgstr ""
+
+#: patterns/footer-agency.php:58
+msgctxt "Footer column heading"
+msgid "Get in touch"
+msgstr ""
+
+#: patterns/footer-agency.php:61
+msgctxt "Footer contact line"
+msgid "studio@northgate.example"
+msgstr ""
+
+#: patterns/footer-agency.php:64
+msgctxt "Footer contact line"
+msgid "0161 555 0134"
+msgstr ""
+
+#: patterns/footer-agency.php:67
+msgctxt "Footer contact line"
+msgid "Northgate Works, Manchester M4 5JW"
+msgstr ""
+
+#: patterns/footer-agency.php:70
+msgctxt "Footer contact line"
+msgid "Booked about six weeks out"
+msgstr ""
+
+#. Pattern title
+#: patterns/footer-agency.php
+msgid "Footer: agency"
+msgstr ""
+
+#. Pattern description
+#: patterns/footer-agency.php
+msgid "A studio footer: what the studio does, the work, and how to start a project."
+msgstr ""
+
 #: patterns/footer-blog.php:40
 msgid "Archive"
 msgstr ""
@@ -3536,23 +4060,6 @@ msgstr ""
 
 #: patterns/footer-blog.php:43
 msgid "Pitch an essay"
-msgstr ""
-
-#. translators: 1: current year, 2: site name.
-#: patterns/footer-blog.php:84
-#: patterns/footer-church.php:87
-#: patterns/footer-finance.php:86
-#: patterns/footer-fitness.php:87
-#: patterns/footer-portfolio.php:84
-msgid "&copy; %1$s %2$s. All rights reserved."
-msgstr ""
-
-#: patterns/footer-blog.php:96
-#: patterns/footer-church.php:99
-#: patterns/footer-finance.php:98
-#: patterns/footer-fitness.php:99
-#: patterns/footer-portfolio.php:96
-msgid "Built with the Unapp theme"
 msgstr ""
 
 #: patterns/footer-blog.php:23
@@ -3829,6 +4336,64 @@ msgstr ""
 #. Pattern description
 #: patterns/footer-portfolio.php
 msgid "A freelancer's footer: what you do, what you are booking, and the one email address that matters."
+msgstr ""
+
+#: patterns/footer-restaurant.php:40
+msgid "This week's menu"
+msgstr ""
+
+#: patterns/footer-restaurant.php:43
+msgid "Private dining"
+msgstr ""
+
+#: patterns/footer-restaurant.php:23
+msgctxt "Footer tagline"
+msgid "Ten tables on Wharf Street. Dinner Wednesday to Saturday, lunch on Sunday, and a menu that changes weekly."
+msgstr ""
+
+#: patterns/footer-restaurant.php:37
+msgctxt "Footer column heading"
+msgid "Eat"
+msgstr ""
+
+#: patterns/footer-restaurant.php:50
+msgctxt "Footer column heading"
+msgid "From the kitchen"
+msgstr ""
+
+#: patterns/footer-restaurant.php:58
+msgctxt "Footer column heading"
+msgid "The room"
+msgstr ""
+
+#: patterns/footer-restaurant.php:61
+msgctxt "Footer contact line"
+msgid "41 Wharf Street, Bristol BS1 4RW"
+msgstr ""
+
+#: patterns/footer-restaurant.php:64
+msgctxt "Footer contact line"
+msgid "0117 555 0192"
+msgstr ""
+
+#: patterns/footer-restaurant.php:67
+msgctxt "Footer contact line"
+msgid "Wed–Sat dinner · Sun lunch"
+msgstr ""
+
+#: patterns/footer-restaurant.php:70
+msgctxt "Footer contact line"
+msgid "eat@wharfstreet.example"
+msgstr ""
+
+#. Pattern title
+#: patterns/footer-restaurant.php
+msgid "Footer: restaurant"
+msgstr ""
+
+#. Pattern description
+#: patterns/footer-restaurant.php
+msgid "A restaurant footer: what the kitchen does, opening nights and where to find the room."
 msgstr ""
 
 #: patterns/footer-slim.php:30
@@ -4731,10 +5296,6 @@ msgstr ""
 msgid "When you need it live"
 msgstr ""
 
-#: patterns/portfolio-contact.php:60
-msgid "A budget range, even a wide one"
-msgstr ""
-
 #: patterns/portfolio-contact.php:65
 msgid "You will hear back within two working days, always from me."
 msgstr ""
@@ -5442,6 +6003,290 @@ msgstr ""
 msgid "Three more posts in a soft band — for the end of the Single template."
 msgstr ""
 
+#: patterns/restaurant-cta.php:19
+msgid "Bookings open six weeks ahead, on the first of the month"
+msgstr ""
+
+#: patterns/restaurant-cta.php:22
+msgid "Tables of two to six online. For anything larger, or the whole room, send us an email and we will sort it out."
+msgstr ""
+
+#: patterns/restaurant-cta.php:30
+msgid "Email the restaurant"
+msgstr ""
+
+#. Pattern title
+#: patterns/restaurant-cta.php
+msgid "Restaurant: booking band"
+msgstr ""
+
+#. Pattern description
+#: patterns/restaurant-cta.php
+msgid "A closing band explaining how bookings work, on the palette gradient."
+msgstr ""
+
+#: patterns/restaurant-hero.php:20
+msgid "Ten tables, one menu, whatever the market had"
+msgstr ""
+
+#: patterns/restaurant-hero.php:23
+msgid "Dinner Wednesday to Saturday · Lunch on Sunday · Bookings open six weeks ahead"
+msgstr ""
+
+#: patterns/restaurant-hero.php:31
+msgid "See this week's menu"
+msgstr ""
+
+#: patterns/restaurant-hero.php:17
+msgctxt "Restaurant hero eyebrow"
+msgid "Kitchen and dining room"
+msgstr ""
+
+#. Pattern title
+#: patterns/restaurant-hero.php
+msgid "Restaurant: hero"
+msgstr ""
+
+#. Pattern description
+#: patterns/restaurant-hero.php
+msgid "A full-bleed cover with opening nights, a booking button and a link to the menu."
+msgstr ""
+
+#: patterns/restaurant-hours.php:24
+msgid "A corner room on Wharf Street"
+msgstr ""
+
+#: patterns/restaurant-hours.php:27
+msgid "Eighteen covers downstairs and a counter for six who did not book. The corner table is the good one; ask for it and we will do our best."
+msgstr ""
+
+#: patterns/restaurant-hours.php:30
+msgid "41 Wharf Street, Bristol BS1 4RW · 0117 555 0192"
+msgstr ""
+
+#: patterns/restaurant-hours.php:49
+msgid "When we are open"
+msgstr ""
+
+#: patterns/restaurant-hours.php:56
+msgctxt "Opening day"
+msgid "Wednesday – Friday"
+msgstr ""
+
+#: patterns/restaurant-hours.php:63
+msgctxt "Opening hours"
+msgid "Dinner 18:00 – 22:00"
+msgstr ""
+
+#: patterns/restaurant-hours.php:84
+msgctxt "Opening hours"
+msgid "Lunch 12:00 – 14:30 · Dinner 18:00 – 22:30"
+msgstr ""
+
+#: patterns/restaurant-hours.php:105
+msgctxt "Opening hours"
+msgid "Lunch 12:00 – 16:00"
+msgstr ""
+
+#: patterns/restaurant-hours.php:119
+msgctxt "Opening day"
+msgid "Monday & Tuesday"
+msgstr ""
+
+#: patterns/restaurant-hours.php:126
+msgctxt "Opening hours"
+msgid "Closed — the kitchen rests"
+msgstr ""
+
+#. Pattern title
+#: patterns/restaurant-hours.php
+msgid "Restaurant: hours and address"
+msgstr ""
+
+#. Pattern description
+#: patterns/restaurant-hours.php
+msgid "Where the restaurant is and when it serves, with the week in a card."
+msgstr ""
+
+#: patterns/restaurant-kitchen.php:21
+msgid "The kitchen pass"
+msgstr ""
+
+#: patterns/restaurant-kitchen.php:31
+msgid "We buy small and cook it the same week"
+msgstr ""
+
+#: patterns/restaurant-kitchen.php:34
+msgid "Two boats in Brixham, a farm outside Chew Magna and a cheese room in Bath. If something is not good enough on the day it comes off the menu, which is why the menu is printed on Wednesday morning and not before."
+msgstr ""
+
+#: patterns/restaurant-kitchen.php:39
+msgid "Everything made here, including the bread"
+msgstr ""
+
+#: patterns/restaurant-kitchen.php:42
+msgid "A short wine list, mostly from small growers"
+msgstr ""
+
+#: patterns/restaurant-kitchen.php:45
+msgid "Vegetarian menu of the same length, always"
+msgstr ""
+
+#: patterns/restaurant-kitchen.php:48
+msgid "Service included; no discretionary anything"
+msgstr ""
+
+#: patterns/restaurant-kitchen.php:28
+msgctxt "Section eyebrow label"
+msgid "The kitchen"
+msgstr ""
+
+#. Pattern title
+#: patterns/restaurant-kitchen.php
+msgid "Restaurant: the kitchen"
+msgstr ""
+
+#. Pattern description
+#: patterns/restaurant-kitchen.php
+msgid "Where the food comes from and how the kitchen works, beside a photograph."
+msgstr ""
+
+#: patterns/restaurant-menu.php:36
+msgid "The menu changes on Wednesday"
+msgstr ""
+
+#: patterns/restaurant-menu.php:39
+msgid "Whatever the boats and the market gave us. Tell us about allergies when you book and we will work around them."
+msgstr ""
+
+#: patterns/restaurant-menu.php:77
+msgid "Five courses at the chef's discretion, £48. The whole table, please."
+msgstr ""
+
+#: patterns/restaurant-menu.php:15
+msgctxt "Menu course"
+msgid "To start"
+msgstr ""
+
+#: patterns/restaurant-menu.php:16
+msgctxt "Menu dish"
+msgid "Sourdough, cultured butter"
+msgstr ""
+
+#: patterns/restaurant-menu.php:16
+msgctxt "Menu dish"
+msgid "Devilled egg, brown crab"
+msgstr ""
+
+#: patterns/restaurant-menu.php:16
+msgctxt "Menu dish"
+msgid "Chicory, pear, blue cheese"
+msgstr ""
+
+#: patterns/restaurant-menu.php:19
+msgctxt "Menu course"
+msgid "Mains"
+msgstr ""
+
+#: patterns/restaurant-menu.php:20
+msgctxt "Menu dish"
+msgid "Hake, mussels, sea vegetables"
+msgstr ""
+
+#: patterns/restaurant-menu.php:20
+msgctxt "Menu dish"
+msgid "Short rib, onions, bone marrow"
+msgstr ""
+
+#: patterns/restaurant-menu.php:20
+msgctxt "Menu dish"
+msgid "Celeriac, hazelnut, sage"
+msgstr ""
+
+#: patterns/restaurant-menu.php:23
+msgctxt "Menu course"
+msgid "To finish"
+msgstr ""
+
+#: patterns/restaurant-menu.php:24
+msgctxt "Menu dish"
+msgid "Burnt custard, rhubarb"
+msgstr ""
+
+#: patterns/restaurant-menu.php:24
+msgctxt "Menu dish"
+msgid "Chocolate, olive oil, salt"
+msgstr ""
+
+#: patterns/restaurant-menu.php:24
+msgctxt "Menu dish"
+msgid "Three cheeses, oatcakes"
+msgstr ""
+
+#: patterns/restaurant-menu.php:33
+msgctxt "Section eyebrow label"
+msgid "This week"
+msgstr ""
+
+#. Pattern title
+#: patterns/restaurant-menu.php
+msgid "Restaurant: menu"
+msgstr ""
+
+#. Pattern description
+#: patterns/restaurant-menu.php
+msgid "Three courses with dishes and prices, and a tasting-menu line underneath."
+msgstr ""
+
+#: patterns/restaurant-reviews.php:36
+msgid "Kind words"
+msgstr ""
+
+#: patterns/restaurant-reviews.php:15
+msgctxt "Restaurant review"
+msgid "The hake was the best thing I ate all year, and I eat out for a living."
+msgstr ""
+
+#: patterns/restaurant-reviews.php:16
+msgctxt "Restaurant review"
+msgid "Bristol Food Review"
+msgstr ""
+
+#: patterns/restaurant-reviews.php:19
+msgctxt "Restaurant review"
+msgid "Ten tables, no music, no theatre — just extremely good cooking and someone who remembers your name."
+msgstr ""
+
+#: patterns/restaurant-reviews.php:20
+msgctxt "Restaurant review"
+msgid "The Wharf Guide"
+msgstr ""
+
+#: patterns/restaurant-reviews.php:23
+msgctxt "Restaurant review"
+msgid "Book six weeks out. It is worth the diary management."
+msgstr ""
+
+#: patterns/restaurant-reviews.php:24
+msgctxt "Restaurant review"
+msgid "Somerset Life"
+msgstr ""
+
+#: patterns/restaurant-reviews.php:33
+msgctxt "Section eyebrow label"
+msgid "Said about us"
+msgstr ""
+
+#. Pattern title
+#: patterns/restaurant-reviews.php
+msgid "Restaurant: reviews"
+msgstr ""
+
+#. Pattern description
+#: patterns/restaurant-reviews.php
+msgid "Three short press quotes with their source."
+msgstr ""
+
 #: patterns/screens.php:39
 msgid "A closer look at Unapp"
 msgstr ""
@@ -6013,10 +6858,12 @@ msgstr ""
 #: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/indigo.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
@@ -6028,10 +6875,12 @@ msgstr ""
 #: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/indigo.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
@@ -6043,10 +6892,12 @@ msgstr ""
 #: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/indigo.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
@@ -6058,10 +6909,12 @@ msgstr ""
 #: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/indigo.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
@@ -6073,10 +6926,12 @@ msgstr ""
 #: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/indigo.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
@@ -6088,10 +6943,12 @@ msgstr ""
 #: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/indigo.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
@@ -6103,10 +6960,12 @@ msgstr ""
 #: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/indigo.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
@@ -6118,10 +6977,12 @@ msgstr ""
 #: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/indigo.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
@@ -6134,11 +6995,13 @@ msgstr ""
 #: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/indigo.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
 #: styles/section-dark.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
@@ -6150,10 +7013,12 @@ msgstr ""
 #: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/indigo.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
@@ -6165,10 +7030,12 @@ msgstr ""
 #: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/indigo.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
@@ -6180,10 +7047,12 @@ msgstr ""
 #: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/indigo.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
@@ -6195,10 +7064,12 @@ msgstr ""
 #: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/indigo.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
@@ -6296,10 +7167,12 @@ msgstr ""
 #: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/indigo.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
@@ -6309,9 +7182,11 @@ msgstr ""
 #. Font family name
 #: theme.json
 #: styles/graphite.json
+#: styles/harvest.json
 #: styles/midnight.json
 #: styles/mono.json
 #: styles/navy.json
+#: styles/slate.json
 #: styles/stone.json
 #: styles/sunset.json
 msgid "Inter"
@@ -6319,6 +7194,7 @@ msgstr ""
 
 #. Font family name
 #: theme.json
+#: styles/harvest.json
 #: styles/navy.json
 #: styles/stone.json
 #: styles/sunset.json
@@ -6328,6 +7204,7 @@ msgstr ""
 #. Font family name
 #: theme.json
 #: styles/midnight.json
+#: styles/slate.json
 msgid "Space Grotesk"
 msgstr ""
 
@@ -6379,6 +7256,11 @@ msgid "Graphite"
 msgstr ""
 
 #. Style variation name
+#: styles/harvest.json
+msgid "Harvest"
+msgstr ""
+
+#. Style variation name
 #: styles/indigo.json
 msgid "Indigo"
 msgstr ""
@@ -6411,6 +7293,11 @@ msgstr ""
 #. Style variation name
 #: styles/section-soft.json
 msgid "Soft background"
+msgstr ""
+
+#. Style variation name
+#: styles/slate.json
+msgid "Slate"
 msgstr ""
 
 #. Style variation name

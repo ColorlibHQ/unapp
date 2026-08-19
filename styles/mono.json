@@ -23,12 +23,12 @@
 				},
 				{
 					"slug": "secondary",
-					"color": "#e07a4f",
+					"color": "#e8e6e1",
 					"name": "Secondary"
 				},
 				{
 					"slug": "accent",
-					"color": "#c9542b",
+					"color": "#4a4a4a",
 					"name": "Accent"
 				},
 				{

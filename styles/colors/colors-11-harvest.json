@@ -1,8 +1,8 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
-	"title": "Mono",
-	"slug": "colors-10-mono",
+	"title": "Harvest",
+	"slug": "colors-11-harvest",
 	"settings": {
 		"color": {
 			"palette": [
@@ -13,42 +13,42 @@
 				},
 				{
 					"slug": "contrast",
-					"color": "#111111",
+					"color": "#221d14",
 					"name": "Contrast"
 				},
 				{
 					"slug": "primary",
-					"color": "#111111",
+					"color": "#6b6122",
 					"name": "Primary"
 				},
 				{
 					"slug": "secondary",
-					"color": "#e8e6e1",
+					"color": "#e2a33c",
 					"name": "Secondary"
 				},
 				{
 					"slug": "accent",
-					"color": "#4a4a4a",
+					"color": "#8a5a1f",
 					"name": "Accent"
 				},
 				{
 					"slug": "surface",
-					"color": "#f6f5f3",
+					"color": "#faf7ee",
 					"name": "Surface"
 				},
 				{
 					"slug": "muted",
-					"color": "#6b6b6b",
+					"color": "#655e4d",
 					"name": "Muted"
 				},
 				{
 					"slug": "border",
-					"color": "#e6e4e0",
+					"color": "#ece5d3",
 					"name": "Border"
 				},
 				{
 					"slug": "dark",
-					"color": "#111111",
+					"color": "#221d14",
 					"name": "Dark"
 				}
 			],
@@ -66,7 +66,7 @@
 				{
 					"slug": "primary-overlay",
 					"name": "Primary overlay",
-					"gradient": "linear-gradient(135deg, rgba(17,17,17,0.9) 0%, rgba(74,74,74,0.85) 100%)"
+					"gradient": "linear-gradient(135deg, rgba(107,97,34,0.9) 0%, rgba(138,90,31,0.85) 100%)"
 				},
 				{
 					"slug": "dark-overlay",

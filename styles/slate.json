@@ -1,54 +1,54 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
-	"title": "Midnight",
-	"slug": "midnight",
+	"title": "Slate",
+	"slug": "slate",
 	"settings": {
 		"color": {
 			"palette": [
 				{
 					"slug": "base",
-					"color": "#12141c",
+					"color": "#ffffff",
 					"name": "Base"
 				},
 				{
 					"slug": "contrast",
-					"color": "#f3f4f8",
+					"color": "#13181d",
 					"name": "Contrast"
 				},
 				{
 					"slug": "primary",
-					"color": "#8b9df0",
+					"color": "#1f4e56",
 					"name": "Primary"
 				},
 				{
 					"slug": "secondary",
-					"color": "#4fd391",
+					"color": "#57c2b4",
 					"name": "Secondary"
 				},
 				{
 					"slug": "accent",
-					"color": "#5aa7f0",
+					"color": "#2f6f79",
 					"name": "Accent"
 				},
 				{
 					"slug": "surface",
-					"color": "#1a1d28",
+					"color": "#f2f7f7",
 					"name": "Surface"
 				},
 				{
 					"slug": "muted",
-					"color": "#a3a9b8",
+					"color": "#586268",
 					"name": "Muted"
 				},
 				{
 					"slug": "border",
-					"color": "#2b3040",
+					"color": "#dfe8e9",
 					"name": "Border"
 				},
 				{
 					"slug": "dark",
-					"color": "#0b0d13",
+					"color": "#13181d",
 					"name": "Dark"
 				}
 			],
@@ -66,7 +66,7 @@
 				{
 					"slug": "primary-overlay",
 					"name": "Primary overlay",
-					"gradient": "linear-gradient(135deg, rgba(139,157,240,0.9) 0%, rgba(90,167,240,0.85) 100%)"
+					"gradient": "linear-gradient(135deg, rgba(31,78,86,0.9) 0%, rgba(47,111,121,0.85) 100%)"
 				},
 				{
 					"slug": "dark-overlay",
@@ -154,27 +154,8 @@
 				}
 			},
 			"button": {
-				"color": {
-					"background": "var:preset|color|secondary",
-					"text": "var:preset|color|contrast"
-				},
-				":hover": {
-					"color": {
-						"background": "var:preset|color|primary",
-						"text": "var:preset|color|base"
-					}
-				},
-				":focus": {
-					"color": {
-						"background": "var:preset|color|primary",
-						"text": "var:preset|color|base"
-					}
-				},
-				":active": {
-					"color": {
-						"background": "var:preset|color|primary",
-						"text": "var:preset|color|base"
-					}
+				"typography": {
+					"fontFamily": "var:preset|font-family|heading"
 				}
 			}
 		},
@@ -192,21 +173,6 @@
 			"core/post-title": {
 				"typography": {
 					"fontFamily": "var:preset|font-family|heading"
-				}
-			},
-			"core/button": {
-				"variations": {
-					"outline": {
-						":hover": {
-							"color": {
-								"background": "var:preset|color|primary",
-								"text": "var:preset|color|base"
-							},
-							"border": {
-								"color": "var:preset|color|primary"
-							}
-						}
-					}
 				}
 			}
 		}

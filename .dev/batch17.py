@@ -130,4 +130,29 @@ niche_footer(
     socials=[("x", "https://x.com"), ("mastodon", "https://mastodon.social"),
              ("rss", "https://example.com/feed")], posts_head="Recent essays")
 
-print("batch 17 rewritten: 5 niche footers on the house style")
+niche_footer(
+    "footer-restaurant", title="Footer: restaurant", cats="unapp, unapp_restaurant, footer",
+    keywords="footer, restaurant, hours, booking, address",
+    desc="A restaurant footer: what the kitchen does, opening nights and where to find the room.",
+    blurb="Ten tables on Wharf Street. Dinner Wednesday to Saturday, lunch on Sunday, and a menu that changes weekly.",
+    links_head="Eat", links=[("This week's menu", "#menu"), ("Book a table", "#book"),
+                             ("The kitchen", "#kitchen"), ("Private dining", "#private")],
+    contact_head="The room",
+    contact_lines=["41 Wharf Street, Bristol BS1 4RW", "0117 555 0192",
+                   "Wed–Sat dinner · Sun lunch", "eat@wharfstreet.example"],
+    socials=SOCIAL_STD + [("tripadvisor", "https://tripadvisor.com")], posts_head="From the kitchen")
+
+niche_footer(
+    "footer-agency", title="Footer: agency", cats="unapp, unapp_agency, footer",
+    keywords="footer, agency, studio, contact, work",
+    desc="A studio footer: what the studio does, the work, and how to start a project.",
+    blurb="An independent studio of nine in Manchester. Brand, product, and the software to run both.",
+    links_head="Studio", links=[("Work", "#work"), ("Capabilities", "#services"),
+                                ("Engagements", "#engagements"), ("Start a project", "#contact")],
+    contact_head="Get in touch",
+    contact_lines=["studio@northgate.example", "0161 555 0134",
+                   "Northgate Works, Manchester M4 5JW", "Booked about six weeks out"],
+    socials=[("linkedin", "https://linkedin.com"), ("instagram", "https://instagram.com"),
+             ("x", "https://x.com")], posts_head="Journal")
+
+print("batch 17 rewritten: 7 niche footers on the house style")
