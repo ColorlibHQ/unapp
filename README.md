@@ -9,8 +9,8 @@ Unapp is a lightweight WordPress **block theme** for app, SaaS and startup landi
 - **Complete landing page on activation** – a real "Home" page (editable page content, *Page (No Title)* template) and a "Blog" page are created and assigned in Settings → Reading; existing front pages are never overridden (a one-click notice is shown instead). Gradient hero with product screenshot, services grid, image & text, features around a phone, animated stats, screenshot gallery (core lightbox), pricing table, team, latest posts, call to action and contact cards.
 - **47 section patterns + 13 page starters**, grouped into ten inserter categories (Heroes, Features, Social proof, Pricing, Calls to action, Content & blog, Company, Utility, Full pages).
 - **Section styles** for Group/Columns/Column: Card, Soft background, Dark, Gradient, Frosted glass, Outline, Elevated. **Block styles**: List (Checklist, Dashed, Numbered steps, Two columns), Image (Device frame, Browser frame, Framed), Quote (Testimonial card), Details (FAQ card), Table (Comparison), Separator (Gradient line), Button (Text link with arrow), Columns (Divided).
-- **Color variations**: default, Emerald, Sunset, Graphite, Violet, Midnight (dark).
-- **Performance**: self-hosted Poppins/Nunito (woff2, latin + latin-ext subsets, ~160 KB total), AVIF images, fluid type, one 2 KB script loaded only where the Stats pattern is used, per-block CSS loaded on demand.
+- **Mix-and-match styles**: 6 colour palettes × 5 typography presets = 30 combinations, plus 5 curated looks. Colour and typography are separate partials in `styles/colors/` and `styles/typography/`.
+- **Performance**: six self-hosted font families (woff2, latin + latin-ext subsets, ~530 KB total, only the active pair downloads), AVIF images, fluid type, one 2 KB script loaded only where the Stats pattern is used, per-block CSS loaded on demand.
 - **Security**: all pattern output escaped, no direct file access, no external requests.
 
 ## Requirements
@@ -26,10 +26,11 @@ unapp/
 ├── theme.json           palette, gradients, shadows, spacing, fonts, global styles, templates
 ├── functions.php        block styles, pattern categories, lazy counter script
 ├── inc/front-page-setup.php  Home/Blog page creation + Reading settings on activation
-├── templates/           index, home, single, page, page-no-title, archive, search, 404
-├── parts/               header, footer (each references a PHP pattern for i18n)
+├── templates/           index, home, single, page, page-no-title, archive, author, category,
+│                       tag, date, search, 404, page-with-sidebar, single-with-sidebar
+├── parts/               header, footer, sidebar (each references a PHP pattern for i18n)
 ├── patterns/            47 section patterns, 13 page starters, hidden template partials
-├── styles/              section styles (blockTypes) and color variations
+├── styles/              curated looks, colors/ and typography/ partials, section styles
 ├── assets/css/          per-block styles (checklist, device frame)
 ├── assets/js/counter.js stat counter (IntersectionObserver, reduced-motion aware)
 ├── assets/fonts/        Poppins + Nunito (OFL)

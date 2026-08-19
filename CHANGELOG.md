@@ -2,7 +2,23 @@
 
 All notable changes to the Unapp theme are documented here.
 
-## Unreleased
+## 2.2.0 – 2026-08-19
+
+Phase 1 of the competitive roadmap: everything the benchmark identified as table stakes against Twenty Twenty-Five.
+
+### Added
+- **Mix-and-match style variations.** Six colour palettes (`styles/colors/`) and five typography presets (`styles/typography/`) are now separate partials, so the Site Editor lists them as independent groups — 30 combinations from 11 small files — alongside five curated looks that pair a palette with a typeface.
+- **Five typography presets** with self-hosted variable fonts: Poppins & Nunito, Inter, Fraunces & Inter, Space Grotesk & Inter, Manrope. Presets redefine the `heading` and `body` font-family slugs, so every existing pattern follows automatically.
+- **Six templates**: `author`, `category`, `tag`, `date`, `page-with-sidebar` and `single-with-sidebar`, plus a `sidebar` template part and its pattern (search, recent posts, topics, a call-to-action card).
+- **WordPress 7.0 blocks**: a native Accordion FAQ pattern, breadcrumbs above post and page titles, a result count on archives and search, and reading time in the post meta row.
+- **Sticky header support** — `settings.position.sticky` is enabled, so any header Group can be made sticky from the editor, with a frosted backdrop once it is.
+- **WooCommerce compatibility styles**, loaded only when WooCommerce is active: form controls, product cards, prices, sale badges, notices, cart and checkout.
+- Post-format support, background-image and dimension controls, and palette-aware shadows built with `color-mix()` so they follow whichever colour variation is active.
+- An accessibility statement in `readme.txt`.
+
+### Changed
+- All CSS uses logical properties — zero physical `left`/`right` declarations remain, so the theme works in right-to-left languages without a separate stylesheet. Added the `rtl-language-support` tag.
+- One consistent focus ring on every interactive element, switching to the section's own text colour on dark and gradient backgrounds instead of relying on the browser default.
 
 ### Fixed
 - Heading hierarchy skipped a level in five patterns: services, features, team and contact card titles were `h4` directly under the section `h2`, and footer column titles were `h4` after the page's last `h2`. Card titles are now `h3` and footer column titles `h2`, so the front page runs h1 → h2 → h3 with no skips. Screen-reader heading navigation was affected; it is also an accessibility-ready blocker.

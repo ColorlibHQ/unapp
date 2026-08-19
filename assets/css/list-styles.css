@@ -3,12 +3,12 @@
 /* --- Checklist ---------------------------------------------------------- */
 .wp-block-list.is-style-checklist {
 	list-style: none;
-	padding-left: 0;
+	padding-inline-start: 0;
 }
 
 .wp-block-list.is-style-checklist > li {
 	position: relative;
-	padding-left: 2.1em;
+	padding-inline-start: 2.1em;
 }
 
 .wp-block-list.is-style-checklist > li + li {
@@ -19,7 +19,7 @@
 	content: "";
 	position: absolute;
 	top: 0.15em;
-	left: 0;
+	inset-inline-start: 0;
 	width: 1.4em;
 	height: 1.4em;
 	border-radius: 50%;
@@ -33,12 +33,12 @@
 /* --- Dashed ------------------------------------------------------------- */
 .wp-block-list.is-style-dash {
 	list-style: none;
-	padding-left: 0;
+	padding-inline-start: 0;
 }
 
 .wp-block-list.is-style-dash > li {
 	position: relative;
-	padding-left: 1.6em;
+	padding-inline-start: 1.6em;
 }
 
 .wp-block-list.is-style-dash > li + li {
@@ -49,7 +49,7 @@
 	content: "";
 	position: absolute;
 	top: 0.72em;
-	left: 0;
+	inset-inline-start: 0;
 	width: 0.8em;
 	height: 2px;
 	border-radius: 2px;
@@ -59,13 +59,13 @@
 /* --- Numbered steps ----------------------------------------------------- */
 .wp-block-list.is-style-steps {
 	list-style: none;
-	padding-left: 0;
+	padding-inline-start: 0;
 	counter-reset: unapp-step;
 }
 
 .wp-block-list.is-style-steps > li {
 	position: relative;
-	padding-left: 2.8em;
+	padding-inline-start: 2.8em;
 	counter-increment: unapp-step;
 }
 
@@ -77,7 +77,7 @@
 	content: counter(unapp-step);
 	position: absolute;
 	top: 0;
-	left: 0;
+	inset-inline-start: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;

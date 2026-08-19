@@ -14,5 +14,6 @@
 	<!-- wp:avatar {"size":32,"style":{"border":{"radius":"999px"}}} /-->
 	<!-- wp:post-author-name {"isLink":true,"fontSize":"small"} /-->
 	<!-- wp:post-date {"fontSize":"small"} /-->
+	<!-- wp:post-time-to-read {"fontSize":"small","textColor":"muted"} /-->
 </div>
 <!-- /wp:group -->

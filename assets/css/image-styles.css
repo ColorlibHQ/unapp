@@ -32,7 +32,7 @@
 	content: "";
 	position: absolute;
 	top: 13px;
-	left: 14px;
+	inset-inline-start: 14px;
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;

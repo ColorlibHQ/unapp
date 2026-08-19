@@ -9,162 +9,162 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-19T10:45:21+00:00\n"
+"POT-Creation-Date: 2026-08-19T11:06:06+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: make-pot.py (Unapp)\n"
 "X-Domain: unapp\n"
 
-#: functions.php:140
+#: functions.php:168
 msgid "Every Unapp section: heroes, features, pricing, social proof, company and calls to action."
 msgstr ""
 
-#: functions.php:144
+#: functions.php:172
 msgid "Opening sections for a landing page."
 msgstr ""
 
-#: functions.php:148
+#: functions.php:176
 msgid "Ways to explain what the product does."
 msgstr ""
 
-#: functions.php:152
+#: functions.php:180
 msgid "Testimonials, logos, ratings and customer stories."
 msgstr ""
 
-#: functions.php:156
+#: functions.php:184
 msgid "Plan tables and comparisons."
 msgstr ""
 
-#: functions.php:160
+#: functions.php:188
 msgid "Conversion sections: sign-up bands, newsletters and app downloads."
 msgstr ""
 
-#: functions.php:164
+#: functions.php:192
 msgid "Post loops, author boxes, changelogs and documentation."
 msgstr ""
 
-#: functions.php:168
+#: functions.php:196
 msgid "About, team, values, careers, offices and press."
 msgstr ""
 
-#: functions.php:172
+#: functions.php:200
 msgid "Contact, FAQ, legal and help-centre sections."
 msgstr ""
 
-#: functions.php:176
+#: functions.php:204
 msgid "Complete page layouts. Insert one into an empty page to start from a finished design."
 msgstr ""
 
-#: functions.php:53
+#: functions.php:81
 msgctxt "Block style label"
 msgid "Checklist"
 msgstr ""
 
-#: functions.php:54
+#: functions.php:82
 msgctxt "Block style label"
 msgid "Dashed"
 msgstr ""
 
-#: functions.php:55
+#: functions.php:83
 msgctxt "Block style label"
 msgid "Numbered steps"
 msgstr ""
 
-#: functions.php:56
+#: functions.php:84
 msgctxt "Block style label"
 msgid "Two columns"
 msgstr ""
 
-#: functions.php:62
+#: functions.php:90
 msgctxt "Block style label"
 msgid "Device frame"
 msgstr ""
 
-#: functions.php:63
+#: functions.php:91
 msgctxt "Block style label"
 msgid "Browser frame"
 msgstr ""
 
-#: functions.php:64
+#: functions.php:92
 msgctxt "Block style label"
 msgid "Framed"
 msgstr ""
 
-#: functions.php:70
+#: functions.php:98
 msgctxt "Block style label"
 msgid "Testimonial card"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:104
 msgctxt "Block style label"
 msgid "FAQ card"
 msgstr ""
 
-#: functions.php:82
+#: functions.php:110
 msgctxt "Block style label"
 msgid "Comparison"
 msgstr ""
 
-#: functions.php:88
+#: functions.php:116
 msgctxt "Block style label"
 msgid "Gradient line"
 msgstr ""
 
-#: functions.php:94
+#: functions.php:122
 msgctxt "Block style label"
 msgid "Text link with arrow"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:128
 msgctxt "Block style label"
 msgid "Divided"
 msgstr ""
 
-#: functions.php:139
+#: functions.php:167
 msgctxt "Block pattern category"
 msgid "Unapp"
 msgstr ""
 
-#: functions.php:143
+#: functions.php:171
 msgctxt "Block pattern category"
 msgid "Unapp: Heroes"
 msgstr ""
 
-#: functions.php:147
+#: functions.php:175
 msgctxt "Block pattern category"
 msgid "Unapp: Features"
 msgstr ""
 
-#: functions.php:151
+#: functions.php:179
 msgctxt "Block pattern category"
 msgid "Unapp: Social proof"
 msgstr ""
 
-#: functions.php:155
+#: functions.php:183
 msgctxt "Block pattern category"
 msgid "Unapp: Pricing"
 msgstr ""
 
-#: functions.php:159
+#: functions.php:187
 msgctxt "Block pattern category"
 msgid "Unapp: Calls to action"
 msgstr ""
 
-#: functions.php:163
+#: functions.php:191
 msgctxt "Block pattern category"
 msgid "Unapp: Content & blog"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:195
 msgctxt "Block pattern category"
 msgid "Unapp: Company"
 msgstr ""
 
-#: functions.php:171
+#: functions.php:199
 msgctxt "Block pattern category"
 msgid "Unapp: Utility"
 msgstr ""
 
-#: functions.php:175
+#: functions.php:203
 msgctxt "Block pattern category"
 msgid "Unapp: Full pages"
 msgstr ""
@@ -292,7 +292,7 @@ msgid "No posts yet. Publish your first post and it will appear here."
 msgstr ""
 
 #: patterns/blog-posts.php:38
-#: patterns/hidden-posts-grid.php:25
+#: patterns/hidden-posts-grid.php:26
 msgctxt "Post excerpt read more link"
 msgid "Read more"
 msgstr ""
@@ -847,52 +847,78 @@ msgstr ""
 msgid "A grid of help-centre categories with icons."
 msgstr ""
 
+#: patterns/faq-accordion.php:40
 #: patterns/faq.php:44
 msgid "Questions we get a lot"
 msgstr ""
 
+#: patterns/faq-accordion.php:43
 #: patterns/faq.php:47
 msgid "Still stuck? The support team answers in under an hour on weekdays."
 msgstr ""
 
+#: patterns/faq-accordion.php:15
 #: patterns/faq.php:15
 msgctxt "FAQ question"
 msgid "Can I try Unapp before paying?"
 msgstr ""
 
+#: patterns/faq-accordion.php:16
 #: patterns/faq.php:16
 msgctxt "FAQ answer"
 msgid "Yes. Every plan starts with a 14-day trial of the Team tier — no card, no sales call. When the trial ends you drop to the free plan rather than losing your data."
 msgstr ""
 
+#: patterns/faq-accordion.php:19
 #: patterns/faq.php:19
 msgctxt "FAQ question"
 msgid "What happens to my data if I cancel?"
 msgstr ""
 
+#: patterns/faq-accordion.php:20
 #: patterns/faq.php:20
 msgctxt "FAQ answer"
 msgid "You can export everything as CSV or through the API at any time. We keep a backup for 30 days after cancellation, then delete it for good."
 msgstr ""
 
+#: patterns/faq-accordion.php:23
 #: patterns/faq.php:23
 msgctxt "FAQ question"
 msgid "Do you offer discounts for non-profits?"
 msgstr ""
 
+#: patterns/faq-accordion.php:24
 #: patterns/faq.php:24
 msgctxt "FAQ answer"
 msgid "We do — registered non-profits and educational institutions get 50% off any paid plan. Email us from your organisation address and we will set it up."
 msgstr ""
 
+#: patterns/faq-accordion.php:27
 #: patterns/faq.php:27
 msgctxt "FAQ question"
 msgid "Where is my data stored?"
 msgstr ""
 
+#: patterns/faq-accordion.php:28
 #: patterns/faq.php:28
 msgctxt "FAQ answer"
 msgid "In the region you choose when the workspace is created: the EU, the United States or Australia. Data never leaves that region."
+msgstr ""
+
+#: patterns/faq-accordion.php:37
+#: patterns/faq.php:41
+msgctxt "Section eyebrow label"
+msgid "FAQ"
+msgstr ""
+
+#. Pattern title
+#: patterns/faq-accordion.php
+msgid "FAQ accordion (WordPress 7.0)"
+msgstr ""
+
+#. Pattern description
+#: patterns/faq-accordion.php
+msgid "Expandable questions built on the core Accordion block, with one panel open by default."
 msgstr ""
 
 #: patterns/faq.php:31
@@ -903,11 +929,6 @@ msgstr ""
 #: patterns/faq.php:32
 msgctxt "FAQ answer"
 msgid "Importers are built in for the usual suspects, and our team will run the migration with you on Business plans."
-msgstr ""
-
-#: patterns/faq.php:41
-msgctxt "Section eyebrow label"
-msgid "FAQ"
 msgstr ""
 
 #. Pattern title
@@ -1508,6 +1529,26 @@ msgid "Big 404, friendly message, search form and a button back home."
 msgstr ""
 
 #. Pattern title
+#: patterns/hidden-archive-header.php
+msgid "Archive header"
+msgstr ""
+
+#. Pattern description
+#: patterns/hidden-archive-header.php
+msgid "Archive title, description and result count."
+msgstr ""
+
+#. Pattern title
+#: patterns/hidden-author-header.php
+msgid "Author header"
+msgstr ""
+
+#. Pattern description
+#: patterns/hidden-author-header.php
+msgid "Author avatar, name and biography above the author's posts."
+msgstr ""
+
+#. Pattern title
 #: patterns/hidden-blog-heading.php
 msgid "Blog heading"
 msgstr ""
@@ -1552,7 +1593,7 @@ msgstr ""
 msgid "Tag list with a translated prefix."
 msgstr ""
 
-#: patterns/hidden-posts-grid.php:40
+#: patterns/hidden-posts-grid.php:41
 msgid "Nothing found. Try a different search term or browse the latest posts from the menu."
 msgstr ""
 
@@ -2645,6 +2686,43 @@ msgstr ""
 msgid "Section intro followed by four icon cards in a responsive grid."
 msgstr ""
 
+#: patterns/sidebar.php:20
+msgid "Search"
+msgstr ""
+
+#: patterns/sidebar.php:29
+msgid "Recent posts"
+msgstr ""
+
+#: patterns/sidebar.php:38
+msgid "Topics"
+msgstr ""
+
+#: patterns/sidebar.php:47
+msgid "Try Unapp free"
+msgstr ""
+
+#: patterns/sidebar.php:50
+msgid "Fourteen days of the Team plan. No card, no sales call."
+msgstr ""
+
+#: patterns/sidebar.php:55
+msgctxt "Button text"
+msgid "Start free trial"
+msgstr ""
+
+#. Pattern title
+#. Template part name
+#: patterns/sidebar.php
+#: theme.json
+msgid "Sidebar"
+msgstr ""
+
+#. Pattern description
+#: patterns/sidebar.php
+msgid "Search, recent posts and categories — the sidebar used by the two sidebar templates."
+msgstr ""
+
 #: patterns/stats.php:16
 msgctxt "Stat label"
 msgid "Active teams"
@@ -2992,7 +3070,7 @@ msgstr ""
 
 #. Description of the theme
 #: style.css
-msgid "Unapp is a lightweight, block-based WordPress theme for app and SaaS landing pages. Built for the Site Editor with 47 section patterns, 13 full-page starters, seven section styles, eleven block styles and six color variations. No page-builder framework, no jQuery, no icon fonts."
+msgid "Unapp is a lightweight, block-based WordPress theme for app and SaaS landing pages. Built for the Site Editor with 50+ section patterns, 13 full-page starters, six colour palettes and five typography presets you can mix, seven section styles and eleven block styles. Self-hosted variable fonts, no page-builder framework, no jQuery, no icon fonts."
 msgstr ""
 
 #. Author of the theme
@@ -3141,31 +3219,16 @@ msgstr ""
 #. Style variation name
 #: theme.json
 #: styles/card.json
-#: styles/emerald.json
-#: styles/graphite.json
-#: styles/midnight.json
-#: styles/sunset.json
-#: styles/violet.json
 msgid "Card"
 msgstr ""
 
 #. Shadow name
 #: theme.json
-#: styles/emerald.json
-#: styles/graphite.json
-#: styles/midnight.json
-#: styles/sunset.json
-#: styles/violet.json
 msgid "Card strong"
 msgstr ""
 
 #. Shadow name
 #: theme.json
-#: styles/emerald.json
-#: styles/graphite.json
-#: styles/midnight.json
-#: styles/sunset.json
-#: styles/violet.json
 msgid "Glow"
 msgstr ""
 
@@ -3226,22 +3289,65 @@ msgstr ""
 
 #. Font family name
 #: theme.json
-msgid "Nunito"
-msgstr ""
-
-#. Font family name
-#: theme.json
+#: styles/violet.json
 msgid "Poppins"
 msgstr ""
 
 #. Font family name
 #: theme.json
+#: styles/violet.json
+msgid "Nunito"
+msgstr ""
+
+#. Font family name
+#: theme.json
+#: styles/emerald.json
+#: styles/graphite.json
+#: styles/midnight.json
+#: styles/sunset.json
+#: styles/violet.json
 msgid "System"
+msgstr ""
+
+#. Font family name
+#: theme.json
+#: styles/graphite.json
+#: styles/midnight.json
+#: styles/sunset.json
+msgid "Inter"
+msgstr ""
+
+#. Font family name
+#: theme.json
+#: styles/sunset.json
+msgid "Fraunces"
+msgstr ""
+
+#. Font family name
+#: theme.json
+#: styles/midnight.json
+msgid "Space Grotesk"
+msgstr ""
+
+#. Font family name
+#: theme.json
+#: styles/emerald.json
+msgid "Manrope"
 msgstr ""
 
 #. Custom template name
 #: theme.json
 msgid "Page (No Title)"
+msgstr ""
+
+#. Custom template name
+#: theme.json
+msgid "Page (With Sidebar)"
+msgstr ""
+
+#. Custom template name
+#: theme.json
+msgid "Post (With Sidebar)"
 msgstr ""
 
 #. Style variation name

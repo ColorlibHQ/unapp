@@ -1,7 +1,7 @@
 /* Columns block style: hairline rules between columns. */
 @media (min-width: 782px) {
 	.wp-block-columns.is-style-divided > .wp-block-column + .wp-block-column {
-		border-left: 1px solid var(--wp--preset--color--border, #e4e7f0);
-		padding-left: var(--wp--preset--spacing--50, 2rem);
+		border-inline-start: 1px solid var(--wp--preset--color--border, #e4e7f0);
+		padding-inline-start: var(--wp--preset--spacing--50, 2rem);
 	}
 }

@@ -3,15 +3,15 @@ Theme Name: Unapp
 Theme URI: https://colorlib.com/wp/themes/unapp/
 Author: Colorlib
 Author URI: https://colorlib.com
-Description: Unapp is a lightweight, block-based WordPress theme for app and SaaS landing pages. Built for the Site Editor with 47 section patterns, 13 full-page starters, seven section styles, eleven block styles and six color variations. No page-builder framework, no jQuery, no icon fonts.
-Version: 2.1.0
+Description: Unapp is a lightweight, block-based WordPress theme for app and SaaS landing pages. Built for the Site Editor with 50+ section patterns, 13 full-page starters, six colour palettes and five typography presets you can mix, seven section styles and eleven block styles. Self-hosted variable fonts, no page-builder framework, no jQuery, no icon fonts.
+Version: 2.2.0
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 7.4
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: unapp
-Tags: blog, one-column, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, style-variations, template-editing, threaded-comments, translation-ready
+Tags: blog, one-column, rtl-language-support, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, style-variations, template-editing, threaded-comments, translation-ready
 
 Unapp WordPress Theme, (C) 2018-2026 Colorlib
 Unapp is distributed under the terms of the GNU GPL.
@@ -86,6 +86,81 @@ Unapp is distributed under the terms of the GNU GPL.
 /* The mobile overlay is the one place the menu should stack. */
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
 	flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Focus
+   One consistent, high-contrast focus ring everywhere, instead of leaving it to
+   each browser's default (which is blue and disappears on dark sections).
+   ========================================================================== */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+	outline: 2px solid var(--wp--preset--color--primary);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+/* On dark and gradient sections the primary colour is the background, so the
+   ring switches to the section's own text colour. */
+:where(.is-style-section-dark, .is-style-section-gradient, .wp-block-cover, .has-dark-background-color)
+	:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+	outline-color: currentColor;
+}
+
+/* ==========================================================================
+   Sticky header
+   Users can switch it on per header from the block's Position control. These
+   rules only make the result look right once they do.
+   ========================================================================== */
+.wp-block-template-part > .wp-block-group.is-position-sticky {
+	backdrop-filter: saturate(140%) blur(12px);
+	-webkit-backdrop-filter: saturate(140%) blur(12px);
+	background-color: color-mix(in srgb, var(--wp--preset--color--base) 88%, transparent);
+	z-index: 100;
+}
+
+/* ==========================================================================
+   Accordion (WordPress 7.0)
+   ========================================================================== */
+.wp-block-accordion .wp-block-accordion-item {
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 14px;
+	background: var(--wp--preset--color--base);
+}
+
+.wp-block-accordion .wp-block-accordion-item + .wp-block-accordion-item {
+	margin-top: 0.75rem;
+}
+
+.wp-block-accordion-heading__toggle {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 1.15rem 1.5rem;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	color: inherit;
+	font: inherit;
+	font-family: var(--wp--preset--font-family--heading);
+	font-weight: 600;
+	text-align: start;
+}
+
+.wp-block-accordion-heading__toggle-icon {
+	flex: 0 0 auto;
+	color: var(--wp--preset--color--primary);
+	font-size: 1.35em;
+	line-height: 1;
+}
+
+.wp-block-accordion-panel > * {
+	margin-inline: 1.5rem;
+}
+
+.wp-block-accordion-panel > *:last-child {
+	margin-bottom: 1.35rem;
 }
 
 /* ==========================================================================
@@ -270,8 +345,7 @@ Unapp is distributed under the terms of the GNU GPL.
 .wp-block-post-content > .alignfull.wp-block-group:not(.has-global-padding):not([style*="padding"]),
 .wp-block-post-content > .alignfull.wp-block-gallery > figcaption,
 .wp-block-post-content > .alignfull.wp-block-image > figcaption {
-	padding-left: var(--wp--style--root--padding-left, 1.5rem);
-	padding-right: var(--wp--style--root--padding-right, 1.5rem);
+	padding-inline: var(--wp--style--root--padding-left, 1.5rem) var(--wp--style--root--padding-right, 1.5rem);
 }
 
 /* Legacy paginated posts (<!--nextpage-->). */
@@ -353,20 +427,21 @@ Unapp is distributed under the terms of the GNU GPL.
 
 :is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) .aligncenter {
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	margin-inline: auto;
 }
 
 :is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) img.alignleft,
 :is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) .wp-caption.alignleft {
-	float: left;
+	float: inline-start;
 	margin: 0.5em 1.5em 1em 0;
+	margin-inline: 0 1.5em;
 }
 
 :is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) img.alignright,
 :is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) .wp-caption.alignright {
-	float: right;
+	float: inline-end;
 	margin: 0.5em 0 1em 1.5em;
+	margin-inline: 1.5em 0;
 }
 
 /* Classic captions ([caption]) match block captions. */
@@ -437,8 +512,8 @@ Unapp is distributed under the terms of the GNU GPL.
 /* Classic blockquote (block quotes are styled by theme.json). */
 :is(.wp-block-post-content, .wp-block-comment-content, .editor-styles-wrapper) blockquote:not([class*="wp-block-"]):not(.wp-block-pullquote *) {
 	margin: 1.5em 0;
-	padding-left: var(--wp--preset--spacing--40);
-	border-left: 4px solid var(--wp--preset--color--primary);
+	padding-inline-start: var(--wp--preset--spacing--40);
+	border-inline-start: 4px solid var(--wp--preset--color--primary);
 	font-size: var(--wp--preset--font-size--large);
 }
 
@@ -496,7 +571,8 @@ Unapp is distributed under the terms of the GNU GPL.
 }
 
 :is(.wp-block-post-content, .wp-block-comment-content) dd {
-	margin: 0 0 1em var(--wp--preset--spacing--40);
+	margin: 0 0 1em;
+	margin-inline-start: var(--wp--preset--spacing--40);
 }
 
 :is(.wp-block-post-content, .wp-block-comment-content) hr:not([class*="wp-block-"]) {

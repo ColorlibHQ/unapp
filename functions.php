@@ -28,6 +28,17 @@ function unapp_setup() {
 
 	// Load the small stylesheet inside the editor too, so cards/thumbnails match the front end.
 	add_editor_style( 'style.css' );
+
+	// WooCommerce renders through its own block templates in a block theme; declaring
+	// support keeps its product gallery features available and silences the
+	// "theme does not declare support" notice.
+	add_theme_support( 'woocommerce' );
+
+	// Post formats, so format-specific styling and patterns work on blogs.
+	add_theme_support(
+		'post-formats',
+		array( 'aside', 'audio', 'gallery', 'image', 'link', 'quote', 'status', 'video' )
+	);
 }
 add_action( 'after_setup_theme', 'unapp_setup' );
 
@@ -38,6 +49,23 @@ function unapp_enqueue_styles() {
 	wp_enqueue_style( 'unapp-style', get_stylesheet_uri(), array(), UNAPP_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'unapp_enqueue_styles' );
+
+/**
+ * WooCommerce compatibility styles, loaded only when WooCommerce is active.
+ */
+function unapp_woocommerce_styles() {
+	if ( ! class_exists( 'WooCommerce' ) ) {
+		return;
+	}
+
+	wp_enqueue_style(
+		'unapp-woocommerce',
+		get_theme_file_uri( 'assets/css/woocommerce.css' ),
+		array( 'unapp-style' ),
+		UNAPP_VERSION
+	);
+}
+add_action( 'wp_enqueue_scripts', 'unapp_woocommerce_styles', 20 );
 
 /**
  * Register block styles and their per-block stylesheets.
@@ -182,6 +210,52 @@ function unapp_pattern_categories() {
 	}
 }
 add_action( 'init', 'unapp_pattern_categories' );
+
+/**
+ * Hide patterns that depend on blocks the current WordPress does not have.
+ *
+ * Unapp supports WordPress 6.6 upwards, but some patterns are built on blocks
+ * that only arrived in 7.0 (Accordion, Breadcrumbs, Query Total, Time to Read).
+ * On older versions those patterns are unregistered rather than shown broken,
+ * and the templates fall back to the equivalents that have always existed.
+ */
+function unapp_unregister_unsupported_patterns() {
+	$requirements = array(
+		'unapp/faq-accordion' => 'core/accordion',
+	);
+
+	foreach ( $requirements as $pattern => $block ) {
+		if ( ! WP_Block_Type_Registry::get_instance()->is_registered( $block )
+			&& WP_Block_Patterns_Registry::get_instance()->is_registered( $pattern ) ) {
+			unregister_block_pattern( $pattern );
+		}
+	}
+}
+add_action( 'init', 'unapp_unregister_unsupported_patterns', 20 );
+
+/**
+ * Strip blocks that need a newer WordPress out of templates and patterns.
+ *
+ * `render_block` returns an empty string for an unregistered block, so the only
+ * thing needed is to make sure nothing else breaks around it. Breadcrumbs,
+ * Query Total and Time to Read all degrade to nothing, which is the intended
+ * behaviour on 6.6–6.9.
+ *
+ * @param string $block_content Rendered block HTML.
+ * @param array  $block         Parsed block.
+ * @return string Block HTML, or an empty string when the block is unavailable.
+ */
+function unapp_skip_unsupported_blocks( $block_content, $block ) {
+	$optional = array( 'core/breadcrumbs', 'core/query-total', 'core/post-time-to-read', 'core/accordion' );
+
+	if ( in_array( $block['blockName'] ?? '', $optional, true )
+		&& ! WP_Block_Type_Registry::get_instance()->is_registered( $block['blockName'] ) ) {
+		return '';
+	}
+
+	return $block_content;
+}
+add_filter( 'render_block', 'unapp_skip_unsupported_blocks', 10, 2 );
 
 /**
  * Lazily enqueue the stat counter script.

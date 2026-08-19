@@ -10,7 +10,8 @@
 	position: relative;
 	list-style: none;
 	cursor: pointer;
-	padding: 1.15rem 3.25rem 1.15rem 1.5rem;
+	padding-block: 1.15rem;
+	padding-inline: 1.5rem 3.25rem;
 	font-family: var(--wp--preset--font-family--heading);
 	font-weight: 600;
 }
@@ -23,11 +24,11 @@
 	content: "";
 	position: absolute;
 	top: 50%;
-	right: 1.4rem;
+	inset-inline-end: 1.4rem;
 	width: 0.7rem;
 	height: 0.7rem;
 	margin-top: -0.45rem;
-	border-right: 2px solid var(--wp--preset--color--primary, #5468d8);
+	border-inline-end: 2px solid var(--wp--preset--color--primary, #5468d8);
 	border-bottom: 2px solid var(--wp--preset--color--primary, #5468d8);
 	transform: rotate(45deg);
 	transition: transform 0.2s ease;
@@ -45,5 +46,6 @@
 }
 
 .wp-block-details.is-style-faq-card > *:not(summary) {
-	margin: 0 1.5rem 1.35rem;
+	margin-block: 0 1.35rem;
+	margin-inline: 1.5rem;
 }

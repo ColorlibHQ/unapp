@@ -2,6 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
 	"title": "Graphite",
+	"slug": "graphite",
 	"settings": {
 		"color": {
 			"palette": [
@@ -54,44 +55,126 @@
 			"gradients": [
 				{
 					"slug": "primary-to-accent",
-					"gradient": "linear-gradient(135deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--accent) 100%)",
-					"name": "Primary to Accent"
+					"name": "Primary to Accent",
+					"gradient": "linear-gradient(135deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--accent) 100%)"
 				},
 				{
 					"slug": "secondary-to-accent",
-					"gradient": "linear-gradient(135deg, var(--wp--preset--color--secondary) 0%, var(--wp--preset--color--accent) 100%)",
-					"name": "Secondary to Accent"
+					"name": "Secondary to Accent",
+					"gradient": "linear-gradient(135deg, var(--wp--preset--color--secondary) 0%, var(--wp--preset--color--accent) 100%)"
 				},
 				{
 					"slug": "primary-overlay",
-					"gradient": "linear-gradient(135deg, rgba(61,67,81,0.92) 0%, rgba(91,100,114,0.88) 100%)",
-					"name": "Primary overlay"
+					"name": "Primary overlay",
+					"gradient": "linear-gradient(135deg, rgba(61,67,81,0.92) 0%, rgba(91,100,114,0.88) 100%)"
 				},
 				{
 					"slug": "dark-overlay",
-					"gradient": "linear-gradient(180deg, rgba(35,35,35,0.55) 0%, rgba(35,35,35,0.85) 100%)",
-					"name": "Dark overlay"
+					"name": "Dark overlay",
+					"gradient": "linear-gradient(180deg, rgba(35,35,35,0.55) 0%, rgba(35,35,35,0.85) 100%)"
 				}
 			]
 		},
-		"shadow": {
-			"presets": [
+		"typography": {
+			"fontFamilies": [
 				{
-					"slug": "card",
-					"shadow": "0 12px 32px -8px rgba(22,24,29,0.12)",
-					"name": "Card"
+					"slug": "heading",
+					"name": "Inter",
+					"fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "100 900",
+							"fontDisplay": "swap",
+							"unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF",
+							"src": [
+								"file:./assets/fonts/inter/inter-normal-latin-ext.woff2"
+							]
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "100 900",
+							"fontDisplay": "swap",
+							"unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+							"src": [
+								"file:./assets/fonts/inter/inter-normal-latin.woff2"
+							]
+						}
+					]
 				},
 				{
-					"slug": "card-strong",
-					"shadow": "0 28px 56px -20px rgba(22,24,29,0.30)",
-					"name": "Card strong"
+					"slug": "body",
+					"name": "Inter",
+					"fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "100 900",
+							"fontDisplay": "swap",
+							"unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF",
+							"src": [
+								"file:./assets/fonts/inter/inter-normal-latin-ext.woff2"
+							]
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "100 900",
+							"fontDisplay": "swap",
+							"unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+							"src": [
+								"file:./assets/fonts/inter/inter-normal-latin.woff2"
+							]
+						}
+					]
 				},
 				{
-					"slug": "glow",
-					"shadow": "0 24px 64px -24px rgba(61,67,81,0.45)",
-					"name": "Glow"
+					"slug": "system",
+					"name": "System",
+					"fontFamily": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif"
 				}
 			]
+		}
+	},
+	"styles": {
+		"typography": {
+			"fontFamily": "var:preset|font-family|body",
+			"fontWeight": "400",
+			"lineHeight": "1.65"
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|heading",
+					"fontWeight": "700",
+					"letterSpacing": "-0.025em"
+				}
+			},
+			"button": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|heading"
+				}
+			}
+		},
+		"blocks": {
+			"core/site-title": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|heading"
+				}
+			},
+			"core/navigation": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|heading"
+				}
+			},
+			"core/post-title": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|heading"
+				}
+			}
 		}
 	}
 }

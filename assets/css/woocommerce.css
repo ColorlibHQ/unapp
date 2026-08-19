@@ -1,0 +1,118 @@
+/**
+ * WooCommerce compatibility.
+ *
+ * Woo's block templates already inherit the palette and button styles from
+ * theme.json. This file only covers what global styles cannot reach: native
+ * form controls, product card rhythm and the pieces Woo styles itself.
+ * Loaded only when WooCommerce is active.
+ */
+
+/* --- Native form controls ------------------------------------------------ */
+.woocommerce select,
+.wc-block-components-sort-select__select,
+.woocommerce-ordering select,
+.wc-block-components-text-input input[type="text"],
+.wc-block-components-text-input input[type="email"],
+.wc-block-components-text-input input[type="tel"],
+.wc-block-components-textarea {
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 8px;
+	padding: 0.7rem 1rem;
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	font-family: inherit;
+	font-size: var(--wp--preset--font-size--small);
+	line-height: 1.4;
+}
+
+.woocommerce select:focus,
+.wc-block-components-sort-select__select:focus,
+.wc-block-components-text-input input:focus,
+.wc-block-components-textarea:focus {
+	outline: 2px solid var(--wp--preset--color--primary);
+	outline-offset: 1px;
+	border-color: transparent;
+}
+
+/* --- Product cards -------------------------------------------------------- */
+.wc-block-product-template .wc-block-product,
+.woocommerce ul.products li.product {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.wc-block-product-template .wc-block-components-product-image img,
+.woocommerce ul.products li.product img {
+	border-radius: 12px;
+}
+
+.wc-block-components-product-title,
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.wc-block-components-product-price,
+.woocommerce ul.products li.product .price {
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--heading);
+	font-weight: 600;
+}
+
+.wc-block-components-product-price del,
+.woocommerce .price del {
+	color: var(--wp--preset--color--muted);
+	font-weight: 400;
+}
+
+.wc-block-components-product-price ins,
+.woocommerce .price ins {
+	text-decoration: none;
+	color: var(--wp--preset--color--primary);
+}
+
+/* Sale flash follows the accent, not Woo's default pink. */
+.woocommerce span.onsale,
+.wc-block-components-product-sale-badge {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--contrast);
+	border-radius: 999px;
+	border: 0;
+	padding: 0.25em 0.85em;
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 600;
+	min-height: 0;
+	min-width: 0;
+	line-height: 1.5;
+}
+
+/* --- Notices -------------------------------------------------------------- */
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error,
+.wc-block-components-notice-banner {
+	border-radius: 12px;
+	border-width: 1px;
+	font-size: var(--wp--preset--font-size--small);
+}
+
+/* --- Cart and checkout ---------------------------------------------------- */
+.wc-block-cart-items__row,
+.woocommerce table.shop_table {
+	border-color: var(--wp--preset--color--border);
+}
+
+.wc-block-components-totals-item__value,
+.wc-block-components-totals-footer-item .wc-block-components-totals-item__value {
+	font-family: var(--wp--preset--font-family--heading);
+	font-weight: 600;
+}
+
+.wc-block-components-sidebar .wc-block-components-panel,
+.wc-block-cart .wc-block-components-sidebar-layout .wc-block-components-sidebar {
+	border-radius: 16px;
+}
