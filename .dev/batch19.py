@@ -150,3 +150,19 @@ write_pattern("hidden-shop-search", title="Shop: product search", cats="unapp", 
                     '"style":{"border":{"radius":"999px"}}} /-->'))
 
 print("batch 19 written: 4 hidden partials + 6 shop sections")
+
+# --------------------------------------------------- visitor scheme toggle
+toggle = ('<!-- wp:buttons -->\n<div class="wp-block-buttons">\n'
+          '<!-- wp:button {"className":"is-style-outline unapp-scheme-toggle","fontSize":"small"} -->\n'
+          '<div class="wp-block-button has-custom-font-size is-style-outline unapp-scheme-toggle has-small-font-size">'
+          '<a class="wp-block-button__link wp-element-button" href="#" role="button" aria-pressed="false">'
+          '<span class="unapp-scheme-toggle__light">' + t("Dark") + '</span>'
+          '<span class="unapp-scheme-toggle__dark">' + t("Light") + '</span>'
+          '</a></div>\n'
+          '<!-- /wp:button -->\n</div>\n<!-- /wp:buttons -->')
+write_pattern("theme-toggle", title="Dark mode toggle", cats="unapp, unapp_utility, header",
+              keywords="dark mode, light, scheme, toggle, accessibility",
+              desc="A button that lets a visitor read the site light or dark and remembers the choice. Add it to the header; the dark tokens and script load only where it appears.",
+              body=toggle, viewport=600)
+
+print("scheme toggle pattern written")

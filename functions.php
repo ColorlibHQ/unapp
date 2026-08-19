@@ -331,3 +331,8 @@ require get_theme_file_path( 'inc/starter-sites.php' );
  * Contact forms: render whichever form plugin is active, styled to the palette.
  */
 require get_theme_file_path( 'inc/forms.php' );
+
+/**
+ * Visitor colour-scheme toggle, active only where the toggle pattern is used.
+ */
+require get_theme_file_path( 'inc/scheme.php' );

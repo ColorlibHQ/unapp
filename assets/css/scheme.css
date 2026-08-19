@@ -1,0 +1,96 @@
+/**
+ * Dark reading scheme.
+ *
+ * The neutrals swap to a dark set; the palette's own primary, secondary and
+ * accent are lightened rather than replaced, so an Emerald site stays green and
+ * a Navy site stays blue in the dark.
+ *
+ * The lightened values are computed on <html>, where the palette still holds
+ * its original values, and consumed on <body>, where the overrides apply.
+ * Computing and consuming on the same element would make each custom property
+ * depend on itself, which is invalid and silently drops the declaration.
+ */
+
+html {
+	/* 52% is the most colour that still clears 4.5:1 on the dark ground for
+	   every palette the theme ships — Mono's primary is black, which needs the
+	   most lift, and Midnight's is already light, which needs the least. */
+	--unapp-primary-lift: color-mix(in srgb, var(--wp--preset--color--primary) 52%, #ffffff);
+	--unapp-secondary-lift: color-mix(in srgb, var(--wp--preset--color--secondary) 78%, #ffffff);
+	--unapp-accent-lift: color-mix(in srgb, var(--wp--preset--color--accent) 52%, #ffffff);
+}
+
+html[data-unapp-scheme="dark"] body {
+	--wp--preset--color--base: #12141c;
+	--wp--preset--color--contrast: #f3f4f8;
+	--wp--preset--color--surface: #1a1d28;
+	--wp--preset--color--border: #2b3040;
+	--wp--preset--color--muted: #a9b0c0;
+	--wp--preset--color--dark: #0b0d13;
+	--wp--preset--color--primary: var(--unapp-primary-lift);
+	--wp--preset--color--secondary: var(--unapp-secondary-lift);
+	--wp--preset--color--accent: var(--unapp-accent-lift);
+
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+}
+
+/* Sections that carry their own dark ground — the gradient bands, the dark
+   footer, the section-dark style — write their text as `base` and their button
+   labels as `contrast`, meaning "light on dark". Swapping those two globally
+   inverts them, so inside such a section the pair goes back to its light-mode
+   meaning. */
+html[data-unapp-scheme="dark"] body :is(
+	[class*="-gradient-background"],
+	.has-dark-background-color,
+	.is-style-section-dark,
+	.wp-block-cover
+) {
+	--wp--preset--color--base: #ffffff;
+	--wp--preset--color--contrast: #12141c;
+}
+
+/* Buttons take their text from `contrast`, which is now light; on the lifted
+   secondary that would be light on light, so pin it back to the dark ground. */
+html[data-unapp-scheme="dark"] body .wp-element-button,
+html[data-unapp-scheme="dark"] body .wp-block-button__link {
+	color: #12141c;
+}
+
+html[data-unapp-scheme="dark"] body .wp-block-button.is-style-outline .wp-block-button__link {
+	color: var(--wp--preset--color--contrast);
+}
+
+/* Images and covers are a touch bright against a dark page. */
+html[data-unapp-scheme="dark"] body .wp-block-image img {
+	filter: brightness(0.92);
+}
+
+/* The toggle itself. */
+.unapp-scheme-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+.unapp-scheme-toggle .unapp-scheme-toggle__dark {
+	display: none;
+}
+
+html[data-unapp-scheme="dark"] .unapp-scheme-toggle .unapp-scheme-toggle__dark {
+	display: inline;
+}
+
+html[data-unapp-scheme="dark"] .unapp-scheme-toggle .unapp-scheme-toggle__light {
+	display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+	html:not([data-unapp-scheme]) .unapp-scheme-toggle .unapp-scheme-toggle__dark {
+		display: inline;
+	}
+
+	html:not([data-unapp-scheme]) .unapp-scheme-toggle .unapp-scheme-toggle__light {
+		display: none;
+	}
+}
