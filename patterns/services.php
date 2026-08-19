@@ -61,8 +61,8 @@ $unapp_services = array(
 				<!-- /wp:image -->
 			</div>
 			<!-- /wp:group -->
-			<!-- wp:heading {"level":4} -->
-			<h4 class="wp-block-heading"><?php echo esc_html( $unapp_service['title'] ); ?></h4>
+			<!-- wp:heading {"level":3} -->
+			<h3 class="wp-block-heading"><?php echo esc_html( $unapp_service['title'] ); ?></h3>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph {"textColor":"muted"} -->
 			<p class="has-muted-color has-text-color"><?php echo esc_html( $unapp_service['text'] ); ?></p>

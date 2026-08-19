@@ -33,8 +33,8 @@
 
 		<!-- wp:column {"width":"18%"} -->
 		<div class="wp-block-column" style="flex-basis:18%">
-			<!-- wp:heading {"level":4,"fontSize":"medium"} -->
-			<h4 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Company', 'unapp' ); ?></h4>
+			<!-- wp:heading {"fontSize":"medium"} -->
+			<h2 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Company', 'unapp' ); ?></h2>
 			<!-- /wp:heading -->
 			<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"},"typography":{"textTransform":"none","letterSpacing":"0","fontWeight":"400"}},"fontFamily":"body","fontSize":"medium"} -->
 				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'About', 'Footer menu link', 'unapp' ); ?>","url":"#"} /-->
@@ -47,8 +47,8 @@
 
 		<!-- wp:column {"width":"24%"} -->
 		<div class="wp-block-column" style="flex-basis:24%">
-			<!-- wp:heading {"level":4,"fontSize":"medium"} -->
-			<h4 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Latest posts', 'unapp' ); ?></h4>
+			<!-- wp:heading {"fontSize":"medium"} -->
+			<h2 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Latest posts', 'unapp' ); ?></h2>
 			<!-- /wp:heading -->
 			<!-- wp:latest-posts {"postsToShow":3,"displayPostDate":true} /-->
 		</div>
@@ -56,8 +56,8 @@
 
 		<!-- wp:column {"width":"24%"} -->
 		<div class="wp-block-column" style="flex-basis:24%">
-			<!-- wp:heading {"level":4,"fontSize":"medium"} -->
-			<h4 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Contact', 'unapp' ); ?></h4>
+			<!-- wp:heading {"fontSize":"medium"} -->
+			<h2 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Contact', 'unapp' ); ?></h2>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.75)"}}} -->
 			<p class="has-text-color" style="color:rgba(255,255,255,0.75)"><?php esc_html_e( '198 West 21th Street, Suite 721', 'unapp' ); ?><br><?php esc_html_e( 'New York, NY 10016', 'unapp' ); ?></p>

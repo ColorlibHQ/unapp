@@ -53,8 +53,8 @@ $unapp_feature_row = static function ( $feature ) {
 		<!-- /wp:group -->
 		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"}} -->
 		<div class="wp-block-group">
-			<!-- wp:heading {"level":4,"fontSize":"large"} -->
-			<h4 class="wp-block-heading has-large-font-size"><?php echo esc_html( $feature['title'] ); ?></h4>
+			<!-- wp:heading {"level":3,"fontSize":"large"} -->
+			<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $feature['title'] ); ?></h3>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph {"textColor":"muted"} -->
 			<p class="has-muted-color has-text-color"><?php echo esc_html( $feature['text'] ); ?></p>

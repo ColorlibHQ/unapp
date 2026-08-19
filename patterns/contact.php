@@ -58,8 +58,8 @@ $unapp_contacts = array(
 					<!-- /wp:image -->
 				</div>
 				<!-- /wp:group -->
-				<!-- wp:heading {"textAlign":"center","level":4,"fontSize":"large"} -->
-				<h4 class="wp-block-heading has-text-align-center has-large-font-size"><?php echo esc_html( $unapp_contact['title'] ); ?></h4>
+				<!-- wp:heading {"textAlign":"center","level":3,"fontSize":"large"} -->
+				<h3 class="wp-block-heading has-text-align-center has-large-font-size"><?php echo esc_html( $unapp_contact['title'] ); ?></h3>
 				<!-- /wp:heading -->
 				<!-- wp:paragraph {"align":"center","textColor":"muted"} -->
 				<p class="has-text-align-center has-muted-color has-text-color"><?php echo wp_kses( $unapp_contact['html'], array( 'a' => array( 'href' => array() ), 'br' => array() ) ); ?></p>

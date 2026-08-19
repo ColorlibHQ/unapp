@@ -2,6 +2,11 @@
 
 All notable changes to the Unapp theme are documented here.
 
+## Unreleased
+
+### Fixed
+- Heading hierarchy skipped a level in five patterns: services, features, team and contact card titles were `h4` directly under the section `h2`, and footer column titles were `h4` after the page's last `h2`. Card titles are now `h3` and footer column titles `h2`, so the front page runs h1 → h2 → h3 with no skips. Screen-reader heading navigation was affected; it is also an accessibility-ready blocker.
+
 ## 2.1.0 – 2026-08-19
 
 ### Added
