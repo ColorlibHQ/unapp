@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-19T11:06:06+00:00\n"
+"POT-Creation-Date: 2026-08-19T11:45:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: make-pot.py (Unapp)\n"
 "X-Domain: unapp\n"
@@ -224,14 +224,209 @@ msgstr ""
 msgid "Not now"
 msgstr ""
 
+#: inc/front-page-setup.php:334
+msgid "Choose a starter site"
+msgstr ""
+
 #: inc/front-page-setup.php:113
 msgctxt "Title of the front page created on activation"
 msgid "Home"
 msgstr ""
 
 #: inc/front-page-setup.php:145
+#: inc/starter-sites.php:277
 msgctxt "Title of the posts page created on activation"
 msgid "Blog"
+msgstr ""
+
+#: inc/starter-sites.php:33
+msgid "SaaS & app"
+msgstr ""
+
+#: inc/starter-sites.php:34
+msgid "The default: a product landing page with pricing, proof and a free-trial call to action."
+msgstr ""
+
+#: inc/starter-sites.php:42
+msgid "Features"
+msgstr ""
+
+#: inc/starter-sites.php:43
+msgid "Pricing"
+msgstr ""
+
+#: inc/starter-sites.php:44
+#: inc/starter-sites.php:59
+#: inc/starter-sites.php:89
+#: inc/starter-sites.php:119
+msgid "About"
+msgstr ""
+
+#: inc/starter-sites.php:45
+#: inc/starter-sites.php:60
+#: inc/starter-sites.php:76
+#: inc/starter-sites.php:90
+#: inc/starter-sites.php:105
+#: inc/starter-sites.php:120
+#: patterns/footer.php:60
+msgid "Contact"
+msgstr ""
+
+#: inc/starter-sites.php:49
+msgid "Portfolio"
+msgstr ""
+
+#: inc/starter-sites.php:50
+msgid "A designer or studio portfolio: work grid, about, services and rates."
+msgstr ""
+
+#: inc/starter-sites.php:51
+msgid "Start a project"
+msgstr ""
+
+#: inc/starter-sites.php:58
+msgid "Work"
+msgstr ""
+
+#: inc/starter-sites.php:64
+msgid "Church"
+msgstr ""
+
+#: inc/starter-sites.php:65
+msgid "A welcoming church site: service times, ministries, staff, giving and directions."
+msgstr ""
+
+#: inc/starter-sites.php:66
+#: inc/starter-sites.php:73
+#: patterns/church-hero.php:28
+msgid "Plan your visit"
+msgstr ""
+
+#: inc/starter-sites.php:74
+msgid "About us"
+msgstr ""
+
+#: inc/starter-sites.php:75
+msgid "Give"
+msgstr ""
+
+#: inc/starter-sites.php:80
+msgid "Blog & magazine"
+msgstr ""
+
+#: inc/starter-sites.php:81
+msgid "A writer’s publication: masthead, featured post, topics and a newsletter."
+msgstr ""
+
+#: inc/starter-sites.php:82
+msgid "Subscribe"
+msgstr ""
+
+#: inc/starter-sites.php:94
+msgid "Fitness studio"
+msgstr ""
+
+#: inc/starter-sites.php:95
+msgid "A gym or studio: timetable, coaches, memberships and a free-trial band."
+msgstr ""
+
+#: inc/starter-sites.php:96
+#: patterns/fitness-schedule.php:39
+msgid "Book a class"
+msgstr ""
+
+#: inc/starter-sites.php:103
+msgid "Timetable"
+msgstr ""
+
+#: inc/starter-sites.php:104
+msgid "Memberships"
+msgstr ""
+
+#: inc/starter-sites.php:109
+msgid "Finance & advisory"
+msgstr ""
+
+#: inc/starter-sites.php:110
+msgid "A professional practice: credentials, services, process, advisers and a risk warning."
+msgstr ""
+
+#: inc/starter-sites.php:111
+msgid "Book a call"
+msgstr ""
+
+#: inc/starter-sites.php:118
+msgid "Services"
+msgstr ""
+
+#: inc/starter-sites.php:145
+msgid "That starter site does not exist."
+msgstr ""
+
+#: inc/starter-sites.php:152
+msgid "The starter site’s home page pattern could not be loaded."
+msgstr ""
+
+#: inc/starter-sites.php:352
+msgid "Blog"
+msgstr ""
+
+#: inc/starter-sites.php:380
+msgid "Navigation"
+msgstr ""
+
+#. Pattern title
+#. Template part name
+#: inc/starter-sites.php:459
+#: patterns/header.php
+#: theme.json
+msgid "Header"
+msgstr ""
+
+#: inc/starter-sites.php:486
+#: inc/starter-sites.php:487
+msgid "Starter Sites"
+msgstr ""
+
+#: inc/starter-sites.php:502
+msgid "You are not allowed to change the site design."
+msgstr ""
+
+#: inc/starter-sites.php:527
+msgid "Unapp starter sites"
+msgstr ""
+
+#: inc/starter-sites.php:529
+msgid "Each starter builds a complete site for one kind of business: a colour palette, a typeface, a home page and its supporting pages, and a matching menu. Your existing pages are never deleted — applying a starter adds new ones and points the front page at them."
+msgstr ""
+
+#. translators: %s: link to the site front page.
+#: inc/starter-sites.php:537
+msgid "Starter site applied. <a href=\"%s\">View your site</a>."
+msgstr ""
+
+#. translators: %s: link to the site front page.
+#: inc/starter-sites.php:543
+msgid "That starter site could not be applied. Please try again."
+msgstr ""
+
+#: inc/starter-sites.php:555
+msgid "Applied"
+msgstr ""
+
+#: inc/starter-sites.php:572
+msgid "Apply again"
+msgstr ""
+
+#: inc/starter-sites.php:572
+msgid "Apply this starter"
+msgstr ""
+
+#: inc/starter-sites.php:35
+#: inc/starter-sites.php:432
+#: patterns/header.php:30
+msgctxt "Header call-to-action button"
+msgid "Get Premium"
 msgstr ""
 
 #. Pattern title
@@ -242,6 +437,52 @@ msgstr ""
 #. Pattern description
 #: patterns/author-box.php
 msgid "Author avatar, name, biography and links — drop it under the post content in the Single template."
+msgstr ""
+
+#: patterns/blog-author-intro.php:21
+msgid "Author portrait placeholder"
+msgstr ""
+
+#: patterns/blog-author-intro.php:31
+msgid "Ines Kovač"
+msgstr ""
+
+#: patterns/blog-author-intro.php:34
+msgid "Fifteen years building products, most of them too quickly. This is where I write down what I would do differently."
+msgstr ""
+
+#: patterns/blog-author-intro.php:28
+msgctxt "Section eyebrow label"
+msgid "Written by"
+msgstr ""
+
+#. Pattern title
+#: patterns/blog-author-intro.php
+msgid "Blog: author introduction"
+msgstr ""
+
+#. Pattern description
+#: patterns/blog-author-intro.php
+msgid "A short author introduction with a portrait and social links, for a blog home."
+msgstr ""
+
+#: patterns/blog-categories.php:22
+msgid "Pick a thread"
+msgstr ""
+
+#: patterns/blog-categories.php:19
+msgctxt "Section eyebrow label"
+msgid "Browse"
+msgstr ""
+
+#. Pattern title
+#: patterns/blog-categories.php
+msgid "Blog: category tiles"
+msgstr ""
+
+#. Pattern description
+#: patterns/blog-categories.php
+msgid "Category tiles with post counts, built on the Terms Query block from WordPress 7.0."
 msgstr ""
 
 #: patterns/blog-featured.php:22
@@ -276,6 +517,24 @@ msgstr ""
 #. Pattern description
 #: patterns/blog-list.php
 msgid "Post rows with a thumbnail beside the title and excerpt. Inherits the page query, so it works on archives too."
+msgstr ""
+
+#: patterns/blog-masthead.php:19
+msgid "The Slow Build"
+msgstr ""
+
+#: patterns/blog-masthead.php:22
+msgid "Essays on making software carefully, published most Fridays."
+msgstr ""
+
+#. Pattern title
+#: patterns/blog-masthead.php
+msgid "Blog: masthead"
+msgstr ""
+
+#. Pattern description
+#: patterns/blog-masthead.php
+msgid "A magazine-style masthead: publication name, standfirst and a gradient rule."
 msgstr ""
 
 #: patterns/blog-posts.php:22
@@ -527,6 +786,195 @@ msgstr ""
 msgid "Dated release entries with a version chip and a list of changes."
 msgstr ""
 
+#: patterns/church-giving.php:24
+msgid "Every gift stays close to home"
+msgstr ""
+
+#: patterns/church-giving.php:27
+msgid "Two thirds of what is given funds the food bank, the night shelter and the debt advice centre. The rest keeps the lights on."
+msgstr ""
+
+#: patterns/church-giving.php:36
+msgid "Give once"
+msgstr ""
+
+#: patterns/church-giving.php:39
+msgid "Set up monthly"
+msgstr ""
+
+#: patterns/church-giving.php:21
+msgctxt "Section eyebrow label"
+msgid "Giving"
+msgstr ""
+
+#. Pattern title
+#: patterns/church-giving.php
+msgid "Church: giving"
+msgstr ""
+
+#. Pattern description
+#: patterns/church-giving.php
+msgid "A giving band that says where the money goes, with two donation buttons."
+msgstr ""
+
+#: patterns/church-hero.php:20
+msgid "A church for people who are not sure about church"
+msgstr ""
+
+#: patterns/church-hero.php:23
+msgid "Sundays at 9:30 and 11:15 · Coffee from 9:00 · Kids welcome in every service"
+msgstr ""
+
+#: patterns/church-hero.php:31
+msgid "Watch online"
+msgstr ""
+
+#: patterns/church-hero.php:17
+msgctxt "Church hero eyebrow"
+msgid "Everyone is welcome"
+msgstr ""
+
+#. Pattern title
+#: patterns/church-hero.php
+msgid "Church: welcome"
+msgstr ""
+
+#. Pattern description
+#: patterns/church-hero.php
+msgid "A welcoming cover with service times and two calls to action."
+msgstr ""
+
+#: patterns/church-ministries.php:28
+msgid "More than a Sunday"
+msgstr ""
+
+#: patterns/church-ministries.php:31
+msgid "There is a place for you here on the other six days too."
+msgstr ""
+
+#: patterns/church-ministries.php:14
+msgctxt "Ministry title"
+msgid "Children and youth"
+msgstr ""
+
+#: patterns/church-ministries.php:14
+msgctxt "Ministry description"
+msgid "Groups for every age from crèche to sixth form, every Sunday morning."
+msgstr ""
+
+#: patterns/church-ministries.php:15
+msgctxt "Ministry title"
+msgid "Care and support"
+msgstr ""
+
+#: patterns/church-ministries.php:15
+msgctxt "Ministry description"
+msgid "Meals, lifts and a listening ear when life gets heavy."
+msgstr ""
+
+#: patterns/church-ministries.php:16
+msgctxt "Ministry title"
+msgid "Small groups"
+msgstr ""
+
+#: patterns/church-ministries.php:16
+msgctxt "Ministry description"
+msgid "Twenty groups meeting in homes across the city through the week."
+msgstr ""
+
+#: patterns/church-ministries.php:17
+msgctxt "Ministry title"
+msgid "Community work"
+msgstr ""
+
+#: patterns/church-ministries.php:17
+msgctxt "Ministry description"
+msgid "The food bank, the night shelter and the debt advice centre."
+msgstr ""
+
+#: patterns/church-ministries.php:25
+msgctxt "Section eyebrow label"
+msgid "Life together"
+msgstr ""
+
+#. Pattern title
+#: patterns/church-ministries.php
+msgid "Church: ministries"
+msgstr ""
+
+#. Pattern description
+#: patterns/church-ministries.php
+msgid "Four ministries or groups as icon cards."
+msgstr ""
+
+#: patterns/church-times.php:27
+msgid "When we gather"
+msgstr ""
+
+#: patterns/church-times.php:30
+msgid "Come as you are. Every service is signed and the building is step-free."
+msgstr ""
+
+#: patterns/church-times.php:14
+msgctxt "Service time"
+msgid "Sunday 9:30"
+msgstr ""
+
+#: patterns/church-times.php:14
+msgctxt "Service name"
+msgid "Traditional service"
+msgstr ""
+
+#: patterns/church-times.php:14
+msgctxt "Service note"
+msgid "Hymns, choir and communion in the main hall."
+msgstr ""
+
+#: patterns/church-times.php:15
+msgctxt "Service time"
+msgid "Sunday 11:15"
+msgstr ""
+
+#: patterns/church-times.php:15
+msgctxt "Service name"
+msgid "Contemporary service"
+msgstr ""
+
+#: patterns/church-times.php:15
+msgctxt "Service note"
+msgid "Band-led worship with children's groups running alongside."
+msgstr ""
+
+#: patterns/church-times.php:16
+msgctxt "Service time"
+msgid "Wednesday 19:00"
+msgstr ""
+
+#: patterns/church-times.php:16
+msgctxt "Service name"
+msgid "Midweek prayer"
+msgstr ""
+
+#: patterns/church-times.php:16
+msgctxt "Service note"
+msgid "A quiet hour in the chapel. Come and go as you need."
+msgstr ""
+
+#: patterns/church-times.php:24
+msgctxt "Section eyebrow label"
+msgid "Service times"
+msgstr ""
+
+#. Pattern title
+#: patterns/church-times.php
+msgid "Church: service times"
+msgstr ""
+
+#. Pattern description
+#: patterns/church-times.php
+msgid "Service times with a short description of each gathering."
+msgstr ""
+
 #: patterns/collaborate.php:17
 msgid "Bright open-plan office with a large shared table"
 msgstr ""
@@ -762,6 +1210,66 @@ msgstr ""
 #. Pattern description
 #: patterns/cta-subscribe.php
 msgid "Full-width cover with a tinted photo, headline, supporting text and a subscribe button. Replace the button with a form block from your newsletter plugin if you have one."
+msgstr ""
+
+#. Pattern title
+#: patterns/demo-blog.php
+msgid "Starter site: Blog & magazine"
+msgstr ""
+
+#. Pattern description
+#: patterns/demo-blog.php
+msgid "The home page for the Blog starter site: masthead, featured post, category tiles, author introduction and a newsletter."
+msgstr ""
+
+#. Pattern title
+#: patterns/demo-church.php
+msgid "Starter site: Church"
+msgstr ""
+
+#. Pattern description
+#: patterns/demo-church.php
+msgid "The home page for the Church starter site: welcome, service times, ministries, staff, giving and directions."
+msgstr ""
+
+#. Pattern title
+#: patterns/demo-finance.php
+msgid "Starter site: Finance & advisory"
+msgstr ""
+
+#. Pattern description
+#: patterns/demo-finance.php
+msgid "The home page for the Finance starter site: trust-led hero, credentials, services, process, advisors, FAQ and the risk warning."
+msgstr ""
+
+#. Pattern title
+#: patterns/demo-fitness.php
+msgid "Starter site: Fitness studio"
+msgstr ""
+
+#. Pattern description
+#: patterns/demo-fitness.php
+msgid "The home page for the Fitness starter site: hero, class timetable, coaches, memberships, results and a join band."
+msgstr ""
+
+#. Pattern title
+#: patterns/demo-portfolio.php
+msgid "Starter site: Portfolio"
+msgstr ""
+
+#. Pattern description
+#: patterns/demo-portfolio.php
+msgid "The home page for the Portfolio starter site: introduction, selected work, about, services and a quiet contact band."
+msgstr ""
+
+#. Pattern title
+#: patterns/demo-saas.php
+msgid "Starter site: SaaS & app"
+msgstr ""
+
+#. Pattern description
+#: patterns/demo-saas.php
+msgid "The home page for the SaaS starter site: split hero, logo cloud, features, steps, proof, pricing and a closing call to action."
 msgstr ""
 
 #: patterns/docs-topics.php:30
@@ -1209,6 +1717,386 @@ msgstr ""
 msgid "Two columns of icon features flanking a mobile app screenshot in a device frame."
 msgstr ""
 
+#: patterns/finance-credentials.php:21
+msgid "28 years"
+msgstr ""
+
+#: patterns/finance-credentials.php:24
+msgid "advising the same families"
+msgstr ""
+
+#: patterns/finance-credentials.php:31
+msgid "£410m"
+msgstr ""
+
+#: patterns/finance-credentials.php:34
+msgid "under advice"
+msgstr ""
+
+#: patterns/finance-credentials.php:41
+msgid "0%"
+msgstr ""
+
+#: patterns/finance-credentials.php:44
+msgid "commission taken"
+msgstr ""
+
+#: patterns/finance-credentials.php:51
+msgid "4.9/5"
+msgstr ""
+
+#: patterns/finance-credentials.php:54
+msgid "client review score"
+msgstr ""
+
+#. Pattern title
+#: patterns/finance-credentials.php
+msgid "Finance: credentials"
+msgstr ""
+
+#. Pattern description
+#: patterns/finance-credentials.php
+msgid "Four trust numbers in a quiet band — years, assets, commission, rating."
+msgstr ""
+
+#: patterns/finance-disclaimer.php:19
+msgid "Risk warning"
+msgstr ""
+
+#: patterns/finance-disclaimer.php:22
+msgid "The value of investments can fall as well as rise and you may get back less than you invested. Past performance is not a guide to future returns. Tax treatment depends on individual circumstances and may change. This page is a placeholder — replace it with your own regulated wording before publishing."
+msgstr ""
+
+#. Pattern title
+#: patterns/finance-disclaimer.php
+msgid "Finance: risk warning"
+msgstr ""
+
+#. Pattern description
+#: patterns/finance-disclaimer.php
+msgid "A bordered compliance note for regulated firms — replace with your own wording."
+msgstr ""
+
+#: patterns/finance-hero.php:24
+msgid "Advice you could explain to your family"
+msgstr ""
+
+#: patterns/finance-hero.php:27
+msgid "Fee-only financial planning for people who would rather understand the plan than be impressed by it."
+msgstr ""
+
+#: patterns/finance-hero.php:32
+msgid "Book an introduction"
+msgstr ""
+
+#: patterns/finance-hero.php:35
+msgid "How we charge"
+msgstr ""
+
+#: patterns/finance-hero.php:40
+msgid "Regulated by the Financial Conduct Authority · No commission, ever"
+msgstr ""
+
+#: patterns/finance-hero.php:47
+msgid "Planning document placeholder"
+msgstr ""
+
+#: patterns/finance-hero.php:21
+msgctxt "Finance hero eyebrow"
+msgid "Independent since 1998"
+msgstr ""
+
+#. Pattern title
+#: patterns/finance-hero.php
+msgid "Finance: trust-led hero"
+msgstr ""
+
+#. Pattern description
+#: patterns/finance-hero.php
+msgid "A restrained hero that leads with independence and a regulatory line."
+msgstr ""
+
+#: patterns/finance-services.php:30
+msgid "Six ways we help"
+msgstr ""
+
+#: patterns/finance-services.php:33
+msgid "Most clients start with one and end up with a plan that covers all six."
+msgstr ""
+
+#: patterns/finance-services.php:14
+msgctxt "Finance service"
+msgid "Retirement planning"
+msgstr ""
+
+#: patterns/finance-services.php:14
+msgctxt "Finance service description"
+msgid "What you can spend, when you can stop, and what happens if markets misbehave."
+msgstr ""
+
+#: patterns/finance-services.php:15
+msgctxt "Finance service"
+msgid "Investment management"
+msgstr ""
+
+#: patterns/finance-services.php:15
+msgctxt "Finance service description"
+msgid "Low-cost, globally diversified portfolios rebalanced on a schedule, not a hunch."
+msgstr ""
+
+#: patterns/finance-services.php:16
+msgctxt "Finance service"
+msgid "Protection"
+msgstr ""
+
+#: patterns/finance-services.php:16
+msgctxt "Finance service description"
+msgid "The cover you actually need, and an honest word about the cover you do not."
+msgstr ""
+
+#: patterns/finance-services.php:17
+msgctxt "Finance service"
+msgid "Business owners"
+msgstr ""
+
+#: patterns/finance-services.php:17
+msgctxt "Finance service description"
+msgid "Extracting profit, funding an exit and keeping the tax bill defensible."
+msgstr ""
+
+#: patterns/finance-services.php:18
+msgctxt "Finance service"
+msgid "Estate planning"
+msgstr ""
+
+#: patterns/finance-services.php:18
+msgctxt "Finance service description"
+msgid "Wills, trusts and the conversations families keep postponing."
+msgstr ""
+
+#: patterns/finance-services.php:19
+msgctxt "Finance service"
+msgid "Cashflow modelling"
+msgstr ""
+
+#: patterns/finance-services.php:19
+msgctxt "Finance service description"
+msgid "One picture of your money for the next thirty years, updated every year."
+msgstr ""
+
+#: patterns/finance-services.php:27
+msgctxt "Section eyebrow label"
+msgid "What we do"
+msgstr ""
+
+#. Pattern title
+#: patterns/finance-services.php
+msgid "Finance: services"
+msgstr ""
+
+#. Pattern description
+#: patterns/finance-services.php
+msgid "Six advisory services as icon cards in a three-column grid."
+msgstr ""
+
+#: patterns/fitness-coaches.php:27
+msgid "Who you will be training with"
+msgstr ""
+
+#: patterns/fitness-coaches.php:14
+msgctxt "Coach name"
+msgid "Danny Osei"
+msgstr ""
+
+#: patterns/fitness-coaches.php:14
+msgctxt "Coach role"
+msgid "Head coach · Strength"
+msgstr ""
+
+#: patterns/fitness-coaches.php:14
+msgctxt "Coach bio"
+msgid "Fifteen years coaching, two of them with the national team."
+msgstr ""
+
+#: patterns/fitness-coaches.php:15
+msgctxt "Coach name"
+msgid "Sofia Marchetti"
+msgstr ""
+
+#: patterns/fitness-coaches.php:15
+msgctxt "Coach role"
+msgid "Conditioning"
+msgstr ""
+
+#: patterns/fitness-coaches.php:15
+msgctxt "Coach bio"
+msgid "Ex-rower. Believes everything is fixable with better breathing."
+msgstr ""
+
+#: patterns/fitness-coaches.php:16
+msgctxt "Coach name"
+msgid "Ruth Okonkwo"
+msgstr ""
+
+#: patterns/fitness-coaches.php:16
+msgctxt "Coach role"
+msgid "Mobility and rehab"
+msgstr ""
+
+#: patterns/fitness-coaches.php:16
+msgctxt "Coach bio"
+msgid "Physiotherapist who would rather you never needed a physiotherapist."
+msgstr ""
+
+#: patterns/fitness-coaches.php:24
+msgctxt "Section eyebrow label"
+msgid "Coaches"
+msgstr ""
+
+#. Pattern title
+#: patterns/fitness-coaches.php
+msgid "Fitness: coaches"
+msgstr ""
+
+#. Pattern description
+#: patterns/fitness-coaches.php
+msgid "Three coaches with a portrait, discipline and a one-line biography."
+msgstr ""
+
+#: patterns/fitness-hero.php:20
+msgid "Stronger than last week"
+msgstr ""
+
+#: patterns/fitness-hero.php:23
+msgid "Small-group strength and conditioning in the old print works. Forty-five minutes, no mirrors, no nonsense."
+msgstr ""
+
+#: patterns/fitness-hero.php:28
+msgid "Book a free session"
+msgstr ""
+
+#: patterns/fitness-hero.php:31
+msgid "See the timetable"
+msgstr ""
+
+#: patterns/fitness-hero.php:17
+msgctxt "Fitness hero eyebrow"
+msgid "First class free"
+msgstr ""
+
+#. Pattern title
+#: patterns/fitness-hero.php
+msgid "Fitness: hero"
+msgstr ""
+
+#. Pattern description
+#: patterns/fitness-hero.php
+msgid "A high-contrast cover hero with a free-trial call to action."
+msgstr ""
+
+#: patterns/fitness-schedule.php:22
+msgid "This week at the studio"
+msgstr ""
+
+#: patterns/fitness-schedule.php:25
+msgid "Twelve people per class. Book through the app up to seven days ahead."
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "Day"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "Morning"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "Evening"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "Monday"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "06:30 · Strength"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "18:30 · Conditioning"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "Tuesday"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "07:00 · Mobility"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "19:00 · Strength"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "Wednesday"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "06:30 · Conditioning"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "18:30 · Open gym"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "Thursday"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "07:00 · Strength"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "19:00 · Intervals"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "Friday"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "17:30 · Team workout"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "Saturday"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "08:00 · Long session"
+msgstr ""
+
+#: patterns/fitness-schedule.php:32
+msgid "10:00 · Beginners"
+msgstr ""
+
+#: patterns/fitness-schedule.php:19
+msgctxt "Section eyebrow label"
+msgid "Timetable"
+msgstr ""
+
+#. Pattern title
+#: patterns/fitness-schedule.php
+msgid "Fitness: class timetable"
+msgstr ""
+
+#. Pattern description
+#: patterns/fitness-schedule.php
+msgid "A weekly class timetable using the Comparison table style."
+msgstr ""
+
 #: patterns/footer-slim.php:30
 msgid "© %1$s %2$s"
 msgstr ""
@@ -1248,10 +2136,6 @@ msgstr ""
 
 #: patterns/footer.php:51
 msgid "Latest posts"
-msgstr ""
-
-#: patterns/footer.php:60
-msgid "Contact"
 msgstr ""
 
 #: patterns/footer.php:63
@@ -1312,18 +2196,6 @@ msgstr ""
 #. Pattern description
 #: patterns/header-centered.php
 msgid "Centred site title above a centred menu — an alternative header template part."
-msgstr ""
-
-#: patterns/header.php:30
-msgctxt "Header call-to-action button"
-msgid "Get Premium"
-msgstr ""
-
-#. Pattern title
-#. Template part name
-#: patterns/header.php
-#: theme.json
-msgid "Header"
 msgstr ""
 
 #. Pattern description
@@ -2061,6 +2933,211 @@ msgstr ""
 #. Pattern description
 #: patterns/page-saas.php
 msgid "A conversion-focused landing page: split hero, logo cloud, features, proof, pricing and a closing call to action."
+msgstr ""
+
+#: patterns/portfolio-about.php:21
+msgid "Studio placeholder"
+msgstr ""
+
+#: patterns/portfolio-about.php:31
+msgid "Fifteen years, three cities, one obsession"
+msgstr ""
+
+#: patterns/portfolio-about.php:34
+msgid "I started in editorial, spent a decade in agencies and now work directly with founders. Most projects run six to ten weeks, start to finish."
+msgstr ""
+
+#: patterns/portfolio-about.php:43
+msgid "Brand identity"
+msgstr ""
+
+#: patterns/portfolio-about.php:46
+msgid "Packaging"
+msgstr ""
+
+#: patterns/portfolio-about.php:49
+msgid "Art direction"
+msgstr ""
+
+#: patterns/portfolio-about.php:60
+msgid "Web design"
+msgstr ""
+
+#: patterns/portfolio-about.php:63
+msgid "Typography"
+msgstr ""
+
+#: patterns/portfolio-about.php:66
+msgid "Print"
+msgstr ""
+
+#: patterns/portfolio-about.php:28
+msgctxt "Section eyebrow label"
+msgid "About"
+msgstr ""
+
+#. Pattern title
+#: patterns/portfolio-about.php
+msgid "Portfolio: about"
+msgstr ""
+
+#. Pattern description
+#: patterns/portfolio-about.php
+msgid "A short biography beside a photograph, with two columns of disciplines."
+msgstr ""
+
+#: patterns/portfolio-hero.php:24
+msgid "Mara Lindqvist"
+msgstr ""
+
+#: patterns/portfolio-hero.php:27
+msgid "I help small teams look like the companies they are becoming — identity, packaging and the odd website."
+msgstr ""
+
+#: patterns/portfolio-hero.php:32
+msgid "See selected work"
+msgstr ""
+
+#: patterns/portfolio-hero.php:41
+msgid "Portrait placeholder"
+msgstr ""
+
+#: patterns/portfolio-hero.php:21
+msgctxt "Portfolio eyebrow"
+msgid "Designer & art director"
+msgstr ""
+
+#. Pattern title
+#: patterns/portfolio-hero.php
+msgid "Portfolio: introduction"
+msgstr ""
+
+#. Pattern description
+#: patterns/portfolio-hero.php
+msgid "A personal introduction with a portrait — name, discipline and a one-line statement."
+msgstr ""
+
+#: patterns/portfolio-services.php:27
+msgid "How we can work together"
+msgstr ""
+
+#: patterns/portfolio-services.php:14
+msgctxt "Service title"
+msgid "Identity"
+msgstr ""
+
+#: patterns/portfolio-services.php:14
+msgctxt "Service price"
+msgid "from £6,000"
+msgstr ""
+
+#: patterns/portfolio-services.php:14
+msgctxt "Service description"
+msgid "Naming, marks, type and a system your team can actually use."
+msgstr ""
+
+#: patterns/portfolio-services.php:15
+msgctxt "Service title"
+msgid "Website"
+msgstr ""
+
+#: patterns/portfolio-services.php:15
+msgctxt "Service price"
+msgid "from £9,000"
+msgstr ""
+
+#: patterns/portfolio-services.php:15
+msgctxt "Service description"
+msgid "Design and build, from the first sketch to the day it ships."
+msgstr ""
+
+#: patterns/portfolio-services.php:16
+msgctxt "Service title"
+msgid "Art direction"
+msgstr ""
+
+#: patterns/portfolio-services.php:16
+msgctxt "Service price"
+msgid "day rate"
+msgstr ""
+
+#: patterns/portfolio-services.php:16
+msgctxt "Service description"
+msgid "Photography, campaigns and the taste to say no to the wrong idea."
+msgstr ""
+
+#: patterns/portfolio-services.php:24
+msgctxt "Section eyebrow label"
+msgid "Services"
+msgstr ""
+
+#. Pattern title
+#: patterns/portfolio-services.php
+msgid "Portfolio: services and rates"
+msgstr ""
+
+#. Pattern description
+#: patterns/portfolio-services.php
+msgid "Three services with an indicative price, separated by hairline rules."
+msgstr ""
+
+#: patterns/portfolio-work.php:28
+msgid "Recent projects"
+msgstr ""
+
+#: patterns/portfolio-work.php:14
+msgctxt "Project title"
+msgid "Nordwell Coffee"
+msgstr ""
+
+#: patterns/portfolio-work.php:14
+msgctxt "Project meta"
+msgid "Identity · Packaging · 2026"
+msgstr ""
+
+#: patterns/portfolio-work.php:15
+msgctxt "Project title"
+msgid "Fold Studio"
+msgstr ""
+
+#: patterns/portfolio-work.php:15
+msgctxt "Project meta"
+msgid "Website · Art direction · 2025"
+msgstr ""
+
+#: patterns/portfolio-work.php:16
+msgctxt "Project title"
+msgid "Meridian Housing"
+msgstr ""
+
+#: patterns/portfolio-work.php:16
+msgctxt "Project meta"
+msgid "Brand system · 2025"
+msgstr ""
+
+#: patterns/portfolio-work.php:17
+msgctxt "Project title"
+msgid "Common Ground"
+msgstr ""
+
+#: patterns/portfolio-work.php:17
+msgctxt "Project meta"
+msgid "Campaign · 2024"
+msgstr ""
+
+#: patterns/portfolio-work.php:25
+msgctxt "Section eyebrow label"
+msgid "Selected work"
+msgstr ""
+
+#. Pattern title
+#: patterns/portfolio-work.php
+msgid "Portfolio: work grid"
+msgstr ""
+
+#. Pattern description
+#: patterns/portfolio-work.php
+msgid "Four projects in a two-by-two grid with title and credits under each."
 msgstr ""
 
 #: patterns/press.php:27
@@ -3070,7 +4147,7 @@ msgstr ""
 
 #. Description of the theme
 #: style.css
-msgid "Unapp is a lightweight, block-based WordPress theme for app and SaaS landing pages. Built for the Site Editor with 50+ section patterns, 13 full-page starters, six colour palettes and five typography presets you can mix, seven section styles and eleven block styles. Self-hosted variable fonts, no page-builder framework, no jQuery, no icon fonts."
+msgid "Unapp is a lightweight, block-based WordPress theme with six one-click starter sites — SaaS, portfolio, church, blog, fitness and finance. Built for the Site Editor with 70+ section patterns, ten colour palettes and five typography presets you can mix, seven section styles and eleven block styles. Self-hosted variable fonts, no page-builder framework, no jQuery, no icon fonts."
 msgstr ""
 
 #. Author of the theme
@@ -3085,9 +4162,14 @@ msgstr ""
 
 #. Color name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/indigo.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
 msgid "Base"
@@ -3095,9 +4177,14 @@ msgstr ""
 
 #. Color name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/indigo.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
 msgid "Contrast"
@@ -3105,9 +4192,14 @@ msgstr ""
 
 #. Color name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/indigo.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
 msgid "Primary"
@@ -3115,9 +4207,14 @@ msgstr ""
 
 #. Color name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/indigo.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
 msgid "Secondary"
@@ -3125,9 +4222,14 @@ msgstr ""
 
 #. Color name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/indigo.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
 msgid "Accent"
@@ -3135,9 +4237,14 @@ msgstr ""
 
 #. Color name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/indigo.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
 msgid "Surface"
@@ -3145,9 +4252,14 @@ msgstr ""
 
 #. Color name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/indigo.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
 msgid "Muted"
@@ -3155,9 +4267,14 @@ msgstr ""
 
 #. Color name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/indigo.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
 msgid "Border"
@@ -3166,10 +4283,15 @@ msgstr ""
 #. Color name
 #. Style variation name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/indigo.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
 #: styles/section-dark.json
+#: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
 msgid "Dark"
@@ -3177,9 +4299,14 @@ msgstr ""
 
 #. Gradient name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/indigo.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
 msgid "Primary to Accent"
@@ -3187,9 +4314,14 @@ msgstr ""
 
 #. Gradient name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/indigo.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
 msgid "Secondary to Accent"
@@ -3197,9 +4329,14 @@ msgstr ""
 
 #. Gradient name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/indigo.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
 msgid "Primary overlay"
@@ -3207,9 +4344,14 @@ msgstr ""
 
 #. Gradient name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/indigo.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
 msgid "Dark overlay"
@@ -3289,21 +4431,28 @@ msgstr ""
 
 #. Font family name
 #: theme.json
+#: styles/indigo.json
 #: styles/violet.json
 msgid "Poppins"
 msgstr ""
 
 #. Font family name
 #: theme.json
+#: styles/indigo.json
 #: styles/violet.json
 msgid "Nunito"
 msgstr ""
 
 #. Font family name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 #: styles/graphite.json
+#: styles/indigo.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 #: styles/violet.json
 msgid "System"
@@ -3313,12 +4462,17 @@ msgstr ""
 #: theme.json
 #: styles/graphite.json
 #: styles/midnight.json
+#: styles/mono.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 msgid "Inter"
 msgstr ""
 
 #. Font family name
 #: theme.json
+#: styles/navy.json
+#: styles/stone.json
 #: styles/sunset.json
 msgid "Fraunces"
 msgstr ""
@@ -3331,6 +4485,7 @@ msgstr ""
 
 #. Font family name
 #: theme.json
+#: styles/ember.json
 #: styles/emerald.json
 msgid "Manrope"
 msgstr ""
@@ -3356,6 +4511,11 @@ msgid "Elevated"
 msgstr ""
 
 #. Style variation name
+#: styles/ember.json
+msgid "Ember"
+msgstr ""
+
+#. Style variation name
 #: styles/emerald.json
 msgid "Emerald"
 msgstr ""
@@ -3371,8 +4531,23 @@ msgid "Graphite"
 msgstr ""
 
 #. Style variation name
+#: styles/indigo.json
+msgid "Indigo"
+msgstr ""
+
+#. Style variation name
 #: styles/midnight.json
 msgid "Midnight"
+msgstr ""
+
+#. Style variation name
+#: styles/mono.json
+msgid "Mono"
+msgstr ""
+
+#. Style variation name
+#: styles/navy.json
+msgid "Navy"
 msgstr ""
 
 #. Style variation name
@@ -3388,6 +4563,11 @@ msgstr ""
 #. Style variation name
 #: styles/section-soft.json
 msgid "Soft background"
+msgstr ""
+
+#. Style variation name
+#: styles/stone.json
+msgid "Stone"
 msgstr ""
 
 #. Style variation name

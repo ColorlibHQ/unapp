@@ -320,7 +320,7 @@ function unapp_front_page_notices() {
 	$dismiss_url = wp_nonce_url( admin_url( 'admin-post.php?action=unapp_dismiss_front_page_setup' ), 'unapp_dismiss_front_page_setup' );
 
 	printf(
-		'<div class="notice notice-info"><p><strong>%1$s</strong> %2$s</p><p><a class="button button-primary" href="%3$s">%4$s</a> <a class="button" href="%5$s">%6$s</a></p></div>',
+		'<div class="notice notice-info"><p><strong>%1$s</strong> %2$s</p><p><a class="button button-primary" href="%7$s">%8$s</a> <a class="button" href="%3$s">%4$s</a> <a class="button" href="%5$s">%6$s</a></p></div>',
 		esc_html__( 'Thanks for choosing Unapp!', 'unapp' ),
 		$front_title
 			/* translators: %s: title of the current front page. */
@@ -329,7 +329,9 @@ function unapp_front_page_notices() {
 		esc_url( $setup_url ),
 		esc_html__( 'Set up the Unapp front page', 'unapp' ),
 		esc_url( $dismiss_url ),
-		esc_html__( 'Not now', 'unapp' )
+		esc_html__( 'Not now', 'unapp' ),
+		esc_url( admin_url( 'themes.php?page=unapp-starter-sites' ) ),
+		esc_html__( 'Choose a starter site', 'unapp' )
 	);
 }
 add_action( 'admin_notices', 'unapp_front_page_notices' );

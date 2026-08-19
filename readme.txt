@@ -3,20 +3,24 @@ Contributors: colorlib
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.2.0
+Stable tag: 2.3.0
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, one-column, rtl-language-support, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, style-variations, template-editing, threaded-comments, translation-ready
 
-Unapp is a lightweight block theme for app and SaaS landing pages, built entirely for the WordPress Site Editor.
+Unapp is a lightweight block theme with six one-click starter sites, built entirely for the WordPress Site Editor.
 
 == Description ==
 
 Unapp is a modern, block-based WordPress theme for presenting an app, SaaS product or startup. Everything is built with core blocks and configured through theme.json, so the whole site — colors, fonts, spacing, header, footer and every landing-page section — can be edited visually in the Site Editor without touching code.
 
+**Starter sites**
+
+Appearance → Starter Sites offers six complete designs, each with its own palette, typeface, home page, supporting pages and menu: SaaS & app, Portfolio, Church, Blog & magazine, Fitness studio, and Finance & advisory. Applying one creates the pages and sets your front page. Nothing is ever deleted — switching starter adds new pages and leaves your old ones in the Pages list.
+
 **What's included**
 
-* **47 section patterns** covering everything a product site needs: five heroes, nine feature layouts, testimonials, logo clouds, ratings, case studies, press, three pricing layouts, FAQ, five calls to action, timeline, values, careers, offices, security, changelog, documentation, contact and more.
+* **70+ section patterns** covering everything a product site needs: five heroes, nine feature layouts, testimonials, logo clouds, ratings, case studies, press, three pricing layouts, FAQ, five calls to action, timeline, values, careers, offices, security, changelog, documentation, contact and more.
 * **13 full-page starters** — SaaS landing page, Features, Pricing, Customers, About, Contact, Careers, Help centre, Changelog, Legal, Coming soon and two more — inserted from the pattern modal when you create a page.
 * **Ten pattern categories** in the inserter (Heroes, Features, Social proof, Pricing, Calls to action, Content & blog, Company, Utility, Full pages) so a big library stays findable.
 * Section styles for any Group, Columns or Column: Card, Soft background, Dark, Gradient, Frosted glass, Outline and Elevated — switch the look of a section with one click.
@@ -79,6 +83,9 @@ They are simple SVGs drawn for this theme — invented brand names for the logo 
 
 == Changelog ==
 
+= 2.3.0 - 2026-08-19 =
+* Six one-click starter sites with a selector under Appearance → Starter Sites, twenty niche patterns (portfolio, church, fitness, finance, blog), four new palettes and abstract placeholder imagery.
+
 = 2.2.0 - 2026-08-19 =
 * Colour and typography style variations you can mix (6 × 5), five typography presets with four new variable fonts, author/category/tag/date and sidebar templates, a sidebar template part, a native Accordion FAQ, breadcrumbs, result counts, reading time, sticky-header support, WooCommerce compatibility styles, post formats, RTL-safe CSS and an accessibility statement.
 
@@ -133,6 +140,6 @@ Icons in assets/images/icons/ are based on Feather Icons
 Copyright (c) 2013-2023 Cole Bemis
 License: MIT — https://github.com/feathericons/feather/blob/main/LICENSE
 
-Avatar placeholders in assets/images/avatars/ were created for this theme by Colorlib and are released under the theme's GPL license.
+Avatar placeholders in assets/images/avatars/, wordmark logos in assets/images/logos/ and the abstract placeholder images in assets/images/abstract/ were created for this theme by Colorlib and are released under the theme's GPL license. All names, quotes, prices and other demo content are fictional.
 
 Product screenshots and photos in assets/images/ were shipped with the original Unapp theme by Colorlib and are redistributed under the theme's GPL license.

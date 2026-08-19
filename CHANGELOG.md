@@ -2,6 +2,18 @@
 
 All notable changes to the Unapp theme are documented here.
 
+## 2.3.0 – 2026-08-19
+
+### Added
+- **Starter sites.** Appearance → Starter Sites offers six complete designs — SaaS & app, Portfolio, Church, Blog & magazine, Fitness studio, Finance & advisory. Applying one writes the matching style variation into Global Styles, creates the home page and its supporting pages from patterns, builds a navigation menu, sets Settings → Reading and gives the header the starter's own call-to-action wording. Nothing is deleted; switching starter adds pages and reverts the header when the wording matches the theme default. Extendable through the `unapp_starter_sites` filter.
+- **Twenty niche patterns**: portfolio (introduction, work grid, about, services and rates), church (welcome, service times, ministries, giving), fitness (hero, class timetable, coaches), finance (trust-led hero, services, credentials, risk warning) and blog (masthead, category tiles built on the WordPress 7.0 Terms Query block, author introduction).
+- **Six starter home pages** as full-page patterns, so the same layouts can be inserted by hand from Patterns → Pages.
+- **Four palettes** — Stone, Ember, Navy and Mono — bringing the total to ten, each contrast-checked, plus matching curated looks.
+- Ten abstract SVG placeholder images (10 KB in total) for the niches the bundled photography does not suit.
+
+### Fixed
+- Pattern previews of `vh`-height cover heroes were captured against a full-page viewport, which stretched them. The capture now keeps a realistic viewport and captures beyond it.
+
 ## 2.2.0 – 2026-08-19
 
 Phase 1 of the competitive roadmap: everything the benchmark identified as table stakes against Twenty Twenty-Five.
