@@ -45,6 +45,16 @@ Appearance → Starter Sites offers six complete designs, each with its own pale
 
 Create a page, choose the "Home landing page" pattern from the pattern modal (Patterns → Pages), set the template to "Page (No Title)" and select it under Settings → Reading → A static page. Developers can disable the automatic setup with `add_filter( 'unapp_auto_setup_front_page', '__return_false' );`.
 
+== Documentation ==
+
+Full documentation ships in the docs/ folder of the theme's repository:
+
+* getting-started.md — install, starter sites, editing, forms, changing the look
+* design-tokens.md — the spacing scale, radii, type roles and widths every pattern uses
+* extending.md — child theme, adding a starter site, adding patterns, changing the form
+
+A ready-made child theme is in child-theme/.
+
 == Accessibility ==
 
 Unapp aims to meet the WordPress accessibility-ready requirements and WCAG 2.1 level AA where a theme can influence the outcome.

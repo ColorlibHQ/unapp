@@ -1,0 +1,21 @@
+/*
+Theme Name: Unapp Child
+Theme URI: https://github.com/ColorlibHQ/unapp
+Description: A starting point for customising Unapp. Anything you add here, or to this folder's theme.json, overrides the parent theme and survives an update.
+Author: Colorlib
+Author URI: https://colorlib.com
+Template: unapp
+Version: 1.0.0
+Requires at least: 6.6
+Tested up to: 7.0
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: unapp-child
+*/
+
+/* Add your CSS below. The parent stylesheet is loaded for you.
+
+   Most look-and-feel changes are better made in theme.json than here — colours,
+   spacing, type sizes and block styles all belong there, because the editor
+   then shows them too. Use this file for rules theme.json cannot express. */
