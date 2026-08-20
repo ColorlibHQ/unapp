@@ -3,7 +3,7 @@ Contributors: colorlib
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.5.1
+Stable tag: 2.5.2
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, one-column, rtl-language-support, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, style-variations, template-editing, threaded-comments, translation-ready
@@ -105,6 +105,10 @@ Yes. Every section is a pattern: open the block inserter, choose the Patterns ta
 They are simple SVGs drawn for this theme — invented brand names for the logo cloud and gradient portraits for the team and testimonials. Nothing is licensed from a third party, so replace them with your own at any time.
 
 == Changelog ==
+
+= 2.5.2 - 2026-08-20 =
+* The companion plugin now sends the same update payload as the theme, including the one-way site identifier, so plugin installs can be counted too. It honours the same unapp_check_for_updates opt-out.
+* The update disclosure on Appearance → Starter Sites now covers the plugin when it is active.
 
 = 2.5.1 - 2026-08-20 =
 * Fixed: the site tagline is displayed again. Every footer now renders it under the site title when one is set, and keeps its written line as a fallback when it is not.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.5.2 – 2026-08-20
+
+### Changed
+- **The companion plugin counts too.** Its update check sent only the plugin slug and version, so a plugin install could never be counted as a site. It now sends the same payload as the theme — WordPress and PHP versions, locale, multisite, and the same one-way site identifier — and honours the same `unapp_check_for_updates` filter, because an opt-out that covers half a product is not an opt-out.
+- The update disclosure on Appearance → Starter Sites speaks for both when the plugin is active. It is two whole sentences rather than one with the subject spliced in: the verb has to agree, and a translator cannot make that agree from a fragment.
+
+
 ## 2.5.1 – 2026-08-20
 
 ### Fixed

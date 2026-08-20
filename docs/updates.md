@@ -21,27 +21,85 @@ If Unapp is ever submitted to WordPress.org, remove the header from
 `style.css` and `inc/updates.php` stops doing anything, because core will not
 fire the hook. Nothing else has to change.
 
-## What the endpoint has to return
+## The endpoint
 
-A single JSON document at `https://updates.colorlib.com/theme/unapp.json`:
+`https://updates.colorlib.com` is a Cloudflare Worker backed by a D1 database,
+deployed from `~/Projects/colorlib-updates`. It answers:
+
+| Path | Purpose |
+| --- | --- |
+| `GET /theme/{slug}.json` | The current release of a theme |
+| `GET /plugin/{slug}.json` | The current release of a plugin |
+| `GET /stats?token=…` | Aggregate install counts, for us |
+| `GET /` | A plain-text page saying what is collected |
+
+A live response:
 
 ```json
 {
-  "version": "2.6.0",
-  "url": "https://colorlib.com/wp/themes/unapp/",
-  "package": "https://downloads.colorlib.com/theme/unapp.zip",
-  "tested": "7.1",
-  "requires_php": "7.4",
-  "autoupdate": false
+	"slug": "unapp",
+	"version": "2.5.1",
+	"url": "https://colorlib.com/wp/themes/unapp/",
+	"package": "https://downloads.colorlib.com/wp/unapp/unapp-2.5.1.zip",
+	"tested": "7.0",
+	"requires": "6.6",
+	"requires_php": "7.4",
+	"autoupdate": false
 }
 ```
 
-Only `version` is required — WordPress ignores an update with no version. A
+Only `version` is required — WordPress ignores an update without one. The
 `package` URL is what makes the one-click update button work; without it the
-user is told an update exists and sent to `url` to fetch it.
+user is told an update exists and sent to `url` to fetch it by hand.
 
-The response is cached for twelve hours, and a failure is cached for one, so a
-dead endpoint costs one request an hour rather than one per page load.
+The theme caches the response for twelve hours and a failure for one, so a dead
+endpoint costs one request an hour rather than one per page load. The Worker
+replies `Cache-Control: no-store`, because a response served from an edge cache
+would never reach the Worker and the install count would quietly become a count
+of cache misses.
+
+### It is a Worker rather than a file in R2
+
+A static JSON file would serve updates perfectly well, and would be simpler.
+The reason it is not one is that the update check *is* the install count — the
+same request has to be answered and recorded. That only works if something runs
+per request.
+
+### Shipping a release
+
+Releases live in a D1 row, not in the Worker source, so publishing never
+depends on being able to deploy code:
+
+```bash
+# In the theme repository: build the zips (the theme zip must contain exactly
+# one root folder named `unapp`, which is what WordPress installs).
+.dev/build-zip.sh
+
+# Upload. Filenames carry the version, so nothing is ever overwritten and no
+# Cloudflare cache purge is needed.
+rclone copyto /tmp/unapp-build/unapp-2.5.1.zip \
+  r2pro:colorlib-downloads/wp/unapp/unapp-2.5.1.zip
+
+# In ~/Projects/colorlib-updates: publish the row. This HEAD-checks the package
+# first and refuses to publish a release pointing at a missing or non-zip file.
+node release.mjs --product theme/unapp --version 2.5.1 \
+  --package https://downloads.colorlib.com/wp/unapp/unapp-2.5.1.zip \
+  --url https://colorlib.com/wp/themes/unapp/ \
+  --tested 7.0 --requires 6.6 --requires-php 7.4
+```
+
+Every site sees the new version within twelve hours, on its own schedule.
+
+### Reading the numbers
+
+```bash
+cd ~/Projects/colorlib-updates
+STATS_TOKEN=$(sed 's/.*=//' .dev.vars) node stats.mjs
+```
+
+which prints active installs (distinct sites seen in the last 30 days), total
+ever, new in the window, and the spread of versions, WordPress versions, PHP
+versions and locales.
 
 ## What is sent, and why
 
@@ -80,10 +138,24 @@ their server.
 
 ## Counting installs
 
-Because each request carries a stable per-site hash, the endpoint can count
-distinct sites rather than requests: active installs are distinct `site` values
-seen in the last N days, and the version spread falls out of the same log. That
-is the same shape of number WordPress.org reports, without the directory.
+Because each request carries a stable per-site hash, the endpoint counts
+distinct sites rather than requests. One row per site per product, upserted on
+each check:
 
-Keep the log short-lived — a rolling window is enough for the count and avoids
-holding data nobody needs.
+```sql
+CREATE TABLE installs (
+	site TEXT NOT NULL, product TEXT NOT NULL,
+	version TEXT, wp TEXT, php TEXT, locale TEXT, multisite INTEGER,
+	first_seen INTEGER NOT NULL, last_seen INTEGER NOT NULL,
+	PRIMARY KEY (site, product)
+);
+```
+
+Active installs are rows whose `last_seen` is inside the window, so the number
+falls out of the same table that serves the update — the same shape of number
+WordPress.org reports, without the directory. Nothing accumulates per request:
+a site that has checked in for three years is still one row.
+
+The Worker stores no IP address and reads none. A ping whose `site` value is
+missing or malformed still receives its update, it is simply not counted — the
+count must never become a reason to withhold a release.

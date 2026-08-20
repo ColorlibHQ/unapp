@@ -276,14 +276,40 @@ function unapp_library_check_update( $update, $plugin_data, $plugin_file ) {
 		return $update;
 	}
 
+	// The theme's opt-out covers the plugin too: a site that has switched off
+	// update checks has switched them off for the whole product, not per file.
+	if ( ! apply_filters( 'unapp_check_for_updates', true ) ) {
+		return $update;
+	}
+
 	$cached = get_site_transient( 'unapp_library_update' );
 
 	if ( ! is_array( $cached ) ) {
+		/**
+		 * Filters the data sent with the plugin's update check.
+		 *
+		 * Mirrors the theme's payload, including the site identifier — a one-way
+		 * hash of the home URL salted with this install's own AUTH_SALT, so the
+		 * count is a count of sites and cannot be reversed into a URL. Return
+		 * only 'plugin' and 'version' to send the bare minimum.
+		 *
+		 * @param array $payload What will be sent.
+		 */
+		$payload = apply_filters(
+			'unapp_library_update_payload',
+			array(
+				'plugin'    => 'unapp-library',
+				'version'   => UNAPP_LIBRARY_VERSION,
+				'wp'        => get_bloginfo( 'version' ),
+				'php'       => PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION,
+				'locale'    => get_locale(),
+				'multisite' => is_multisite() ? 1 : 0,
+				'site'      => substr( hash_hmac( 'sha256', home_url( '/' ), wp_salt( 'auth' ) ), 0, 32 ),
+			)
+		);
+
 		$response = wp_remote_get(
-			add_query_arg(
-				array( 'plugin' => 'unapp-library', 'version' => UNAPP_LIBRARY_VERSION ),
-				'https://updates.colorlib.com/plugin/unapp-library.json'
-			),
+			add_query_arg( $payload, 'https://updates.colorlib.com/plugin/unapp-library.json' ),
 			array( 'timeout' => 8 )
 		);
 

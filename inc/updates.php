@@ -184,12 +184,21 @@ function unapp_updates_notice() {
 	}
 
 	$payload = unapp_update_payload();
+
+	// The companion plugin checks the same host with the same payload and honours
+	// the same opt-out, so the note has to speak for both when it is active.
+	// Two whole sentences rather than a spliced-in subject: the verb has to agree,
+	// and a translator cannot make that agree from a fragment.
+	$note = function_exists( 'unapp_library_check_update' )
+		/* translators: 1: the update host, 2: the list of values sent, 3: filter name. */
+		? __( 'Unapp and its Starter Library plugin check %1$s for updates twice a day and send %2$s. No personal data and no site name is sent, and the identifier is a one-way hash. Add the %3$s filter to switch both off.', 'unapp' )
+		/* translators: 1: the update host, 2: the list of values sent, 3: filter name. */
+		: __( 'Unapp checks %1$s for updates twice a day and sends %2$s. No personal data and no site name is sent, and the identifier is a one-way hash. Add the %3$s filter to switch it off.', 'unapp' );
 	?>
 	<p class="description unapp-updates-note">
 		<?php
 		printf(
-			/* translators: %s: the list of values sent with an update check. */
-			esc_html__( 'Unapp checks %1$s for updates twice a day and sends %2$s. It sends no personal data and no site name, and the identifier is a one-way hash. Add the %3$s filter to switch it off.', 'unapp' ),
+			esc_html( $note ),
 			'<code>' . esc_html( UNAPP_UPDATE_HOST ) . '</code>',
 			'<code>' . esc_html( implode( ', ', array_keys( $payload ) ) ) . '</code>',
 			'<code>unapp_check_for_updates</code>'
