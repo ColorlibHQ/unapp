@@ -59,6 +59,12 @@ Full documentation ships in the docs/ folder of the theme's repository:
 
 A ready-made child theme is in child-theme/.
 
+== Updates ==
+
+Unapp is distributed outside the WordPress.org directory, so it carries an Update URI header and checks https://updates.colorlib.com twice a day through the hook WordPress provides for exactly that. Updates then appear in Dashboard → Updates like any other theme.
+
+The check sends the theme version, your WordPress and PHP versions, your locale, whether the site is multisite, and a one-way hash of the site URL so installs can be counted as sites rather than requests. It sends no site name, no email address and no personal data. Add the `unapp_check_for_updates` filter returning false to switch the check off, or `unapp_update_payload` to trim what it sends. See docs/updates.md.
+
 == Accessibility ==
 
 Unapp aims to meet the WordPress accessibility-ready requirements and WCAG 2.1 level AA where a theme can influence the outcome.

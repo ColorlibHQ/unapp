@@ -359,6 +359,11 @@ require get_theme_file_path( 'inc/scheme.php' );
 require get_theme_file_path( 'inc/setup-wizard.php' );
 
 /**
+ * Updates for a theme distributed outside WordPress.org.
+ */
+require get_theme_file_path( 'inc/updates.php' );
+
+/**
  * Load the monthly/yearly price switch only on pages that render one.
  *
  * @param string $content Rendered block content.

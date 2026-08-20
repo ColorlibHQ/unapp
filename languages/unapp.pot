@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-20T09:57:23+00:00\n"
+"POT-Creation-Date: 2026-08-20T10:02:18+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: make-pot.py (Unapp)\n"
 "X-Domain: unapp\n"
@@ -914,6 +914,11 @@ msgstr ""
 #: patterns/header.php:30
 msgctxt "Header call-to-action button"
 msgid "Get Premium"
+msgstr ""
+
+#. translators: %s: the list of values sent with an update check.
+#: inc/updates.php:192
+msgid "Unapp checks %1$s for updates twice a day and sends %2$s. It sends no personal data and no site name, and the identifier is a one-way hash. Add the %3$s filter to switch it off."
 msgstr ""
 
 #: patterns/agency-clients.php:48

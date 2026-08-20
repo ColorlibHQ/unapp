@@ -7,6 +7,7 @@
  * Requires PHP: 7.4
  * Author: Colorlib
  * Author URI: https://colorlib.com
+ * Update URI: https://updates.colorlib.com/plugin/unapp-library.json
  * Text Domain: unapp-library
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -257,5 +258,55 @@ function unapp_library_add_starters( $sites ) {
 	return $sites;
 }
 add_filter( 'unapp_starter_sites', 'unapp_library_add_starters' );
+
+/**
+ * Updates, through the same first-class hook the theme uses.
+ *
+ * A plugin declaring an Update URI header gets update_plugins_{hostname}
+ * filtered during the normal check, so releases appear on the Plugins screen
+ * exactly like any other update.
+ *
+ * @param array|false $update      Update data, or false.
+ * @param array       $plugin_data Plugin headers.
+ * @param string      $plugin_file Plugin file.
+ * @return array|false
+ */
+function unapp_library_check_update( $update, $plugin_data, $plugin_file ) {
+	if ( $update || 'unapp-library/unapp-library.php' !== $plugin_file ) {
+		return $update;
+	}
+
+	$cached = get_site_transient( 'unapp_library_update' );
+
+	if ( ! is_array( $cached ) ) {
+		$response = wp_remote_get(
+			add_query_arg(
+				array( 'plugin' => 'unapp-library', 'version' => UNAPP_LIBRARY_VERSION ),
+				'https://updates.colorlib.com/plugin/unapp-library.json'
+			),
+			array( 'timeout' => 8 )
+		);
+
+		$cached = ( ! is_wp_error( $response ) && 200 === wp_remote_retrieve_response_code( $response ) )
+			? (array) json_decode( wp_remote_retrieve_body( $response ), true )
+			: array();
+
+		set_site_transient( 'unapp_library_update', $cached, $cached ? 12 * HOUR_IN_SECONDS : HOUR_IN_SECONDS );
+	}
+
+	if ( empty( $cached['version'] ) || version_compare( $cached['version'], UNAPP_LIBRARY_VERSION, '<=' ) ) {
+		return $update;
+	}
+
+	return array(
+		'id'      => 'https://updates.colorlib.com/plugin/unapp-library.json',
+		'slug'    => 'unapp-library',
+		'plugin'  => $plugin_file,
+		'version' => $cached['version'],
+		'url'     => isset( $cached['url'] ) ? $cached['url'] : 'https://colorlib.com/wp/themes/unapp/',
+		'package' => isset( $cached['package'] ) ? $cached['package'] : '',
+	);
+}
+add_filter( 'update_plugins_updates.colorlib.com', 'unapp_library_check_update', 10, 3 );
 
 require_once plugin_dir_path( __FILE__ ) . 'admin.php';

@@ -29,6 +29,14 @@ switching it on under Appearance → Starter Library adds it to the starter
 screen. The bundled Charity pack demonstrates it — fourteen starters with the
 plugin active, thirteen without.
 
+## Updates
+
+The theme is distributed outside WordPress.org and updates through the hook
+core added for that in 6.1 — an `Update URI` header plus
+`update_themes_{hostname}` — so releases appear in Dashboard → Updates like any
+other theme. `docs/updates.md` documents the endpoint contract, exactly what
+the check sends, and the two filters that trim or disable it.
+
 ## Design system
 
 Every section is built from the same measurements, held in one place (`.dev/pgen.py`) and enforced by the generator:
