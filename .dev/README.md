@@ -3,7 +3,7 @@
 The patterns in `patterns/*.php` are generated, not hand-typed. Regenerate the
 whole library with:
 
-    for i in $(seq 1 17); do python3 .dev/batch$i.py; done
+    for i in $(seq 1 22); do python3 .dev/batch$i.py; done
     python3 .dev/apply_grounds.py
 
 `apply_grounds.py` runs last: it assigns each section its ground by role, which
