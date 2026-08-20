@@ -687,3 +687,26 @@ def contact_form(title, email):
             f"\t\t'title' => _x( '{esc(title)}', 'Contact form heading', '{DOM}' ),\n"
             f"\t\t'email' => '{email}',\n"
             "\t)\n);\n?>")
+
+
+def php_rows(name, fields, rows, ctx):
+    """A translatable PHP array for a repeated row.
+
+    Lives here rather than in a batch file: importing a batch to borrow a
+    helper re-runs that batch, which silently regenerates its patterns and
+    undoes apply_grounds.py.
+    """
+    out = f"${name} = array(\n"
+    for row in rows:
+        out += "\tarray(\n"
+        for key, value in zip(fields, row):
+            if key in ("icon", "image"):
+                out += f"\t\t'{key}' => '{value}',\n"
+            else:
+                out += f"\t\t'{key}' => _x( \"{value}\", '{ctx}', '{DOM}' ),\n"
+        out += "\t),\n"
+    return out + ");\n"
+
+
+def loop(var, item, body):
+    return f"<?php foreach ( ${var} as ${item} ) : ?>\n{body}\n<?php endforeach; ?>"

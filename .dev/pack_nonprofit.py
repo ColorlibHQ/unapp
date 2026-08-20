@@ -8,7 +8,6 @@ patterns use, which is what keeps a pack on the house measurements.
 import json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pgen import *
-from batch13 import php_rows, loop
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                    "..", "plugin", "unapp-library", "packs", "nonprofit.json")

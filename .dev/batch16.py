@@ -1,7 +1,6 @@
 """Portfolio and blog starter sections, on the house style."""
 import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pgen import *
-from batch13 import php_rows, loop
 
 P = "unapp, unapp_portfolio"
 B = "unapp, unapp_blog"

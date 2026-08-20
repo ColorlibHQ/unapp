@@ -7,7 +7,6 @@ scroll, a marquee, tabs, a period toggle and editorial furniture.
 """
 import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pgen import *
-from batch13 import php_rows, loop
 
 U = "unapp, unapp_features"
 

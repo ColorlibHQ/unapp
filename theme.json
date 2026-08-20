@@ -462,6 +462,10 @@
 		"dimensions": {
 			"aspectRatio": true,
 			"minHeight": true
+		},
+		"viewport": {
+			"mobile": "600px",
+			"tablet": "782px"
 		}
 	},
 	"styles": {
@@ -633,6 +637,19 @@
 							}
 						}
 					}
+				},
+				"@mobile": {
+					"typography": {
+						"fontSize": "0.875rem"
+					},
+					"spacing": {
+						"padding": {
+							"top": "0.7rem",
+							"bottom": "0.7rem",
+							"left": "1.15rem",
+							"right": "1.15rem"
+						}
+					}
 				}
 			},
 			"core/site-title": {
@@ -706,6 +723,11 @@
 								"text": "var:preset|color|primary"
 							}
 						}
+					}
+				},
+				"@mobile": {
+					"typography": {
+						"letterSpacing": "0"
 					}
 				}
 			},
@@ -1057,6 +1079,13 @@
 			},
 			"core/comment-template": {
 				"css": "& .is-layout-flex > .wp-block-group{min-width:0;flex:1 1 0%}"
+			},
+			"core/heading": {
+				"@mobile": {
+					"typography": {
+						"letterSpacing": "0"
+					}
+				}
 			}
 		},
 		"css": ".wp-block-post-comments-form input:not([type=submit]):not([type=checkbox]), .wp-block-post-comments-form textarea{border:1px solid var(--wp--preset--color--border);border-radius:8px;padding:0.75rem 1rem;font-family:inherit;font-size:inherit;width:100%;box-sizing:border-box} .wp-block-post-comments-form input:focus, .wp-block-post-comments-form textarea:focus{outline:2px solid var(--wp--preset--color--primary);outline-offset:1px;border-color:transparent} .wp-block-post-comments-form .form-submit{margin-bottom:0} .comment-respond .comment-reply-title small{font-size:0.75em;font-weight:400;margin-left:0.5em} .post-password-form{display:flex;flex-wrap:wrap;gap:0.75rem 1rem;align-items:flex-end} .post-password-form p{margin:0;flex:1 1 100%} .post-password-form label{display:flex;flex-direction:column;gap:0.5rem;font-size:var(--wp--preset--font-size--small);color:var(--wp--preset--color--muted)} .post-password-form input[type=password]{border:1px solid var(--wp--preset--color--border);border-radius:999px;padding:0.75rem 1.25rem;font:inherit;color:inherit;background:var(--wp--preset--color--base);min-width:16rem} .post-password-form input[type=password]:focus{outline:2px solid var(--wp--preset--color--primary);outline-offset:1px;border-color:transparent} .post-password-form input[type=submit]{background:var(--wp--preset--color--secondary);color:var(--wp--preset--color--contrast);border:0;border-radius:999px;padding:0.9rem 1.75rem;font-family:var(--wp--preset--font-family--heading);font-size:0.9375rem;font-weight:500;line-height:1.2;cursor:pointer} .post-password-form input[type=submit]:hover,.post-password-form input[type=submit]:focus{background:var(--wp--preset--color--contrast);color:var(--wp--preset--color--base)}"

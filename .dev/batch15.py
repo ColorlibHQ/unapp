@@ -1,7 +1,6 @@
 """Finance starter sections, on the house style."""
 import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pgen import *
-from batch13 import php_rows, loop
 
 N = "unapp, unapp_finance"
 
