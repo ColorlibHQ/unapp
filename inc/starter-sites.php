@@ -484,6 +484,65 @@ function unapp_apply_starter_site( $slug ) {
 }
 
 /**
+ * Merge two style-variation arrays.
+ *
+ * Associative arrays merge key by key; lists are replaced outright, because a
+ * palette is a list and merging two palettes item by item would interleave
+ * them.
+ *
+ * @param array $base  Base array.
+ * @param array $added Array to merge in.
+ * @return array
+ */
+function unapp_merge_variation( $base, $added ) {
+	foreach ( $added as $key => $value ) {
+		if ( is_array( $value ) && isset( $base[ $key ] ) && is_array( $base[ $key ] )
+			&& ! wp_is_numeric_array( $value ) && ! wp_is_numeric_array( $base[ $key ] ) ) {
+			$base[ $key ] = unapp_merge_variation( $base[ $key ], $value );
+			continue;
+		}
+
+		$base[ $key ] = $value;
+	}
+
+	return $base;
+}
+
+/**
+ * Compose a style variation from a colour partial and a typography partial.
+ *
+ * @param string $colors Colour variation slug, e.g. colors-7-stone.
+ * @param string $type   Typography variation slug, e.g. typography-3-editorial.
+ * @return array|null Composed variation, or null when either part is missing.
+ */
+function unapp_compose_variation( $colors, $type ) {
+	if ( ! $colors || ! $type ) {
+		return null;
+	}
+
+	$out = array();
+
+	foreach ( array( 'colors/' . $colors, 'typography/' . $type ) as $relative ) {
+		$path = get_theme_file_path( 'styles/' . $relative . '.json' );
+
+		if ( ! file_exists( $path ) ) {
+			return null;
+		}
+
+		$part = wp_json_file_decode( $path, array( 'associative' => true ) );
+
+		if ( ! is_array( $part ) ) {
+			return null;
+		}
+
+		unset( $part['$schema'], $part['title'], $part['slug'], $part['version'] );
+		$out = unapp_merge_variation( $out, $part );
+	}
+
+	return $out;
+}
+
+/**
  * Build the content of one starter page.
  *
  * A page is defined either as a single 'pattern' or as a 'patterns' list of
@@ -609,13 +668,25 @@ function unapp_starter_blog_page( $author_id ) {
  * @param array $site Starter site definition.
  */
 function unapp_apply_starter_styles( $site ) {
-	$path = get_theme_file_path( 'styles/' . $site['style'] . '.json' );
+	// A starter names both a palette and a typeface. Composing the variation
+	// from those two partials — rather than loading the curated look that pairs
+	// them — is what lets the setup wizard swap either one independently. The
+	// curated file remains the fallback for a starter that names only a look.
+	$variation = unapp_compose_variation(
+		isset( $site['colors'] ) ? $site['colors'] : '',
+		isset( $site['type'] ) ? $site['type'] : ''
+	);
 
-	if ( ! file_exists( $path ) ) {
-		return;
+	if ( ! $variation ) {
+		$path = get_theme_file_path( 'styles/' . $site['style'] . '.json' );
+
+		if ( ! file_exists( $path ) ) {
+			return;
+		}
+
+		$variation = wp_json_file_decode( $path, array( 'associative' => true ) );
 	}
 
-	$variation = wp_json_file_decode( $path, array( 'associative' => true ) );
 	if ( ! is_array( $variation ) ) {
 		return;
 	}
@@ -894,6 +965,45 @@ add_action( 'admin_post_unapp_apply_starter', 'unapp_handle_starter_request' );
  * Render the starter sites screen.
  */
 function unapp_render_starter_screen() {
+	// phpcs:disable WordPress.Security.NonceVerification.Recommended -- read-only navigation between wizard steps.
+	$step    = isset( $_GET['step'] ) ? sanitize_key( wp_unslash( $_GET['step'] ) ) : '';
+	$starter = isset( $_GET['starter'] ) ? sanitize_key( wp_unslash( $_GET['starter'] ) ) : '';
+	$sites   = unapp_get_starter_sites();
+
+	if ( 'done' === $step ) {
+		echo '<div class="wrap unapp-starters">';
+		unapp_wizard_render_done();
+		unapp_starter_styles();
+		echo '</div>';
+		return;
+	}
+
+	if ( isset( $sites[ $starter ] ) && in_array( $step, array( 'brand', 'plugins' ), true ) ) {
+		echo '<div class="wrap unapp-starters">';
+		echo '<h1>' . esc_html__( 'Set up your site', 'unapp' ) . '</h1>';
+		unapp_wizard_steps( $step );
+
+		if ( 'brand' === $step ) {
+			unapp_wizard_render_brand( $starter );
+		} else {
+			unapp_wizard_render_plugins(
+				$starter,
+				array(
+					'title'   => isset( $_GET['site_title'] ) ? sanitize_text_field( wp_unslash( $_GET['site_title'] ) ) : '',
+					'tagline' => isset( $_GET['tagline'] ) ? sanitize_text_field( wp_unslash( $_GET['tagline'] ) ) : '',
+					'logo'    => isset( $_GET['logo_id'] ) ? absint( $_GET['logo_id'] ) : 0,
+					'colors'  => isset( $_GET['colors'] ) ? sanitize_key( wp_unslash( $_GET['colors'] ) ) : '',
+					'type'    => isset( $_GET['typography'] ) ? sanitize_key( wp_unslash( $_GET['typography'] ) ) : '',
+				)
+			);
+		}
+
+		unapp_starter_styles();
+		echo '</div>';
+		return;
+	}
+	// phpcs:enable WordPress.Security.NonceVerification.Recommended
+
 	$sites  = unapp_get_starter_sites();
 	$active = get_option( UNAPP_STARTER_OPTION, array() );
 	$result = get_transient( UNAPP_STARTER_RESULT );
@@ -905,7 +1015,7 @@ function unapp_render_starter_screen() {
 	<div class="wrap unapp-starters">
 		<h1><?php esc_html_e( 'Unapp starter sites', 'unapp' ); ?></h1>
 		<p class="unapp-starters__intro">
-			<?php esc_html_e( 'Each starter builds a complete site for one kind of business: a colour palette, a typeface, a home page and its supporting pages, and a matching menu. Your existing pages are never deleted — applying a starter adds new ones and points the front page at them.', 'unapp' ); ?>
+			<?php esc_html_e( 'Each starter builds a complete site for one kind of business: a colour palette, a typeface, a home page and its supporting pages, and a matching menu. Setting one up takes three short steps — the starter, your name and look, then anything it needs installing. Your existing pages are never deleted.', 'unapp' ); ?>
 		</p>
 
 		<?php if ( 'done' === $result ) : ?>
@@ -956,19 +1066,63 @@ function unapp_render_starter_screen() {
 							);
 							?>
 						</p>
-						<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
-							<?php wp_nonce_field( 'unapp_apply_starter' ); ?>
-							<input type="hidden" name="action" value="unapp_apply_starter">
-							<input type="hidden" name="starter" value="<?php echo esc_attr( $slug ); ?>">
-							<button type="submit" class="button button-primary">
-								<?php echo $is_active ? esc_html__( 'Apply again', 'unapp' ) : esc_html__( 'Apply this starter', 'unapp' ); ?>
-							</button>
-						</form>
+						<div class="unapp-starter__buttons">
+							<a class="button button-primary" href="<?php echo esc_url( add_query_arg( array( 'page' => 'unapp-starter-sites', 'step' => 'brand', 'starter' => $slug ), admin_url( 'themes.php' ) ) ); ?>">
+								<?php echo $is_active ? esc_html__( 'Set up again', 'unapp' ) : esc_html__( 'Set up this starter', 'unapp' ); ?>
+							</a>
+							<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+								<?php wp_nonce_field( 'unapp_apply_starter' ); ?>
+								<input type="hidden" name="action" value="unapp_apply_starter">
+								<input type="hidden" name="starter" value="<?php echo esc_attr( $slug ); ?>">
+								<button type="submit" class="button-link unapp-starter__skip">
+									<?php esc_html_e( 'Apply without setup', 'unapp' ); ?>
+								</button>
+							</form>
+						</div>
 					</div>
 				</div>
 			<?php endforeach; ?>
 		</div>
 	</div>
+	<?php
+	unapp_starter_styles();
+}
+
+/**
+ * The step indicator shown above every wizard step.
+ *
+ * @param string $current Current step key.
+ */
+function unapp_wizard_steps( $current ) {
+	$steps = array(
+		'choose'  => __( 'Choose a starter', 'unapp' ),
+		'brand'   => __( 'Name and look', 'unapp' ),
+		'plugins' => __( 'Finish', 'unapp' ),
+	);
+	$keys  = array_keys( $steps );
+	$at    = array_search( $current, $keys, true );
+	$at    = false === $at ? 0 : $at;
+	$n     = 0;
+
+	echo '<ol class="unapp-steps">';
+	foreach ( $steps as $key => $label ) {
+		$state = $n === $at ? ' is-current' : ( $n < $at ? ' is-done' : '' );
+		printf(
+			'<li class="unapp-step%s"><span class="unapp-step__n">%d</span>%s</li>',
+			esc_attr( $state ),
+			absint( $n + 1 ),
+			esc_html( $label )
+		);
+		++$n;
+	}
+	echo '</ol>';
+}
+
+/**
+ * Styles for the starter screen and the wizard.
+ */
+function unapp_starter_styles() {
+	?>
 	<style>
 		.unapp-starters__intro { max-width: 70ch; }
 		.unapp-starters__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 24px; }
@@ -984,7 +1138,42 @@ function unapp_render_starter_screen() {
 		.unapp-starter__badge { display: inline-block; margin-inline-start: 6px; padding: 1px 8px; border-radius: 999px; background: #2271b1; color: #fff; font-size: 11px; vertical-align: middle; }
 		.unapp-starter__body p { margin: 0; color: #50575e; font-size: 13px; }
 		.unapp-starter__meta { color: #787c82 !important; font-size: 12px !important; }
-		.unapp-starter form { margin-top: auto; padding-top: 8px; }
+		.unapp-starter form { margin-top: 0; padding-top: 0; }
+		.unapp-starter__buttons { margin-top: auto; padding-top: 10px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+		.unapp-starter__skip { color: #787c82 !important; font-size: 12px; text-decoration: underline; }
+		.unapp-steps { display: flex; flex-wrap: wrap; gap: 8px 28px; list-style: none; margin: 20px 0 26px; padding: 0; }
+		.unapp-step { display: flex; align-items: center; gap: 8px; color: #787c82; font-size: 13px; }
+		.unapp-step__n { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #dcdcde; color: #50575e; font-size: 12px; font-weight: 600; }
+		.unapp-step.is-current { color: #1d2327; font-weight: 600; }
+		.unapp-step.is-current .unapp-step__n { background: #2271b1; color: #fff; }
+		.unapp-step.is-done .unapp-step__n { background: #00a32a; color: #fff; }
+		.unapp-wizard { max-width: 820px; }
+		.unapp-wizard h2 { margin-top: 0; font-size: 1.5rem; }
+		.unapp-wizard__lede { max-width: 68ch; color: #50575e; font-size: 14px; }
+		.unapp-wizard__hint { color: #787c82; font-size: 13px; margin-top: -6px; }
+		.unapp-wizard__panel { background: #fff; border: 1px solid #dcdcde; border-radius: 8px; padding: 18px 20px; margin: 18px 0; }
+		.unapp-wizard__panel h3 { margin-top: 0; font-size: 14px; }
+		.unapp-field { display: block; margin-bottom: 14px; }
+		.unapp-field label, .unapp-field__label { display: block; font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+		.unapp-field input[type="text"] { width: 100%; max-width: 420px; }
+		.unapp-logo { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+		.unapp-logo__preview { max-width: 140px; max-height: 60px; border: 1px solid #dcdcde; border-radius: 6px; padding: 4px; background: #fff; }
+		.unapp-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
+		.unapp-swatches--type { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+		.unapp-swatch { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid #dcdcde; border-radius: 8px; cursor: pointer; font-size: 13px; background: #fff; }
+		.unapp-swatch:has(input:checked) { border-color: #2271b1; box-shadow: 0 0 0 1px #2271b1; }
+		.unapp-swatch input { margin: 0; }
+		.unapp-swatch__dots { display: inline-flex; }
+		.unapp-swatch__dots span { width: 15px; height: 15px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0,0,0,.12); }
+		.unapp-swatch__dots span + span { margin-left: -5px; }
+		.unapp-plugin { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 12px 0; border-bottom: 1px solid #f0f0f1; }
+		.unapp-plugin:last-child { border-bottom: 0; }
+		.unapp-plugin p { margin: 4px 0 0; color: #50575e; font-size: 13px; max-width: 60ch; }
+		.unapp-wizard__summary { background: #fff; border: 1px solid #dcdcde; border-radius: 8px; padding: 18px 20px; margin: 18px 0; }
+		.unapp-wizard__summary h3 { margin-top: 0; font-size: 14px; }
+		.unapp-wizard__summary ul { margin: 10px 0 0 18px; color: #50575e; font-size: 13px; list-style: disc; }
+		.unapp-wizard__actions { display: flex; align-items: center; gap: 10px; margin-top: 22px; }
+		.unapp-wizard--done { text-align: left; }
 	</style>
 	<?php
 }

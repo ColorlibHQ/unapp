@@ -14,7 +14,19 @@ uses where available and quietly omits where not.
 
 ## Pick a starter site
 
-**Appearance → Starter Sites** offers six complete designs:
+**Appearance → Starter Sites** walks through three steps:
+
+1. **Choose a starter** — thirteen complete designs.
+2. **Name and look** — your site title, tagline and logo, and the palette and
+   typeface. Each starter comes with its own pairing; change either one here
+   and the site is built with your choice instead.
+3. **Finish** — anything the starter depends on. A contact form has to come
+   from a plugin, and the Shop starter needs WooCommerce. The theme never
+   installs anything itself; it links to WordPress's installer.
+
+You can skip the wizard entirely with **Apply without setup** on any card.
+
+The thirteen designs:
 
 | Starter | Look | Pages it creates |
 | --- | --- | --- |

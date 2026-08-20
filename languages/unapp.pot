@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-20T06:45:48+00:00\n"
+"POT-Creation-Date: 2026-08-20T07:11:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: make-pot.py (Unapp)\n"
 "X-Domain: unapp\n"
@@ -358,9 +358,159 @@ msgid "Home"
 msgstr ""
 
 #: inc/front-page-setup.php:145
-#: inc/starter-sites.php:590
+#: inc/starter-sites.php:649
 msgctxt "Title of the posts page created on activation"
 msgid "Blog"
+msgstr ""
+
+#: inc/setup-wizard.php:33
+msgid "Contact Form 7"
+msgstr ""
+
+#: inc/setup-wizard.php:34
+msgid "Your Contact page renders whichever form plugin you have. Any of the ten Unapp recognises will do — this is the smallest."
+msgstr ""
+
+#: inc/setup-wizard.php:39
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/setup-wizard.php:40
+msgid "The Shop starter builds a storefront. Without WooCommerce there are no products to put in it."
+msgstr ""
+
+#: inc/setup-wizard.php:141
+#: inc/starter-sites.php:952
+msgid "You are not allowed to change the site design."
+msgstr ""
+
+#: inc/setup-wizard.php:208
+#: inc/setup-wizard.php:290
+msgid "Choose a logo"
+msgstr ""
+
+#: inc/setup-wizard.php:209
+msgid "Use this logo"
+msgstr ""
+
+#. translators: %s: starter site name.
+#: inc/setup-wizard.php:268
+msgid "Make the %s starter yours"
+msgstr ""
+
+#. translators: %s: starter site name.
+#: inc/setup-wizard.php:271
+msgid "Everything here is optional and everything can be changed later. Leaving a field alone keeps what the site already has."
+msgstr ""
+
+#. translators: %s: starter site name.
+#: inc/setup-wizard.php:274
+msgid "Name and logo"
+msgstr ""
+
+#: inc/setup-wizard.php:276
+msgid "Site title"
+msgstr ""
+
+#: inc/setup-wizard.php:281
+msgid "Tagline"
+msgstr ""
+
+#: inc/setup-wizard.php:286
+msgid "Logo"
+msgstr ""
+
+#: inc/setup-wizard.php:292
+msgid "Remove"
+msgstr ""
+
+#: inc/setup-wizard.php:300
+msgid "Colours"
+msgstr ""
+
+#. translators: %s: the palette the starter uses by default.
+#: inc/setup-wizard.php:304
+msgid "The %s starter uses its own palette. Pick another if it suits your brand better."
+msgstr ""
+
+#: inc/setup-wizard.php:324
+msgid "Typeface"
+msgstr ""
+
+#: inc/setup-wizard.php:338
+#: inc/setup-wizard.php:409
+msgid "Back"
+msgstr ""
+
+#: inc/setup-wizard.php:340
+msgid "Continue"
+msgstr ""
+
+#: inc/setup-wizard.php:358
+msgid "One or two things this starter needs"
+msgstr ""
+
+#: inc/setup-wizard.php:361
+msgid "WordPress installs these, not the theme, and you can skip them and come back later. Nothing here is required to build the site."
+msgstr ""
+
+#: inc/setup-wizard.php:371
+msgid "Install"
+msgstr ""
+
+#: inc/setup-wizard.php:377
+msgid "Nothing to install — everything this starter needs is already active."
+msgstr ""
+
+#: inc/setup-wizard.php:391
+msgid "What happens when you press the button"
+msgstr ""
+
+#. translators: %d: number of pages.
+#: inc/setup-wizard.php:400
+msgid "A navigation menu is built from those pages"
+msgstr ""
+
+#. translators: %d: number of pages.
+#: inc/setup-wizard.php:401
+msgid "The palette and typeface are written into Global Styles"
+msgstr ""
+
+#. translators: %d: number of pages.
+#: inc/setup-wizard.php:402
+msgid "The front page is pointed at the new home page"
+msgstr ""
+
+#: inc/setup-wizard.php:403
+msgid "Nothing you already have is deleted or overwritten"
+msgstr ""
+
+#: inc/setup-wizard.php:411
+msgid "Build my site"
+msgstr ""
+
+#: inc/setup-wizard.php:426
+msgid "Your site is built"
+msgstr ""
+
+#: inc/setup-wizard.php:427
+msgid "The pages are written, the menu is made and the front page points at the new home page. Every section is locked to its content, so you can rewrite the words without pulling the layout apart."
+msgstr ""
+
+#: inc/setup-wizard.php:429
+msgid "View your site"
+msgstr ""
+
+#: inc/setup-wizard.php:431
+msgid "Edit the home page"
+msgstr ""
+
+#: inc/setup-wizard.php:433
+msgid "Open the Site Editor"
+msgstr ""
+
+#: inc/setup-wizard.php:435
+msgid "Choose a different starter"
 msgstr ""
 
 #: inc/starter-sites.php:33
@@ -676,17 +826,17 @@ msgstr ""
 msgid "The starter site’s home page pattern could not be loaded."
 msgstr ""
 
-#: inc/starter-sites.php:665
+#: inc/starter-sites.php:736
 msgid "Blog"
 msgstr ""
 
-#: inc/starter-sites.php:693
+#: inc/starter-sites.php:764
 msgid "Navigation"
 msgstr ""
 
 #. Pattern title
 #. Template part name
-#: inc/starter-sites.php:797
+#: inc/starter-sites.php:868
 #: patterns/footer.php
 #: theme.json
 msgid "Footer"
@@ -694,58 +844,74 @@ msgstr ""
 
 #. Pattern title
 #. Template part name
-#: inc/starter-sites.php:838
+#: inc/starter-sites.php:909
 #: patterns/header.php
 #: theme.json
 msgid "Header"
 msgstr ""
 
-#: inc/starter-sites.php:865
-#: inc/starter-sites.php:866
+#: inc/starter-sites.php:936
+#: inc/starter-sites.php:937
 msgid "Starter Sites"
 msgstr ""
 
-#: inc/starter-sites.php:881
-msgid "You are not allowed to change the site design."
+#: inc/starter-sites.php:983
+msgid "Set up your site"
 msgstr ""
 
-#: inc/starter-sites.php:906
+#: inc/starter-sites.php:1016
 msgid "Unapp starter sites"
 msgstr ""
 
-#: inc/starter-sites.php:908
-msgid "Each starter builds a complete site for one kind of business: a colour palette, a typeface, a home page and its supporting pages, and a matching menu. Your existing pages are never deleted — applying a starter adds new ones and points the front page at them."
+#: inc/starter-sites.php:1018
+msgid "Each starter builds a complete site for one kind of business: a colour palette, a typeface, a home page and its supporting pages, and a matching menu. Setting one up takes three short steps — the starter, your name and look, then anything it needs installing. Your existing pages are never deleted."
 msgstr ""
 
 #. translators: %s: link to the site front page.
-#: inc/starter-sites.php:916
+#: inc/starter-sites.php:1026
 msgid "Starter site applied. <a href=\"%s\">View your site</a>."
 msgstr ""
 
 #. translators: %s: link to the site front page.
-#: inc/starter-sites.php:922
+#: inc/starter-sites.php:1032
 msgid "That starter site could not be applied. Please try again."
 msgstr ""
 
 #. translators: %s: starter site name.
-#: inc/starter-sites.php:935
+#: inc/starter-sites.php:1045
 msgid "The home page the %s starter builds"
 msgstr ""
 
-#: inc/starter-sites.php:942
+#: inc/starter-sites.php:1052
 msgid "Applied"
 msgstr ""
 
-#: inc/starter-sites.php:964
-msgid "Apply again"
+#: inc/starter-sites.php:1071
+msgid "Set up again"
 msgstr ""
 
-#: inc/starter-sites.php:964
-msgid "Apply this starter"
+#: inc/starter-sites.php:1071
+msgid "Set up this starter"
+msgstr ""
+
+#: inc/starter-sites.php:1078
+msgid "Apply without setup"
+msgstr ""
+
+#: inc/starter-sites.php:1098
+msgid "Choose a starter"
+msgstr ""
+
+#: inc/starter-sites.php:1099
+msgid "Name and look"
+msgstr ""
+
+#: inc/starter-sites.php:1100
+msgid "Finish"
 msgstr ""
 
 #: inc/starter-sites.php:35
-#: inc/starter-sites.php:811
+#: inc/starter-sites.php:882
 #: patterns/header.php:30
 msgctxt "Header call-to-action button"
 msgid "Get Premium"

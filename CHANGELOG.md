@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.5.0 – 2026-08-20
+
+### Added
+- **A setup wizard.** Picking a starter was only half of setting a site up. Appearance → Starter Sites is now three steps: choose the starter, set the site title, tagline, logo, palette and typeface, then install anything that starter depends on. The wizard never installs a plugin itself — it links to WordPress's own installer with a proper nonce, so core does the installing and the user sees it happen.
+- **Palette and typeface are now independent of the starter.** A starter names both, and the wizard can override either. The composed variation reproduces the curated look byte for byte when neither is changed.
+
+### Fixed
+- `unapp_apply_starter_styles()` loaded the curated look file, which bundles a palette and a typeface together, so the `colors` and `type` keys in a starter definition had no effect. They are now composed from the two partials, which is what makes overriding one of them possible.
+
+
 ## 2.4.0 – 2026-08-20
 
 ### Added

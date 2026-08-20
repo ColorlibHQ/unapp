@@ -3,7 +3,7 @@ Contributors: colorlib
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.4.0
+Stable tag: 2.5.0
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, one-column, rtl-language-support, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, style-variations, template-editing, threaded-comments, translation-ready
@@ -20,7 +20,7 @@ Unapp ships its own shop, product, cart, checkout, order-confirmation and produc
 
 **Starter sites**
 
-Appearance → Starter Sites offers thirteen complete designs, each with its own palette, typeface, home page, supporting pages and menu: SaaS & app, Portfolio, Church, Blog & magazine, Fitness studio, Restaurant, Agency, Shop, Property, Practice, Courses, Conference and Finance & advisory. Applying one creates the pages and sets your front page. Nothing is ever deleted — switching starter adds new pages and leaves your old ones in the Pages list.
+Appearance → Starter Sites walks you through three steps — the starter, your name and look, and any plugin it needs — and offers thirteen complete designs, each with its own palette, typeface, home page, supporting pages and menu: SaaS & app, Portfolio, Church, Blog & magazine, Fitness studio, Restaurant, Agency, Shop, Property, Practice, Courses, Conference and Finance & advisory. Applying one creates the pages and sets your front page. Nothing is ever deleted — switching starter adds new pages and leaves your old ones in the Pages list.
 
 **What's included**
 
@@ -99,6 +99,9 @@ Yes. Every section is a pattern: open the block inserter, choose the Patterns ta
 They are simple SVGs drawn for this theme — invented brand names for the logo cloud and gradient portraits for the team and testimonials. Nothing is licensed from a third party, so replace them with your own at any time.
 
 == Changelog ==
+
+= 2.5.0 - 2026-08-20 =
+* A three-step setup wizard: choose a starter, set the site name, logo, palette and typeface, then install anything the starter needs. Colour and typeface can now be chosen independently of the starter's own pairing.
 
 = 2.4.0 - 2026-08-20 =
 * Contact forms that render whichever form plugin you have; WooCommerce templates and a Shop starter; Restaurant and Agency starters; starter pages locked to their content; documentation and a child theme. Fixes a header overflow at 390px and a shop grid that dropped to two columns.

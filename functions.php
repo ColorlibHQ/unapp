@@ -354,6 +354,11 @@ require get_theme_file_path( 'inc/forms.php' );
 require get_theme_file_path( 'inc/scheme.php' );
 
 /**
+ * Setup wizard: name, logo, palette, typeface and the plugins a starter needs.
+ */
+require get_theme_file_path( 'inc/setup-wizard.php' );
+
+/**
  * Load the monthly/yearly price switch only on pages that render one.
  *
  * @param string $content Rendered block content.
