@@ -106,3 +106,20 @@ Build a pack from the generator the theme's own patterns use — see
 plain block markup and writes the JSON. Patterns register under the
 `unapp-library/` namespace, and `{{THEME}}` in an image URL resolves to the
 active theme's URL at runtime.
+
+## Rewriting copy with AI
+
+The library plugin can rewrite the words a starter produced, using ChatGPT,
+Claude or Gemini and the site's own API key. It deliberately does not generate
+layouts: the layouts are already measured and verified, so the model is pointed
+at the part it is good at.
+
+Only the text inside headings, paragraphs, list items and links is sent —
+`unapp_ai_extract_text()` pulls the text nodes and nothing else — and
+replacements go back between tags, so the block markup cannot be damaged by the
+reply. A reply that does not line up with the page one-for-one is rejected
+whole rather than applied partially.
+
+To add a provider, filter the list and give it an endpoint and a response
+shape; see `unapp_ai_providers()` and `unapp_ai_response_text()` in
+`plugin/unapp-library/ai.php`.

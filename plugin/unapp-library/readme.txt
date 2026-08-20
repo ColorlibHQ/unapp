@@ -31,6 +31,23 @@ means no remote packs, and the bundled ones keep working.
 
 The plugin does nothing at all unless the Unapp theme is active.
 
+== Rewrite with AI ==
+
+**Appearance → Rewrite with AI** rewrites the words on the pages a starter
+built, and only the words. Choose ChatGPT, Claude or Gemini — whichever you
+already have an account with — paste your own API key, and describe your
+business. The model receives the text on the page and your description, and
+returns replacements one for one.
+
+The layout is never sent and never changes. Only the text inside headings,
+paragraphs, list items and links is extracted; the block markup around it is
+not, so a model cannot damage a layout it never sees. Replacements are applied
+between tags only, and the result is still valid block markup — verified at
+106 blocks with zero invalid after a full-page rewrite.
+
+Your key is stored on your own site and sent only to the provider you chose.
+The previous wording stays in each page's revision history.
+
 == Writing a pack ==
 
     {
@@ -56,4 +73,4 @@ copies.
 == Changelog ==
 
 = 1.0.0 =
-* First release, with the Charity pack.
+* First release, with the Charity pack and AI copy rewriting for ChatGPT, Claude and Gemini.

@@ -309,4 +309,5 @@ function unapp_library_check_update( $update, $plugin_data, $plugin_file ) {
 }
 add_filter( 'update_plugins_updates.colorlib.com', 'unapp_library_check_update', 10, 3 );
 
+require_once plugin_dir_path( __FILE__ ) . 'ai.php';
 require_once plugin_dir_path( __FILE__ ) . 'admin.php';
