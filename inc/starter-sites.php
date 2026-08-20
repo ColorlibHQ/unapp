@@ -164,7 +164,7 @@ function unapp_get_starter_sites() {
 		),
 		'restaurant' => array(
 			'title'    => __( 'Restaurant', 'unapp' ),
-			'summary'  => __( 'A cover hero, the week\u2019s menu, the kitchen, reviews, opening hours and a booking band.', 'unapp' ),
+			'summary'  => __( 'A cover hero, the week’s menu, the kitchen, reviews, opening hours and a booking band.', 'unapp' ),
 			'cta'      => __( 'Book a table', 'unapp' ),
 			'style'    => 'harvest',
 			'colors'   => 'colors-11-harvest',
@@ -291,7 +291,7 @@ function unapp_get_starter_sites() {
 		),
 		'education' => array(
 			'title'    => __( 'Courses', 'unapp' ),
-			'summary'  => __( 'A course provider: the term\u2019s timetable with prices, the tutors who teach it and how booking works.', 'unapp' ),
+			'summary'  => __( 'A course provider: the term’s timetable with prices, the tutors who teach it and how booking works.', 'unapp' ),
 			'cta'      => __( 'See the courses', 'unapp' ),
 			'style'    => 'violet',
 			'colors'   => 'colors-5-violet',
