@@ -1038,8 +1038,18 @@ function unapp_render_starter_screen() {
 				<div class="unapp-starter<?php echo $is_active ? ' is-active' : ''; ?>">
 					<div class="unapp-starter__preview"
 						style="background:linear-gradient(135deg, <?php echo esc_attr( $site['swatches'][0] ); ?> 0%, <?php echo esc_attr( $site['swatches'][1] ); ?> 100%)">
-						<?php if ( ! empty( $site['thumb'] ) && file_exists( get_theme_file_path( 'assets/images/starters/' . $site['thumb'] . '.webp' ) ) ) : ?>
-							<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/starters/' . $site['thumb'] . '.webp' ) ); ?>"
+						<?php
+						// A starter added by a plugin carries its own thumbnail URL;
+						// the theme's own starters name a bundled file.
+						$unapp_thumb = '';
+						if ( ! empty( $site['thumb_url'] ) ) {
+							$unapp_thumb = $site['thumb_url'];
+						} elseif ( ! empty( $site['thumb'] ) && file_exists( get_theme_file_path( 'assets/images/starters/' . $site['thumb'] . '.webp' ) ) ) {
+							$unapp_thumb = get_theme_file_uri( 'assets/images/starters/' . $site['thumb'] . '.webp' );
+						}
+						?>
+						<?php if ( $unapp_thumb ) : ?>
+							<img src="<?php echo esc_url( $unapp_thumb ); ?>"
 								alt="<?php
 								/* translators: %s: starter site name. */
 								echo esc_attr( sprintf( __( 'The home page the %s starter builds', 'unapp' ), $site['title'] ) );

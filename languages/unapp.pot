@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-20T07:11:17+00:00\n"
+"POT-Creation-Date: 2026-08-20T07:17:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: make-pot.py (Unapp)\n"
 "X-Domain: unapp\n"
@@ -878,35 +878,35 @@ msgid "That starter site could not be applied. Please try again."
 msgstr ""
 
 #. translators: %s: starter site name.
-#: inc/starter-sites.php:1045
+#: inc/starter-sites.php:1055
 msgid "The home page the %s starter builds"
 msgstr ""
 
-#: inc/starter-sites.php:1052
+#: inc/starter-sites.php:1062
 msgid "Applied"
 msgstr ""
 
-#: inc/starter-sites.php:1071
+#: inc/starter-sites.php:1081
 msgid "Set up again"
 msgstr ""
 
-#: inc/starter-sites.php:1071
+#: inc/starter-sites.php:1081
 msgid "Set up this starter"
 msgstr ""
 
-#: inc/starter-sites.php:1078
+#: inc/starter-sites.php:1088
 msgid "Apply without setup"
 msgstr ""
 
-#: inc/starter-sites.php:1098
+#: inc/starter-sites.php:1108
 msgid "Choose a starter"
 msgstr ""
 
-#: inc/starter-sites.php:1099
+#: inc/starter-sites.php:1109
 msgid "Name and look"
 msgstr ""
 
-#: inc/starter-sites.php:1100
+#: inc/starter-sites.php:1110
 msgid "Finish"
 msgstr ""
 

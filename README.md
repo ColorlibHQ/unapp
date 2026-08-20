@@ -21,6 +21,14 @@ Every starter carries its own patterns end to end — its home page, its inner p
 
 Add your own with the `unapp_starter_sites` filter. Nothing is deleted when you apply or switch.
 
+## Starter library plugin
+
+`plugin/unapp-library/` adds starter sites from JSON packs, so a new vertical
+ships without a theme release. A pack carries its own patterns as block markup;
+switching it on under Appearance → Starter Library adds it to the starter
+screen. The bundled Charity pack demonstrates it — fourteen starters with the
+plugin active, thirteen without.
+
 ## Design system
 
 Every section is built from the same measurements, held in one place (`.dev/pgen.py`) and enforced by the generator:

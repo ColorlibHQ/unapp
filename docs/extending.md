@@ -84,3 +84,25 @@ Return `null` to force the email fallback.
 ```php
 add_filter( 'unapp_auto_setup_front_page', '__return_false' );
 ```
+
+## Ship a starter without a theme update
+
+The **Unapp Starter Library** plugin (in `plugin/unapp-library/`) loads starter
+sites from JSON packs. A pack holds the starter definition and the block markup
+of every pattern it needs, so a new kind of site is a file rather than a
+release.
+
+Packs are read from the plugin's own `packs/` directory, or fetched from an
+endpoint you nominate:
+
+```php
+add_filter( 'unapp_library_endpoint', function () {
+    return 'https://example.com/unapp/packs.json';
+} );
+```
+
+Build a pack from the generator the theme's own patterns use — see
+`.dev/pack_nonprofit.py`, which resolves the PHP in a generated pattern down to
+plain block markup and writes the JSON. Patterns register under the
+`unapp-library/` namespace, and `{{THEME}}` in an image URL resolves to the
+active theme's URL at runtime.
