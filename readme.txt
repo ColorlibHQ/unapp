@@ -8,7 +8,7 @@ License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, one-column, rtl-language-support, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, style-variations, template-editing, threaded-comments, translation-ready
 
-Unapp is a lightweight block theme with six one-click starter sites, built entirely for the WordPress Site Editor.
+Unapp is a lightweight block theme with thirteen one-click starter sites, built entirely for the WordPress Site Editor.
 
 == Description ==
 

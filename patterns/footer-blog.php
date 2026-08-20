@@ -19,9 +19,13 @@
 <!-- wp:column {"width":"34%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 <div class="wp-block-column" style="flex-basis:34%;">
 <!-- wp:site-title {"level":0,"fontSize":"large"} /-->
+<?php if ( get_bloginfo( 'description' ) ) : ?>
+<!-- wp:site-tagline {"className":"unapp-footer-note","fontSize":"small"} /-->
+<?php else : ?>
 <!-- wp:paragraph {"fontSize":"small","style":{"color":{"text":"rgba(255,255,255,0.72)"}}} -->
 <p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.72);"><?php echo esc_html_x( 'Essays on making software carefully. One most Fridays, about a thousand words, no sponsorship.', 'Footer tagline', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
+<?php endif; ?>
 <!-- wp:social-links {"iconColor":"base","iconColorValue":"#ffffff","className":"is-style-logos-only","size":"has-small-icon-size","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
 <ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only">
 <!-- wp:social-link {"url":"https://x.com","service":"x"} /-->
