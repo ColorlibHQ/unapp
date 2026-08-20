@@ -107,7 +107,7 @@ Useful checks with it: `wp eval 'echo do_blocks("<!-- wp:pattern {\"slug\":\"una
 
 ### Assets
 
-- Fonts: `assets/fonts/{poppins,nunito}/*.woff2` — Google-served latin + latin-ext subsets with `unicodeRange` in theme.json; Poppins static 400–700, Nunito variable 300–800. OFL.txt alongside; credit in readme.txt.
+- Fonts: `assets/fonts/{poppins,nunito,inter,fraunces,space-grotesk,manrope}/*.woff2` — six families, all self-hosted, latin + latin-ext subsets with `unicodeRange` in theme.json. The five typography presets pair them as Poppins & Nunito, Inter, Fraunces & Inter, Space Grotesk & Inter, Manrope. OFL.txt alongside each; credits in readme.txt.
 - Abstract imagery: `.dev/abstract.py` generates `assets/images/abstract/*.svg` — a muted duotone ground, one geometric subject and fine white line work, sharing a stroke weight and light source so the ten read as one commissioned set. They replaced flat gradient blobs that rendered as smudges in the portfolio grid.
 - Avatars: `.dev/avatars.py` generates `assets/images/avatars/*.svg` — duotone silhouettes, one muted ground and one figure tone each, with a different hair and shoulder shape per file so a row of four reads as four people. All ten share one neutral ground — per-avatar tints looked arbitrary side by side in a grid. Long hair is drawn *behind* the head and shoulders; anything drawn after the head is clipped to the skull, or it leaves a slab across the chin.
 - Images: AVIF (`avifenc --min 20 --max 30 --speed 4`; `crowd.avif` at 34–44 because it sits under an 80% overlay). Sources were the 1.x JPGs; originals are gone from the repo (git history `1d3c10c` has them).

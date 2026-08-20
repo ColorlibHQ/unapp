@@ -35,7 +35,7 @@ Appearance → Starter Sites walks you through three steps — the starter, your
 * **WordPress 7.0 blocks** used where they belong: a native Accordion FAQ, breadcrumbs on posts and pages, result counts on archives and reading time in post meta — all degrading quietly on WordPress 6.6–6.9.
 * Blog, archive, search, single, page, no-title page and 404 templates with comments and pagination.
 * Consistent content styling: block and classic (shortcode) content share the same alignment ladder, captions, galleries, tables, code and vertical rhythm.
-* Locally hosted Poppins and Nunito fonts (no external requests), fluid typography and a consistent spacing scale.
+* Six locally hosted font families — Poppins, Nunito, Inter, Fraunces, Space Grotesk and Manrope — with no external requests, plus fluid typography and a consistent spacing scale.
 * No jQuery, no icon fonts, no framework. The only JavaScript is a 2 KB stat counter, loaded solely on pages that use the Stats pattern.
 
 == Installation ==
