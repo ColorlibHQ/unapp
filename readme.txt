@@ -70,6 +70,9 @@ Unapp aims to meet the WordPress accessibility-ready requirements and WCAG 2.1 l
 * Motion respects `prefers-reduced-motion`: the stat counter does not animate and its final values are already in the markup.
 * Text can be resized to 200% and reflows to a single column without loss of content or function.
 * Images in patterns carry alt text or are marked decorative; no content is conveyed by colour alone.
+* The dark reading mode keeps every palette above 4.5:1 on the dark ground; the closest is 4.85:1.
+
+**How this was tested.** A scripted keyboard pass tabs through the front page, the shop and the blog: 54, 70 and 45 stops respectively, every one of them visible and carrying a focus indicator, with no keyboard traps. Landmarks, heading order, alt text, form labels and empty links are checked on every template. Colour contrast is computed from the palette files for body text, muted text and button labels, in both reading modes.
 
 If you find an accessibility barrier, please report it on the theme's support forum so it can be fixed.
 

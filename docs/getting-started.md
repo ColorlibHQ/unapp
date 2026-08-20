@@ -60,3 +60,27 @@ With no form plugin installed, the contact sections show an email panel instead.
 
 Colours and typography are independent, so the ten palettes and five type
 presets give fifty combinations.
+
+## Dark mode
+
+The **Dark mode toggle** pattern adds a button that lets a visitor read the
+site light or dark and remembers the choice. It keeps your palette rather than
+replacing it: the neutrals swap to a dark set and your own primary, secondary
+and accent are lightened just enough to stay legible, so a green site stays
+green.
+
+Nothing loads on pages without the toggle — no stylesheet, no script.
+
+## Performance
+
+Measured on a local WordPress 7.0 install with WooCommerce, Jetpack and a form
+plugin active, cold cache, at 1280px:
+
+| Page | Requests | Transferred | First contentful paint |
+| --- | --- | --- | --- |
+| Front page | 43 | 235 KB | 224 ms |
+| Blog | 37 | 501 KB | 152 ms |
+
+Most of the script weight is the active plugins rather than the theme; the
+theme itself ships no framework, no jQuery and no icon font, and loads its
+per-block stylesheets only on pages that use those blocks.
