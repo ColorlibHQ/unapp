@@ -155,7 +155,7 @@ print("batch 19 written: 4 hidden partials + 6 shop sections")
 toggle = ('<!-- wp:buttons -->\n<div class="wp-block-buttons">\n'
           '<!-- wp:button {"className":"is-style-outline unapp-scheme-toggle","fontSize":"small"} -->\n'
           '<div class="wp-block-button has-custom-font-size is-style-outline unapp-scheme-toggle has-small-font-size">'
-          '<a class="wp-block-button__link wp-element-button" href="#" role="button" aria-pressed="false">'
+          '<a class="wp-block-button__link has-small-font-size has-custom-font-size wp-element-button" href="#">'
           '<span class="unapp-scheme-toggle__light">' + t("Dark") + '</span>'
           '<span class="unapp-scheme-toggle__dark">' + t("Light") + '</span>'
           '</a></div>\n'

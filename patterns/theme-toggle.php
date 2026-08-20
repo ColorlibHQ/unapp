@@ -14,7 +14,7 @@
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"className":"is-style-outline unapp-scheme-toggle","fontSize":"small"} -->
-<div class="wp-block-button has-custom-font-size is-style-outline unapp-scheme-toggle has-small-font-size"><a class="wp-block-button__link wp-element-button" href="#" role="button" aria-pressed="false"><span class="unapp-scheme-toggle__light"><?php esc_html_e( 'Dark', 'unapp' ); ?></span><span class="unapp-scheme-toggle__dark"><?php esc_html_e( 'Light', 'unapp' ); ?></span></a></div>
+<div class="wp-block-button has-custom-font-size is-style-outline unapp-scheme-toggle has-small-font-size"><a class="wp-block-button__link has-small-font-size has-custom-font-size wp-element-button" href="#"><span class="unapp-scheme-toggle__light"><?php esc_html_e( 'Dark', 'unapp' ); ?></span><span class="unapp-scheme-toggle__dark"><?php esc_html_e( 'Light', 'unapp' ); ?></span></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

@@ -148,7 +148,7 @@ switch = group(
     '<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->\n<div class="wp-block-buttons">\n'
     '<!-- wp:button {"className":"unapp-period is-style-outline","fontSize":"small"} -->\n'
     '<div class="wp-block-button has-custom-font-size unapp-period is-style-outline has-small-font-size">'
-    '<a class="wp-block-button__link wp-element-button" href="#" role="button" aria-pressed="false">'
+    '<a class="wp-block-button__link has-small-font-size has-custom-font-size wp-element-button" href="#">'
     '<span class="unapp-period__to-yearly">' + t("Show yearly prices") + '</span>'
     '<span class="unapp-period__to-monthly">' + t("Show monthly prices") + '</span>'
     '</a></div>\n<!-- /wp:button -->\n</div>\n<!-- /wp:buttons -->',

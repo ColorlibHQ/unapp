@@ -15,6 +15,9 @@
 				return;
 			}
 
+			control.setAttribute( 'role', 'button' );
+			control.setAttribute( 'aria-pressed', 'false' );
+
 			control.addEventListener( 'click', function ( event ) {
 				event.preventDefault();
 				var yearly = scope.getAttribute( 'data-unapp-period' ) === 'yearly';

@@ -57,7 +57,7 @@ $unapp_toggle_plans = array(
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons">
 <!-- wp:button {"className":"unapp-period is-style-outline","fontSize":"small"} -->
-<div class="wp-block-button has-custom-font-size unapp-period is-style-outline has-small-font-size"><a class="wp-block-button__link wp-element-button" href="#" role="button" aria-pressed="false"><span class="unapp-period__to-yearly"><?php esc_html_e( 'Show yearly prices', 'unapp' ); ?></span><span class="unapp-period__to-monthly"><?php esc_html_e( 'Show monthly prices', 'unapp' ); ?></span></a></div>
+<div class="wp-block-button has-custom-font-size unapp-period is-style-outline has-small-font-size"><a class="wp-block-button__link has-small-font-size has-custom-font-size wp-element-button" href="#"><span class="unapp-period__to-yearly"><?php esc_html_e( 'Show yearly prices', 'unapp' ); ?></span><span class="unapp-period__to-monthly"><?php esc_html_e( 'Show monthly prices', 'unapp' ); ?></span></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

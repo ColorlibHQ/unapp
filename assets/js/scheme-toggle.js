@@ -21,6 +21,10 @@
 			// wrapper the class lands on, so the state belongs on the link.
 			var control = wrapper.matches( 'a, button' ) ? wrapper : wrapper.querySelector( 'a, button' );
 			if ( control ) {
+				// Applied here rather than stored in the pattern: core's button
+				// save() does not emit these, and markup it did not produce
+				// fails block validation.
+				control.setAttribute( 'role', 'button' );
 				control.setAttribute( 'aria-pressed', isDark ? 'true' : 'false' );
 			}
 		} );
