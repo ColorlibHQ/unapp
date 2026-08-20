@@ -2,7 +2,7 @@
 /**
  * Title: Courses: booking band
  * Slug: unapp/education-cta
- * Categories: unapp, unapp_education, unapp_cta, call to action
+ * Categories: unapp, unapp_education, unapp_cta, call-to-action
  * Keywords: education, cta, booking, term, newsletter
  * Viewport Width: 1400
  * Description: A closing band about when booking opens, on the palette gradient.

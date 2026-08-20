@@ -701,12 +701,25 @@ function unapp_apply_starter_styles( $site ) {
 		return;
 	}
 
+	// Core finds the global styles post through the `wp_theme` taxonomy, and
+	// creates it with `tax_input` — which wp_insert_post() silently discards
+	// when there is no logged-in user with permission to assign terms. Under
+	// WP-CLI there is no such user, so the term never lands, the next lookup
+	// finds nothing and creates *another* post, and the variation is written to
+	// one the site never reads. Attaching the term ourselves is idempotent in
+	// the browser and is what makes headless provisioning work at all.
+	wp_set_object_terms( $user_cpt['ID'], wp_get_theme()->get_stylesheet(), 'wp_theme' );
+
 	wp_update_post(
 		array(
 			'ID'           => $user_cpt['ID'],
 			'post_content' => wp_slash( wp_json_encode( $variation ) ),
 		)
 	);
+
+	// The resolver caches user data per request; a starter applied and then read
+	// back in the same run would otherwise see the old styles.
+	WP_Theme_JSON_Resolver::clean_cached_data();
 }
 
 /**

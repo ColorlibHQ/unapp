@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.5.3 – 2026-08-20
+
+### Fixed
+- **A starter applied through WP-CLI silently kept the default palette.** Core locates the global styles post through the `wp_theme` taxonomy, and creates it with `tax_input` — which `wp_insert_post()` discards when there is no logged-in user with permission to assign terms. Under WP-CLI the term therefore never landed, the next lookup found nothing and created *another* post, and the variation was written to one the site never reads. `unapp_apply_starter_styles()` now attaches the term itself, which is a no-op in the browser and is what makes headless provisioning work at all. Found while building the thirteen public demo sites, every one of which came out in the default indigo.
+- Five niche call-to-action patterns declared the category `call to action`; WordPress registers `call-to-action`. They were absent from that group in the inserter.
+
+
 ## 2.5.2 – 2026-08-20
 
 ### Changed

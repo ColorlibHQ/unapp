@@ -2,7 +2,7 @@
 /**
  * Title: Church: closing invitation
  * Slug: unapp/church-cta
- * Categories: unapp, unapp_church, unapp_cta, call to action
+ * Categories: unapp, unapp_church, unapp_cta, call-to-action
  * Keywords: church, cta, invitation, visit, sunday
  * Viewport Width: 1400
  * Description: A warm closing band inviting a visit, on the palette gradient.

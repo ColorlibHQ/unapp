@@ -2,7 +2,7 @@
 /**
  * Title: Fitness: join band
  * Slug: unapp/fitness-cta
- * Categories: unapp, unapp_fitness, unapp_cta, call to action
+ * Categories: unapp, unapp_fitness, unapp_cta, call-to-action
  * Keywords: fitness, gym, cta, join, trial, free session
  * Viewport Width: 1400
  * Description: A closing band offering the free first session, on the palette gradient.

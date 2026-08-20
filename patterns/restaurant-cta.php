@@ -2,7 +2,7 @@
 /**
  * Title: Restaurant: booking band
  * Slug: unapp/restaurant-cta
- * Categories: unapp, unapp_restaurant, unapp_cta, call to action
+ * Categories: unapp, unapp_restaurant, unapp_cta, call-to-action
  * Keywords: restaurant, booking, reservation, cta
  * Viewport Width: 1400
  * Description: A closing band explaining how bookings work, on the palette gradient.

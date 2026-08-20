@@ -2,7 +2,7 @@
 /**
  * Title: Shop: closing band
  * Slug: unapp/shop-cta
- * Categories: unapp, unapp_shop, unapp_cta, call to action
+ * Categories: unapp, unapp_shop, unapp_cta, call-to-action
  * Keywords: shop, cta, newsletter, stock, ecommerce
  * Viewport Width: 1400
  * Description: A closing band about small production runs, on the palette gradient.
