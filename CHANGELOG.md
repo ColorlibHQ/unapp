@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.5.1 – 2026-08-20
+
+### Fixed
+- **The site's tagline is displayed again.** Reported against 1.x in 2019 and still true of the block theme: nothing in `patterns/`, `parts/` or `templates/` rendered the tagline, so a value typed into Settings → General — or into the setup wizard, which asks for one — went nowhere. Every footer already had the slot: a short line under the site title, labelled with a `Footer tagline` translator context in the niche footers, but hard-coded. All fourteen footers now render `core/site-tagline` there when the site has a tagline and keep the written line as a fallback when it does not, so a footer still previews as a finished design on a fresh install.
+- The theme description advertised six starter sites and 70+ patterns. There are thirteen and 140+.
+
+### Notes
+- Site Tagline is a dynamic block, and the style engine drops `rgba()` from a dynamic block's inline colour while passing `#hex` through. The footer tagline takes its muted tone from a class in `style.css` for that reason.
+
+
 ## 2.5.0 – 2026-08-20
 
 ### Added
