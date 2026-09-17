@@ -32,19 +32,17 @@ body = section(
           title=t("The workspace your team will actually use"), title_level=1,
           lead=t("Join 10,000 teams planning, shipping and reporting in one calm place."),
           content="760px", margin_bottom=None) + "\n" +
-    group(
-        '<!-- wp:search {"label":"' + t("Email address", ctx="Hero email capture label").replace('"', "'") +
-        '","showLabel":false,"placeholder":"' + tattr("you@company.com") +
-        '","width":100,"widthUnit":"%","buttonText":"' + t("Get early access", ctx="Hero email capture button").replace('"', "'") +
-        '","buttonPosition":"button-inside"} /-->',
-        layout="constrained", content_size="460px") + "\n" +
-    para(t("Free while in beta. Unsubscribe any time."), align="center", color="muted", size="small") + "\n" +
+    # A button, not a field: a theme must not take submissions, and the Search
+    # block that stood here ran a site search for whatever address was typed.
+    buttons([{"text": t("Request early access"), "url": mailto("hello@example.com", "Early access")}],
+            justify="center") + "\n" +
+    para(t("Free while in beta. Every request gets a reply from a person."), align="center", color="muted", size="small") + "\n" +
     image(uri("assets/images/dashboard-2.avif"), tattr("Unapp analytics dashboard"),
           align="wide", radius="20px", shadow="card-strong"),
     pad=("70", "70"), gap="40", content_size="760px", wide_size="1100px")
 write_pattern("hero-email", title="Hero: email capture", cats=C,
-              keywords="hero, email, signup, waitlist, capture, form",
-              desc="Centred hero with an inline email capture field, a reassurance line and a product screenshot.",
+              keywords="hero, email, signup, waitlist, early access",
+              desc="Centred hero with an early-access request by email, a reassurance line and a product screenshot.",
               body=body)
 
 # ---------------------------------------------------------------- hero-cover

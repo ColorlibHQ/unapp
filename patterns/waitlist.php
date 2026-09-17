@@ -5,7 +5,7 @@
  * Categories: unapp, unapp_cta, call-to-action, banner
  * Keywords: waitlist, coming soon, launch, early access, signup
  * Viewport Width: 1400
- * Description: Full-bleed gradient panel with a waitlist field and social links — the whole page for a pre-launch site.
+ * Description: Full-bleed gradient panel with a join-the-waitlist button and social links — the whole page for a pre-launch site.
  *
  * @package Unapp
  */
@@ -22,15 +22,17 @@
 <h2 class="wp-block-heading has-text-align-center has-base-color has-text-color"><?php esc_html_e( 'Something new is nearly ready', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"align":"center","textColor":"base","fontSize":"large"} -->
-<p class="has-text-align-center has-base-color has-text-color has-large-font-size"><?php esc_html_e( 'We are putting the finishing touches to the next version of Unapp. Leave your address and you will be first through the door.', 'unapp' ); ?></p>
+<p class="has-text-align-center has-base-color has-text-color has-large-font-size"><?php esc_html_e( 'We are putting the finishing touches to the next version of Unapp. Send us a note and you will be first through the door.', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
-<!-- wp:group {"layout":{"type":"constrained","contentSize":"440px"}} -->
-<div class="wp-block-group">
-<!-- wp:search {"label":"<?php echo esc_html_x( 'Email address', 'Waitlist field label', 'unapp' ); ?>","showLabel":false,"placeholder":"<?php esc_attr_e( 'you@company.com', 'unapp' ); ?>","width":100,"widthUnit":"%","buttonText":"<?php echo esc_html_x( 'Join the waitlist', 'Waitlist button', 'unapp' ); ?>","buttonPosition":"button-inside"} /-->
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons">
+<!-- wp:button {"textColor":"primary","backgroundColor":"base"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-primary-color has-text-color has-base-background-color has-background wp-element-button" href="<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( _x( 'Waitlist', 'Email subject line', 'unapp' ) ) ); ?>"><?php esc_html_e( 'Join the waitlist by email', 'unapp' ); ?></a></div>
+<!-- /wp:button -->
 </div>
-<!-- /wp:group -->
+<!-- /wp:buttons -->
 <!-- wp:social-links {"iconColor":"base","iconColorValue":"#ffffff","className":"is-style-logos-only","layout":{"type":"flex","justifyContent":"center"}} -->
 <ul class="wp-block-social-links has-icon-color is-style-logos-only">
 <!-- wp:social-link {"url":"https://x.com","service":"x"} /-->

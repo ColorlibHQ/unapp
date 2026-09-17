@@ -145,35 +145,29 @@ body = section(
         column(heading(t("The Friday changelog"), level=3, size="large") + "\n" +
                para(t("One short email a week: what shipped, what broke, what we learned. No marketing."), color="muted"),
                width="52%", vertical_align="center", gap="20"),
-        column('<!-- wp:search {"label":"' + t("Email address", ctx="Newsletter field label").replace('"', "'") +
-               '","showLabel":false,"placeholder":"' + tattr("you@company.com") +
-               '","width":100,"widthUnit":"%","buttonText":"' + t("Subscribe", ctx="Newsletter button").replace('"', "'") +
-               '","buttonPosition":"button-inside"} /-->\n' +
-               para(t("Roughly 900 readers. Unsubscribe in one click."), color="muted", size="small"),
+        column(buttons([{"text": t("Subscribe by email"), "url": mailto("hello@example.com", "Friday changelog")}]) + "\n" +
+               para(t("Roughly 900 readers. Reply to any issue to stop receiving it."), color="muted", size="small"),
                width="48%", vertical_align="center", gap="20"),
     ], align="wide", gap="50", vertical_align="center"),
     pad=("60", "60"), gap="0")
 write_pattern("newsletter", title="Newsletter sign-up", cats="unapp, unapp_cta, call-to-action, text",
               keywords="newsletter, subscribe, email, signup, inline",
-              desc="Inline newsletter row: pitch on the left, email field on the right. Swap the field for your mail plugin's block.",
+              desc="Inline newsletter row: pitch on the left, a subscribe-by-email button on the right. Swap the button for your mail plugin's form.",
               body=body)
 
 # ------------------------------------------------------------- waitlist / coming soon
 body = section(
     intro(eyebrow_text=t("Coming soon", "Section eyebrow label"),
           title=t("Something new is nearly ready"),
-          lead=t("We are putting the finishing touches to the next version of Unapp. Leave your address and you will be first through the door."),
+          lead=t("We are putting the finishing touches to the next version of Unapp. Send us a note and you will be first through the door."),
           content="620px", eyebrow_color="base", title_color="base", lead_color="base") + "\n" +
-    group('<!-- wp:search {"label":"' + t("Email address", ctx="Waitlist field label").replace('"', "'") +
-          '","showLabel":false,"placeholder":"' + tattr("you@company.com") +
-          '","width":100,"widthUnit":"%","buttonText":"' + t("Join the waitlist", ctx="Waitlist button").replace('"', "'") +
-          '","buttonPosition":"button-inside"} /-->',
-          layout="constrained", content_size="440px") + "\n" +
+    buttons([{"text": t("Join the waitlist by email"), "url": mailto("hello@example.com", "Waitlist"),
+              "bg": "base", "color": "primary"}], justify="center") + "\n" +
     social([("x", "https://x.com"), ("linkedin", "https://linkedin.com"), ("github", "https://github.com")],
            justify="center", color="base", value="#ffffff"),
     style_variation="is-style-section-gradient", pad=("80", "80"), gap="40", content_size="620px")
 write_pattern("waitlist", title="Waitlist / coming soon", cats="unapp, unapp_cta, call-to-action, banner",
               keywords="waitlist, coming soon, launch, early access, signup",
-              desc="Full-bleed gradient panel with a waitlist field and social links — the whole page for a pre-launch site.",
+              desc="Full-bleed gradient panel with a join-the-waitlist button and social links — the whole page for a pre-launch site.",
               body=body)
 print("batch 4 written")

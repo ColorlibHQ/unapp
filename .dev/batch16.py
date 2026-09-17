@@ -84,22 +84,25 @@ write_pattern("blog-about", title="Blog: about the publication", cats=B + ", una
               desc="What the publication is, how often it appears and how it is paid for.",
               body=body)
 
-subscribe_field = ('<!-- wp:search {"label":"","showLabel":false,"placeholder":"' + tattr("you@example.com") +
-                   '","buttonText":"' + tattr("Subscribe") + '","align":"center","buttonPosition":"button-inside",'
-                   '"style":{"border":{"radius":"999px"}}} /-->')
+# Buttons rather than a field: a theme must not take submissions, and the
+# Search block that stood here ran a site search for the typed address.
+subscribe_buttons = buttons([
+    {"text": t("Subscribe by email"), "url": mailto("editor@theslowbuild.example", "Subscribe"),
+     "bg": "base", "color": "contrast"},
+    {"text": t("Follow the RSS feed"), "url": "<?php echo esc_url( get_feed_link() ); ?>",
+     "style": "outline", "color": "base"},
+], justify="center", margin={"top": "20"})
 body = section_std(
     group(
         heading(t("One essay, most Fridays"), align="center", size="xx-large", color="base") + "\n" +
-        para(t("Four thousand people read it over coffee. No tracking pixels, no sequence, and one click to leave."),
+        para(t("Four thousand people read it over coffee. No tracking pixels, no sequence, and one reply to leave."),
              align="center", custom_color="rgba(255,255,255,0.86)", size="large") + "\n" +
-        subscribe_field + "\n" +
-        para(t("Or follow the RSS feed, if you are that sort of person. Many of us are."),
-             align="center", custom_color="rgba(255,255,255,0.7)", size="small"),
+        subscribe_buttons,
         layout="constrained", content_size="620px", gap=STACK_GAP),
     gradient="primary-to-accent", text="base", gap="0", elements=GRADIENT_ELEMENTS)
 write_pattern("blog-subscribe", title="Blog: subscribe band", cats=B + ", unapp_cta, newsletter",
               keywords="blog, subscribe, newsletter, email, rss",
-              desc="A newsletter band in an editorial voice, with an email field and a nod to RSS.",
+              desc="A newsletter band in an editorial voice, with subscribe-by-email and RSS buttons.",
               body=body, anchor="subscribe")
 
 pitch_card = card(
