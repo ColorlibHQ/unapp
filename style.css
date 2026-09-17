@@ -742,10 +742,29 @@ Unapp is distributed under the terms of the GNU GPL.
    The header row is nowrap by contract, so its children have to be allowed to
    shrink or they push past the viewport. With a long call-to-action label — or
    with WooCommerce adding account and cart icons to the row — the button was
-   overflowing by about 36px at 390px. */
+   overflowing by about 36px at 390px.
+
+   The button used to keep its full width, so a long label ("Book an
+   appointment") still pushed the page to 409px at 390 and 392px at 360. Now the
+   brand takes whatever the menu toggle and button leave, down to a floor, and
+   wraps onto a second line before it is cut; only below that floor does the
+   button label wrap. */
 @media (max-width: 599px) {
 	.unapp-header-row > .wp-block-group {
 		min-width: 0;
+	}
+
+	.unapp-header-row > .wp-block-group:first-child {
+		flex: 1 1 0;
+		min-width: min(8.5rem, 44%);
+	}
+
+	.unapp-header-row > .wp-block-group:last-child {
+		flex: 0 1 auto;
+	}
+
+	.unapp-header-row > .wp-block-group > :is(.wp-block-site-logo, .wp-block-navigation) {
+		flex-shrink: 0;
 	}
 
 	/* The row's gaps come from block spacing presets; at this width they are
@@ -757,15 +776,29 @@ Unapp is distributed under the terms of the GNU GPL.
 
 	.unapp-header-row .wp-block-site-title {
 		min-width: 0;
+		display: -webkit-box;
 		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		line-clamp: 2;
+		white-space: normal;
+		overflow-wrap: anywhere;
+		line-height: 1.15;
 	}
 
-	/* The header pattern sets this padding inline, so only !important reaches it. */
-	.unapp-header-row .wp-block-button__link {
-		padding-inline: 0.9rem !important;
-		font-size: 0.8125rem;
+	.unapp-header-row.unapp-header-row .wp-block-buttons,
+	.unapp-header-row .wp-block-buttons > .wp-block-button {
+		flex-shrink: 1;
+		min-width: 0;
+	}
+
+	/* The header pattern sets this padding and a font-size class inline, so only
+	   !important reaches them. */
+	.unapp-header-row .wp-block-buttons > .wp-block-button > .wp-block-button__link {
+		padding: 0.55rem 0.75rem !important;
+		font-size: 0.8125rem !important;
+		line-height: 1.15;
+		text-wrap: balance;
 	}
 }
 
