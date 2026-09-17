@@ -100,11 +100,89 @@ Unapp is distributed under the terms of the GNU GPL.
 	border-radius: 2px;
 }
 
-/* On dark and gradient sections the primary colour is the background, so the
-   ring switches to the section's own text colour. */
-:where(.is-style-section-dark, .is-style-section-gradient, .wp-block-cover, .has-dark-background-color)
+/* On coloured grounds — dark and gradient sections, covers, groups filled with
+   a palette colour — a primary ring vanishes: a primary-to-accent band starts
+   in the very colour of the ring. There the ring switches to the section's own
+   text colour, which the section already has to keep readable. */
+:where(.is-style-section-dark, .is-style-section-gradient, .wp-block-cover, [class*="-gradient-background"],
+	.has-primary-background-color, .has-secondary-background-color, .has-accent-background-color,
+	.has-contrast-background-color, .has-dark-background-color)
 	:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
 	outline-color: currentColor;
+}
+
+/* A filled button's label is coloured against its own fill (primary text on a
+   white button), so its currentColor ring can match the section. There the
+   ring takes the fill colour instead — the colour the pattern chose to stand
+   out from that section. Default buttons are filled with secondary. */
+:where(.is-style-section-dark, .is-style-section-gradient, .wp-block-cover, [class*="-gradient-background"],
+	.has-primary-background-color, .has-secondary-background-color, .has-accent-background-color,
+	.has-contrast-background-color, .has-dark-background-color)
+	.wp-block-button:not(.is-style-outline) > .wp-block-button__link:focus-visible {
+	outline-color: var(--wp--preset--color--secondary);
+}
+
+:where(.is-style-section-dark, .is-style-section-gradient, .wp-block-cover, [class*="-gradient-background"],
+	.has-primary-background-color, .has-secondary-background-color, .has-accent-background-color,
+	.has-contrast-background-color, .has-dark-background-color)
+	.wp-block-button > .wp-block-button__link.has-base-background-color:focus-visible {
+	outline-color: var(--wp--preset--color--base);
+}
+
+:where(.is-style-section-dark, .is-style-section-gradient, .wp-block-cover, [class*="-gradient-background"],
+	.has-primary-background-color, .has-secondary-background-color, .has-accent-background-color,
+	.has-contrast-background-color, .has-dark-background-color)
+	.wp-block-button > .wp-block-button__link.has-contrast-background-color:focus-visible {
+	outline-color: var(--wp--preset--color--contrast);
+}
+
+:where(.is-style-section-dark, .is-style-section-gradient, .wp-block-cover, [class*="-gradient-background"],
+	.has-primary-background-color, .has-secondary-background-color, .has-accent-background-color,
+	.has-contrast-background-color, .has-dark-background-color)
+	.wp-block-button > .wp-block-button__link.has-primary-background-color:focus-visible {
+	outline-color: var(--wp--preset--color--primary);
+}
+
+:where(.is-style-section-dark, .is-style-section-gradient, .wp-block-cover, [class*="-gradient-background"],
+	.has-primary-background-color, .has-secondary-background-color, .has-accent-background-color,
+	.has-contrast-background-color, .has-dark-background-color)
+	.wp-block-button > .wp-block-button__link.has-accent-background-color:focus-visible {
+	outline-color: var(--wp--preset--color--accent);
+}
+
+:where(.is-style-section-dark, .is-style-section-gradient, .wp-block-cover, [class*="-gradient-background"],
+	.has-primary-background-color, .has-secondary-background-color, .has-accent-background-color,
+	.has-contrast-background-color, .has-dark-background-color)
+	.wp-block-button > .wp-block-button__link.has-surface-background-color:focus-visible {
+	outline-color: var(--wp--preset--color--surface);
+}
+
+/* A dark-filled button sits on a dark section, so there its light label is the
+   colour that shows. */
+:where(.is-style-section-dark, .is-style-section-gradient, .wp-block-cover, [class*="-gradient-background"],
+	.has-primary-background-color, .has-secondary-background-color, .has-accent-background-color,
+	.has-contrast-background-color, .has-dark-background-color)
+	.wp-block-button > .wp-block-button__link.has-dark-background-color:focus-visible {
+	outline-color: currentColor;
+}
+
+/* Search with the button inside: core strips the field's outline and draws the
+   box on the wrapper, so the ring goes on the wrapper. Inside that white box
+   the button's ring is back on a light ground, so it returns to primary. */
+.wp-block-search__button-inside .wp-block-search__inside-wrapper:has(> .wp-block-search__input:focus-visible) {
+	outline: 2px solid var(--wp--preset--color--primary);
+	outline-offset: 2px;
+}
+
+:where(.is-style-section-dark, .is-style-section-gradient, .wp-block-cover, [class*="-gradient-background"],
+	.has-primary-background-color, .has-secondary-background-color, .has-accent-background-color,
+	.has-contrast-background-color, .has-dark-background-color)
+	.wp-block-search__button-inside .wp-block-search__inside-wrapper:has(> .wp-block-search__input:focus-visible) {
+	outline-color: currentColor;
+}
+
+.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button:focus-visible {
+	outline-color: var(--wp--preset--color--primary);
 }
 
 /* ==========================================================================
