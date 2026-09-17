@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-**Unapp 2.5.1** is a Colorlib **WordPress block theme** (Full Site Editing) with **thirteen one-click starter sites** (SaaS, portfolio, church, blog, fitness, restaurant, agency, shop, property, practice, courses, conference, finance) — 143 section patterns, 19 page starters, 22 templates (six of them WooCommerce), 7 section styles, 11 block styles, and 12 colour palettes × 5 typography presets — text domain `unapp`, upstream `github.com/ColorlibHQ/unapp`. Version 2.0.0 (Aug 2026) is a from-scratch rewrite: the Epsilon Framework, Customizer section builder, Bootstrap 3, jQuery and icon fonts from 1.x are gone. It is *not* a static HTML template — the Colorlib R2 preview/download publishing flow and the HTML-template upgrade phases in the global instructions do not apply here.
+**Unapp 2.5.5** is a Colorlib **WordPress block theme** (Full Site Editing) with **thirteen one-click starter sites** (SaaS, portfolio, church, blog, fitness, restaurant, agency, shop, property, practice, courses, conference, finance) — 241 pattern files (184 in the inserter; 57 hidden, including 44 `-h1` page-opening copies), 20 templates (six of them WooCommerce), 7 section styles, 11 block styles, and 12 colour palettes × 5 typography presets — text domain `unapp`, upstream `github.com/ColorlibHQ/unapp`. Version 2.0.0 (Aug 2026) is a from-scratch rewrite: the Epsilon Framework, Customizer section builder, Bootstrap 3, jQuery and icon fonts from 1.x are gone. It is *not* a static HTML template — the Colorlib R2 preview/download publishing flow and the HTML-template upgrade phases in the global instructions do not apply here.
 
-Requires WP 6.6+ (theme.json v3, section styles); tested on WP 7.0. No build step, no npm, no SCSS — every file is committed as-is.
+Requires WP 6.6+ (theme.json v3, section styles); tested on WP 7.1. No build step, no npm, no SCSS — every file is committed as-is.
 
 ## Commands
 
@@ -114,6 +114,8 @@ Useful checks with it: `wp eval 'echo do_blocks("<!-- wp:pattern {\"slug\":\"una
 - `screenshot.png` (1200×900) is a headless-Chrome capture of the live front page with the test site's title/menu replaced in the DOM for the shot.
 
 ## Release checklist
+
+0. Regenerate and confirm no diff: `for i in $(seq 1 22); do python3 .dev/batch$i.py; done; python3 .dev/apply_grounds.py` and `python3 .dev/build_styles.py`; then run `.dev/heading_audit.py`, `.dev/link_audit.py`, `.dev/rhythm_audit.py` and `.dev/gradient_contrast.py` (each exits non-zero on a failure).
 
 1. `php -l` all PHP, validate JSON, bump `Version:` in `style.css` and `Stable tag` in `readme.txt`, add a CHANGELOG entry.
 2. Activate on the Local site, load `/`, `/blog/`, a single post, `/author/…`, `/category/…`, `/tag/…`, a date archive, `?s=`, and (if WooCommerce is active) `/shop/`; render every pattern (`wp eval` loop over the registry) and check `wp-content/debug.log` (enable `WP_DEBUG_LOG` temporarily — remember to revert wp-config.php).

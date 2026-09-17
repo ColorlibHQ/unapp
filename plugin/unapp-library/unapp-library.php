@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Unapp Starter Library
  * Description: Ships additional Unapp starter sites as self-contained packs, so a new kind of site can be added without updating the theme. Packs can be bundled with the plugin or fetched from a library endpoint.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 6.6
  * Requires PHP: 7.4
  * Author: Colorlib
@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const UNAPP_LIBRARY_VERSION = '1.0.0';
+const UNAPP_LIBRARY_VERSION = '1.0.1';
 const UNAPP_LIBRARY_ENABLED = 'unapp_library_enabled';
 const UNAPP_LIBRARY_CACHE   = 'unapp_library_remote';
 

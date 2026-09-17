@@ -1,9 +1,9 @@
 === Unapp ===
 Contributors: colorlib
 Requires at least: 6.6
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.5.4
+Stable tag: 2.5.5
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, one-column, rtl-language-support, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, style-variations, template-editing, threaded-comments, translation-ready
@@ -24,19 +24,19 @@ Appearance → Starter Sites walks you through three steps — the starter, your
 
 **What's included**
 
-* **140+ section patterns** covering everything a product site needs: five heroes, nine feature layouts, testimonials, logo clouds, ratings, case studies, press, three pricing layouts, FAQ, five calls to action, timeline, values, careers, offices, security, changelog, documentation, contact and more.
+* **180+ section patterns** covering everything a product site needs: five heroes, nine feature layouts, testimonials, logo clouds, ratings, case studies, press, three pricing layouts, FAQ, five calls to action, timeline, values, careers, offices, security, changelog, documentation, contact and more.
 * **13 full-page starters** — SaaS landing page, Features, Pricing, Customers, About, Contact, Careers, Help centre, Changelog, Legal, Coming soon and two more — inserted from the pattern modal when you create a page.
-* **Ten pattern categories** in the inserter (Heroes, Features, Social proof, Pricing, Calls to action, Content & blog, Company, Utility, Full pages) so a big library stays findable.
+* **Twenty-two pattern categories** in the inserter — one per job (Heroes, Features, Social proof, Pricing, Calls to action, Content & blog, Company, Utility, Full pages) and one per starter's kind of business — so a big library stays findable.
 * Section styles for any Group, Columns or Column: Card, Soft background, Dark, Gradient, Frosted glass, Outline and Elevated — switch the look of a section with one click.
 * Block styles: Checklist, Dashed, Numbered steps and Two columns (List); Device frame, Browser frame and Framed (Image); Testimonial card (Quote); FAQ card (Details); Comparison (Table); Gradient line (Separator); Text link with arrow (Button); Divided (Columns).
-* **Mix-and-match styles**: six colour palettes × five typography presets = 30 combinations, plus five curated looks that pair a palette with its typeface. Switch either independently from Appearance → Editor → Styles.
+* **Mix-and-match styles**: twelve colour palettes × five typography presets = 60 combinations, plus twelve curated looks that pair a palette with its typeface. Switch either independently from Appearance → Editor → Styles.
 * **Five typography presets** with self-hosted variable fonts: Poppins & Nunito, Inter, Fraunces & Inter, Space Grotesk & Inter, and Manrope.
-* **Fourteen templates** including author, category, tag and date archives, plus Page and Post layouts with a sidebar.
+* **Twenty templates**, six of them for WooCommerce, including author, category, tag and date archives, plus Page and Post layouts with a sidebar.
 * **WordPress 7.0 blocks** used where they belong: a native Accordion FAQ, breadcrumbs on posts and pages, result counts on archives and reading time in post meta — all degrading quietly on WordPress 6.6–6.9.
 * Blog, archive, search, single, page, no-title page and 404 templates with comments and pagination.
 * Consistent content styling: block and classic (shortcode) content share the same alignment ladder, captions, galleries, tables, code and vertical rhythm.
 * Six locally hosted font families — Poppins, Nunito, Inter, Fraunces, Space Grotesk and Manrope — with no external requests, plus fluid typography and a consistent spacing scale.
-* No jQuery, no icon fonts, no framework. The only JavaScript is a 2 KB stat counter, loaded solely on pages that use the Stats pattern.
+* No jQuery, no icon fonts, no framework. Front-end JavaScript is three small scripts — the stat counter, the monthly/yearly price switch and the dark-mode toggle — each loaded only on pages that use it.
 
 == Installation ==
 
@@ -57,7 +57,7 @@ Full documentation ships in the docs/ folder of the theme's repository:
 * design-tokens.md — the spacing scale, radii, type roles and widths every pattern uses
 * extending.md — child theme, adding a starter site, adding patterns, changing the form
 
-A ready-made child theme is in child-theme/.
+A ready-made child theme is in the repository's child-theme/ folder (https://github.com/ColorlibHQ/unapp).
 
 == Updates ==
 
@@ -86,11 +86,11 @@ If you find an accessibility barrier, please report it on the theme's support fo
 
 = How do I add a contact or newsletter form? =
 
-Unapp does not bundle a form plugin. Install any form plugin with a block (for example WPForms, Kali Forms, Contact Form 7 with its block, or MailChimp for WordPress) and add its block below the Contact cards or in place of the Subscribe button.
+Unapp does not bundle a form plugin, and it does not need you to place one. Install any of the ten form plugins it recognises (WPForms, Contact Form 7, Gravity Forms, Fluent Forms, Forminator, Ninja Forms, Kali Forms, Everest Forms, HappyForms or Jetpack) and every contact section shows that plugin's form in place of the email panel. For a newsletter, add your newsletter plugin's block in place of a Subscribe button.
 
 = How do I change the colors? =
 
-Appearance → Editor → Styles. Pick one of the built-in variations (Emerald, Sunset, Midnight) or edit the palette. All patterns use palette slugs, so a palette change updates every section.
+Appearance → Editor → Styles. Pick any of the twelve palettes and five typefaces, or edit the palette. All patterns use palette slugs, so a palette change updates every section.
 
 = Do I need WordPress 7.0? =
 
@@ -102,9 +102,26 @@ Yes. Every section is a pattern: open the block inserter, choose the Patterns ta
 
 = Where are the placeholder logos and avatars from? =
 
-They are simple SVGs drawn for this theme — invented brand names for the logo cloud and gradient portraits for the team and testimonials. Nothing is licensed from a third party, so replace them with your own at any time.
+They are simple SVGs drawn for this theme — invented brand names for the logo cloud and duotone silhouettes for the team and testimonials. Nothing is licensed from a third party, so replace them with your own at any time.
 
 == Changelog ==
+
+= 2.5.5 - 2026-09-17 =
+* Fixed: contact sections could show an administrator-only hint to visitors. Forms are now chosen when the page is displayed, so installing a form plugin later updates every contact page, and pages built with earlier versions are fixed by the update alone.
+* Fixed: applying a starter could remove a header or footer customised in the Site Editor and replace the site's newest menu. Starters now keep their own menu, never delete a template part, and save the previous styles, header and footer as revisions.
+* Fixed: activating the theme on an existing blog replaced its front page. Automatic setup now runs only on a fresh install; other sites get a one-click offer.
+* Fixed: the bundled child theme did not load the parent stylesheet.
+* Fixed: after applying a starter the Site Editor listed palettes and fonts twice.
+* Fixed: the Midnight palette's buttons and the Conference footer were unreadable; text on gradients, the Dark section style and two hero bands now meet AA contrast in all twelve palettes.
+* Fixed: every starter page now has exactly one h1, and every link and button on the starter pages goes somewhere, including the header button, which opens the starter's main page.
+* Fixed: six niche pages carried SaaS sections; they have sections written for their business. Email sign-up boxes that were really search forms are now honest email buttons.
+* Fixed: the dark-mode toggle was reversed for visitors whose system is set to dark.
+* Fixed: the Shop starter could be applied without WooCommerce; WooCommerce templates and patterns are hidden until it is active.
+* Fixed: layout details — 20px strips between sections, a stranded card in three-item grids on tablets, the header overflowing on phones, footer menus in capitals, the plain white mobile menu, focus rings on coloured sections, card heights and plan buttons.
+* Update checks no longer include the site address in the request.
+* Setup wizard: Remove clears the logo, Back keeps what you typed, failures are reported, and plugins that are installed but inactive get an Activate link.
+* Faster: theme images carry width and height so they lazy-load, the variable fonts are trimmed to the weights used (72 KB smaller), and the contact form stylesheet loads only where a form is shown.
+* Tested with WordPress 7.1.
 
 = 2.5.4 - 2026-09-17 =
 * Fixed: the Restaurant and Courses starter descriptions on Appearance > Starter Sites showed a literal \u2019 instead of an apostrophe.

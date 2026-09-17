@@ -1,5 +1,30 @@
 # Changelog
 
+## 2.5.5 – 2026-09-17
+
+### Fixed
+- **Contact sections could show visitors an administrator-only hint.** A starter expands its patterns into page content, so the form detected at that moment — and, because an administrator applied it, the "Only you can see this" hint — was frozen into every contact page. The pattern now stores a slot (a heading and the email fallback); the active form plugin's form, or the hint for administrators only, is chosen when the page is displayed. Hints saved by earlier versions are hidden from everyone who cannot edit theme options, so updating fixes existing sites.
+- **Starters no longer destroy a site's own header, footer or menu.** A customised header or footer was force-deleted, revisions and all, whenever a starter used the theme's own; the newest navigation menu on the site was renamed and emptied. Template parts are now always updated, never deleted, and their current version is saved as a revision first (a part saved once in the Site Editor had none). Starters keep their own menu in `unapp_starter_navigation`, and Global Styles keep a revision of the previous styles.
+- **Activation no longer replaces an established blog's front page.** Automatic setup runs only while WordPress's `fresh_site` flag is set; any other site gets the one-click offer, worded for a latest-posts front page. Concurrent requests can no longer both run the setup.
+- **The child theme loads the parent stylesheet.** `get_stylesheet_uri()` pointed at the child's file. `UNAPP_VERSION` is the parent's version, and includes use `get_parent_theme_file_path()`.
+- **Palettes and fonts listed twice in the Site Editor.** Starters saved preset lists un-keyed, which WordPress files as custom; they are keyed by the theme origin, as the Site Editor saves a variation.
+- **Contrast.** Midnight's button labels were 1.73:1 (now 9.68:1), the Conference footer 1.06:1 (all footers are now written in white), and white text on gradient bands failed in six palettes (it now follows the palette's base colour). A generated audit, `.dev/gradient_contrast.py`, checks every text element on every coloured ground in all twelve palettes: 0 failures in 13,416 checks. The Dark and Gradient section styles and the Fitness and Subscribe heroes are fixed too.
+- **One h1 per page.** Heroes and the blog masthead are h1; sections that open inner pages have hidden `-h1` copies the starters use. 66 starter pages checked, all with exactly one.
+- **Every link arrives somewhere.** Footers and calls to action pointed at anchors no section defined, and the header button was `#` on every starter. Target sections carry anchors, footer links go to the front page's sections, bookings open email or phone, shop links use the WooCommerce shop page, and the header button opens the page each starter names in `cta_page`. 0 dead links across all 13 starters.
+- **SaaS copy on niche pages.** Six niche pages used SaaS contact, FAQ and case-study sections; each now has a section written for its business. The blog heading is neutral.
+- **Email sign-ups were search forms.** The four patterns that used a Search block for an email address now show an email button.
+- **Dark-mode toggle** read `prefers-color-scheme` while the dark tokens follow only the attribute, so an OS-dark visitor saw a light page with the button pressed.
+- **The Shop starter** could be applied without WooCommerce, producing an empty storefront; it now needs WooCommerce, and WooCommerce templates and product patterns are hidden until it is active.
+- **Layout:** the 20px strip between full-width sections, a stranded card in three-item grids at tablet widths, header overflow on 360–390px phones, the header navigation style leaking into footers, the plain white mobile menu (now palette-coloured with 44px targets), focus rings on coloured sections, unequal card heights and plan buttons, rows in menu and opening-hours cards, the comparison table on phones, and category tiles on small screens.
+- **Setup wizard:** Remove now clears the logo, Back keeps what was typed, the done screen reports failures, installed-but-inactive plugins get an Activate link, and install links respect capabilities. The wizard and Starter Sites screen say what a starter replaces instead of "nothing is overwritten".
+- The church diary no longer shows dates that go stale.
+
+### Changed
+- **Update checks send `Unapp/<version>` as the User-Agent.** The previous User-Agent included the site address, which the one-way site hash exists to avoid. "Check again" on Dashboard → Updates clears the twelve-hour cache, the release's minimum WordPress version is passed to core, and a copy installed under another folder name is matched by its Update URI. The update note sits inside the Starter Sites screen.
+- **Performance:** theme images get width and height attributes at render time, so WordPress lazy-loads them and gives the hero `fetchpriority`; the variable fonts are trimmed to the 400–700 weights the theme uses (72 KB smaller); two dashboard screenshots are re-encoded at the size they are shown; `forms.css` loads only on pages that render a form.
+- The pattern generator reproduces the shipped patterns byte for byte, and the styles generator the shipped styles. Pattern values are escaped by context (0 PHPCS escaping errors).
+- Tested with WordPress 7.1.
+
 ## 2.5.4 – 2026-09-17
 
 ### Fixed

@@ -2,9 +2,9 @@
 Contributors: colorlib
 Tags: block-patterns, starter-sites, full-site-editing
 Requires at least: 6.6
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,14 @@ in an image URL to point at the active theme's own assets rather than shipping
 copies.
 
 == Changelog ==
+
+= 1.0.1 =
+* A saved AI key now belongs to the provider it was saved with: switching provider clears it, and the model resets to that provider's default.
+* A "Remove the saved key" control, a saved notice, and cleanup of the plugin's settings when it is deleted. The key can also be set with an UNAPP_AI_KEY constant.
+* AI settings are no longer loaded on every request; Gemini's key is sent in a request header.
+* Rewriting needs the same capability as saving the key, skips pages the user cannot edit, and a double click no longer starts a second request.
+* Update checks send only the plugin name and version as the User-Agent.
+* Remote packs load over HTTPS only, and nothing is loaded when no pack is switched on.
 
 = 1.0.0 =
 * First release, with the Charity pack and AI copy rewriting for ChatGPT, Claude and Gemini.
