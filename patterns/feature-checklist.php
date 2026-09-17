@@ -78,8 +78,8 @@
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%;">
-<!-- wp:image {"width":"100%","aspectRatio":"30/19","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"},"shadow":"var:preset|shadow|card"}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/dashboard-3.avif' ) ); ?>" alt="<?php esc_attr_e( 'Unapp project board', 'unapp' ); ?>" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card);aspect-ratio:30/19;width:100%;height:auto"/></figure>
+<!-- wp:image {"width":"100%","aspectRatio":"1024/649","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"},"shadow":"var:preset|shadow|card"}} -->
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/dashboard-3.avif' ) ); ?>" alt="<?php esc_attr_e( 'Unapp project board', 'unapp' ); ?>" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card);aspect-ratio:1024/649;width:100%;height:auto"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->

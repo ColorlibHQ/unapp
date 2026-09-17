@@ -24,16 +24,16 @@ FONTS = {
                 [face("Poppins", f"poppins/poppins-{w}-{s}.woff2", w)
                  for w in ("400", "500", "600", "700") for s in ("latin-ext", "latin")]),
     "nunito": ("Nunito", "Nunito, ui-sans-serif, system-ui, -apple-system, sans-serif",
-               [face("Nunito", f"nunito/nunito-300-800-{s}.woff2", "300 800") for s in ("latin-ext", "latin")]),
+               [face("Nunito", f"nunito/nunito-300-800-{s}.woff2", "400 700") for s in ("latin-ext", "latin")]),
     "inter": ("Inter", "Inter, ui-sans-serif, system-ui, -apple-system, sans-serif",
-              [face("Inter", f"inter/inter-normal-{s}.woff2", "100 900") for s in ("latin-ext", "latin")]),
+              [face("Inter", f"inter/inter-normal-{s}.woff2", "400 700") for s in ("latin-ext", "latin")]),
     "fraunces": ("Fraunces", "Fraunces, ui-serif, Georgia, serif",
-                 [face("Fraunces", f"fraunces/fraunces-normal-{s}.woff2", "300 900") for s in ("latin-ext", "latin")]),
+                 [face("Fraunces", f"fraunces/fraunces-normal-{s}.woff2", "400 700") for s in ("latin-ext", "latin")]),
     "space-grotesk": ("Space Grotesk", "\"Space Grotesk\", ui-sans-serif, system-ui, sans-serif",
-                      [face("Space Grotesk", f"space-grotesk/space-grotesk-normal-{s}.woff2", "300 700")
+                      [face("Space Grotesk", f"space-grotesk/space-grotesk-normal-{s}.woff2", "400 700")
                        for s in ("latin-ext", "latin")]),
     "manrope": ("Manrope", "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
-                [face("Manrope", f"manrope/manrope-normal-{s}.woff2", "200 800") for s in ("latin-ext", "latin")]),
+                [face("Manrope", f"manrope/manrope-normal-{s}.woff2", "400 700") for s in ("latin-ext", "latin")]),
 }
 
 SYSTEM = {"slug": "system", "name": "System",
