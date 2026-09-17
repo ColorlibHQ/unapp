@@ -18,6 +18,14 @@ html {
 	--unapp-primary-lift: color-mix(in srgb, var(--wp--preset--color--primary) 52%, #ffffff);
 	--unapp-secondary-lift: color-mix(in srgb, var(--wp--preset--color--secondary) 78%, #ffffff);
 	--unapp-accent-lift: color-mix(in srgb, var(--wp--preset--color--accent) 52%, #ffffff);
+
+	/* The palette as the site defines it, for sections that keep their
+	   light-mode colours (resolved here, before body overrides them). */
+	--unapp-base: var(--wp--preset--color--base);
+	--unapp-contrast: var(--wp--preset--color--contrast);
+	--unapp-primary: var(--wp--preset--color--primary);
+	--unapp-secondary: var(--wp--preset--color--secondary);
+	--unapp-accent: var(--wp--preset--color--accent);
 }
 
 html[data-unapp-scheme="dark"] body {
@@ -36,18 +44,26 @@ html[data-unapp-scheme="dark"] body {
 }
 
 /* Sections that carry their own dark ground — the gradient bands, the dark
-   footer, the section-dark style — write their text as `base` and their button
-   labels as `contrast`, meaning "light on dark". Swapping those two globally
-   inverts them, so inside such a section the pair goes back to its light-mode
-   meaning. */
+   footer, the section-dark and section-gradient styles, covers — write their
+   text as `base` and their button labels as `contrast`, meaning "light on
+   dark". Swapping those two globally inverts them, so inside such a section
+   the palette goes back to its light-mode values. That includes the accents:
+   the white button on a cover or gradient band sets its label in primary, and
+   the lifted primary on white was 2.1–2.3:1 (1.6:1 on Midnight). The values
+   come from the palette rather than a fixed white and near-black, so a dark
+   palette such as Midnight keeps its own meaning too. */
 html[data-unapp-scheme="dark"] body :is(
 	[class*="-gradient-background"],
 	.has-dark-background-color,
 	.is-style-section-dark,
+	.is-style-section-gradient,
 	.wp-block-cover
 ) {
-	--wp--preset--color--base: #ffffff;
-	--wp--preset--color--contrast: #12141c;
+	--wp--preset--color--base: var(--unapp-base);
+	--wp--preset--color--contrast: var(--unapp-contrast);
+	--wp--preset--color--primary: var(--unapp-primary);
+	--wp--preset--color--secondary: var(--unapp-secondary);
+	--wp--preset--color--accent: var(--unapp-accent);
 }
 
 /* Buttons take their text from `contrast`, which is now light; on the lifted
