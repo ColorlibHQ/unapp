@@ -7,7 +7,7 @@
  * Block Types: core/post-content
  * Post Types: page, wp_template
  * Viewport Width: 1400
- * Description: The home page for the Finance starter site: trust-led hero, credentials, services, process, advisers, questions, contact and the risk warning.
+ * Description: The home page for the Finance starter site: trust-led hero, credentials, services, process, fees, advisers, questions, contact and the risk warning.
  *
  * @package Unapp
  */
@@ -17,6 +17,7 @@
 <!-- wp:pattern {"slug":"unapp/finance-credentials"} /-->
 <!-- wp:pattern {"slug":"unapp/finance-services"} /-->
 <!-- wp:pattern {"slug":"unapp/finance-process"} /-->
+<!-- wp:pattern {"slug":"unapp/finance-fees"} /-->
 <!-- wp:pattern {"slug":"unapp/finance-team"} /-->
 <!-- wp:pattern {"slug":"unapp/finance-faq"} /-->
 <!-- wp:pattern {"slug":"unapp/finance-contact"} /-->

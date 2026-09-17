@@ -5,7 +5,7 @@
  * Categories: unapp, unapp_cta, call-to-action, text
  * Keywords: newsletter, subscribe, email, signup, inline
  * Viewport Width: 1400
- * Description: Inline newsletter row: pitch on the left, email field on the right. Swap the field for your mail plugin's block.
+ * Description: Inline newsletter row: pitch on the left, a subscribe-by-email button on the right. Swap the button for your mail plugin's form.
  *
  * @package Unapp
  */
@@ -27,9 +27,15 @@
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"center","width":"48%","style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:48%;">
-<!-- wp:search {"label":"<?php echo esc_html_x( 'Email address', 'Newsletter field label', 'unapp' ); ?>","showLabel":false,"placeholder":"<?php esc_attr_e( 'you@company.com', 'unapp' ); ?>","width":100,"widthUnit":"%","buttonText":"<?php echo esc_html_x( 'Subscribe', 'Newsletter button', 'unapp' ); ?>","buttonPosition":"button-inside"} /-->
+<!-- wp:buttons -->
+<div class="wp-block-buttons">
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( _x( 'Friday changelog', 'Email subject line', 'unapp' ) ) ); ?>"><?php esc_html_e( 'Subscribe by email', 'unapp' ); ?></a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'Roughly 900 readers. Unsubscribe in one click.', 'unapp' ); ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'Roughly 900 readers. Reply to any issue to stop receiving it.', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->

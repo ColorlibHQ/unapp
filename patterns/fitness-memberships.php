@@ -37,8 +37,8 @@ $unapp_fitness_plans = array(
 	),
 );
 ?>
-<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull is-style-section-soft" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"},"anchor":"memberships"} -->
+<div class="wp-block-group alignfull is-style-section-soft" id="memberships" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"680px"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"align":"center","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
@@ -56,23 +56,20 @@ $unapp_fitness_plans = array(
 <div class="wp-block-group alignwide unapp-grid-3">
 <?php foreach ( $unapp_fitness_plans as $unapp_fitness_plan ) : ?>
 <?php if ( $unapp_fitness_plan['featured'] ) : ?>
-<!-- wp:group {"className":"is-style-elevated","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<!-- wp:group {"className":"is-style-elevated","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"space-between"}} -->
 <div class="wp-block-group is-style-elevated" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
-<?php if ( $unapp_fitness_plan['featured'] ) : ?>
-<!-- wp:paragraph {"textColor":"primary","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
-<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo esc_html_x( 'Most members choose this', 'Highlighted membership badge', 'unapp' ); ?></p>
-<!-- /wp:paragraph -->
-<?php endif; ?>
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group">
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_fitness_plan['name']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_fitness_plan['name'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_fitness_plan['note']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_fitness_plan['note'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"horizontal","verticalAlignment":"bottom"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"fontSize":"xxx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
-<p class="has-xxx-large-font-size" style="font-weight:700;line-height:1;"><?php echo '£' . $unapp_fitness_plan['price']; ?></p>
+<p class="has-xxx-large-font-size" style="font-weight:700;line-height:1;"><?php echo esc_html( sprintf( /* translators: %s: monthly price, a number. */ _x( '£%s', 'Membership price with currency', 'unapp' ), $unapp_fitness_plan['price'] ) ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
 <p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html_x( 'a month', 'Membership period', 'unapp' ); ?></p>
@@ -88,33 +85,41 @@ $unapp_fitness_plans = array(
 <?php endforeach; ?>
 </ul>
 <!-- /wp:list -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group">
+<?php if ( $unapp_fitness_plan['featured'] ) : ?>
+<!-- wp:paragraph {"textColor":"primary","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo esc_html_x( 'Most members choose this', 'Highlighted membership badge', 'unapp' ); ?></p>
+<!-- /wp:paragraph -->
+<?php endif; ?>
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="#join"><?php echo esc_html( $unapp_fitness_plan['cta'] ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@archtwelve.example?subject=' . rawurlencode( sprintf( /* translators: %s: membership name. */ _x( 'Membership: %s', 'Email subject line', 'unapp' ), $unapp_fitness_plan['name'] ) ) ); ?>"><?php echo esc_html( $unapp_fitness_plan['cta'] ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 <?php else : ?>
-<!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"space-between"}} -->
 <div class="wp-block-group is-style-card" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
-<?php if ( $unapp_fitness_plan['featured'] ) : ?>
-<!-- wp:paragraph {"textColor":"primary","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
-<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo esc_html_x( 'Most members choose this', 'Highlighted membership badge', 'unapp' ); ?></p>
-<!-- /wp:paragraph -->
-<?php endif; ?>
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group">
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_fitness_plan['name']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_fitness_plan['name'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_fitness_plan['note']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_fitness_plan['note'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"horizontal","verticalAlignment":"bottom"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"fontSize":"xxx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
-<p class="has-xxx-large-font-size" style="font-weight:700;line-height:1;"><?php echo '£' . $unapp_fitness_plan['price']; ?></p>
+<p class="has-xxx-large-font-size" style="font-weight:700;line-height:1;"><?php echo esc_html( sprintf( /* translators: %s: monthly price, a number. */ _x( '£%s', 'Membership price with currency', 'unapp' ), $unapp_fitness_plan['price'] ) ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
 <p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html_x( 'a month', 'Membership period', 'unapp' ); ?></p>
@@ -130,13 +135,24 @@ $unapp_fitness_plans = array(
 <?php endforeach; ?>
 </ul>
 <!-- /wp:list -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group">
+<?php if ( $unapp_fitness_plan['featured'] ) : ?>
+<!-- wp:paragraph {"textColor":"primary","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo esc_html_x( 'Most members choose this', 'Highlighted membership badge', 'unapp' ); ?></p>
+<!-- /wp:paragraph -->
+<?php endif; ?>
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="#join"><?php echo esc_html( $unapp_fitness_plan['cta'] ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@archtwelve.example?subject=' . rawurlencode( sprintf( /* translators: %s: membership name. */ _x( 'Membership: %s', 'Email subject line', 'unapp' ), $unapp_fitness_plan['name'] ) ) ); ?>"><?php echo esc_html( $unapp_fitness_plan['cta'] ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 <?php endif; ?>

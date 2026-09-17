@@ -47,7 +47,7 @@ write_pattern("church-visit", title="Church: what to expect", cats=C + ", unapp_
               desc="Four answers a first-time visitor actually wants: how long it lasts, where to park, what happens to the children and what to wear.",
               body=body,
               php_prelude=php_rows("unapp_church_expect", ("icon", "title", "text"), EXPECT,
-                                   "Church first-visit card"))
+                                   "Church first-visit card"), anchor="visit")
 
 # ---------------------------------------------------------------- staff
 STAFF = [
@@ -57,8 +57,8 @@ STAFF = [
     ("avatar-8", "Ruth Nakamura", "Church administrator", "Bookings, the building, and the person who knows where everything is."),
 ]
 person = stack(
-    avatar(php("get_theme_file_uri( 'assets/images/avatars/' . $unapp_church_person['image'] . '.svg' )"),
-           php("$unapp_church_person['name']")) + "\n" +
+    avatar(php_url("get_theme_file_uri( 'assets/images/avatars/' . $unapp_church_person['image'] . '.svg' )"),
+           php_attr("$unapp_church_person['name']")) + "\n" +
     card_title(php("$unapp_church_person['name']")) + "\n" +
     label(php("$unapp_church_person['role']")) + "\n" +
     para(php("$unapp_church_person['note']"), color="muted", size="small"),
@@ -73,7 +73,7 @@ write_pattern("church-staff", title="Church: staff", cats=C + ", unapp_company, 
               desc="The four people a visitor is likely to meet, with what each of them actually does.",
               body=body,
               php_prelude=php_rows("unapp_church_staff", ("image", "name", "role", "note"), STAFF,
-                                   "Church staff"))
+                                   "Church staff"), anchor="staff")
 
 # ---------------------------------------------------------------- what we believe
 BELIEFS = [
@@ -107,8 +107,8 @@ body = section_std(
              color="muted", size="large") + "\n" +
         para(t("There are around two hundred of us now, from about thirty streets, and we would be glad to make it two hundred and one."),
              color="muted") + "\n" +
-        buttons([{"text": t("Plan your visit"), "url": "#visit"},
-                 {"text": t("Meet the staff"), "url": "#staff", "style": "outline"}]),
+        buttons([{"text": t("Plan your visit"), "url": home_anchor("visit")},
+                 {"text": t("Meet the staff"), "url": home_anchor("staff"), "style": "outline"}]),
         image(uri("assets/images/abstract/sanctuary.svg"), tattr("The church building"), radius=CARD_RADIUS),
         left_width="54%", right_width="46%"),
     gap="0")
@@ -118,11 +118,13 @@ write_pattern("church-story", title="Church: our story", cats=C + ", unapp_compa
               body=body)
 
 # ---------------------------------------------------------------- upcoming events
+# Recurring and seasonal wording, not dates: a dated list goes stale the week
+# the theme ships, and a weekday printed beside a date is wrong the next year.
 EVENTS = [
-    ("Sat 14 Sep", "Community lunch", "Everyone eats, nobody pays. Twelve o'clock in the hall."),
-    ("Thu 26 Sep", "Job club", "CVs, applications and interview practice with people who hire for a living."),
-    ("Sun 6 Oct", "Harvest service", "Bring tinned food if you can; the whole lot goes to the foodbank on Mill Lane."),
-    ("Sun 22 Dec", "Carols by candlelight", "The one service a year that fills the balcony. Come early."),
+    ("First Saturdays", "Community lunch", "Everyone eats, nobody pays. Twelve o'clock in the hall, on the first Saturday of every month."),
+    ("Thursdays in term", "Job club", "CVs, applications and interview practice with people who hire for a living."),
+    ("Early October", "Harvest service", "Bring tinned food if you can; the whole lot goes to the foodbank on Mill Lane."),
+    ("Before Christmas", "Carols by candlelight", "The Sunday before Christmas, and the one service a year that fills the balcony. Come early."),
 ]
 row = (columns([
     column(label(php("$unapp_church_event['when']")), width="26%", vertical_align="top"),
@@ -136,10 +138,10 @@ body = section_std(
           layout="constrained", content_size=READ_WIDTH, gap=CARD_GAP))
 write_pattern("church-events", title="Church: upcoming events", cats=C + ", unapp_content",
               keywords="church, events, diary, calendar, upcoming",
-              desc="A dated list of what is on: community lunch, job club, harvest and carols.",
+              desc="What is on through the year: the monthly lunch, the weekly job club, harvest and carols.",
               body=body,
               php_prelude=php_rows("unapp_church_events", ("when", "title", "text"), EVENTS,
-                                   "Church event"))
+                                   "Church event"), anchor="events")
 
 # ---------------------------------------------------------------- first-visit FAQ
 FAQ = [
@@ -177,7 +179,7 @@ body = section_std(
         heading(t("Mill Lane, and the door is open")) + "\n" +
         para(t("Riverside Church, 12 Mill Lane, Chesterfield S40 1RT. The 43 and 44 buses stop at the end of the road; the car park is behind the building."),
              color="muted", size="large") + "\n" +
-        buttons([{"text": t("Get directions"), "url": "#map"}]) + "\n" +
+        buttons([{"text": t("Get directions"), "url": map_link("Riverside Church, 12 Mill Lane, Chesterfield S40 1RT")}]) + "\n" +
         details_card,
         card(contact_form("Send a message", "hello@riverside.example")),
         align="top"),
@@ -190,8 +192,8 @@ write_pattern("church-contact", title="Church: contact and directions", cats=C +
 # ---------------------------------------------------------------- closing band
 body = band(t("There is a service this Sunday at 9:30 and 11:15"),
             t("Come on your own, come late, come and sit at the back. All of that is completely normal here."),
-            [{"text": t("Plan your visit"), "url": "#visit", "bg": "base", "color": "contrast"},
-             {"text": t("Watch a service online"), "url": "#watch", "style": "outline", "color": "base"}])
+            [{"text": t("Plan your visit"), "url": home_anchor("visit"), "bg": "base", "color": "contrast"},
+             {"text": t("See what is on"), "url": home_anchor("events"), "style": "outline", "color": "base"}])
 write_pattern("church-cta", title="Church: closing invitation", cats=C + ", unapp_cta, call-to-action",
               keywords="church, cta, invitation, visit, sunday",
               desc="A warm closing band inviting a visit, on the palette gradient.",

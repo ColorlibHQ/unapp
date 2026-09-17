@@ -7,13 +7,13 @@
  * Block Types: core/post-content
  * Post Types: page, wp_template
  * Viewport Width: 1400
- * Description: A full product tour: bento grid, alternating rows, integrations, security and a call to action.
+ * Description: A full product tour: why teams move, a bento grid, alternating rows, integrations, security and a call to action.
  *
  * @package Unapp
  */
 
 ?>
-<!-- wp:pattern {"slug":"unapp/hero-minimal"} /-->
+<!-- wp:pattern {"slug":"unapp/features-offset-h1"} /-->
 <!-- wp:pattern {"slug":"unapp/features-bento"} /-->
 <!-- wp:pattern {"slug":"unapp/how-it-works"} /-->
 <!-- wp:pattern {"slug":"unapp/features-zigzag"} /-->

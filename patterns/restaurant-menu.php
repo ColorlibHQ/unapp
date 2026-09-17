@@ -25,8 +25,8 @@ $unapp_menu = array(
 	),
 );
 ?>
-<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull is-style-section-soft" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"},"anchor":"menu"} -->
+<div class="wp-block-group alignfull is-style-section-soft" id="menu" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"680px"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"align":"center","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
@@ -43,10 +43,10 @@ $unapp_menu = array(
 <!-- wp:group {"align":"wide","className":"unapp-grid-3","style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"grid","columnCount":3}} -->
 <div class="wp-block-group alignwide unapp-grid-3">
 <?php foreach ( $unapp_menu as $unapp_course ) : ?>
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"textColor":"primary","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
-<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo $unapp_course['course']; ?></p>
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo esc_html( $unapp_course['course'] ); ?></p>
 <!-- /wp:paragraph -->
 <?php foreach ( $unapp_course['dishes'] as $unapp_dish ) : ?>
 <!-- wp:columns {"verticalAlignment":"top","isStackedOnMobile":false,"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"var:preset|spacing|20"}}}} -->
@@ -54,14 +54,14 @@ $unapp_menu = array(
 <!-- wp:column {"verticalAlignment":"top","width":"80%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:80%;">
 <!-- wp:paragraph -->
-<p><?php echo $unapp_dish['dish']; ?></p>
+<p><?php echo esc_html( $unapp_dish['dish'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"top","width":"20%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:20%;">
 <!-- wp:paragraph {"align":"right","textColor":"muted"} -->
-<p class="has-text-align-right has-muted-color has-text-color"><?php echo '£' . $unapp_dish['price']; ?></p>
+<p class="has-text-align-right has-muted-color has-text-color"><?php echo esc_html( sprintf( /* translators: %s: price of the dish, a number. */ _x( '£%s', 'Menu price with currency', 'unapp' ), $unapp_dish['price'] ) ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->

@@ -5,7 +5,7 @@
  * Categories: unapp, unapp_features, features, columns
  * Keywords: integrations, apps, connect, stack, grid, icons
  * Viewport Width: 1400
- * Description: A grid of integration tiles with icons, plus a link to a full directory.
+ * Description: A grid of integration tiles with icons, plus a way to ask about one that is not listed.
  *
  * @package Unapp
  */
@@ -43,8 +43,8 @@ $unapp_integrations = array(
 <div class="wp-block-group is-style-card" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
 <!-- wp:group {"style":{"border":{"radius":"14px"},"spacing":{"padding":{"top":"14px","bottom":"14px","left":"14px","right":"14px"}}},"backgroundColor":"primary","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group has-primary-background-color has-background" style="border-radius:14px;padding-top:14px;padding-right:14px;padding-bottom:14px;padding-left:14px">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","width":"24px","height":"24px"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/' . $unapp_integration['icon'] . '.svg' ) ); ?>" alt="" style="width:24px;height:24px;"/></figure>
+<!-- wp:image {"width":"24px","height":"24px","sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/' . $unapp_integration['icon'] . '.svg' ) ); ?>" alt="" style="width:24px;height:24px"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:group -->
@@ -59,7 +59,7 @@ $unapp_integrations = array(
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons">
 <!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="#"><?php esc_html_e( 'Browse all integrations', 'unapp' ); ?></a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( _x( 'Integrations', 'Email subject line', 'unapp' ) ) ); ?>"><?php esc_html_e( 'Ask about an integration', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

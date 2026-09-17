@@ -24,18 +24,18 @@
 	<!-- wp:buttons {"style":{"spacing":{"blockGap":"var:preset|spacing|30","margin":{"top":"var:preset|spacing|40"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
 	<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
 		<!-- wp:button -->
-		<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#"><?php echo esc_html_x( 'Get Premium', 'Hero primary button', 'unapp' ); ?></a></div>
+		<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#pricing"><?php echo esc_html_x( 'Get Premium', 'Hero primary button', 'unapp' ); ?></a></div>
 		<!-- /wp:button -->
 		<!-- wp:button {"textColor":"base","className":"is-style-outline"} -->
-		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" href="#"><?php echo esc_html_x( 'See how it works', 'Hero secondary button', 'unapp' ); ?></a></div>
+		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" href="#features"><?php echo esc_html_x( 'See how it works', 'Hero secondary button', 'unapp' ); ?></a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->
 
 	<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignwide" style="margin-top:var(--wp--preset--spacing--60)">
-		<!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":{"topLeft":"16px","topRight":"16px"}},"shadow":"var:preset|shadow|card-strong"}} -->
-		<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/dashboard-1.avif' ) ); ?>" alt="<?php esc_attr_e( 'Unapp dashboard showing project analytics and portfolio insights', 'unapp' ); ?>" style="border-top-left-radius:16px;border-top-right-radius:16px;box-shadow:var(--wp--preset--shadow--card-strong)"/></figure>
+		<!-- wp:image {"width":"100%","aspectRatio":"800/507","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":{"topLeft":"16px","topRight":"16px"}},"shadow":"var:preset|shadow|card-strong"}} -->
+		<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/dashboard-1.avif' ) ); ?>" alt="<?php esc_attr_e( 'Unapp dashboard showing project analytics and portfolio insights', 'unapp' ); ?>" style="border-top-left-radius:16px;border-top-right-radius:16px;box-shadow:var(--wp--preset--shadow--card-strong);aspect-ratio:800/507;width:100%;height:auto"/></figure>
 		<!-- /wp:image -->
 	</div>
 	<!-- /wp:group -->

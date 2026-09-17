@@ -10,13 +10,13 @@
  */
 
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|60"},"elements":{"link":{"color":{"text":"var:preset|color|base"},":hover":{"color":{"text":"var:preset|color|secondary"}}},"heading":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"dark","textColor":"base","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-base-color has-dark-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--40)">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|60"},"elements":{"link":{"color":{"text":"#ffffff"},":hover":{"color":{"text":"var:preset|color|secondary"}}},"heading":{"color":{"text":"#ffffff"}}},"color":{"text":"#ffffff"}},"backgroundColor":"dark","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-dark-background-color has-text-color has-background has-link-color" style="color:#ffffff;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--40)">
 	<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
 	<div class="wp-block-columns alignwide">
 		<!-- wp:column {"width":"34%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 		<div class="wp-block-column" style="flex-basis:34%">
-			<!-- wp:site-title {"level":0,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}}} /-->
+			<!-- wp:site-title {"level":0,"style":{"elements":{"link":{"color":{"text":"#ffffff"}}}}} /-->
 			<?php if ( get_bloginfo( 'description' ) ) : ?>
 			<!-- wp:site-tagline {"className":"unapp-footer-note"} /-->
 			<?php else : ?>
@@ -24,7 +24,7 @@
 			<p class="has-text-color" style="color:rgba(255,255,255,0.75)"><?php esc_html_e( 'One calm workspace for planning, files and conversations. Take on your biggest projects and goals with Unapp.', 'unapp' ); ?></p>
 			<!-- /wp:paragraph -->
 			<?php endif; ?>
-			<!-- wp:social-links {"iconColor":"base","iconColorValue":"#ffffff","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
+			<!-- wp:social-links {"iconColorValue":"#ffffff","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
 			<ul class="wp-block-social-links has-icon-color is-style-logos-only">
 				<!-- wp:social-link {"url":"https://facebook.com","service":"facebook"} /-->
 				<!-- wp:social-link {"url":"https://x.com","service":"x"} /-->
@@ -38,13 +38,13 @@
 		<!-- wp:column {"width":"18%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 		<div class="wp-block-column" style="flex-basis:18%">
 			<!-- wp:heading {"fontSize":"medium"} -->
-			<h2 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Company', 'unapp' ); ?></h2>
+			<h2 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Product', 'unapp' ); ?></h2>
 			<!-- /wp:heading -->
 			<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"},"typography":{"textTransform":"none","letterSpacing":"0","fontWeight":"400"}},"fontFamily":"body","fontSize":"medium"} -->
-				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'About', 'Footer menu link', 'unapp' ); ?>","url":"#"} /-->
-				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Pricing', 'Footer menu link', 'unapp' ); ?>","url":"#"} /-->
-				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Careers', 'Footer menu link', 'unapp' ); ?>","url":"#"} /-->
-				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Contact', 'Footer menu link', 'unapp' ); ?>","url":"#"} /-->
+				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Features', 'Footer menu link', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#features' ) ); ?>"} /-->
+				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Pricing', 'Footer menu link', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#pricing' ) ); ?>"} /-->
+				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Blog', 'Footer menu link', 'unapp' ); ?>","url":"<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>"} /-->
+				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Contact', 'Footer menu link', 'unapp' ); ?>","url":"mailto:info@example.com"} /-->
 			<!-- /wp:navigation -->
 		</div>
 		<!-- /wp:column -->

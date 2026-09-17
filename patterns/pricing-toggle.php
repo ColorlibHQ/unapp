@@ -67,18 +67,20 @@ $unapp_toggle_plans = array(
 <div class="wp-block-group alignwide unapp-grid-3">
 <?php foreach ( $unapp_toggle_plans as $unapp_toggle_plan ) : ?>
 <?php if ( $unapp_toggle_plan['featured'] ) : ?>
-<!-- wp:group {"className":"is-style-elevated","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<!-- wp:group {"className":"is-style-elevated","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"space-between"}} -->
 <div class="wp-block-group is-style-elevated" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group">
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_toggle_plan['name']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_toggle_plan['name'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_toggle_plan['note']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_toggle_plan['note'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"horizontal","verticalAlignment":"bottom"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"className":"unapp-price","fontSize":"xxx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
-<p class="unapp-price has-xxx-large-font-size" style="font-weight:700;line-height:1;"><span class="unapp-price__monthly"><?php echo '$' . $unapp_toggle_plan['monthly']; ?></span><span class="unapp-price__yearly"><?php echo '$' . $unapp_toggle_plan['yearly']; ?></span></p>
+<p class="unapp-price has-xxx-large-font-size" style="font-weight:700;line-height:1;"><span class="unapp-price__monthly"><?php echo esc_html( sprintf( /* translators: %s: price per person per month, a number. */ _x( '$%s', 'Plan price with currency', 'unapp' ), $unapp_toggle_plan['monthly'] ) ); ?></span><span class="unapp-price__yearly"><?php echo esc_html( sprintf( /* translators: %s: price per person per month, a number. */ _x( '$%s', 'Plan price with currency', 'unapp' ), $unapp_toggle_plan['yearly'] ) ); ?></span></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
 <p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html_x( 'per person, per month', 'Plan period', 'unapp' ); ?></p>
@@ -94,28 +96,36 @@ $unapp_toggle_plans = array(
 <?php endforeach; ?>
 </ul>
 <!-- /wp:list -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group">
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="#start"><?php esc_html_e( 'Start free', 'unapp' ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( $unapp_toggle_plan['name'] ) ); ?>"><?php esc_html_e( 'Start free', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 <?php else : ?>
-<!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"space-between"}} -->
 <div class="wp-block-group is-style-card" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group">
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_toggle_plan['name']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_toggle_plan['name'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_toggle_plan['note']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_toggle_plan['note'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"horizontal","verticalAlignment":"bottom"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"className":"unapp-price","fontSize":"xxx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
-<p class="unapp-price has-xxx-large-font-size" style="font-weight:700;line-height:1;"><span class="unapp-price__monthly"><?php echo '$' . $unapp_toggle_plan['monthly']; ?></span><span class="unapp-price__yearly"><?php echo '$' . $unapp_toggle_plan['yearly']; ?></span></p>
+<p class="unapp-price has-xxx-large-font-size" style="font-weight:700;line-height:1;"><span class="unapp-price__monthly"><?php echo esc_html( sprintf( /* translators: %s: price per person per month, a number. */ _x( '$%s', 'Plan price with currency', 'unapp' ), $unapp_toggle_plan['monthly'] ) ); ?></span><span class="unapp-price__yearly"><?php echo esc_html( sprintf( /* translators: %s: price per person per month, a number. */ _x( '$%s', 'Plan price with currency', 'unapp' ), $unapp_toggle_plan['yearly'] ) ); ?></span></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
 <p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html_x( 'per person, per month', 'Plan period', 'unapp' ); ?></p>
@@ -131,13 +141,19 @@ $unapp_toggle_plans = array(
 <?php endforeach; ?>
 </ul>
 <!-- /wp:list -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group">
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="#start"><?php esc_html_e( 'Start free', 'unapp' ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( $unapp_toggle_plan['name'] ) ); ?>"><?php esc_html_e( 'Start free', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 <?php endif; ?>

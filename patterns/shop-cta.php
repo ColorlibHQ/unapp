@@ -18,16 +18,16 @@
 <!-- wp:heading {"textAlign":"center","textColor":"base","fontSize":"xx-large"} -->
 <h2 class="wp-block-heading has-text-align-center has-base-color has-text-color has-xx-large-font-size"><?php esc_html_e( 'Everything is made in runs of about two hundred', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
-<!-- wp:paragraph {"align":"center","fontSize":"large","style":{"color":{"text":"rgba(255,255,255,0.86)"}}} -->
-<p class="has-text-align-center has-text-color has-large-font-size" style="color:rgba(255,255,255,0.86);"><?php esc_html_e( 'When something sells out we decide whether to make it again. The newsletter is the only warning you get.', 'unapp' ); ?></p>
+<!-- wp:paragraph {"align":"center","textColor":"base","fontSize":"large"} -->
+<p class="has-text-align-center has-base-color has-text-color has-large-font-size"><?php esc_html_e( 'When something sells out we decide whether to make it again. The newsletter is the only warning you get.', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--20);">
 <!-- wp:button {"textColor":"contrast","backgroundColor":"base"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-text-color has-base-background-color has-background wp-element-button" href="/shop/"><?php esc_html_e( 'Shop everything', 'unapp' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-text-color has-base-background-color has-background wp-element-button" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' ) ); ?>"><?php esc_html_e( 'Shop everything', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline","textColor":"base"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" href="#subscribe"><?php esc_html_e( 'Join the list', 'unapp' ); ?></a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" href="<?php echo esc_url( 'mailto:workshop@sheafworks.example?subject=' . rawurlencode( _x( 'Join the list', 'Email subject line', 'unapp' ) ) ); ?>"><?php esc_html_e( 'Join the list', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

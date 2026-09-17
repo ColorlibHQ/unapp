@@ -13,7 +13,7 @@
  */
 
 ?>
-<!-- wp:pattern {"slug":"unapp/pricing"} /-->
+<!-- wp:pattern {"slug":"unapp/pricing-h1"} /-->
 <!-- wp:pattern {"slug":"unapp/pricing-compare"} /-->
 <!-- wp:pattern {"slug":"unapp/security"} /-->
 <!-- wp:pattern {"slug":"unapp/faq"} /-->

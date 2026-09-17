@@ -16,8 +16,8 @@
 <!-- wp:paragraph {"align":"center","textColor":"base","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
 <p class="has-text-align-center has-base-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'First class free', 'Fitness hero eyebrow', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:heading {"textAlign":"center","textColor":"base","fontSize":"xxx-large"} -->
-<h2 class="wp-block-heading has-text-align-center has-base-color has-text-color has-xxx-large-font-size"><?php esc_html_e( 'Stronger than last week', 'unapp' ); ?></h2>
+<!-- wp:heading {"level":1,"textAlign":"center","textColor":"base","fontSize":"xxx-large","style":{"typography":{"lineHeight":"1.2"}}} -->
+<h1 class="wp-block-heading has-text-align-center has-base-color has-text-color has-xxx-large-font-size" style="line-height:1.2;"><?php esc_html_e( 'Stronger than last week', 'unapp' ); ?></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"align":"center","textColor":"base","fontSize":"large"} -->
 <p class="has-text-align-center has-base-color has-text-color has-large-font-size"><?php esc_html_e( 'Small-group strength and conditioning in the old print works. Forty-five minutes, no mirrors, no nonsense.', 'unapp' ); ?></p>
@@ -25,10 +25,10 @@
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40);">
 <!-- wp:button {"textColor":"contrast","backgroundColor":"secondary"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-text-color has-secondary-background-color has-background wp-element-button" href="#"><?php esc_html_e( 'Book a free session', 'unapp' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-text-color has-secondary-background-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/#book' ) ); ?>"><?php esc_html_e( 'Book a free session', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline","textColor":"base"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" href="#"><?php esc_html_e( 'See the timetable', 'unapp' ); ?></a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" href="<?php echo esc_url( home_url( '/#timetable' ) ); ?>"><?php esc_html_e( 'See the timetable', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

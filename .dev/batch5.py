@@ -65,7 +65,9 @@ role_row = group(
         column(heading("<?php echo esc_html( $unapp_role['title'] ); ?>", level=3, size="large") + "\n" +
                para("<?php echo esc_html( $unapp_role['team'] . ' · ' . $unapp_role['place'] ); ?>",
                     color="muted", size="small"), width="70%", vertical_align="center", gap="20"),
-        column(buttons([{"text": t("View role"), "style": "is-style-outline"}], justify="right"),
+        column(buttons([{"text": t("View role"), "style": "is-style-outline",
+                         "url": "<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( $unapp_role['title'] ) ); ?>"}],
+                       justify="right"),
                width="30%", vertical_align="center"),
     ], gap="40", vertical_align="center"),
     style_variation="is-style-card", radius="20px", layout="default",
@@ -151,7 +153,7 @@ body = section(
           lead=t("The controls your security review will ask about, ready before you do.")) + "\n" +
     group('<?php foreach ( $unapp_trust as $unapp_trust_item ) : ?>\n' + trust_tile + '\n<?php endforeach; ?>',
           align="wide", layout="grid", gap="40", col_count=4, class_name="unapp-grid-4") + "\n" +
-    buttons([{"text": t("Read the security overview"), "style": "is-style-outline"}], justify="center"),
+    buttons([{"text": t("Ask for the security report"), "url": mailto("hello@example.com", "Security report"), "style": "is-style-outline"}], justify="center"),
     pad=("70", "70"), gap="50")
 write_pattern("security", title="Security and compliance", cats="unapp, unapp_features, featured",
               keywords="security, compliance, trust, soc2, encryption, sso",

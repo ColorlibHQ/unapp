@@ -134,8 +134,8 @@ TEAM = [
     ("avatar-9", "Sam Lockhart", "Head of services", "The only full-time member of staff, and the one who does the rota."),
 ]
 person = stack(
-    avatar(php("get_theme_file_uri( 'assets/images/avatars/' . $unapp_np_person['image'] . '.svg' )"),
-           php("$unapp_np_person['name']")) + "\n" +
+    avatar(php_url("get_theme_file_uri( 'assets/images/avatars/' . $unapp_np_person['image'] . '.svg' )"),
+           php_attr("$unapp_np_person['name']")) + "\n" +
     card_title(php("$unapp_np_person['name']")) + "\n" +
     label(php("$unapp_np_person['role']")) + "\n" +
     para(php("$unapp_np_person['note']"), color="muted", size="small"),

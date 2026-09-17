@@ -33,8 +33,8 @@ $unapp_press = array(
 <?php foreach ( $unapp_press as $unapp_item ) : ?>
 <!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 <div class="wp-block-column">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","height":"24px"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/logos/' . $unapp_item['logo'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_item['logo'] ); ?>" style="height:24px;"/></figure>
+<!-- wp:image {"height":"24px","sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/logos/' . $unapp_item['logo'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_item['logo'] ); ?>" style="height:24px"/></figure>
 <!-- /wp:image -->
 <!-- wp:paragraph {"fontSize":"large","style":{"typography":{"lineHeight":"1.5"}}} -->
 <p class="has-large-font-size" style="line-height:1.5;"><?php echo esc_html( $unapp_item['quote'] ); ?></p>

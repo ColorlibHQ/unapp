@@ -6,7 +6,7 @@ B = "unapp, unapp_blog, unapp_content, posts, query"
 # ---------------------------------------------------------------- magazine masthead
 body = section(
     group(
-        heading(t("The Slow Build"), align="center", size="xxx-large", line_height="1.05") + "\n" +
+        h1(t("The Slow Build"), align="center", size="xxx-large", line_height="1.05") + "\n" +
         para(t("Essays on making software carefully, published most Fridays."),
              align="center", color="muted", size="large") + "\n" +
         separator(style="gradient", color=None),
@@ -22,7 +22,9 @@ terms = ('<!-- wp:terms-query {"termQuery":{"taxonomy":"category","perPage":6,"h
          '"orderBy":"count","order":"desc"},"align":"wide","layout":{"type":"default"}} -->\n'
          '<div class="wp-block-terms-query alignwide">\n'
          '<!-- wp:term-template {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},'
-         '"layout":{"type":"grid","columnCount":3}} -->\n'
+         # Three across at most, but never narrower than 16rem: two on a tablet,
+         # one on a phone, where three columns left 98px cards.
+         '"layout":{"type":"grid","columnCount":3,"minimumColumnWidth":"16rem"}} -->\n'
          + group(
              '<!-- wp:term-name {"isLink":true,"level":3,"fontSize":"large"} /-->\n'
              '<!-- wp:term-count {"fontSize":"small","textColor":"muted"} /-->',
@@ -35,7 +37,7 @@ body = section(
 write_pattern("blog-categories", title="Blog: category tiles", cats=B,
               keywords="blog, categories, topics, terms, browse, tiles",
               desc="Category tiles with post counts, built on the Terms Query block from WordPress 7.0.",
-              body=body)
+              body=body, anchor="topics")
 
 # ---------------------------------------------------------------- author intro
 body = section(
@@ -55,6 +57,6 @@ body = section(
 write_pattern("blog-author-intro", title="Blog: author introduction", cats=B,
               keywords="blog, author, about, bio, writer",
               desc="A short author introduction with a portrait and social links, for a blog home.",
-              body=body)
+              body=body, anchor="about")
 
 print("batch 11 written")

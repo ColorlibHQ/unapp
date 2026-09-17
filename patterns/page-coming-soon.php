@@ -13,6 +13,6 @@
  */
 
 ?>
-<!-- wp:pattern {"slug":"unapp/waitlist"} /-->
+<!-- wp:pattern {"slug":"unapp/waitlist-h1"} /-->
 <!-- wp:pattern {"slug":"unapp/services"} /-->
 <!-- wp:pattern {"slug":"unapp/ratings"} /-->

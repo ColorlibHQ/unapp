@@ -36,6 +36,7 @@ function unapp_get_starter_sites() {
 			'title'    => __( 'SaaS & app', 'unapp' ),
 			'summary'  => __( 'The default: a product landing page with features, proof, pricing and a free-trial call to action.', 'unapp' ),
 			'cta'      => _x( 'Get Premium', 'Header call-to-action button', 'unapp' ),
+			'cta_page' => 'pricing',
 			'style'    => 'indigo',
 			'colors'   => 'colors-1-indigo',
 			'type'     => 'typography-1-product',
@@ -65,6 +66,7 @@ function unapp_get_starter_sites() {
 			'title'    => __( 'Portfolio', 'unapp' ),
 			'summary'  => __( 'Work first: a project grid, how you run a job, rates, a client quote and what you are booking.', 'unapp' ),
 			'cta'      => __( 'Start a project', 'unapp' ),
+			'cta_page' => 'contact',
 			'style'    => 'mono',
 			'colors'   => 'colors-10-mono',
 			'type'     => 'typography-2-interface',
@@ -75,15 +77,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'work'    => array(
 					'title'    => __( 'Work', 'unapp' ),
-					'patterns' => array( 'unapp/portfolio-work', 'unapp/portfolio-process', 'unapp/portfolio-testimonial', 'unapp/portfolio-contact' ),
+					'patterns' => array( 'unapp/portfolio-work-h1', 'unapp/portfolio-process', 'unapp/portfolio-testimonial', 'unapp/portfolio-contact' ),
 				),
 				'about'   => array(
 					'title'    => __( 'About', 'unapp' ),
-					'patterns' => array( 'unapp/portfolio-about', 'unapp/portfolio-process', 'unapp/portfolio-services', 'unapp/portfolio-testimonial' ),
+					'patterns' => array( 'unapp/portfolio-about-h1', 'unapp/portfolio-process', 'unapp/portfolio-services', 'unapp/portfolio-testimonial' ),
 				),
 				'contact' => array(
 					'title'    => __( 'Contact', 'unapp' ),
-					'patterns' => array( 'unapp/portfolio-contact', 'unapp/portfolio-services' ),
+					'patterns' => array( 'unapp/portfolio-contact-h1', 'unapp/portfolio-services' ),
 				),
 			),
 		),
@@ -91,6 +93,7 @@ function unapp_get_starter_sites() {
 			'title'    => __( 'Church', 'unapp' ),
 			'summary'  => __( 'Service times, what to expect on a first visit, ministries, staff, events, giving and directions.', 'unapp' ),
 			'cta'      => __( 'Plan your visit', 'unapp' ),
+			'cta_page' => 'visit',
 			'style'    => 'stone',
 			'colors'   => 'colors-7-stone',
 			'type'     => 'typography-3-editorial',
@@ -101,19 +104,19 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'visit'   => array(
 					'title'    => __( 'Plan your visit', 'unapp' ),
-					'patterns' => array( 'unapp/church-visit', 'unapp/church-times', 'unapp/church-story', 'unapp/church-faq', 'unapp/church-contact' ),
+					'patterns' => array( 'unapp/church-visit-h1', 'unapp/church-times', 'unapp/church-story', 'unapp/church-faq', 'unapp/church-contact' ),
 				),
 				'about'   => array(
 					'title'    => __( 'About us', 'unapp' ),
-					'patterns' => array( 'unapp/church-story', 'unapp/church-events', 'unapp/church-beliefs', 'unapp/church-staff', 'unapp/church-cta' ),
+					'patterns' => array( 'unapp/church-story-h1', 'unapp/church-events', 'unapp/church-beliefs', 'unapp/church-staff', 'unapp/church-cta' ),
 				),
 				'give'    => array(
 					'title'    => __( 'Give', 'unapp' ),
-					'patterns' => array( 'unapp/church-giving', 'unapp/church-faq', 'unapp/church-contact' ),
+					'patterns' => array( 'unapp/church-giving-h1', 'unapp/church-faq', 'unapp/church-contact' ),
 				),
 				'contact' => array(
 					'title'    => __( 'Contact', 'unapp' ),
-					'patterns' => array( 'unapp/church-contact', 'unapp/church-times', 'unapp/church-visit' ),
+					'patterns' => array( 'unapp/church-contact-h1', 'unapp/church-times', 'unapp/church-visit' ),
 				),
 			),
 		),
@@ -121,6 +124,7 @@ function unapp_get_starter_sites() {
 			'title'    => __( 'Blog & magazine', 'unapp' ),
 			'summary'  => __( 'A masthead, a featured post, category tiles that read your real categories, and a subscribe band.', 'unapp' ),
 			'cta'      => __( 'Subscribe', 'unapp' ),
+			'cta_page' => 'about',
 			'style'    => 'sunset',
 			'colors'   => 'colors-3-sunset',
 			'type'     => 'typography-3-editorial',
@@ -131,11 +135,11 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'about'   => array(
 					'title'    => __( 'About', 'unapp' ),
-					'patterns' => array( 'unapp/blog-about', 'unapp/blog-author-intro', 'unapp/blog-subscribe' ),
+					'patterns' => array( 'unapp/blog-about-h1', 'unapp/blog-author-intro', 'unapp/blog-subscribe' ),
 				),
 				'contact' => array(
 					'title'    => __( 'Contact', 'unapp' ),
-					'patterns' => array( 'unapp/blog-contact', 'unapp/blog-subscribe' ),
+					'patterns' => array( 'unapp/blog-contact-h1', 'unapp/blog-subscribe' ),
 				),
 			),
 		),
@@ -143,6 +147,7 @@ function unapp_get_starter_sites() {
 			'title'    => __( 'Fitness studio', 'unapp' ),
 			'summary'  => __( 'A class timetable, coaches, membership prices, member stories and a free first session.', 'unapp' ),
 			'cta'      => __( 'Book a class', 'unapp' ),
+			'cta_page' => 'timetable',
 			'style'    => 'ember',
 			'colors'   => 'colors-8-ember',
 			'type'     => 'typography-5-geometric',
@@ -153,15 +158,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'timetable'   => array(
 					'title'    => __( 'Timetable', 'unapp' ),
-					'patterns' => array( 'unapp/fitness-schedule', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
+					'patterns' => array( 'unapp/fitness-schedule-h1', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
 				),
 				'memberships' => array(
 					'title'    => __( 'Memberships', 'unapp' ),
-					'patterns' => array( 'unapp/fitness-memberships', 'unapp/fitness-testimonials', 'unapp/fitness-location', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
+					'patterns' => array( 'unapp/fitness-memberships-h1', 'unapp/fitness-testimonials', 'unapp/fitness-location', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
 				),
 				'contact'     => array(
 					'title'    => __( 'Contact', 'unapp' ),
-					'patterns' => array( 'unapp/fitness-location', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
+					'patterns' => array( 'unapp/fitness-location-h1', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
 				),
 			),
 		),
@@ -169,6 +174,7 @@ function unapp_get_starter_sites() {
 			'title'    => __( 'Restaurant', 'unapp' ),
 			'summary'  => __( 'A cover hero, the week’s menu, the kitchen, reviews, opening hours and a booking band.', 'unapp' ),
 			'cta'      => __( 'Book a table', 'unapp' ),
+			'cta_page' => 'contact',
 			'style'    => 'harvest',
 			'colors'   => 'colors-11-harvest',
 			'type'     => 'typography-3-editorial',
@@ -179,15 +185,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'menu'    => array(
 					'title'    => __( 'Menu', 'unapp' ),
-					'patterns' => array( 'unapp/restaurant-menu', 'unapp/restaurant-kitchen', 'unapp/restaurant-cta' ),
+					'patterns' => array( 'unapp/restaurant-menu-h1', 'unapp/restaurant-kitchen', 'unapp/restaurant-cta' ),
 				),
 				'about'   => array(
 					'title'    => __( 'The kitchen', 'unapp' ),
-					'patterns' => array( 'unapp/restaurant-kitchen', 'unapp/restaurant-reviews', 'unapp/restaurant-hours' ),
+					'patterns' => array( 'unapp/restaurant-kitchen-h1', 'unapp/restaurant-reviews', 'unapp/restaurant-hours' ),
 				),
 				'contact' => array(
 					'title'    => __( 'Book a table', 'unapp' ),
-					'patterns' => array( 'unapp/restaurant-hours', 'unapp/contact-split', 'unapp/restaurant-cta' ),
+					'patterns' => array( 'unapp/restaurant-hours-h1', 'unapp/restaurant-booking', 'unapp/restaurant-cta' ),
 				),
 			),
 		),
@@ -195,6 +201,7 @@ function unapp_get_starter_sites() {
 			'title'    => __( 'Agency', 'unapp' ),
 			'summary'  => __( 'A studio introduction, capabilities, a client list, published rates, the team and an enquiry form.', 'unapp' ),
 			'cta'      => __( 'Start a project', 'unapp' ),
+			'cta_page' => 'contact',
 			'style'    => 'slate',
 			'colors'   => 'colors-12-slate',
 			'type'     => 'typography-4-technical',
@@ -205,15 +212,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'work'    => array(
 					'title'    => __( 'Work', 'unapp' ),
-					'patterns' => array( 'unapp/agency-clients', 'unapp/case-study', 'unapp/agency-services', 'unapp/agency-contact' ),
+					'patterns' => array( 'unapp/agency-clients-h1', 'unapp/agency-case-study', 'unapp/agency-services', 'unapp/agency-contact' ),
 				),
 				'studio'  => array(
 					'title'    => __( 'Studio', 'unapp' ),
-					'patterns' => array( 'unapp/agency-team', 'unapp/agency-services', 'unapp/agency-engagements' ),
+					'patterns' => array( 'unapp/agency-team-h1', 'unapp/agency-services', 'unapp/agency-engagements' ),
 				),
 				'contact' => array(
 					'title'    => __( 'Start a project', 'unapp' ),
-					'patterns' => array( 'unapp/agency-contact', 'unapp/agency-engagements' ),
+					'patterns' => array( 'unapp/agency-contact-h1', 'unapp/agency-engagements' ),
 				),
 			),
 		),
@@ -221,6 +228,7 @@ function unapp_get_starter_sites() {
 			'title'    => __( 'Shop', 'unapp' ),
 			'summary'  => __( 'A storefront: hero, newest products, the promises that matter, how it is made and delivery answers. Needs WooCommerce.', 'unapp' ),
 			'cta'      => __( 'Shop everything', 'unapp' ),
+			'cta_page' => 'products',
 			'style'    => 'emerald',
 			'colors'   => 'colors-2-emerald',
 			'type'     => 'typography-5-geometric',
@@ -230,13 +238,17 @@ function unapp_get_starter_sites() {
 			'footer'   => 'unapp/footer-shop',
 			'requires' => 'woocommerce/woocommerce.php',
 			'pages'    => array(
-				'about'   => array(
+				'about'    => array(
 					'title'    => __( 'How it is made', 'unapp' ),
-					'patterns' => array( 'unapp/shop-workshop', 'unapp/shop-promise', 'unapp/shop-cta' ),
+					'patterns' => array( 'unapp/shop-workshop-h1', 'unapp/shop-promise', 'unapp/shop-cta' ),
 				),
-				'help'    => array(
+				'help'     => array(
 					'title'    => __( 'Delivery and returns', 'unapp' ),
-					'patterns' => array( 'unapp/shop-faq', 'unapp/shop-promise', 'unapp/contact-split' ),
+					'patterns' => array( 'unapp/shop-faq-h1', 'unapp/shop-promise', 'unapp/shop-contact' ),
+				),
+				'products' => array(
+					'title'    => __( 'New in', 'unapp' ),
+					'patterns' => array( 'unapp/shop-featured-h1', 'unapp/shop-promise', 'unapp/shop-cta' ),
 				),
 			),
 		),
@@ -244,6 +256,7 @@ function unapp_get_starter_sites() {
 			'title'    => __( 'Property', 'unapp' ),
 			'summary'  => __( 'An estate agency: current listings with prices on them, published fees and a valuation enquiry.', 'unapp' ),
 			'cta'      => __( 'Book a valuation', 'unapp' ),
+			'cta_page' => 'contact',
 			'style'    => 'graphite',
 			'colors'   => 'colors-4-graphite',
 			'type'     => 'typography-3-editorial',
@@ -254,15 +267,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'listings' => array(
 					'title'    => __( 'For sale', 'unapp' ),
-					'patterns' => array( 'unapp/realestate-listings', 'unapp/realestate-fees', 'unapp/realestate-valuation' ),
+					'patterns' => array( 'unapp/realestate-listings-h1', 'unapp/realestate-fees', 'unapp/realestate-valuation' ),
 				),
 				'fees'     => array(
 					'title'    => __( 'Our fees', 'unapp' ),
-					'patterns' => array( 'unapp/realestate-fees', 'unapp/faq', 'unapp/realestate-valuation' ),
+					'patterns' => array( 'unapp/realestate-fees-h1', 'unapp/realestate-faq', 'unapp/realestate-valuation' ),
 				),
 				'contact'  => array(
 					'title'    => __( 'Book a valuation', 'unapp' ),
-					'patterns' => array( 'unapp/realestate-valuation', 'unapp/realestate-fees' ),
+					'patterns' => array( 'unapp/realestate-valuation-h1', 'unapp/realestate-fees' ),
 				),
 			),
 		),
@@ -270,6 +283,7 @@ function unapp_get_starter_sites() {
 			'title'    => __( 'Practice', 'unapp' ),
 			'summary'  => __( 'A clinic or dental practice: treatments in plain English, clinicians with qualifications, patient questions and opening hours.', 'unapp' ),
 			'cta'      => __( 'Book an appointment', 'unapp' ),
+			'cta_page' => 'contact',
 			'style'    => 'slate',
 			'colors'   => 'colors-12-slate',
 			'type'     => 'typography-2-interface',
@@ -280,15 +294,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'treatments' => array(
 					'title'    => __( 'Treatments', 'unapp' ),
-					'patterns' => array( 'unapp/medical-services', 'unapp/medical-team', 'unapp/medical-faq' ),
+					'patterns' => array( 'unapp/medical-services-h1', 'unapp/medical-team', 'unapp/medical-faq' ),
 				),
 				'team'       => array(
 					'title'    => __( 'The team', 'unapp' ),
-					'patterns' => array( 'unapp/medical-team', 'unapp/medical-services', 'unapp/medical-hours' ),
+					'patterns' => array( 'unapp/medical-team-h1', 'unapp/medical-services', 'unapp/medical-hours' ),
 				),
 				'contact'    => array(
 					'title'    => __( 'Find us', 'unapp' ),
-					'patterns' => array( 'unapp/medical-hours', 'unapp/contact-split', 'unapp/medical-faq' ),
+					'patterns' => array( 'unapp/medical-hours-h1', 'unapp/medical-contact', 'unapp/medical-faq' ),
 				),
 			),
 		),
@@ -296,6 +310,7 @@ function unapp_get_starter_sites() {
 			'title'    => __( 'Courses', 'unapp' ),
 			'summary'  => __( 'A course provider: the term’s timetable with prices, the tutors who teach it and how booking works.', 'unapp' ),
 			'cta'      => __( 'See the courses', 'unapp' ),
+			'cta_page' => 'courses',
 			'style'    => 'violet',
 			'colors'   => 'colors-5-violet',
 			'type'     => 'typography-1-product',
@@ -306,15 +321,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'courses' => array(
 					'title'    => __( 'Courses', 'unapp' ),
-					'patterns' => array( 'unapp/education-courses', 'unapp/education-tutors', 'unapp/education-faq', 'unapp/education-cta' ),
+					'patterns' => array( 'unapp/education-courses-h1', 'unapp/education-tutors', 'unapp/education-faq', 'unapp/education-cta' ),
 				),
 				'tutors'  => array(
 					'title'    => __( 'Tutors', 'unapp' ),
-					'patterns' => array( 'unapp/education-tutors', 'unapp/education-courses', 'unapp/education-cta' ),
+					'patterns' => array( 'unapp/education-tutors-h1', 'unapp/education-courses', 'unapp/education-cta' ),
 				),
 				'contact' => array(
 					'title'    => __( 'Contact', 'unapp' ),
-					'patterns' => array( 'unapp/contact-split', 'unapp/education-faq' ),
+					'patterns' => array( 'unapp/education-contact-h1', 'unapp/education-faq' ),
 				),
 			),
 		),
@@ -322,6 +337,7 @@ function unapp_get_starter_sites() {
 			'title'    => __( 'Conference', 'unapp' ),
 			'summary'  => __( 'A two-day event: the programme, announced speakers, three ticket tiers and the venue with its access provision.', 'unapp' ),
 			'cta'      => __( 'Buy a ticket', 'unapp' ),
+			'cta_page' => 'tickets',
 			'style'    => 'midnight',
 			'colors'   => 'colors-6-midnight',
 			'type'     => 'typography-4-technical',
@@ -332,15 +348,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'programme' => array(
 					'title'    => __( 'Programme', 'unapp' ),
-					'patterns' => array( 'unapp/events-programme', 'unapp/events-speakers', 'unapp/events-tickets' ),
+					'patterns' => array( 'unapp/events-programme-h1', 'unapp/events-speakers', 'unapp/events-tickets' ),
 				),
 				'tickets'   => array(
 					'title'    => __( 'Tickets', 'unapp' ),
-					'patterns' => array( 'unapp/events-tickets', 'unapp/events-venue', 'unapp/events-programme' ),
+					'patterns' => array( 'unapp/events-tickets-h1', 'unapp/events-venue', 'unapp/events-programme' ),
 				),
 				'venue'     => array(
 					'title'    => __( 'Venue and access', 'unapp' ),
-					'patterns' => array( 'unapp/events-venue', 'unapp/events-programme' ),
+					'patterns' => array( 'unapp/events-venue-h1', 'unapp/events-programme' ),
 				),
 			),
 		),
@@ -348,6 +364,7 @@ function unapp_get_starter_sites() {
 			'title'    => __( 'Finance & advisory', 'unapp' ),
 			'summary'  => __( 'Credentials, plain-English services, how advice works, fees, advisers and the risk warning.', 'unapp' ),
 			'cta'      => __( 'Book a call', 'unapp' ),
+			'cta_page' => 'contact',
 			'style'    => 'navy',
 			'colors'   => 'colors-9-navy',
 			'type'     => 'typography-3-editorial',
@@ -358,15 +375,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'services' => array(
 					'title'    => __( 'Services', 'unapp' ),
-					'patterns' => array( 'unapp/finance-services', 'unapp/finance-process', 'unapp/finance-team', 'unapp/finance-fees', 'unapp/finance-faq', 'unapp/finance-disclaimer' ),
+					'patterns' => array( 'unapp/finance-services-h1', 'unapp/finance-process', 'unapp/finance-team', 'unapp/finance-fees', 'unapp/finance-faq', 'unapp/finance-disclaimer' ),
 				),
 				'about'    => array(
 					'title'    => __( 'About', 'unapp' ),
-					'patterns' => array( 'unapp/finance-team', 'unapp/finance-credentials', 'unapp/finance-process', 'unapp/finance-disclaimer' ),
+					'patterns' => array( 'unapp/finance-team-h1', 'unapp/finance-credentials', 'unapp/finance-process', 'unapp/finance-disclaimer' ),
 				),
 				'contact'  => array(
 					'title'    => __( 'Contact', 'unapp' ),
-					'patterns' => array( 'unapp/finance-contact', 'unapp/finance-process', 'unapp/finance-faq', 'unapp/finance-disclaimer' ),
+					'patterns' => array( 'unapp/finance-contact-h1', 'unapp/finance-process', 'unapp/finance-faq', 'unapp/finance-disclaimer' ),
 				),
 			),
 		),

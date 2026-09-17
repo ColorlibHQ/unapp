@@ -5,36 +5,36 @@
  * Categories: unapp, unapp_church, unapp_content
  * Keywords: church, events, diary, calendar, upcoming
  * Viewport Width: 1400
- * Description: A dated list of what is on: community lunch, job club, harvest and carols.
+ * Description: What is on through the year: the monthly lunch, the weekly job club, harvest and carols.
  *
  * @package Unapp
  */
 
 $unapp_church_events = array(
 	array(
-		'when' => _x( "Sat 14 Sep", 'Church event', 'unapp' ),
+		'when' => _x( "First Saturdays", 'Church event', 'unapp' ),
 		'title' => _x( "Community lunch", 'Church event', 'unapp' ),
-		'text' => _x( "Everyone eats, nobody pays. Twelve o'clock in the hall.", 'Church event', 'unapp' ),
+		'text' => _x( "Everyone eats, nobody pays. Twelve o'clock in the hall, on the first Saturday of every month.", 'Church event', 'unapp' ),
 	),
 	array(
-		'when' => _x( "Thu 26 Sep", 'Church event', 'unapp' ),
+		'when' => _x( "Thursdays in term", 'Church event', 'unapp' ),
 		'title' => _x( "Job club", 'Church event', 'unapp' ),
 		'text' => _x( "CVs, applications and interview practice with people who hire for a living.", 'Church event', 'unapp' ),
 	),
 	array(
-		'when' => _x( "Sun 6 Oct", 'Church event', 'unapp' ),
+		'when' => _x( "Early October", 'Church event', 'unapp' ),
 		'title' => _x( "Harvest service", 'Church event', 'unapp' ),
 		'text' => _x( "Bring tinned food if you can; the whole lot goes to the foodbank on Mill Lane.", 'Church event', 'unapp' ),
 	),
 	array(
-		'when' => _x( "Sun 22 Dec", 'Church event', 'unapp' ),
+		'when' => _x( "Before Christmas", 'Church event', 'unapp' ),
 		'title' => _x( "Carols by candlelight", 'Church event', 'unapp' ),
-		'text' => _x( "The one service a year that fills the balcony. Come early.", 'Church event', 'unapp' ),
+		'text' => _x( "The Sunday before Christmas, and the one service a year that fills the balcony. Come early.", 'Church event', 'unapp' ),
 	),
 );
 ?>
-<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull is-style-section-soft" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"},"anchor":"events"} -->
+<div class="wp-block-group alignfull is-style-section-soft" id="events" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"680px"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"align":"center","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
@@ -53,17 +53,17 @@ $unapp_church_events = array(
 <!-- wp:column {"verticalAlignment":"top","width":"26%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:26%;">
 <!-- wp:paragraph {"textColor":"primary","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
-<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo $unapp_church_event['when']; ?></p>
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo esc_html( $unapp_church_event['when'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"top","width":"74%","style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:74%;">
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_church_event['title']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_church_event['title'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_church_event['text']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_church_event['text'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->

@@ -25,7 +25,7 @@ write_pattern("portfolio-process", title="Portfolio: how a project runs", cats=P
               keywords="portfolio, process, project, stages, timeline, freelance",
               desc="Three stages of a design engagement with the week numbers attached, so a client knows what they are buying.",
               body=body,
-              php_prelude=php_rows("unapp_portfolio_steps", ("when", "title", "text"), STEPS, "Project stage"))
+              php_prelude=php_rows("unapp_portfolio_steps", ("when", "title", "text"), STEPS, "Project stage"), anchor="process")
 
 body = section_std(
     group(
@@ -63,7 +63,7 @@ body = section_std(
 write_pattern("portfolio-contact", title="Portfolio: availability and enquiries", cats=P + ", unapp_utility, contact",
               keywords="portfolio, contact, availability, enquiry, freelance, hire",
               desc="Current availability, an email address and a short brief of what to include in a first message.",
-              body=body)
+              body=body, anchor="contact")
 
 # ================================================================= BLOG
 body = section_std(
@@ -75,8 +75,8 @@ body = section_std(
              color="muted", size="large") + "\n" +
         para(t("One essay most Fridays, about a thousand words, on the parts of building software that do not fit in a conference talk: estimation, rewrites, hiring, and the quiet cost of moving fast. No sponsorship, no affiliate links, and no course at the end of it."),
              color="muted") + "\n" +
-        buttons([{"text": t("Read the archive"), "url": "#archive"},
-                 {"text": t("Subscribe"), "url": "#subscribe", "style": "outline"}]),
+        buttons([{"text": t("Read the archive"), "url": BLOG_URL},
+                 {"text": t("Subscribe"), "url": home_anchor("subscribe"), "style": "outline"}]),
         left_width="45%", right_width="55%"),
     gap="0")
 write_pattern("blog-about", title="Blog: about the publication", cats=B + ", unapp_company, about",
@@ -84,23 +84,26 @@ write_pattern("blog-about", title="Blog: about the publication", cats=B + ", una
               desc="What the publication is, how often it appears and how it is paid for.",
               body=body)
 
-subscribe_field = ('<!-- wp:search {"label":"","showLabel":false,"placeholder":"' + tattr("you@example.com") +
-                   '","buttonText":"' + tattr("Subscribe") + '","align":"center","buttonPosition":"button-inside",'
-                   '"style":{"border":{"radius":"999px"}}} /-->')
+# Buttons rather than a field: a theme must not take submissions, and the
+# Search block that stood here ran a site search for the typed address.
+subscribe_buttons = buttons([
+    {"text": t("Subscribe by email"), "url": mailto("editor@theslowbuild.example", "Subscribe"),
+     "bg": "base", "color": "contrast"},
+    {"text": t("Follow the RSS feed"), "url": "<?php echo esc_url( get_feed_link() ); ?>",
+     "style": "outline", "color": "base"},
+], justify="center", margin={"top": "20"})
 body = section_std(
     group(
         heading(t("One essay, most Fridays"), align="center", size="xx-large", color="base") + "\n" +
-        para(t("Four thousand people read it over coffee. No tracking pixels, no sequence, and one click to leave."),
-             align="center", custom_color="rgba(255,255,255,0.86)", size="large") + "\n" +
-        subscribe_field + "\n" +
-        para(t("Or follow the RSS feed, if you are that sort of person. Many of us are."),
-             align="center", custom_color="rgba(255,255,255,0.7)", size="small"),
+        para(t("Four thousand people read it over coffee. No tracking pixels, no sequence, and one reply to leave."),
+             align="center", color="base", size="large") + "\n" +
+        subscribe_buttons,
         layout="constrained", content_size="620px", gap=STACK_GAP),
     gradient="primary-to-accent", text="base", gap="0", elements=GRADIENT_ELEMENTS)
 write_pattern("blog-subscribe", title="Blog: subscribe band", cats=B + ", unapp_cta, newsletter",
               keywords="blog, subscribe, newsletter, email, rss",
-              desc="A newsletter band in an editorial voice, with an email field and a nod to RSS.",
-              body=body)
+              desc="A newsletter band in an editorial voice, with subscribe-by-email and RSS buttons.",
+              body=body, anchor="subscribe")
 
 pitch_card = card(
     para(t("Pitching an essay"), weight="600") + "\n" +

@@ -31,7 +31,69 @@ def uri(path):
 
 
 def php(expr):
-    return f"<?php echo {expr}; ?>"
+    """Echo a PHP expression as element text. Escaped: translations are input too."""
+    return f"<?php echo esc_html( {expr} ); ?>"
+
+
+def php_attr(expr):
+    """Echo a PHP expression inside an HTML attribute (alt, title, aria-label)."""
+    return f"<?php echo esc_attr( {expr} ); ?>"
+
+
+def php_url(expr):
+    """Echo a PHP expression as a URL (href, src)."""
+    return f"<?php echo esc_url( {expr} ); ?>"
+
+
+def php_format(expr, fmt, ctx, note):
+    """A value inside a translatable format string, echoed as element text.
+
+    For the characters around a value that belong to the language, not the
+    data: `'£' . $price` fixes the symbol and its position for every locale,
+    and hard-coded curly quotes are wrong in German or French. A format string
+    lets a translation write "39 £" or „…“.
+    """
+    return (f"<?php echo esc_html( sprintf( /* translators: {note} */ "
+            f"_x( '{esc(fmt)}', '{esc(ctx)}', '{DOM}' ), {expr} ) ); ?>")
+
+
+# --------------------------------------------------------------------------- links
+# Every link a pattern writes has to arrive somewhere. A starter page is built
+# from sections that also appear on other pages, and a footer renders on every
+# page, so a link to a section goes to the front page, where the starter's home
+# composition carries that section's anchor. Transactions the theme cannot
+# perform (a booking, a donation, a ticket) go to the business's own phone or
+# email rather than to a dead "#".
+def home_anchor(anchor):
+    """A section of the front page, from any page."""
+    return f"<?php echo esc_url( home_url( '/#{anchor}' ) ); ?>"
+
+
+def mailto(email, subject=None):
+    """An email to the business, with a translatable subject line."""
+    if not subject:
+        return f"mailto:{email}"
+    return (f"<?php echo esc_url( 'mailto:{email}?subject=' . rawurlencode( "
+            f"_x( '{esc(subject)}', 'Email subject line', '{DOM}' ) ) ); ?>")
+
+
+def tel(number):
+    """A telephone link; number in international form, digits only."""
+    return "tel:" + re.sub(r"[^\d+]", "", number)
+
+
+def map_link(address):
+    """The address in a maps search, which is where "Get directions" leads."""
+    from urllib.parse import quote_plus
+    return "https://maps.google.com/?q=" + quote_plus(address, safe=",")
+
+
+# WooCommerce's shop page when it is active; the front page otherwise. A
+# hard-coded /shop/ breaks on any site installed in a subdirectory.
+SHOP_URL = ("<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? "
+            "wc_get_page_permalink( 'shop' ) : home_url( '/' ) ); ?>")
+# The posts page (or the front page when the site shows posts there).
+BLOG_URL = "<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>"
 
 
 # --------------------------------------------------------------------------- attrs
@@ -110,7 +172,7 @@ def group(inner, *, align=None, style_variation=None, class_name=None, bg=None, 
           gradient=None, pad=None, gap=None, layout="constrained", content_size=None,
           wide_size=None, radius=None, border_top=None, shadow=None, extra_style="", tag="div",
           justify=None, orientation=None, wrap=None, vertical_align=None, elements=None,
-          min_col=None, col_count=None):
+          min_col=None, col_count=None, anchor=None, custom_text=None):
     a, classes, css = {}, ["wp-block-group"], ""
     if align:
         a["align"] = align
@@ -131,6 +193,12 @@ def group(inner, *, align=None, style_variation=None, class_name=None, bg=None, 
         a["textColor"] = text
         classes += [f"has-{text}-color", "has-text-color"]
     style = {}
+    if custom_text:
+        # A literal colour for grounds that are dark in every palette. The
+        # palette's base is white in eleven of them and near-black in Midnight.
+        style["color"] = {"text": custom_text}
+        classes.append("has-text-color")
+        css += f"color:{custom_text};"
     if radius:
         style.setdefault("border", {})["radius"] = radius
         css += f"border-radius:{radius};"
@@ -179,9 +247,12 @@ def group(inner, *, align=None, style_variation=None, class_name=None, bg=None, 
         if vertical_align:
             lay["verticalAlignment"] = vertical_align
     a["layout"] = lay
+    if anchor:
+        a["anchor"] = anchor  # core serialises it last, and the id after the class
     css += extra_style
     style_attr = f' style="{css}"' if css else ""
-    return (f'<!-- wp:group {_attrs(a)} -->\n<{tag} class="{" ".join(dict.fromkeys(classes))}"{style_attr}>\n'
+    id_attr = f' id="{anchor}"' if anchor else ""
+    return (f'<!-- wp:group {_attrs(a)} -->\n<{tag} class="{" ".join(dict.fromkeys(classes))}"{id_attr}{style_attr}>\n'
             f'{inner}\n</{tag}>\n<!-- /wp:group -->')
 
 
@@ -293,6 +364,20 @@ def heading(text, *, level=2, align=None, size=None, color=None, font=None, weig
             f'<!-- /wp:heading -->')
 
 
+# theme.json styles h1 at xxx-large / line-height 1.1 and h2 at xx-large /
+# 1.2. A page's main heading changes level, not look: whatever the h2 got from
+# its element style is written onto the h1 explicitly.
+H2_LOOK = {"size": "xx-large", "line_height": "1.2"}
+
+
+def h1(text, **kw):
+    """The page's one h1, looking exactly as the h2 it replaces did."""
+    for key, value in H2_LOOK.items():
+        if not kw.get(key):
+            kw[key] = value
+    return heading(text, level=1, **kw)
+
+
 def para(text, *, align=None, size=None, color=None, custom_color=None, font=None, weight=None,
          line_height=None, letter=None, transform=None, class_name=None, margin=None, extra_css=""):
     a, classes, css = {}, [], ""
@@ -390,7 +475,11 @@ def buttons(items, *, justify=None, margin=None, gap=None):
             acls += [f'has-{it["bg"]}-background-color', "has-background"]
         acls.append("wp-element-button")
         battrs = f" {_attrs(ba)}" if ba else ""
-        url = it.get("url", "#")
+        if not it.get("url") or it["url"] == "#":
+            # A button that goes nowhere is a bug the link checker has to find
+            # on a live site. Refuse it here instead.
+            raise ValueError(f"button {it['text']!r} has no destination")
+        url = it["url"]
         inner.append(f'<!-- wp:button{battrs} -->\n<div class="{" ".join(bclasses)}">'
                      f'<a class="{" ".join(dict.fromkeys(acls))}" href="{url}">{it["text"]}</a></div>\n'
                      f'<!-- /wp:button -->')
@@ -400,41 +489,118 @@ def buttons(items, *, justify=None, margin=None, gap=None):
             + "\n".join(inner) + '\n</div>\n<!-- /wp:buttons -->')
 
 
+# ------------------------------------------------------------ image sizing
+# core/image's save() writes no width/height HTML attributes, so a pattern can
+# not carry them without failing block validation. What it can carry is the
+# same information as style: an aspect-ratio plus one explicit dimension. That
+# reserves the image's box before the file arrives (no layout shift) and
+# satisfies Lighthouse's unsized-images audit. The ratio is read from the asset
+# itself, so it cannot drift from the file.
+_SIZE_CACHE = {}
+
+
+def _read_size(path):
+    if path in _SIZE_CACHE:
+        return _SIZE_CACHE[path]
+    size = None
+    if path.endswith(".svg"):
+        head = open(path, encoding="utf-8").read(2000)
+        root = re.search(r"<svg\b[^>]*>", head).group(0)
+        vb = re.search(r'viewBox="\s*[-\d.]+\s+[-\d.]+\s+([\d.]+)\s+([\d.]+)', root)
+        size = (float(vb.group(1)), float(vb.group(2)))
+    elif path.endswith(".avif"):
+        data = open(path, "rb").read(4096)
+        i = data.find(b"ispe")
+        size = (int.from_bytes(data[i + 8:i + 12], "big"), int.from_bytes(data[i + 12:i + 16], "big"))
+    _SIZE_CACHE[path] = size
+    return size
+
+
+def intrinsic_size(src):
+    """(width, height) of the theme asset an image src points at, or None.
+
+    Resolves a literal path, or a PHP-built path whose directory holds files of
+    one size (the avatars, the abstract set). A directory of mixed sizes (the
+    logos) returns None: there is no single ratio to promise.
+    """
+    m = re.search(r"assets/images/([a-z0-9/_.-]+\.(?:svg|avif))'", src)
+    if m:
+        return _read_size(os.path.join(THEME, "assets", "images", m.group(1)))
+    m = re.search(r"assets/images/([a-z0-9_-]+)/' \.", src)
+    if m:
+        folder = os.path.join(THEME, "assets", "images", m.group(1))
+        sizes = {_read_size(os.path.join(folder, f)) for f in os.listdir(folder)
+                 if f.endswith((".svg", ".avif"))}
+        return sizes.pop() if len(sizes) == 1 else None
+    return None
+
+
+def ratio(w, h):
+    from math import gcd
+    w, h = int(round(w)), int(round(h))
+    g = gcd(w, h)
+    return f"{w // g}/{h // g}" if (w // g, h // g) != (1, 1) else "1"
+
+
 def image(src, alt, *, width=None, height=None, align=None, radius=None, shadow=None,
-          class_name=None, size_slug="full", link=None, aspect=None, scale=None):
-    a, fig_classes, img_style = {"sizeSlug": size_slug, "linkDestination": "none"}, ["wp-block-image"], ""
+          class_name=None, size_slug="full", link=None, aspect=None, scale=None, intrinsic=None):
+    """A core/image block, serialised exactly as core's save() writes it.
+
+    Every theme image gets a reserved box: explicit width and height, or one
+    of them plus an aspect-ratio taken from the file. An image with neither
+    fills its container (width 100%, which is what it already did) at the
+    file's own ratio.
+    """
+    size = intrinsic or intrinsic_size(src)
+    if class_name and "is-style-device" in class_name:
+        # The device frame is a 10px border on a border-box image, and
+        # aspect-ratio sizes the border box: the screenshot would stretch.
+        size = None
+    if not (width and height):
+        if not width and not height:
+            width = "100%"
+        if aspect is None and size:
+            aspect = ratio(*size)
+    a = {}
+    if width:
+        a["width"] = width
+    if height:
+        a["height"] = height
+    if aspect:
+        a["aspectRatio"] = aspect
+    if scale:
+        a["scale"] = scale
+    a["sizeSlug"] = size_slug
+    a["linkDestination"] = "none"
+    fig_classes = ["wp-block-image"]
     if align:
         a["align"] = align
         fig_classes.append("align" + align)
     fig_classes.append(f"size-{size_slug}")
-    if width:
-        a["width"] = width
-        img_style += f"width:{width};"
-    if height:
-        a["height"] = height
-        img_style += f"height:{height};"
     if width or height:
         fig_classes.append("is-resized")
-    if aspect:
-        a["aspectRatio"] = aspect
-        img_style += f"aspect-ratio:{aspect};"
-    if scale:
-        a["scale"] = scale
-        img_style += f"object-fit:{scale};"
-    style = {}
+    style, css = {}, []
     if radius:
         style["border"] = {"radius": radius}
-        img_style = f"border-radius:{radius};" + img_style
+        css.append(f"border-radius:{radius}")
         fig_classes.append("has-custom-border")
     if shadow:
         style["shadow"] = f"var:preset|shadow|{shadow}"
-        img_style += f"box-shadow:var(--wp--preset--shadow--{shadow});"
+        css.append(f"box-shadow:var(--wp--preset--shadow--{shadow})")
+    if aspect:
+        css.append(f"aspect-ratio:{aspect}")
+    if scale:
+        css.append(f"object-fit:{scale}")
+    if width:
+        css.append(f"width:{width}")
+    if width or height:
+        css.append(f"height:{height or 'auto'}")
     if class_name:
         a["className"] = class_name
         fig_classes.append(class_name)
     if style:
         a["style"] = style
-    st = f' style="{img_style}"' if img_style else ""
+    st = f' style="{";".join(css)}"' if css else ""
     return (f'<!-- wp:image {_attrs(a)} -->\n<figure class="{" ".join(dict.fromkeys(fig_classes))}">'
             f'<img src="{src}" alt="{alt}"{st}/></figure>\n<!-- /wp:image -->')
 
@@ -514,7 +680,10 @@ def details(summary, inner, *, class_name=None):
 
 def social(links, *, size="has-normal-icon-size", justify=None, color="muted", value="#6b7280",
            style_class="is-style-logos-only", gap=None):
-    a = {"iconColor": color, "iconColorValue": value, "className": style_class}
+    # color=None writes only the literal value: a palette slug's class wins
+    # over it, and base is near-black in the Midnight palette.
+    a = {"iconColor": color, "iconColorValue": value, "className": style_class} if color else \
+        {"iconColorValue": value, "className": style_class}
     classes = ["wp-block-social-links"]
     if size != "has-normal-icon-size":
         a["size"] = size
@@ -536,12 +705,13 @@ def pattern_ref(slug):
 # --------------------------------------------------------------------------- composites
 def intro(*, eyebrow_text=None, title=None, lead=None, align="center", content="680px",
           gap="20", margin_bottom=None, title_size=None, eyebrow_color="primary",
-          title_color=None, lead_color="muted"):
+          title_color=None, lead_color="muted", title_level=2):
     parts = []
     if eyebrow_text:
         parts.append(eyebrow(eyebrow_text, align=align, color=eyebrow_color))
     if title:
-        parts.append(heading(title, align=align, size=title_size, color=title_color))
+        make = h1 if title_level == 1 else heading
+        parts.append(make(title, align=align, size=title_size, color=title_color))
     if lead:
         parts.append(para(lead, align=align, color=lead_color, size="large"))
     css = ""
@@ -555,11 +725,13 @@ def intro(*, eyebrow_text=None, title=None, lead=None, align="center", content="
 
 
 def section(inner, *, pad=("70", "70"), gap="60", style_variation=None, bg=None, text=None,
-            gradient=None, layout="constrained", content_size=None, wide_size=None, elements=None):
+            gradient=None, layout="constrained", content_size=None, wide_size=None, elements=None,
+            anchor=None, custom_text=None):
     padding = {"top": pad[0], "bottom": pad[1]}
     return group(inner, align="full", style_variation=style_variation, bg=bg, text=text,
                  gradient=gradient, pad=padding, gap=gap, layout=layout,
-                 content_size=content_size, wide_size=wide_size, elements=elements)
+                 content_size=content_size, wide_size=wide_size, elements=elements, anchor=anchor,
+                 custom_text=custom_text)
 
 
 HEADER_TPL = """<?php
@@ -578,8 +750,23 @@ HEADER_TPL = """<?php
 """
 
 
+_SECTION_RE = re.compile(r'<!-- wp:group (\{"align":"full".*?\}) -->\n<div class="([^"]*)"')
+
+
+def anchor_section(body, anchor):
+    """Give the pattern's full-width section an HTML anchor (the block's id)."""
+    m = _SECTION_RE.search(body)
+    if not m:
+        raise ValueError(f"no full-width section to anchor #{anchor}")
+    attrs = m.group(1)[:-1] + f',"anchor":"{anchor}"}}'
+    new = f'<!-- wp:group {attrs} -->\n<div class="{m.group(2)}" id="{anchor}"'
+    return body[:m.start()] + new + body[m.end():]
+
+
 def write_pattern(slug, *, title, cats, keywords, desc, body, php_prelude="", viewport=1400,
-                  inserter=True, block_types=None, post_types=None):
+                  inserter=True, block_types=None, post_types=None, anchor=None):
+    if anchor:
+        body = anchor_section(body, anchor)
     head = HEADER_TPL.format(title=title, slug=slug, cats=cats, keywords=keywords,
                              desc=desc, viewport=viewport)
     if block_types:
@@ -600,12 +787,30 @@ def write_pattern(slug, *, title, cats, keywords, desc, body, php_prelude="", vi
 # the measurements live here, so a change lands everywhere at once.
 
 def card(inner, *, variation="is-style-card", pad=CARD_PAD, gap=CARD_GAP,
-         radius=CARD_RADIUS, vertical=True):
-    """A surface with the house padding, radius and internal rhythm."""
+         radius=CARD_RADIUS, vertical=True, justify=None, vertical_align=None):
+    """A surface with the house padding, radius and internal rhythm.
+
+    A vertical card is a flex column, which WordPress aligns to flex-start:
+    children take their content width, so an icon badge stays a badge. A card
+    of rows (hours, prices) passes justify="stretch" so every row spans it.
+    """
     return group(inner, style_variation=variation, radius=radius, gap=gap,
                  layout="flex" if vertical else "constrained",
                  orientation="vertical" if vertical else None,
+                 justify=justify, vertical_align=vertical_align,
                  pad={"top": pad, "bottom": pad, "left": pad, "right": pad})
+
+
+def plan_card(top, bottom, *, variation="is-style-card"):
+    """A price card whose call to action sits on the card's bottom edge.
+
+    Cards in a grid row share one height. The card is split into what the
+    plan is (top) and what to do about it (bottom), pushed apart with
+    space-between, so every button in the row lines up however long the
+    feature lists run, and a badge beside one button moves no other row.
+    """
+    return card(stack(top, gap=CARD_GAP) + "\n" + stack(bottom, gap="20", justify="stretch"),
+                variation=variation, justify="stretch", vertical_align="space-between")
 
 
 def stack(inner, *, gap=STACK_GAP, justify=None):
@@ -659,10 +864,11 @@ def faq_list(pairs):
 
 
 def section_std(inner, *, variation=None, bg=None, gradient=None, text=None,
-                pad=SECTION_PAD, gap=SECTION_GAP, elements=None):
+                pad=SECTION_PAD, gap=SECTION_GAP, elements=None, anchor=None, custom_text=None):
     """Every section: same padding, same intro-to-content gap."""
     return section(inner, pad=pad, gap=gap, style_variation=variation, bg=bg,
-                   gradient=gradient, text=text, elements=elements)
+                   gradient=gradient, text=text, elements=elements, anchor=anchor,
+                   custom_text=custom_text)
 
 
 GRADIENT_ELEMENTS = {
@@ -671,19 +877,26 @@ GRADIENT_ELEMENTS = {
 }
 
 
-def band(title, body, buttons_list, *, width="720px"):
+# Text on the primary-to-accent gradient is the palette's base colour, solid.
+# White at 86% measured 3.93:1 on Indigo's accent and 2.27:1 on Midnight's,
+# where the palette is dark and even solid white is 2.55:1; base clears 4.5:1
+# against both gradient ends in all twelve palettes (lowest: Indigo's accent,
+# 4.72:1). .dev/gradient_contrast.py recomputes it.
+def band(title, body, buttons_list, *, width="720px", anchor=None):
     """A closing call-to-action on the palette gradient."""
     inner = (heading(title, align="center", size="xx-large", color="base") + "\n" +
-             para(body, align="center", custom_color="rgba(255,255,255,0.86)", size="large") + "\n" +
+             para(body, align="center", color="base", size="large") + "\n" +
              buttons(buttons_list, justify="center", margin={"top": "20"}))
     return section_std(
         group(inner, layout="constrained", content_size=width, gap=STACK_GAP),
-        gradient="primary-to-accent", text="base", gap="0", elements=GRADIENT_ELEMENTS)
+        gradient="primary-to-accent", text="base", gap="0", elements=GRADIENT_ELEMENTS, anchor=anchor)
 
 
 def contact_form(title, email):
     """Whichever form plugin is active, rendered inside a card."""
-    return ("<?php\necho unapp_contact_form(\n\tarray(\n"
+    return ("<?php\n"
+            "// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- block markup; each part is escaped where unapp_contact_form() builds it.\n"
+            "echo unapp_contact_form(\n\tarray(\n"
             f"\t\t'title' => _x( '{esc(title)}', 'Contact form heading', '{DOM}' ),\n"
             f"\t\t'email' => '{email}',\n"
             "\t)\n);\n?>")

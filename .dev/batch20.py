@@ -91,9 +91,7 @@ write_pattern("features-sticky", title="Features: sticky explanation", cats=U + 
 # ---------------------------------------------------------------- logo marquee
 LOGOS = ['cobalt', 'foundry', 'harbor', 'kite', 'lumen', 'meridian', 'northwind', 'vertex']
 marquee_items = "".join(
-    '<!-- wp:image {"width":"128px","sizeSlug":"full","linkDestination":"none"} -->\n'
-    f'<figure class="wp-block-image size-full is-resized"><img src="{uri("assets/images/logos/" + n + ".svg")}" '
-    f'alt="" style="width:128px"/></figure>\n<!-- /wp:image -->\n' for n in LOGOS + LOGOS)
+    image(uri("assets/images/logos/" + n + ".svg"), "", width="128px") + "\n" for n in LOGOS + LOGOS)
 track = group(marquee_items, class_name="unapp-marquee__track", layout="flex", wrap="nowrap", gap="60")
 body = section_std(
     para(t("Trusted by product teams at"), align="center", color="muted", size="small",
@@ -127,8 +125,8 @@ for name, m, y, note, feats, featured in PLANS:
                 "\t),\n")
 prelude += ");\n"
 price = group(
-    para('<span class="unapp-price__monthly">' + php("'$' . $unapp_toggle_plan['monthly']") + '</span>'
-         '<span class="unapp-price__yearly">' + php("'$' . $unapp_toggle_plan['yearly']") + '</span>',
+    para('<span class="unapp-price__monthly">' + php_format("$unapp_toggle_plan['monthly']", "$%s", "Plan price with currency", "%s: price per person per month, a number.") + '</span>'
+         '<span class="unapp-price__yearly">' + php_format("$unapp_toggle_plan['yearly']", "$%s", "Plan price with currency", "%s: price per person per month, a number.") + '</span>',
          size="xxx-large", weight="700", line_height="1", class_name="unapp-price") + "\n" +
     para(t("per person, per month", "Plan period"), color="muted", size="small"),
     layout="flex", orientation="horizontal", gap="20", vertical_align="bottom")
@@ -136,13 +134,14 @@ feature_list = ('<!-- wp:list {"className":"is-style-checklist"} -->\n<ul class=
                 "<?php foreach ( $unapp_toggle_plan['features'] as $unapp_toggle_feature ) : ?>\n"
                 '<!-- wp:list-item -->\n<li><?php echo esc_html( $unapp_toggle_feature ); ?></li>\n<!-- /wp:list-item -->\n'
                 '<?php endforeach; ?>\n</ul>\n<!-- /wp:list -->')
-plan_inner = (card_title(php("$unapp_toggle_plan['name']")) + "\n" +
-              para(php("$unapp_toggle_plan['note']"), color="muted", size="small") + "\n" +
-              price + "\n" + feature_list + "\n" +
-              buttons([{"text": t("Start free"), "url": "#start", "width": 100}]))
+plan_top = (card_title(php("$unapp_toggle_plan['name']")) + "\n" +
+            para(php("$unapp_toggle_plan['note']"), color="muted", size="small") + "\n" +
+            price + "\n" + feature_list)
+plan_bottom = (buttons([{"text": t("Start free"), "width": 100,
+                        "url": "<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( $unapp_toggle_plan['name'] ) ); ?>"}]))
 plan = ("<?php if ( $unapp_toggle_plan['featured'] ) : ?>\n"
-        + card(plan_inner, variation="is-style-elevated")
-        + "\n<?php else : ?>\n" + card(plan_inner) + "\n<?php endif; ?>")
+        + plan_card(plan_top, plan_bottom, variation="is-style-elevated")
+        + "\n<?php else : ?>\n" + plan_card(plan_top, plan_bottom) + "\n<?php endif; ?>")
 switch = group(
     '<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->\n<div class="wp-block-buttons">\n'
     '<!-- wp:button {"className":"unapp-period is-style-outline","fontSize":"small"} -->\n'

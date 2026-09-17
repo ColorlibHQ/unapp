@@ -13,7 +13,7 @@
  */
 
 ?>
-<!-- wp:pattern {"slug":"unapp/collaborate"} /-->
+<!-- wp:pattern {"slug":"unapp/collaborate-h1"} /-->
 <!-- wp:pattern {"slug":"unapp/team"} /-->
 <!-- wp:pattern {"slug":"unapp/stats"} /-->
 <!-- wp:pattern {"slug":"unapp/cta-subscribe"} /-->

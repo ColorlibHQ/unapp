@@ -60,7 +60,7 @@ body = section(
             para(t("“Unapp gave us one calendar, one backlog and one source of truth. Six months in, nobody asks for the old spreadsheets.”"),
                  size="x-large", font="heading", line_height="1.35", weight="500") + "\n" +
             para(t("Nadia Okafor · VP Engineering, Harbor"), color="muted") + "\n" +
-            buttons([{"text": t("Read the case study"), "style": "is-style-outline"}], margin={"top": "30"}),
+            buttons([{"text": t("Read the case study"), "url": "#case-study", "style": "is-style-outline"}], margin={"top": "30"}),
             width="68%", vertical_align="center", gap="30"),
     ], align="wide", gap="60", vertical_align="center"),
     style_variation="is-style-section-soft", pad=("70", "70"), gap="0")
@@ -91,7 +91,7 @@ body = section(
 write_pattern("case-study", title="Case study", cats="unapp, unapp_proof, featured, media",
               keywords="case study, customer story, results, metrics, proof",
               desc="Customer story with a photo, outcome checklist and two headline metrics.",
-              body=body)
+              body=body, anchor="case-study")
 
 # ------------------------------------------------------------- ratings band
 prelude = """$unapp_ratings = array(

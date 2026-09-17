@@ -12,8 +12,8 @@
  */
 
 ?>
-<!-- wp:group {"align":"full","backgroundColor":"dark","textColor":"base","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|60"},"elements":{"link":{"color":{"text":"var:preset|color|base"},":hover":{"color":{"text":"var:preset|color|secondary"}}},"heading":{"color":{"text":"var:preset|color|base"}}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-dark-background-color has-background has-base-color has-text-color has-link-color" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--40);">
+<!-- wp:group {"align":"full","backgroundColor":"dark","style":{"color":{"text":"#ffffff"},"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|60"},"elements":{"link":{"color":{"text":"#ffffff"},":hover":{"color":{"text":"var:preset|color|secondary"}}},"heading":{"color":{"text":"#ffffff"}}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-dark-background-color has-background has-text-color has-link-color" style="color:#ffffff;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--40);">
 <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-columns alignwide">
 <!-- wp:column {"width":"34%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
@@ -26,7 +26,7 @@
 <p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.72);"><?php echo esc_html_x( 'An independent studio of nine in Manchester. Brand, product, and the software to run both.', 'Footer tagline', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 <?php endif; ?>
-<!-- wp:social-links {"iconColor":"base","iconColorValue":"#ffffff","className":"is-style-logos-only","size":"has-small-icon-size","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
+<!-- wp:social-links {"iconColorValue":"#ffffff","className":"is-style-logos-only","size":"has-small-icon-size","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
 <ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only">
 <!-- wp:social-link {"url":"https://linkedin.com","service":"linkedin"} /-->
 <!-- wp:social-link {"url":"https://instagram.com","service":"instagram"} /-->
@@ -41,10 +41,10 @@
 <h2 class="wp-block-heading has-small-font-size" style="font-weight:600;letter-spacing:0.06em;"><?php echo esc_html_x( 'Studio', 'Footer column heading', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Work', 'unapp' ); ?>","url":"#work","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Capabilities', 'unapp' ); ?>","url":"#services","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Engagements', 'unapp' ); ?>","url":"#engagements","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Start a project', 'unapp' ); ?>","url":"#contact","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Work', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#work' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Capabilities', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#services' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Engagements', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#engagements' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Start a project', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#contact' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 <!-- /wp:navigation -->
 </div>
 <!-- /wp:column -->

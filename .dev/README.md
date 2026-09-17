@@ -7,7 +7,12 @@ whole library with:
     python3 .dev/apply_grounds.py
 
 `apply_grounds.py` runs last: it assigns each section its ground by role, which
-the batches deliberately do not do.
+the batches deliberately do not do, and then writes the page-opening variants
+(`openings.py`): for every section that opens a starter page or a page starter,
+a hidden `unapp/<slug>-h1` copy whose first heading is the page's h1, styled
+exactly as the h2 it replaces. Starter pages hide their title, so that heading
+is the page title; the section itself stays an h2 because it also appears
+further down other pages.
 
 ## The measurement system
 
@@ -32,6 +37,8 @@ Three radii exist in the theme: 14px (icon badges), 20px (cards and images),
 ## Audits
 
     python3 .dev/rhythm_audit.py            # ground rhythm of every composition
+    python3 .dev/heading_audit.py           # exactly one h1 per composition, in its first section
+    python3 .dev/link_audit.py              # every link on every starter page arrives somewhere
     node cdp-rhythm.mjs jobs.json 1280      # measured gaps vs the spacing scale
     node cdp-wrap.mjs jobs.json 1280,768,390  # orphaned items on the last row
 
@@ -43,3 +50,12 @@ nonsense (`parseFloat("0.5rem")` is `0.5`, not `8`).
 
     python3 .dev/avatars.py     # assets/images/avatars/*.svg
     python3 .dev/abstract.py    # assets/images/abstract/*.svg
+
+## Links
+
+`buttons()` refuses a button without a destination. A link to a section uses
+`home_anchor("slug")` (the section carries `anchor=` in `write_pattern`), since
+sections recur across pages and footers render on all of them; transactions
+the theme cannot perform go to the business's phone or email (`tel()`,
+`mailto()`), directions to `map_link()`, and the shop and blog to `SHOP_URL`
+and `BLOG_URL`, never a hard-coded path.

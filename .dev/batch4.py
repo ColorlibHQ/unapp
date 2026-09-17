@@ -2,14 +2,14 @@ import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pgen import *
 
 # ------------------------------------------------------------- pricing: two plans
-def plan(name, price, period, tagline, features, button, featured=False):
+def plan(name, price, period, tagline, features, button, url, featured=False):
     inner = (heading(name, level=3, size="large") + "\n" +
              para(tagline, color=None if featured else "muted", size="small") + "\n" +
              group(para(price, size="xxx-large", font="heading", weight="600", line_height="1") + "\n" +
                    para(period, color=None if featured else "muted", size="small"),
                    layout="flex", wrap="nowrap", gap="20", vertical_align="bottom") + "\n" +
              lst(features) + "\n" +
-             buttons([{"text": button, "width": 100,
+             buttons([{"text": button, "url": url, "width": 100,
                        **({"bg": "base", "color": "primary"} if featured else {"style": "is-style-outline"})}],
                      margin={"top": "40"}))
     return column(group(inner, style_variation="is-style-section-gradient" if featured else "is-style-card",
@@ -23,10 +23,11 @@ body = section(
           lead=t("Start free forever. Upgrade the day your team outgrows it.")) + "\n" +
     columns([
         plan(t("Free"), t("$0"), t("forever"), t("For solo makers and side projects"),
-             [t("3 projects"), t("1 GB storage"), t("Community support")], t("Create an account")),
+             [t("3 projects"), t("1 GB storage"), t("Community support")], t("Create an account"),
+             mailto("hello@example.com", "Free plan")),
         plan(t("Team"), t("$12"), t("per user / month"), t("For teams shipping every week"),
              [t("Unlimited projects"), t("100 GB storage"), t("Priority support"), t("Advanced reporting"), t("SSO and audit logs")],
-             t("Start free trial"), featured=True),
+             t("Start free trial"), mailto("hello@example.com", "Team plan trial"), featured=True),
     ], align="wide", gap="40") + "\n" +
     para(t("Prices exclude VAT. Annual billing saves 20%."), align="center", color="muted", size="small"),
     style_variation="is-style-section-soft", pad=("70", "70"), gap="50", content_size="900px", wide_size="900px")
@@ -55,7 +56,8 @@ body = section(
           title=t("Everything, side by side"),
           lead=t("The full breakdown of what each plan includes.")) + "\n" +
     group(table, align="wide", layout="constrained") + "\n" +
-    buttons([{"text": t("Start free trial")}, {"text": t("Talk to sales"), "style": "is-style-outline"}],
+    buttons([{"text": t("Start free trial"), "url": "#pricing"},
+             {"text": t("Talk to sales"), "url": mailto("hello@example.com", "Sales"), "style": "is-style-outline"}],
             justify="center", gap="30"),
     pad=("70", "70"), gap="50")
 write_pattern("pricing-compare", title="Pricing: comparison table", cats="unapp, unapp_pricing, featured",
@@ -109,7 +111,7 @@ body = section(
         column(heading(t("Ready to see it with your own projects?"), size="x-large", color="base") + "\n" +
                para(t("Import a board and watch it come to life. It takes about five minutes."), color="base"),
                width="62%", vertical_align="center", gap="20"),
-        column(buttons([{"text": t("Start free trial"), "bg": "base", "color": "primary"}],
+        column(buttons([{"text": t("Start free trial"), "url": home_anchor("pricing"), "bg": "base", "color": "primary"}],
                        justify="right"), width="38%", vertical_align="center"),
     ], align="wide", gap="50", vertical_align="center"),
     style_variation="is-style-section-gradient", pad=("60", "60"), gap="0")
@@ -127,7 +129,8 @@ body = section(
         column(eyebrow(t("Mobile", "Section eyebrow label"), align="left") + "\n" +
                heading(t("Take the roadmap with you"), size="x-large") + "\n" +
                para(t("Review work, approve requests and reply to comments from the train. Everything syncs the moment you are back online."), color="muted", size="large") + "\n" +
-               buttons([{"text": t("App Store")}, {"text": t("Google Play"), "style": "is-style-outline"}], gap="30"),
+               buttons([{"text": t("App Store"), "url": "https://apps.apple.com/"},
+                        {"text": t("Google Play"), "url": "https://play.google.com/store/apps", "style": "is-style-outline"}], gap="30"),
                width="62%", vertical_align="center", gap="30"),
     ], align="wide", gap="60", vertical_align="center"),
     style_variation="is-style-section-soft", pad=("70", "70"), gap="0")
@@ -142,35 +145,29 @@ body = section(
         column(heading(t("The Friday changelog"), level=3, size="large") + "\n" +
                para(t("One short email a week: what shipped, what broke, what we learned. No marketing."), color="muted"),
                width="52%", vertical_align="center", gap="20"),
-        column('<!-- wp:search {"label":"' + t("Email address", ctx="Newsletter field label").replace('"', "'") +
-               '","showLabel":false,"placeholder":"' + tattr("you@company.com") +
-               '","width":100,"widthUnit":"%","buttonText":"' + t("Subscribe", ctx="Newsletter button").replace('"', "'") +
-               '","buttonPosition":"button-inside"} /-->\n' +
-               para(t("Roughly 900 readers. Unsubscribe in one click."), color="muted", size="small"),
+        column(buttons([{"text": t("Subscribe by email"), "url": mailto("hello@example.com", "Friday changelog")}]) + "\n" +
+               para(t("Roughly 900 readers. Reply to any issue to stop receiving it."), color="muted", size="small"),
                width="48%", vertical_align="center", gap="20"),
     ], align="wide", gap="50", vertical_align="center"),
     pad=("60", "60"), gap="0")
 write_pattern("newsletter", title="Newsletter sign-up", cats="unapp, unapp_cta, call-to-action, text",
               keywords="newsletter, subscribe, email, signup, inline",
-              desc="Inline newsletter row: pitch on the left, email field on the right. Swap the field for your mail plugin's block.",
+              desc="Inline newsletter row: pitch on the left, a subscribe-by-email button on the right. Swap the button for your mail plugin's form.",
               body=body)
 
 # ------------------------------------------------------------- waitlist / coming soon
 body = section(
     intro(eyebrow_text=t("Coming soon", "Section eyebrow label"),
           title=t("Something new is nearly ready"),
-          lead=t("We are putting the finishing touches to the next version of Unapp. Leave your address and you will be first through the door."),
+          lead=t("We are putting the finishing touches to the next version of Unapp. Send us a note and you will be first through the door."),
           content="620px", eyebrow_color="base", title_color="base", lead_color="base") + "\n" +
-    group('<!-- wp:search {"label":"' + t("Email address", ctx="Waitlist field label").replace('"', "'") +
-          '","showLabel":false,"placeholder":"' + tattr("you@company.com") +
-          '","width":100,"widthUnit":"%","buttonText":"' + t("Join the waitlist", ctx="Waitlist button").replace('"', "'") +
-          '","buttonPosition":"button-inside"} /-->',
-          layout="constrained", content_size="440px") + "\n" +
+    buttons([{"text": t("Join the waitlist by email"), "url": mailto("hello@example.com", "Waitlist"),
+              "bg": "base", "color": "primary"}], justify="center") + "\n" +
     social([("x", "https://x.com"), ("linkedin", "https://linkedin.com"), ("github", "https://github.com")],
            justify="center", color="base", value="#ffffff"),
     style_variation="is-style-section-gradient", pad=("80", "80"), gap="40", content_size="620px")
 write_pattern("waitlist", title="Waitlist / coming soon", cats="unapp, unapp_cta, call-to-action, banner",
               keywords="waitlist, coming soon, launch, early access, signup",
-              desc="Full-bleed gradient panel with a waitlist field and social links — the whole page for a pre-launch site.",
+              desc="Full-bleed gradient panel with a join-the-waitlist button and social links — the whole page for a pre-launch site.",
               body=body)
 print("batch 4 written")

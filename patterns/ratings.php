@@ -24,8 +24,8 @@ $unapp_ratings = array(
 <?php foreach ( $unapp_ratings as $unapp_rating ) : ?>
 <!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
 <div class="wp-block-column">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","align":"center","width":"96px"} -->
-<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/ui/stars-5.svg' ) ); ?>" alt="<?php esc_attr_e( 'Five star rating', 'unapp' ); ?>" style="width:96px;"/></figure>
+<!-- wp:image {"width":"96px","aspectRatio":"11/2","sizeSlug":"full","linkDestination":"none","align":"center"} -->
+<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/ui/stars-5.svg' ) ); ?>" alt="<?php esc_attr_e( 'Five star rating', 'unapp' ); ?>" style="aspect-ratio:11/2;width:96px;height:auto"/></figure>
 <!-- /wp:image -->
 <!-- wp:paragraph {"align":"center","fontFamily":"heading","fontSize":"x-large","style":{"typography":{"fontWeight":"600"}}} -->
 <p class="has-text-align-center has-heading-font-family has-x-large-font-size" style="font-weight:600;"><?php echo esc_html( $unapp_rating['score'] ); ?></p>

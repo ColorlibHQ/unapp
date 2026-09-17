@@ -15,8 +15,8 @@
 <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--60);">
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"720px"}} -->
 <div class="wp-block-group">
-<!-- wp:heading {"textAlign":"center"} -->
-<h2 class="wp-block-heading has-text-align-center"><?php esc_html_e( 'Documentation, changelog and everything in between', 'unapp' ); ?></h2>
+<!-- wp:heading {"level":1,"textAlign":"center","fontSize":"xx-large","style":{"typography":{"lineHeight":"1.2"}}} -->
+<h1 class="wp-block-heading has-text-align-center has-xx-large-font-size" style="line-height:1.2;"><?php esc_html_e( 'Documentation, changelog and everything in between', 'unapp' ); ?></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"align":"center","textColor":"muted","fontSize":"large"} -->
 <p class="has-text-align-center has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Everything you need to run Unapp day to day — guides, API reference and release notes.', 'unapp' ); ?></p>

@@ -38,11 +38,33 @@ def compositions():
         refs = re.findall(r'"slug":"unapp/([a-z0-9-]+)"', s)
         if refs:
             out[f[:-4]] = refs
-    starters = open(os.path.join(THEME, "inc", "starter-sites.php")).read()
-    for m in re.finditer(r"'([a-z]+)'\s*=> array\(\s*\n\s*'title'\s*=> __\( '([^']+)'.*?'patterns' => array\( ([^)]*) \)", starters, re.S):
-        refs = re.findall(r"'unapp/([a-z0-9-]+)'", m.group(3))
-        if refs:
-            out["starter page: " + m.group(2)] = refs
+    for name, refs in starter_pages().items():
+        # A starter page that is one page starter reads as that page's sections.
+        if len(refs) == 1 and refs[0] in out:
+            refs = out[refs[0]]
+        out[name] = refs
+    return out
+
+
+def starter_pages():
+    """{"<starter> / <page key>": [section slugs]} from unapp_get_starter_sites().
+
+    Keyed by starter and page key: several starters have an "About" or a
+    "Contact" page, and keying by title silently dropped all but the last.
+    """
+    src = open(os.path.join(THEME, "inc", "starter-sites.php")).read()
+    body = src[src.index("function unapp_get_starter_sites()"):src.index("apply_filters( 'unapp_starter_sites'")]
+    out = {}
+    starts = list(re.finditer(r"^\t\t'([a-z]+)'\s*=> array\($", body, re.M))
+    for i, m in enumerate(starts):
+        block = body[m.end():starts[i + 1].start() if i + 1 < len(starts) else len(body)]
+        home = re.search(r"'home'\s*=> 'unapp/([a-z0-9-]+)'", block)
+        if home:
+            out[f"{m.group(1)} / home"] = [home.group(1)]
+        for page in re.finditer(r"^\t\t\t\t'([a-z]+)'\s*=> array\((.*?)^\t\t\t\t\),", block, re.M | re.S):
+            refs = re.findall(r"'unapp/([a-z0-9-]+)'", page.group(2))
+            if refs:
+                out[f"{m.group(1)} / {page.group(1)}"] = refs
     return out
 
 
@@ -66,14 +88,15 @@ def check(name, refs):
     return seq, problems
 
 
-bad = 0
-for name, refs in compositions().items():
-    seq, problems = check(name, refs)
-    if problems:
-        bad += 1
-        print(f"\n{name}")
-        print("   " + " ".join(st for _, st in seq))
-        for p in dict.fromkeys(problems):
-            print("   !! " + p)
-print(f"\ncompositions with a rhythm problem: {bad}")
-sys.exit(0)
+if __name__ == "__main__":
+    bad = 0
+    for name, refs in compositions().items():
+        seq, problems = check(name, refs)
+        if problems:
+            bad += 1
+            print(f"\n{name}")
+            print("   " + " ".join(st for _, st in seq))
+            for p in dict.fromkeys(problems):
+                print("   !! " + p)
+    print(f"\ncompositions with a rhythm problem: {bad}")
+    sys.exit(0)
