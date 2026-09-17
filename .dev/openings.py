@@ -28,7 +28,7 @@ OPENINGS = [
     "fitness-schedule", "fitness-memberships", "fitness-location",
     "restaurant-menu", "restaurant-kitchen", "restaurant-hours",
     "agency-clients", "agency-team", "agency-contact",
-    "shop-workshop", "shop-faq",
+    "shop-workshop", "shop-faq", "shop-featured",
     "realestate-listings", "realestate-fees", "realestate-valuation",
     "medical-services", "medical-team", "medical-hours",
     "education-courses", "education-tutors", "education-contact",
