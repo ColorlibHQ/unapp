@@ -31,7 +31,30 @@ def uri(path):
 
 
 def php(expr):
-    return f"<?php echo {expr}; ?>"
+    """Echo a PHP expression as element text. Escaped: translations are input too."""
+    return f"<?php echo esc_html( {expr} ); ?>"
+
+
+def php_attr(expr):
+    """Echo a PHP expression inside an HTML attribute (alt, title, aria-label)."""
+    return f"<?php echo esc_attr( {expr} ); ?>"
+
+
+def php_url(expr):
+    """Echo a PHP expression as a URL (href, src)."""
+    return f"<?php echo esc_url( {expr} ); ?>"
+
+
+def php_format(expr, fmt, ctx, note):
+    """A value inside a translatable format string, echoed as element text.
+
+    For the characters around a value that belong to the language, not the
+    data: `'£' . $price` fixes the symbol and its position for every locale,
+    and hard-coded curly quotes are wrong in German or French. A format string
+    lets a translation write "39 £" or „…“.
+    """
+    return (f"<?php echo esc_html( sprintf( /* translators: {note} */ "
+            f"_x( '{esc(fmt)}', '{esc(ctx)}', '{DOM}' ), {expr} ) ); ?>")
 
 
 # --------------------------------------------------------------------------- attrs
@@ -683,7 +706,9 @@ def band(title, body, buttons_list, *, width="720px"):
 
 def contact_form(title, email):
     """Whichever form plugin is active, rendered inside a card."""
-    return ("<?php\necho unapp_contact_form(\n\tarray(\n"
+    return ("<?php\n"
+            "// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- block markup; each part is escaped where unapp_contact_form() builds it.\n"
+            "echo unapp_contact_form(\n\tarray(\n"
             f"\t\t'title' => _x( '{esc(title)}', 'Contact form heading', '{DOM}' ),\n"
             f"\t\t'email' => '{email}',\n"
             "\t)\n);\n?>")

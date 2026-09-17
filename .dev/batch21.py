@@ -41,8 +41,8 @@ for img, name, price, meta in LISTINGS:
                 "\t),\n")
 prelude += ");\n"
 listing = stack(
-    image(php("get_theme_file_uri( 'assets/images/abstract/' . $unapp_listing['image'] . '.svg' )"),
-          php("$unapp_listing['name']"), radius=CARD_RADIUS, aspect="4/3", scale="cover") + "\n" +
+    image(php_url("get_theme_file_uri( 'assets/images/abstract/' . $unapp_listing['image'] . '.svg' )"),
+          php_attr("$unapp_listing['name']"), radius=CARD_RADIUS, aspect="4/3", scale="cover") + "\n" +
     card_title(php("$unapp_listing['name']")) + "\n" +
     para(php("$unapp_listing['price']"), color="primary", weight="700") + "\n" +
     para(php("$unapp_listing['meta']"), color="muted", size="small"),
@@ -137,8 +137,8 @@ TEAM = [
     ("avatar-4", "Marie Colbert", "Hygienist · RDH", "Runs the hygiene programme and the school visits."),
 ]
 person = card(
-    avatar(php("get_theme_file_uri( 'assets/images/avatars/' . $unapp_clinician['image'] . '.svg' )"),
-           php("$unapp_clinician['name']")) + "\n" +
+    avatar(php_url("get_theme_file_uri( 'assets/images/avatars/' . $unapp_clinician['image'] . '.svg' )"),
+           php_attr("$unapp_clinician['name']")) + "\n" +
     card_title(php("$unapp_clinician['name']")) + "\n" +
     label(php("$unapp_clinician['role']")) + "\n" +
     para(php("$unapp_clinician['note']"), color="muted", size="small"))

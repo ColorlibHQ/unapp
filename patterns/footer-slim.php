@@ -27,7 +27,14 @@
 <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide">
 <!-- wp:paragraph {"fontSize":"small","style":{"color":{"text":"rgba(255,255,255,0.75)"}}} -->
-<p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.75);"><?php printf( esc_html__( '© %1$s %2$s', 'unapp' ), esc_html( date_i18n( 'Y' ) ), esc_html( get_bloginfo( 'name' ) ) ); ?></p>
+<p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.75);"><?php
+printf(
+	/* translators: 1: current year, 2: site name. */
+	esc_html__( '© %1$s %2$s', 'unapp' ),
+	esc_html( date_i18n( 'Y' ) ),
+	esc_html( get_bloginfo( 'name' ) )
+);
+?></p>
 <!-- /wp:paragraph -->
 <!-- wp:social-links {"iconColor":"base","iconColorValue":"#ffffff","className":"is-style-logos-only","size":"has-small-icon-size"} -->
 <ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only">

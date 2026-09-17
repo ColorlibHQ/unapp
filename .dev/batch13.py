@@ -57,8 +57,8 @@ STAFF = [
     ("avatar-8", "Ruth Nakamura", "Church administrator", "Bookings, the building, and the person who knows where everything is."),
 ]
 person = stack(
-    avatar(php("get_theme_file_uri( 'assets/images/avatars/' . $unapp_church_person['image'] . '.svg' )"),
-           php("$unapp_church_person['name']")) + "\n" +
+    avatar(php_url("get_theme_file_uri( 'assets/images/avatars/' . $unapp_church_person['image'] . '.svg' )"),
+           php_attr("$unapp_church_person['name']")) + "\n" +
     card_title(php("$unapp_church_person['name']")) + "\n" +
     label(php("$unapp_church_person['role']")) + "\n" +
     para(php("$unapp_church_person['note']"), color="muted", size="small"),

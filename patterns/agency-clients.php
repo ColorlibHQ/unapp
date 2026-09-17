@@ -57,14 +57,14 @@ $unapp_agency_clients = array(
 <!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%;">
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_agency_client['name']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_agency_client['name'] ); ?></h3>
 <!-- /wp:heading -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%;">
 <!-- wp:paragraph {"align":"right","textColor":"muted","fontSize":"small"} -->
-<p class="has-text-align-right has-muted-color has-text-color has-small-font-size"><?php echo $unapp_agency_client['meta']; ?></p>
+<p class="has-text-align-right has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_agency_client['meta'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->

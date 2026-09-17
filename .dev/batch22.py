@@ -62,8 +62,8 @@ TUTORS = [
     ("avatar-9", "Kwame Boakye", "Ceramics", "Production potter. Fires the kiln on Wednesdays, which is why glazing is on Tuesday."),
 ]
 person = stack(
-    avatar(php("get_theme_file_uri( 'assets/images/avatars/' . $unapp_tutor['image'] . '.svg' )"),
-           php("$unapp_tutor['name']")) + "\n" +
+    avatar(php_url("get_theme_file_uri( 'assets/images/avatars/' . $unapp_tutor['image'] . '.svg' )"),
+           php_attr("$unapp_tutor['name']")) + "\n" +
     card_title(php("$unapp_tutor['name']")) + "\n" +
     label(php("$unapp_tutor['role']")) + "\n" +
     para(php("$unapp_tutor['note']"), color="muted", size="small"),
@@ -159,8 +159,8 @@ SPEAKERS = [
     ("avatar-5", "Joachim Reiss", "Author, The Long Rewrite"),
 ]
 person = stack(
-    avatar(php("get_theme_file_uri( 'assets/images/avatars/' . $unapp_speaker['image'] . '.svg' )"),
-           php("$unapp_speaker['name']")) + "\n" +
+    avatar(php_url("get_theme_file_uri( 'assets/images/avatars/' . $unapp_speaker['image'] . '.svg' )"),
+           php_attr("$unapp_speaker['name']")) + "\n" +
     card_title(php("$unapp_speaker['name']")) + "\n" +
     label(php("$unapp_speaker['role']")),
     gap=CARD_GAP)

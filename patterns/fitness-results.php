@@ -51,13 +51,13 @@ $unapp_fitness_stats = array(
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"className":"unapp-count","fontSize":"xxx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
-<p class="unapp-count has-xxx-large-font-size" style="font-weight:700;line-height:1;"><?php echo $unapp_fitness_stat['number']; ?></p>
+<p class="unapp-count has-xxx-large-font-size" style="font-weight:700;line-height:1;"><?php echo esc_html( $unapp_fitness_stat['number'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}}} -->
-<p style="font-weight:600;"><?php echo $unapp_fitness_stat['label']; ?></p>
+<p style="font-weight:600;"><?php echo esc_html( $unapp_fitness_stat['label'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_fitness_stat['note']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_fitness_stat['note'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

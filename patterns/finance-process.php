@@ -51,13 +51,13 @@ $unapp_finance_step_number = 0;
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"textColor":"primary","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
-<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo str_pad( (string) ++$unapp_finance_step_number, 2, '0', STR_PAD_LEFT ); ?></p>
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo esc_html( str_pad( (string) ++$unapp_finance_step_number, 2, '0', STR_PAD_LEFT ) ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_finance_step['title']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_finance_step['title'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_finance_step['text']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_finance_step['text'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

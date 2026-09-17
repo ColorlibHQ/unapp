@@ -49,13 +49,13 @@ $unapp_agency_bands = array(
 <!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group is-style-card" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_agency_band['name']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_agency_band['name'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"xx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
-<p class="has-xx-large-font-size" style="font-weight:700;line-height:1;"><?php echo $unapp_agency_band['price']; ?></p>
+<p class="has-xx-large-font-size" style="font-weight:700;line-height:1;"><?php echo esc_html( $unapp_agency_band['price'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_agency_band['text']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_agency_band['text'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

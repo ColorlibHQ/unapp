@@ -49,7 +49,7 @@ for name, price, note, feats, featured, cta in PLANS:
 prelude += ");\n"
 
 price = group(
-    para(php("'£' . $unapp_fitness_plan['price']"), size="xxx-large", weight="700", line_height="1") + "\n" +
+    para(php_format("$unapp_fitness_plan['price']", "£%s", "Membership price with currency", "%s: monthly price, a number."), size="xxx-large", weight="700", line_height="1") + "\n" +
     para(t("a month", "Membership period"), color="muted", size="small"),
     layout="flex", orientation="horizontal", gap="20", vertical_align="bottom")
 feature_list = ('<!-- wp:list {"className":"is-style-checklist"} -->\n<ul class="wp-block-list is-style-checklist">\n'
@@ -116,8 +116,8 @@ STORIES = [
      "I came back six weeks after having my son. They rewrote the whole programme around what my body could actually do that month."),
 ]
 attribution = group(
-    avatar(php("get_theme_file_uri( 'assets/images/avatars/' . $unapp_fitness_story['image'] . '.svg' )"),
-           php("$unapp_fitness_story['name']"), size=AVATAR_ROW) + "\n" +
+    avatar(php_url("get_theme_file_uri( 'assets/images/avatars/' . $unapp_fitness_story['image'] . '.svg' )"),
+           php_attr("$unapp_fitness_story['name']"), size=AVATAR_ROW) + "\n" +
     stack(para(php("$unapp_fitness_story['name']"), weight="600") + "\n" +
           para(php("$unapp_fitness_story['meta']"), color="muted", size="small"), gap="0"),
     layout="flex", orientation="horizontal", gap="30", vertical_align="center")

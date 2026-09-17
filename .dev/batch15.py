@@ -38,8 +38,8 @@ TEAM = [
      "Writes the plans, models the scenarios and finds the pension nobody remembered they had."),
 ]
 person = card(
-    avatar(php("get_theme_file_uri( 'assets/images/avatars/' . $unapp_finance_person['image'] . '.svg' )"),
-           php("$unapp_finance_person['name']")) + "\n" +
+    avatar(php_url("get_theme_file_uri( 'assets/images/avatars/' . $unapp_finance_person['image'] . '.svg' )"),
+           php_attr("$unapp_finance_person['name']")) + "\n" +
     card_title(php("$unapp_finance_person['name']")) + "\n" +
     label(php("$unapp_finance_person['role']")) + "\n" +
     para(php("$unapp_finance_person['note']"), color="muted", size="small"))

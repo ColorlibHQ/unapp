@@ -127,8 +127,8 @@ for name, m, y, note, feats, featured in PLANS:
                 "\t),\n")
 prelude += ");\n"
 price = group(
-    para('<span class="unapp-price__monthly">' + php("'$' . $unapp_toggle_plan['monthly']") + '</span>'
-         '<span class="unapp-price__yearly">' + php("'$' . $unapp_toggle_plan['yearly']") + '</span>',
+    para('<span class="unapp-price__monthly">' + php_format("$unapp_toggle_plan['monthly']", "$%s", "Plan price with currency", "%s: price per person per month, a number.") + '</span>'
+         '<span class="unapp-price__yearly">' + php_format("$unapp_toggle_plan['yearly']", "$%s", "Plan price with currency", "%s: price per person per month, a number.") + '</span>',
          size="xxx-large", weight="700", line_height="1", class_name="unapp-price") + "\n" +
     para(t("per person, per month", "Plan period"), color="muted", size="small"),
     layout="flex", orientation="horizontal", gap="20", vertical_align="bottom")

@@ -53,13 +53,13 @@ $unapp_sticky_number = 0;
 <!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group is-style-card" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
 <!-- wp:paragraph {"textColor":"primary","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
-<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo str_pad( (string) ++$unapp_sticky_number, 2, '0', STR_PAD_LEFT ); ?></p>
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo esc_html( str_pad( (string) ++$unapp_sticky_number, 2, '0', STR_PAD_LEFT ) ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_sticky_step['title']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_sticky_step['title'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted"} -->
-<p class="has-muted-color has-text-color"><?php echo $unapp_sticky_step['text']; ?></p>
+<p class="has-muted-color has-text-color"><?php echo esc_html( $unapp_sticky_step['text'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

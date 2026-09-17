@@ -61,10 +61,10 @@ $unapp_church_expect = array(
 </div>
 <!-- /wp:group -->
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_church_item['title']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_church_item['title'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted"} -->
-<p class="has-muted-color has-text-color"><?php echo $unapp_church_item['text']; ?></p>
+<p class="has-muted-color has-text-color"><?php echo esc_html( $unapp_church_item['text'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

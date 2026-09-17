@@ -56,10 +56,10 @@ $unapp_church_beliefs = array(
 </div>
 <!-- /wp:group -->
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_church_belief['title']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_church_belief['title'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted"} -->
-<p class="has-muted-color has-text-color"><?php echo $unapp_church_belief['text']; ?></p>
+<p class="has-muted-color has-text-color"><?php echo esc_html( $unapp_church_belief['text'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

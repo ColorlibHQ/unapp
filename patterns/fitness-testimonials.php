@@ -49,20 +49,20 @@ $unapp_fitness_stories = array(
 <!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group is-style-card" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
 <!-- wp:paragraph {"fontSize":"large","style":{"typography":{"lineHeight":"1.5"}}} -->
-<p class="has-large-font-size" style="line-height:1.5;"><?php echo $unapp_fitness_story['quote']; ?></p>
+<p class="has-large-font-size" style="line-height:1.5;"><?php echo esc_html( $unapp_fitness_story['quote'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"horizontal","verticalAlignment":"center"}} -->
 <div class="wp-block-group">
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","width":"56px","height":"56px","style":{"border":{"radius":"999px"}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo get_theme_file_uri( 'assets/images/avatars/' . $unapp_fitness_story['image'] . '.svg' ); ?>" alt="<?php echo $unapp_fitness_story['name']; ?>" style="border-radius:999px;width:56px;height:56px;"/></figure>
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/' . $unapp_fitness_story['image'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_fitness_story['name'] ); ?>" style="border-radius:999px;width:56px;height:56px;"/></figure>
 <!-- /wp:image -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}}} -->
-<p style="font-weight:600;"><?php echo $unapp_fitness_story['name']; ?></p>
+<p style="font-weight:600;"><?php echo esc_html( $unapp_fitness_story['name'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_fitness_story['meta']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_fitness_story['meta'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

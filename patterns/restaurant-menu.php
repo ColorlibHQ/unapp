@@ -46,7 +46,7 @@ $unapp_menu = array(
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"textColor":"primary","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
-<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo $unapp_course['course']; ?></p>
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo esc_html( $unapp_course['course'] ); ?></p>
 <!-- /wp:paragraph -->
 <?php foreach ( $unapp_course['dishes'] as $unapp_dish ) : ?>
 <!-- wp:columns {"verticalAlignment":"top","isStackedOnMobile":false,"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"var:preset|spacing|20"}}}} -->
@@ -54,14 +54,14 @@ $unapp_menu = array(
 <!-- wp:column {"verticalAlignment":"top","width":"80%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:80%;">
 <!-- wp:paragraph -->
-<p><?php echo $unapp_dish['dish']; ?></p>
+<p><?php echo esc_html( $unapp_dish['dish'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"top","width":"20%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:20%;">
 <!-- wp:paragraph {"align":"right","textColor":"muted"} -->
-<p class="has-text-align-right has-muted-color has-text-color"><?php echo '£' . $unapp_dish['price']; ?></p>
+<p class="has-text-align-right has-muted-color has-text-color"><?php echo esc_html( sprintf( /* translators: %s: price of the dish, a number. */ _x( '£%s', 'Menu price with currency', 'unapp' ), $unapp_dish['price'] ) ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->

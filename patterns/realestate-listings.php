@@ -58,16 +58,16 @@ $unapp_listings = array(
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group">
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","aspectRatio":"4/3","scale":"cover","style":{"border":{"radius":"20px"}}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo get_theme_file_uri( 'assets/images/abstract/' . $unapp_listing['image'] . '.svg' ); ?>" alt="<?php echo $unapp_listing['name']; ?>" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;"/></figure>
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/' . $unapp_listing['image'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_listing['name'] ); ?>" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;"/></figure>
 <!-- /wp:image -->
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_listing['name']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_listing['name'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"primary","style":{"typography":{"fontWeight":"700"}}} -->
-<p class="has-primary-color has-text-color" style="font-weight:700;"><?php echo $unapp_listing['price']; ?></p>
+<p class="has-primary-color has-text-color" style="font-weight:700;"><?php echo esc_html( $unapp_listing['price'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_listing['meta']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_listing['meta'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

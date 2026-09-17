@@ -64,15 +64,15 @@ $unapp_fitness_plans = array(
 <!-- /wp:paragraph -->
 <?php endif; ?>
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_fitness_plan['name']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_fitness_plan['name'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_fitness_plan['note']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_fitness_plan['note'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"horizontal","verticalAlignment":"bottom"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"fontSize":"xxx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
-<p class="has-xxx-large-font-size" style="font-weight:700;line-height:1;"><?php echo '£' . $unapp_fitness_plan['price']; ?></p>
+<p class="has-xxx-large-font-size" style="font-weight:700;line-height:1;"><?php echo esc_html( sprintf( /* translators: %s: monthly price, a number. */ _x( '£%s', 'Membership price with currency', 'unapp' ), $unapp_fitness_plan['price'] ) ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
 <p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html_x( 'a month', 'Membership period', 'unapp' ); ?></p>
@@ -106,15 +106,15 @@ $unapp_fitness_plans = array(
 <!-- /wp:paragraph -->
 <?php endif; ?>
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_fitness_plan['name']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_fitness_plan['name'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_fitness_plan['note']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_fitness_plan['note'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"horizontal","verticalAlignment":"bottom"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"fontSize":"xxx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
-<p class="has-xxx-large-font-size" style="font-weight:700;line-height:1;"><?php echo '£' . $unapp_fitness_plan['price']; ?></p>
+<p class="has-xxx-large-font-size" style="font-weight:700;line-height:1;"><?php echo esc_html( sprintf( /* translators: %s: monthly price, a number. */ _x( '£%s', 'Membership price with currency', 'unapp' ), $unapp_fitness_plan['price'] ) ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
 <p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html_x( 'a month', 'Membership period', 'unapp' ); ?></p>

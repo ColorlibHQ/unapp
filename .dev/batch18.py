@@ -56,7 +56,7 @@ prelude += ");\n"
 
 dish_row = columns([
     column(para(php("$unapp_dish['dish']")), width="80%", vertical_align="top"),
-    column(para(php("'£' . $unapp_dish['price']"), color="muted", align="right"),
+    column(para(php_format("$unapp_dish['price']", "£%s", "Menu price with currency", "%s: price of the dish, a number."), color="muted", align="right"),
            width="20%", vertical_align="top"),
 ], gap="20", vertical_align="top", is_stacked=False)
 course_block = stack(
@@ -130,7 +130,7 @@ REVIEWS = [
 ]
 prelude = php_rows("unapp_reviews", ("quote", "source"), REVIEWS, "Restaurant review")
 review = card(
-    para(php("'&#8220;' . $unapp_review['quote'] . '&#8221;'"), size="large", line_height="1.5") + "\n" +
+    para(php_format("$unapp_review['quote']", "“%s”", "Review in quotation marks", "%s: what the reviewer wrote."), size="large", line_height="1.5") + "\n" +
     label(php("$unapp_review['source']")))
 body = section_std(
     intro(eyebrow_text=t("Said about us", "Section eyebrow label"), title=t("Kind words")) + "\n" +
@@ -247,8 +247,8 @@ TEAM = [
 ]
 prelude = php_rows("unapp_agency_team", ("image", "name", "role"), TEAM, "Studio member")
 person = stack(
-    avatar(php("get_theme_file_uri( 'assets/images/avatars/' . $unapp_agency_person['image'] . '.svg' )"),
-           php("$unapp_agency_person['name']")) + "\n" +
+    avatar(php_url("get_theme_file_uri( 'assets/images/avatars/' . $unapp_agency_person['image'] . '.svg' )"),
+           php_attr("$unapp_agency_person['name']")) + "\n" +
     card_title(php("$unapp_agency_person['name']")) + "\n" +
     label(php("$unapp_agency_person['role']")),
     gap=CARD_GAP)

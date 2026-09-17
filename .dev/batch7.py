@@ -123,7 +123,7 @@ body = group(
         '<!-- /wp:navigation -->',
         layout="flex", wrap="wrap", justify="space-between", gap="40", align="wide") + "\n" +
     group(
-        para("<?php printf( esc_html__( '© %1$s %2$s', 'unapp' ), esc_html( date_i18n( 'Y' ) ), esc_html( get_bloginfo( 'name' ) ) ); ?>",
+        para("<?php\nprintf(\n\t/* translators: 1: current year, 2: site name. */\n\tesc_html__( '© %1$s %2$s', 'unapp' ),\n\tesc_html( date_i18n( 'Y' ) ),\n\tesc_html( get_bloginfo( 'name' ) )\n);\n?>",
              size="small", custom_color="rgba(255,255,255,0.75)") + "\n" +
         social([("x", "https://x.com"), ("linkedin", "https://linkedin.com"), ("github", "https://github.com")],
                size="has-small-icon-size", color="base", value="#ffffff"),

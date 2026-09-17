@@ -43,10 +43,10 @@ $unapp_reviews = array(
 <!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group is-style-card" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
 <!-- wp:paragraph {"fontSize":"large","style":{"typography":{"lineHeight":"1.5"}}} -->
-<p class="has-large-font-size" style="line-height:1.5;"><?php echo '&#8220;' . $unapp_review['quote'] . '&#8221;'; ?></p>
+<p class="has-large-font-size" style="line-height:1.5;"><?php echo esc_html( sprintf( /* translators: %s: what the reviewer wrote. */ _x( '“%s”', 'Review in quotation marks', 'unapp' ), $unapp_review['quote'] ) ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"primary","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
-<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo $unapp_review['source']; ?></p>
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo esc_html( $unapp_review['source'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

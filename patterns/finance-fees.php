@@ -49,13 +49,13 @@ $unapp_finance_fees = array(
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
-<p class="has-muted-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo $unapp_finance_fee['label']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo esc_html( $unapp_finance_fee['label'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"xxx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
-<p class="has-xxx-large-font-size" style="font-weight:700;line-height:1;"><?php echo $unapp_finance_fee['amount']; ?></p>
+<p class="has-xxx-large-font-size" style="font-weight:700;line-height:1;"><?php echo esc_html( $unapp_finance_fee['amount'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_finance_fee['text']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_finance_fee['text'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

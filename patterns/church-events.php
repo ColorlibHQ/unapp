@@ -53,17 +53,17 @@ $unapp_church_events = array(
 <!-- wp:column {"verticalAlignment":"top","width":"26%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:26%;">
 <!-- wp:paragraph {"textColor":"primary","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
-<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo $unapp_church_event['when']; ?></p>
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase;"><?php echo esc_html( $unapp_church_event['when'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"top","width":"74%","style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:74%;">
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php echo $unapp_church_event['title']; ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_church_event['title'] ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php echo $unapp_church_event['text']; ?></p>
+<p class="has-muted-color has-text-color has-small-font-size"><?php echo esc_html( $unapp_church_event['text'] ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->
