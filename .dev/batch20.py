@@ -134,14 +134,14 @@ feature_list = ('<!-- wp:list {"className":"is-style-checklist"} -->\n<ul class=
                 "<?php foreach ( $unapp_toggle_plan['features'] as $unapp_toggle_feature ) : ?>\n"
                 '<!-- wp:list-item -->\n<li><?php echo esc_html( $unapp_toggle_feature ); ?></li>\n<!-- /wp:list-item -->\n'
                 '<?php endforeach; ?>\n</ul>\n<!-- /wp:list -->')
-plan_inner = (card_title(php("$unapp_toggle_plan['name']")) + "\n" +
-              para(php("$unapp_toggle_plan['note']"), color="muted", size="small") + "\n" +
-              price + "\n" + feature_list + "\n" +
-              buttons([{"text": t("Start free"), "width": 100,
+plan_top = (card_title(php("$unapp_toggle_plan['name']")) + "\n" +
+            para(php("$unapp_toggle_plan['note']"), color="muted", size="small") + "\n" +
+            price + "\n" + feature_list)
+plan_bottom = (buttons([{"text": t("Start free"), "width": 100,
                         "url": "<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( $unapp_toggle_plan['name'] ) ); ?>"}]))
 plan = ("<?php if ( $unapp_toggle_plan['featured'] ) : ?>\n"
-        + card(plan_inner, variation="is-style-elevated")
-        + "\n<?php else : ?>\n" + card(plan_inner) + "\n<?php endif; ?>")
+        + plan_card(plan_top, plan_bottom, variation="is-style-elevated")
+        + "\n<?php else : ?>\n" + plan_card(plan_top, plan_bottom) + "\n<?php endif; ?>")
 switch = group(
     '<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->\n<div class="wp-block-buttons">\n'
     '<!-- wp:button {"className":"unapp-period is-style-outline","fontSize":"small"} -->\n'

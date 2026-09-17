@@ -222,16 +222,16 @@ feature_list = ('<!-- wp:list {"className":"is-style-checklist"} -->\n<ul class=
                 "<?php foreach ( $unapp_ticket['features'] as $unapp_ticket_feature ) : ?>\n"
                 '<!-- wp:list-item -->\n<li><?php echo esc_html( $unapp_ticket_feature ); ?></li>\n<!-- /wp:list-item -->\n'
                 '<?php endforeach; ?>\n</ul>\n<!-- /wp:list -->')
-inner = (card_title(php("$unapp_ticket['name']")) + "\n" +
-         para(php("$unapp_ticket['price']"), size="xxx-large", weight="700", line_height="1") + "\n" +
-         para(php("$unapp_ticket['note']"), color="muted", size="small") + "\n" +
-         feature_list + "\n" +
-         buttons([{"text": t("Buy"), "width": 100,
+top = (card_title(php("$unapp_ticket['name']")) + "\n" +
+       para(php("$unapp_ticket['price']"), size="xxx-large", weight="700", line_height="1") + "\n" +
+       para(php("$unapp_ticket['note']"), color="muted", size="small") + "\n" +
+       feature_list)
+bottom = (buttons([{"text": t("Buy"), "width": 100,
                    "url": "<?php echo esc_url( 'mailto:hello@thelongrewrite.example?subject=' . rawurlencode( sprintf( "
                           "/* translators: %s: ticket name. */ _x( 'Tickets: %s', 'Email subject line', 'unapp' ), "
                           "$unapp_ticket['name'] ) ) ); ?>"}]))
-ticket = ("<?php if ( $unapp_ticket['featured'] ) : ?>\n" + card(inner, variation="is-style-elevated")
-          + "\n<?php else : ?>\n" + card(inner) + "\n<?php endif; ?>")
+ticket = ("<?php if ( $unapp_ticket['featured'] ) : ?>\n" + plan_card(top, bottom, variation="is-style-elevated")
+          + "\n<?php else : ?>\n" + plan_card(top, bottom) + "\n<?php endif; ?>")
 body = section_std(
     intro(eyebrow_text=t("Tickets", "Section eyebrow label"),
           title=t("Three prices, one of them nothing"),

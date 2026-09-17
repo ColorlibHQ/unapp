@@ -68,12 +68,15 @@ plan_button = ('<!-- wp:buttons -->\n<div class="wp-block-buttons">\n<!-- wp:but
 badge = ("<?php if ( $unapp_fitness_plan['featured'] ) : ?>\n"
          + label(t("Most members choose this", "Highlighted membership badge"))
          + "\n<?php endif; ?>")
-plan_inner = (badge + "\n" + card_title(php("$unapp_fitness_plan['name']")) + "\n" +
-              para(php("$unapp_fitness_plan['note']"), color="muted", size="small") + "\n" +
-              price + "\n" + feature_list + "\n" + plan_button)
+plan_top = (card_title(php("$unapp_fitness_plan['name']")) + "\n" +
+            para(php("$unapp_fitness_plan['note']"), color="muted", size="small") + "\n" +
+            price + "\n" + feature_list)
+# The badge sits above its button: at the top it pushed that card's name,
+# price and features a line below the other two.
+plan_bottom = badge + "\n" + plan_button
 plan = ("<?php if ( $unapp_fitness_plan['featured'] ) : ?>\n"
-        + card(plan_inner, variation="is-style-elevated")
-        + "\n<?php else : ?>\n" + card(plan_inner) + "\n<?php endif; ?>")
+        + plan_card(plan_top, plan_bottom, variation="is-style-elevated")
+        + "\n<?php else : ?>\n" + plan_card(plan_top, plan_bottom) + "\n<?php endif; ?>")
 body = section_std(
     intro(eyebrow_text=t("Memberships", "Section eyebrow label"),
           title=t("Three ways to train here"),

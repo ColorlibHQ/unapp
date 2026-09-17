@@ -801,6 +801,18 @@ def card(inner, *, variation="is-style-card", pad=CARD_PAD, gap=CARD_GAP,
                  pad={"top": pad, "bottom": pad, "left": pad, "right": pad})
 
 
+def plan_card(top, bottom, *, variation="is-style-card"):
+    """A price card whose call to action sits on the card's bottom edge.
+
+    Cards in a grid row share one height. The card is split into what the
+    plan is (top) and what to do about it (bottom), pushed apart with
+    space-between, so every button in the row lines up however long the
+    feature lists run, and a badge beside one button moves no other row.
+    """
+    return card(stack(top, gap=CARD_GAP) + "\n" + stack(bottom, gap="20", justify="stretch"),
+                variation=variation, justify="stretch", vertical_align="space-between")
+
+
 def stack(inner, *, gap=STACK_GAP, justify=None):
     """A vertical run of blocks. Also what makes an icon badge shrink to content."""
     return group(inner, layout="flex", orientation="vertical", gap=gap, justify=justify)
