@@ -4,9 +4,10 @@
  *
  * Creates a real "Home" page (content = the "Home landing page" pattern,
  * template "Page (No Title)") and a "Blog" posts page, then points
- * Settings → Reading at them. Runs automatically right after activation when
- * the site has no static front page yet; otherwise an admin notice offers a
- * one-click setup so an existing front page is never overridden silently.
+ * Settings → Reading at them. Runs automatically right after activation only on
+ * a fresh install (WordPress's `fresh_site` flag, which clears as soon as anyone
+ * publishes or edits content). On any other site an admin notice offers the
+ * one-click setup, so an existing blog's front page is never replaced unasked.
  *
  * Disable the automatic run with:
  *   add_filter( 'unapp_auto_setup_front_page', '__return_false' );
@@ -129,7 +130,8 @@ function unapp_setup_front_page() {
 	}
 
 	// 2. Blog (posts) page — reuse whatever the site already uses.
-	$blog_id = absint( get_option( 'page_for_posts' ) );
+	$blog_created = false;
+	$blog_id      = absint( get_option( 'page_for_posts' ) );
 	if ( ! $blog_id || 'publish' !== get_post_status( $blog_id ) ) {
 		$blog_id = isset( $state['blog'] ) ? absint( $state['blog'] ) : 0;
 	}
@@ -157,6 +159,7 @@ function unapp_setup_front_page() {
 			}
 			return $blog_id;
 		}
+		$blog_created = true;
 	}
 
 	if ( $kses_active ) {
@@ -171,10 +174,11 @@ function unapp_setup_front_page() {
 	update_option(
 		UNAPP_SETUP_OPTION,
 		array(
-			'home'    => $home_id,
-			'blog'    => $blog_id,
-			'version' => UNAPP_VERSION,
-			'time'    => time(),
+			'home'         => $home_id,
+			'blog'         => $blog_id,
+			'blog_created' => $blog_created,
+			'version'      => UNAPP_VERSION,
+			'time'         => time(),
 		)
 	);
 	delete_option( UNAPP_OFFER_OPTION );
@@ -199,7 +203,12 @@ function unapp_after_switch_theme() {
 
 	$has_static_front = 'page' === get_option( 'show_on_front' ) && absint( get_option( 'page_on_front' ) ) > 0;
 
-	if ( ! $has_static_front && apply_filters( 'unapp_auto_setup_front_page', true ) ) {
+	// Only a brand-new install is set up without asking. A site that already
+	// shows its latest posts is an established blog, and replacing its front
+	// page with a landing page is not something to do on activation.
+	$fresh_site = (bool) get_option( 'fresh_site' );
+
+	if ( ! $has_static_front && $fresh_site && apply_filters( 'unapp_auto_setup_front_page', true ) ) {
 		update_option( 'unapp_pending_front_page_setup', 1 );
 		return;
 	}
@@ -215,7 +224,12 @@ function unapp_run_pending_setup() {
 	if ( ! get_option( 'unapp_pending_front_page_setup' ) ) {
 		return;
 	}
-	delete_option( 'unapp_pending_front_page_setup' );
+
+	// delete_option() reports whether this request removed the row, so two
+	// requests arriving together cannot both run the setup and create two Homes.
+	if ( ! delete_option( 'unapp_pending_front_page_setup' ) ) {
+		return;
+	}
 
 	if ( get_option( UNAPP_SETUP_OPTION ) ) {
 		return;
@@ -290,10 +304,14 @@ function unapp_front_page_notices() {
 		$state = get_option( UNAPP_SETUP_OPTION, array() );
 
 		if ( 'done' === $result && ! empty( $state['home'] ) ) {
+			$message = empty( $state['blog_created'] )
+				? __( 'A "Home" page with the Unapp landing page was created, and it and your existing posts page were assigned in Settings → Reading. Everything on the front page is editable as normal page content.', 'unapp' )
+				: __( 'A "Home" page with the Unapp landing page and a "Blog" page were created and assigned in Settings → Reading. Everything on the front page is editable as normal page content.', 'unapp' );
+
 			printf(
 				'<div class="notice notice-success is-dismissible"><p><strong>%1$s</strong> %2$s</p><p><a class="button button-primary" href="%3$s">%4$s</a> <a class="button" href="%5$s">%6$s</a> <a class="button" href="%7$s">%8$s</a></p></div>',
 				esc_html__( 'Unapp is ready.', 'unapp' ),
-				esc_html__( 'A "Home" page with the Unapp landing page and a "Blog" page were created and assigned in Settings → Reading. Everything on the front page is editable as normal page content.', 'unapp' ),
+				esc_html( $message ),
 				esc_url( home_url( '/' ) ),
 				esc_html__( 'View front page', 'unapp' ),
 				esc_url( get_edit_post_link( absint( $state['home'] ) ) ),
@@ -319,13 +337,19 @@ function unapp_front_page_notices() {
 	$setup_url   = wp_nonce_url( admin_url( 'admin-post.php?action=unapp_setup_front_page' ), 'unapp_setup_front_page' );
 	$dismiss_url = wp_nonce_url( admin_url( 'admin-post.php?action=unapp_dismiss_front_page_setup' ), 'unapp_dismiss_front_page_setup' );
 
+	if ( $front_title ) {
+		/* translators: %s: title of the current front page. */
+		$offer = sprintf( esc_html__( 'Your site already uses "%s" as its front page, so it was left untouched. Unapp can create a "Home" page with its landing-page design and make it the front page — you can switch back any time under Settings → Reading.', 'unapp' ), esc_html( $front_title ) );
+	} elseif ( 'posts' === get_option( 'show_on_front' ) ) {
+		$offer = esc_html__( 'Your front page shows your latest posts, so it was left untouched. Unapp can create a "Home" page with its landing-page design and make it the front page, with your posts on a "Blog" page — you can switch back any time under Settings → Reading.', 'unapp' );
+	} else {
+		$offer = esc_html__( 'Unapp can create a "Home" page with its landing-page design and a "Blog" page, and set them under Settings → Reading.', 'unapp' );
+	}
+
 	printf(
-		'<div class="notice notice-info"><p><strong>%1$s</strong> %2$s</p><p><a class="button button-primary" href="%7$s">%8$s</a> <a class="button" href="%3$s">%4$s</a> <a class="button" href="%5$s">%6$s</a></p></div>',
+		'<div class="notice notice-info is-dismissible"><p><strong>%1$s</strong> %2$s</p><p><a class="button button-primary" href="%7$s">%8$s</a> <a class="button" href="%3$s">%4$s</a> <a class="button" href="%5$s">%6$s</a></p></div>',
 		esc_html__( 'Thanks for choosing Unapp!', 'unapp' ),
-		$front_title
-			/* translators: %s: title of the current front page. */
-			? sprintf( esc_html__( 'Your site already uses "%s" as its front page, so it was left untouched. Unapp can create a "Home" page with its landing-page design and make it the front page — you can switch back any time under Settings → Reading.', 'unapp' ), esc_html( $front_title ) )
-			: esc_html__( 'Unapp can create a "Home" page with its landing-page design and a "Blog" page, and set them under Settings → Reading.', 'unapp' ),
+		$offer,
 		esc_url( $setup_url ),
 		esc_html__( 'Set up the Unapp front page', 'unapp' ),
 		esc_url( $dismiss_url ),
