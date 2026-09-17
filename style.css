@@ -974,3 +974,26 @@ Unapp is distributed under the terms of the GNU GPL.
 .wp-block-site-tagline.unapp-footer-note {
 	color: rgba(255, 255, 255, 0.75);
 }
+
+/* --------------------------------------------------------------------------
+   Footer bottom row on phones
+
+   The niche footers end in an unstacked 60/40 row: copyright on the left,
+   credit right-aligned. On a phone that squeezed both into two-line wraps
+   (196px and 130px wide at 390, three lines at 360), so there the two stack
+   and share the start edge.
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 599px) {
+	footer .wp-block-columns.is-not-stacked-on-mobile:has(> .wp-block-column > .has-text-align-right) {
+		flex-wrap: wrap !important;
+	}
+
+	footer .wp-block-columns.is-not-stacked-on-mobile:has(> .wp-block-column > .has-text-align-right) > .wp-block-column {
+		flex-basis: 100% !important;
+	}
+
+	footer .wp-block-columns.is-not-stacked-on-mobile > .wp-block-column > .has-text-align-right {
+		text-align: start;
+	}
+}
