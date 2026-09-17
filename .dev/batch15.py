@@ -31,7 +31,7 @@ write_pattern("finance-process", title="Finance: how advice works", cats=N + ", 
 # ---------------------------------------------------------------- advisers
 TEAM = [
     ("avatar-5", "Helen Ashworth", "Chartered Financial Planner · FCII, CFP",
-     "Twenty-eight years advising families through retirement, divorce and inheritance. Founded the firm in 2009."),
+     "Twenty-eight years advising families through retirement, divorce and inheritance. Joined Ridgeway in 2009 and has led it since."),
     ("avatar-10", "Idris Mahmood", "Financial Planner · DipPFS",
      "Specialises in company directors and the awkward business of extracting money from your own company sensibly."),
     ("avatar-4", "Sarah Whitcombe", "Paraplanner · DipPFS",

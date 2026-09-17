@@ -15,7 +15,7 @@ $unapp_finance_team = array(
 		'image' => 'avatar-5',
 		'name' => _x( "Helen Ashworth", 'Adviser', 'unapp' ),
 		'role' => _x( "Chartered Financial Planner · FCII, CFP", 'Adviser', 'unapp' ),
-		'note' => _x( "Twenty-eight years advising families through retirement, divorce and inheritance. Founded the firm in 2009.", 'Adviser', 'unapp' ),
+		'note' => _x( "Twenty-eight years advising families through retirement, divorce and inheritance. Joined Ridgeway in 2009 and has led it since.", 'Adviser', 'unapp' ),
 	),
 	array(
 		'image' => 'avatar-10',

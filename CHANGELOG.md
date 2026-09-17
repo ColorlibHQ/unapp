@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.5.7 – 2026-09-17
+
+### Fixed
+- **The Finance starter contradicted itself.** The home page's "Independent since 1998" and the "28 years" figure sat beside an adviser biography that said she founded the firm in 2009. She now joined in 2009 and has led it since, so the three agree.
+
 ## 2.5.6 – 2026-09-17
 
 ### Fixed
