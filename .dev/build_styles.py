@@ -163,7 +163,9 @@ PALETTES = [
 
 DARK_BUTTON_STYLES = {
     "elements": {"button": {
-        "color": {"background": "var:preset|color|secondary", "text": "var:preset|color|contrast"},
+        # base, not contrast: in a dark palette contrast is the light tone, which put
+        # #f3f4f8 on Midnight's #4fd391 secondary (1.73:1). base gives 9.68:1.
+        "color": {"background": "var:preset|color|secondary", "text": "var:preset|color|base"},
         ":hover": {"color": {"background": "var:preset|color|primary", "text": "var:preset|color|base"}},
         ":focus": {"color": {"background": "var:preset|color|primary", "text": "var:preset|color|base"}},
         ":active": {"color": {"background": "var:preset|color|primary", "text": "var:preset|color|base"}},
