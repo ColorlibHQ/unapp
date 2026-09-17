@@ -915,7 +915,10 @@ Unapp is distributed under the terms of the GNU GPL.
 	filter: grayscale(1);
 }
 
-.unapp-marquee:hover .unapp-marquee__track {
+/* Pause for a pointer and for the keyboard alike: a logo that is a link must
+   hold still while it has focus. */
+.unapp-marquee:hover .unapp-marquee__track,
+.unapp-marquee:focus-within .unapp-marquee__track {
 	animation-play-state: paused;
 }
 
