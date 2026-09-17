@@ -89,6 +89,20 @@ Unapp is distributed under the terms of the GNU GPL.
 	flex-wrap: wrap;
 }
 
+/* The small, uppercase, tracked style theme.json gives core/navigation is the
+   header's. Every footer's link columns picked it up too and sat in capitals
+   beside sentence-case columns, so menus outside the header read as the text
+   around them. A menu that collapses into the mobile overlay is a site menu
+   wherever it sits, and keeps the style — which is also how a header part
+   edited on its own in the Site Editor, outside any <header>, keeps it. */
+.wp-block-navigation:not(header *, .unapp-header-row *, :has(.wp-block-navigation__responsive-container-open)) {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	letter-spacing: inherit;
+	text-transform: none;
+}
+
 /* ==========================================================================
    Focus
    One consistent, high-contrast focus ring everywhere, instead of leaving it to
