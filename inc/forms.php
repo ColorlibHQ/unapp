@@ -250,7 +250,27 @@ function unapp_detect_form() {
 }
 
 /**
- * Render the contact form, or the fallback when no form plugin is available.
+ * The admin-only hint shown under the email fallback.
+ *
+ * @return string
+ */
+function unapp_form_admin_hint() {
+	return __( 'Only you can see this: install any form plugin — WPForms, Contact Form 7, Gravity Forms, Fluent Forms and several others are recognised — and its form replaces this panel automatically.', 'unapp' );
+}
+
+/**
+ * The contact form slot a pattern stores in the page.
+ *
+ * Patterns are expanded into post content when a starter is applied or a
+ * pattern is inserted, so anything decided here is frozen into the page. In
+ * 2.5.4 that froze two things: the form detected at that moment, and — because
+ * the admin applying the starter could edit theme options — the "Only you can
+ * see this" hint, which every visitor then saw.
+ *
+ * Now the slot stores only the heading and the email fallback, marked with the
+ * `unapp-form-slot` class. What a visitor gets is decided when the page is
+ * displayed, by unapp_render_form_slot(): the active form plugin's form when
+ * there is one, otherwise the fallback, plus the hint for administrators only.
  *
  * @param array $args {
  *     @type string $title    Heading above the form.
@@ -269,53 +289,96 @@ function unapp_contact_form( $args = array() ) {
 		)
 	);
 
-	$form = unapp_detect_form();
-	$out  = '<!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">'
-		. esc_html( $args['title'] ) . '</h3><!-- /wp:heading -->';
-
-	if ( $form && ! empty( $form['markup'] ) ) {
-		$inner = 0 === strpos( $form['markup'], '<!-- wp:' )
-			? $form['markup']
-			// A shortcode has to travel inside a Shortcode block to survive the editor.
-			: '<!-- wp:shortcode -->' . $form['markup'] . '<!-- /wp:shortcode -->';
-
-		// The wrapper is what assets/css/forms.css styles: every plugin names its
-		// own container differently, but they all render fields inside this one.
-		return $out
-			. '<!-- wp:group {"className":"unapp-form","layout":{"type":"default"}} -->'
-			. '<div class="wp-block-group unapp-form">' . $inner . '</div>'
-			. '<!-- /wp:group -->';
-	}
-
-	$out .= '<!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->'
+	return '<!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">'
+		. esc_html( $args['title'] ) . '</h3><!-- /wp:heading -->'
+		. '<!-- wp:group {"className":"unapp-form-slot","layout":{"type":"default"}} -->'
+		. '<div class="wp-block-group unapp-form-slot">'
+		. '<!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->'
 		. '<p class="has-muted-color has-text-color has-small-font-size">'
-		. esc_html( $args['fallback'] ) . '</p><!-- /wp:paragraph -->';
-	$out .= '<!-- wp:buttons --><div class="wp-block-buttons">'
+		. esc_html( $args['fallback'] ) . '</p><!-- /wp:paragraph -->'
+		. '<!-- wp:buttons --><div class="wp-block-buttons">'
 		. '<!-- wp:button --><div class="wp-block-button">'
 		. '<a class="wp-block-button__link wp-element-button" href="mailto:' . esc_attr( $args['email'] ) . '">'
-		. esc_html( $args['email'] ) . '</a></div><!-- /wp:button --></div><!-- /wp:buttons -->';
-
-	if ( current_user_can( 'edit_theme_options' ) ) {
-		$out .= '<!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->'
-			. '<p class="has-muted-color has-text-color has-small-font-size"><em>'
-			. esc_html__( 'Only you can see this: install any form plugin — WPForms, Contact Form 7, Gravity Forms, Fluent Forms and several others are recognised — and its form replaces this panel automatically.', 'unapp' )
-			. '</em></p><!-- /wp:paragraph -->';
-	}
-
-	return $out;
+		. esc_html( $args['email'] ) . '</a></div><!-- /wp:button --></div><!-- /wp:buttons -->'
+		. '</div><!-- /wp:group -->';
 }
 
 /**
- * Load the form stylesheet only on pages that render a form.
+ * Render the active form plugin's form into a contact slot, at display time.
  *
- * The selectors cover the field markup of the supported plugins, so their
- * inputs and buttons inherit the palette instead of the plugin's own defaults.
+ * @param string $block_content Rendered block HTML.
+ * @param array  $block         Parsed block.
+ * @return string
  */
-function unapp_form_styles() {
-	if ( ! unapp_detect_form() ) {
-		return;
+function unapp_render_form_slot( $block_content, $block ) {
+	$class = isset( $block['attrs']['className'] ) ? $block['attrs']['className'] : '';
+
+	if ( false === strpos( $class, 'unapp-form-slot' ) ) {
+		return $block_content;
 	}
 
+	// The block editor previews patterns through the REST API; keep the fallback
+	// there so the stored content stays what the editor shows.
+	if ( wp_is_serving_rest_request() ) {
+		return $block_content;
+	}
+
+	$form = unapp_detect_form();
+
+	if ( $form && ! empty( $form['markup'] ) ) {
+		$markup = 0 === strpos( $form['markup'], '<!-- wp:' )
+			? do_blocks( $form['markup'] )
+			: do_shortcode( $form['markup'] );
+
+		unapp_enqueue_form_styles();
+
+		// The wrapper is what assets/css/forms.css styles: every plugin names its
+		// own container differently, but they all render fields inside this one.
+		return '<div class="wp-block-group unapp-form">' . $markup . '</div>';
+	}
+
+	if ( current_user_can( 'edit_theme_options' ) ) {
+		$block_content .= '<p class="has-muted-color has-text-color has-small-font-size unapp-form-hint"><em>'
+			. esc_html( unapp_form_admin_hint() ) . '</em></p>';
+	}
+
+	return $block_content;
+}
+add_filter( 'render_block_core/group', 'unapp_render_form_slot', 10, 2 );
+
+/**
+ * Hide the admin hint that 2.5.4 saved into pages.
+ *
+ * Starter pages built with 2.5.4 carry the hint as an ordinary paragraph in
+ * their content. It is removed for everyone who is not an administrator, so an
+ * update fixes existing sites without anyone editing a page.
+ *
+ * @param string $block_content Rendered block HTML.
+ * @param array  $block         Parsed block.
+ * @return string
+ */
+function unapp_hide_saved_form_hint( $block_content, $block ) {
+	if ( false === strpos( $block_content, '<em>' ) || current_user_can( 'edit_theme_options' ) ) {
+		return $block_content;
+	}
+
+	if ( false !== strpos( $block_content, esc_html( unapp_form_admin_hint() ) ) ) {
+		return '';
+	}
+
+	return $block_content;
+}
+add_filter( 'render_block_core/paragraph', 'unapp_hide_saved_form_hint', 10, 2 );
+
+/**
+ * Enqueue the form stylesheet.
+ *
+ * Called while a form renders, so the stylesheet loads only on pages that show
+ * one. (Hooked to every page before 2.5.5 whenever any form plugin existed.)
+ * Block themes render the template before wp_head, so the style still prints
+ * in the head.
+ */
+function unapp_enqueue_form_styles() {
 	wp_enqueue_style(
 		'unapp-forms',
 		get_theme_file_uri( 'assets/css/forms.css' ),
@@ -323,4 +386,21 @@ function unapp_form_styles() {
 		UNAPP_VERSION
 	);
 }
-add_action( 'wp_enqueue_scripts', 'unapp_form_styles' );
+
+/**
+ * Style pages built before 2.5.5, whose content already holds a form wrapper.
+ *
+ * @param string $block_content Rendered block HTML.
+ * @param array  $block         Parsed block.
+ * @return string
+ */
+function unapp_style_saved_forms( $block_content, $block ) {
+	$class = isset( $block['attrs']['className'] ) ? $block['attrs']['className'] : '';
+
+	if ( preg_match( '/(^|\s)unapp-form(\s|$)/', $class ) ) {
+		unapp_enqueue_form_styles();
+	}
+
+	return $block_content;
+}
+add_filter( 'render_block_core/group', 'unapp_style_saved_forms', 10, 2 );
