@@ -3,7 +3,7 @@ Contributors: colorlib
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.5.5
+Stable tag: 2.5.6
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, one-column, rtl-language-support, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, style-variations, template-editing, threaded-comments, translation-ready
@@ -105,6 +105,10 @@ Yes. Every section is a pattern: open the block inserter, choose the Patterns ta
 They are simple SVGs drawn for this theme — invented brand names for the logo cloud and duotone silhouettes for the team and testimonials. Nothing is licensed from a third party, so replace them with your own at any time.
 
 == Changelog ==
+
+= 2.5.6 - 2026-09-17 =
+* Fixed: the SaaS starter's Contact page told visitors to "add your form plugin's block here". It now shows the active form plugin's form, or an email fallback, like every other contact section.
+* Fixed: Contact Form 7 fields overflowed a phone-width contact card, and forms did not fill the card on wider screens.
 
 = 2.5.5 - 2026-09-17 =
 * Fixed: contact sections could show an administrator-only hint to visitors. Forms are now chosen when the page is displayed, so installing a form plugin later updates every contact page, and pages built with earlier versions are fixed by the update alone.

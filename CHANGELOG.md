@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.5.6 – 2026-09-17
+
+### Fixed
+- **The SaaS starter's Contact page showed setup instructions to visitors.** `contact-split`, which that page opens with, carried a card telling the reader to "add your form plugin's block here". It now uses the same form slot as the niche contact sections: the active form plugin's form, or the email fallback.
+- **Forms overflowed phone-width cards.** Found once the demos had real Contact Form 7 forms: fields sized `content-box` ran 34px past the card at 390px, and the form shrank to CF7's `size="40"` width inside the vertical flex card. Fields are `border-box` and the form stretches to the card (0px overflow at 1440, 390 and 360).
+
 ## 2.5.5 – 2026-09-17
 
 ### Fixed
