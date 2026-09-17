@@ -37,8 +37,8 @@ $unapp_fitness_plans = array(
 	),
 );
 ?>
-<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull is-style-section-soft" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"},"anchor":"memberships"} -->
+<div class="wp-block-group alignfull is-style-section-soft" id="memberships" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"680px"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"align":"center","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
@@ -91,7 +91,7 @@ $unapp_fitness_plans = array(
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="#join"><?php echo esc_html( $unapp_fitness_plan['cta'] ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@archtwelve.example?subject=' . rawurlencode( sprintf( /* translators: %s: membership name. */ _x( 'Membership: %s', 'Email subject line', 'unapp' ), $unapp_fitness_plan['name'] ) ) ); ?>"><?php echo esc_html( $unapp_fitness_plan['cta'] ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
@@ -133,7 +133,7 @@ $unapp_fitness_plans = array(
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="#join"><?php echo esc_html( $unapp_fitness_plan['cta'] ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@archtwelve.example?subject=' . rawurlencode( sprintf( /* translators: %s: membership name. */ _x( 'Membership: %s', 'Email subject line', 'unapp' ), $unapp_fitness_plan['name'] ) ) ); ?>"><?php echo esc_html( $unapp_fitness_plan['cta'] ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

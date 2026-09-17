@@ -40,10 +40,10 @@
 <h2 class="wp-block-heading has-small-font-size" style="font-weight:600;letter-spacing:0.06em;"><?php echo esc_html_x( 'Attend', 'Footer column heading', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Programme', 'unapp' ); ?>","url":"#programme","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Speakers', 'unapp' ); ?>","url":"#speakers","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Tickets', 'unapp' ); ?>","url":"#tickets","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Access and travel', 'unapp' ); ?>","url":"#access","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Programme', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#programme' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Speakers', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#speakers' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Tickets', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#tickets' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Access and travel', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#venue' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 <!-- /wp:navigation -->
 </div>
 <!-- /wp:column -->

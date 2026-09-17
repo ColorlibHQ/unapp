@@ -5,7 +5,7 @@
  * Categories: unapp, unapp_features, features, columns
  * Keywords: integrations, apps, connect, stack, grid, icons
  * Viewport Width: 1400
- * Description: A grid of integration tiles with icons, plus a link to a full directory.
+ * Description: A grid of integration tiles with icons, plus a way to ask about one that is not listed.
  *
  * @package Unapp
  */
@@ -59,7 +59,7 @@ $unapp_integrations = array(
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons">
 <!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="#"><?php esc_html_e( 'Browse all integrations', 'unapp' ); ?></a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( _x( 'Integrations', 'Email subject line', 'unapp' ) ) ); ?>"><?php esc_html_e( 'Ask about an integration', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

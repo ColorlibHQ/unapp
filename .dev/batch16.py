@@ -25,7 +25,7 @@ write_pattern("portfolio-process", title="Portfolio: how a project runs", cats=P
               keywords="portfolio, process, project, stages, timeline, freelance",
               desc="Three stages of a design engagement with the week numbers attached, so a client knows what they are buying.",
               body=body,
-              php_prelude=php_rows("unapp_portfolio_steps", ("when", "title", "text"), STEPS, "Project stage"))
+              php_prelude=php_rows("unapp_portfolio_steps", ("when", "title", "text"), STEPS, "Project stage"), anchor="process")
 
 body = section_std(
     group(
@@ -63,7 +63,7 @@ body = section_std(
 write_pattern("portfolio-contact", title="Portfolio: availability and enquiries", cats=P + ", unapp_utility, contact",
               keywords="portfolio, contact, availability, enquiry, freelance, hire",
               desc="Current availability, an email address and a short brief of what to include in a first message.",
-              body=body)
+              body=body, anchor="contact")
 
 # ================================================================= BLOG
 body = section_std(
@@ -75,8 +75,8 @@ body = section_std(
              color="muted", size="large") + "\n" +
         para(t("One essay most Fridays, about a thousand words, on the parts of building software that do not fit in a conference talk: estimation, rewrites, hiring, and the quiet cost of moving fast. No sponsorship, no affiliate links, and no course at the end of it."),
              color="muted") + "\n" +
-        buttons([{"text": t("Read the archive"), "url": "#archive"},
-                 {"text": t("Subscribe"), "url": "#subscribe", "style": "outline"}]),
+        buttons([{"text": t("Read the archive"), "url": BLOG_URL},
+                 {"text": t("Subscribe"), "url": home_anchor("subscribe"), "style": "outline"}]),
         left_width="45%", right_width="55%"),
     gap="0")
 write_pattern("blog-about", title="Blog: about the publication", cats=B + ", unapp_company, about",
@@ -100,7 +100,7 @@ body = section_std(
 write_pattern("blog-subscribe", title="Blog: subscribe band", cats=B + ", unapp_cta, newsletter",
               keywords="blog, subscribe, newsletter, email, rss",
               desc="A newsletter band in an editorial voice, with an email field and a nod to RSS.",
-              body=body)
+              body=body, anchor="subscribe")
 
 pitch_card = card(
     para(t("Pitching an essay"), weight="600") + "\n" +

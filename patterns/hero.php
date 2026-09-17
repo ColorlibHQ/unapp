@@ -24,10 +24,10 @@
 	<!-- wp:buttons {"style":{"spacing":{"blockGap":"var:preset|spacing|30","margin":{"top":"var:preset|spacing|40"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
 	<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
 		<!-- wp:button -->
-		<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#"><?php echo esc_html_x( 'Get Premium', 'Hero primary button', 'unapp' ); ?></a></div>
+		<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#pricing"><?php echo esc_html_x( 'Get Premium', 'Hero primary button', 'unapp' ); ?></a></div>
 		<!-- /wp:button -->
 		<!-- wp:button {"textColor":"base","className":"is-style-outline"} -->
-		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" href="#"><?php echo esc_html_x( 'See how it works', 'Hero secondary button', 'unapp' ); ?></a></div>
+		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" href="#features"><?php echo esc_html_x( 'See how it works', 'Hero secondary button', 'unapp' ); ?></a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->

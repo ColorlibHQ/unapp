@@ -47,7 +47,7 @@ write_pattern("church-visit", title="Church: what to expect", cats=C + ", unapp_
               desc="Four answers a first-time visitor actually wants: how long it lasts, where to park, what happens to the children and what to wear.",
               body=body,
               php_prelude=php_rows("unapp_church_expect", ("icon", "title", "text"), EXPECT,
-                                   "Church first-visit card"))
+                                   "Church first-visit card"), anchor="visit")
 
 # ---------------------------------------------------------------- staff
 STAFF = [
@@ -73,7 +73,7 @@ write_pattern("church-staff", title="Church: staff", cats=C + ", unapp_company, 
               desc="The four people a visitor is likely to meet, with what each of them actually does.",
               body=body,
               php_prelude=php_rows("unapp_church_staff", ("image", "name", "role", "note"), STAFF,
-                                   "Church staff"))
+                                   "Church staff"), anchor="staff")
 
 # ---------------------------------------------------------------- what we believe
 BELIEFS = [
@@ -107,8 +107,8 @@ body = section_std(
              color="muted", size="large") + "\n" +
         para(t("There are around two hundred of us now, from about thirty streets, and we would be glad to make it two hundred and one."),
              color="muted") + "\n" +
-        buttons([{"text": t("Plan your visit"), "url": "#visit"},
-                 {"text": t("Meet the staff"), "url": "#staff", "style": "outline"}]),
+        buttons([{"text": t("Plan your visit"), "url": home_anchor("visit")},
+                 {"text": t("Meet the staff"), "url": home_anchor("staff"), "style": "outline"}]),
         image(uri("assets/images/abstract/sanctuary.svg"), tattr("The church building"), radius=CARD_RADIUS),
         left_width="54%", right_width="46%"),
     gap="0")
@@ -139,7 +139,7 @@ write_pattern("church-events", title="Church: upcoming events", cats=C + ", unap
               desc="A dated list of what is on: community lunch, job club, harvest and carols.",
               body=body,
               php_prelude=php_rows("unapp_church_events", ("when", "title", "text"), EVENTS,
-                                   "Church event"))
+                                   "Church event"), anchor="events")
 
 # ---------------------------------------------------------------- first-visit FAQ
 FAQ = [
@@ -177,7 +177,7 @@ body = section_std(
         heading(t("Mill Lane, and the door is open")) + "\n" +
         para(t("Riverside Church, 12 Mill Lane, Chesterfield S40 1RT. The 43 and 44 buses stop at the end of the road; the car park is behind the building."),
              color="muted", size="large") + "\n" +
-        buttons([{"text": t("Get directions"), "url": "#map"}]) + "\n" +
+        buttons([{"text": t("Get directions"), "url": map_link("Riverside Church, 12 Mill Lane, Chesterfield S40 1RT")}]) + "\n" +
         details_card,
         card(contact_form("Send a message", "hello@riverside.example")),
         align="top"),
@@ -190,8 +190,8 @@ write_pattern("church-contact", title="Church: contact and directions", cats=C +
 # ---------------------------------------------------------------- closing band
 body = band(t("There is a service this Sunday at 9:30 and 11:15"),
             t("Come on your own, come late, come and sit at the back. All of that is completely normal here."),
-            [{"text": t("Plan your visit"), "url": "#visit", "bg": "base", "color": "contrast"},
-             {"text": t("Watch a service online"), "url": "#watch", "style": "outline", "color": "base"}])
+            [{"text": t("Plan your visit"), "url": home_anchor("visit"), "bg": "base", "color": "contrast"},
+             {"text": t("See what is on"), "url": home_anchor("events"), "style": "outline", "color": "base"}])
 write_pattern("church-cta", title="Church: closing invitation", cats=C + ", unapp_cta, call-to-action",
               keywords="church, cta, invitation, visit, sunday",
               desc="A warm closing band inviting a visit, on the palette gradient.",

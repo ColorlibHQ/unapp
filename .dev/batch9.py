@@ -10,7 +10,7 @@ body = section(
             eyebrow(t("Designer & art director", "Portfolio eyebrow"), align="left") + "\n" +
             h1(t("Mara Lindqvist"), size="xxx-large", line_height="1.05", align="left") + "\n" +
             para(t("I help small teams look like the companies they are becoming — identity, packaging and the odd website."), color="muted", size="large") + "\n" +
-            buttons([{"text": t("See selected work"), "style": "is-style-arrow"}], margin={"top": "30"}),
+            buttons([{"text": t("See selected work"), "url": home_anchor("work"), "style": "is-style-arrow"}], margin={"top": "30"}),
             width="52%", vertical_align="center", gap="30"),
         column(image(uri("assets/images/abstract/studio-2.svg"), tattr("Portrait placeholder"), radius="20px"),
                width="48%", vertical_align="center"),
@@ -47,7 +47,7 @@ body = section(
 write_pattern("portfolio-work", title="Portfolio: work grid", cats=P,
               keywords="portfolio, work, projects, grid, gallery, case studies",
               desc="Four projects in a two-by-two grid with title and credits under each.",
-              body=body, php_prelude=prelude)
+              body=body, php_prelude=prelude, anchor="work")
 
 body = section(
     columns([
@@ -67,7 +67,7 @@ body = section(
 write_pattern("portfolio-about", title="Portfolio: about", cats=P,
               keywords="portfolio, about, bio, skills, designer",
               desc="A short biography beside a photograph, with two columns of disciplines.",
-              body=body)
+              body=body, anchor="about")
 
 prelude = """$unapp_offers = array(
 	array( 'title' => _x( 'Identity', 'Service title', 'unapp' ), 'price' => _x( 'from £6,000', 'Service price', 'unapp' ), 'text' => _x( 'Naming, marks, type and a system your team can actually use.', 'Service description', 'unapp' ) ),
@@ -89,15 +89,15 @@ body = section(
 write_pattern("portfolio-services", title="Portfolio: services and rates", cats=P,
               keywords="portfolio, services, rates, pricing, freelance",
               desc="Three services with an indicative price, separated by hairline rules.",
-              body=body, php_prelude=prelude)
+              body=body, php_prelude=prelude, anchor="services")
 
 # ============================================================ CHURCH
 C = "unapp, unapp_church, banner, featured"
 inner = (eyebrow(t("Everyone is welcome", "Church hero eyebrow"), align="center", color="base") + "\n" +
          h1(t("A church for people who are not sure about church"), align="center", color="base", size="xxx-large") + "\n" +
          para(t("Sundays at 9:30 and 11:15 · Coffee from 9:00 · Kids welcome in every service"), align="center", color="base", size="large") + "\n" +
-         buttons([{"text": t("Plan your visit"), "bg": "base", "color": "primary"},
-                  {"text": t("Watch online"), "style": "is-style-outline", "color": "base"}],
+         buttons([{"text": t("Plan your visit"), "url": home_anchor("visit"), "bg": "base", "color": "primary"},
+                  {"text": t("Service times"), "url": home_anchor("times"), "style": "is-style-outline", "color": "base"}],
                  justify="center", gap="30", margin={"top": "40"}))
 cover_url = uri("assets/images/abstract/sanctuary.svg")
 body = f'''<!-- wp:cover {{"url":"{cover_url}","dimRatio":70,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":64,"minHeightUnit":"vh","align":"full","style":{{"spacing":{{"padding":{{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"blockGap":"var:preset|spacing|30"}}}},"layout":{{"type":"constrained","contentSize":"780px"}}}} -->
@@ -134,7 +134,7 @@ body = section(
 write_pattern("church-times", title="Church: service times", cats="unapp, unapp_church, text",
               keywords="church, service times, schedule, worship, sunday",
               desc="Service times with a short description of each gathering.",
-              body=body, php_prelude=prelude)
+              body=body, php_prelude=prelude, anchor="times")
 
 prelude = """$unapp_ministries = array(
 	array( 'icon' => 'users', 'title' => _x( 'Children and youth', 'Ministry title', 'unapp' ), 'text' => _x( 'Groups for every age from crèche to sixth form, every Sunday morning.', 'Ministry description', 'unapp' ) ),
@@ -158,7 +158,7 @@ body = section(
 write_pattern("church-ministries", title="Church: ministries", cats=C,
               keywords="church, ministries, groups, community, grid",
               desc="Four ministries or groups as icon cards.",
-              body=body, php_prelude=prelude)
+              body=body, php_prelude=prelude, anchor="ministries")
 
 body = section(
     columns([
@@ -167,13 +167,15 @@ body = section(
             heading(t("Every gift stays close to home"), size="xx-large", color="base") + "\n" +
             para(t("Two thirds of what is given funds the food bank, the night shelter and the debt advice centre. The rest keeps the lights on."), color="base", size="large"),
             width="62%", vertical_align="center", gap="20"),
-        column(buttons([{"text": t("Give once"), "bg": "base", "color": "primary"},
-                        {"text": t("Set up monthly"), "style": "is-style-outline", "color": "base"}],
+        column(buttons([{"text": t("Ask about giving"), "url": mailto("hello@riverside.example", "Giving"),
+                         "bg": "base", "color": "primary"},
+                        {"text": t("Set up a standing order"), "url": mailto("hello@riverside.example", "Standing order"),
+                         "style": "is-style-outline", "color": "base"}],
                        justify="right", gap="30"), width="38%", vertical_align="center"),
     ], align="wide", gap="50", vertical_align="center"),
     style_variation="is-style-section-gradient", pad=("70", "70"), gap="0")
 write_pattern("church-giving", title="Church: giving", cats="unapp, unapp_church, call-to-action",
               keywords="church, giving, donate, offering, tithe",
-              desc="A giving band that says where the money goes, with two donation buttons.",
-              body=body)
+              desc="A giving band that says where the money goes, with two ways to ask how to give.",
+              body=body, anchor="give")
 print("batch 9 written")

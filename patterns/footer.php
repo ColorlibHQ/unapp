@@ -38,13 +38,13 @@
 		<!-- wp:column {"width":"18%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 		<div class="wp-block-column" style="flex-basis:18%">
 			<!-- wp:heading {"fontSize":"medium"} -->
-			<h2 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Company', 'unapp' ); ?></h2>
+			<h2 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Product', 'unapp' ); ?></h2>
 			<!-- /wp:heading -->
 			<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"},"typography":{"textTransform":"none","letterSpacing":"0","fontWeight":"400"}},"fontFamily":"body","fontSize":"medium"} -->
-				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'About', 'Footer menu link', 'unapp' ); ?>","url":"#"} /-->
-				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Pricing', 'Footer menu link', 'unapp' ); ?>","url":"#"} /-->
-				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Careers', 'Footer menu link', 'unapp' ); ?>","url":"#"} /-->
-				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Contact', 'Footer menu link', 'unapp' ); ?>","url":"#"} /-->
+				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Features', 'Footer menu link', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#features' ) ); ?>"} /-->
+				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Pricing', 'Footer menu link', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#pricing' ) ); ?>"} /-->
+				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Blog', 'Footer menu link', 'unapp' ); ?>","url":"<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>"} /-->
+				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Contact', 'Footer menu link', 'unapp' ); ?>","url":"mailto:info@example.com"} /-->
 			<!-- /wp:navigation -->
 		</div>
 		<!-- /wp:column -->

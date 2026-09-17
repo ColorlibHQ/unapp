@@ -41,10 +41,10 @@
 <h2 class="wp-block-heading has-small-font-size" style="font-weight:600;letter-spacing:0.06em;"><?php echo esc_html_x( 'Train', 'Footer column heading', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Timetable', 'unapp' ); ?>","url":"#timetable","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Memberships', 'unapp' ); ?>","url":"#memberships","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Coaches', 'unapp' ); ?>","url":"#coaches","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Book a session', 'unapp' ); ?>","url":"#book","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Timetable', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#timetable' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Memberships', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#memberships' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Coaches', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#coaches' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Book a session', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#book' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 <!-- /wp:navigation -->
 </div>
 <!-- /wp:column -->

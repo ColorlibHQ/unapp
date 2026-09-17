@@ -34,8 +34,8 @@ $unapp_tickets = array(
 	),
 );
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"},"anchor":"tickets"} -->
+<div class="wp-block-group alignfull" id="tickets" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"680px"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"align":"center","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
@@ -76,7 +76,7 @@ $unapp_tickets = array(
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="#tickets"><?php esc_html_e( 'Buy', 'unapp' ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@thelongrewrite.example?subject=' . rawurlencode( sprintf( /* translators: %s: ticket name. */ _x( 'Tickets: %s', 'Email subject line', 'unapp' ), $unapp_ticket['name'] ) ) ); ?>"><?php esc_html_e( 'Buy', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
@@ -106,7 +106,7 @@ $unapp_tickets = array(
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="#tickets"><?php esc_html_e( 'Buy', 'unapp' ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@thelongrewrite.example?subject=' . rawurlencode( sprintf( /* translators: %s: ticket name. */ _x( 'Tickets: %s', 'Email subject line', 'unapp' ), $unapp_ticket['name'] ) ) ); ?>"><?php esc_html_e( 'Buy', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

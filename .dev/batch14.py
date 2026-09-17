@@ -15,14 +15,14 @@ body = section_std(
              t("Programmes written for your first year, not your first week"),
              t("Coaches who lift, and who have all coached beginners"),
              t("Open gym hours included in every membership")]) + "\n" +
-        buttons([{"text": t("Book a free session"), "url": "#book"}]),
+        buttons([{"text": t("Book a free session"), "url": home_anchor("book")}]),
         image(uri("assets/images/abstract/track.svg"), tattr("The training floor"), radius=CARD_RADIUS),
         left_width="54%", right_width="46%"),
     gap="0")
 write_pattern("fitness-intro", title="Fitness: about the studio", cats=F + ", unapp_features",
               keywords="fitness, gym, studio, about, training, intro",
               desc="What the gym is and is not, with a checklist and a photograph of the floor.",
-              body=body)
+              body=body, anchor="studio")
 
 # ---------------------------------------------------------------- memberships
 PLANS = [
@@ -58,7 +58,11 @@ feature_list = ('<!-- wp:list {"className":"is-style-checklist"} -->\n<ul class=
                 '<?php endforeach; ?>\n</ul>\n<!-- /wp:list -->')
 plan_button = ('<!-- wp:buttons -->\n<div class="wp-block-buttons">\n<!-- wp:button {"width":100} -->\n'
                '<div class="wp-block-button has-custom-width wp-block-button__width-100">'
-               '<a class="wp-block-button__link wp-element-button" href="#join">'
+               '<a class="wp-block-button__link wp-element-button" href="'
+               "<?php echo esc_url( 'mailto:hello@archtwelve.example?subject=' . rawurlencode( sprintf( "
+               "/* translators: %s: membership name. */ _x( 'Membership: %s', 'Email subject line', 'unapp' ), "
+               "$unapp_fitness_plan['name'] ) ) ); ?>"
+               '">'
                "<?php echo esc_html( $unapp_fitness_plan['cta'] ); ?></a></div>\n"
                '<!-- /wp:button -->\n</div>\n<!-- /wp:buttons -->')
 badge = ("<?php if ( $unapp_fitness_plan['featured'] ) : ?>\n"
@@ -80,7 +84,7 @@ body = section_std(
 write_pattern("fitness-memberships", title="Fitness: memberships", cats=F + ", unapp_pricing, pricing",
               keywords="fitness, gym, membership, pricing, plans, join",
               desc="Three membership tiers at real gym prices, the popular one badged, and a concessions line.",
-              body=body, php_prelude=prelude)
+              body=body, php_prelude=prelude, anchor="memberships")
 
 # ---------------------------------------------------------------- the studio in numbers
 STATS = [
@@ -170,8 +174,8 @@ body = section_std(
         para(t("Under the railway on Bonnington Road, five minutes from the station. Look for the roller door — the sign is small and the music is not."),
              color="muted", size="large") + "\n" +
         para(t("hello@archtwelve.example · 0131 555 0142"), color="muted") + "\n" +
-        buttons([{"text": t("Get directions"), "url": "#map"},
-                 {"text": t("Book a free session"), "url": "#book", "style": "outline"}]),
+        buttons([{"text": t("Get directions"), "url": map_link("Arch 12, Bonnington Yard, Edinburgh EH6 5NX")},
+                 {"text": t("Book a free session"), "url": home_anchor("book"), "style": "outline"}]),
         hours_card, align="top"),
     variation="is-style-section-soft", gap="0")
 write_pattern("fitness-location", title="Fitness: location and hours", cats=F + ", unapp_utility, contact",
@@ -182,11 +186,12 @@ write_pattern("fitness-location", title="Fitness: location and hours", cats=F + 
 # ---------------------------------------------------------------- join band
 body = band(t("Your first session is free, and it always will be"),
             t("An hour with a coach, an empty bar and no obligation to join anything at the end of it."),
-            [{"text": t("Book your free session"), "url": "#book", "bg": "base", "color": "contrast"},
-             {"text": t("See the timetable"), "url": "#timetable", "style": "outline", "color": "base"}])
+            [{"text": t("Book your free session"), "url": mailto("hello@archtwelve.example", "Free session"),
+              "bg": "base", "color": "contrast"},
+             {"text": t("See the timetable"), "url": home_anchor("timetable"), "style": "outline", "color": "base"}])
 write_pattern("fitness-cta", title="Fitness: join band", cats=F + ", unapp_cta, call-to-action",
               keywords="fitness, gym, cta, join, trial, free session",
               desc="A closing band offering the free first session, on the palette gradient.",
-              body=body)
+              body=body, anchor="book")
 
 print("batch 14 rewritten: 7 fitness patterns on the house style")

@@ -52,7 +52,7 @@
 		<!-- wp:buttons -->
 		<div class="wp-block-buttons">
 			<!-- wp:button {"width":100} -->
-			<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="#"><?php echo esc_html_x( 'Start free trial', 'Button text', 'unapp' ); ?></a></div>
+			<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#pricing' ) ); ?>"><?php echo esc_html_x( 'Start free trial', 'Button text', 'unapp' ); ?></a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

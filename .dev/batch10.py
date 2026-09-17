@@ -7,8 +7,8 @@ inner = (eyebrow(t("First class free", "Fitness hero eyebrow"), align="center", 
          h1(t("Stronger than last week"), align="center", color="base", size="xxx-large") + "\n" +
          para(t("Small-group strength and conditioning in the old print works. Forty-five minutes, no mirrors, no nonsense."),
               align="center", color="base", size="large") + "\n" +
-         buttons([{"text": t("Book a free session"), "bg": "secondary", "color": "contrast"},
-                  {"text": t("See the timetable"), "style": "is-style-outline", "color": "base"}],
+         buttons([{"text": t("Book a free session"), "url": home_anchor("book"), "bg": "secondary", "color": "contrast"},
+                  {"text": t("See the timetable"), "url": home_anchor("timetable"), "style": "is-style-outline", "color": "base"}],
                  justify="center", gap="30", margin={"top": "40"}))
 cover = uri("assets/images/abstract/track.svg")
 body = f'''<!-- wp:cover {{"url":"{cover}","dimRatio":60,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":70,"minHeightUnit":"vh","align":"full","style":{{"spacing":{{"padding":{{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"blockGap":"var:preset|spacing|30"}}}},"layout":{{"type":"constrained","contentSize":"760px"}}}} -->
@@ -39,12 +39,12 @@ body = section(
           title=t("This week at the studio"),
           lead=t("Twelve people per class. Book through the app up to seven days ahead.")) + "\n" +
     group(table, align="wide", layout="constrained") + "\n" +
-    buttons([{"text": t("Book a class")}], justify="center"),
+    buttons([{"text": t("Book a class"), "url": home_anchor("book")}], justify="center"),
     pad=("70", "70"), gap="60")
 write_pattern("fitness-schedule", title="Fitness: class timetable", cats="unapp, unapp_fitness, text",
               keywords="fitness, timetable, schedule, classes, gym",
               desc="A weekly class timetable using the Comparison table style.",
-              body=body)
+              body=body, anchor="timetable")
 
 prelude = """$unapp_coaches = array(
 	array( 'avatar' => 'avatar-6', 'name' => _x( 'Danny Osei', 'Coach name', 'unapp' ), 'role' => _x( 'Head coach · Strength', 'Coach role', 'unapp' ), 'bio' => _x( 'Fifteen years coaching, two of them with the national team.', 'Coach bio', 'unapp' ) ),
@@ -69,7 +69,7 @@ body = section(
 write_pattern("fitness-coaches", title="Fitness: coaches", cats="unapp, unapp_fitness, team",
               keywords="fitness, coaches, trainers, team, staff",
               desc="Three coaches with a portrait, discipline and a one-line biography.",
-              body=body, php_prelude=prelude)
+              body=body, php_prelude=prelude, anchor="coaches")
 
 # ============================================================ FINANCE
 FI = "unapp, unapp_finance, featured"
@@ -79,7 +79,8 @@ body = section(
             eyebrow(t("Independent since 1998", "Finance hero eyebrow"), align="left") + "\n" +
             h1(t("Advice you could explain to your family"), size="xxx-large", line_height="1.1", align="left") + "\n" +
             para(t("Fee-only financial planning for people who would rather understand the plan than be impressed by it."), color="muted", size="large") + "\n" +
-            buttons([{"text": t("Book an introduction")}, {"text": t("How we charge"), "style": "is-style-outline"}],
+            buttons([{"text": t("Book an introduction"), "url": home_anchor("contact")},
+                     {"text": t("How we charge"), "url": home_anchor("fees"), "style": "is-style-outline"}],
                     gap="30", margin={"top": "40"}) + "\n" +
             para(t("Regulated by the Financial Conduct Authority · No commission, ever"), color="muted", size="small"),
             width="52%", vertical_align="center", gap="30"),
@@ -116,7 +117,7 @@ body = section(
 write_pattern("finance-services", title="Finance: services", cats=FI + ", services",
               keywords="finance, services, advice, planning, grid",
               desc="Six advisory services as icon cards in a three-column grid.",
-              body=body, php_prelude=prelude)
+              body=body, php_prelude=prelude, anchor="services")
 
 metric = lambda v, l: column(
     para(v, align="center", size="xx-large", font="heading", weight="600", line_height="1.1", color="primary") + "\n" +

@@ -40,10 +40,10 @@
 <h2 class="wp-block-heading has-small-font-size" style="font-weight:600;letter-spacing:0.06em;"><?php echo esc_html_x( 'Advice', 'Footer column heading', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Services', 'unapp' ); ?>","url":"#services","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Our fees', 'unapp' ); ?>","url":"#fees","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'The team', 'unapp' ); ?>","url":"#team","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Book a call', 'unapp' ); ?>","url":"#book","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Services', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#services' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Our fees', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#fees' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'The team', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#team' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Book a call', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#contact' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 <!-- /wp:navigation -->
 </div>
 <!-- /wp:column -->

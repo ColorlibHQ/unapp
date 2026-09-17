@@ -25,10 +25,10 @@
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40);">
 <!-- wp:button {"textColor":"contrast","backgroundColor":"secondary"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-text-color has-secondary-background-color has-background wp-element-button" href="#"><?php esc_html_e( 'Book a free session', 'unapp' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-text-color has-secondary-background-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/#book' ) ); ?>"><?php esc_html_e( 'Book a free session', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline","textColor":"base"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" href="#"><?php esc_html_e( 'See the timetable', 'unapp' ); ?></a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" href="<?php echo esc_url( home_url( '/#timetable' ) ); ?>"><?php esc_html_e( 'See the timetable', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

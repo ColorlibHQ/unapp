@@ -24,10 +24,10 @@
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--20);">
 <!-- wp:button {"textColor":"contrast","backgroundColor":"base"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-text-color has-base-background-color has-background wp-element-button" href="/shop/"><?php esc_html_e( 'Shop everything', 'unapp' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-text-color has-base-background-color has-background wp-element-button" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' ) ); ?>"><?php esc_html_e( 'Shop everything', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline","textColor":"base"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" href="#subscribe"><?php esc_html_e( 'Join the list', 'unapp' ); ?></a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" href="<?php echo esc_url( 'mailto:workshop@sheafworks.example?subject=' . rawurlencode( _x( 'Join the list', 'Email subject line', 'unapp' ) ) ); ?>"><?php esc_html_e( 'Join the list', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

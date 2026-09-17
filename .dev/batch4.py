@@ -2,14 +2,14 @@ import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pgen import *
 
 # ------------------------------------------------------------- pricing: two plans
-def plan(name, price, period, tagline, features, button, featured=False):
+def plan(name, price, period, tagline, features, button, url, featured=False):
     inner = (heading(name, level=3, size="large") + "\n" +
              para(tagline, color=None if featured else "muted", size="small") + "\n" +
              group(para(price, size="xxx-large", font="heading", weight="600", line_height="1") + "\n" +
                    para(period, color=None if featured else "muted", size="small"),
                    layout="flex", wrap="nowrap", gap="20", vertical_align="bottom") + "\n" +
              lst(features) + "\n" +
-             buttons([{"text": button, "width": 100,
+             buttons([{"text": button, "url": url, "width": 100,
                        **({"bg": "base", "color": "primary"} if featured else {"style": "is-style-outline"})}],
                      margin={"top": "40"}))
     return column(group(inner, style_variation="is-style-section-gradient" if featured else "is-style-card",
@@ -23,10 +23,11 @@ body = section(
           lead=t("Start free forever. Upgrade the day your team outgrows it.")) + "\n" +
     columns([
         plan(t("Free"), t("$0"), t("forever"), t("For solo makers and side projects"),
-             [t("3 projects"), t("1 GB storage"), t("Community support")], t("Create an account")),
+             [t("3 projects"), t("1 GB storage"), t("Community support")], t("Create an account"),
+             mailto("hello@example.com", "Free plan")),
         plan(t("Team"), t("$12"), t("per user / month"), t("For teams shipping every week"),
              [t("Unlimited projects"), t("100 GB storage"), t("Priority support"), t("Advanced reporting"), t("SSO and audit logs")],
-             t("Start free trial"), featured=True),
+             t("Start free trial"), mailto("hello@example.com", "Team plan trial"), featured=True),
     ], align="wide", gap="40") + "\n" +
     para(t("Prices exclude VAT. Annual billing saves 20%."), align="center", color="muted", size="small"),
     style_variation="is-style-section-soft", pad=("70", "70"), gap="50", content_size="900px", wide_size="900px")
@@ -55,7 +56,8 @@ body = section(
           title=t("Everything, side by side"),
           lead=t("The full breakdown of what each plan includes.")) + "\n" +
     group(table, align="wide", layout="constrained") + "\n" +
-    buttons([{"text": t("Start free trial")}, {"text": t("Talk to sales"), "style": "is-style-outline"}],
+    buttons([{"text": t("Start free trial"), "url": "#pricing"},
+             {"text": t("Talk to sales"), "url": mailto("hello@example.com", "Sales"), "style": "is-style-outline"}],
             justify="center", gap="30"),
     pad=("70", "70"), gap="50")
 write_pattern("pricing-compare", title="Pricing: comparison table", cats="unapp, unapp_pricing, featured",
@@ -109,7 +111,7 @@ body = section(
         column(heading(t("Ready to see it with your own projects?"), size="x-large", color="base") + "\n" +
                para(t("Import a board and watch it come to life. It takes about five minutes."), color="base"),
                width="62%", vertical_align="center", gap="20"),
-        column(buttons([{"text": t("Start free trial"), "bg": "base", "color": "primary"}],
+        column(buttons([{"text": t("Start free trial"), "url": home_anchor("pricing"), "bg": "base", "color": "primary"}],
                        justify="right"), width="38%", vertical_align="center"),
     ], align="wide", gap="50", vertical_align="center"),
     style_variation="is-style-section-gradient", pad=("60", "60"), gap="0")
@@ -127,7 +129,8 @@ body = section(
         column(eyebrow(t("Mobile", "Section eyebrow label"), align="left") + "\n" +
                heading(t("Take the roadmap with you"), size="x-large") + "\n" +
                para(t("Review work, approve requests and reply to comments from the train. Everything syncs the moment you are back online."), color="muted", size="large") + "\n" +
-               buttons([{"text": t("App Store")}, {"text": t("Google Play"), "style": "is-style-outline"}], gap="30"),
+               buttons([{"text": t("App Store"), "url": "https://apps.apple.com/"},
+                        {"text": t("Google Play"), "url": "https://play.google.com/store/apps", "style": "is-style-outline"}], gap="30"),
                width="62%", vertical_align="center", gap="30"),
     ], align="wide", gap="60", vertical_align="center"),
     style_variation="is-style-section-soft", pad=("70", "70"), gap="0")

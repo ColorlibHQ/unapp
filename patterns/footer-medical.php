@@ -39,10 +39,10 @@
 <h2 class="wp-block-heading has-small-font-size" style="font-weight:600;letter-spacing:0.06em;"><?php echo esc_html_x( 'Patients', 'Footer column heading', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Treatments', 'unapp' ); ?>","url":"#treatments","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Fees', 'unapp' ); ?>","url":"#fees","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Register', 'unapp' ); ?>","url":"#register","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Emergencies', 'unapp' ); ?>","url":"#emergency","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Treatments', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#treatments' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'The team', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#team' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Joining the practice', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#questions' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Emergencies', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#hours' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 <!-- /wp:navigation -->
 </div>
 <!-- /wp:column -->

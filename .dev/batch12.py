@@ -39,8 +39,8 @@ DEMOS = [
   "The home page for the Conference starter site: cover hero, programme, speakers, tickets and the venue.",
   ["events-hero","events-programme","events-speakers","events-tickets","events-venue"]),
  ("demo-finance", "Starter site: Finance & advisory", "starter site, finance, advisor, consulting, professional",
-  "The home page for the Finance starter site: trust-led hero, credentials, services, process, advisers, questions, contact and the risk warning.",
-  ["finance-hero","finance-credentials","finance-services","finance-process","finance-team","finance-faq","finance-contact","finance-disclaimer"]),
+  "The home page for the Finance starter site: trust-led hero, credentials, services, process, fees, advisers, questions, contact and the risk warning.",
+  ["finance-hero","finance-credentials","finance-services","finance-process","finance-fees","finance-team","finance-faq","finance-contact","finance-disclaimer"]),
 ]
 for slug, title, keywords, desc, refs in DEMOS:
     body = "\n".join(pattern_ref("unapp/" + r) for r in refs)

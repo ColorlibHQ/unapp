@@ -97,7 +97,7 @@ $unapp_toggle_plans = array(
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="#start"><?php esc_html_e( 'Start free', 'unapp' ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( $unapp_toggle_plan['name'] ) ); ?>"><?php esc_html_e( 'Start free', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
@@ -134,7 +134,7 @@ $unapp_toggle_plans = array(
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="#start"><?php esc_html_e( 'Start free', 'unapp' ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( $unapp_toggle_plan['name'] ) ); ?>"><?php esc_html_e( 'Start free', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

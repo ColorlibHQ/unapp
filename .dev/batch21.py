@@ -15,8 +15,8 @@ body = section_std(
                 line_height="1.05") + "\n" +
         para(t("A small agency covering Bath and the villages east of it. Twelve properties on the books at a time, because that is how many we can show properly."),
              color="muted", size="large") + "\n" +
-        buttons([{"text": t("See what is for sale"), "url": "#listings"},
-                 {"text": t("Book a valuation"), "url": "#valuation", "style": "outline"}]),
+        buttons([{"text": t("See what is for sale"), "url": home_anchor("listings")},
+                 {"text": t("Book a valuation"), "url": home_anchor("valuation"), "style": "outline"}]),
         image(uri("assets/images/abstract/skyline.svg"), tattr("Bath rooftops"), radius=CARD_RADIUS),
         left_width="55%", right_width="45%"),
     gap="0")
@@ -58,7 +58,7 @@ body = section_std(
 write_pattern("realestate-listings", title="Property: listings", cats=RE + ", unapp_content",
               keywords="real estate, property, listings, for sale, homes, grid",
               desc="Four properties with photograph, price and the room count.",
-              body=body, php_prelude=prelude)
+              body=body, php_prelude=prelude, anchor="listings")
 
 FEES = [
     ("Sole agency", "1.2%", "Plus VAT, payable on completion and nothing before it."),
@@ -79,7 +79,7 @@ body = section_std(
 write_pattern("realestate-fees", title="Property: fees", cats=RE + ", unapp_pricing, pricing",
               keywords="real estate, fees, commission, lettings, charges",
               desc="Three published agency fees, so a seller knows the cost before the valuation.",
-              body=body, php_prelude=prelude)
+              body=body, php_prelude=prelude, anchor="fees")
 
 body = section_std(
     split(
@@ -94,7 +94,7 @@ body = section_std(
 write_pattern("realestate-valuation", title="Property: book a valuation", cats=RE + ", unapp_utility, contact",
               keywords="real estate, valuation, contact, book, appraisal",
               desc="A valuation enquiry section with the contact form.",
-              body=body)
+              body=body, anchor="valuation")
 
 # Questions for the Our fees page — replaced the SaaS faq ("Can I try Unapp").
 FAQ = [
@@ -122,8 +122,8 @@ body = section_std(
         h1(t("A dental practice that runs on time")) + "\n" +
         para(t("Six surgeries on Fore Street, open six days a week, with emergency slots kept back every morning for the people who need them that day."),
              color="muted", size="large") + "\n" +
-        buttons([{"text": t("Book an appointment"), "url": "#book"},
-                 {"text": t("Our treatments"), "url": "#treatments", "style": "outline"}]),
+        buttons([{"text": t("Book an appointment"), "url": tel("+44 1392 555 0146")},
+                 {"text": t("Our treatments"), "url": home_anchor("treatments"), "style": "outline"}]),
         image(uri("assets/images/abstract/studio-2.svg"), tattr("The practice"), radius=CARD_RADIUS),
         left_width="55%", right_width="45%"),
     gap="0")
@@ -151,7 +151,7 @@ write_pattern("medical-services", title="Practice: treatments", cats=ME + ", una
               keywords="medical, dental, treatments, services, clinic",
               desc="Four treatment cards written for patients rather than for clinicians.",
               body=body,
-              php_prelude=php_rows("unapp_treatments", ("icon", "title", "text"), TREATMENTS, "Treatment"))
+              php_prelude=php_rows("unapp_treatments", ("icon", "title", "text"), TREATMENTS, "Treatment"), anchor="treatments")
 
 TEAM = [
     ("avatar-5", "Dr Anna Petrou", "Principal dentist · BDS, MFDS RCS", "Here since 2004. Special interest in nervous patients, which is most of us."),
@@ -174,7 +174,7 @@ write_pattern("medical-team", title="Practice: clinicians", cats=ME + ", unapp_c
               keywords="medical, dental, team, clinicians, dentists, staff",
               desc="Three clinicians with qualifications — the credential check a patient makes first.",
               body=body,
-              php_prelude=php_rows("unapp_clinicians", ("image", "name", "role", "note"), TEAM, "Clinician"))
+              php_prelude=php_rows("unapp_clinicians", ("image", "name", "role", "note"), TEAM, "Clinician"), anchor="team")
 
 FAQ = [
     ("Are you taking NHS patients?",
@@ -192,7 +192,7 @@ body = section_std(
 write_pattern("medical-faq", title="Practice: patient questions", cats=ME + ", unapp_utility, faq",
               keywords="medical, dental, faq, nhs, emergency, patients",
               desc="The four questions asked at reception most days, answered without jargon.",
-              body=body)
+              body=body, anchor="questions")
 
 HOURS = [("Monday – Thursday", "08:30 – 17:30"), ("Friday", "08:30 – 16:00"),
          ("Saturday", "09:00 – 13:00"), ("Emergencies", "Ring before 09:00 any weekday")]
@@ -211,13 +211,13 @@ body = section_std(
         para(t("Level access from the street, a hearing loop at reception and a lift to the first-floor surgeries. The car park is free for patients for two hours."),
              color="muted", size="large") + "\n" +
         para(t("reception@forestreetdental.example · 01392 555 0146"), color="muted") + "\n" +
-        buttons([{"text": t("Book an appointment"), "url": "#book"}]),
+        buttons([{"text": t("Book an appointment"), "url": tel("+44 1392 555 0146")}]),
         hours_card, align="top"),
     gap="0")
 write_pattern("medical-hours", title="Practice: hours and access", cats=ME + ", unapp_utility, contact",
               keywords="medical, dental, hours, address, access, parking",
               desc="Where the practice is, how accessible it is, and when it is open.",
-              body=body)
+              body=body, anchor="hours")
 
 # contact reception — replaced the SaaS contact-split on Find us
 details_card = card(

@@ -11,7 +11,7 @@ write_pattern("hidden-shop-empty-cart", title="Shop: empty cart", cats="unapp", 
               body=(heading(t("Your cart is empty"), align="center") + "\n" +
                     para(t("Nothing here yet. Have a look at what is in stock."),
                          align="center", color="muted") + "\n" +
-                    buttons([{"text": t("Browse the shop"), "url": "/shop/"}], justify="center")))
+                    buttons([{"text": t("Browse the shop"), "url": SHOP_URL}], justify="center")))
 
 write_pattern("hidden-shop-related", title="Shop: related products heading", cats="unapp", inserter=False,
               keywords="shop, related, products",
@@ -68,7 +68,7 @@ body = section_std(
           title=t("The four most recent things"),
           lead=t("Everything is made in small runs, so this changes more often than we plan for.")) + "\n" +
     featured + "\n" +
-    buttons([{"text": t("See everything in stock"), "url": "/shop/"}], justify="center"))
+    buttons([{"text": t("See everything in stock"), "url": SHOP_URL}], justify="center"))
 write_pattern("shop-featured", title="Shop: featured products", cats=S + ", unapp_content, products",
               keywords="shop, products, featured, new, grid, woocommerce",
               desc="Four newest products from the store, with a link to the full shop. Needs WooCommerce.",
@@ -82,8 +82,8 @@ body = section_std(
                 line_height="1.05") + "\n" +
         para(t("A small workshop in Leeds making bags, aprons and a few things that did not fit either category. Two hundred of anything, then we stop and think about it."),
              color="muted", size="large") + "\n" +
-        buttons([{"text": t("Shop everything"), "url": "/shop/"},
-                 {"text": t("How it is made"), "url": "#making", "style": "outline"}]),
+        buttons([{"text": t("Shop everything"), "url": SHOP_URL},
+                 {"text": t("How it is made"), "url": home_anchor("making"), "style": "outline"}]),
         image(uri("assets/images/abstract/studio-1.svg"), tattr("The workshop"), radius=CARD_RADIUS),
         left_width="55%", right_width="45%"),
     gap="0")
@@ -109,7 +109,7 @@ body = section_std(
 write_pattern("shop-workshop", title="Shop: the workshop", cats=S + ", unapp_company, about",
               keywords="shop, about, workshop, making, materials, craft",
               desc="Where the goods are made and what from, beside a photograph.",
-              body=body)
+              body=body, anchor="making")
 
 # shop FAQ
 FAQ = [
@@ -129,7 +129,7 @@ body = section_std(
 write_pattern("shop-faq", title="Shop: delivery and returns", cats=S + ", unapp_utility, faq",
               keywords="shop, faq, delivery, returns, repairs, shipping",
               desc="The four questions asked before every online order.",
-              body=body)
+              body=body, anchor="delivery")
 
 # contact the workshop — replaced the SaaS contact-split on Delivery and returns
 details_card = card(
@@ -159,8 +159,9 @@ write_pattern("shop-contact", title="Shop: contact the workshop", cats=S + ", un
 
 body = band(t("Everything is made in runs of about two hundred"),
             t("When something sells out we decide whether to make it again. The newsletter is the only warning you get."),
-            [{"text": t("Shop everything"), "url": "/shop/", "bg": "base", "color": "contrast"},
-             {"text": t("Join the list"), "url": "#subscribe", "style": "outline", "color": "base"}])
+            [{"text": t("Shop everything"), "url": SHOP_URL, "bg": "base", "color": "contrast"},
+             {"text": t("Join the list"), "url": mailto("workshop@sheafworks.example", "Join the list"),
+              "style": "outline", "color": "base"}])
 write_pattern("shop-cta", title="Shop: closing band", cats=S + ", unapp_cta, call-to-action",
               keywords="shop, cta, newsletter, stock, ecommerce",
               desc="A closing band about small production runs, on the palette gradient.",

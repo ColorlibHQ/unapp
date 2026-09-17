@@ -40,10 +40,10 @@
 <h2 class="wp-block-heading has-small-font-size" style="font-weight:600;letter-spacing:0.06em;"><?php echo esc_html_x( 'Property', 'Footer column heading', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'For sale', 'unapp' ); ?>","url":"#listings","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'To let', 'unapp' ); ?>","url":"#lettings","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Our fees', 'unapp' ); ?>","url":"#fees","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Book a valuation', 'unapp' ); ?>","url":"#valuation","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'For sale', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#listings' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Our fees', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#fees' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Book a valuation', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#valuation' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Email the office', 'unapp' ); ?>","url":"mailto:hello@lansdown.example","kind":"custom","isTopLevelLink":true} /-->
 <!-- /wp:navigation -->
 </div>
 <!-- /wp:column -->

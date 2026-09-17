@@ -57,6 +57,45 @@ def php_format(expr, fmt, ctx, note):
             f"_x( '{esc(fmt)}', '{esc(ctx)}', '{DOM}' ), {expr} ) ); ?>")
 
 
+# --------------------------------------------------------------------------- links
+# Every link a pattern writes has to arrive somewhere. A starter page is built
+# from sections that also appear on other pages, and a footer renders on every
+# page, so a link to a section goes to the front page, where the starter's home
+# composition carries that section's anchor. Transactions the theme cannot
+# perform (a booking, a donation, a ticket) go to the business's own phone or
+# email rather than to a dead "#".
+def home_anchor(anchor):
+    """A section of the front page, from any page."""
+    return f"<?php echo esc_url( home_url( '/#{anchor}' ) ); ?>"
+
+
+def mailto(email, subject=None):
+    """An email to the business, with a translatable subject line."""
+    if not subject:
+        return f"mailto:{email}"
+    return (f"<?php echo esc_url( 'mailto:{email}?subject=' . rawurlencode( "
+            f"_x( '{esc(subject)}', 'Email subject line', '{DOM}' ) ) ); ?>")
+
+
+def tel(number):
+    """A telephone link; number in international form, digits only."""
+    return "tel:" + re.sub(r"[^\d+]", "", number)
+
+
+def map_link(address):
+    """The address in a maps search, which is where "Get directions" leads."""
+    from urllib.parse import quote_plus
+    return "https://maps.google.com/?q=" + quote_plus(address, safe=",")
+
+
+# WooCommerce's shop page when it is active; the front page otherwise. A
+# hard-coded /shop/ breaks on any site installed in a subdirectory.
+SHOP_URL = ("<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? "
+            "wc_get_page_permalink( 'shop' ) : home_url( '/' ) ); ?>")
+# The posts page (or the front page when the site shows posts there).
+BLOG_URL = "<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>"
+
+
 # --------------------------------------------------------------------------- attrs
 def _attrs(d):
     return json.dumps(d, separators=(",", ":"), ensure_ascii=False)
@@ -133,7 +172,7 @@ def group(inner, *, align=None, style_variation=None, class_name=None, bg=None, 
           gradient=None, pad=None, gap=None, layout="constrained", content_size=None,
           wide_size=None, radius=None, border_top=None, shadow=None, extra_style="", tag="div",
           justify=None, orientation=None, wrap=None, vertical_align=None, elements=None,
-          min_col=None, col_count=None):
+          min_col=None, col_count=None, anchor=None):
     a, classes, css = {}, ["wp-block-group"], ""
     if align:
         a["align"] = align
@@ -202,9 +241,12 @@ def group(inner, *, align=None, style_variation=None, class_name=None, bg=None, 
         if vertical_align:
             lay["verticalAlignment"] = vertical_align
     a["layout"] = lay
+    if anchor:
+        a["anchor"] = anchor  # core serialises it last, and the id after the class
     css += extra_style
     style_attr = f' style="{css}"' if css else ""
-    return (f'<!-- wp:group {_attrs(a)} -->\n<{tag} class="{" ".join(dict.fromkeys(classes))}"{style_attr}>\n'
+    id_attr = f' id="{anchor}"' if anchor else ""
+    return (f'<!-- wp:group {_attrs(a)} -->\n<{tag} class="{" ".join(dict.fromkeys(classes))}"{id_attr}{style_attr}>\n'
             f'{inner}\n</{tag}>\n<!-- /wp:group -->')
 
 
@@ -427,7 +469,11 @@ def buttons(items, *, justify=None, margin=None, gap=None):
             acls += [f'has-{it["bg"]}-background-color', "has-background"]
         acls.append("wp-element-button")
         battrs = f" {_attrs(ba)}" if ba else ""
-        url = it.get("url", "#")
+        if not it.get("url") or it["url"] == "#":
+            # A button that goes nowhere is a bug the link checker has to find
+            # on a live site. Refuse it here instead.
+            raise ValueError(f"button {it['text']!r} has no destination")
+        url = it["url"]
         inner.append(f'<!-- wp:button{battrs} -->\n<div class="{" ".join(bclasses)}">'
                      f'<a class="{" ".join(dict.fromkeys(acls))}" href="{url}">{it["text"]}</a></div>\n'
                      f'<!-- /wp:button -->')
@@ -670,11 +716,12 @@ def intro(*, eyebrow_text=None, title=None, lead=None, align="center", content="
 
 
 def section(inner, *, pad=("70", "70"), gap="60", style_variation=None, bg=None, text=None,
-            gradient=None, layout="constrained", content_size=None, wide_size=None, elements=None):
+            gradient=None, layout="constrained", content_size=None, wide_size=None, elements=None,
+            anchor=None):
     padding = {"top": pad[0], "bottom": pad[1]}
     return group(inner, align="full", style_variation=style_variation, bg=bg, text=text,
                  gradient=gradient, pad=padding, gap=gap, layout=layout,
-                 content_size=content_size, wide_size=wide_size, elements=elements)
+                 content_size=content_size, wide_size=wide_size, elements=elements, anchor=anchor)
 
 
 HEADER_TPL = """<?php
@@ -693,8 +740,23 @@ HEADER_TPL = """<?php
 """
 
 
+_SECTION_RE = re.compile(r'<!-- wp:group (\{"align":"full".*?\}) -->\n<div class="([^"]*)"')
+
+
+def anchor_section(body, anchor):
+    """Give the pattern's full-width section an HTML anchor (the block's id)."""
+    m = _SECTION_RE.search(body)
+    if not m:
+        raise ValueError(f"no full-width section to anchor #{anchor}")
+    attrs = m.group(1)[:-1] + f',"anchor":"{anchor}"}}'
+    new = f'<!-- wp:group {attrs} -->\n<div class="{m.group(2)}" id="{anchor}"'
+    return body[:m.start()] + new + body[m.end():]
+
+
 def write_pattern(slug, *, title, cats, keywords, desc, body, php_prelude="", viewport=1400,
-                  inserter=True, block_types=None, post_types=None):
+                  inserter=True, block_types=None, post_types=None, anchor=None):
+    if anchor:
+        body = anchor_section(body, anchor)
     head = HEADER_TPL.format(title=title, slug=slug, cats=cats, keywords=keywords,
                              desc=desc, viewport=viewport)
     if block_types:
@@ -774,10 +836,10 @@ def faq_list(pairs):
 
 
 def section_std(inner, *, variation=None, bg=None, gradient=None, text=None,
-                pad=SECTION_PAD, gap=SECTION_GAP, elements=None):
+                pad=SECTION_PAD, gap=SECTION_GAP, elements=None, anchor=None):
     """Every section: same padding, same intro-to-content gap."""
     return section(inner, pad=pad, gap=gap, style_variation=variation, bg=bg,
-                   gradient=gradient, text=text, elements=elements)
+                   gradient=gradient, text=text, elements=elements, anchor=anchor)
 
 
 GRADIENT_ELEMENTS = {
@@ -786,14 +848,14 @@ GRADIENT_ELEMENTS = {
 }
 
 
-def band(title, body, buttons_list, *, width="720px"):
+def band(title, body, buttons_list, *, width="720px", anchor=None):
     """A closing call-to-action on the palette gradient."""
     inner = (heading(title, align="center", size="xx-large", color="base") + "\n" +
              para(body, align="center", custom_color="rgba(255,255,255,0.86)", size="large") + "\n" +
              buttons(buttons_list, justify="center", margin={"top": "20"}))
     return section_std(
         group(inner, layout="constrained", content_size=width, gap=STACK_GAP),
-        gradient="primary-to-accent", text="base", gap="0", elements=GRADIENT_ELEMENTS)
+        gradient="primary-to-accent", text="base", gap="0", elements=GRADIENT_ELEMENTS, anchor=anchor)
 
 
 def contact_form(title, email):

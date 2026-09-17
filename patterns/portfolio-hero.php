@@ -29,7 +29,7 @@
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--30);">
 <!-- wp:button {"className":"is-style-arrow"} -->
-<div class="wp-block-button is-style-arrow"><a class="wp-block-button__link wp-element-button" href="#"><?php esc_html_e( 'See selected work', 'unapp' ); ?></a></div>
+<div class="wp-block-button is-style-arrow"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#work' ) ); ?>"><?php esc_html_e( 'See selected work', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

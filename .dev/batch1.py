@@ -10,7 +10,9 @@ body = section(
             eyebrow(t("New in 2.0","Hero eyebrow"), align="left") + "\n" +
             h1(t("Ship your product, not your project plan"), size="xxx-large", line_height="1.1", align="left") + "\n" +
             para(t("Unapp keeps roadmaps, files and conversations in one place, so the work moves forward while you sleep."), color="muted", size="large") + "\n" +
-            buttons([{"text": t("Start free trial")}, {"text": t("Book a demo"), "style": "is-style-outline"}], gap="30", margin={"top": "40"}) + "\n" +
+            buttons([{"text": t("Start free trial"), "url": "#pricing"},
+                     {"text": t("Book a demo"), "url": mailto("hello@example.com", "Book a demo"), "style": "is-style-outline"}],
+                    gap="30", margin={"top": "40"}) + "\n" +
             para(t("No credit card required · 14-day trial"), color="muted", size="small"),
             width="46%", vertical_align="center", gap="30"),
         column(
@@ -49,8 +51,8 @@ write_pattern("hero-email", title="Hero: email capture", cats=C,
 inner_cover = (h1(t("Built for teams who ship every week"), align="center", color="base", size="xxx-large") + "\n" +
                para(t("From first sketch to release notes, Unapp keeps everyone pointed at the same goal."),
                     align="center", color="base", size="large") + "\n" +
-               buttons([{"text": t("Get Premium"), "bg": "base", "color": "primary"},
-                        {"text": t("Watch the tour"), "style": "is-style-outline", "color": "base"}],
+               buttons([{"text": t("Get Premium"), "url": home_anchor("pricing"), "bg": "base", "color": "primary"},
+                        {"text": t("See the features"), "url": home_anchor("features"), "style": "is-style-outline", "color": "base"}],
                        justify="center", gap="30", margin={"top": "40"}))
 cover_url = uri("assets/images/crowd.avif")
 body = f'''<!-- wp:cover {{"url":"{cover_url}","dimRatio":80,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":72,"minHeightUnit":"vh","align":"full","style":{{"spacing":{{"padding":{{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"blockGap":"var:preset|spacing|30"}}}},"layout":{{"type":"constrained","contentSize":"780px"}}}} -->

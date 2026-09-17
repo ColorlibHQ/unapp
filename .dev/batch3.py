@@ -28,7 +28,7 @@ body = section(
 write_pattern("features-zigzag", title="Features: alternating rows", cats=FEAT,
               keywords="features, alternating, zigzag, media text, product tour",
               desc="Two alternating image-and-text rows with checklists — the classic product tour layout.",
-              body=body)
+              body=body, anchor="features")
 
 # ------------------------------------------------------------- bento grid
 def bento_cell(icon, title, text, *, bg=None, style="is-style-card", width=None, big=False):
@@ -91,7 +91,7 @@ body = section(
 write_pattern("how-it-works", title="How it works: numbered steps", cats="unapp, unapp_features, featured, text",
               keywords="steps, process, how it works, onboarding, numbered",
               desc="Three numbered steps describing a process, in equal columns.",
-              body=body, php_prelude=prelude)
+              body=body, php_prelude=prelude, anchor="how-it-works")
 
 # ------------------------------------------------------------- integrations
 prelude = """$unapp_integrations = array(
@@ -115,10 +115,10 @@ body = section(
           lead=t("Two-way sync with the tools your team already opens every morning.")) + "\n" +
     group('<?php foreach ( $unapp_integrations as $unapp_integration ) : ?>\n' + tile + '\n<?php endforeach; ?>',
           align="wide", layout="grid", gap="40", col_count=4, class_name="unapp-grid-4") + "\n" +
-    buttons([{"text": t("Browse all integrations"), "style": "is-style-outline"}], justify="center"),
+    buttons([{"text": t("Ask about an integration"), "url": mailto("hello@example.com", "Integrations"), "style": "is-style-outline"}], justify="center"),
     pad=("70", "70"), gap="60")
 write_pattern("integrations", title="Integrations grid", cats=FEAT,
               keywords="integrations, apps, connect, stack, grid, icons",
-              desc="A grid of integration tiles with icons, plus a link to a full directory.",
+              desc="A grid of integration tiles with icons, plus a way to ask about one that is not listed.",
               body=body, php_prelude=prelude)
 print("batch 3 written")

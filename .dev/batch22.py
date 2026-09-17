@@ -12,8 +12,8 @@ body = section_std(
         h1(t("Learn a trade properly, from someone who does it")) + "\n" +
         para(t("Short courses in woodwork, letterpress, ceramics and bookbinding, taught in a Victorian school hall by people who make their living at it."),
              color="muted", size="large") + "\n" +
-        buttons([{"text": t("See the courses"), "url": "#courses"},
-                 {"text": t("How booking works"), "url": "#faq", "style": "outline"}]),
+        buttons([{"text": t("See the courses"), "url": home_anchor("courses")},
+                 {"text": t("How booking works"), "url": home_anchor("questions"), "style": "outline"}]),
         image(uri("assets/images/abstract/studio-1.svg"), tattr("The workshop"), radius=CARD_RADIUS),
         left_width="55%", right_width="45%"),
     gap="0")
@@ -54,7 +54,7 @@ body = section_std(
 write_pattern("education-courses", title="Courses: the timetable", cats=ED + ", unapp_content",
               keywords="education, courses, classes, timetable, prices, list",
               desc="Four courses with length, price and what you leave with.",
-              body=body, php_prelude=prelude)
+              body=body, php_prelude=prelude, anchor="courses")
 
 TUTORS = [
     ("avatar-3", "Rob Feeny", "Woodwork", "Furniture maker for twenty-two years. Teaches the way he was taught, minus the shouting."),
@@ -77,7 +77,7 @@ write_pattern("education-tutors", title="Courses: tutors", cats=ED + ", unapp_co
               keywords="education, tutors, teachers, staff, instructors",
               desc="Three tutors with what they make when they are not teaching.",
               body=body,
-              php_prelude=php_rows("unapp_tutors", ("image", "name", "role", "note"), TUTORS, "Tutor"))
+              php_prelude=php_rows("unapp_tutors", ("image", "name", "role", "note"), TUTORS, "Tutor"), anchor="tutors")
 
 FAQ = [
     ("Do I need to bring anything?",
@@ -95,12 +95,13 @@ body = section_std(
 write_pattern("education-faq", title="Courses: questions", cats=ED + ", unapp_utility, faq",
               keywords="education, faq, booking, courses, beginners",
               desc="What to bring, starting from nothing, missed weeks and gift vouchers.",
-              body=body)
+              body=body, anchor="questions")
 
 body = band(t("The autumn term opens for booking on 1 September"),
             t("Courses fill in about a fortnight. The mailing list gets a day's head start, which is the only perk it has."),
-            [{"text": t("See the courses"), "url": "#courses", "bg": "base", "color": "contrast"},
-             {"text": t("Join the list"), "url": "#subscribe", "style": "outline", "color": "base"}])
+            [{"text": t("See the courses"), "url": home_anchor("courses"), "bg": "base", "color": "contrast"},
+             {"text": t("Join the list"), "url": mailto("hello@oldschoolhall.example", "Mailing list"),
+              "style": "outline", "color": "base"}])
 write_pattern("education-cta", title="Courses: booking band", cats=ED + ", unapp_cta, call-to-action",
               keywords="education, cta, booking, term, newsletter",
               desc="A closing band about when booking opens, on the palette gradient.",
@@ -139,8 +140,8 @@ inner = (eyebrow(t("Bristol · 14–15 May 2027", "Conference hero eyebrow"), al
                  align="center", color="base", size="xxx-large") + "\n" +
          para(t("Sixteen talks, no sponsor keynotes, four hundred people and a bar that opens at five."),
               align="center", color="base", size="large") + "\n" +
-         buttons([{"text": t("Buy a ticket"), "bg": "base", "color": "primary"},
-                  {"text": t("See the programme"), "style": "is-style-outline", "color": "base"}],
+         buttons([{"text": t("Buy a ticket"), "url": home_anchor("tickets"), "bg": "base", "color": "primary"},
+                  {"text": t("See the programme"), "url": home_anchor("programme"), "style": "is-style-outline", "color": "base"}],
                  justify="center", margin={"top": "40"}))
 body = f'''<!-- wp:cover {{"url":"{cover_url}","dimRatio":70,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":68,"minHeightUnit":"vh","align":"full","style":{{"spacing":{{"padding":{{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"blockGap":"var:preset|spacing|30"}}}},"layout":{{"type":"constrained","contentSize":"860px"}}}} -->
 <div class="wp-block-cover alignfull" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80);min-height:68vh"><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-70 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="{cover_url}" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
@@ -176,7 +177,7 @@ body = section_std(
 write_pattern("events-programme", title="Event: programme", cats=EV + ", unapp_content",
               keywords="events, conference, programme, schedule, agenda, timetable",
               desc="A timed programme for one day, with a note about the other.",
-              body=body, php_prelude=prelude)
+              body=body, php_prelude=prelude, anchor="programme")
 
 SPEAKERS = [
     ("avatar-2", "Tess Oduya", "Principal engineer, Halden"),
@@ -199,7 +200,7 @@ write_pattern("events-speakers", title="Event: speakers", cats=EV + ", unapp_com
               keywords="events, conference, speakers, line-up, talks",
               desc="Four announced speakers with their day jobs.",
               body=body,
-              php_prelude=php_rows("unapp_speakers", ("image", "name", "role"), SPEAKERS, "Speaker"))
+              php_prelude=php_rows("unapp_speakers", ("image", "name", "role"), SPEAKERS, "Speaker"), anchor="speakers")
 
 TICKETS = [
     ("Early", "£180", "Until 31 January, or until three hundred have gone.", ["Both days", "Lunch and coffee", "The bar"], False),
@@ -225,7 +226,10 @@ inner = (card_title(php("$unapp_ticket['name']")) + "\n" +
          para(php("$unapp_ticket['price']"), size="xxx-large", weight="700", line_height="1") + "\n" +
          para(php("$unapp_ticket['note']"), color="muted", size="small") + "\n" +
          feature_list + "\n" +
-         buttons([{"text": t("Buy"), "url": "#tickets", "width": 100}]))
+         buttons([{"text": t("Buy"), "width": 100,
+                   "url": "<?php echo esc_url( 'mailto:hello@thelongrewrite.example?subject=' . rawurlencode( sprintf( "
+                          "/* translators: %s: ticket name. */ _x( 'Tickets: %s', 'Email subject line', 'unapp' ), "
+                          "$unapp_ticket['name'] ) ) ); ?>"}]))
 ticket = ("<?php if ( $unapp_ticket['featured'] ) : ?>\n" + card(inner, variation="is-style-elevated")
           + "\n<?php else : ?>\n" + card(inner) + "\n<?php endif; ?>")
 body = section_std(
@@ -236,7 +240,7 @@ body = section_std(
 write_pattern("events-tickets", title="Event: tickets", cats=EV + ", unapp_pricing, pricing",
               keywords="events, tickets, pricing, conference, early bird",
               desc="Three ticket tiers including free supported places, with what each includes.",
-              body=body, php_prelude=prelude)
+              body=body, php_prelude=prelude, anchor="tickets")
 
 body = section_std(
     split(
@@ -245,7 +249,7 @@ body = section_std(
         para(t("Ten minutes from Temple Meads on foot. Step-free throughout, a quiet room off the main hall, and live captions on every talk."),
              color="muted", size="large") + "\n" +
         para(t("hello@thelongrewrite.example"), color="muted") + "\n" +
-        buttons([{"text": t("Accessibility and travel"), "url": "#access"}]),
+        buttons([{"text": t("Ask about access and travel"), "url": mailto("hello@thelongrewrite.example", "Access and travel")}]),
         card(para(t("Dates"), weight="600") + "\n" +
              para(t("14–15 May 2027, 09:30 to 18:00 both days"), color="muted", size="small") + "\n" +
              separator(style="wide", color="border") + "\n" +
@@ -259,6 +263,6 @@ body = section_std(
 write_pattern("events-venue", title="Event: venue and access", cats=EV + ", unapp_utility, contact",
               keywords="events, venue, travel, access, accessibility, conference",
               desc="Where the event is, when, and what access provision it makes.",
-              body=body)
+              body=body, anchor="venue")
 
 print("batch 22 written: 5 education + 5 event patterns")

@@ -35,7 +35,7 @@ body = section(
 write_pattern("blog-categories", title="Blog: category tiles", cats=B,
               keywords="blog, categories, topics, terms, browse, tiles",
               desc="Category tiles with post counts, built on the Terms Query block from WordPress 7.0.",
-              body=body)
+              body=body, anchor="topics")
 
 # ---------------------------------------------------------------- author intro
 body = section(
@@ -55,6 +55,6 @@ body = section(
 write_pattern("blog-author-intro", title="Blog: author introduction", cats=B,
               keywords="blog, author, about, bio, writer",
               desc="A short author introduction with a portrait and social links, for a blog home.",
-              body=body)
+              body=body, anchor="about")
 
 print("batch 11 written")

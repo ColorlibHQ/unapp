@@ -137,7 +137,8 @@ feature_list = ('<!-- wp:list {"className":"is-style-checklist"} -->\n<ul class=
 plan_inner = (card_title(php("$unapp_toggle_plan['name']")) + "\n" +
               para(php("$unapp_toggle_plan['note']"), color="muted", size="small") + "\n" +
               price + "\n" + feature_list + "\n" +
-              buttons([{"text": t("Start free"), "url": "#start", "width": 100}]))
+              buttons([{"text": t("Start free"), "width": 100,
+                        "url": "<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( $unapp_toggle_plan['name'] ) ); ?>"}]))
 plan = ("<?php if ( $unapp_toggle_plan['featured'] ) : ?>\n"
         + card(plan_inner, variation="is-style-elevated")
         + "\n<?php else : ?>\n" + card(plan_inner) + "\n<?php endif; ?>")

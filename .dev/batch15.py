@@ -26,7 +26,7 @@ body = section_std(
 write_pattern("finance-process", title="Finance: how advice works", cats=N + ", unapp_features, steps",
               keywords="finance, adviser, process, steps, how it works, advice",
               desc="The four stages of an advice relationship, numbered, with the reassurance that you can stop at any of them.",
-              body=body, php_prelude=prelude)
+              body=body, php_prelude=prelude, anchor="process")
 
 # ---------------------------------------------------------------- advisers
 TEAM = [
@@ -52,7 +52,7 @@ write_pattern("finance-team", title="Finance: advisers", cats=N + ", unapp_compa
               keywords="finance, adviser, team, chartered, planner, qualifications",
               desc="Three advisers with their qualifications spelled out — the credential check a prospective client makes first.",
               body=body,
-              php_prelude=php_rows("unapp_finance_team", ("image", "name", "role", "note"), TEAM, "Adviser"))
+              php_prelude=php_rows("unapp_finance_team", ("image", "name", "role", "note"), TEAM, "Adviser"), anchor="team")
 
 # ---------------------------------------------------------------- fees
 FEES = [
@@ -75,7 +75,7 @@ write_pattern("finance-fees", title="Finance: fees", cats=N + ", unapp_pricing, 
               keywords="finance, fees, cost, pricing, charges, transparent",
               desc="Three fee cards stating the initial charge, the ongoing percentage and the fact that nothing else is charged.",
               body=body,
-              php_prelude=php_rows("unapp_finance_fees", ("label", "amount", "text"), FEES, "Fee"))
+              php_prelude=php_rows("unapp_finance_fees", ("label", "amount", "text"), FEES, "Fee"), anchor="fees")
 
 # ---------------------------------------------------------------- questions
 FAQ = [
@@ -94,7 +94,7 @@ body = section_std(
 write_pattern("finance-faq", title="Finance: questions", cats=N + ", unapp_utility, faq",
               keywords="finance, faq, questions, independent, fees, minimum",
               desc="Independence, minimums, custody of your money and how to leave — answered plainly.",
-              body=body)
+              body=body, anchor="questions")
 
 # ---------------------------------------------------------------- book a call
 details_card = card(
@@ -116,8 +116,8 @@ body = section_std(
         heading(t("The first conversation costs nothing")) + "\n" +
         para(t("An hour, on the phone or at the office on Rodney Street, with whichever of us is the right fit. If we are not the right firm for you we will say so, and where we can we will tell you who is."),
              color="muted", size="large") + "\n" +
-        buttons([{"text": t("Book a call"), "url": "#book"},
-                 {"text": t("Send an email"), "url": "#email", "style": "outline"}]) + "\n" +
+        buttons([{"text": t("Book a call"), "url": tel("+44 151 555 0188")},
+                 {"text": t("Send an email"), "url": "mailto:advice@rodneystreet.example", "style": "outline"}]) + "\n" +
         details_card,
         card(contact_form("Request a callback", "advice@rodneystreet.example")),
         align="top"),
@@ -125,6 +125,6 @@ body = section_std(
 write_pattern("finance-contact", title="Finance: book a call", cats=N + ", unapp_utility, contact",
               keywords="finance, contact, book, call, office, regulated",
               desc="An invitation to a free first conversation beside the office, phone, email and FCA registration details.",
-              body=body)
+              body=body, anchor="contact")
 
 print("batch 15 rewritten: 5 finance patterns on the house style")

@@ -30,7 +30,7 @@ body = section(
             group(
                 heading(t("Send a message"), level=3, size="large") + "\n" +
                 para(t("Add your form plugin's block here — Contact Form 7, WPForms, Kali Forms and Gravity Forms all provide one."), color="muted", size="small") + "\n" +
-                buttons([{"text": t("Email us instead"), "style": "is-style-outline", "width": 100}], margin={"top": "30"}),
+                buttons([{"text": t("Email us instead"), "url": "mailto:hello@example.com", "style": "is-style-outline", "width": 100}], margin={"top": "30"}),
                 style_variation="is-style-card", radius="20px", layout="default", gap="30",
                 pad={"top": "50", "bottom": "50", "left": "50", "right": "50"}),
             width="55%"),
@@ -51,7 +51,7 @@ body = section(
                 column(lst([t("Unlimited projects"), t("Custom fields"), t("Offline mode"), t("Time tracking")])),
                 column(lst([t("Guest access"), t("Automations"), t("Public roadmaps"), t("Audit logs")])),
             ], gap="40") + "\n" +
-            buttons([{"text": t("See the full feature list"), "style": "is-style-outline"}], margin={"top": "30"}),
+            buttons([{"text": t("Compare the plans"), "url": home_anchor("pricing"), "style": "is-style-outline"}], margin={"top": "30"}),
             width="55%", vertical_align="center", gap="30"),
         column(image(uri("assets/images/dashboard-3.avif"), tattr("Unapp project board"),
                      radius="20px", shadow="card"), width="45%", vertical_align="center"),
@@ -117,9 +117,9 @@ body = group(
     group(
         '<!-- wp:site-title {"level":0,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}}} /-->\n' +
         '<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex"},"style":{"typography":{"textTransform":"none","letterSpacing":"0","fontWeight":"400"}},"fontFamily":"body","fontSize":"small"} -->\n'
-        '<!-- wp:navigation-link {"label":"' + t("Privacy", ctx="Footer menu link").replace('"', "'") + '","url":"#"} /-->\n'
-        '<!-- wp:navigation-link {"label":"' + t("Terms", ctx="Footer menu link").replace('"', "'") + '","url":"#"} /-->\n'
-        '<!-- wp:navigation-link {"label":"' + t("Status", ctx="Footer menu link").replace('"', "'") + '","url":"#"} /-->\n'
+        '<!-- wp:navigation-link {"label":"' + t("Home", ctx="Footer menu link").replace('"', "'") + '","url":"' + "<?php echo esc_url( home_url( '/' ) ); ?>" + '"} /-->\n'
+        '<!-- wp:navigation-link {"label":"' + t("Blog", ctx="Footer menu link").replace('"', "'") + '","url":"' + BLOG_URL + '"} /-->\n'
+        '<!-- wp:navigation-link {"label":"' + t("Privacy", ctx="Footer menu link").replace('"', "'") + '","url":"' + "<?php echo esc_url( get_privacy_policy_url() ? get_privacy_policy_url() : home_url( '/' ) ); ?>" + '"} /-->\n'
         '<!-- /wp:navigation -->',
         layout="flex", wrap="wrap", justify="space-between", gap="40", align="wide") + "\n" +
     group(

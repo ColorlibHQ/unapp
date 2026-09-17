@@ -24,18 +24,23 @@ def h1_count(slug):
     return len(re.findall(r"<h1[\s>]", source(slug)))
 
 
-bad = 0
-comps = compositions()
-for name, refs in comps.items():
-    counts = [h1_count(r) for r in refs]
-    problems = []
-    if not refs or counts[0] != 1:
-        problems.append(f"first section {refs[0] if refs else '-'} has {counts[0] if counts else 0} h1")
-    for r, c in zip(refs[1:], counts[1:]):
-        if c:
-            problems.append(f"{r} adds {c} h1")
-    if problems:
-        bad += 1
-        print(f"{name}: " + "; ".join(problems))
-print(f"compositions checked: {len(comps)}, with a heading problem: {bad}")
-sys.exit(1 if bad else 0)
+def main():
+    bad = 0
+    comps = compositions()
+    for name, refs in comps.items():
+        counts = [h1_count(r) for r in refs]
+        problems = []
+        if not refs or counts[0] != 1:
+            problems.append(f"first section {refs[0] if refs else '-'} has {counts[0] if counts else 0} h1")
+        for r, c in zip(refs[1:], counts[1:]):
+            if c:
+                problems.append(f"{r} adds {c} h1")
+        if problems:
+            bad += 1
+            print(f"{name}: " + "; ".join(problems))
+    print(f"compositions checked: {len(comps)}, with a heading problem: {bad}")
+    sys.exit(1 if bad else 0)
+
+
+if __name__ == "__main__":
+    main()
