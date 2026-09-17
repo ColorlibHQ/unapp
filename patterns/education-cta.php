@@ -18,8 +18,8 @@
 <!-- wp:heading {"textAlign":"center","textColor":"base","fontSize":"xx-large"} -->
 <h2 class="wp-block-heading has-text-align-center has-base-color has-text-color has-xx-large-font-size"><?php esc_html_e( 'The autumn term opens for booking on 1 September', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
-<!-- wp:paragraph {"align":"center","fontSize":"large","style":{"color":{"text":"rgba(255,255,255,0.86)"}}} -->
-<p class="has-text-align-center has-text-color has-large-font-size" style="color:rgba(255,255,255,0.86);"><?php esc_html_e( 'Courses fill in about a fortnight. The mailing list gets a day\'s head start, which is the only perk it has.', 'unapp' ); ?></p>
+<!-- wp:paragraph {"align":"center","textColor":"base","fontSize":"large"} -->
+<p class="has-text-align-center has-base-color has-text-color has-large-font-size"><?php esc_html_e( 'Courses fill in about a fortnight. The mailing list gets a day\'s head start, which is the only perk it has.', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--20);">

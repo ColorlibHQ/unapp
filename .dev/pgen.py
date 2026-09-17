@@ -848,10 +848,15 @@ GRADIENT_ELEMENTS = {
 }
 
 
+# Text on the primary-to-accent gradient is the palette's base colour, solid.
+# White at 86% measured 3.93:1 on Indigo's accent and 2.27:1 on Midnight's,
+# where the palette is dark and even solid white is 2.55:1; base clears 4.5:1
+# against both gradient ends in all twelve palettes (lowest: Indigo's accent,
+# 4.72:1). .dev/gradient_contrast.py recomputes it.
 def band(title, body, buttons_list, *, width="720px", anchor=None):
     """A closing call-to-action on the palette gradient."""
     inner = (heading(title, align="center", size="xx-large", color="base") + "\n" +
-             para(body, align="center", custom_color="rgba(255,255,255,0.86)", size="large") + "\n" +
+             para(body, align="center", color="base", size="large") + "\n" +
              buttons(buttons_list, justify="center", margin={"top": "20"}))
     return section_std(
         group(inner, layout="constrained", content_size=width, gap=STACK_GAP),

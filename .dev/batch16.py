@@ -96,7 +96,7 @@ body = section_std(
     group(
         heading(t("One essay, most Fridays"), align="center", size="xx-large", color="base") + "\n" +
         para(t("Four thousand people read it over coffee. No tracking pixels, no sequence, and one reply to leave."),
-             align="center", custom_color="rgba(255,255,255,0.86)", size="large") + "\n" +
+             align="center", color="base", size="large") + "\n" +
         subscribe_buttons,
         layout="constrained", content_size="620px", gap=STACK_GAP),
     gradient="primary-to-accent", text="base", gap="0", elements=GRADIENT_ELEMENTS)
