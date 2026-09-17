@@ -115,7 +115,7 @@ write_pattern("header-centered", title="Header: centred", cats="unapp, header",
 # ------------------------------------------------------------- slim footer
 body = group(
     group(
-        '<!-- wp:site-title {"level":0,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}}} /-->\n' +
+        '<!-- wp:site-title {"level":0,"style":{"elements":{"link":{"color":{"text":"#ffffff"}}}}} /-->\n' +
         '<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex"},"style":{"typography":{"textTransform":"none","letterSpacing":"0","fontWeight":"400"}},"fontFamily":"body","fontSize":"small"} -->\n'
         '<!-- wp:navigation-link {"label":"' + t("Home", ctx="Footer menu link").replace('"', "'") + '","url":"' + "<?php echo esc_url( home_url( '/' ) ); ?>" + '"} /-->\n'
         '<!-- wp:navigation-link {"label":"' + t("Blog", ctx="Footer menu link").replace('"', "'") + '","url":"' + BLOG_URL + '"} /-->\n'
@@ -126,11 +126,12 @@ body = group(
         para("<?php\nprintf(\n\t/* translators: 1: current year, 2: site name. */\n\tesc_html__( '© %1$s %2$s', 'unapp' ),\n\tesc_html( date_i18n( 'Y' ) ),\n\tesc_html( get_bloginfo( 'name' ) )\n);\n?>",
              size="small", custom_color="rgba(255,255,255,0.75)") + "\n" +
         social([("x", "https://x.com"), ("linkedin", "https://linkedin.com"), ("github", "https://github.com")],
-               size="has-small-icon-size", color="base", value="#ffffff"),
+               size="has-small-icon-size", color=None, value="#ffffff"),
         layout="flex", wrap="wrap", justify="space-between", gap="30", align="wide"),
-    align="full", bg="dark", text="base", pad={"top": "60", "bottom": "50"}, gap="40",
+    align="full", bg="dark", custom_text="#ffffff", pad={"top": "60", "bottom": "50"}, gap="40",
     layout="constrained",
-    elements={"link": {"color": {"text": "var:preset|color|base"}, ":hover": {"color": {"text": "var:preset|color|secondary"}}}})
+    # White, not base: base is near-black in the Midnight palette.
+    elements={"link": {"color": {"text": "#ffffff"}, ":hover": {"color": {"text": "var:preset|color|secondary"}}}})
 write_pattern("footer-slim", title="Footer: slim", cats="unapp, footer",
               keywords="footer, slim, simple, minimal, template part",
               desc="A one-row footer with the site title, a short menu, copyright and social links.",

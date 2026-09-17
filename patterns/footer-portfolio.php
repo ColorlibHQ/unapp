@@ -12,8 +12,8 @@
  */
 
 ?>
-<!-- wp:group {"align":"full","backgroundColor":"dark","textColor":"base","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|60"},"elements":{"link":{"color":{"text":"var:preset|color|base"},":hover":{"color":{"text":"var:preset|color|secondary"}}},"heading":{"color":{"text":"var:preset|color|base"}}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-dark-background-color has-background has-base-color has-text-color has-link-color" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--40);">
+<!-- wp:group {"align":"full","backgroundColor":"dark","style":{"color":{"text":"#ffffff"},"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|60"},"elements":{"link":{"color":{"text":"#ffffff"},":hover":{"color":{"text":"var:preset|color|secondary"}}},"heading":{"color":{"text":"#ffffff"}}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-dark-background-color has-background has-text-color has-link-color" style="color:#ffffff;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--40);">
 <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-columns alignwide">
 <!-- wp:column {"width":"34%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
@@ -26,7 +26,7 @@
 <p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.72);"><?php echo esc_html_x( 'Brand and product design for teams between five and fifty people. Four or five projects a year.', 'Footer tagline', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 <?php endif; ?>
-<!-- wp:social-links {"iconColor":"base","iconColorValue":"#ffffff","className":"is-style-logos-only","size":"has-small-icon-size","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
+<!-- wp:social-links {"iconColorValue":"#ffffff","className":"is-style-logos-only","size":"has-small-icon-size","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
 <ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only">
 <!-- wp:social-link {"url":"https://instagram.com","service":"instagram"} /-->
 <!-- wp:social-link {"url":"https://x.com","service":"x"} /-->

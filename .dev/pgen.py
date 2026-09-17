@@ -172,7 +172,7 @@ def group(inner, *, align=None, style_variation=None, class_name=None, bg=None, 
           gradient=None, pad=None, gap=None, layout="constrained", content_size=None,
           wide_size=None, radius=None, border_top=None, shadow=None, extra_style="", tag="div",
           justify=None, orientation=None, wrap=None, vertical_align=None, elements=None,
-          min_col=None, col_count=None, anchor=None):
+          min_col=None, col_count=None, anchor=None, custom_text=None):
     a, classes, css = {}, ["wp-block-group"], ""
     if align:
         a["align"] = align
@@ -193,6 +193,12 @@ def group(inner, *, align=None, style_variation=None, class_name=None, bg=None, 
         a["textColor"] = text
         classes += [f"has-{text}-color", "has-text-color"]
     style = {}
+    if custom_text:
+        # A literal colour for grounds that are dark in every palette. The
+        # palette's base is white in eleven of them and near-black in Midnight.
+        style["color"] = {"text": custom_text}
+        classes.append("has-text-color")
+        css += f"color:{custom_text};"
     if radius:
         style.setdefault("border", {})["radius"] = radius
         css += f"border-radius:{radius};"
@@ -674,7 +680,10 @@ def details(summary, inner, *, class_name=None):
 
 def social(links, *, size="has-normal-icon-size", justify=None, color="muted", value="#6b7280",
            style_class="is-style-logos-only", gap=None):
-    a = {"iconColor": color, "iconColorValue": value, "className": style_class}
+    # color=None writes only the literal value: a palette slug's class wins
+    # over it, and base is near-black in the Midnight palette.
+    a = {"iconColor": color, "iconColorValue": value, "className": style_class} if color else \
+        {"iconColorValue": value, "className": style_class}
     classes = ["wp-block-social-links"]
     if size != "has-normal-icon-size":
         a["size"] = size
@@ -717,11 +726,12 @@ def intro(*, eyebrow_text=None, title=None, lead=None, align="center", content="
 
 def section(inner, *, pad=("70", "70"), gap="60", style_variation=None, bg=None, text=None,
             gradient=None, layout="constrained", content_size=None, wide_size=None, elements=None,
-            anchor=None):
+            anchor=None, custom_text=None):
     padding = {"top": pad[0], "bottom": pad[1]}
     return group(inner, align="full", style_variation=style_variation, bg=bg, text=text,
                  gradient=gradient, pad=padding, gap=gap, layout=layout,
-                 content_size=content_size, wide_size=wide_size, elements=elements, anchor=anchor)
+                 content_size=content_size, wide_size=wide_size, elements=elements, anchor=anchor,
+                 custom_text=custom_text)
 
 
 HEADER_TPL = """<?php
@@ -842,10 +852,11 @@ def faq_list(pairs):
 
 
 def section_std(inner, *, variation=None, bg=None, gradient=None, text=None,
-                pad=SECTION_PAD, gap=SECTION_GAP, elements=None, anchor=None):
+                pad=SECTION_PAD, gap=SECTION_GAP, elements=None, anchor=None, custom_text=None):
     """Every section: same padding, same intro-to-content gap."""
     return section(inner, pad=pad, gap=gap, style_variation=variation, bg=bg,
-                   gradient=gradient, text=text, elements=elements, anchor=anchor)
+                   gradient=gradient, text=text, elements=elements, anchor=anchor,
+                   custom_text=custom_text)
 
 
 GRADIENT_ELEMENTS = {

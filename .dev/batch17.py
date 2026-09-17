@@ -21,10 +21,15 @@ CREDIT = '''<!-- wp:paragraph {"align":"right","style":{"color":{"text":"rgba(25
 <p class="has-text-align-right has-text-color has-small-font-size" style="color:rgba(255,255,255,0.75)"><?php esc_html_e( 'Built with the Unapp theme', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->'''
 
+# The footer ground is the palette's dark colour, which is dark in all twelve
+# palettes; base is not (Midnight's base is #12141c, which left the events
+# footer at 1.06:1). So the footer's text, links and headings are written in
+# white, like its muted lines already were.
+FOOTER_TEXT = "#ffffff"
 FOOTER_ELEMENTS = {
-    "link": {"color": {"text": "var:preset|color|base"},
+    "link": {"color": {"text": FOOTER_TEXT},
              ":hover": {"color": {"text": "var:preset|color|secondary"}}},
-    "heading": {"color": {"text": "var:preset|color|base"}},
+    "heading": {"color": {"text": FOOTER_TEXT}},
 }
 
 
@@ -53,7 +58,7 @@ def niche_footer(slug, *, title, cats, keywords, desc, blurb, links_head, links,
                "<?php else : ?>\n" +
                para(t(blurb, "Footer tagline"), custom_color=DIM, size="small") + "\n" +
                "<?php endif; ?>\n" +
-               social(socials, size="has-small-icon-size", color="base", value="#ffffff", gap="30"),
+               social(socials, size="has-small-icon-size", color=None, value=FOOTER_TEXT, gap="30"),
                width="34%", gap=CARD_GAP),
         column(head(links_head) + "\n" + nav, width="22%", gap=CARD_GAP),
         column(head(posts_head) + "\n" + posts, width="22%", gap=CARD_GAP),
@@ -67,7 +72,7 @@ def niche_footer(slug, *, title, cats, keywords, desc, blurb, links_head, links,
         ], align="wide", gap="30", vertical_align="center", is_stacked=False),
         align="wide", border_top=("rgba(255,255,255,0.15)", "1px", "solid"), pad={"top": "40"})
 
-    body = section_std(cols + "\n" + bar, bg="dark", text="base", pad=("70", "40"),
+    body = section_std(cols + "\n" + bar, bg="dark", custom_text=FOOTER_TEXT, pad=("70", "40"),
                        elements=FOOTER_ELEMENTS)
     write_pattern(slug, title=title, cats=cats, keywords=keywords, desc=desc, body=body,
                   block_types="core/template-part/footer")
