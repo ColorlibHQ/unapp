@@ -13,7 +13,7 @@
 			"gradient": "var:preset|gradient|primary-to-accent",
 			"text": "var:preset|color|base"
 		},
-		"css": "& { --wp--preset--color--muted: rgba(255,255,255,0.8); --wp--preset--color--border: rgba(255,255,255,0.2); }",
+		"css": "& { --wp--preset--color--muted: var(--wp--preset--color--base); --wp--preset--color--border: rgba(255,255,255,0.2); }",
 		"elements": {
 			"heading": {
 				"color": {

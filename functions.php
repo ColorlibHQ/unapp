@@ -370,6 +370,78 @@ function unapp_skip_unsupported_blocks( $block_content, $block ) {
 add_filter( 'render_block', 'unapp_skip_unsupported_blocks', 10, 2 );
 
 /**
+ * Give the theme's own images width and height attributes when they render.
+ *
+ * core/image's save() never writes them, so a pattern cannot carry them (the
+ * block would fail validation). WordPress only adds loading="lazy" and
+ * fetchpriority="high" to images that have both, so without them every theme
+ * image loaded eagerly and the hero never got priority. The generator already
+ * reserves each box with an aspect ratio; this supplies the attributes from the
+ * file itself, for images served from this theme's assets/images only.
+ *
+ * @param string $block_content Rendered block HTML.
+ * @return string
+ */
+function unapp_theme_image_size( $block_content ) {
+	if ( false === strpos( $block_content, '/assets/images/' ) ) {
+		return $block_content;
+	}
+
+	static $sizes = array();
+
+	$base = trailingslashit( get_template_directory_uri() );
+	$tags = new WP_HTML_Tag_Processor( $block_content );
+
+	while ( $tags->next_tag( 'img' ) ) {
+		$src = (string) $tags->get_attribute( 'src' );
+
+		if ( null !== $tags->get_attribute( 'width' ) || 0 !== strpos( $src, $base . 'assets/images/' ) ) {
+			continue;
+		}
+
+		$relative = substr( strtok( $src, '?' ), strlen( $base ) );
+
+		if ( ! array_key_exists( $relative, $sizes ) ) {
+			$file              = get_parent_theme_file_path( $relative );
+			$sizes[ $relative ] = null;
+
+			if ( '.svg' === substr( $file, -4 ) && is_readable( $file ) ) {
+				// phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- local theme file, first 2 KB.
+				$head = (string) file_get_contents( $file, false, null, 0, 2048 );
+				if ( preg_match( '/viewBox="\s*[-\d.]+\s+[-\d.]+\s+([\d.]+)\s+([\d.]+)/', $head, $m ) ) {
+					$sizes[ $relative ] = array( (float) $m[1], (float) $m[2] );
+				}
+			} elseif ( is_readable( $file ) ) {
+				$info = wp_getimagesize( $file );
+				if ( $info ) {
+					$sizes[ $relative ] = array( (float) $info[0], (float) $info[1] );
+				}
+			}
+		}
+
+		$size = $sizes[ $relative ];
+
+		if ( ! $size || ! $size[1] ) {
+			continue;
+		}
+
+		// Logo rows set only a height; scale the width attribute to match it, or
+		// the browser would stretch the logo to the file's full width.
+		$style = (string) $tags->get_attribute( 'style' );
+		if ( preg_match( '/(?:^|;)\s*height:\s*(\d+)px/', $style, $h ) && false === strpos( $style, 'width:' ) ) {
+			$size = array( $size[0] * $h[1] / $size[1], (float) $h[1] );
+		}
+
+		$tags->set_attribute( 'width', (string) round( $size[0] ) );
+		$tags->set_attribute( 'height', (string) round( $size[1] ) );
+	}
+
+	return $tags->get_updated_html();
+}
+add_filter( 'render_block_core/image', 'unapp_theme_image_size' );
+add_filter( 'render_block_core/cover', 'unapp_theme_image_size' );
+
+/**
  * Lazily enqueue the stat counter script.
  *
  * The Stats pattern marks its numbers with the `unapp-count` class. The script

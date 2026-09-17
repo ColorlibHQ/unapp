@@ -1027,3 +1027,15 @@ Unapp is distributed under the terms of the GNU GPL.
 		text-align: start;
 	}
 }
+
+/* Contact slot fallback: a long address such as reception@forestreetdental.example
+   is one unbreakable word, which pushed the button past a phone-width card. */
+.unapp-form-slot .wp-block-button__link {
+	overflow-wrap: anywhere;
+}
+
+/* Logo rows: a narrow column caps the width while the height is fixed, so the
+   wider marks (Northwind, Meridian) were squeezed to 147px instead of scaling. */
+img[src*="/assets/images/logos/"] {
+	object-fit: contain;
+}
