@@ -40,13 +40,16 @@ for img, name, price, meta in LISTINGS:
                 f"\t\t'meta'  => _x( '{meta}', 'Property details', 'unapp' ),\n"
                 "\t),\n")
 prelude += ");\n"
-listing = stack(
+# A flow group, not a vertical flex stack: in a flex column with
+# align-items:flex-start the photograph's figure shrinks to its content, so its
+# box cannot be reserved before the file arrives.
+listing = group(
     image(php_url("get_theme_file_uri( 'assets/images/abstract/' . $unapp_listing['image'] . '.svg' )"),
           php_attr("$unapp_listing['name']"), radius=CARD_RADIUS, aspect="4/3", scale="cover") + "\n" +
     card_title(php("$unapp_listing['name']")) + "\n" +
     para(php("$unapp_listing['price']"), color="primary", weight="700") + "\n" +
     para(php("$unapp_listing['meta']"), color="muted", size="small"),
-    gap="20")
+    layout="default", gap="20")
 body = section_std(
     intro(eyebrow_text=t("For sale", "Section eyebrow label"),
           title=t("On the books this week"),

@@ -51,8 +51,8 @@ $unapp_finance_team = array(
 <?php foreach ( $unapp_finance_team as $unapp_finance_person ) : ?>
 <!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group is-style-card" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","width":"96px","height":"96px","style":{"border":{"radius":"999px"}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/' . $unapp_finance_person['image'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_finance_person['name'] ); ?>" style="border-radius:999px;width:96px;height:96px;"/></figure>
+<!-- wp:image {"width":"96px","height":"96px","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"999px"}}} -->
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/' . $unapp_finance_person['image'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_finance_person['name'] ); ?>" style="border-radius:999px;width:96px;height:96px"/></figure>
 <!-- /wp:image -->
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
 <h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_finance_person['name'] ); ?></h3>

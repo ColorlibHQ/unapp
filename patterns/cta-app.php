@@ -17,8 +17,8 @@
 <div class="wp-block-columns are-vertically-aligned-center alignwide">
 <!-- wp:column {"verticalAlignment":"center","width":"38%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:38%;">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","align":"center","width":"240px","className":"is-style-device"} -->
-<figure class="wp-block-image aligncenter size-full is-resized is-style-device"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/app-mobile-2.avif' ) ); ?>" alt="<?php esc_attr_e( 'Unapp mobile app', 'unapp' ); ?>" style="width:240px;"/></figure>
+<!-- wp:image {"width":"240px","sizeSlug":"full","linkDestination":"none","align":"center","className":"is-style-device"} -->
+<figure class="wp-block-image aligncenter size-full is-resized is-style-device"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/app-mobile-2.avif' ) ); ?>" alt="<?php esc_attr_e( 'Unapp mobile app', 'unapp' ); ?>" style="width:240px;height:auto"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->

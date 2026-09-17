@@ -27,8 +27,8 @@ $unapp_logos = array(
 <!-- wp:group {"align":"wide","className":"unapp-logo-cloud","style":{"spacing":{"blockGap":"var:preset|spacing|60"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"center"}} -->
 <div class="wp-block-group alignwide unapp-logo-cloud">
 <?php foreach ( $unapp_logos as $unapp_slug => $unapp_name ) : ?>
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","height":"26px"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/logos/' . $unapp_slug . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_name ); ?>" style="height:26px;"/></figure>
+<!-- wp:image {"height":"26px","sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/logos/' . $unapp_slug . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_name ); ?>" style="height:26px"/></figure>
 <!-- /wp:image -->
 <?php endforeach; ?>
 </div>

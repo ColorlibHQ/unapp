@@ -18,8 +18,8 @@
 <!-- wp:paragraph {"align":"center","fontSize":"xx-large","style":{"typography":{"lineHeight":"1.35"}}} -->
 <p class="has-text-align-center has-xx-large-font-size" style="line-height:1.35;"><?php esc_html_e( '&#8220;She showed us two directions in a fortnight and then argued us out of the one we liked. She was right. The thing we shipped is the thing people can actually use.&#8221;', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","align":"center","width":"56px","height":"56px","style":{"border":{"radius":"999px"}}} -->
-<figure class="wp-block-image aligncenter size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/avatar-3.svg' ) ); ?>" alt="<?php esc_attr_e( 'Client portrait placeholder', 'unapp' ); ?>" style="border-radius:999px;width:56px;height:56px;"/></figure>
+<!-- wp:image {"width":"56px","height":"56px","sizeSlug":"full","linkDestination":"none","align":"center","style":{"border":{"radius":"999px"}}} -->
+<figure class="wp-block-image aligncenter size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/avatar-3.svg' ) ); ?>" alt="<?php esc_attr_e( 'Client portrait placeholder', 'unapp' ); ?>" style="border-radius:999px;width:56px;height:56px"/></figure>
 <!-- /wp:image -->
 <!-- wp:paragraph {"align":"center","style":{"typography":{"fontWeight":"600"}}} -->
 <p class="has-text-align-center" style="font-weight:600;"><?php esc_html_e( 'Ollie Trent', 'unapp' ); ?></p>

@@ -423,41 +423,118 @@ def buttons(items, *, justify=None, margin=None, gap=None):
             + "\n".join(inner) + '\n</div>\n<!-- /wp:buttons -->')
 
 
+# ------------------------------------------------------------ image sizing
+# core/image's save() writes no width/height HTML attributes, so a pattern can
+# not carry them without failing block validation. What it can carry is the
+# same information as style: an aspect-ratio plus one explicit dimension. That
+# reserves the image's box before the file arrives (no layout shift) and
+# satisfies Lighthouse's unsized-images audit. The ratio is read from the asset
+# itself, so it cannot drift from the file.
+_SIZE_CACHE = {}
+
+
+def _read_size(path):
+    if path in _SIZE_CACHE:
+        return _SIZE_CACHE[path]
+    size = None
+    if path.endswith(".svg"):
+        head = open(path, encoding="utf-8").read(2000)
+        root = re.search(r"<svg\b[^>]*>", head).group(0)
+        vb = re.search(r'viewBox="\s*[-\d.]+\s+[-\d.]+\s+([\d.]+)\s+([\d.]+)', root)
+        size = (float(vb.group(1)), float(vb.group(2)))
+    elif path.endswith(".avif"):
+        data = open(path, "rb").read(4096)
+        i = data.find(b"ispe")
+        size = (int.from_bytes(data[i + 8:i + 12], "big"), int.from_bytes(data[i + 12:i + 16], "big"))
+    _SIZE_CACHE[path] = size
+    return size
+
+
+def intrinsic_size(src):
+    """(width, height) of the theme asset an image src points at, or None.
+
+    Resolves a literal path, or a PHP-built path whose directory holds files of
+    one size (the avatars, the abstract set). A directory of mixed sizes (the
+    logos) returns None: there is no single ratio to promise.
+    """
+    m = re.search(r"assets/images/([a-z0-9/_.-]+\.(?:svg|avif))'", src)
+    if m:
+        return _read_size(os.path.join(THEME, "assets", "images", m.group(1)))
+    m = re.search(r"assets/images/([a-z0-9_-]+)/' \.", src)
+    if m:
+        folder = os.path.join(THEME, "assets", "images", m.group(1))
+        sizes = {_read_size(os.path.join(folder, f)) for f in os.listdir(folder)
+                 if f.endswith((".svg", ".avif"))}
+        return sizes.pop() if len(sizes) == 1 else None
+    return None
+
+
+def ratio(w, h):
+    from math import gcd
+    w, h = int(round(w)), int(round(h))
+    g = gcd(w, h)
+    return f"{w // g}/{h // g}" if (w // g, h // g) != (1, 1) else "1"
+
+
 def image(src, alt, *, width=None, height=None, align=None, radius=None, shadow=None,
-          class_name=None, size_slug="full", link=None, aspect=None, scale=None):
-    a, fig_classes, img_style = {"sizeSlug": size_slug, "linkDestination": "none"}, ["wp-block-image"], ""
+          class_name=None, size_slug="full", link=None, aspect=None, scale=None, intrinsic=None):
+    """A core/image block, serialised exactly as core's save() writes it.
+
+    Every theme image gets a reserved box: explicit width and height, or one
+    of them plus an aspect-ratio taken from the file. An image with neither
+    fills its container (width 100%, which is what it already did) at the
+    file's own ratio.
+    """
+    size = intrinsic or intrinsic_size(src)
+    if class_name and "is-style-device" in class_name:
+        # The device frame is a 10px border on a border-box image, and
+        # aspect-ratio sizes the border box: the screenshot would stretch.
+        size = None
+    if not (width and height):
+        if not width and not height:
+            width = "100%"
+        if aspect is None and size:
+            aspect = ratio(*size)
+    a = {}
+    if width:
+        a["width"] = width
+    if height:
+        a["height"] = height
+    if aspect:
+        a["aspectRatio"] = aspect
+    if scale:
+        a["scale"] = scale
+    a["sizeSlug"] = size_slug
+    a["linkDestination"] = "none"
+    fig_classes = ["wp-block-image"]
     if align:
         a["align"] = align
         fig_classes.append("align" + align)
     fig_classes.append(f"size-{size_slug}")
-    if width:
-        a["width"] = width
-        img_style += f"width:{width};"
-    if height:
-        a["height"] = height
-        img_style += f"height:{height};"
     if width or height:
         fig_classes.append("is-resized")
-    if aspect:
-        a["aspectRatio"] = aspect
-        img_style += f"aspect-ratio:{aspect};"
-    if scale:
-        a["scale"] = scale
-        img_style += f"object-fit:{scale};"
-    style = {}
+    style, css = {}, []
     if radius:
         style["border"] = {"radius": radius}
-        img_style = f"border-radius:{radius};" + img_style
+        css.append(f"border-radius:{radius}")
         fig_classes.append("has-custom-border")
     if shadow:
         style["shadow"] = f"var:preset|shadow|{shadow}"
-        img_style += f"box-shadow:var(--wp--preset--shadow--{shadow});"
+        css.append(f"box-shadow:var(--wp--preset--shadow--{shadow})")
+    if aspect:
+        css.append(f"aspect-ratio:{aspect}")
+    if scale:
+        css.append(f"object-fit:{scale}")
+    if width:
+        css.append(f"width:{width}")
+    if width or height:
+        css.append(f"height:{height or 'auto'}")
     if class_name:
         a["className"] = class_name
         fig_classes.append(class_name)
     if style:
         a["style"] = style
-    st = f' style="{img_style}"' if img_style else ""
+    st = f' style="{";".join(css)}"' if css else ""
     return (f'<!-- wp:image {_attrs(a)} -->\n<figure class="{" ".join(dict.fromkeys(fig_classes))}">'
             f'<img src="{src}" alt="{alt}"{st}/></figure>\n<!-- /wp:image -->')
 

@@ -53,16 +53,16 @@ $unapp_quotes = array(
 <div class="wp-block-column">
 <!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group is-style-card" style="border-radius:20px;">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","width":"96px"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/ui/stars-5.svg' ) ); ?>" alt="<?php esc_attr_e( 'Rated 5 out of 5', 'unapp' ); ?>" style="width:96px;"/></figure>
+<!-- wp:image {"width":"96px","aspectRatio":"11/2","sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/ui/stars-5.svg' ) ); ?>" alt="<?php esc_attr_e( 'Rated 5 out of 5', 'unapp' ); ?>" style="aspect-ratio:11/2;width:96px;height:auto"/></figure>
 <!-- /wp:image -->
 <!-- wp:paragraph {"fontSize":"large"} -->
 <p class="has-large-font-size"><?php echo esc_html( $unapp_quote['quote'] ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
 <div class="wp-block-group">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","width":"56px","height":"56px","style":{"border":{"radius":"999px"}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/' . $unapp_quote['avatar'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_quote['name'] ); ?>" style="border-radius:999px;width:56px;height:56px;"/></figure>
+<!-- wp:image {"width":"56px","height":"56px","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"999px"}}} -->
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/' . $unapp_quote['avatar'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_quote['name'] ); ?>" style="border-radius:999px;width:56px;height:56px"/></figure>
 <!-- /wp:image -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group">

@@ -17,15 +17,15 @@
 <div class="wp-block-columns are-vertically-aligned-center alignwide">
 <!-- wp:column {"verticalAlignment":"center","width":"32%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:32%;">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/avatar-3.svg' ) ); ?>" alt="<?php esc_attr_e( 'Portrait of the quoted customer', 'unapp' ); ?>" style="border-radius:20px;"/></figure>
+<!-- wp:image {"width":"100%","aspectRatio":"1","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/avatars/avatar-3.svg' ) ); ?>" alt="<?php esc_attr_e( 'Portrait of the quoted customer', 'unapp' ); ?>" style="border-radius:20px;aspect-ratio:1;width:100%;height:auto"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"center","width":"68%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:68%;">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","height":"26px"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/logos/harbor.svg' ) ); ?>" alt="<?php esc_attr_e( 'Harbor logo', 'unapp' ); ?>" style="height:26px;"/></figure>
+<!-- wp:image {"height":"26px","aspectRatio":"75/14","sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/logos/harbor.svg' ) ); ?>" alt="<?php esc_attr_e( 'Harbor logo', 'unapp' ); ?>" style="aspect-ratio:75/14;height:26px"/></figure>
 <!-- /wp:image -->
 <!-- wp:paragraph {"fontFamily":"heading","fontSize":"x-large","style":{"typography":{"fontWeight":"500","lineHeight":"1.35"}}} -->
 <p class="has-heading-font-family has-x-large-font-size" style="font-weight:500;line-height:1.35;"><?php esc_html_e( '“Unapp gave us one calendar, one backlog and one source of truth. Six months in, nobody asks for the old spreadsheets.”', 'unapp' ); ?></p>

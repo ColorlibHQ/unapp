@@ -91,9 +91,7 @@ write_pattern("features-sticky", title="Features: sticky explanation", cats=U + 
 # ---------------------------------------------------------------- logo marquee
 LOGOS = ['cobalt', 'foundry', 'harbor', 'kite', 'lumen', 'meridian', 'northwind', 'vertex']
 marquee_items = "".join(
-    '<!-- wp:image {"width":"128px","sizeSlug":"full","linkDestination":"none"} -->\n'
-    f'<figure class="wp-block-image size-full is-resized"><img src="{uri("assets/images/logos/" + n + ".svg")}" '
-    f'alt="" style="width:128px"/></figure>\n<!-- /wp:image -->\n' for n in LOGOS + LOGOS)
+    image(uri("assets/images/logos/" + n + ".svg"), "", width="128px") + "\n" for n in LOGOS + LOGOS)
 track = group(marquee_items, class_name="unapp-marquee__track", layout="flex", wrap="nowrap", gap="60")
 body = section_std(
     para(t("Trusted by product teams at"), align="center", color="muted", size="small",

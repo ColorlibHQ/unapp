@@ -27,8 +27,8 @@
 <div class="wp-block-columns are-vertically-aligned-center alignwide">
 <!-- wp:column {"verticalAlignment":"center","width":"46%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:46%;">
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/office.avif' ) ); ?>" alt="<?php esc_attr_e( 'Meridian\'s studio', 'unapp' ); ?>" style="border-radius:20px;"/></figure>
+<!-- wp:image {"width":"100%","aspectRatio":"50/33","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/office.avif' ) ); ?>" alt="<?php esc_attr_e( 'Meridian\'s studio', 'unapp' ); ?>" style="border-radius:20px;aspect-ratio:50/33;width:100%;height:auto"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->
