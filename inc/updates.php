@@ -30,6 +30,16 @@ const UNAPP_UPDATE_ENDPOINT = 'https://updates.colorlib.com/theme/unapp.json';
 const UNAPP_UPDATE_CACHE    = 'unapp_update_response';
 
 /**
+ * User-Agent for the update check.
+ *
+ * Deliberately just the product and version. WordPress's default User-Agent
+ * appends the site URL, which would undo the one-way hash in the payload.
+ */
+function unapp_update_user_agent() {
+	return 'Unapp/' . UNAPP_VERSION;
+}
+
+/**
  * Whether the site has opted out of the update check.
  *
  * Opting out also opts out of update notifications, which is the honest
@@ -104,7 +114,7 @@ function unapp_fetch_update() {
 		add_query_arg( unapp_update_payload(), UNAPP_UPDATE_ENDPOINT ),
 		array(
 			'timeout'    => 8,
-			'user-agent' => 'Unapp/' . UNAPP_VERSION . '; ' . home_url( '/' ),
+			'user-agent' => unapp_update_user_agent(),
 		)
 	);
 
@@ -134,7 +144,11 @@ function unapp_fetch_update() {
  * @return array|false
  */
 function unapp_check_update( $update, $theme_data, $theme_stylesheet ) {
-	if ( $update || 'unapp' !== $theme_stylesheet ) {
+	// Match on the Update URI rather than the folder name, so a copy installed
+	// as "unapp-2" (a common result of uploading the zip twice) still updates.
+	$update_uri = isset( $theme_data['UpdateURI'] ) ? $theme_data['UpdateURI'] : '';
+
+	if ( $update || ( UNAPP_UPDATE_ENDPOINT !== $update_uri && 'unapp' !== $theme_stylesheet ) ) {
 		return $update;
 	}
 
@@ -151,6 +165,7 @@ function unapp_check_update( $update, $theme_data, $theme_stylesheet ) {
 		'url'          => isset( $release['url'] ) ? $release['url'] : 'https://colorlib.com/wp/themes/unapp/',
 		'package'      => isset( $release['package'] ) ? $release['package'] : '',
 		'tested'       => isset( $release['tested'] ) ? $release['tested'] : '',
+		'requires'     => isset( $release['requires'] ) ? $release['requires'] : '',
 		'requires_php' => isset( $release['requires_php'] ) ? $release['requires_php'] : '7.4',
 		'autoupdate'   => ! empty( $release['autoupdate'] ),
 	);
@@ -158,7 +173,7 @@ function unapp_check_update( $update, $theme_data, $theme_stylesheet ) {
 add_filter( 'update_themes_' . UNAPP_UPDATE_HOST, 'unapp_check_update', 10, 3 );
 
 /**
- * Forget the cached response when someone asks WordPress to check again.
+ * Forget the cached response after an update or a theme switch.
  */
 function unapp_flush_update_cache() {
 	delete_site_transient( UNAPP_UPDATE_CACHE );
@@ -167,18 +182,26 @@ add_action( 'upgrader_process_complete', 'unapp_flush_update_cache' );
 add_action( 'after_switch_theme', 'unapp_flush_update_cache' );
 
 /**
+ * Forget it too when someone clicks "Check again" on Dashboard → Updates.
+ *
+ * Without this the twelve-hour cache outlived the button, so a release could
+ * stay invisible for half a day after the user explicitly asked.
+ */
+function unapp_flush_update_cache_on_force_check() {
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- core's own read-only query flag.
+	if ( ! empty( $_GET['force-check'] ) && current_user_can( 'update_themes' ) ) {
+		unapp_flush_update_cache();
+	}
+}
+add_action( 'load-update-core.php', 'unapp_flush_update_cache_on_force_check' );
+
+/**
  * Explain the update check on the theme's own screen.
  *
  * A site owner should not have to read the source to find out what leaves
  * their server.
  */
 function unapp_updates_notice() {
-	$screen = get_current_screen();
-
-	if ( ! $screen || 'appearance_page_unapp-starter-sites' !== $screen->id ) {
-		return;
-	}
-
 	if ( ! unapp_updates_enabled() ) {
 		return;
 	}
@@ -208,4 +231,6 @@ function unapp_updates_notice() {
 	<style>.unapp-updates-note { max-width: 70ch; margin-top: 18px; }</style>
 	<?php
 }
-add_action( 'admin_footer', 'unapp_updates_notice' );
+// Printed inside the Starter Sites screen's .wrap. On admin_footer it landed at
+// x=0, under the admin menu and on top of "Thank you for creating with WordPress".
+add_action( 'unapp_starter_screen_footer', 'unapp_updates_notice' );

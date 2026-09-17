@@ -310,7 +310,12 @@ function unapp_library_check_update( $update, $plugin_data, $plugin_file ) {
 
 		$response = wp_remote_get(
 			add_query_arg( $payload, 'https://updates.colorlib.com/plugin/unapp-library.json' ),
-			array( 'timeout' => 8 )
+			// Product and version only: WordPress's default User-Agent appends the
+			// site URL, which would undo the one-way hash in the payload.
+			array(
+				'timeout'    => 8,
+				'user-agent' => 'Unapp-Library/' . UNAPP_LIBRARY_VERSION,
+			)
 		);
 
 		$cached = ( ! is_wp_error( $response ) && 200 === wp_remote_retrieve_response_code( $response ) )
