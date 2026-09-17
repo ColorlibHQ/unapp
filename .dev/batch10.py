@@ -7,12 +7,14 @@ inner = (eyebrow(t("First class free", "Fitness hero eyebrow"), align="center", 
          h1(t("Stronger than last week"), align="center", color="base", size="xxx-large") + "\n" +
          para(t("Small-group strength and conditioning in the old print works. Forty-five minutes, no mirrors, no nonsense."),
               align="center", color="base", size="large") + "\n" +
-         buttons([{"text": t("Book a free session"), "url": home_anchor("book"), "bg": "secondary", "color": "contrast"},
+         # The palette's own button colours: an explicit contrast label on
+         # secondary is 1.73:1 in Midnight, whose partial sets the label to base.
+         buttons([{"text": t("Book a free session"), "url": home_anchor("book")},
                   {"text": t("See the timetable"), "url": home_anchor("timetable"), "style": "is-style-outline", "color": "base"}],
                  justify="center", gap="30", margin={"top": "40"}))
 cover = uri("assets/images/abstract/track.svg")
-body = f'''<!-- wp:cover {{"url":"{cover}","dimRatio":60,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":70,"minHeightUnit":"vh","align":"full","style":{{"spacing":{{"padding":{{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"blockGap":"var:preset|spacing|30"}}}},"layout":{{"type":"constrained","contentSize":"760px"}}}} -->
-<div class="wp-block-cover alignfull" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80);min-height:70vh"><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-60 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="{cover}" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
+body = f'''<!-- wp:cover {{"url":"{cover}","dimRatio":70,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":70,"minHeightUnit":"vh","align":"full","style":{{"spacing":{{"padding":{{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"blockGap":"var:preset|spacing|30"}}}},"layout":{{"type":"constrained","contentSize":"760px"}}}} -->
+<div class="wp-block-cover alignfull" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80);min-height:70vh"><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-70 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="{cover}" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
 {inner}
 </div></div>
 <!-- /wp:cover -->'''

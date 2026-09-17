@@ -39,6 +39,7 @@ Three radii exist in the theme: 14px (icon badges), 20px (cards and images),
     python3 .dev/rhythm_audit.py            # ground rhythm of every composition
     python3 .dev/heading_audit.py           # exactly one h1 per composition, in its first section
     python3 .dev/link_audit.py              # every link on every starter page arrives somewhere
+    python3 .dev/gradient_contrast.py       # every text on a coloured ground, in all 12 palettes
     node cdp-rhythm.mjs jobs.json 1280      # measured gaps vs the spacing scale
     node cdp-wrap.mjs jobs.json 1280,768,390  # orphaned items on the last row
 
