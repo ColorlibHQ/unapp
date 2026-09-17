@@ -777,11 +777,17 @@ def write_pattern(slug, *, title, cats, keywords, desc, body, php_prelude="", vi
 # the measurements live here, so a change lands everywhere at once.
 
 def card(inner, *, variation="is-style-card", pad=CARD_PAD, gap=CARD_GAP,
-         radius=CARD_RADIUS, vertical=True):
-    """A surface with the house padding, radius and internal rhythm."""
+         radius=CARD_RADIUS, vertical=True, justify=None, vertical_align=None):
+    """A surface with the house padding, radius and internal rhythm.
+
+    A vertical card is a flex column, which WordPress aligns to flex-start:
+    children take their content width, so an icon badge stays a badge. A card
+    of rows (hours, prices) passes justify="stretch" so every row spans it.
+    """
     return group(inner, style_variation=variation, radius=radius, gap=gap,
                  layout="flex" if vertical else "constrained",
                  orientation="vertical" if vertical else None,
+                 justify=justify, vertical_align=vertical_align,
                  pad={"top": pad, "bottom": pad, "left": pad, "right": pad})
 
 

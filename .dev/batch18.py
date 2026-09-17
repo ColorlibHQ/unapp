@@ -62,7 +62,7 @@ dish_row = columns([
 course_block = stack(
     label(php("$unapp_course['course']")) + "\n" +
     ("<?php foreach ( $unapp_course['dishes'] as $unapp_dish ) : ?>\n" + dish_row + "\n<?php endforeach; ?>"),
-    gap="20")
+    gap="20", justify="stretch")  # every dish row spans the course, so the prices line up
 body = section_std(
     intro(eyebrow_text=t("This week", "Section eyebrow label"),
           title=t("The menu changes on Wednesday"),
@@ -86,7 +86,7 @@ for day, hrs in HOURS:
         column(para(t(hrs, "Opening hours"), color="muted", align="right"), width="68%", vertical_align="center"),
     ], gap="30", vertical_align="center", is_stacked=False))
 hours_card = card(card_title(t("When we are open")) + "\n" +
-                  ("\n" + separator(style="wide", color="border") + "\n").join(rows))
+                  ("\n" + separator(style="wide", color="border") + "\n").join(rows), justify="stretch")
 body = section_std(
     split(
         eyebrow(t("Find us", "Section eyebrow label"), align="left") + "\n" +

@@ -203,7 +203,7 @@ for day, hrs in HOURS:
         column(para(t(hrs, "Opening hours"), color="muted", align="right"), width="54%", vertical_align="center"),
     ], gap="30", vertical_align="center", is_stacked=False))
 hours_card = card(card_title(t("Opening hours")) + "\n" +
-                  ("\n" + separator(style="wide", color="border") + "\n").join(rows))
+                  ("\n" + separator(style="wide", color="border") + "\n").join(rows), justify="stretch")
 body = section_std(
     split(
         eyebrow(t("Find the practice", "Section eyebrow label"), align="left") + "\n" +
