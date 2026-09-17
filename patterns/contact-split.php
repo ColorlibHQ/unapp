@@ -5,7 +5,7 @@
  * Categories: unapp, unapp_utility, contact
  * Keywords: contact, form, details, email, phone, split
  * Viewport Width: 1400
- * Description: Contact details on the left and a card for your form plugin's block on the right.
+ * Description: Contact details on the left and your form plugin's form, or an email fallback, on the right.
  *
  * @package Unapp
  */
@@ -99,19 +99,15 @@
 <div class="wp-block-column" style="flex-basis:55%;">
 <!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group is-style-card" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);">
-<!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'Send a message', 'unapp' ); ?></h3>
-<!-- /wp:heading -->
-<!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-<p class="has-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'Add your form plugin\'s block here — Contact Form 7, WPForms, Kali Forms and Gravity Forms all provide one.', 'unapp' ); ?></p>
-<!-- /wp:paragraph -->
-<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--30);">
-<!-- wp:button {"className":"is-style-outline","width":100} -->
-<div class="wp-block-button is-style-outline has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="mailto:hello@example.com"><?php esc_html_e( 'Email us instead', 'unapp' ); ?></a></div>
-<!-- /wp:button -->
-</div>
-<!-- /wp:buttons -->
+<?php
+// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- block markup; each part is escaped where unapp_contact_form() builds it.
+echo unapp_contact_form(
+	array(
+		'title' => _x( 'Send a message', 'Contact form heading', 'unapp' ),
+		'email' => 'hello@example.com',
+	)
+);
+?>
 </div>
 <!-- /wp:group -->
 </div>

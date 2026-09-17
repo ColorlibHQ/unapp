@@ -11,6 +11,11 @@
  */
 
 .unapp-form {
+	/* Contact cards are vertical flex groups, which size children to their
+	   content: without this the form shrank to the width of Contact Form 7's
+	   size="40" fields instead of filling the card. */
+	align-self: stretch;
+	inline-size: 100%;
 	font-family: var(--wp--preset--font-family--body);
 	font-size: var(--wp--preset--font-size--small);
 }
@@ -37,7 +42,9 @@
 	input[type="number"], input[type="date"], input[type="time"], input[type="search"],
 	input[type="password"], select, textarea
 ) {
+	box-sizing: border-box;
 	inline-size: 100%;
+	max-inline-size: 100%;
 	padding: 0.75rem 1rem;
 	border: 1px solid var(--wp--preset--color--border);
 	border-radius: 10px;

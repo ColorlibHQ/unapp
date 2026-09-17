@@ -28,9 +28,11 @@ body = section(
             width="45%", gap="30"),
         column(
             group(
-                heading(t("Send a message"), level=3, size="large") + "\n" +
-                para(t("Add your form plugin's block here — Contact Form 7, WPForms, Kali Forms and Gravity Forms all provide one."), color="muted", size="small") + "\n" +
-                buttons([{"text": t("Email us instead"), "url": "mailto:hello@example.com", "style": "is-style-outline", "width": 100}], margin={"top": "30"}),
+                # The form slot, like every niche contact section: the active form
+                # plugin's form when there is one, an email fallback when not. The
+                # old instruction to "add your form plugin's block here" was shown
+                # to visitors on every SaaS contact page.
+                contact_form("Send a message", "hello@example.com"),
                 style_variation="is-style-card", radius="20px", layout="default", gap="30",
                 pad={"top": "50", "bottom": "50", "left": "50", "right": "50"}),
             width="55%"),
@@ -38,7 +40,7 @@ body = section(
     pad=("70", "70"), gap="0")
 write_pattern("contact-split", title="Contact: details and form", cats="unapp, unapp_utility, contact",
               keywords="contact, form, details, email, phone, split",
-              desc="Contact details on the left and a card for your form plugin's block on the right.",
+              desc="Contact details on the left and your form plugin's form, or an email fallback, on the right.",
               body=body)
 
 # ------------------------------------------------------------- feature checklist
