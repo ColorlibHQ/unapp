@@ -78,7 +78,7 @@
 .woocommerce span.onsale,
 .wc-block-components-product-sale-badge {
 	background-color: var(--wp--preset--color--secondary);
-	color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--dark);
 	border-radius: 999px;
 	border: 0;
 	padding: 0.25em 0.85em;
@@ -194,7 +194,7 @@
 .wc-block-components-product-sale-badge {
 	border-radius: 999px;
 	background: var(--wp--preset--color--secondary);
-	color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--dark);
 	font-family: var(--wp--preset--font-family--heading);
 	font-size: var(--wp--preset--font-size--small);
 	font-weight: 600;
@@ -215,7 +215,7 @@
 
 .wp-block-woocommerce-product-button .wp-block-button__link {
 	background: var(--wp--preset--color--secondary);
-	color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--dark);
 	padding: 0.7rem 1.4rem;
 }
 
