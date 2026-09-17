@@ -32,3 +32,33 @@
 .wp-block-table.is-style-compare tbody tr:last-child :is(th, td) {
 	border-bottom: 0;
 }
+
+/* Phones: a four-column comparison was 398px wide in a 342px column at 390,
+   so it scrolled sideways inside a region the keyboard cannot reach. Tighter
+   cells and a step down in type let it fit from 360px up. */
+@media (max-width: 480px) {
+	.wp-block-table.is-style-compare :is(th, td) {
+		padding: 0.7rem 0.4rem;
+		font-size: 0.8125rem;
+		line-height: 1.4;
+	}
+
+	.wp-block-table.is-style-compare :is(th:first-child, td:first-child) {
+		padding-inline-start: 0.6rem;
+	}
+
+	.wp-block-table.is-style-compare thead th {
+		font-size: 0.875rem;
+	}
+}
+
+@media (max-width: 359px) {
+	.wp-block-table.is-style-compare :is(th, td) {
+		padding-inline: 0.25rem;
+		font-size: 0.75rem;
+	}
+
+	.wp-block-table.is-style-compare thead th {
+		font-size: 0.8125rem;
+	}
+}

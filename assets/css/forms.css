@@ -71,7 +71,8 @@
 	border: 0;
 	border-radius: 999px;
 	background: var(--wp--preset--color--secondary);
-	color: var(--wp--preset--color--contrast);
+	/* `dark`, not `contrast`: on a dark palette contrast is the light tone. */
+	color: var(--wp--preset--color--dark);
 	font-family: var(--wp--preset--font-family--heading);
 	font-size: 0.9375rem;
 	font-weight: 500;
