@@ -43,8 +43,11 @@ function unapp_scheme_boot() {
 		return;
 	}
 
-	// phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript -- must run before paint.
-	echo '<script>(function(){try{var s=localStorage.getItem("unapp-scheme");if(s==="dark"||s==="light"){document.documentElement.setAttribute("data-unapp-scheme",s);}}catch(e){}})();</script>' . "\n";
+	// Printed through core so CSP nonce filters (wp_inline_script_attributes) apply.
+	wp_print_inline_script_tag(
+		'(function(){try{var s=localStorage.getItem("unapp-scheme");if(s==="dark"||s==="light"){document.documentElement.setAttribute("data-unapp-scheme",s);}}catch(e){}})();',
+		array( 'id' => 'unapp-scheme-boot' )
+	);
 }
 add_action( 'wp_head', 'unapp_scheme_boot', 1 );
 

@@ -30,12 +30,12 @@
 		} );
 	}
 
+	// The dark tokens apply only through the attribute (assets/css/scheme.css), so
+	// the state is read from the attribute alone. Following prefers-color-scheme
+	// here made the button report "dark" to an OS-dark visitor looking at a light
+	// page, and their first click stored "light" and changed nothing.
 	function current() {
-		var set = root.getAttribute( 'data-unapp-scheme' );
-		if ( set ) {
-			return set;
-		}
-		return window.matchMedia( '(prefers-color-scheme: dark)' ).matches ? 'dark' : 'light';
+		return root.getAttribute( 'data-unapp-scheme' ) === 'dark' ? 'dark' : 'light';
 	}
 
 	function bind( button ) {
