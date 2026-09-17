@@ -44,16 +44,18 @@ write_pattern("features-offset", title="Features: asymmetric", cats=U,
               body=body)
 
 # ---------------------------------------------------------------- full-bleed statement
+# White, not the palette's base: the ground is dark in all twelve palettes,
+# and base is near-black in Midnight (1.06:1). Same fix as the footers.
 body = section_std(
     group(
-        eyebrow(t("The short version", "Section eyebrow label"), align="center", color="base") + "\n" +
+        eyebrow(t("The short version", "Section eyebrow label"), align="center", custom_color="#ffffff") + "\n" +
         heading(t("Software should make the work smaller, not the week longer"),
-                align="center", size="xxx-large", color="base", line_height="1.1") + "\n" +
+                align="center", size="xxx-large", line_height="1.1") + "\n" +
         para(t("Everything else on this page is detail underneath that sentence."),
              align="center", custom_color="rgba(255,255,255,0.8)", size="large"),
         layout="constrained", content_size="900px", gap=STACK_GAP),
-    bg="dark", text="base", pad=("80", "80"), gap="0",
-    elements={"heading": {"color": {"text": "var:preset|color|base"}}})
+    bg="dark", custom_text="#ffffff", pad=("80", "80"), gap="0",
+    elements={"heading": {"color": {"text": "#ffffff"}}})
 write_pattern("statement", title="Statement", cats="unapp, unapp_content, text",
               keywords="statement, quote, manifesto, full width, dark",
               desc="One sentence, full bleed on the dark ground. A pause between two busy sections.",
