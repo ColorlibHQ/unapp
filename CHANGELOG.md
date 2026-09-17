@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.5.4 – 2026-09-17
+
+### Fixed
+- The Restaurant and Courses starter descriptions on Appearance → Starter Sites showed a literal `\u2019` instead of an apostrophe ("the week\u2019s menu").
+- The font credits in readme.txt named two families; the theme bundles six: Poppins, Nunito, Inter, Fraunces, Space Grotesk and Manrope.
+
+### Changed
+- `languages/unapp.pot` is regenerated from the current source. It had fallen behind the 2.5.x releases and still carried the escaped starter descriptions.
+
 ## 2.5.3 – 2026-08-20
 
 ### Fixed

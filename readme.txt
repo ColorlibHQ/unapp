@@ -3,7 +3,7 @@ Contributors: colorlib
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.5.3
+Stable tag: 2.5.4
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, one-column, rtl-language-support, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, style-variations, template-editing, threaded-comments, translation-ready
@@ -105,6 +105,11 @@ Yes. Every section is a pattern: open the block inserter, choose the Patterns ta
 They are simple SVGs drawn for this theme — invented brand names for the logo cloud and gradient portraits for the team and testimonials. Nothing is licensed from a third party, so replace them with your own at any time.
 
 == Changelog ==
+
+= 2.5.4 - 2026-09-17 =
+* Fixed: the Restaurant and Courses starter descriptions on Appearance > Starter Sites showed a literal \u2019 instead of an apostrophe.
+* Fixed: the font credits named two families; the theme bundles six (Poppins, Nunito, Inter, Fraunces, Space Grotesk and Manrope).
+* The translation template is regenerated from the current source. It had fallen behind 2.5.x, including the starter descriptions and the update notice.
 
 = 2.5.3 - 2026-08-20 =
 * Fixed: a starter site applied through WP-CLI did not apply its palette or typeface. WordPress finds the global styles post through a taxonomy term that wp_insert_post() drops when no user is logged in, so each attempt wrote to a post the site never read.
