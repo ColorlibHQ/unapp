@@ -107,6 +107,51 @@ function unapp_plugin_install_url( $slug ) {
 }
 
 /**
+ * Whether a plugin's files are present, active or not.
+ *
+ * @param string $file Plugin file, relative to the plugins directory.
+ * @return bool
+ */
+function unapp_plugin_installed( $file ) {
+	return file_exists( WP_PLUGIN_DIR . '/' . $file );
+}
+
+/**
+ * The action a user can take for a suggested plugin: install it, activate it,
+ * or nothing when their role allows neither.
+ *
+ * Core refuses to install over an existing folder ("Destination folder already
+ * exists"), so an installed-but-inactive plugin needs the activate link instead.
+ *
+ * @param array $plugin Plugin definition from unapp_wizard_plugins().
+ * @return array|null array( 'url', 'label' ), or null.
+ */
+function unapp_plugin_action( $plugin ) {
+	if ( unapp_plugin_installed( $plugin['file'] ) ) {
+		if ( ! current_user_can( 'activate_plugins' ) ) {
+			return null;
+		}
+
+		return array(
+			'url'   => wp_nonce_url(
+				self_admin_url( 'plugins.php?action=activate&plugin=' . rawurlencode( $plugin['file'] ) ),
+				'activate-plugin_' . $plugin['file']
+			),
+			'label' => __( 'Activate', 'unapp' ),
+		);
+	}
+
+	if ( ! current_user_can( 'install_plugins' ) ) {
+		return null;
+	}
+
+	return array(
+		'url'   => unapp_plugin_install_url( $plugin['slug'] ),
+		'label' => __( 'Install', 'unapp' ),
+	);
+}
+
+/**
  * Apply the branding collected by the wizard.
  *
  * @param array $brand {
@@ -128,7 +173,29 @@ function unapp_wizard_apply_brand( $brand ) {
 
 	if ( $brand['logo'] ) {
 		set_theme_mod( 'custom_logo', $brand['logo'] );
+	} elseif ( ! empty( $brand['logo_was'] ) ) {
+		// The field started with a logo and came back empty: the user pressed Remove.
+		remove_theme_mod( 'custom_logo' );
 	}
+}
+
+/**
+ * Branding values carried between wizard steps in the query string.
+ *
+ * @param array $source $_GET or $_POST.
+ * @return array
+ */
+function unapp_wizard_brand_from( $source ) {
+	// phpcs:disable WordPress.Security.NonceVerification -- callers verify the nonce where state changes.
+	return array(
+		'title'    => isset( $source['site_title'] ) ? sanitize_text_field( wp_unslash( $source['site_title'] ) ) : '',
+		'tagline'  => isset( $source['tagline'] ) ? sanitize_text_field( wp_unslash( $source['tagline'] ) ) : '',
+		'logo'     => isset( $source['logo_id'] ) ? absint( $source['logo_id'] ) : 0,
+		'logo_was' => isset( $source['logo_was'] ) ? absint( $source['logo_was'] ) : 0,
+		'colors'   => isset( $source['colors'] ) ? sanitize_key( wp_unslash( $source['colors'] ) ) : '',
+		'type'     => isset( $source['typography'] ) ? sanitize_key( wp_unslash( $source['typography'] ) ) : '',
+	);
+	// phpcs:enable WordPress.Security.NonceVerification
 }
 
 /**
@@ -149,13 +216,7 @@ function unapp_wizard_handle() {
 		exit;
 	}
 
-	$brand = array(
-		'title'   => isset( $_POST['site_title'] ) ? sanitize_text_field( wp_unslash( $_POST['site_title'] ) ) : '',
-		'tagline' => isset( $_POST['tagline'] ) ? sanitize_text_field( wp_unslash( $_POST['tagline'] ) ) : '',
-		'logo'    => isset( $_POST['logo_id'] ) ? absint( $_POST['logo_id'] ) : 0,
-		'colors'  => isset( $_POST['colors'] ) ? sanitize_key( wp_unslash( $_POST['colors'] ) ) : '',
-		'type'    => isset( $_POST['typography'] ) ? sanitize_key( wp_unslash( $_POST['typography'] ) ) : '',
-	);
+	$brand = unapp_wizard_brand_from( $_POST );
 
 	unapp_wizard_apply_brand( $brand );
 
@@ -177,7 +238,7 @@ function unapp_wizard_handle() {
 	$result = unapp_apply_starter_site( $starter );
 	remove_filter( 'unapp_starter_sites', $filter, 99 );
 
-	set_transient( UNAPP_STARTER_RESULT, is_wp_error( $result ) ? 'error' : 'done', HOUR_IN_SECONDS );
+	set_transient( UNAPP_STARTER_RESULT, is_wp_error( $result ) ? 'error:' . $result->get_error_code() : 'done', HOUR_IN_SECONDS );
 	wp_safe_redirect( admin_url( 'themes.php?page=unapp-starter-sites&step=done' ) );
 	exit;
 }
@@ -254,13 +315,29 @@ function unapp_wizard_render_brand( $starter ) {
 	$sites      = unapp_get_starter_sites();
 	$site       = $sites[ $starter ];
 	$variations = unapp_wizard_variations();
-	$logo_id    = (int) get_theme_mod( 'custom_logo' );
-	$logo_src   = $logo_id ? wp_get_attachment_image_url( $logo_id, 'medium' ) : '';
+
+	// Coming "Back" from step three carries what was typed there; otherwise start
+	// from what the site already has.
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only prefill.
+	$carried  = isset( $_GET['back'] ) ? unapp_wizard_brand_from( $_GET ) : null;
+	$logo_was = (int) get_theme_mod( 'custom_logo' );
+	$logo_id  = $carried ? $carried['logo'] : $logo_was;
+	$logo_src = $logo_id ? wp_get_attachment_image_url( $logo_id, 'medium' ) : '';
+	$title    = $carried ? $carried['title'] : get_option( 'blogname' );
+	$tagline  = $carried ? $carried['tagline'] : get_option( 'blogdescription' );
+
+	if ( $carried && $carried['colors'] ) {
+		$site['colors'] = $carried['colors'];
+	}
+	if ( $carried && $carried['type'] ) {
+		$site['type'] = $carried['type'];
+	}
 	?>
 	<form method="get" action="<?php echo esc_url( admin_url( 'themes.php' ) ); ?>" class="unapp-wizard">
 		<input type="hidden" name="page" value="unapp-starter-sites">
 		<input type="hidden" name="step" value="plugins">
 		<input type="hidden" name="starter" value="<?php echo esc_attr( $starter ); ?>">
+		<input type="hidden" name="logo_was" value="<?php echo esc_attr( $logo_was ); ?>">
 
 		<h2>
 			<?php
@@ -275,12 +352,12 @@ function unapp_wizard_render_brand( $starter ) {
 			<p class="unapp-field">
 				<label for="unapp-site-title"><?php esc_html_e( 'Site title', 'unapp' ); ?></label>
 				<input type="text" id="unapp-site-title" name="site_title" class="regular-text"
-					value="<?php echo esc_attr( get_option( 'blogname' ) ); ?>">
+					value="<?php echo esc_attr( $title ); ?>">
 			</p>
 			<p class="unapp-field">
 				<label for="unapp-tagline"><?php esc_html_e( 'Tagline', 'unapp' ); ?></label>
 				<input type="text" id="unapp-tagline" name="tagline" class="regular-text"
-					value="<?php echo esc_attr( get_option( 'blogdescription' ) ); ?>">
+					value="<?php echo esc_attr( $tagline ); ?>">
 			</p>
 			<div class="unapp-field">
 				<span class="unapp-field__label"><?php esc_html_e( 'Logo', 'unapp' ); ?></span>
@@ -353,23 +430,46 @@ function unapp_wizard_render_plugins( $starter, $brand ) {
 	$sites       = unapp_get_starter_sites();
 	$site        = $sites[ $starter ];
 	$suggestions = unapp_wizard_plugin_suggestions( $starter );
+	$missing     = unapp_starter_missing_requirement( $site );
+	$back_args   = array(
+		'page'       => 'unapp-starter-sites',
+		'step'       => 'brand',
+		'starter'    => $starter,
+		'back'       => 1,
+		'site_title' => $brand['title'],
+		'tagline'    => $brand['tagline'],
+		'logo_id'    => $brand['logo'],
+		'logo_was'   => $brand['logo_was'],
+		'colors'     => $brand['colors'],
+		'typography' => $brand['type'],
+	);
 	?>
 	<div class="unapp-wizard">
 		<h2><?php esc_html_e( 'One or two things this starter needs', 'unapp' ); ?></h2>
 
 		<?php if ( $suggestions ) : ?>
-			<p class="unapp-wizard__lede"><?php esc_html_e( 'WordPress installs these, not the theme, and you can skip them and come back later. Nothing here is required to build the site.', 'unapp' ); ?></p>
+			<p class="unapp-wizard__lede">
+				<?php
+				echo $missing
+					? esc_html__( 'WordPress installs these, not the theme. This starter cannot be built until its required plugin is active; the others can be skipped and added later.', 'unapp' )
+					: esc_html__( 'WordPress installs these, not the theme, and you can skip them and come back later. Nothing here is required to build the site.', 'unapp' );
+				?>
+			</p>
 			<div class="unapp-wizard__panel">
 				<?php foreach ( $suggestions as $plugin ) : ?>
+					<?php $unapp_action = unapp_plugin_action( $plugin ); ?>
 					<div class="unapp-plugin">
 						<div>
 							<strong><?php echo esc_html( $plugin['label'] ); ?></strong>
 							<p><?php echo esc_html( $plugin['reason'] ); ?></p>
 						</div>
-						<a class="button" target="_blank" rel="noopener"
-							href="<?php echo esc_url( unapp_plugin_install_url( $plugin['slug'] ) ); ?>">
-							<?php esc_html_e( 'Install', 'unapp' ); ?>
-						</a>
+						<?php if ( $unapp_action ) : ?>
+							<a class="button" target="_blank" rel="noopener" href="<?php echo esc_url( $unapp_action['url'] ); ?>">
+								<?php echo esc_html( $unapp_action['label'] ); ?>
+							</a>
+						<?php else : ?>
+							<span class="description"><?php esc_html_e( 'Ask an administrator to install it.', 'unapp' ); ?></span>
+						<?php endif; ?>
 					</div>
 				<?php endforeach; ?>
 			</div>
@@ -384,6 +484,7 @@ function unapp_wizard_render_plugins( $starter, $brand ) {
 			<input type="hidden" name="site_title" value="<?php echo esc_attr( $brand['title'] ); ?>">
 			<input type="hidden" name="tagline" value="<?php echo esc_attr( $brand['tagline'] ); ?>">
 			<input type="hidden" name="logo_id" value="<?php echo esc_attr( $brand['logo'] ); ?>">
+			<input type="hidden" name="logo_was" value="<?php echo esc_attr( $brand['logo_was'] ); ?>">
 			<input type="hidden" name="colors" value="<?php echo esc_attr( $brand['colors'] ); ?>">
 			<input type="hidden" name="typography" value="<?php echo esc_attr( $brand['type'] ); ?>">
 
@@ -398,17 +499,18 @@ function unapp_wizard_render_plugins( $starter, $brand ) {
 						?>
 					</li>
 					<li><?php esc_html_e( 'A navigation menu is built from those pages', 'unapp' ); ?></li>
-					<li><?php esc_html_e( 'The palette and typeface are written into Global Styles', 'unapp' ); ?></li>
+					<li><?php esc_html_e( 'The palette and typeface replace the current Global Styles', 'unapp' ); ?></li>
+					<li><?php esc_html_e( 'The header and footer take the starter\'s wording', 'unapp' ); ?></li>
 					<li><?php esc_html_e( 'The front page is pointed at the new home page', 'unapp' ); ?></li>
-					<li><?php esc_html_e( 'Nothing you already have is deleted or overwritten', 'unapp' ); ?></li>
+					<li><?php esc_html_e( 'No page, post or image is deleted, and the previous styles, header and footer stay in their revision history', 'unapp' ); ?></li>
 				</ul>
 			</div>
 
 			<p class="unapp-wizard__actions">
-				<a class="button" href="<?php echo esc_url( add_query_arg( array( 'page' => 'unapp-starter-sites', 'step' => 'brand', 'starter' => $starter ), admin_url( 'themes.php' ) ) ); ?>">
+				<a class="button" href="<?php echo esc_url( add_query_arg( $back_args, admin_url( 'themes.php' ) ) ); ?>">
 					<?php esc_html_e( 'Back', 'unapp' ); ?>
 				</a>
-				<button type="submit" class="button button-primary button-hero"><?php esc_html_e( 'Build my site', 'unapp' ); ?></button>
+				<button type="submit" class="button button-primary button-hero" <?php disabled( (bool) $missing ); ?>><?php esc_html_e( 'Build my site', 'unapp' ); ?></button>
 			</p>
 		</form>
 	</div>
@@ -421,6 +523,21 @@ function unapp_wizard_render_plugins( $starter, $brand ) {
 function unapp_wizard_render_done() {
 	$applied = get_option( UNAPP_STARTER_OPTION, array() );
 	$home    = isset( $applied['pages']['home'] ) ? (int) $applied['pages']['home'] : 0;
+	$result  = get_transient( UNAPP_STARTER_RESULT );
+
+	// Read once here, so it does not reappear as a stale notice on the next visit.
+	delete_transient( UNAPP_STARTER_RESULT );
+
+	if ( 'done' !== $result ) {
+		?>
+		<div class="unapp-wizard unapp-wizard--done">
+			<h2><?php esc_html_e( 'The site could not be built', 'unapp' ); ?></h2>
+			<p class="unapp-wizard__lede"><?php echo esc_html( unapp_starter_error_message( $result ) ); ?></p>
+			<p><a class="button button-primary" href="<?php echo esc_url( admin_url( 'themes.php?page=unapp-starter-sites' ) ); ?>"><?php esc_html_e( 'Back to the starter sites', 'unapp' ); ?></a></p>
+		</div>
+		<?php
+		return;
+	}
 	?>
 	<div class="unapp-wizard unapp-wizard--done">
 		<h2><?php esc_html_e( 'Your site is built', 'unapp' ); ?></h2>

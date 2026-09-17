@@ -7,8 +7,11 @@
  * pages and a matching menu. Applying one writes the style variation into
  * Global Styles, creates the pages and points Settings → Reading at them.
  *
- * Nothing is ever deleted. Applying a second starter creates a new home page
- * and leaves the previous one in the Pages list.
+ * No page, post or image is ever deleted: applying a second starter creates a
+ * new home page and leaves the previous one in the Pages list. The Global
+ * Styles, the header and footer template parts and the theme's own navigation
+ * menu are replaced, always by updating the existing post, so what was there
+ * before stays in its revision history.
  *
  * @package Unapp
  * @since   2.3.0
@@ -380,6 +383,48 @@ function unapp_get_starter_sites() {
 }
 
 /**
+ * The plugin a starter needs but the site does not have active, if any.
+ *
+ * @param array $site Starter site definition.
+ * @return string Plugin file (e.g. woocommerce/woocommerce.php), or '' when nothing is missing.
+ */
+function unapp_starter_missing_requirement( $site ) {
+	if ( empty( $site['requires'] ) ) {
+		return '';
+	}
+
+	if ( ! function_exists( 'is_plugin_active' ) ) {
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	}
+
+	return is_plugin_active( $site['requires'] ) ? '' : $site['requires'];
+}
+
+/**
+ * A readable name for a required plugin file.
+ *
+ * @param string $file Plugin file.
+ * @return string
+ */
+function unapp_starter_requirement_label( $file ) {
+	return 0 === strpos( $file, 'woocommerce/' ) ? 'WooCommerce' : dirname( $file );
+}
+
+/**
+ * The message for a failed apply, from the code stored after the attempt.
+ *
+ * @param string $result Stored result: "error" or "error:<code>".
+ * @return string
+ */
+function unapp_starter_error_message( $result ) {
+	if ( 0 === strpos( (string) $result, 'error:unapp_missing_requirement' ) ) {
+		return __( 'This starter needs a plugin that is not active yet. Install and activate it, then build the site again.', 'unapp' );
+	}
+
+	return __( 'That starter site could not be applied. Please try again.', 'unapp' );
+}
+
+/**
  * Apply a starter site.
  *
  * @param string $slug Starter site slug.
@@ -392,7 +437,19 @@ function unapp_apply_starter_site( $slug ) {
 		return new WP_Error( 'unapp_unknown_starter', __( 'That starter site does not exist.', 'unapp' ) );
 	}
 
-	$site    = $sites[ $slug ];
+	$site = $sites[ $slug ];
+
+	// The Shop starter is built from WooCommerce blocks. Without WooCommerce it
+	// produced an empty storefront full of missing-block placeholders.
+	$missing = unapp_starter_missing_requirement( $site );
+	if ( $missing ) {
+		return new WP_Error(
+			'unapp_missing_requirement',
+			/* translators: %s: plugin name. */
+			sprintf( __( 'This starter needs %s. Install and activate it first.', 'unapp' ), unapp_starter_requirement_label( $missing ) )
+		);
+	}
+
 	$content = unapp_lock_starter_sections( unapp_get_pattern_markup( $site['home'] ) );
 
 	if ( '' === $content ) {
@@ -470,7 +527,7 @@ function unapp_apply_starter_site( $slug ) {
 
 	unapp_apply_starter_styles( $site );
 	unapp_build_starter_menu( $site, $created );
-	unapp_apply_starter_header( $site );
+	unapp_apply_starter_header( $site, $created );
 	unapp_apply_starter_footer( $site );
 
 	update_option( UNAPP_STARTER_OPTION, array( 'slug' => $slug, 'pages' => $created, 'time' => time() ) );
@@ -692,6 +749,7 @@ function unapp_apply_starter_styles( $site ) {
 	}
 
 	unset( $variation['$schema'], $variation['title'], $variation['slug'] );
+	$variation                                = unapp_key_presets_by_origin( $variation );
 	$variation['version']                     = WP_Theme_JSON::LATEST_SCHEMA;
 	$variation['isGlobalStylesUserThemeJSON'] = true;
 
@@ -710,6 +768,9 @@ function unapp_apply_starter_styles( $site ) {
 	// the browser and is what makes headless provisioning work at all.
 	wp_set_object_terms( $user_cpt['ID'], wp_get_theme()->get_stylesheet(), 'wp_theme' );
 
+	// Keep the styles the site had, so Styles → Revisions can bring them back.
+	unapp_keep_revision( $user_cpt['ID'] );
+
 	wp_update_post(
 		array(
 			'ID'           => $user_cpt['ID'],
@@ -721,6 +782,55 @@ function unapp_apply_starter_styles( $site ) {
 	// back in the same run would otherwise see the old styles.
 	WP_Theme_JSON_Resolver::clean_cached_data();
 }
+
+/**
+ * Store preset lists the way the Site Editor stores a chosen style variation.
+ *
+ * A variation file writes a palette as a plain list. Saved into the user's
+ * Global Styles as-is, WordPress files that list under the "custom" origin, so
+ * the Site Editor showed the theme's default palette and the starter's colours
+ * side by side, listed every font twice and marked no variation as active.
+ * Keying each list by "theme" is exactly what the editor saves when a user
+ * picks the variation themselves.
+ *
+ * @param array $variation Decoded variation.
+ * @return array
+ */
+function unapp_key_presets_by_origin( $variation ) {
+	if ( empty( $variation['settings'] ) || ! is_array( $variation['settings'] ) ) {
+		return $variation;
+	}
+
+	$paths = array();
+	foreach ( WP_Theme_JSON::PRESETS_METADATA as $meta ) {
+		$paths[] = $meta['path'];
+	}
+
+	$wrap = static function ( $settings ) use ( $paths ) {
+		foreach ( $paths as $path ) {
+			$value = _wp_array_get( $settings, $path, null );
+			if ( is_array( $value ) && ( array() === $value || wp_is_numeric_array( $value ) ) ) {
+				_wp_array_set( $settings, $path, array( 'theme' => $value ) );
+			}
+		}
+		return $settings;
+	};
+
+	$variation['settings'] = $wrap( $variation['settings'] );
+
+	if ( ! empty( $variation['settings']['blocks'] ) && is_array( $variation['settings']['blocks'] ) ) {
+		foreach ( $variation['settings']['blocks'] as $block => $block_settings ) {
+			if ( is_array( $block_settings ) ) {
+				$variation['settings']['blocks'][ $block ] = $wrap( $block_settings );
+			}
+		}
+	}
+
+	return $variation;
+}
+
+/** Option holding the ID of the navigation menu the starters build and maintain. */
+const UNAPP_STARTER_NAV_OPTION = 'unapp_starter_navigation';
 
 /**
  * Build a navigation menu for the starter's pages and make it the site menu.
@@ -761,28 +871,34 @@ function unapp_build_starter_menu( $site, $created ) {
 		kses_remove_filters();
 	}
 
-	$existing = get_posts(
-		array(
-			'post_type'      => 'wp_navigation',
-			'post_status'    => 'publish',
-			'posts_per_page' => 1,
-			'orderby'        => 'date',
-			'order'          => 'DESC',
-		)
-	);
+	// Only ever update the menu the starters made themselves. Taking the newest
+	// wp_navigation post instead renamed and emptied whatever menu the site had
+	// created last (a "Top Socials" menu, in testing).
+	$own = absint( get_option( UNAPP_STARTER_NAV_OPTION ) );
+	if ( $own && 'wp_navigation' !== get_post_type( $own ) ) {
+		$own = 0;
+	}
 
 	$args = array(
 		'post_type'    => 'wp_navigation',
 		'post_status'  => 'publish',
-		'post_title'   => __( 'Navigation', 'unapp' ),
+		'post_title'   => __( 'Starter site menu', 'unapp' ),
 		'post_content' => wp_slash( trim( $items ) ),
 	);
 
-	if ( $existing ) {
-		$args['ID'] = $existing[0]->ID;
+	if ( $own ) {
+		unapp_keep_revision( $own );
+		// The header's Navigation block has no fixed ref and shows the most recently
+		// published menu, so bring this one back to the front of that queue.
+		$args['ID']            = $own;
+		$args['post_date']     = current_time( 'mysql' );
+		$args['post_date_gmt'] = current_time( 'mysql', true );
 		wp_update_post( $args );
 	} else {
-		wp_insert_post( $args );
+		$own = wp_insert_post( $args );
+		if ( $own && ! is_wp_error( $own ) ) {
+			update_option( UNAPP_STARTER_NAV_OPTION, $own, false );
+		}
 	}
 
 	if ( $kses_active ) {
@@ -826,6 +942,89 @@ function unapp_get_customised_header() {
 }
 
 /**
+ * Save a template part, always as an update when one already exists.
+ *
+ * Force-deleting a customised part (as 2.5.4 did when a starter used the theme's
+ * own header or footer) also destroyed its revisions, so a header the user had
+ * edited in the Site Editor was gone for good. Updating instead keeps the
+ * previous version one click away under Revisions.
+ *
+ * @param string $name    Part slug: 'header' or 'footer'.
+ * @param string $title   Part title.
+ * @param string $content Block markup.
+ */
+function unapp_save_part( $name, $title, $content ) {
+	$existing = unapp_get_customised_part( $name );
+
+	$args = array(
+		'post_type'    => 'wp_template_part',
+		'post_status'  => 'publish',
+		'post_title'   => $title,
+		'post_name'    => $name,
+		'post_content' => wp_slash( $content ),
+	);
+
+	// The markup is the theme's own; kses would mangle block attributes when this
+	// runs without a logged-in user (WP-CLI).
+	$kses_active = has_filter( 'content_save_pre', 'wp_filter_post_kses' );
+	if ( $kses_active ) {
+		kses_remove_filters();
+	}
+
+	if ( $existing ) {
+		if ( $existing->post_content === $content ) {
+			if ( $kses_active ) {
+				kses_init_filters();
+			}
+			return;
+		}
+		unapp_keep_revision( $existing->ID );
+		$args['ID'] = $existing->ID;
+		$part_id    = wp_update_post( $args );
+	} else {
+		$part_id = wp_insert_post( $args );
+	}
+
+	if ( $kses_active ) {
+		kses_init_filters();
+	}
+
+	if ( $part_id && ! is_wp_error( $part_id ) ) {
+		wp_set_object_terms( $part_id, get_stylesheet(), 'wp_theme' );
+		wp_set_object_terms( $part_id, $name, 'wp_template_part_area' );
+	}
+}
+
+/**
+ * Make sure a post's current content exists as a revision before replacing it.
+ *
+ * WordPress stores a revision when a post is updated, of the new content. A
+ * header saved once in the Site Editor was inserted, never updated, so it had
+ * no revision at all, and overwriting it would have lost it. This records the
+ * current state first (wp_save_post_revision() skips it when the latest
+ * revision already matches).
+ *
+ * @param int $post_id Post ID.
+ */
+function unapp_keep_revision( $post_id ) {
+	if ( wp_revisions_enabled( get_post( $post_id ) ) ) {
+		wp_save_post_revision( $post_id );
+	}
+}
+
+/**
+ * The theme file's own markup for a template part.
+ *
+ * @param string $name Part slug.
+ * @return string
+ */
+function unapp_part_file_content( $name ) {
+	$file = get_theme_file_path( 'parts/' . $name . '.html' );
+	// phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- local theme file.
+	return file_exists( $file ) ? (string) file_get_contents( $file ) : '';
+}
+
+/**
  * Point a template part at one of the theme's own patterns.
  *
  * Starters swap the footer this way: the saved part is a single pattern
@@ -840,8 +1039,13 @@ function unapp_set_part_to_pattern( $name, $title, $pattern ) {
 	$existing = unapp_get_customised_part( $name );
 
 	if ( '' === $pattern ) {
+		// Back to the theme's own part. With nothing saved there is nothing to do;
+		// with a saved part, write the file's markup over it rather than deleting.
 		if ( $existing ) {
-			wp_delete_post( $existing->ID, true );
+			$file = unapp_part_file_content( $name );
+			if ( '' !== $file ) {
+				unapp_save_part( $name, $title, $file );
+			}
 		}
 		return;
 	}
@@ -850,25 +1054,7 @@ function unapp_set_part_to_pattern( $name, $title, $pattern ) {
 		return;
 	}
 
-	$args = array(
-		'post_type'    => 'wp_template_part',
-		'post_status'  => 'publish',
-		'post_title'   => $title,
-		'post_name'    => $name,
-		'post_content' => wp_slash( '<!-- wp:pattern {"slug":"' . $pattern . '"} /-->' ),
-	);
-
-	if ( $existing ) {
-		$args['ID'] = $existing->ID;
-		$part_id    = wp_update_post( $args );
-	} else {
-		$part_id = wp_insert_post( $args );
-	}
-
-	if ( $part_id && ! is_wp_error( $part_id ) ) {
-		wp_set_object_terms( $part_id, get_stylesheet(), 'wp_theme' );
-		wp_set_object_terms( $part_id, $name, 'wp_template_part_area' );
-	}
+	unapp_save_part( $name, $title, '<!-- wp:pattern {"slug":"' . $pattern . '"} /-->' );
 }
 
 /**
@@ -882,63 +1068,73 @@ function unapp_apply_starter_footer( $site ) {
 }
 
 /**
- * Give the header the starter's own call-to-action label.
+ * Where a starter's header button should point.
  *
- * The header pattern ships with a SaaS label, which reads oddly on a church or
- * a gym. This saves a customised copy of the header template part with the
- * starter's wording — the same thing the user would get by editing the header
- * in the Site Editor.
+ * A definition names one of the pages it creates in 'cta_page'; the Shop
+ * starter names 'shop', which is WooCommerce's own shop page.
  *
- * @param array $site Starter site definition.
+ * @param array $site    Starter site definition.
+ * @param array $created Created page IDs keyed by page key.
+ * @return string URL, or '' when the starter names none.
  */
-function unapp_apply_starter_header( $site ) {
-	$default  = _x( 'Get Premium', 'Header call-to-action button', 'unapp' );
-	$existing = unapp_get_customised_header();
+function unapp_starter_cta_url( $site, $created ) {
+	$key = isset( $site['cta_page'] ) ? $site['cta_page'] : '';
 
-	// A starter that uses the theme's own wording needs no customised part. Remove
-	// any left over from a previous starter so the header file takes over again.
-	if ( empty( $site['cta'] ) || $site['cta'] === $default ) {
-		if ( $existing ) {
-			wp_delete_post( $existing->ID, true );
-		}
+	if ( 'shop' === $key && function_exists( 'wc_get_page_permalink' ) ) {
+		return wc_get_page_permalink( 'shop' );
+	}
+
+	if ( '' !== $key && ! empty( $created[ $key ] ) ) {
+		return get_permalink( $created[ $key ] );
+	}
+
+	return '';
+}
+
+/**
+ * Give the header the starter's own call-to-action label and link.
+ *
+ * The header pattern ships with a SaaS label and an href of "#", which reads
+ * oddly on a church or a gym and goes nowhere on all of them. This saves a
+ * customised copy of the header template part with the starter's wording and a
+ * link to the page it names — the same thing the user would get by editing the
+ * header in the Site Editor.
+ *
+ * @param array $site    Starter site definition.
+ * @param array $created Created page IDs keyed by page key.
+ */
+function unapp_apply_starter_header( $site, $created = array() ) {
+	$default = _x( 'Get Premium', 'Header call-to-action button', 'unapp' );
+	$label   = empty( $site['cta'] ) ? $default : $site['cta'];
+	$url     = unapp_starter_cta_url( $site, $created );
+
+	// Nothing to customise: the header file takes over again.
+	if ( $label === $default && '' === $url ) {
+		unapp_set_part_to_pattern( 'header', __( 'Header', 'unapp' ), '' );
 		return;
 	}
 
 	$markup = unapp_get_pattern_markup( 'unapp/header' );
-	if ( '' === $markup || false === strpos( $markup, $default ) ) {
+
+	// The pattern prints the label through esc_html_x(), so compare against the
+	// escaped form: a translation containing an apostrophe or an ampersand never
+	// matched the raw string, and the swap was silently skipped.
+	$pattern = '#(<a class="wp-block-button__link[^"]*"[^>]*?href=")\\#("[^>]*>)' . preg_quote( esc_html( $default ), '#' ) . '(</a>)#';
+
+	if ( '' === $markup || ! preg_match( $pattern, $markup ) ) {
 		return;
 	}
 
-	$markup = str_replace( '>' . $default . '<', '>' . $site['cta'] . '<', $markup );
-
-	$kses_active = has_filter( 'content_save_pre', 'wp_filter_post_kses' );
-	if ( $kses_active ) {
-		kses_remove_filters();
-	}
-
-	$args = array(
-		'post_type'    => 'wp_template_part',
-		'post_status'  => 'publish',
-		'post_title'   => __( 'Header', 'unapp' ),
-		'post_name'    => 'header',
-		'post_content' => wp_slash( $markup ),
+	$markup = preg_replace_callback(
+		$pattern,
+		static function ( $m ) use ( $label, $url ) {
+			return $m[1] . ( '' === $url ? '#' : esc_url( $url ) ) . $m[2] . esc_html( $label ) . $m[3];
+		},
+		$markup,
+		1
 	);
 
-	if ( $existing ) {
-		$args['ID'] = $existing->ID;
-		$part_id    = wp_update_post( $args );
-	} else {
-		$part_id = wp_insert_post( $args );
-	}
-
-	if ( $kses_active ) {
-		kses_init_filters();
-	}
-
-	if ( $part_id && ! is_wp_error( $part_id ) ) {
-		wp_set_object_terms( $part_id, get_stylesheet(), 'wp_theme' );
-		wp_set_object_terms( $part_id, 'header', 'wp_template_part_area' );
-	}
+	unapp_save_part( 'header', __( 'Header', 'unapp' ), $markup );
 }
 
 /**
@@ -968,7 +1164,7 @@ function unapp_handle_starter_request() {
 	$slug   = isset( $_POST['starter'] ) ? sanitize_key( wp_unslash( $_POST['starter'] ) ) : '';
 	$result = unapp_apply_starter_site( $slug );
 
-	set_transient( UNAPP_STARTER_RESULT, is_wp_error( $result ) ? 'error' : 'done', HOUR_IN_SECONDS );
+	set_transient( UNAPP_STARTER_RESULT, is_wp_error( $result ) ? 'error:' . $result->get_error_code() : 'done', HOUR_IN_SECONDS );
 	wp_safe_redirect( admin_url( 'themes.php?page=unapp-starter-sites' ) );
 	exit;
 }
@@ -999,16 +1195,7 @@ function unapp_render_starter_screen() {
 		if ( 'brand' === $step ) {
 			unapp_wizard_render_brand( $starter );
 		} else {
-			unapp_wizard_render_plugins(
-				$starter,
-				array(
-					'title'   => isset( $_GET['site_title'] ) ? sanitize_text_field( wp_unslash( $_GET['site_title'] ) ) : '',
-					'tagline' => isset( $_GET['tagline'] ) ? sanitize_text_field( wp_unslash( $_GET['tagline'] ) ) : '',
-					'logo'    => isset( $_GET['logo_id'] ) ? absint( $_GET['logo_id'] ) : 0,
-					'colors'  => isset( $_GET['colors'] ) ? sanitize_key( wp_unslash( $_GET['colors'] ) ) : '',
-					'type'    => isset( $_GET['typography'] ) ? sanitize_key( wp_unslash( $_GET['typography'] ) ) : '',
-				)
-			);
+			unapp_wizard_render_plugins( $starter, unapp_wizard_brand_from( $_GET ) );
 		}
 
 		unapp_starter_styles();
@@ -1028,7 +1215,7 @@ function unapp_render_starter_screen() {
 	<div class="wrap unapp-starters">
 		<h1><?php esc_html_e( 'Unapp starter sites', 'unapp' ); ?></h1>
 		<p class="unapp-starters__intro">
-			<?php esc_html_e( 'Each starter builds a complete site for one kind of business: a colour palette, a typeface, a home page and its supporting pages, and a matching menu. Setting one up takes three short steps — the starter, your name and look, then anything it needs installing. Your existing pages are never deleted.', 'unapp' ); ?>
+			<?php esc_html_e( 'Each starter builds a complete site for one kind of business: a colour palette, a typeface, a home page and its supporting pages, and a matching menu. Setting one up takes three short steps — the starter, your name and look, then anything it needs installing. No page, post or image is ever deleted. The starter replaces the site\'s styles, header and footer, and the previous versions stay in their revision history.', 'unapp' ); ?>
 		</p>
 
 		<?php if ( 'done' === $result ) : ?>
@@ -1041,13 +1228,16 @@ function unapp_render_starter_screen() {
 				);
 				?>
 			</p></div>
-		<?php elseif ( 'error' === $result ) : ?>
-			<div class="notice notice-error"><p><?php esc_html_e( 'That starter site could not be applied. Please try again.', 'unapp' ); ?></p></div>
+		<?php elseif ( $result && 0 === strpos( $result, 'error' ) ) : ?>
+			<div class="notice notice-error"><p><?php echo esc_html( unapp_starter_error_message( $result ) ); ?></p></div>
 		<?php endif; ?>
 
 		<div class="unapp-starters__grid">
 			<?php foreach ( $sites as $slug => $site ) : ?>
-				<?php $is_active = isset( $active['slug'] ) && $active['slug'] === $slug; ?>
+				<?php
+				$is_active     = isset( $active['slug'] ) && $active['slug'] === $slug;
+				$unapp_missing = unapp_starter_missing_requirement( $site );
+				?>
 				<div class="unapp-starter<?php echo $is_active ? ' is-active' : ''; ?>">
 					<div class="unapp-starter__preview"
 						style="background:linear-gradient(135deg, <?php echo esc_attr( $site['swatches'][0] ); ?> 0%, <?php echo esc_attr( $site['swatches'][1] ); ?> 100%)">
@@ -1093,19 +1283,36 @@ function unapp_render_starter_screen() {
 							<a class="button button-primary" href="<?php echo esc_url( add_query_arg( array( 'page' => 'unapp-starter-sites', 'step' => 'brand', 'starter' => $slug ), admin_url( 'themes.php' ) ) ); ?>">
 								<?php echo $is_active ? esc_html__( 'Set up again', 'unapp' ) : esc_html__( 'Set up this starter', 'unapp' ); ?>
 							</a>
-							<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
-								<?php wp_nonce_field( 'unapp_apply_starter' ); ?>
-								<input type="hidden" name="action" value="unapp_apply_starter">
-								<input type="hidden" name="starter" value="<?php echo esc_attr( $slug ); ?>">
-								<button type="submit" class="button-link unapp-starter__skip">
-									<?php esc_html_e( 'Apply without setup', 'unapp' ); ?>
-								</button>
-							</form>
+							<?php if ( $unapp_missing ) : ?>
+								<span class="unapp-starter__skip">
+									<?php
+									/* translators: %s: plugin name, e.g. WooCommerce. */
+									printf( esc_html__( 'Needs %s, which the setup offers to install', 'unapp' ), esc_html( unapp_starter_requirement_label( $unapp_missing ) ) );
+									?>
+								</span>
+							<?php else : ?>
+								<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+									<?php wp_nonce_field( 'unapp_apply_starter' ); ?>
+									<input type="hidden" name="action" value="unapp_apply_starter">
+									<input type="hidden" name="starter" value="<?php echo esc_attr( $slug ); ?>">
+									<button type="submit" class="button-link unapp-starter__skip">
+										<?php esc_html_e( 'Apply without setup', 'unapp' ); ?>
+									</button>
+								</form>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>
 			<?php endforeach; ?>
 		</div>
+		<?php
+		/**
+		 * Fires at the bottom of the Starter Sites screen, inside its .wrap.
+		 *
+		 * @since 2.5.5
+		 */
+		do_action( 'unapp_starter_screen_footer' );
+		?>
 	</div>
 	<?php
 	unapp_starter_styles();
