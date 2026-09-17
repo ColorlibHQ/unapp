@@ -184,7 +184,7 @@ function unapp_get_starter_sites() {
 				),
 				'contact' => array(
 					'title'    => __( 'Book a table', 'unapp' ),
-					'patterns' => array( 'unapp/restaurant-hours', 'unapp/contact-split', 'unapp/restaurant-cta' ),
+					'patterns' => array( 'unapp/restaurant-hours', 'unapp/restaurant-booking', 'unapp/restaurant-cta' ),
 				),
 			),
 		),
@@ -202,7 +202,7 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'work'    => array(
 					'title'    => __( 'Work', 'unapp' ),
-					'patterns' => array( 'unapp/agency-clients', 'unapp/case-study', 'unapp/agency-services', 'unapp/agency-contact' ),
+					'patterns' => array( 'unapp/agency-clients', 'unapp/agency-case-study', 'unapp/agency-services', 'unapp/agency-contact' ),
 				),
 				'studio'  => array(
 					'title'    => __( 'Studio', 'unapp' ),
@@ -233,7 +233,7 @@ function unapp_get_starter_sites() {
 				),
 				'help'    => array(
 					'title'    => __( 'Delivery and returns', 'unapp' ),
-					'patterns' => array( 'unapp/shop-faq', 'unapp/shop-promise', 'unapp/contact-split' ),
+					'patterns' => array( 'unapp/shop-faq', 'unapp/shop-promise', 'unapp/shop-contact' ),
 				),
 			),
 		),
@@ -255,7 +255,7 @@ function unapp_get_starter_sites() {
 				),
 				'fees'     => array(
 					'title'    => __( 'Our fees', 'unapp' ),
-					'patterns' => array( 'unapp/realestate-fees', 'unapp/faq', 'unapp/realestate-valuation' ),
+					'patterns' => array( 'unapp/realestate-fees', 'unapp/realestate-faq', 'unapp/realestate-valuation' ),
 				),
 				'contact'  => array(
 					'title'    => __( 'Book a valuation', 'unapp' ),
@@ -285,7 +285,7 @@ function unapp_get_starter_sites() {
 				),
 				'contact'    => array(
 					'title'    => __( 'Find us', 'unapp' ),
-					'patterns' => array( 'unapp/medical-hours', 'unapp/contact-split', 'unapp/medical-faq' ),
+					'patterns' => array( 'unapp/medical-hours', 'unapp/medical-contact', 'unapp/medical-faq' ),
 				),
 			),
 		),
@@ -311,7 +311,7 @@ function unapp_get_starter_sites() {
 				),
 				'contact' => array(
 					'title'    => __( 'Contact', 'unapp' ),
-					'patterns' => array( 'unapp/contact-split', 'unapp/education-faq' ),
+					'patterns' => array( 'unapp/education-contact', 'unapp/education-faq' ),
 				),
 			),
 		),

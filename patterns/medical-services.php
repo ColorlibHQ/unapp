@@ -44,7 +44,7 @@ $unapp_treatments = array(
 <h2 class="wp-block-heading has-text-align-center"><?php esc_html_e( 'What we do, in plain English', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"align":"center","textColor":"muted","fontSize":"large"} -->
-<p class="has-text-align-center has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Prices for everything are on the fees page, including the ones nobody likes talking about.', 'unapp' ); ?></p>
+<p class="has-text-align-center has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Ask reception for a price and you will have it in writing before anything starts, including the treatments nobody likes talking about.', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

@@ -141,6 +141,28 @@ write_pattern("restaurant-reviews", title="Restaurant: reviews", cats=R + ", una
               desc="Three short press quotes with their source.",
               body=body, php_prelude=prelude)
 
+# ---------------------------------------------------------------- booking
+# The Book a table page's own section. It replaced the SaaS contact-split,
+# which told diners to "tell us what you are building".
+body = section_std(
+    split(
+        eyebrow(t("Booking", "Section eyebrow label"), align="left") + "\n" +
+        heading(t("How to get a table")) + "\n" +
+        para(t("Bookings open at nine on the first of each month, for the six weeks that follow. Fridays and Saturdays go within a day or two; midweek there is usually room."),
+             color="muted", size="large") + "\n" +
+        lst([t("Tables of two to six: send the form, or ring after three"),
+             t("Seven or more, or the whole room: email and we will plan it with you"),
+             t("Allergies and dietary needs: tell us when you book, not on the night"),
+             t("Cannot make it: ring as early as you can. There is no deposit to lose")]) + "\n" +
+        para(t("eat@wharfstreet.example · 0117 555 0192"), color="muted"),
+        card(contact_form("Request a table", "eat@wharfstreet.example")),
+        align="top"),
+    gap="0")
+write_pattern("restaurant-booking", title="Restaurant: booking", cats=R + ", unapp_utility, contact",
+              keywords="restaurant, booking, reservation, table, private dining, contact",
+              desc="How bookings work, from a table for two to the whole room, beside a request form.",
+              body=body)
+
 # ---------------------------------------------------------------- booking band
 body = band(t("Bookings open six weeks ahead, on the first of the month"),
             t("Tables of two to six online. For anything larger, or the whole room, send us an email and we will sort it out."),
@@ -216,6 +238,29 @@ write_pattern("agency-clients", title="Agency: selected clients", cats=A + ", un
               keywords="agency, clients, work, portfolio, list",
               desc="A dated client list with the discipline beside each name.",
               body=body, php_prelude=prelude)
+
+# ---------------------------------------------------------------- case study
+# The Work page's story. It replaced the SaaS case-study ("Before Unapp…").
+outcome = lambda value, text: stack(
+    para(value, size="xx-large", font="heading", weight="600", line_height="1.1", color="primary") + "\n" +
+    para(text, color="muted", size="small"), gap="20")
+body = section_std(
+    intro(eyebrow_text=t("Case study", "Section eyebrow label"),
+          title=t("Halden Rail: eleven logos down to one")) + "\n" +
+    split(
+        image(uri("assets/images/abstract/motion.svg"), tattr("Halden Rail identity"), radius=CARD_RADIUS),
+        para(t("Halden Rail runs regional trains across four counties and had, by its own count, eleven logos in use. We spent two weeks on the argument, six on the system and two getting it onto the first carriage."),
+             size="large") + "\n" +
+        lst([t("One mark, one typeface and a colour for each line"),
+             t("Signage rules a depot manager can follow without us in the room"),
+             t("A brand site the in-house team updates themselves")]) + "\n" +
+        columns([column(outcome(t("11 → 1"), t("logos in use"))),
+                 column(outcome(t("10 weeks"), t("from brief to the first carriage")))], gap=ROW_GAP),
+        left_width="46%", right_width="54%"))
+write_pattern("agency-case-study", title="Agency: case study", cats=A + ", unapp_proof, media",
+              keywords="agency, case study, work, client, results, identity",
+              desc="One client project told properly: the problem, what the studio made and two outcomes.",
+              body=body)
 
 # ---------------------------------------------------------------- engagement
 BANDS = [

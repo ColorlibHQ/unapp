@@ -37,6 +37,12 @@ SOFT = {
     "medical-faq",
 }
 
+# Contact and answer sections written for one starter page stay on the page
+# ground, because on that page they sit between two tinted sections:
+# restaurant-booking, shop-contact, medical-contact, education-contact (first
+# on its page, above a tinted FAQ), realestate-faq (between fees and the
+# valuation form) and agency-case-study.
+
 SECTION_RE = re.compile(r'(<!-- wp:group (\{"align":"full".*?\}) -->\s*\n\s*<div class="([^"]*)")')
 
 

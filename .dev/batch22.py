@@ -106,6 +106,32 @@ write_pattern("education-cta", title="Courses: booking band", cats=ED + ", unapp
               desc="A closing band about when booking opens, on the palette gradient.",
               body=body)
 
+# get in touch — replaced the SaaS contact-split on the Courses contact page
+details_card = card(
+    para(t("The school"), weight="600") + "\n" +
+    para(t("The Old School Hall, Sheffield S3 8HL. Ten minutes on foot from the station, and the tram stops outside."),
+         color="muted", size="small") + "\n" +
+    separator(style="wide", color="border") + "\n" +
+    para(t("Office hours"), weight="600") + "\n" +
+    para(t("Tuesday to Saturday, 10:00–16:00. Evening courses run until nine."), color="muted", size="small") + "\n" +
+    separator(style="wide", color="border") + "\n" +
+    para(t("Telephone and email"), weight="600") + "\n" +
+    para(t("0114 555 0128 · hello@oldschoolhall.example"), color="muted", size="small"))
+body = section_std(
+    split(
+        eyebrow(t("Get in touch", "Section eyebrow label"), align="left") + "\n" +
+        heading(t("Ask before you book")) + "\n" +
+        para(t("Not sure which course suits you, whether your hands will cope, or when the next term opens? Ask. One of the tutors answers, usually within a day."),
+             color="muted", size="large") + "\n" +
+        details_card,
+        card(contact_form("Ask about a course", "hello@oldschoolhall.example")),
+        align="top"),
+    gap="0")
+write_pattern("education-contact", title="Courses: contact the school", cats=ED + ", unapp_utility, contact",
+              keywords="education, contact, courses, school, questions, booking",
+              desc="Where the school is, when the office is open and a form for questions about courses.",
+              body=body)
+
 # ================================================================= EVENTS
 cover_url = uri("assets/images/abstract/gathering.svg")
 inner = (eyebrow(t("Bristol · 14–15 May 2027", "Conference hero eyebrow"), align="center", color="base") + "\n" +

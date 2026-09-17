@@ -131,6 +131,32 @@ write_pattern("shop-faq", title="Shop: delivery and returns", cats=S + ", unapp_
               desc="The four questions asked before every online order.",
               body=body)
 
+# contact the workshop — replaced the SaaS contact-split on Delivery and returns
+details_card = card(
+    para(t("Returns address"), weight="600") + "\n" +
+    para(t("Unit 4, Sheaf Works, Leeds LS10 1EE. Put your order number on a note inside."),
+         color="muted", size="small") + "\n" +
+    separator(style="wide", color="border") + "\n" +
+    para(t("Telephone"), weight="600") + "\n" +
+    para(t("0113 555 0177, weekdays 9:00–17:00"), color="muted", size="small") + "\n" +
+    separator(style="wide", color="border") + "\n" +
+    para(t("Email"), weight="600") + "\n" +
+    para(t("workshop@sheafworks.example"), color="muted", size="small"))
+body = section_std(
+    split(
+        eyebrow(t("Still stuck", "Section eyebrow label"), align="left") + "\n" +
+        heading(t("Ask the people who made it")) + "\n" +
+        para(t("Orders, returns and repairs all land with the four of us in the workshop, so whoever answers can usually walk over and look at the thing itself. We reply the same working day."),
+             color="muted", size="large") + "\n" +
+        details_card,
+        card(contact_form("Message the workshop", "workshop@sheafworks.example")),
+        align="top"),
+    gap="0")
+write_pattern("shop-contact", title="Shop: contact the workshop", cats=S + ", unapp_utility, contact",
+              keywords="shop, contact, returns, repairs, orders, workshop",
+              desc="Who answers, the returns address and a message form, for the delivery and returns page.",
+              body=body)
+
 body = band(t("Everything is made in runs of about two hundred"),
             t("When something sells out we decide whether to make it again. The newsletter is the only warning you get."),
             [{"text": t("Shop everything"), "url": "/shop/", "bg": "base", "color": "contrast"},

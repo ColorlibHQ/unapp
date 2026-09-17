@@ -15,7 +15,7 @@
 	<h1 class="wp-block-heading has-text-align-center has-xx-large-font-size"><?php esc_html_e( 'Latest blog posts', 'unapp' ); ?></h1>
 	<!-- /wp:heading -->
 	<!-- wp:paragraph {"align":"center","textColor":"muted","fontSize":"large"} -->
-	<p class="has-text-align-center has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Product updates, customer stories and practical tips on running projects with less friction.', 'unapp' ); ?></p>
+	<p class="has-text-align-center has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Everything published here, newest first.', 'unapp' ); ?></p>
 	<!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
