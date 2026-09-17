@@ -430,6 +430,36 @@ Unapp is distributed under the terms of the GNU GPL.
 	padding-top: 0.75em;
 }
 
+/* Cards in a row share one height too. Core stretches each column to the row
+   (and grid items stretch on their own), but a card inside a column kept its
+   content height, so a row of testimonials measured 336/302/302px and a row of
+   pricing cards 389/424/389px. A card that is its column's only child now
+   fills the column. Columns aligned top, centre or bottom are not stretched by
+   core, and stay as they are. */
+.wp-block-columns:not([class*="are-vertically-aligned-"]) > .wp-block-column:not([class*="is-vertically-aligned-"]) > .wp-block-group:only-child:is(.is-style-card, .is-style-elevated, .is-style-frosted, .is-style-outline, .is-style-section-gradient, .is-style-section-dark) {
+	box-sizing: border-box;
+	height: 100%;
+}
+
+/* A card that ends in buttons — in Columns or a grid — pins them to its
+   bottom edge, so the calls to action in a row line up. The spare height goes
+   below the block before the buttons, which keeps the buttons' own top margin
+   (set inline by the patterns). */
+:is(
+	.wp-block-columns:not([class*="are-vertically-aligned-"]) > .wp-block-column:not([class*="is-vertically-aligned-"]) > .wp-block-group:only-child,
+	.is-layout-grid > .wp-block-group
+):is(.is-style-card, .is-style-elevated, .is-style-frosted, .is-style-outline, .is-style-section-gradient, .is-style-section-dark):has(> .wp-block-buttons:last-child) {
+	display: flex;
+	flex-direction: column;
+}
+
+:is(
+	.wp-block-columns:not([class*="are-vertically-aligned-"]) > .wp-block-column:not([class*="is-vertically-aligned-"]) > .wp-block-group:only-child,
+	.is-layout-grid > .wp-block-group
+):is(.is-style-card, .is-style-elevated, .is-style-frosted, .is-style-outline, .is-style-section-gradient, .is-style-section-dark) > :nth-last-child(2):has(+ .wp-block-buttons:last-child) {
+	margin-bottom: auto;
+}
+
 /* Query pagination reads as one control group. */
 .wp-block-query-pagination {
 	gap: 0.4rem;
