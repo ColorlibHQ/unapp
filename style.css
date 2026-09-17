@@ -758,6 +758,29 @@ Unapp is distributed under the terms of the GNU GPL.
 	flex-shrink: 0;
 }
 
+/* ==========================================================================
+   Form fields
+   Without a colour of their own, text fields fall back to the browser's white
+   box with black text — which is what the comment form and search fields
+   showed on a dark palette. Take both from the palette instead. Zero
+   specificity, so a form plugin's or WooCommerce's own field styles still win.
+   ========================================================================== */
+:where(input:not([type="button"], [type="submit"], [type="reset"], [type="checkbox"], [type="radio"], [type="range"], [type="color"], [type="file"], [type="image"], [type="hidden"]), textarea, select) {
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+}
+
+:where(input, textarea)::placeholder {
+	color: var(--wp--preset--color--muted);
+	opacity: 1;
+}
+
+/* Search with the button inside draws the box on its wrapper, which core
+   paints white. */
+.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	background-color: var(--wp--preset--color--base);
+}
+
 /* Full-width sections sit flush
    ------------------------------------------------------------------------
    The root block gap (1.25rem) lands as a top margin on every block in a
