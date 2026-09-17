@@ -613,6 +613,28 @@ Unapp is distributed under the terms of the GNU GPL.
 	flex-shrink: 0;
 }
 
+/* Full-width sections sit flush
+   ------------------------------------------------------------------------
+   The root block gap (1.25rem) lands as a top margin on every block in a
+   constrained layout and on every top-level template area. Between two
+   full-bleed sections, and between the header or footer and a page that starts
+   or ends with one, that margin showed as a 20px strip of page ground above
+   tinted sections, gradient bands, cover heroes and the dark footer. Sections
+   carry their own padding, so the gap adds nothing there. Ordinary content — a
+   paragraph after a full-width image, a heading after a cover — keeps it. */
+:is(.wp-block-post-content, .is-root-container) > :is(.wp-block-group, .wp-block-cover).alignfull
+	+ :is(.wp-block-group, .wp-block-cover).alignfull {
+	margin-block-start: 0;
+}
+
+.wp-site-blocks > main:has(> .wp-block-post-content:first-child > :is(.wp-block-group, .wp-block-cover).alignfull:first-child) {
+	margin-block-start: 0;
+}
+
+.wp-site-blocks > main:has(> .wp-block-post-content:last-child > :is(.wp-block-group, .wp-block-cover).alignfull:last-child) + footer {
+	margin-block-start: 0;
+}
+
 /* Section seams
    ------------------------------------------------------------------------
    Sections are separated by their ground: explanation on the page ground,
