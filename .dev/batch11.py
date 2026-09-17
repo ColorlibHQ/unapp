@@ -22,7 +22,9 @@ terms = ('<!-- wp:terms-query {"termQuery":{"taxonomy":"category","perPage":6,"h
          '"orderBy":"count","order":"desc"},"align":"wide","layout":{"type":"default"}} -->\n'
          '<div class="wp-block-terms-query alignwide">\n'
          '<!-- wp:term-template {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},'
-         '"layout":{"type":"grid","columnCount":3}} -->\n'
+         # Three across at most, but never narrower than 16rem: two on a tablet,
+         # one on a phone, where three columns left 98px cards.
+         '"layout":{"type":"grid","columnCount":3,"minimumColumnWidth":"16rem"}} -->\n'
          + group(
              '<!-- wp:term-name {"isLink":true,"level":3,"fontSize":"large"} /-->\n'
              '<!-- wp:term-count {"fontSize":"small","textColor":"muted"} /-->',
