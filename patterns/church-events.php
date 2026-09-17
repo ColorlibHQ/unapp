@@ -5,31 +5,31 @@
  * Categories: unapp, unapp_church, unapp_content
  * Keywords: church, events, diary, calendar, upcoming
  * Viewport Width: 1400
- * Description: A dated list of what is on: community lunch, job club, harvest and carols.
+ * Description: What is on through the year: the monthly lunch, the weekly job club, harvest and carols.
  *
  * @package Unapp
  */
 
 $unapp_church_events = array(
 	array(
-		'when' => _x( "Sat 14 Sep", 'Church event', 'unapp' ),
+		'when' => _x( "First Saturdays", 'Church event', 'unapp' ),
 		'title' => _x( "Community lunch", 'Church event', 'unapp' ),
-		'text' => _x( "Everyone eats, nobody pays. Twelve o'clock in the hall.", 'Church event', 'unapp' ),
+		'text' => _x( "Everyone eats, nobody pays. Twelve o'clock in the hall, on the first Saturday of every month.", 'Church event', 'unapp' ),
 	),
 	array(
-		'when' => _x( "Thu 26 Sep", 'Church event', 'unapp' ),
+		'when' => _x( "Thursdays in term", 'Church event', 'unapp' ),
 		'title' => _x( "Job club", 'Church event', 'unapp' ),
 		'text' => _x( "CVs, applications and interview practice with people who hire for a living.", 'Church event', 'unapp' ),
 	),
 	array(
-		'when' => _x( "Sun 6 Oct", 'Church event', 'unapp' ),
+		'when' => _x( "Early October", 'Church event', 'unapp' ),
 		'title' => _x( "Harvest service", 'Church event', 'unapp' ),
 		'text' => _x( "Bring tinned food if you can; the whole lot goes to the foodbank on Mill Lane.", 'Church event', 'unapp' ),
 	),
 	array(
-		'when' => _x( "Sun 22 Dec", 'Church event', 'unapp' ),
+		'when' => _x( "Before Christmas", 'Church event', 'unapp' ),
 		'title' => _x( "Carols by candlelight", 'Church event', 'unapp' ),
-		'text' => _x( "The one service a year that fills the balcony. Come early.", 'Church event', 'unapp' ),
+		'text' => _x( "The Sunday before Christmas, and the one service a year that fills the balcony. Come early.", 'Church event', 'unapp' ),
 	),
 );
 ?>

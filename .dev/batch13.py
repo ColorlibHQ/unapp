@@ -118,11 +118,13 @@ write_pattern("church-story", title="Church: our story", cats=C + ", unapp_compa
               body=body)
 
 # ---------------------------------------------------------------- upcoming events
+# Recurring and seasonal wording, not dates: a dated list goes stale the week
+# the theme ships, and a weekday printed beside a date is wrong the next year.
 EVENTS = [
-    ("Sat 14 Sep", "Community lunch", "Everyone eats, nobody pays. Twelve o'clock in the hall."),
-    ("Thu 26 Sep", "Job club", "CVs, applications and interview practice with people who hire for a living."),
-    ("Sun 6 Oct", "Harvest service", "Bring tinned food if you can; the whole lot goes to the foodbank on Mill Lane."),
-    ("Sun 22 Dec", "Carols by candlelight", "The one service a year that fills the balcony. Come early."),
+    ("First Saturdays", "Community lunch", "Everyone eats, nobody pays. Twelve o'clock in the hall, on the first Saturday of every month."),
+    ("Thursdays in term", "Job club", "CVs, applications and interview practice with people who hire for a living."),
+    ("Early October", "Harvest service", "Bring tinned food if you can; the whole lot goes to the foodbank on Mill Lane."),
+    ("Before Christmas", "Carols by candlelight", "The Sunday before Christmas, and the one service a year that fills the balcony. Come early."),
 ]
 row = (columns([
     column(label(php("$unapp_church_event['when']")), width="26%", vertical_align="top"),
@@ -136,7 +138,7 @@ body = section_std(
           layout="constrained", content_size=READ_WIDTH, gap=CARD_GAP))
 write_pattern("church-events", title="Church: upcoming events", cats=C + ", unapp_content",
               keywords="church, events, diary, calendar, upcoming",
-              desc="A dated list of what is on: community lunch, job club, harvest and carols.",
+              desc="What is on through the year: the monthly lunch, the weekly job club, harvest and carols.",
               body=body,
               php_prelude=php_rows("unapp_church_events", ("when", "title", "text"), EVENTS,
                                    "Church event"), anchor="events")
