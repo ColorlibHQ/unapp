@@ -214,6 +214,18 @@ Unapp is distributed under the terms of the GNU GPL.
 	.wp-block-group.unapp-grid-3 {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
+
+	/* An odd number of items cannot pair up without stranding the last one, so
+	   those grids stay three across until they can go straight to one. */
+	.wp-block-group.unapp-grid-3:has(> :last-child:nth-child(odd)) {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 739px) {
+	.wp-block-group.unapp-grid-3:has(> :last-child:nth-child(odd)) {
+		grid-template-columns: minmax(0, 1fr);
+	}
 }
 
 @media (max-width: 560px) {
