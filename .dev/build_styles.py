@@ -2,7 +2,7 @@
 """Rebuild Unapp's style variations: colour partials, typography partials and curated full looks."""
 import json, os, shutil
 
-THEME = "/Users/silkalns/Fresh Projects/unapp"
+THEME = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 S = "https://schemas.wp.org/trunk/theme.json"
 
 LATIN = ("U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, "

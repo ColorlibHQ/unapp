@@ -101,7 +101,7 @@ body = band(t("The autumn term opens for booking on 1 September"),
             t("Courses fill in about a fortnight. The mailing list gets a day's head start, which is the only perk it has."),
             [{"text": t("See the courses"), "url": "#courses", "bg": "base", "color": "contrast"},
              {"text": t("Join the list"), "url": "#subscribe", "style": "outline", "color": "base"}])
-write_pattern("education-cta", title="Courses: booking band", cats=ED + ", unapp_cta, call to action",
+write_pattern("education-cta", title="Courses: booking band", cats=ED + ", unapp_cta, call-to-action",
               keywords="education, cta, booking, term, newsletter",
               desc="A closing band about when booking opens, on the palette gradient.",
               body=body)

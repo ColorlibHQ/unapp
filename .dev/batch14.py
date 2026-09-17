@@ -184,7 +184,7 @@ body = band(t("Your first session is free, and it always will be"),
             t("An hour with a coach, an empty bar and no obligation to join anything at the end of it."),
             [{"text": t("Book your free session"), "url": "#book", "bg": "base", "color": "contrast"},
              {"text": t("See the timetable"), "url": "#timetable", "style": "outline", "color": "base"}])
-write_pattern("fitness-cta", title="Fitness: join band", cats=F + ", unapp_cta, call to action",
+write_pattern("fitness-cta", title="Fitness: join band", cats=F + ", unapp_cta, call-to-action",
               keywords="fitness, gym, cta, join, trial, free session",
               desc="A closing band offering the free first session, on the palette gradient.",
               body=body)

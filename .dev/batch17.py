@@ -46,7 +46,13 @@ def niche_footer(slug, *, title, cats, keywords, desc, blurb, links_head, links,
 
     cols = columns([
         column('<!-- wp:site-title {"level":0,"fontSize":"large"} /-->' + "\n" +
+               # The site's own tagline when it has one; the written line keeps the
+               # pattern previewing as a finished design on a fresh install.
+               "<?php if ( get_bloginfo( 'description' ) ) : ?>\n" +
+               '<!-- wp:site-tagline {"className":"unapp-footer-note","fontSize":"small"} /-->' + "\n" +
+               "<?php else : ?>\n" +
                para(t(blurb, "Footer tagline"), custom_color=DIM, size="small") + "\n" +
+               "<?php endif; ?>\n" +
                social(socials, size="has-small-icon-size", color="base", value="#ffffff", gap="30"),
                width="34%", gap=CARD_GAP),
         column(head(links_head) + "\n" + nav, width="22%", gap=CARD_GAP),

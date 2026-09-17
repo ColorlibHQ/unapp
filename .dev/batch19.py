@@ -135,7 +135,7 @@ body = band(t("Everything is made in runs of about two hundred"),
             t("When something sells out we decide whether to make it again. The newsletter is the only warning you get."),
             [{"text": t("Shop everything"), "url": "/shop/", "bg": "base", "color": "contrast"},
              {"text": t("Join the list"), "url": "#subscribe", "style": "outline", "color": "base"}])
-write_pattern("shop-cta", title="Shop: closing band", cats=S + ", unapp_cta, call to action",
+write_pattern("shop-cta", title="Shop: closing band", cats=S + ", unapp_cta, call-to-action",
               keywords="shop, cta, newsletter, stock, ecommerce",
               desc="A closing band about small production runs, on the palette gradient.",
               body=body)

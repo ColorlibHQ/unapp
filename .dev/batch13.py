@@ -192,7 +192,7 @@ body = band(t("There is a service this Sunday at 9:30 and 11:15"),
             t("Come on your own, come late, come and sit at the back. All of that is completely normal here."),
             [{"text": t("Plan your visit"), "url": "#visit", "bg": "base", "color": "contrast"},
              {"text": t("Watch a service online"), "url": "#watch", "style": "outline", "color": "base"}])
-write_pattern("church-cta", title="Church: closing invitation", cats=C + ", unapp_cta, call to action",
+write_pattern("church-cta", title="Church: closing invitation", cats=C + ", unapp_cta, call-to-action",
               keywords="church, cta, invitation, visit, sunday",
               desc="A warm closing band inviting a visit, on the palette gradient.",
               body=body)

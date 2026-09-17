@@ -6,7 +6,7 @@ save() produces, so patterns validate in the editor.
 """
 import json, os, re
 
-THEME = "/Users/silkalns/Fresh Projects/unapp"
+THEME = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 DOM = "unapp"
 
 

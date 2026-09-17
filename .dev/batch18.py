@@ -146,7 +146,7 @@ body = band(t("Bookings open six weeks ahead, on the first of the month"),
             t("Tables of two to six online. For anything larger, or the whole room, send us an email and we will sort it out."),
             [{"text": t("Book a table"), "url": "#book", "bg": "base", "color": "contrast"},
              {"text": t("Email the restaurant"), "url": "#email", "style": "outline", "color": "base"}])
-write_pattern("restaurant-cta", title="Restaurant: booking band", cats=R + ", unapp_cta, call to action",
+write_pattern("restaurant-cta", title="Restaurant: booking band", cats=R + ", unapp_cta, call-to-action",
               keywords="restaurant, booking, reservation, cta",
               desc="A closing band explaining how bookings work, on the palette gradient.",
               body=body)
