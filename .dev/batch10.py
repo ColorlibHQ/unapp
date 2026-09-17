@@ -4,7 +4,7 @@ from pgen import *
 # ============================================================ FITNESS
 F = "unapp, unapp_fitness, banner, featured"
 inner = (eyebrow(t("First class free", "Fitness hero eyebrow"), align="center", color="base") + "\n" +
-         heading(t("Stronger than last week"), align="center", color="base", size="xxx-large") + "\n" +
+         h1(t("Stronger than last week"), align="center", color="base", size="xxx-large") + "\n" +
          para(t("Small-group strength and conditioning in the old print works. Forty-five minutes, no mirrors, no nonsense."),
               align="center", color="base", size="large") + "\n" +
          buttons([{"text": t("Book a free session"), "bg": "secondary", "color": "contrast"},
@@ -77,7 +77,7 @@ body = section(
     columns([
         column(
             eyebrow(t("Independent since 1998", "Finance hero eyebrow"), align="left") + "\n" +
-            heading(t("Advice you could explain to your family"), size="xxx-large", line_height="1.1", align="left") + "\n" +
+            h1(t("Advice you could explain to your family"), size="xxx-large", line_height="1.1", align="left") + "\n" +
             para(t("Fee-only financial planning for people who would rather understand the plan than be impressed by it."), color="muted", size="large") + "\n" +
             buttons([{"text": t("Book an introduction")}, {"text": t("How we charge"), "style": "is-style-outline"}],
                     gap="30", margin={"top": "40"}) + "\n" +

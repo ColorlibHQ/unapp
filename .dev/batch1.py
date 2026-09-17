@@ -8,7 +8,7 @@ body = section(
     columns([
         column(
             eyebrow(t("New in 2.0","Hero eyebrow"), align="left") + "\n" +
-            heading(t("Ship your product, not your project plan"), size="xxx-large", line_height="1.1", align="left") + "\n" +
+            h1(t("Ship your product, not your project plan"), size="xxx-large", line_height="1.1", align="left") + "\n" +
             para(t("Unapp keeps roadmaps, files and conversations in one place, so the work moves forward while you sleep."), color="muted", size="large") + "\n" +
             buttons([{"text": t("Start free trial")}, {"text": t("Book a demo"), "style": "is-style-outline"}], gap="30", margin={"top": "40"}) + "\n" +
             para(t("No credit card required · 14-day trial"), color="muted", size="small"),
@@ -27,7 +27,7 @@ write_pattern("hero-split", title="Hero: split with screenshot", cats=C,
 # ---------------------------------------------------------------- hero-email
 body = section(
     intro(eyebrow_text=t("Early access","Hero eyebrow"),
-          title=t("The workspace your team will actually use"),
+          title=t("The workspace your team will actually use"), title_level=1,
           lead=t("Join 10,000 teams planning, shipping and reporting in one calm place."),
           content="760px", margin_bottom=None) + "\n" +
     group(
@@ -46,7 +46,7 @@ write_pattern("hero-email", title="Hero: email capture", cats=C,
               body=body)
 
 # ---------------------------------------------------------------- hero-cover
-inner_cover = (heading(t("Built for teams who ship every week"), align="center", color="base", size="xxx-large") + "\n" +
+inner_cover = (h1(t("Built for teams who ship every week"), align="center", color="base", size="xxx-large") + "\n" +
                para(t("From first sketch to release notes, Unapp keeps everyone pointed at the same goal."),
                     align="center", color="base", size="large") + "\n" +
                buttons([{"text": t("Get Premium"), "bg": "base", "color": "primary"},
@@ -65,7 +65,7 @@ write_pattern("hero-cover", title="Hero: photo background", cats=C,
 
 # ---------------------------------------------------------------- hero-minimal
 body = section(
-    intro(title=t("Documentation, changelog and everything in between"),
+    intro(title=t("Documentation, changelog and everything in between"), title_level=1,
           lead=t("Everything you need to run Unapp day to day — guides, API reference and release notes."),
           content="720px") + "\n" +
     group(

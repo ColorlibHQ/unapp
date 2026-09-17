@@ -20,8 +20,8 @@
 <!-- wp:paragraph {"align":"left","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
 <p class="has-text-align-left has-primary-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'New in 2.0', 'Hero eyebrow', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:heading {"textAlign":"left","fontSize":"xxx-large","style":{"typography":{"lineHeight":"1.1"}}} -->
-<h2 class="wp-block-heading has-text-align-left has-xxx-large-font-size" style="line-height:1.1;"><?php esc_html_e( 'Ship your product, not your project plan', 'unapp' ); ?></h2>
+<!-- wp:heading {"level":1,"textAlign":"left","fontSize":"xxx-large","style":{"typography":{"lineHeight":"1.1"}}} -->
+<h1 class="wp-block-heading has-text-align-left has-xxx-large-font-size" style="line-height:1.1;"><?php esc_html_e( 'Ship your product, not your project plan', 'unapp' ); ?></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"large"} -->
 <p class="has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Unapp keeps roadmaps, files and conversations in one place, so the work moves forward while you sleep.', 'unapp' ); ?></p>

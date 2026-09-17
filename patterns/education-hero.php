@@ -20,8 +20,8 @@
 <!-- wp:paragraph {"align":"left","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
 <p class="has-text-align-left has-primary-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'Evening and weekend courses', 'School hero eyebrow', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:heading -->
-<h2 class="wp-block-heading"><?php esc_html_e( 'Learn a trade properly, from someone who does it', 'unapp' ); ?></h2>
+<!-- wp:heading {"level":1,"fontSize":"xx-large","style":{"typography":{"lineHeight":"1.2"}}} -->
+<h1 class="wp-block-heading has-xx-large-font-size" style="line-height:1.2;"><?php esc_html_e( 'Learn a trade properly, from someone who does it', 'unapp' ); ?></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"large"} -->
 <p class="has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Short courses in woodwork, letterpress, ceramics and bookbinding, taught in a Victorian school hall by people who make their living at it.', 'unapp' ); ?></p>

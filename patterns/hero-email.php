@@ -18,8 +18,8 @@
 <!-- wp:paragraph {"align":"center","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
 <p class="has-text-align-center has-primary-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'Early access', 'Hero eyebrow', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:heading {"textAlign":"center"} -->
-<h2 class="wp-block-heading has-text-align-center"><?php esc_html_e( 'The workspace your team will actually use', 'unapp' ); ?></h2>
+<!-- wp:heading {"level":1,"textAlign":"center","fontSize":"xx-large","style":{"typography":{"lineHeight":"1.2"}}} -->
+<h1 class="wp-block-heading has-text-align-center has-xx-large-font-size" style="line-height:1.2;"><?php esc_html_e( 'The workspace your team will actually use', 'unapp' ); ?></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"align":"center","textColor":"muted","fontSize":"large"} -->
 <p class="has-text-align-center has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Join 10,000 teams planning, shipping and reporting in one calm place.', 'unapp' ); ?></p>

@@ -13,8 +13,8 @@
 ?>
 <!-- wp:cover {"url":"<?php echo esc_url( get_theme_file_uri( 'assets/images/crowd.avif' ) ); ?>","dimRatio":80,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":72,"minHeightUnit":"vh","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained","contentSize":"780px"}} -->
 <div class="wp-block-cover alignfull" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80);min-height:72vh"><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-80 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_theme_file_uri( 'assets/images/crowd.avif' ) ); ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
-<!-- wp:heading {"textAlign":"center","textColor":"base","fontSize":"xxx-large"} -->
-<h2 class="wp-block-heading has-text-align-center has-base-color has-text-color has-xxx-large-font-size"><?php esc_html_e( 'Built for teams who ship every week', 'unapp' ); ?></h2>
+<!-- wp:heading {"level":1,"textAlign":"center","textColor":"base","fontSize":"xxx-large","style":{"typography":{"lineHeight":"1.2"}}} -->
+<h1 class="wp-block-heading has-text-align-center has-base-color has-text-color has-xxx-large-font-size" style="line-height:1.2;"><?php esc_html_e( 'Built for teams who ship every week', 'unapp' ); ?></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"align":"center","textColor":"base","fontSize":"large"} -->
 <p class="has-text-align-center has-base-color has-text-color has-large-font-size"><?php esc_html_e( 'From first sketch to release notes, Unapp keeps everyone pointed at the same goal.', 'unapp' ); ?></p>

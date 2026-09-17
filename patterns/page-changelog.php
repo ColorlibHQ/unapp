@@ -13,5 +13,5 @@
  */
 
 ?>
-<!-- wp:pattern {"slug":"unapp/changelog"} /-->
+<!-- wp:pattern {"slug":"unapp/changelog-h1"} /-->
 <!-- wp:pattern {"slug":"unapp/newsletter"} /-->

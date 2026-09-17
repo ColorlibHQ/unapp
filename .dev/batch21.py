@@ -11,7 +11,7 @@ EV = "unapp, unapp_events"
 body = section_std(
     split(
         eyebrow(t("Sales and lettings, Bath", "Estate agent hero eyebrow"), align="left") + "\n" +
-        heading(t("We only take on houses we would live in ourselves"), size="xxx-large",
+        h1(t("We only take on houses we would live in ourselves"), size="xxx-large",
                 line_height="1.05") + "\n" +
         para(t("A small agency covering Bath and the villages east of it. Twelve properties on the books at a time, because that is how many we can show properly."),
              color="muted", size="large") + "\n" +
@@ -119,7 +119,7 @@ write_pattern("realestate-faq", title="Property: fee questions", cats=RE + ", un
 body = section_std(
     split(
         eyebrow(t("NHS and private · Est. 1994", "Practice hero eyebrow"), align="left") + "\n" +
-        heading(t("A dental practice that runs on time")) + "\n" +
+        h1(t("A dental practice that runs on time")) + "\n" +
         para(t("Six surgeries on Fore Street, open six days a week, with emergency slots kept back every morning for the people who need them that day."),
              color="muted", size="large") + "\n" +
         buttons([{"text": t("Book an appointment"), "url": "#book"},

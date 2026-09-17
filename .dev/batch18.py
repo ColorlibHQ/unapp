@@ -8,7 +8,7 @@ A = "unapp, unapp_agency"
 # ================================================================= RESTAURANT
 cover_url = uri("assets/images/abstract/gathering.svg")
 inner = (eyebrow(t("Kitchen and dining room", "Restaurant hero eyebrow"), align="center", color="base") + "\n" +
-         heading(t("Ten tables, one menu, whatever the market had"), align="center", color="base",
+         h1(t("Ten tables, one menu, whatever the market had"), align="center", color="base",
                  size="xxx-large") + "\n" +
          para(t("Dinner Wednesday to Saturday · Lunch on Sunday · Bookings open six weeks ahead"),
               align="center", color="base", size="large") + "\n" +
@@ -177,7 +177,7 @@ write_pattern("restaurant-cta", title="Restaurant: booking band", cats=R + ", un
 body = section_std(
     split(
         eyebrow(t("Independent since 2011", "Agency hero eyebrow"), align="left") + "\n" +
-        heading(t("We make the thing, not the deck about the thing"), size="xxx-large",
+        h1(t("We make the thing, not the deck about the thing"), size="xxx-large",
                 line_height="1.05") + "\n" +
         para(t("A studio of nine in Manchester. Brand, product and the software to run both — for companies that have outgrown the website they built themselves."),
              color="muted", size="large") + "\n" +

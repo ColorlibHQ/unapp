@@ -16,8 +16,8 @@
 <!-- wp:paragraph {"align":"center","textColor":"base","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
 <p class="has-text-align-center has-base-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'First class free', 'Fitness hero eyebrow', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:heading {"textAlign":"center","textColor":"base","fontSize":"xxx-large"} -->
-<h2 class="wp-block-heading has-text-align-center has-base-color has-text-color has-xxx-large-font-size"><?php esc_html_e( 'Stronger than last week', 'unapp' ); ?></h2>
+<!-- wp:heading {"level":1,"textAlign":"center","textColor":"base","fontSize":"xxx-large","style":{"typography":{"lineHeight":"1.2"}}} -->
+<h1 class="wp-block-heading has-text-align-center has-base-color has-text-color has-xxx-large-font-size" style="line-height:1.2;"><?php esc_html_e( 'Stronger than last week', 'unapp' ); ?></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"align":"center","textColor":"base","fontSize":"large"} -->
 <p class="has-text-align-center has-base-color has-text-color has-large-font-size"><?php esc_html_e( 'Small-group strength and conditioning in the old print works. Forty-five minutes, no mirrors, no nonsense.', 'unapp' ); ?></p>

@@ -78,7 +78,7 @@ write_pattern("shop-featured", title="Shop: featured products", cats=S + ", unap
 body = section_std(
     split(
         eyebrow(t("Workshop and shop", "Shop hero eyebrow"), align="left") + "\n" +
-        heading(t("Things we make, in numbers we can stand behind"), size="xxx-large",
+        h1(t("Things we make, in numbers we can stand behind"), size="xxx-large",
                 line_height="1.05") + "\n" +
         para(t("A small workshop in Leeds making bags, aprons and a few things that did not fit either category. Two hundred of anything, then we stop and think about it."),
              color="muted", size="large") + "\n" +

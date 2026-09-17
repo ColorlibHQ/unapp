@@ -6,7 +6,7 @@ B = "unapp, unapp_blog, unapp_content, posts, query"
 # ---------------------------------------------------------------- magazine masthead
 body = section(
     group(
-        heading(t("The Slow Build"), align="center", size="xxx-large", line_height="1.05") + "\n" +
+        h1(t("The Slow Build"), align="center", size="xxx-large", line_height="1.05") + "\n" +
         para(t("Essays on making software carefully, published most Fridays."),
              align="center", color="muted", size="large") + "\n" +
         separator(style="gradient", color=None),

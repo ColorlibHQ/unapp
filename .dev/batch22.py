@@ -9,7 +9,7 @@ EV = "unapp, unapp_events"
 body = section_std(
     split(
         eyebrow(t("Evening and weekend courses", "School hero eyebrow"), align="left") + "\n" +
-        heading(t("Learn a trade properly, from someone who does it")) + "\n" +
+        h1(t("Learn a trade properly, from someone who does it")) + "\n" +
         para(t("Short courses in woodwork, letterpress, ceramics and bookbinding, taught in a Victorian school hall by people who make their living at it."),
              color="muted", size="large") + "\n" +
         buttons([{"text": t("See the courses"), "url": "#courses"},
@@ -135,7 +135,7 @@ write_pattern("education-contact", title="Courses: contact the school", cats=ED 
 # ================================================================= EVENTS
 cover_url = uri("assets/images/abstract/gathering.svg")
 inner = (eyebrow(t("Bristol · 14–15 May 2027", "Conference hero eyebrow"), align="center", color="base") + "\n" +
-         heading(t("Two days about building things that outlast the team that built them"),
+         h1(t("Two days about building things that outlast the team that built them"),
                  align="center", color="base", size="xxx-large") + "\n" +
          para(t("Sixteen talks, no sponsor keynotes, four hundred people and a bar that opens at five."),
               align="center", color="base", size="large") + "\n" +

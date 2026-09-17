@@ -72,15 +72,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'work'    => array(
 					'title'    => __( 'Work', 'unapp' ),
-					'patterns' => array( 'unapp/portfolio-work', 'unapp/portfolio-process', 'unapp/portfolio-testimonial', 'unapp/portfolio-contact' ),
+					'patterns' => array( 'unapp/portfolio-work-h1', 'unapp/portfolio-process', 'unapp/portfolio-testimonial', 'unapp/portfolio-contact' ),
 				),
 				'about'   => array(
 					'title'    => __( 'About', 'unapp' ),
-					'patterns' => array( 'unapp/portfolio-about', 'unapp/portfolio-process', 'unapp/portfolio-services', 'unapp/portfolio-testimonial' ),
+					'patterns' => array( 'unapp/portfolio-about-h1', 'unapp/portfolio-process', 'unapp/portfolio-services', 'unapp/portfolio-testimonial' ),
 				),
 				'contact' => array(
 					'title'    => __( 'Contact', 'unapp' ),
-					'patterns' => array( 'unapp/portfolio-contact', 'unapp/portfolio-services' ),
+					'patterns' => array( 'unapp/portfolio-contact-h1', 'unapp/portfolio-services' ),
 				),
 			),
 		),
@@ -98,19 +98,19 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'visit'   => array(
 					'title'    => __( 'Plan your visit', 'unapp' ),
-					'patterns' => array( 'unapp/church-visit', 'unapp/church-times', 'unapp/church-story', 'unapp/church-faq', 'unapp/church-contact' ),
+					'patterns' => array( 'unapp/church-visit-h1', 'unapp/church-times', 'unapp/church-story', 'unapp/church-faq', 'unapp/church-contact' ),
 				),
 				'about'   => array(
 					'title'    => __( 'About us', 'unapp' ),
-					'patterns' => array( 'unapp/church-story', 'unapp/church-events', 'unapp/church-beliefs', 'unapp/church-staff', 'unapp/church-cta' ),
+					'patterns' => array( 'unapp/church-story-h1', 'unapp/church-events', 'unapp/church-beliefs', 'unapp/church-staff', 'unapp/church-cta' ),
 				),
 				'give'    => array(
 					'title'    => __( 'Give', 'unapp' ),
-					'patterns' => array( 'unapp/church-giving', 'unapp/church-faq', 'unapp/church-contact' ),
+					'patterns' => array( 'unapp/church-giving-h1', 'unapp/church-faq', 'unapp/church-contact' ),
 				),
 				'contact' => array(
 					'title'    => __( 'Contact', 'unapp' ),
-					'patterns' => array( 'unapp/church-contact', 'unapp/church-times', 'unapp/church-visit' ),
+					'patterns' => array( 'unapp/church-contact-h1', 'unapp/church-times', 'unapp/church-visit' ),
 				),
 			),
 		),
@@ -128,11 +128,11 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'about'   => array(
 					'title'    => __( 'About', 'unapp' ),
-					'patterns' => array( 'unapp/blog-about', 'unapp/blog-author-intro', 'unapp/blog-subscribe' ),
+					'patterns' => array( 'unapp/blog-about-h1', 'unapp/blog-author-intro', 'unapp/blog-subscribe' ),
 				),
 				'contact' => array(
 					'title'    => __( 'Contact', 'unapp' ),
-					'patterns' => array( 'unapp/blog-contact', 'unapp/blog-subscribe' ),
+					'patterns' => array( 'unapp/blog-contact-h1', 'unapp/blog-subscribe' ),
 				),
 			),
 		),
@@ -150,15 +150,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'timetable'   => array(
 					'title'    => __( 'Timetable', 'unapp' ),
-					'patterns' => array( 'unapp/fitness-schedule', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
+					'patterns' => array( 'unapp/fitness-schedule-h1', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
 				),
 				'memberships' => array(
 					'title'    => __( 'Memberships', 'unapp' ),
-					'patterns' => array( 'unapp/fitness-memberships', 'unapp/fitness-testimonials', 'unapp/fitness-location', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
+					'patterns' => array( 'unapp/fitness-memberships-h1', 'unapp/fitness-testimonials', 'unapp/fitness-location', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
 				),
 				'contact'     => array(
 					'title'    => __( 'Contact', 'unapp' ),
-					'patterns' => array( 'unapp/fitness-location', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
+					'patterns' => array( 'unapp/fitness-location-h1', 'unapp/fitness-faq', 'unapp/fitness-cta' ),
 				),
 			),
 		),
@@ -176,15 +176,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'menu'    => array(
 					'title'    => __( 'Menu', 'unapp' ),
-					'patterns' => array( 'unapp/restaurant-menu', 'unapp/restaurant-kitchen', 'unapp/restaurant-cta' ),
+					'patterns' => array( 'unapp/restaurant-menu-h1', 'unapp/restaurant-kitchen', 'unapp/restaurant-cta' ),
 				),
 				'about'   => array(
 					'title'    => __( 'The kitchen', 'unapp' ),
-					'patterns' => array( 'unapp/restaurant-kitchen', 'unapp/restaurant-reviews', 'unapp/restaurant-hours' ),
+					'patterns' => array( 'unapp/restaurant-kitchen-h1', 'unapp/restaurant-reviews', 'unapp/restaurant-hours' ),
 				),
 				'contact' => array(
 					'title'    => __( 'Book a table', 'unapp' ),
-					'patterns' => array( 'unapp/restaurant-hours', 'unapp/restaurant-booking', 'unapp/restaurant-cta' ),
+					'patterns' => array( 'unapp/restaurant-hours-h1', 'unapp/restaurant-booking', 'unapp/restaurant-cta' ),
 				),
 			),
 		),
@@ -202,15 +202,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'work'    => array(
 					'title'    => __( 'Work', 'unapp' ),
-					'patterns' => array( 'unapp/agency-clients', 'unapp/agency-case-study', 'unapp/agency-services', 'unapp/agency-contact' ),
+					'patterns' => array( 'unapp/agency-clients-h1', 'unapp/agency-case-study', 'unapp/agency-services', 'unapp/agency-contact' ),
 				),
 				'studio'  => array(
 					'title'    => __( 'Studio', 'unapp' ),
-					'patterns' => array( 'unapp/agency-team', 'unapp/agency-services', 'unapp/agency-engagements' ),
+					'patterns' => array( 'unapp/agency-team-h1', 'unapp/agency-services', 'unapp/agency-engagements' ),
 				),
 				'contact' => array(
 					'title'    => __( 'Start a project', 'unapp' ),
-					'patterns' => array( 'unapp/agency-contact', 'unapp/agency-engagements' ),
+					'patterns' => array( 'unapp/agency-contact-h1', 'unapp/agency-engagements' ),
 				),
 			),
 		),
@@ -229,11 +229,11 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'about'   => array(
 					'title'    => __( 'How it is made', 'unapp' ),
-					'patterns' => array( 'unapp/shop-workshop', 'unapp/shop-promise', 'unapp/shop-cta' ),
+					'patterns' => array( 'unapp/shop-workshop-h1', 'unapp/shop-promise', 'unapp/shop-cta' ),
 				),
 				'help'    => array(
 					'title'    => __( 'Delivery and returns', 'unapp' ),
-					'patterns' => array( 'unapp/shop-faq', 'unapp/shop-promise', 'unapp/shop-contact' ),
+					'patterns' => array( 'unapp/shop-faq-h1', 'unapp/shop-promise', 'unapp/shop-contact' ),
 				),
 			),
 		),
@@ -251,15 +251,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'listings' => array(
 					'title'    => __( 'For sale', 'unapp' ),
-					'patterns' => array( 'unapp/realestate-listings', 'unapp/realestate-fees', 'unapp/realestate-valuation' ),
+					'patterns' => array( 'unapp/realestate-listings-h1', 'unapp/realestate-fees', 'unapp/realestate-valuation' ),
 				),
 				'fees'     => array(
 					'title'    => __( 'Our fees', 'unapp' ),
-					'patterns' => array( 'unapp/realestate-fees', 'unapp/realestate-faq', 'unapp/realestate-valuation' ),
+					'patterns' => array( 'unapp/realestate-fees-h1', 'unapp/realestate-faq', 'unapp/realestate-valuation' ),
 				),
 				'contact'  => array(
 					'title'    => __( 'Book a valuation', 'unapp' ),
-					'patterns' => array( 'unapp/realestate-valuation', 'unapp/realestate-fees' ),
+					'patterns' => array( 'unapp/realestate-valuation-h1', 'unapp/realestate-fees' ),
 				),
 			),
 		),
@@ -277,15 +277,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'treatments' => array(
 					'title'    => __( 'Treatments', 'unapp' ),
-					'patterns' => array( 'unapp/medical-services', 'unapp/medical-team', 'unapp/medical-faq' ),
+					'patterns' => array( 'unapp/medical-services-h1', 'unapp/medical-team', 'unapp/medical-faq' ),
 				),
 				'team'       => array(
 					'title'    => __( 'The team', 'unapp' ),
-					'patterns' => array( 'unapp/medical-team', 'unapp/medical-services', 'unapp/medical-hours' ),
+					'patterns' => array( 'unapp/medical-team-h1', 'unapp/medical-services', 'unapp/medical-hours' ),
 				),
 				'contact'    => array(
 					'title'    => __( 'Find us', 'unapp' ),
-					'patterns' => array( 'unapp/medical-hours', 'unapp/medical-contact', 'unapp/medical-faq' ),
+					'patterns' => array( 'unapp/medical-hours-h1', 'unapp/medical-contact', 'unapp/medical-faq' ),
 				),
 			),
 		),
@@ -303,15 +303,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'courses' => array(
 					'title'    => __( 'Courses', 'unapp' ),
-					'patterns' => array( 'unapp/education-courses', 'unapp/education-tutors', 'unapp/education-faq', 'unapp/education-cta' ),
+					'patterns' => array( 'unapp/education-courses-h1', 'unapp/education-tutors', 'unapp/education-faq', 'unapp/education-cta' ),
 				),
 				'tutors'  => array(
 					'title'    => __( 'Tutors', 'unapp' ),
-					'patterns' => array( 'unapp/education-tutors', 'unapp/education-courses', 'unapp/education-cta' ),
+					'patterns' => array( 'unapp/education-tutors-h1', 'unapp/education-courses', 'unapp/education-cta' ),
 				),
 				'contact' => array(
 					'title'    => __( 'Contact', 'unapp' ),
-					'patterns' => array( 'unapp/education-contact', 'unapp/education-faq' ),
+					'patterns' => array( 'unapp/education-contact-h1', 'unapp/education-faq' ),
 				),
 			),
 		),
@@ -329,15 +329,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'programme' => array(
 					'title'    => __( 'Programme', 'unapp' ),
-					'patterns' => array( 'unapp/events-programme', 'unapp/events-speakers', 'unapp/events-tickets' ),
+					'patterns' => array( 'unapp/events-programme-h1', 'unapp/events-speakers', 'unapp/events-tickets' ),
 				),
 				'tickets'   => array(
 					'title'    => __( 'Tickets', 'unapp' ),
-					'patterns' => array( 'unapp/events-tickets', 'unapp/events-venue', 'unapp/events-programme' ),
+					'patterns' => array( 'unapp/events-tickets-h1', 'unapp/events-venue', 'unapp/events-programme' ),
 				),
 				'venue'     => array(
 					'title'    => __( 'Venue and access', 'unapp' ),
-					'patterns' => array( 'unapp/events-venue', 'unapp/events-programme' ),
+					'patterns' => array( 'unapp/events-venue-h1', 'unapp/events-programme' ),
 				),
 			),
 		),
@@ -355,15 +355,15 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'services' => array(
 					'title'    => __( 'Services', 'unapp' ),
-					'patterns' => array( 'unapp/finance-services', 'unapp/finance-process', 'unapp/finance-team', 'unapp/finance-fees', 'unapp/finance-faq', 'unapp/finance-disclaimer' ),
+					'patterns' => array( 'unapp/finance-services-h1', 'unapp/finance-process', 'unapp/finance-team', 'unapp/finance-fees', 'unapp/finance-faq', 'unapp/finance-disclaimer' ),
 				),
 				'about'    => array(
 					'title'    => __( 'About', 'unapp' ),
-					'patterns' => array( 'unapp/finance-team', 'unapp/finance-credentials', 'unapp/finance-process', 'unapp/finance-disclaimer' ),
+					'patterns' => array( 'unapp/finance-team-h1', 'unapp/finance-credentials', 'unapp/finance-process', 'unapp/finance-disclaimer' ),
 				),
 				'contact'  => array(
 					'title'    => __( 'Contact', 'unapp' ),
-					'patterns' => array( 'unapp/finance-contact', 'unapp/finance-process', 'unapp/finance-faq', 'unapp/finance-disclaimer' ),
+					'patterns' => array( 'unapp/finance-contact-h1', 'unapp/finance-process', 'unapp/finance-faq', 'unapp/finance-disclaimer' ),
 				),
 			),
 		),

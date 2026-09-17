@@ -316,6 +316,20 @@ def heading(text, *, level=2, align=None, size=None, color=None, font=None, weig
             f'<!-- /wp:heading -->')
 
 
+# theme.json styles h1 at xxx-large / line-height 1.1 and h2 at xx-large /
+# 1.2. A page's main heading changes level, not look: whatever the h2 got from
+# its element style is written onto the h1 explicitly.
+H2_LOOK = {"size": "xx-large", "line_height": "1.2"}
+
+
+def h1(text, **kw):
+    """The page's one h1, looking exactly as the h2 it replaces did."""
+    for key, value in H2_LOOK.items():
+        if not kw.get(key):
+            kw[key] = value
+    return heading(text, level=1, **kw)
+
+
 def para(text, *, align=None, size=None, color=None, custom_color=None, font=None, weight=None,
          line_height=None, letter=None, transform=None, class_name=None, margin=None, extra_css=""):
     a, classes, css = {}, [], ""
@@ -636,12 +650,13 @@ def pattern_ref(slug):
 # --------------------------------------------------------------------------- composites
 def intro(*, eyebrow_text=None, title=None, lead=None, align="center", content="680px",
           gap="20", margin_bottom=None, title_size=None, eyebrow_color="primary",
-          title_color=None, lead_color="muted"):
+          title_color=None, lead_color="muted", title_level=2):
     parts = []
     if eyebrow_text:
         parts.append(eyebrow(eyebrow_text, align=align, color=eyebrow_color))
     if title:
-        parts.append(heading(title, align=align, size=title_size, color=title_color))
+        make = h1 if title_level == 1 else heading
+        parts.append(make(title, align=align, size=title_size, color=title_color))
     if lead:
         parts.append(para(lead, align=align, color=lead_color, size="large"))
     css = ""

@@ -47,6 +47,8 @@ SECTION_RE = re.compile(r'(<!-- wp:group (\{"align":"full".*?\}) -->\s*\n\s*<div
 
 
 def ground_of(slug):
+    if slug.endswith("-h1"):
+        slug = slug[:-3]  # a page-opening variant sits on its section's ground
     return "soft" if slug in SOFT else "plain"
 
 
@@ -88,3 +90,8 @@ for f in sorted(os.listdir(os.path.join(THEME, "patterns"))):
     elif r:
         changed += 1
 print(f"grounds applied: {changed} changed, {skipped} skipped (covers and bands)")
+
+# Last: the page-opening h1 variants are copies of finished sections, grounds
+# included, so they are derived only now.
+import openings  # noqa: E402
+openings.main()

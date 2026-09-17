@@ -20,8 +20,8 @@
 <!-- wp:paragraph {"align":"left","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
 <p class="has-text-align-left has-primary-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'Designer & art director', 'Portfolio eyebrow', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:heading {"textAlign":"left","fontSize":"xxx-large","style":{"typography":{"lineHeight":"1.05"}}} -->
-<h2 class="wp-block-heading has-text-align-left has-xxx-large-font-size" style="line-height:1.05;"><?php esc_html_e( 'Mara Lindqvist', 'unapp' ); ?></h2>
+<!-- wp:heading {"level":1,"textAlign":"left","fontSize":"xxx-large","style":{"typography":{"lineHeight":"1.05"}}} -->
+<h1 class="wp-block-heading has-text-align-left has-xxx-large-font-size" style="line-height:1.05;"><?php esc_html_e( 'Mara Lindqvist', 'unapp' ); ?></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"large"} -->
 <p class="has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'I help small teams look like the companies they are becoming — identity, packaging and the odd website.', 'unapp' ); ?></p>

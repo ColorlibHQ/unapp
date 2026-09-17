@@ -8,7 +8,7 @@ body = section(
     columns([
         column(
             eyebrow(t("Designer & art director", "Portfolio eyebrow"), align="left") + "\n" +
-            heading(t("Mara Lindqvist"), size="xxx-large", line_height="1.05", align="left") + "\n" +
+            h1(t("Mara Lindqvist"), size="xxx-large", line_height="1.05", align="left") + "\n" +
             para(t("I help small teams look like the companies they are becoming — identity, packaging and the odd website."), color="muted", size="large") + "\n" +
             buttons([{"text": t("See selected work"), "style": "is-style-arrow"}], margin={"top": "30"}),
             width="52%", vertical_align="center", gap="30"),
@@ -94,7 +94,7 @@ write_pattern("portfolio-services", title="Portfolio: services and rates", cats=
 # ============================================================ CHURCH
 C = "unapp, unapp_church, banner, featured"
 inner = (eyebrow(t("Everyone is welcome", "Church hero eyebrow"), align="center", color="base") + "\n" +
-         heading(t("A church for people who are not sure about church"), align="center", color="base", size="xxx-large") + "\n" +
+         h1(t("A church for people who are not sure about church"), align="center", color="base", size="xxx-large") + "\n" +
          para(t("Sundays at 9:30 and 11:15 · Coffee from 9:00 · Kids welcome in every service"), align="center", color="base", size="large") + "\n" +
          buttons([{"text": t("Plan your visit"), "bg": "base", "color": "primary"},
                   {"text": t("Watch online"), "style": "is-style-outline", "color": "base"}],
