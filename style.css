@@ -89,6 +89,47 @@ Unapp is distributed under the terms of the GNU GPL.
 	flex-wrap: wrap;
 }
 
+/* Core paints the open overlay white with black text whatever the palette — a
+   white flash on a dark site — and keeps the header's 13px capitals, about
+   22px tall to tap. The overlay takes its ground and text from the palette and
+   sets the links at reading size with 44px targets. */
+.wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open:not(.disable-default-overlay) {
+	background-color: var(--wp--preset--color--base);
+}
+
+.wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open:not(.disable-default-overlay) {
+	color: var(--wp--preset--color--contrast);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open:not(.disable-default-overlay) .wp-block-navigation__responsive-container-content .wp-block-navigation__container {
+	gap: 0.25rem;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open:not(.disable-default-overlay) .wp-block-navigation__responsive-container-content .wp-block-navigation-item__content {
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	min-height: 44px;
+	padding-block: 0.35rem;
+	font-size: 1.25rem;
+	letter-spacing: -0.01em;
+	line-height: 1.3;
+	text-transform: none;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open:not(.disable-default-overlay) .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	font-size: 1.0625rem;
+	font-weight: 500;
+}
+
+/* The toggles draw a 24px icon; pad them to a 44px target without moving it.
+   (The open button is a flex-layout child, whose margins core zeroes.) */
+.wp-block-navigation .wp-block-navigation__responsive-container-open,
+.wp-block-navigation .wp-block-navigation__responsive-container-close {
+	padding: 10px;
+	margin: -10px;
+}
+
 /* The small, uppercase, tracked style theme.json gives core/navigation is the
    header's. Every footer's link columns picked it up too and sat in capitals
    beside sentence-case columns, so menus outside the header read as the text
