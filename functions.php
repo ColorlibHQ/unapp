@@ -13,7 +13,10 @@
 defined( 'ABSPATH' ) || exit;
 
 if ( ! defined( 'UNAPP_VERSION' ) ) {
-	define( 'UNAPP_VERSION', wp_get_theme()->get( 'Version' ) );
+	// The parent's version, even when a child theme is active: wp_get_theme()
+	// alone returns the child, which would pin every asset URL to the child's
+	// version and report the wrong version to the update check.
+	define( 'UNAPP_VERSION', wp_get_theme( get_template() )->get( 'Version' ) );
 }
 
 /**
@@ -44,9 +47,23 @@ add_action( 'after_setup_theme', 'unapp_setup' );
 
 /**
  * Enqueue the front-end stylesheet.
+ *
+ * Always the parent's style.css. get_stylesheet_uri() points at the child
+ * theme's file when one is active, which silently dropped the parent's rules
+ * (header, alignment, query cards, the price toggle) from every child theme.
+ * A child's own style.css is added after it, so its rules still win.
  */
 function unapp_enqueue_styles() {
-	wp_enqueue_style( 'unapp-style', get_stylesheet_uri(), array(), UNAPP_VERSION );
+	wp_enqueue_style( 'unapp-style', get_parent_theme_file_uri( 'style.css' ), array(), UNAPP_VERSION );
+
+	if ( is_child_theme() ) {
+		wp_enqueue_style(
+			'unapp-child-style',
+			get_stylesheet_uri(),
+			array( 'unapp-style' ),
+			wp_get_theme()->get( 'Version' )
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'unapp_enqueue_styles' );
 
@@ -270,6 +287,9 @@ add_action( 'init', 'unapp_pattern_categories' );
 function unapp_unregister_unsupported_patterns() {
 	$requirements = array(
 		'unapp/faq-accordion' => 'core/accordion',
+		// Built from WooCommerce's product blocks; without WooCommerce it inserts
+		// an empty grid of missing-block placeholders.
+		'unapp/shop-featured' => 'woocommerce/product-collection',
 	);
 
 	foreach ( $requirements as $pattern => $block ) {
@@ -279,7 +299,51 @@ function unapp_unregister_unsupported_patterns() {
 		}
 	}
 }
+// Priority 20 runs after WooCommerce registers its blocks on init.
 add_action( 'init', 'unapp_unregister_unsupported_patterns', 20 );
+
+/**
+ * Keep the WooCommerce templates out of sight while WooCommerce is inactive.
+ *
+ * WordPress does not know "archive-product" or "page-cart" without WooCommerce,
+ * so it treated the theme's shop templates as custom page templates and offered
+ * them by raw slug in the page editor's Template menu.
+ *
+ * @param WP_Block_Template[] $templates Templates found.
+ * @return WP_Block_Template[]
+ */
+function unapp_hide_woocommerce_templates( $templates ) {
+	if ( class_exists( 'WooCommerce' ) ) {
+		return $templates;
+	}
+
+	$woo = array( 'archive-product', 'single-product', 'page-cart', 'page-checkout', 'order-confirmation', 'product-search-results' );
+
+	return array_values(
+		array_filter(
+			$templates,
+			static function ( $template ) use ( $woo ) {
+				return ! ( isset( $template->theme, $template->slug ) && get_stylesheet() === $template->theme && in_array( $template->slug, $woo, true ) );
+			}
+		)
+	);
+}
+add_filter( 'get_block_templates', 'unapp_hide_woocommerce_templates' );
+
+/**
+ * Give the comment form's "Leave a Reply" heading the right level.
+ *
+ * Core prints it as an h3 straight after the post's h1, which skips a level.
+ *
+ * @param array $defaults Comment form arguments.
+ * @return array
+ */
+function unapp_comment_form_heading( $defaults ) {
+	$defaults['title_reply_before'] = '<h2 id="reply-title" class="comment-reply-title">';
+	$defaults['title_reply_after']  = '</h2>';
+	return $defaults;
+}
+add_filter( 'comment_form_defaults', 'unapp_comment_form_heading' );
 
 /**
  * Strip blocks that need a newer WordPress out of templates and patterns.
@@ -336,32 +400,32 @@ add_filter( 'render_block_core/paragraph', 'unapp_maybe_enqueue_counter', 10, 2 
 /**
  * Front page setup (Home + Blog pages, Settings → Reading) on activation.
  */
-require get_theme_file_path( 'inc/front-page-setup.php' );
+require get_parent_theme_file_path( 'inc/front-page-setup.php' );
 
 /**
  * Starter sites: complete designs for different kinds of website.
  */
-require get_theme_file_path( 'inc/starter-sites.php' );
+require get_parent_theme_file_path( 'inc/starter-sites.php' );
 
 /**
  * Contact forms: render whichever form plugin is active, styled to the palette.
  */
-require get_theme_file_path( 'inc/forms.php' );
+require get_parent_theme_file_path( 'inc/forms.php' );
 
 /**
  * Visitor colour-scheme toggle, active only where the toggle pattern is used.
  */
-require get_theme_file_path( 'inc/scheme.php' );
+require get_parent_theme_file_path( 'inc/scheme.php' );
 
 /**
  * Setup wizard: name, logo, palette, typeface and the plugins a starter needs.
  */
-require get_theme_file_path( 'inc/setup-wizard.php' );
+require get_parent_theme_file_path( 'inc/setup-wizard.php' );
 
 /**
  * Updates for a theme distributed outside WordPress.org.
  */
-require get_theme_file_path( 'inc/updates.php' );
+require get_parent_theme_file_path( 'inc/updates.php' );
 
 /**
  * Load the monthly/yearly price switch only on pages that render one.
