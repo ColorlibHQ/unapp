@@ -20,7 +20,7 @@ Unapp ships its own shop, product, cart, checkout, order-confirmation and produc
 
 **Starter sites**
 
-Appearance → Starter Sites walks you through three steps — the starter, your name and look, and any plugin it needs — and offers thirteen complete designs, each with its own palette, typeface, home page, supporting pages and menu: SaaS & app, Portfolio, Church, Blog & magazine, Fitness studio, Restaurant, Agency, Shop, Property, Practice, Courses, Conference and Finance & advisory. Applying one creates the pages and sets your front page. Nothing is ever deleted — switching starter adds new pages and leaves your old ones in the Pages list.
+Appearance → Starter Sites walks you through three steps — the starter, your name and look, and any plugin it needs — and offers thirteen complete designs, each with its own palette, typeface, home page, supporting pages and menu: SaaS & app, Portfolio, Church, Blog & magazine, Fitness studio, Restaurant, Agency, Shop, Property, Practice, Courses, Conference and Finance & advisory. Applying one creates the pages and sets your front page. No page, post or image is ever deleted — switching starter adds new pages and leaves your old ones in the Pages list — and the styles, header and footer it replaces are kept as revisions.
 
 **What's included**
 
@@ -42,8 +42,8 @@ Appearance → Starter Sites walks you through three steps — the starter, your
 
 1. In your WordPress dashboard go to Appearance → Themes → Add New → Upload Theme.
 2. Upload the zip file, click Install Now, then Activate.
-3. On a site without a static front page Unapp immediately creates a "Home" page (the landing page, template "Page (No Title)") and a "Blog" page and assigns them under Settings → Reading. Both are ordinary pages: edit the front page like any other page, or open Appearance → Editor for the header, footer, colors and templates.
-4. If your site already has a static front page it is left untouched; a notice on the Dashboard/Themes screen offers a one-click "Set up the Unapp front page" instead. You can always switch back under Settings → Reading.
+3. On a brand-new install Unapp immediately creates a "Home" page (the landing page, template "Page (No Title)") and a "Blog" page and assigns them under Settings → Reading. Both are ordinary pages: edit the front page like any other page, or open Appearance → Editor for the header, footer, colors and templates.
+4. On a site that already has content — a static front page or a blog of latest posts — nothing changes on activation; a notice on the Dashboard/Themes screen offers a one-click "Set up the Unapp front page" instead. You can always switch back under Settings → Reading.
 
 **Building the landing page by hand**
 

@@ -19,7 +19,7 @@ Appearance → **Starter Sites** applies a complete design for one kind of websi
 
 Every starter carries its own patterns end to end — its home page, its inner pages and its footer. A church site does not sign off with SaaS pricing links, and its Contact page does not answer questions about free trials.
 
-Add your own with the `unapp_starter_sites` filter. Nothing is deleted when you apply or switch.
+Add your own with the `unapp_starter_sites` filter. No page, post or image is deleted when you apply or switch; the styles, header and footer a starter replaces are kept as revisions.
 
 ## Starter library plugin
 
@@ -53,7 +53,7 @@ Spacing that is not on the scale is refused at build time, sections alternate th
 
 ## Highlights
 
-- **Complete landing page on activation** – a real "Home" page (editable page content, *Page (No Title)* template) and a "Blog" page are created and assigned in Settings → Reading; existing front pages are never overridden (a one-click notice is shown instead). Gradient hero with product screenshot, services grid, image & text, features around a phone, animated stats, screenshot gallery (core lightbox), pricing table, team, latest posts, call to action and contact cards.
+- **Complete landing page on activation** – a real "Home" page (editable page content, *Page (No Title)* template) and a "Blog" page are created and assigned in Settings → Reading; this happens automatically only on a fresh install, and a site with existing content gets a one-click notice instead. Gradient hero with product screenshot, services grid, image & text, features around a phone, animated stats, screenshot gallery (core lightbox), pricing table, team, latest posts, call to action and contact cards.
 - **140+ section patterns + 19 page starters**, grouped into fifteen inserter categories (Heroes, Features, Social proof, Pricing, Calls to action, Content & blog, Company, Utility, Portfolio, Church, Fitness, Finance, Blog & magazine, Full pages).
 - **Section styles** for Group/Columns/Column: Card, Soft background, Dark, Gradient, Frosted glass, Outline, Elevated. **Block styles**: List (Checklist, Dashed, Numbered steps, Two columns), Image (Device frame, Browser frame, Framed), Quote (Testimonial card), Details (FAQ card), Table (Comparison), Separator (Gradient line), Button (Text link with arrow), Columns (Divided).
 - **Mix-and-match styles**: 10 colour palettes × 5 typography presets = 50 combinations, plus 10 curated looks. Colour and typography are separate partials in `styles/colors/` and `styles/typography/`.
@@ -95,7 +95,7 @@ unapp/
 
 ## Front page behaviour
 
-There is deliberately **no `front-page.html`**. On activation `inc/front-page-setup.php` creates a *Home* page whose content is the fully expanded "Home landing page" pattern (template *Page (No Title)*) plus a *Blog* page, and sets `show_on_front`, `page_on_front`, `page_for_posts`. It only does this automatically when the site has no static front page; otherwise an admin notice offers a one-click setup. The run is recorded in the `unapp_front_page_setup` option and never repeated. Disable with `add_filter( 'unapp_auto_setup_front_page', '__return_false' )`.
+There is deliberately **no `front-page.html`**. On activation `inc/front-page-setup.php` creates a *Home* page whose content is the fully expanded "Home landing page" pattern (template *Page (No Title)*) plus a *Blog* page, and sets `show_on_front`, `page_on_front`, `page_for_posts`. It only does this automatically on a fresh install (the `fresh_site` option) with no static front page; otherwise an admin notice offers a one-click setup. The run is recorded in the `unapp_front_page_setup` option and never repeated. Disable with `add_filter( 'unapp_auto_setup_front_page', '__return_false' )`.
 
 ## Development
 

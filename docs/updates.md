@@ -118,7 +118,9 @@ The update request is also the only install count there is. It carries:
 `site` is `hash_hmac( 'sha256', home_url(), wp_salt( 'auth' ) )`, truncated. It
 uses the install's own salt, so it cannot be reversed into a URL by whoever
 receives it and two sites cannot collide. No site name, no email address and
-no personal data is sent.
+no personal data is sent. The request's User-Agent is `Unapp/<version>` only
+(WordPress's default User-Agent would add the site URL, which the hash exists to
+avoid).
 
 Two filters control it:
 

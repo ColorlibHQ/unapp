@@ -3,10 +3,11 @@
 ## Install and activate
 
 Upload the theme zip under **Appearance → Themes → Add New → Upload Theme**, then
-activate it. On activation Unapp creates a **Home** page and a **Blog** page,
-assigns them under **Settings → Reading**, and leaves you on a finished landing
-page rather than an empty blog roll. If your site already has a static front
-page, nothing is overwritten — a notice offers the setup instead.
+activate it. On a brand-new install Unapp creates a **Home** page and a **Blog**
+page, assigns them under **Settings → Reading**, and leaves you on a finished
+landing page rather than an empty blog roll. On a site that already has content
+— a static front page or a blog of latest posts — nothing is changed: a notice
+offers the same setup with one click instead.
 
 Requires WordPress 6.6 or later. Everything works on 6.6; WordPress 7.0 adds
 the Accordion, Breadcrumbs, Query Total and Terms Query blocks, which the theme
@@ -38,11 +39,17 @@ The thirteen designs:
 | Finance & advisory | Navy · Fraunces & Inter | Home, Services, About, Contact |
 
 Applying a starter writes its palette and typeface into Global Styles, builds
-the pages, creates a menu, sets the front page, changes the header button
-wording and swaps in that starter's footer.
+the pages, creates a menu, sets the front page, points the header button at the
+starter's main page with its own wording, and swaps in that starter's footer.
 
-**Nothing is ever deleted.** Applying a second starter adds new pages beside the
-old ones and repoints the front page; your previous pages stay in **Pages**.
+**No page, post or image is ever deleted.** Applying a second starter adds new
+pages beside the old ones and repoints the front page; your previous pages stay
+in **Pages**. What a starter does replace — the Global Styles, the header and the
+footer — is saved as a revision first, so **Styles → Revisions** and the
+template part's revisions bring the previous version back. Starters keep their
+own navigation menu and never change menus you made yourself.
+
+The Shop starter needs WooCommerce, and cannot be applied until it is active.
 
 ## Editing a starter page
 

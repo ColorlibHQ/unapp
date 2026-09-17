@@ -64,6 +64,12 @@ Register a new pattern category in a child theme with
 
 ## Change the contact form
 
+Contact sections store a slot, not a form: a heading and an email fallback in a
+group with the `unapp-form-slot` class. When the page is displayed, the slot
+renders the active form plugin's form, or the email fallback plus a hint that
+only administrators see. Installing a form plugin later therefore updates every
+contact page without editing any of them.
+
 The form is chosen by `unapp_detect_form()`. To force a specific one, or to
 render something the theme does not know about:
 
