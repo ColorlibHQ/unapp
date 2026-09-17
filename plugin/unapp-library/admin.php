@@ -179,17 +179,32 @@ function unapp_ai_save() {
 	$provider  = isset( $_POST['provider'] ) ? sanitize_key( wp_unslash( $_POST['provider'] ) ) : '';
 	$key       = isset( $_POST['api_key'] ) ? trim( sanitize_text_field( wp_unslash( $_POST['api_key'] ) ) ) : '';
 	$model     = isset( $_POST['model'] ) ? sanitize_text_field( wp_unslash( $_POST['model'] ) ) : '';
-	$existing  = unapp_ai_settings();
+	$remove    = ! empty( $_POST['remove_key'] );
+	$saved     = get_option( UNAPP_AI_SETTINGS, array() );
+	$saved     = wp_parse_args( is_array( $saved ) ? $saved : array(), array( 'provider' => 'anthropic', 'key' => '', 'model' => '' ) );
+	$provider  = isset( $providers[ $provider ] ) ? $provider : $saved['provider'];
+	$switched  = $provider !== $saved['provider'];
+
+	// An empty field means "leave the stored key alone", so the key never has to
+	// be pasted twice or rendered back into the page — but only for the same
+	// provider. A Claude key kept after switching to Gemini would be sent to Google.
+	if ( $remove ) {
+		$stored_key = '';
+	} elseif ( '' !== $key ) {
+		$stored_key = $key;
+	} else {
+		$stored_key = $switched ? '' : $saved['key'];
+	}
 
 	update_option(
 		UNAPP_AI_SETTINGS,
 		array(
-			'provider' => isset( $providers[ $provider ] ) ? $provider : $existing['provider'],
-			// An empty field means "leave the stored key alone", so the key
-			// never has to be pasted twice or rendered back into the page.
-			'key'      => '' === $key ? $existing['key'] : $key,
-			'model'    => $model,
-		)
+			'provider' => $provider,
+			'key'      => $stored_key,
+			// Model names are provider-specific, so a switch starts from the default.
+			'model'    => ( $switched && $model === $saved['model'] ) ? '' : $model,
+		),
+		false // Not autoloaded: the key has no business in every request's memory.
 	);
 
 	wp_safe_redirect( admin_url( 'themes.php?page=unapp-ai&saved=1' ) );
@@ -203,8 +218,21 @@ add_action( 'admin_post_unapp_ai_settings', 'unapp_ai_save' );
 function unapp_ai_run() {
 	check_admin_referer( 'unapp_ai_run' );
 
-	if ( ! current_user_can( 'edit_theme_options' ) ) {
+	// Running spends the stored key's credit, so it takes the same capability as
+	// saving the key.
+	if ( ! current_user_can( 'manage_options' ) ) {
 		wp_die( esc_html__( 'You are not allowed to rewrite the site.', 'unapp-library' ), 403 );
+	}
+
+	// A double click would start a second paid request while the first runs.
+	if ( ! add_option( 'unapp_ai_running', time(), '', false ) ) {
+		$started = (int) get_option( 'unapp_ai_running' );
+		if ( $started > time() - 5 * MINUTE_IN_SECONDS ) {
+			set_transient( 'unapp_ai_result', array( 'error' => __( 'A rewrite is already running. Wait for it to finish.', 'unapp-library' ) ), MINUTE_IN_SECONDS * 5 );
+			wp_safe_redirect( admin_url( 'themes.php?page=unapp-ai' ) );
+			exit;
+		}
+		update_option( 'unapp_ai_running', time(), false );
 	}
 
 	$description = isset( $_POST['description'] ) ? sanitize_textarea_field( wp_unslash( $_POST['description'] ) ) : '';
@@ -227,6 +255,8 @@ function unapp_ai_run() {
 			MINUTE_IN_SECONDS * 5
 		);
 	}
+
+	delete_option( 'unapp_ai_running' );
 
 	wp_safe_redirect( admin_url( 'themes.php?page=unapp-ai' ) );
 	exit;
@@ -252,6 +282,11 @@ function unapp_ai_render() {
 		<p class="unapp-ai__intro">
 			<?php esc_html_e( 'This rewrites the words on the pages your starter built, and only the words. The layout, the spacing and the images are never sent and never change — the model receives the text on the page and a description of your business, and returns replacements one for one.', 'unapp-library' ); ?>
 		</p>
+
+		<?php // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- display flag set by our own redirect. ?>
+		<?php if ( ! $result && isset( $_GET['saved'] ) ) : ?>
+			<div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'Settings saved.', 'unapp-library' ); ?></p></div>
+		<?php endif; ?>
 
 		<?php if ( isset( $result['error'] ) ) : ?>
 			<div class="notice notice-error"><p><?php echo esc_html( $result['error'] ); ?></p></div>
@@ -294,8 +329,16 @@ function unapp_ai_render() {
 				<tr>
 					<th scope="row"><label for="unapp-ai-key"><?php esc_html_e( 'API key', 'unapp-library' ); ?></label></th>
 					<td>
-						<input type="password" id="unapp-ai-key" name="api_key" class="regular-text" autocomplete="off"
-							placeholder="<?php echo $settings['key'] ? esc_attr__( 'Saved — leave blank to keep it', 'unapp-library' ) : ''; ?>">
+						<?php if ( ! empty( $settings['constant'] ) ) : ?>
+							<p class="description"><?php esc_html_e( 'Set by the UNAPP_AI_KEY constant in wp-config.php.', 'unapp-library' ); ?></p>
+						<?php else : ?>
+							<input type="password" id="unapp-ai-key" name="api_key" class="regular-text" autocomplete="off"
+								placeholder="<?php echo $settings['key'] ? esc_attr__( 'Saved — leave blank to keep it', 'unapp-library' ) : ''; ?>">
+							<?php if ( $settings['key'] ) : ?>
+								<label class="unapp-ai__remove"><input type="checkbox" name="remove_key" value="1"> <?php esc_html_e( 'Remove the saved key', 'unapp-library' ); ?></label>
+							<?php endif; ?>
+							<p class="description"><?php esc_html_e( 'A saved key belongs to the provider it was saved with. Switching provider clears it.', 'unapp-library' ); ?></p>
+						<?php endif; ?>
 					</td>
 				</tr>
 				<tr>

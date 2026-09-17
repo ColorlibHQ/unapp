@@ -56,8 +56,18 @@ function unapp_ai_providers() {
 function unapp_ai_settings() {
 	$defaults = array( 'provider' => 'anthropic', 'key' => '', 'model' => '' );
 	$saved    = get_option( UNAPP_AI_SETTINGS, array() );
+	$settings = wp_parse_args( is_array( $saved ) ? $saved : array(), $defaults );
 
-	return wp_parse_args( is_array( $saved ) ? $saved : array(), $defaults );
+	// A key defined in wp-config.php never touches the database.
+	if ( defined( 'UNAPP_AI_KEY' ) && '' !== (string) UNAPP_AI_KEY ) {
+		$settings['key']      = (string) UNAPP_AI_KEY;
+		$settings['constant'] = true;
+	}
+	if ( defined( 'UNAPP_AI_PROVIDER' ) && isset( unapp_ai_providers()[ UNAPP_AI_PROVIDER ] ) ) {
+		$settings['provider'] = UNAPP_AI_PROVIDER;
+	}
+
+	return $settings;
 }
 
 /**
@@ -164,9 +174,11 @@ function unapp_ai_rewrite( $strings, $description ) {
 			break;
 
 		case 'google':
-			$endpoint = str_replace( '{model}', rawurlencode( $model ), $endpoint );
-			$endpoint = add_query_arg( 'key', rawurlencode( $settings['key'] ), $endpoint );
-			$body     = array(
+			$endpoint                  = str_replace( '{model}', rawurlencode( $model ), $endpoint );
+			// In a header, not the query string, so the key stays out of server
+			// and proxy logs that record URLs.
+			$headers['x-goog-api-key'] = $settings['key'];
+			$body                      = array(
 				'contents' => array( array( 'parts' => array( array( 'text' => $prompt ) ) ) ),
 			);
 			break;
@@ -305,7 +317,7 @@ function unapp_ai_rewrite_pages( $page_ids, $description ) {
 
 	foreach ( $page_ids as $id ) {
 		$post = get_post( $id );
-		if ( ! $post ) {
+		if ( ! $post || ! current_user_can( 'edit_post', $id ) ) {
 			continue;
 		}
 		$pages[ $id ] = $post->post_content;

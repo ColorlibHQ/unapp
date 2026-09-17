@@ -136,7 +136,8 @@ function unapp_library_remote_packs() {
 	 */
 	$url = apply_filters( 'unapp_library_endpoint', '' );
 
-	if ( ! $url ) {
+	// Pack markup is stored into pages, so it only comes over HTTPS.
+	if ( ! $url || 'https' !== wp_parse_url( $url, PHP_URL_SCHEME ) ) {
 		return array();
 	}
 
@@ -145,7 +146,13 @@ function unapp_library_remote_packs() {
 		return $cached;
 	}
 
-	$response = wp_remote_get( $url, array( 'timeout' => 8 ) );
+	$response = wp_safe_remote_get(
+		$url,
+		array(
+			'timeout'    => 8,
+			'user-agent' => 'Unapp-Library/' . UNAPP_LIBRARY_VERSION,
+		)
+	);
 
 	if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
 		// Cache the failure briefly so a broken endpoint does not slow every load.
@@ -192,6 +199,12 @@ function unapp_library_register_patterns() {
 
 	$enabled = unapp_library_enabled();
 
+	// Loading packs reads and decodes every pack file; with none switched on
+	// there is nothing to register, so skip that work on every request.
+	if ( ! $enabled ) {
+		return;
+	}
+
 	foreach ( unapp_library_packs() as $slug => $pack ) {
 		if ( ! in_array( $slug, $enabled, true ) ) {
 			continue;
@@ -233,6 +246,12 @@ add_action( 'init', 'unapp_library_register_patterns', 11 );
  */
 function unapp_library_add_starters( $sites ) {
 	$enabled = unapp_library_enabled();
+
+	// Loading packs reads and decodes every pack file; with none switched on
+	// there is nothing to register, so skip that work on every request.
+	if ( ! $enabled ) {
+		return $sites;
+	}
 
 	foreach ( unapp_library_packs() as $slug => $pack ) {
 		if ( ! in_array( $slug, $enabled, true ) ) {
