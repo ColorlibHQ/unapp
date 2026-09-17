@@ -430,9 +430,10 @@ def para(text, *, align=None, size=None, color=None, custom_color=None, font=Non
     return f'<!-- wp:paragraph{attrs} -->\n<p{cls_attr}{style_attr}>{text}</p>\n<!-- /wp:paragraph -->'
 
 
-def eyebrow(text, *, align="center", color="primary"):
-    return para(text, align=align, size="small", color=color, font="heading",
-                weight="600", letter="0.12em", transform="uppercase")
+def eyebrow(text, *, align="center", color="primary", custom_color=None):
+    return para(text, align=align, size="small", color=None if custom_color else color,
+                custom_color=custom_color, font="heading", weight="600", letter="0.12em",
+                transform="uppercase")
 
 
 def buttons(items, *, justify=None, margin=None, gap=None):
