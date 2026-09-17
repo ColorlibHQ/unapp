@@ -12,18 +12,18 @@
 	"styles": {
 		"color": {
 			"background": "var:preset|color|dark",
-			"text": "var:preset|color|base"
+			"text": "#ffffff"
 		},
 		"css": "& { --wp--preset--color--muted: rgba(255,255,255,0.72); --wp--preset--color--border: rgba(255,255,255,0.15); }",
 		"elements": {
 			"heading": {
 				"color": {
-					"text": "var:preset|color|base"
+					"text": "#ffffff"
 				}
 			},
 			"link": {
 				"color": {
-					"text": "var:preset|color|base"
+					"text": "#ffffff"
 				},
 				":hover": {
 					"color": {

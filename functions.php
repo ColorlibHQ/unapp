@@ -289,7 +289,8 @@ function unapp_unregister_unsupported_patterns() {
 		'unapp/faq-accordion' => 'core/accordion',
 		// Built from WooCommerce's product blocks; without WooCommerce it inserts
 		// an empty grid of missing-block placeholders.
-		'unapp/shop-featured' => 'woocommerce/product-collection',
+		'unapp/shop-featured'    => 'woocommerce/product-collection',
+		'unapp/shop-featured-h1' => 'woocommerce/product-collection',
 	);
 
 	foreach ( $requirements as $pattern => $block ) {
