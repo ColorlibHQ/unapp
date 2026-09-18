@@ -38,7 +38,7 @@
 <!-- wp:heading {"fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em"}}} -->
 <h2 class="wp-block-heading has-small-font-size" style="font-weight:600;letter-spacing:0.06em;"><?php echo esc_html_x( 'Patients', 'Footer column heading', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
-<!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->
+<!-- wp:navigation {"overlayMenu":"never","ariaLabel":"<?php echo esc_attr_x( 'Footer menu', 'Navigation landmark label', 'unapp' ); ?>","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->
 <!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Treatments', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#treatments' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 <!-- wp:navigation-link {"label":"<?php esc_attr_e( 'The team', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#team' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 <!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Joining the practice', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#questions' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->

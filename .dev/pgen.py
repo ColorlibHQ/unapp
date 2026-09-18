@@ -26,6 +26,11 @@ def tattr(s):
     return f"<?php esc_attr_e( '{esc(s)}', '{DOM}' ); ?>"
 
 
+def tattr_x(s, ctx):
+    """A translatable attribute that needs a context to be translated well."""
+    return f"<?php echo esc_attr_x( '{esc(s)}', '{esc(ctx)}', '{DOM}' ); ?>"
+
+
 def uri(path):
     return f"<?php echo esc_url( get_theme_file_uri( '{path}' ) ); ?>"
 

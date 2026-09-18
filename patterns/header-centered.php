@@ -20,6 +20,6 @@
 <!-- wp:site-title {"level":0,"textAlign":"center"} /-->
 </div>
 <!-- /wp:group -->
-<!-- wp:navigation {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} /-->
+<!-- wp:navigation {"ariaLabel":"<?php echo esc_attr_x( 'Main menu', 'Navigation landmark label', 'unapp' ); ?>","layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} /-->
 </div>
 <!-- /wp:group -->

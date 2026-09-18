@@ -40,7 +40,7 @@
 <!-- wp:heading {"fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em"}}} -->
 <h2 class="wp-block-heading has-small-font-size" style="font-weight:600;letter-spacing:0.06em;"><?php echo esc_html_x( 'Shop', 'Footer column heading', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
-<!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->
+<!-- wp:navigation {"overlayMenu":"never","ariaLabel":"<?php echo esc_attr_x( 'Footer menu', 'Navigation landmark label', 'unapp' ); ?>","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->
 <!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Everything in stock', 'unapp' ); ?>","url":"<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 <!-- wp:navigation-link {"label":"<?php esc_attr_e( 'How it is made', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#making' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 <!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Delivery and returns', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#delivery' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->

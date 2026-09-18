@@ -40,7 +40,7 @@
 <!-- wp:heading {"fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em"}}} -->
 <h2 class="wp-block-heading has-small-font-size" style="font-weight:600;letter-spacing:0.06em;"><?php echo esc_html_x( 'Eat', 'Footer column heading', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
-<!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->
+<!-- wp:navigation {"overlayMenu":"never","ariaLabel":"<?php echo esc_attr_x( 'Footer menu', 'Navigation landmark label', 'unapp' ); ?>","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->
 <!-- wp:navigation-link {"label":"<?php esc_attr_e( 'This week\'s menu', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#menu' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 <!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Book a table', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#bookings' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 <!-- wp:navigation-link {"label":"<?php esc_attr_e( 'The kitchen', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/#kitchen' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->

@@ -107,7 +107,7 @@ body = group(
     group(
         '<!-- wp:site-logo {"width":40} /-->\n<!-- wp:site-title {"level":0,"textAlign":"center"} /-->',
         layout="flex", justify="center", wrap="nowrap", gap="20") + "\n" +
-    '<!-- wp:navigation {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} /-->',
+    '<!-- wp:navigation {"ariaLabel":"' + tattr_x("Main menu", "Navigation landmark label") + '","layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} /-->',
     align="full", bg="base", pad={"top": "40", "bottom": "40"}, gap="30", layout="constrained")
 write_pattern("header-centered", title="Header: centred", cats="unapp, header",
               keywords="header, centered, logo, navigation, template part",
@@ -118,7 +118,7 @@ write_pattern("header-centered", title="Header: centred", cats="unapp, header",
 body = group(
     group(
         '<!-- wp:site-title {"level":0,"style":{"elements":{"link":{"color":{"text":"#ffffff"}}}}} /-->\n' +
-        '<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex"},"style":{"typography":{"textTransform":"none","letterSpacing":"0","fontWeight":"400"}},"fontFamily":"body","fontSize":"small"} -->\n'
+        '<!-- wp:navigation {"overlayMenu":"never","ariaLabel":"' + tattr_x("Footer menu", "Navigation landmark label") + '","layout":{"type":"flex"},"style":{"typography":{"textTransform":"none","letterSpacing":"0","fontWeight":"400"}},"fontFamily":"body","fontSize":"small"} -->\n'
         '<!-- wp:navigation-link {"label":"' + t("Home", ctx="Footer menu link").replace('"', "'") + '","url":"' + "<?php echo esc_url( home_url( '/' ) ); ?>" + '"} /-->\n'
         '<!-- wp:navigation-link {"label":"' + t("Blog", ctx="Footer menu link").replace('"', "'") + '","url":"' + BLOG_URL + '"} /-->\n'
         '<!-- wp:navigation-link {"label":"' + t("Privacy", ctx="Footer menu link").replace('"', "'") + '","url":"' + "<?php echo esc_url( get_privacy_policy_url() ? get_privacy_policy_url() : home_url( '/' ) ); ?>" + '"} /-->\n'

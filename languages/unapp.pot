@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-18T08:51:09+00:00\n"
+"POT-Creation-Date: 2026-09-18T09:17:27+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: unapp\n"
@@ -1010,13 +1010,13 @@ msgid "Finish"
 msgstr ""
 
 #. translators: 1: the update host, 2: the list of values sent, 3: filter name.
-#: inc/updates.php:217
+#: inc/updates.php:239
 #, php-format
 msgid "Unapp and its Starter Library plugin check %1$s for updates twice a day and send %2$s. No personal data and no site name is sent, and the identifier is a one-way hash. Add the %3$s filter to switch both off."
 msgstr ""
 
 #. translators: 1: the update host, 2: the list of values sent, 3: filter name.
-#: inc/updates.php:219
+#: inc/updates.php:241
 #, php-format
 msgid "Unapp checks %1$s for updates twice a day and sends %2$s. No personal data and no site name is sent, and the identifier is a one-way hash. Add the %3$s filter to switch it off."
 msgstr ""
@@ -5885,6 +5885,24 @@ msgctxt "Footer column heading"
 msgid "Studio"
 msgstr ""
 
+#: patterns/footer-agency.php:43
+#: patterns/footer-blog.php:43
+#: patterns/footer-church.php:43
+#: patterns/footer-education.php:42
+#: patterns/footer-events.php:42
+#: patterns/footer-finance.php:42
+#: patterns/footer-fitness.php:43
+#: patterns/footer-medical.php:41
+#: patterns/footer-portfolio.php:43
+#: patterns/footer-realestate.php:42
+#: patterns/footer-restaurant.php:43
+#: patterns/footer-shop.php:43
+#: patterns/footer-slim.php:20
+#: patterns/footer.php:43
+msgctxt "Navigation landmark label"
+msgid "Footer menu"
+msgstr ""
+
 #: patterns/footer-agency.php:45
 msgid "Capabilities"
 msgstr ""
@@ -6693,6 +6711,12 @@ msgstr ""
 #: patterns/header-centered.php
 msgctxt "Pattern description"
 msgid "Centred site title above a centred menu — an alternative header template part."
+msgstr ""
+
+#: patterns/header-centered.php:23
+#: patterns/header.php:26
+msgctxt "Navigation landmark label"
+msgid "Main menu"
 msgstr ""
 
 #: patterns/header.php

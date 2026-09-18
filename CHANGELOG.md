@@ -3,6 +3,7 @@
 ## Unreleased
 
 ### Fixed
+- **Neither menu had a name a screen reader could use.** Both the header and footer navigation blocks rendered as unnamed `navigation` landmarks, so a site with both announced the same thing twice — and where core fell back to the navigation post's title, one read out as " 2". All 16 header and footer patterns now set `ariaLabel` ("Main menu" / "Footer menu"), translatable with a context.
 - **The Starter Sites screen described an update check that a WordPress.org build would not make.** The note was printed whenever the theme was installed, but core only calls `update_themes_{host}` for a theme carrying the matching `Update URI` header. `unapp_updates_self_hosted()` now reads that header back, so removing the one line for a directory upload silences the updater and the note together. No change for the self-hosted build.
 
 ## 2.5.8 – 2026-09-18

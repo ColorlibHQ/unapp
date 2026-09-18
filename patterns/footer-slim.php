@@ -17,7 +17,7 @@
 <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide">
 <!-- wp:site-title {"level":0,"style":{"elements":{"link":{"color":{"text":"#ffffff"}}}}} /-->
-<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex"},"style":{"typography":{"textTransform":"none","letterSpacing":"0","fontWeight":"400"}},"fontFamily":"body","fontSize":"small"} -->
+<!-- wp:navigation {"overlayMenu":"never","ariaLabel":"<?php echo esc_attr_x( 'Footer menu', 'Navigation landmark label', 'unapp' ); ?>","layout":{"type":"flex"},"style":{"typography":{"textTransform":"none","letterSpacing":"0","fontWeight":"400"}},"fontFamily":"body","fontSize":"small"} -->
 <!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Home', 'Footer menu link', 'unapp' ); ?>","url":"<?php echo esc_url( home_url( '/' ) ); ?>"} /-->
 <!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Blog', 'Footer menu link', 'unapp' ); ?>","url":"<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>"} /-->
 <!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Privacy', 'Footer menu link', 'unapp' ); ?>","url":"<?php echo esc_url( get_privacy_policy_url() ? get_privacy_policy_url() : home_url( '/' ) ); ?>"} /-->

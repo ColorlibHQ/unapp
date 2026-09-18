@@ -38,7 +38,11 @@ def niche_footer(slug, *, title, cats, keywords, desc, blurb, links_head, links,
     link_items = "\n".join(
         f'<!-- wp:navigation-link {{"label":"{tattr(text)}","url":"{url}","kind":"custom","isTopLevelLink":true}} /-->'
         for text, url in links)
-    nav = ('<!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},'
+    # ariaLabel names the landmark. Without it core falls back to the navigation
+    # post's title, which on a site with two menus announced as " 2".
+    nav = ('<!-- wp:navigation {"overlayMenu":"never","ariaLabel":"'
+           + tattr_x("Footer menu", "Navigation landmark label") + '",'
+           '"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},'
            '"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->\n'
            + link_items + '\n<!-- /wp:navigation -->')
     contact = "\n".join(para(t(line, "Footer contact line"), custom_color=DIM, size="small")
