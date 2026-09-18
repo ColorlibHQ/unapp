@@ -33,7 +33,7 @@
 <!-- wp:group {"className":"is-style-card","style":{"border":{"radius":"20px"},"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group is-style-card" style="border-radius:20px;">
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'Free', 'unapp' ); ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'Starter', 'unapp' ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
 <p class="has-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'For solo makers and side projects', 'unapp' ); ?></p>
@@ -64,7 +64,7 @@
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40);">
 <!-- wp:button {"className":"is-style-outline","width":100} -->
-<div class="wp-block-button is-style-outline has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( _x( 'Free plan', 'Email subject line', 'unapp' ) ) ); ?>"><?php esc_html_e( 'Create an account', 'unapp' ); ?></a></div>
+<div class="wp-block-button is-style-outline has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( _x( 'Starter plan', 'Email subject line', 'unapp' ) ) ); ?>"><?php esc_html_e( 'Create an account', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
@@ -77,7 +77,7 @@
 <!-- wp:group {"className":"is-style-section-gradient","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"},"shadow":"var:preset|shadow|glow"},"layout":{"type":"default"}} -->
 <div class="wp-block-group is-style-section-gradient" style="border-radius:20px;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50);box-shadow:var(--wp--preset--shadow--glow);">
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'Team', 'unapp' ); ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'Pro', 'unapp' ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size"><?php esc_html_e( 'For teams shipping every week', 'unapp' ); ?></p>
@@ -114,7 +114,7 @@
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40);">
 <!-- wp:button {"width":100,"textColor":"primary","backgroundColor":"base"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-primary-color has-text-color has-base-background-color has-background wp-element-button" href="<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( _x( 'Team plan trial', 'Email subject line', 'unapp' ) ) ); ?>"><?php esc_html_e( 'Start free trial', 'unapp' ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-primary-color has-text-color has-base-background-color has-background wp-element-button" href="<?php echo esc_url( 'mailto:hello@example.com?subject=' . rawurlencode( _x( 'Pro plan trial', 'Email subject line', 'unapp' ) ) ); ?>"><?php esc_html_e( 'Start free trial', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

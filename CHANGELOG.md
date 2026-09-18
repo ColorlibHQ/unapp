@@ -3,6 +3,7 @@
 ## Unreleased
 
 ### Fixed
+- **2.5.8 fixed one sentence and left the rest of the contradiction standing.** The theme shipped three different names for the same three plans: `pricing` and `pricing-h1` sold Starter, Pro and Business, while `pricing-two` and `pricing-compare` sold Free, Team and Business, and `pricing-toggle` sold Free, Team and Company. Put a comparison table under the pricing table — which is what it is for — and the columns named plans the prices above them did not. `sidebar` also still offered "Fourteen days of the Team plan", the same claim 2.5.8 corrected in the FAQ. Everything now says Starter, Pro and Business.
 - **Neither menu had a name a screen reader could use.** Both the header and footer navigation blocks rendered as unnamed `navigation` landmarks, so a site with both announced the same thing twice — and where core fell back to the navigation post's title, one read out as " 2". All 16 header and footer patterns now set `ariaLabel` ("Main menu" / "Footer menu"), translatable with a context.
 - **The Starter Sites screen described an update check that a WordPress.org build would not make.** The note was printed whenever the theme was installed, but core only calls `update_themes_{host}` for a theme carrying the matching `Update URI` header. `unapp_updates_self_hosted()` now reads that header back, so removing the one line for a directory upload silences the updater and the note together. No change for the self-hosted build.
 

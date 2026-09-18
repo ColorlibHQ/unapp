@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-18T09:17:27+00:00\n"
+"POT-Creation-Date: 2026-09-18T09:19:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: unapp\n"
@@ -8350,12 +8350,12 @@ msgstr ""
 
 #: patterns/pricing-compare.php:32
 #: patterns/pricing-two.php:36
-msgid "Free"
+msgid "Starter"
 msgstr ""
 
 #: patterns/pricing-compare.php:32
 #: patterns/pricing-two.php:80
-msgid "Team"
+msgid "Pro"
 msgstr ""
 
 #: patterns/pricing-compare.php:32
@@ -8636,7 +8636,7 @@ msgstr ""
 
 #: patterns/pricing-toggle.php:15
 msgctxt "Plan name"
-msgid "Free"
+msgid "Starter"
 msgstr ""
 
 #: patterns/pricing-toggle.php:18
@@ -8661,7 +8661,7 @@ msgstr ""
 
 #: patterns/pricing-toggle.php:23
 msgctxt "Plan name"
-msgid "Team"
+msgid "Pro"
 msgstr ""
 
 #: patterns/pricing-toggle.php:26
@@ -8691,7 +8691,7 @@ msgstr ""
 
 #: patterns/pricing-toggle.php:31
 msgctxt "Plan name"
-msgid "Company"
+msgid "Business"
 msgstr ""
 
 #: patterns/pricing-toggle.php:34
@@ -8701,7 +8701,7 @@ msgstr ""
 
 #: patterns/pricing-toggle.php:36
 msgctxt "Plan feature"
-msgid "Everything in Team"
+msgid "Everything in Pro"
 msgstr ""
 
 #: patterns/pricing-toggle.php:36
@@ -8798,7 +8798,7 @@ msgstr ""
 
 #: patterns/pricing-two.php:67
 msgctxt "Email subject line"
-msgid "Free plan"
+msgid "Starter plan"
 msgstr ""
 
 #: patterns/pricing-two.php:67
@@ -8835,7 +8835,7 @@ msgstr ""
 
 #: patterns/pricing-two.php:117
 msgctxt "Email subject line"
-msgid "Team plan trial"
+msgid "Pro plan trial"
 msgstr ""
 
 #: patterns/pricing-two.php:128
@@ -10163,7 +10163,7 @@ msgid "Try Unapp free"
 msgstr ""
 
 #: patterns/sidebar.php:50
-msgid "Fourteen days of the Team plan. No card, no sales call."
+msgid "Fourteen days of Pro. No card, no sales call."
 msgstr ""
 
 #: patterns/sidebar.php:55

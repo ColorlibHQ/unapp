@@ -22,12 +22,12 @@ body = section(
           title=t("Two plans. No surprises."),
           lead=t("Start free forever. Upgrade the day your team outgrows it.")) + "\n" +
     columns([
-        plan(t("Free"), t("$0"), t("forever"), t("For solo makers and side projects"),
+        plan(t("Starter"), t("$0"), t("forever"), t("For solo makers and side projects"),
              [t("3 projects"), t("1 GB storage"), t("Community support")], t("Create an account"),
-             mailto("hello@example.com", "Free plan")),
-        plan(t("Team"), t("$12"), t("per user / month"), t("For teams shipping every week"),
+             mailto("hello@example.com", "Starter plan")),
+        plan(t("Pro"), t("$12"), t("per user / month"), t("For teams shipping every week"),
              [t("Unlimited projects"), t("100 GB storage"), t("Priority support"), t("Advanced reporting"), t("SSO and audit logs")],
-             t("Start free trial"), mailto("hello@example.com", "Team plan trial"), featured=True),
+             t("Start free trial"), mailto("hello@example.com", "Pro plan trial"), featured=True),
     ], align="wide", gap="40") + "\n" +
     para(t("Prices exclude VAT. Annual billing saves 20%."), align="center", color="muted", size="small"),
     style_variation="is-style-section-soft", pad=("70", "70"), gap="50", content_size="900px", wide_size="900px")
@@ -46,7 +46,7 @@ rows = [
     (t("Single sign-on"), t("—"), t("Yes"), t("Yes")),
     (t("Support"), t("Community"), t("Priority"), t("Dedicated manager")),
 ]
-thead = "<tr><th>" + t("Feature") + "</th><th>" + t("Free") + "</th><th>" + t("Team") + "</th><th>" + t("Business") + "</th></tr>"
+thead = "<tr><th>" + t("Feature") + "</th><th>" + t("Starter") + "</th><th>" + t("Pro") + "</th><th>" + t("Business") + "</th></tr>"
 tbody = "".join(f"<tr><td>{r[0]}</td><td>{r[1]}</td><td>{r[2]}</td><td>{r[3]}</td></tr>" for r in rows)
 table = ('<!-- wp:table {"className":"is-style-compare"} -->\n'
          f'<figure class="wp-block-table is-style-compare"><table><thead>{thead}</thead><tbody>{tbody}</tbody></table></figure>\n'

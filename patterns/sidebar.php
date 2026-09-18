@@ -47,7 +47,7 @@
 		<h2 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'Try Unapp free', 'unapp' ); ?></h2>
 		<!-- /wp:heading -->
 		<!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
-		<p class="has-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'Fourteen days of the Team plan. No card, no sales call.', 'unapp' ); ?></p>
+		<p class="has-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'Fourteen days of Pro. No card, no sales call.', 'unapp' ); ?></p>
 		<!-- /wp:paragraph -->
 		<!-- wp:buttons -->
 		<div class="wp-block-buttons">

@@ -12,7 +12,7 @@
 
 $unapp_toggle_plans = array(
 	array(
-		'name'     => _x( 'Free', 'Plan name', 'unapp' ),
+		'name'     => _x( 'Starter', 'Plan name', 'unapp' ),
 		'monthly'  => '0',
 		'yearly'   => '0',
 		'note'     => _x( 'For one person keeping track of one thing.', 'Plan note', 'unapp' ),
@@ -20,7 +20,7 @@ $unapp_toggle_plans = array(
 		'features' => array( _x( 'Three projects', 'Plan feature', 'unapp' ), _x( 'Two weeks of history', 'Plan feature', 'unapp' ), _x( 'Community support', 'Plan feature', 'unapp' ) ),
 	),
 	array(
-		'name'     => _x( 'Team', 'Plan name', 'unapp' ),
+		'name'     => _x( 'Pro', 'Plan name', 'unapp' ),
 		'monthly'  => '12',
 		'yearly'   => '10',
 		'note'     => _x( 'For a team that has outgrown a group chat.', 'Plan note', 'unapp' ),
@@ -28,12 +28,12 @@ $unapp_toggle_plans = array(
 		'features' => array( _x( 'Unlimited projects', 'Plan feature', 'unapp' ), _x( 'Full history', 'Plan feature', 'unapp' ), _x( 'Roles and permissions', 'Plan feature', 'unapp' ), _x( 'Priority support', 'Plan feature', 'unapp' ) ),
 	),
 	array(
-		'name'     => _x( 'Company', 'Plan name', 'unapp' ),
+		'name'     => _x( 'Business', 'Plan name', 'unapp' ),
 		'monthly'  => '24',
 		'yearly'   => '20',
 		'note'     => _x( 'For several teams that have to agree with each other.', 'Plan note', 'unapp' ),
 		'featured' => false,
-		'features' => array( _x( 'Everything in Team', 'Plan feature', 'unapp' ), _x( 'Single sign-on', 'Plan feature', 'unapp' ), _x( 'Audit log', 'Plan feature', 'unapp' ), _x( 'A named contact', 'Plan feature', 'unapp' ) ),
+		'features' => array( _x( 'Everything in Pro', 'Plan feature', 'unapp' ), _x( 'Single sign-on', 'Plan feature', 'unapp' ), _x( 'Audit log', 'Plan feature', 'unapp' ), _x( 'A named contact', 'Plan feature', 'unapp' ) ),
 	),
 );
 ?>

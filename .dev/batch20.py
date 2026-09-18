@@ -107,12 +107,12 @@ write_pattern("logo-marquee", title="Logo marquee", cats="unapp, unapp_proof, lo
 
 # ---------------------------------------------------------------- pricing period toggle
 PLANS = [
-    ("Free", "0", "0", "For one person keeping track of one thing.",
+    ("Starter", "0", "0", "For one person keeping track of one thing.",
      ["Three projects", "Two weeks of history", "Community support"], False),
-    ("Team", "12", "10", "For a team that has outgrown a group chat.",
+    ("Pro", "12", "10", "For a team that has outgrown a group chat.",
      ["Unlimited projects", "Full history", "Roles and permissions", "Priority support"], True),
-    ("Company", "24", "20", "For several teams that have to agree with each other.",
-     ["Everything in Team", "Single sign-on", "Audit log", "A named contact"], False),
+    ("Business", "24", "20", "For several teams that have to agree with each other.",
+     ["Everything in Pro", "Single sign-on", "Audit log", "A named contact"], False),
 ]
 prelude = "$unapp_toggle_plans = array(\n"
 for name, m, y, note, feats, featured in PLANS:
