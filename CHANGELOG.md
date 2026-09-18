@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 2.5.9 – 2026-09-18
 
 ### Fixed
 - **2.5.8 fixed one sentence and left the rest of the contradiction standing.** The theme shipped three different names for the same three plans: `pricing` and `pricing-h1` sold Starter, Pro and Business, while `pricing-two` and `pricing-compare` sold Free, Team and Business, and `pricing-toggle` sold Free, Team and Company. Put a comparison table under the pricing table — which is what it is for — and the columns named plans the prices above them did not. `sidebar` also still offered "Fourteen days of the Team plan", the same claim 2.5.8 corrected in the FAQ. Everything now says Starter, Pro and Business.
