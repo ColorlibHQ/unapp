@@ -119,5 +119,5 @@ Useful checks with it: `wp eval 'echo do_blocks("<!-- wp:pattern {\"slug\":\"una
 
 1. `php -l` all PHP, validate JSON, bump `Version:` in `style.css` and `Stable tag` in `readme.txt`, add a CHANGELOG entry.
 2. Activate on the Local site, load `/`, `/blog/`, a single post, `/author/…`, `/category/…`, `/tag/…`, a date archive, `?s=`, and (if WooCommerce is active) `/shop/`; render every pattern (`wp eval` loop over the registry) and check `wp-content/debug.log` (enable `WP_DEBUG_LOG` temporarily — remember to revert wp-config.php).
-3. Run Theme Check from wp-admin (only expected notice: single text domain INFO).
+3. Run Theme Check from wp-admin against the built zip, not the working copy. **Exactly one REQUIRED is expected — `Update URI:` in `style.css`** — plus the single text domain INFO. Anything else is a regression: that one line is all that stands between this theme and a WordPress.org upload, and it must stay that way even though we are not submitting it. Check it stays true by unzipping the release beside the theme, stripping the header from the copy and re-running: zero REQUIRED, zero warnings. (A theme staged under a folder whose name is not `unapp` also draws a slug WARNING; that one is the staging folder, not the theme.)
 4. Regenerate `languages/unapp.pot` and `screenshot.png` if strings or the hero changed.

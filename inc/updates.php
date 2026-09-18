@@ -40,6 +40,24 @@ function unapp_update_user_agent() {
 }
 
 /**
+ * Whether this copy of the theme checks for updates at all.
+ *
+ * Core only calls `update_themes_{host}` for a theme whose `Update URI` header
+ * names that host, so a build without the header never checks for anything. The
+ * header is therefore the condition, not a separate switch: strip that one line
+ * for a WordPress.org upload and the updater goes quiet by itself, including the
+ * note on the Starter Sites screen, which would otherwise describe a request
+ * that no longer happens.
+ *
+ * @return bool
+ */
+function unapp_updates_self_hosted() {
+	$uri = wp_get_theme( get_template() )->get( 'UpdateURI' );
+
+	return is_string( $uri ) && UNAPP_UPDATE_HOST === wp_parse_url( $uri, PHP_URL_HOST );
+}
+
+/**
  * Whether the site has opted out of the update check.
  *
  * Opting out also opts out of update notifications, which is the honest
@@ -48,6 +66,10 @@ function unapp_update_user_agent() {
  * @return bool
  */
 function unapp_updates_enabled() {
+	if ( ! unapp_updates_self_hosted() ) {
+		return false;
+	}
+
 	/**
 	 * Filters whether Unapp checks for updates.
 	 *

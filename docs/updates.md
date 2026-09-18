@@ -21,6 +21,18 @@ If Unapp is ever submitted to WordPress.org, remove the header from
 `style.css` and `inc/updates.php` stops doing anything, because core will not
 fire the hook. Nothing else has to change.
 
+`unapp_updates_self_hosted()` makes that literally true rather than nearly
+true. It reads the header back off the theme, and `unapp_updates_enabled()`
+returns false when it is absent, so stripping the line also silences the note
+on the Starter Sites screen — which would otherwise describe a twice-daily
+request that no longer happens. The header is the switch; there is not a second
+one to remember.
+
+Verified against 2.5.8 with Theme Check (283 files): the `Update URI` REQUIRED
+is the only finding, and removing that one line leaves zero REQUIRED and zero
+warnings. Re-check this whenever `inc/updates.php`, the headers or the build
+script change — see the release checklist.
+
 ## The endpoint
 
 `https://updates.colorlib.com` is a Cloudflare Worker backed by a D1 database,
