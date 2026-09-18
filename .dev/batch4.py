@@ -69,7 +69,7 @@ write_pattern("pricing-compare", title="Pricing: comparison table", cats="unapp,
 prelude = """$unapp_faqs = array(
 	array(
 		'q' => _x( 'Can I try Unapp before paying?', 'FAQ question', 'unapp' ),
-		'a' => _x( 'Yes. Every plan starts with a 14-day trial of the Team tier — no card, no sales call. When the trial ends you drop to the free plan rather than losing your data.', 'FAQ answer', 'unapp' ),
+		'a' => _x( 'Yes. Every plan starts with a 14-day trial of Pro — no card, no sales call. When the trial ends you drop to the free plan rather than losing your data.', 'FAQ answer', 'unapp' ),
 	),
 	array(
 		'q' => _x( 'What happens to my data if I cancel?', 'FAQ question', 'unapp' ),

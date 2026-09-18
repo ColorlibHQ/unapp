@@ -3,7 +3,7 @@ Contributors: colorlib
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.5.7
+Stable tag: 2.5.8
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, one-column, rtl-language-support, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, style-variations, template-editing, threaded-comments, translation-ready
@@ -105,6 +105,9 @@ Yes. Every section is a pattern: open the block inserter, choose the Patterns ta
 They are simple SVGs drawn for this theme — invented brand names for the logo cloud and duotone silhouettes for the team and testimonials. Nothing is licensed from a third party, so replace them with your own at any time.
 
 == Changelog ==
+
+= 2.5.8 - 2026-09-18 =
+* Fixed: the SaaS starter's FAQ offered a trial of a "Team" tier, but its pricing table sells Starter, Pro and Business. The FAQ now names Pro.
 
 = 2.5.7 - 2026-09-17 =
 * Fixed: the Finance starter's copy contradicted itself — the home page says the firm has been independent since 1998 while the adviser's biography said she founded it in 2009. She now joined in 2009 and has led it since.

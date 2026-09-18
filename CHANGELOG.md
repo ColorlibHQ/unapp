@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.5.8 – 2026-09-18
+
+### Fixed
+- **The SaaS starter named a plan that does not exist.** Its FAQ answer offered "a 14-day trial of the Team tier" while the pricing table sells Starter, Pro and Business. Both the FAQ and the accordion FAQ now say Pro. (`faq.php` is generated; `faq-accordion.php` is one of the 27 hand-maintained patterns, so it needed the same edit by hand.)
+
 ## 2.5.7 – 2026-09-17
 
 ### Fixed
