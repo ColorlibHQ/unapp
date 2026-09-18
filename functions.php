@@ -521,3 +521,18 @@ function unapp_period_toggle_script( $content, $block ) {
 	return $content;
 }
 add_filter( 'render_block_core/button', 'unapp_period_toggle_script', 10, 2 );
+
+
+/**
+ * Editor and markup support this theme predates.
+ */
+if ( ! function_exists( 'unapp_modern_supports' ) ) {
+	function unapp_modern_supports() {
+		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' ) );
+		add_theme_support( 'responsive-embeds' );
+		add_theme_support( 'align-wide' );
+		add_theme_support( 'editor-styles' );
+		add_theme_support( 'automatic-feed-links' );
+	}
+	add_action( 'after_setup_theme', 'unapp_modern_supports', 20 );
+}
