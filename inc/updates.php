@@ -36,7 +36,7 @@ const UNAPP_UPDATE_CACHE    = 'unapp_update_response';
  * appends the site URL, which would undo the one-way hash in the payload.
  */
 function unapp_update_user_agent() {
-	return 'Unapp/' . UNAPP_VERSION;
+	return 'Unapp/' . UNAPP_VERSION . '; WordPress/' . get_bloginfo( 'version' );
 }
 
 /**
@@ -256,3 +256,19 @@ function unapp_updates_notice() {
 // Printed inside the Starter Sites screen's .wrap. On admin_footer it landed at
 // x=0, under the admin menu and on top of "Thank you for creating with WordPress".
 add_action( 'unapp_starter_screen_footer', 'unapp_updates_notice' );
+
+/**
+ * Core downloads the update package itself, with its default User-Agent (which
+ * names the site). Requests to the update host get the anonymous one instead.
+ *
+ * @param array  $args Request arguments.
+ * @param string $url  Request URL.
+ * @return array
+ */
+function unapp_update_request_args( $args, $url ) {
+	if ( 'updates.colorlib.com' === wp_parse_url( $url, PHP_URL_HOST ) ) {
+		$args['user-agent'] = unapp_update_user_agent();
+	}
+	return $args;
+}
+add_filter( 'http_request_args', 'unapp_update_request_args', 10, 2 );

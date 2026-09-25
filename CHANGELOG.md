@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.5.10
+
+- Update requests no longer name the site. WordPress's default User-Agent carries the site address; the update check and core's package download to updates.colorlib.com now send only the theme and WordPress versions, so the one-way site identifier is the only thing that tells installs apart.
+
 ## 2.5.9 – 2026-09-18
 
 ### Fixed
