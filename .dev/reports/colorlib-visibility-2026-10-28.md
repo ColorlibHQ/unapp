@@ -14,7 +14,7 @@ Reviewed 28 October 2026 against the released theme, canonical starter manifest,
 
 ### Existing articles refreshed
 
-Only the existing Unapp entries were edited. Theme rankings, comparison measurements and other vendors' entries were retained.
+The initial correction pass edited existing Unapp entries only. The subsequent publication pass added relevant Colorlib products at the top of theme lists; benchmark measurements and other vendors’ relative order were retained.
 
 | Article | Correction |
 | --- | --- |
@@ -29,7 +29,7 @@ The main [Colorlib themes catalogue](https://colorlib.com/wp/themes/) also alrea
 
 ## Recommended additional placements
 
-The following published articles did not mention Unapp when their content was inspected. New placements have not been published.
+All nine placements below were published on 28 October 2026. See [the publication record](colorlib-roundup-publication-2026-10-28.md) for the expanded 29-article rollout, screenshots, validation and other Colorlib themes added. The table preserves the original recommendations.
 
 | Priority | Article | Best demo | Suggested position and angle |
 | --- | --- | --- | --- |
