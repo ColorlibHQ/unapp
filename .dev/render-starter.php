@@ -80,6 +80,7 @@ try {
 				$patterns[ $pattern['name'] ] = unapp_get_pattern_markup( $pattern['name'] );
 			}
 		}
+		wp_scripts()->done = array();
 		ob_start();
 		wp_print_scripts( array( 'wp-block-library' ) );
 		$scripts = ob_get_clean();

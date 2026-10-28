@@ -125,6 +125,8 @@ if ( $design_output && is_dir( $design_output ) ) {
 			file_put_contents( $design_output . '/' . $area . '-' . $key . '.html', ob_get_clean() );
 		}
 	}
+	// Each exported document needs its own complete dependency graph.
+	wp_scripts()->done = array();
 	ob_start();
 	wp_print_scripts( array( 'wp-block-library' ) );
 	$editor_scripts = ob_get_clean();
