@@ -22,8 +22,10 @@ try {
 	foreach ( glob( $root . '/patterns/*.php' ) as $file ) {
 		$head = get_file_data( $file, array( 'title' => 'Title', 'slug' => 'Slug', 'categories' => 'Categories', 'inserter' => 'Inserter' ) );
 		if ( 'no' === $head['inserter'] ) { continue; }
-		$category = explode( ',', $head['categories'] )[0];
-		$data['patterns'][] = array( 'slug' => $head['slug'], 'title' => $head['title'], 'group' => ucwords( str_replace( array( 'unapp_', '-' ), array( '', ' ' ), $category ) ) );
+		$categories = array_map( 'trim', explode( ',', $head['categories'] ) );
+		$specific = array_values( array_filter( $categories, static function ( $category ) { return 0 === strpos( $category, 'unapp_' ); } ) );
+		$category = $specific[0] ?? $categories[0];
+		$data['patterns'][] = array( 'slug' => $head['slug'], 'title' => $head['title'], 'group' => ucwords( str_replace( array( 'unapp_', '-', '_' ), array( '', ' ', ' ' ), $category ) ) );
 	}
 	file_put_contents( $out, wp_json_encode( $data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . "\n" );
 	echo 'Exported ' . count( $data['starters'] ) . ' starters and ' . count( $data['patterns'] ) . " patterns.\n";
