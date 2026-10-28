@@ -1,5 +1,61 @@
 # Changelog
 
+## 2.6.0 — 2026-10-28
+
+- Added optional service-card names/descriptions to nine compatible starters, shared by personalized previews, homepage/supporting-page imports and later page expansion. Business profile updates preserve directly edited fields; blank rows retain content. Prices, images, icons and buttons stay native and unchanged. Service setup uses nonce-protected native POST Continue/Back forms for long or multilingual copy.
+- Added native editor notice shortcuts for guided visits: Review this section, Back to website setup and Next section. Unsaved or saving edits prevent navigation; shortcuts do not change content or approve reviews. Added integration, native block/store, responsive browser and CI coverage.
+
+- Added a separate Recommended checks (optional) panel for site icons, saved navigation destinations, search visibility and missing image descriptions, with native WordPress settings/editor links. Recommendations do not affect launch totals, review snapshots or publication and never change settings or fetch destinations.
+- Distinguished missing alt attributes from potentially decorative empty text; excluded decorative Cover backgrounds, bundled icons and explicitly hidden/presentational images. Added shared-reference/cycle handling, capability-aware links, read-only integration checks, keyboard/mobile browser tests and CI coverage.
+
+- Added content-preserving section layout swaps to the guided content pass: compatible image-left/right/stacked heroes, one/two/three-column service grids and side-by-side/stacked calls to action. Private responsive previews share the apply builder and disable external actions.
+- Added guarded Undo for the latest swapped section, preserving changes elsewhere on the page, native revisions, stale-preview and editor-lock protection, and recovery from failed saves. All content, buttons, images, links and anchors remain native WordPress blocks. Added integration, block-validation, responsive browser and CI coverage.
+
+- Extended the guided content pass to imported supporting pages with independent page/section progress, preserved homepage reviews and continuation from Finish your website. Unrelated, trashed and uneditable pages are excluded; edits invalidate stale reviews.
+- Added individual native Image/Cover replacement links, local thumbnails, bundled-demo labels, saved shape/alternative text and practical size/crop/mobile guidance. Editing uses WordPress and the Media Library, with no required plugins or content rewrites.
+- Kept WordPress's first Custom CSS lookup request-local in previews, avoiding an incidental theme-mod cache write. Added page/image integration, editor-selection and responsive regressions.
+
+- Added free Coach & Consultant, Photographer and Nonprofit starters, bringing the bundled catalogue to nineteen. Each includes original imagery, supporting pages, niche-specific content and native quote/project/involvement actions without required plugins. Photographer includes three distinct portfolio photographs; Nonprofit uses giving enquiries without implying a configured checkout.
+- Added finder aliases, clear native section names and focused guided-review prompts for the new niches. Extended import, optional-form, personalization, preview, Undo, block-validation and responsive checks, including distinct gallery images and plugin-free support links.
+
+- Added a starter finder with niche search aliases, category filters, result counts and empty-state guidance. Filtering works instantly with JavaScript and through a native GET form without it. Cards show required plugins and fit narrow screens.
+- Added free Home Services, Cleaning and Salon & Barber starters with original photographs, niche-specific services and visit information, quote/appointment-request actions and full supporting pages. They use native core blocks and need no plugins; contact pages support email fallbacks and the existing optional form selector. All setup, personalized preview, section selection, guided editing and Undo flows remain available.
+
+- Added a private personalized homepage preview to the final setup step, showing selected sections, business details, logo, palette, typography and main action at actual desktop/tablet/mobile widths. The preview uses POST, keeps live content/settings unchanged and disables outbound/purchase/submission actions while preserving native navigation controls.
+- Added the optional main-action selector before import, retained through Back and final submission. Preview and import now share content/header/footer generation; temporary preview branding and style filters are cleaned up after rendering. Added preview/import equivalence, read-only-state, native-block and browser checks, including loading without JavaScript.
+
+- Added optional homepage section selection to starter setup, with all sections selected by default and required introduction/closing sections preserved. Selection survives Back and final submission; omitted-section navigation and button links are repaired without removing full-site supporting pages.
+- Added a guided content pass with focused prompts, native section/image selection and recognizable List View names. Explicit review progress follows the actual saved homepage and resets for edited sections without approving unrelated content. Added integration, core-block/editor-store and responsive browser checks.
+
+- Added Appearance → Finish your website as the resumable setup workspace, with a suggested next action, native editing shortcuts, live launch-check progress and publication/search-visibility information. Setup completion now points here.
+- Added a main-action selector for calls, email, bookings, quotes and WooCommerce Shop links. Generated header, hero and closing buttons update together while direct edits and secondary actions are kept. Public contact changes follow selected call/email actions; starter actions can be restored. Saves retain native revisions and recover from failed writes, with stale-form protection and integration/browser coverage.
+
+- Added recommended one-page setup with section navigation, an optional full website, and folded optional design controls. Shop retains its WooCommerce requirements.
+- Added Appearance → Business profile for shared public details in native blocks. Updates preserve directly edited fields and older content. One-page sites can add supporting pages later without rebuilding their homepage or design, with custom-menu protection and guarded Undo. Added integration, responsive browser and core block-validation coverage.
+
+- Added Appearance → Make it yours with native Site Editor shortcuts and three header/three footer presets. Private responsive previews show the actual layout using current styles; applying changes only the selected template part and preserves its menu, logo and action where included.
+- Added guarded preset Undo, stale-edit protection, no-op replay handling and recovery on save failures. Native revisions are retained when enabled. Added integration and browser checks for the workspace, forms and serialized block validity.
+
+- Polished the remaining ten starters, beginning with Shop, Restaurant and Fitness: original photographic scenes, editorial artwork, clearer introductions and calls to action, full-width phone buttons and readable opening-hour rows. Property listings now have distinct home imagery. Reservation and first-session actions describe requests rather than implying instant confirmation.
+- Extended offline browser checks to all thirteen starters and native WooCommerce product rows; WebP dimensions reserve image space in generated patterns. Refreshed the remaining starter preview cards and recorded image-generation prompts and credits.
+
+- Polished the SaaS, Portfolio and Agency/service-business starters with original product and brand illustrations, clearer calls to action, phone-sized buttons and improved mobile layouts. Agency now leads with a featured case study; Portfolio enquiries no longer show a fixed booking month. Refreshed starter thumbnails and the theme screenshot.
+- Added offline responsive checks at five viewport widths and validation against WordPress's core block editor.
+
+- Added Appearance → Launch checklist with live findings for demo contacts, unfinished links, missing starter pages and unavailable shared content. Owner reviews cover business details, contact delivery and mobile behavior, and reset after relevant edits.
+- Added a contact-form selector with automatic, email-only and specific-form choices. Existing dynamic contact sections update without rewriting pages; missing/deactivated selections fall back to email and are flagged.
+- Added checklist/form-selection regressions, a real Contact Form 7 smoke test, and desktop/mobile browser tests for the admin form payloads and keyboard interaction.
+
+- Private starter previews show home and supporting pages at desktop, tablet and mobile widths without changing the live site.
+- Added Undo for the latest setup, with a recovery snapshot and checks that stop it from overwriting later edits.
+- AI wording is reviewed before saving. Proposals expire after 30 minutes, belong to their generating account, and refuse to overwrite newer page edits.
+
+- Starter setup validates every nested pattern and page template before writing. Failed saves restore the previous design and Reading settings; newly created pages go to the Trash. Concurrent builds are blocked and repeated submissions reuse their completed result.
+- The setup wizard accepts public email and phone details and applies them to new pages, contact links, navigation links and the footer. Site branding changes only after the starter is saved successfully.
+- Dark mode and yearly billing controls support Space and Enter, keep a stable accessible name, and synchronize their announced state across matching controls.
+- AI rewriting handles formatted text fragments and entities without changing tags or block attributes. Replacement counts reflect saved changes; invalid responses and failed saves are reported.
+- Added PHP/content checks, WordPress import regression tests, real-browser keyboard tests, and CI coverage for WordPress 6.6/PHP 7.4 and current WordPress/PHP 8.4.
+
 ## 2.5.10
 
 - Update requests no longer name the site. WordPress's default User-Agent carries the site address; the update check and core's package download to updates.colorlib.com now send only the theme and WordPress versions, so the one-way site identifier is the only thing that tells installs apart.

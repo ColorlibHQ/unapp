@@ -34,8 +34,8 @@ function unapp_get_starter_sites() {
 	$sites = array(
 		'saas'      => array(
 			'title'    => __( 'SaaS & app', 'unapp' ),
-			'summary'  => __( 'The default: a product landing page with features, proof, pricing and a free-trial call to action.', 'unapp' ),
-			'cta'      => _x( 'Get Premium', 'Header call-to-action button', 'unapp' ),
+			'summary'  => __( 'The default: a product landing page with product illustrations, features, proof, pricing and clear calls to action.', 'unapp' ),
+			'cta'      => _x( 'Explore plans', 'Header call-to-action button', 'unapp' ),
 			'cta_page' => 'pricing',
 			'style'    => 'indigo',
 			'colors'   => 'colors-1-indigo',
@@ -173,7 +173,7 @@ function unapp_get_starter_sites() {
 		'restaurant' => array(
 			'title'    => __( 'Restaurant', 'unapp' ),
 			'summary'  => __( 'A cover hero, the week’s menu, the kitchen, reviews, opening hours and a booking band.', 'unapp' ),
-			'cta'      => __( 'Book a table', 'unapp' ),
+			'cta'      => __( 'Request a table', 'unapp' ),
 			'cta_page' => 'contact',
 			'style'    => 'harvest',
 			'colors'   => 'colors-11-harvest',
@@ -199,8 +199,8 @@ function unapp_get_starter_sites() {
 		),
 		'agency'    => array(
 			'title'    => __( 'Agency', 'unapp' ),
-			'summary'  => __( 'A studio introduction, capabilities, a client list, published rates, the team and an enquiry form.', 'unapp' ),
-			'cta'      => __( 'Start a project', 'unapp' ),
+			'summary'  => __( 'A service-business website with a featured project, capabilities, published rates, the team and an enquiry form.', 'unapp' ),
+			'cta'      => __( 'Get an estimate', 'unapp' ),
 			'cta_page' => 'contact',
 			'style'    => 'slate',
 			'colors'   => 'colors-12-slate',
@@ -212,7 +212,7 @@ function unapp_get_starter_sites() {
 			'pages'    => array(
 				'work'    => array(
 					'title'    => __( 'Work', 'unapp' ),
-					'patterns' => array( 'unapp/agency-clients-h1', 'unapp/agency-case-study', 'unapp/agency-services', 'unapp/agency-contact' ),
+					'patterns' => array( 'unapp/agency-case-study-h1', 'unapp/agency-clients', 'unapp/agency-services', 'unapp/agency-contact' ),
 				),
 				'studio'  => array(
 					'title'    => __( 'Studio', 'unapp' ),
@@ -336,7 +336,7 @@ function unapp_get_starter_sites() {
 		'events'    => array(
 			'title'    => __( 'Conference', 'unapp' ),
 			'summary'  => __( 'A two-day event: the programme, announced speakers, three ticket tiers and the venue with its access provision.', 'unapp' ),
-			'cta'      => __( 'Buy a ticket', 'unapp' ),
+			'cta'      => __( 'Explore tickets', 'unapp' ),
 			'cta_page' => 'tickets',
 			'style'    => 'midnight',
 			'colors'   => 'colors-6-midnight',
@@ -357,6 +357,172 @@ function unapp_get_starter_sites() {
 				'venue'     => array(
 					'title'    => __( 'Venue and access', 'unapp' ),
 					'patterns' => array( 'unapp/events-venue-h1', 'unapp/events-programme' ),
+				),
+			),
+		),
+		'coach' => array(
+			'title' => __( 'Coach & Consultant', 'unapp' ),
+			'summary' => __( 'Business coaching and consulting: ways to work together, the approach, a clear process and discovery-call requests.', 'unapp' ),
+			'cta' => __( 'Request a discovery call', 'unapp' ),
+			'cta_page' => 'contact',
+			'style' => 'slate',
+			'colors' => 'colors-12-slate',
+			'type' => 'typography-2-interface',
+			'swatches' => array( '#1f4e56', '#57c2b4' ),
+			'home' => 'unapp/demo-coach',
+			'thumb' => 'coach',
+			'footer' => 'unapp/footer-columns',
+			'pages' => array(
+				'services' => array(
+					'title' => __( 'Work together', 'unapp' ),
+					'patterns' => array( 'unapp/coach-services-h1', 'unapp/coach-process', 'unapp/coach-cta' ),
+				),
+				'about' => array(
+					'title' => __( 'The approach', 'unapp' ),
+					'patterns' => array( 'unapp/coach-about-h1', 'unapp/coach-process', 'unapp/coach-cta' ),
+				),
+				'contact' => array(
+					'title' => __( 'Start a conversation', 'unapp' ),
+					'patterns' => array( 'unapp/coach-contact-h1', 'unapp/coach-cta' ),
+				),
+			),
+		),
+		'photographer' => array(
+			'title' => __( 'Photographer', 'unapp' ),
+			'summary' => __( 'An image-led portfolio with landscape, still-life and architecture studies, commissions, the approach and project enquiries.', 'unapp' ),
+			'cta' => __( 'Discuss a project', 'unapp' ),
+			'cta_page' => 'contact',
+			'style' => 'mono',
+			'colors' => 'colors-10-mono',
+			'type' => 'typography-2-interface',
+			'swatches' => array( '#111111', '#e8e6e1' ),
+			'home' => 'unapp/demo-photographer',
+			'thumb' => 'photographer',
+			'footer' => 'unapp/footer-columns',
+			'pages' => array(
+				'work' => array(
+					'title' => __( 'Selected work', 'unapp' ),
+					'patterns' => array( 'unapp/photographer-work-h1', 'unapp/photographer-services', 'unapp/photographer-cta' ),
+				),
+				'about' => array(
+					'title' => __( 'The approach', 'unapp' ),
+					'patterns' => array( 'unapp/photographer-about-h1', 'unapp/photographer-process', 'unapp/photographer-cta' ),
+				),
+				'contact' => array(
+					'title' => __( 'Enquiries', 'unapp' ),
+					'patterns' => array( 'unapp/photographer-contact-h1', 'unapp/photographer-cta' ),
+				),
+			),
+		),
+		'nonprofit' => array(
+			'title' => __( 'Nonprofit', 'unapp' ),
+			'summary' => __( 'Community programmes, volunteering, practical support and giving enquiries, with clear information about how to get involved.', 'unapp' ),
+			'cta' => __( 'Ways to support', 'unapp' ),
+			'cta_page' => 'support',
+			'style' => 'stone',
+			'colors' => 'colors-7-stone',
+			'type' => 'typography-3-editorial',
+			'swatches' => array( '#7d5f38', '#5cb39a' ),
+			'home' => 'unapp/demo-nonprofit',
+			'thumb' => 'nonprofit',
+			'footer' => 'unapp/footer-columns',
+			'pages' => array(
+				'programmes' => array(
+					'title' => __( 'Programmes', 'unapp' ),
+					'patterns' => array( 'unapp/nonprofit-programmes-h1', 'unapp/nonprofit-values', 'unapp/nonprofit-cta' ),
+				),
+				'about' => array(
+					'title' => __( 'About our work', 'unapp' ),
+					'patterns' => array( 'unapp/nonprofit-values-h1', 'unapp/nonprofit-accountability', 'unapp/nonprofit-cta' ),
+				),
+				'support' => array(
+					'title' => __( 'Ways to support', 'unapp' ),
+					'patterns' => array( 'unapp/nonprofit-support-h1', 'unapp/nonprofit-accountability', 'unapp/nonprofit-cta' ),
+				),
+				'contact' => array(
+					'title' => __( 'Get involved', 'unapp' ),
+					'patterns' => array( 'unapp/nonprofit-contact-h1', 'unapp/nonprofit-cta' ),
+				),
+			),
+		),
+		'home-services' => array(
+			'title' => __( 'Home Services', 'unapp' ),
+			'summary' => __( 'A local repair and maintenance business: practical services, how quotes work, service areas and clear phone/email enquiries. No required plugins.', 'unapp' ),
+			'cta' => __( 'Request a quote', 'unapp' ),
+			'cta_page' => 'contact',
+			'style' => 'navy',
+			'colors' => 'colors-9-navy',
+			'type' => 'typography-3-editorial',
+			'swatches' => array( '#1e4272', '#d1a33f' ),
+			'home' => 'unapp/demo-home-services',
+			'thumb' => 'home-services',
+			'footer' => 'unapp/footer-columns',
+			'pages' => array(
+				'services' => array(
+					'title' => __( 'Services', 'unapp' ),
+					'patterns' => array( 'unapp/home-services-services-h1', 'unapp/home-services-process', 'unapp/home-services-cta' ),
+				),
+				'area' => array(
+					'title' => __( 'Where we work', 'unapp' ),
+					'patterns' => array( 'unapp/home-services-location-h1', 'unapp/home-services-process', 'unapp/home-services-cta' ),
+				),
+				'contact' => array(
+					'title' => __( 'Request a quote', 'unapp' ),
+					'patterns' => array( 'unapp/home-services-contact-h1', 'unapp/home-services-cta' ),
+				),
+			),
+		),
+		'cleaning' => array(
+			'title' => __( 'Cleaning', 'unapp' ),
+			'summary' => __( 'Home and small workplace cleaning: service checklists, quote and visit arrangements, service areas and direct contact. No required plugins.', 'unapp' ),
+			'cta' => __( 'Get a cleaning quote', 'unapp' ),
+			'cta_page' => 'contact',
+			'style' => 'emerald',
+			'colors' => 'colors-2-emerald',
+			'type' => 'typography-2-interface',
+			'swatches' => array( '#008565', '#fcb323' ),
+			'home' => 'unapp/demo-cleaning',
+			'thumb' => 'cleaning',
+			'footer' => 'unapp/footer-columns',
+			'pages' => array(
+				'services' => array(
+					'title' => __( 'Cleaning services', 'unapp' ),
+					'patterns' => array( 'unapp/cleaning-services-h1', 'unapp/cleaning-process', 'unapp/cleaning-cta' ),
+				),
+				'area' => array(
+					'title' => __( 'Areas and visits', 'unapp' ),
+					'patterns' => array( 'unapp/cleaning-location-h1', 'unapp/cleaning-process', 'unapp/cleaning-cta' ),
+				),
+				'contact' => array(
+					'title' => __( 'Get a quote', 'unapp' ),
+					'patterns' => array( 'unapp/cleaning-contact-h1', 'unapp/cleaning-cta' ),
+				),
+			),
+		),
+		'salon' => array(
+			'title' => __( 'Salon & Barber', 'unapp' ),
+			'summary' => __( 'An independent hair studio: cuts, styling, barbering and colour consultations, visit information and appointment requests. No required plugins.', 'unapp' ),
+			'cta' => __( 'Request an appointment', 'unapp' ),
+			'cta_page' => 'contact',
+			'style' => 'harvest',
+			'colors' => 'colors-11-harvest',
+			'type' => 'typography-3-editorial',
+			'swatches' => array( '#915b3c', '#c89f70' ),
+			'home' => 'unapp/demo-salon',
+			'thumb' => 'salon',
+			'footer' => 'unapp/footer-columns',
+			'pages' => array(
+				'services' => array(
+					'title' => __( 'Services', 'unapp' ),
+					'patterns' => array( 'unapp/salon-services-h1', 'unapp/salon-process', 'unapp/salon-cta' ),
+				),
+				'visit' => array(
+					'title' => __( 'Visit the studio', 'unapp' ),
+					'patterns' => array( 'unapp/salon-location-h1', 'unapp/salon-process', 'unapp/salon-cta' ),
+				),
+				'contact' => array(
+					'title' => __( 'Appointments', 'unapp' ),
+					'patterns' => array( 'unapp/salon-contact-h1', 'unapp/salon-cta' ),
 				),
 			),
 		),
@@ -396,7 +562,7 @@ function unapp_get_starter_sites() {
 	 *
 	 * @param array[] $sites Starter site definitions keyed by slug.
 	 */
-	return apply_filters( 'unapp_starter_sites', $sites );
+	return apply_filters( 'unapp_starter_sites', unapp_starter_metadata( $sites ) );
 }
 
 /**
@@ -434,6 +600,28 @@ function unapp_starter_requirement_label( $file ) {
  * @return string
  */
 function unapp_starter_error_message( $result ) {
+	$messages = array(
+		'error:unapp_undo_changed' => __( 'The site changed after setup. Undo was stopped to protect your edits. Use page and style revisions for individual changes.', 'unapp' ),
+		'error:unapp_no_undo' => __( 'This setup is no longer available to undo. Refresh the starter screen.', 'unapp' ),
+		'error:unapp_import_undone' => __( 'This setup was undone. Choose a starter again to create a new site.', 'unapp' ),
+		'error:unapp_import_busy'     => __( 'Another starter is being built. Wait for it to finish before trying again.', 'unapp' ),
+		'error:unapp_import_restored' => __( 'Setup could not finish. Your previous site settings and design were restored. New starter pages are in the Trash. Please try again.', 'unapp' ),
+		'error:unapp_import_recovery' => __( 'Setup could not finish and some changes could not be restored. Check Pages, the Site Editor and Settings → Reading before trying again.', 'unapp' ),
+		'error:unapp_missing_pattern' => __( 'A required starter section is missing. Reinstall the theme or starter pack, then try again.', 'unapp' ),
+		'error:unapp_missing_template' => __( 'The starter page template is unavailable. Reinstall the theme, then try again.', 'unapp' ),
+		'error:unapp_missing_style'   => __( 'The starter style is missing or invalid. Reinstall the theme, then try again.', 'unapp' ),
+		'error:unapp_business_contact' => __( 'Check your public email address and phone number, then try setup again.', 'unapp' ),
+		'error:unapp_sections_invalid' => __( 'Check the homepage section choices for this starter and try again.', 'unapp' ),
+		'error:unapp_services_invalid' => __( 'Give each service card a name and description, or leave both fields blank, then try setup again.', 'unapp' ),
+		'error:unapp_service_slots' => __( 'Use service cards offered by the selected starter, then try setup again.', 'unapp' ),
+		'error:unapp_setup_logo' => __( 'Choose an image from your Media Library for the logo.', 'unapp' ),
+		'error:unapp_action_invalid' => __( 'Choose an available main action in setup.', 'unapp' ),
+		'error:unapp_action_missing' => __( 'Check the public contact details, booking URL or published Shop page for your main action.', 'unapp' ),
+		'error:unapp_action_url' => __( 'Use a complete http or https URL for the main action.', 'unapp' ),
+	);
+	if ( isset( $messages[ $result ] ) ) {
+		return $messages[ $result ];
+	}
 	if ( 0 === strpos( (string) $result, 'error:unapp_missing_requirement' ) ) {
 		return __( 'This starter needs a plugin that is not active yet. Install and activate it, then build the site again.', 'unapp' );
 	}
@@ -442,117 +630,67 @@ function unapp_starter_error_message( $result ) {
 }
 
 /**
- * Apply a starter site.
+ * Save an already validated starter. Called only by the import coordinator.
  *
- * @param string $slug Starter site slug.
+ * @param string $slug     Starter slug.
+ * @param array  $site     Starter definition.
+ * @param array  $prepared Prepared page markup.
  * @return array|WP_Error Array of created page IDs, or WP_Error.
  */
-function unapp_apply_starter_site( $slug ) {
-	$sites = unapp_get_starter_sites();
-
-	if ( ! isset( $sites[ $slug ] ) ) {
-		return new WP_Error( 'unapp_unknown_starter', __( 'That starter site does not exist.', 'unapp' ) );
-	}
-
-	$site = $sites[ $slug ];
-
-	// The Shop starter is built from WooCommerce blocks. Without WooCommerce it
-	// produced an empty storefront full of missing-block placeholders.
-	$missing = unapp_starter_missing_requirement( $site );
-	if ( $missing ) {
-		return new WP_Error(
-			'unapp_missing_requirement',
-			/* translators: %s: plugin name. */
-			sprintf( __( 'This starter needs %s. Install and activate it first.', 'unapp' ), unapp_starter_requirement_label( $missing ) )
-		);
-	}
-
-	$content = unapp_lock_starter_sections( unapp_get_pattern_markup( $site['home'] ) );
-
-	if ( '' === $content ) {
-		return new WP_Error( 'unapp_missing_pattern', __( 'The starter site’s home page pattern could not be loaded.', 'unapp' ) );
-	}
-
-	$kses_active = has_filter( 'content_save_pre', 'wp_filter_post_kses' );
-	if ( $kses_active ) {
-		kses_remove_filters();
-	}
-
+function unapp_build_starter_site( $slug, $site, $prepared ) {
 	$author_id = unapp_starter_author_id();
 	$created   = array();
+	$pages     = array( 'home' => array( 'title' => $site['title'] ) ) + $site['pages'];
 
-	$home_id = wp_insert_post(
-		array(
-			'post_type'      => 'page',
-			'post_status'    => 'publish',
-			'post_title'     => $site['title'],
-			'post_author'    => $author_id,
-			'post_content'   => $content,
-			'comment_status' => 'closed',
-			'ping_status'    => 'closed',
-			'page_template'  => 'page-no-title',
-		),
-		true
-	);
-
-	if ( is_wp_error( $home_id ) ) {
-		if ( $kses_active ) {
-			kses_init_filters();
-		}
-		return $home_id;
-	}
-
-	$created['home'] = $home_id;
-
-	foreach ( $site['pages'] as $key => $page ) {
-		$markup = unapp_get_starter_page_markup( $page );
-		if ( '' === $markup ) {
-			continue;
-		}
-
+	foreach ( $pages as $key => $page ) {
 		$page_id = wp_insert_post(
 			array(
 				'post_type'      => 'page',
 				'post_status'    => 'publish',
 				'post_title'     => $page['title'],
 				'post_author'    => $author_id,
-				'post_content'   => $markup,
+				'post_content'   => wp_slash( $prepared[ $key ] ),
 				'comment_status' => 'closed',
 				'ping_status'    => 'closed',
 				'page_template'  => 'page-no-title',
 			),
 			true
 		);
-
-		if ( ! is_wp_error( $page_id ) ) {
-			$created[ $key ] = $page_id;
+		if ( is_wp_error( $page_id ) || ! $page_id ) {
+			return is_wp_error( $page_id ) ? $page_id : new WP_Error( 'unapp_starter_save', __( 'A starter page could not be saved.', 'unapp' ) );
 		}
+		$created[ $key ] = $page_id;
 	}
 
-	if ( $kses_active ) {
-		kses_init_filters();
+	$blog_id = ! empty( $site['one_page'] ) ? (int) get_option( 'page_for_posts' ) : unapp_starter_blog_page( $author_id );
+	if ( ! $blog_id && empty( $site['one_page'] ) ) {
+		return new WP_Error( 'unapp_starter_save', __( 'The blog page could not be saved.', 'unapp' ) );
 	}
-
-	$blog_id = unapp_starter_blog_page( $author_id );
-
-	update_option( 'show_on_front', 'page' );
-	update_option( 'page_on_front', $home_id );
-	if ( $blog_id ) {
-		update_option( 'page_for_posts', $blog_id );
+	if ( empty( $site['one_page'] ) ) {
 		$created['blog'] = $blog_id;
 	}
 
-	unapp_apply_starter_styles( $site );
-	unapp_build_starter_menu( $site, $created );
-	unapp_apply_starter_header( $site, $created );
-	unapp_apply_starter_footer( $site );
+	foreach ( array( 'unapp_apply_starter_styles', 'unapp_build_starter_menu', 'unapp_apply_starter_header', 'unapp_apply_starter_footer' ) as $save ) {
+		$result = call_user_func( $save, $site, $created );
+		if ( is_wp_error( $result ) ) {
+			return $result;
+		}
+	}
 
-	update_option( UNAPP_STARTER_OPTION, array( 'slug' => $slug, 'pages' => $created, 'time' => time() ) );
-	update_option(
-		UNAPP_SETUP_OPTION,
-		array( 'home' => $home_id, 'blog' => $blog_id, 'version' => UNAPP_VERSION, 'time' => time() )
-	);
+	// Change the live front page only after all required content has been saved.
+	update_option( 'show_on_front', 'page' );
+	update_option( 'page_on_front', $created['home'] );
+	update_option( 'page_for_posts', $blog_id );
+	$active = array( 'slug' => $slug, 'pages' => $created, 'time' => time(), 'layout' => ! empty( $site['one_page'] ) ? 'one-page' : 'full', 'profile' => ! empty( $site['profile_enabled'] ) );
+	$active['menu_hash'] = unapp_starter_post_fingerprint( (int) get_option( UNAPP_STARTER_NAV_OPTION ) );
+	if ( isset( $site['main_action_choice'] ) ) { $active['main_action'] = $site['main_action_choice']; }
+	update_option( UNAPP_STARTER_OPTION, $active );
+	update_option( UNAPP_SETUP_OPTION, array( 'home' => $created['home'], 'blog' => $blog_id, 'version' => UNAPP_VERSION, 'time' => time() ) );
 	delete_option( UNAPP_OFFER_OPTION );
+	if ( 'page' !== get_option( 'show_on_front' ) || (int) get_option( 'page_on_front' ) !== $created['home']
+		|| (int) get_option( 'page_for_posts' ) !== $blog_id || get_option( UNAPP_STARTER_OPTION ) !== $active ) {
+		return new WP_Error( 'unapp_starter_save', __( 'The starter settings could not be saved.', 'unapp' ) );
+	}
 
 	return $created;
 }
@@ -755,14 +893,14 @@ function unapp_apply_starter_styles( $site ) {
 		$path = get_theme_file_path( 'styles/' . $site['style'] . '.json' );
 
 		if ( ! file_exists( $path ) ) {
-			return;
+			return new WP_Error( 'unapp_missing_style', __( 'The starter style could not be loaded.', 'unapp' ) );
 		}
 
 		$variation = wp_json_file_decode( $path, array( 'associative' => true ) );
 	}
 
 	if ( ! is_array( $variation ) ) {
-		return;
+		return new WP_Error( 'unapp_starter_save', __( 'The starter styles could not be saved.', 'unapp' ) );
 	}
 
 	unset( $variation['$schema'], $variation['title'], $variation['slug'] );
@@ -773,7 +911,7 @@ function unapp_apply_starter_styles( $site ) {
 	$user_cpt = WP_Theme_JSON_Resolver::get_user_data_from_wp_global_styles( wp_get_theme(), true );
 
 	if ( empty( $user_cpt['ID'] ) ) {
-		return;
+		return new WP_Error( 'unapp_starter_save', __( 'The starter styles could not be saved.', 'unapp' ) );
 	}
 
 	// Core finds the global styles post through the `wp_theme` taxonomy, and
@@ -783,21 +921,26 @@ function unapp_apply_starter_styles( $site ) {
 	// finds nothing and creates *another* post, and the variation is written to
 	// one the site never reads. Attaching the term ourselves is idempotent in
 	// the browser and is what makes headless provisioning work at all.
-	wp_set_object_terms( $user_cpt['ID'], wp_get_theme()->get_stylesheet(), 'wp_theme' );
+	$terms = wp_set_object_terms( $user_cpt['ID'], wp_get_theme()->get_stylesheet(), 'wp_theme' );
+	if ( is_wp_error( $terms ) ) {
+		return $terms;
+	}
 
 	// Keep the styles the site had, so Styles → Revisions can bring them back.
 	unapp_keep_revision( $user_cpt['ID'] );
 
-	wp_update_post(
+	$result = wp_update_post(
 		array(
 			'ID'           => $user_cpt['ID'],
 			'post_content' => wp_slash( wp_json_encode( $variation ) ),
-		)
+		),
+		true
 	);
 
 	// The resolver caches user data per request; a starter applied and then read
 	// back in the same run would otherwise see the old styles.
 	WP_Theme_JSON_Resolver::clean_cached_data();
+	return is_wp_error( $result ) ? $result : ( $result ? true : new WP_Error( 'unapp_starter_save', __( 'The starter styles could not be saved.', 'unapp' ) ) );
 }
 
 /**
@@ -857,6 +1000,14 @@ const UNAPP_STARTER_NAV_OPTION = 'unapp_starter_navigation';
  */
 function unapp_build_starter_menu( $site, $created ) {
 	$items = '';
+	if ( ! empty( $site['one_page'] ) ) {
+		foreach ( array_slice( $site['section_links'], 0, 4, true ) as $anchor => $label ) {
+			$items .= '<!-- wp:navigation-link ' . serialize_block_attributes( array( 'label' => $label, 'url' => home_url( '/#' . $anchor ) ) ) . ' /-->';
+		}
+		if ( isset( $site['section_links']['business-details'] ) && false === strpos( $items, '#business-details' ) ) {
+			$items .= '<!-- wp:navigation-link ' . serialize_block_attributes( array( 'label' => __( 'Contact', 'unapp' ), 'url' => home_url( '/#business-details' ) ) ) . ' /-->';
+		}
+	}
 
 	foreach ( $site['pages'] as $key => $page ) {
 		if ( empty( $created[ $key ] ) ) {
@@ -880,7 +1031,7 @@ function unapp_build_starter_menu( $site, $created ) {
 	}
 
 	if ( '' === $items ) {
-		return;
+		return new WP_Error( 'unapp_starter_save', __( 'The starter menu is empty.', 'unapp' ) );
 	}
 
 	$kses_active = has_filter( 'content_save_pre', 'wp_filter_post_kses' );
@@ -910,9 +1061,10 @@ function unapp_build_starter_menu( $site, $created ) {
 		$args['ID']            = $own;
 		$args['post_date']     = current_time( 'mysql' );
 		$args['post_date_gmt'] = current_time( 'mysql', true );
-		wp_update_post( $args );
+		$saved = wp_update_post( $args, true );
 	} else {
-		$own = wp_insert_post( $args );
+		$saved = wp_insert_post( $args, true );
+		$own   = $saved;
 		if ( $own && ! is_wp_error( $own ) ) {
 			update_option( UNAPP_STARTER_NAV_OPTION, $own, false );
 		}
@@ -921,6 +1073,7 @@ function unapp_build_starter_menu( $site, $created ) {
 	if ( $kses_active ) {
 		kses_init_filters();
 	}
+	return is_wp_error( $saved ) ? $saved : ( $saved ? true : new WP_Error( 'unapp_starter_save', __( 'The starter menu could not be saved.', 'unapp' ) ) );
 }
 
 /**
@@ -993,13 +1146,13 @@ function unapp_save_part( $name, $title, $content ) {
 			if ( $kses_active ) {
 				kses_init_filters();
 			}
-			return;
+			return $existing->ID;
 		}
 		unapp_keep_revision( $existing->ID );
 		$args['ID'] = $existing->ID;
-		$part_id    = wp_update_post( $args );
+		$part_id    = wp_update_post( $args, true );
 	} else {
-		$part_id = wp_insert_post( $args );
+		$part_id = wp_insert_post( $args, true );
 	}
 
 	if ( $kses_active ) {
@@ -1007,9 +1160,14 @@ function unapp_save_part( $name, $title, $content ) {
 	}
 
 	if ( $part_id && ! is_wp_error( $part_id ) ) {
-		wp_set_object_terms( $part_id, get_stylesheet(), 'wp_theme' );
-		wp_set_object_terms( $part_id, $name, 'wp_template_part_area' );
+		foreach ( array( 'wp_theme' => get_stylesheet(), 'wp_template_part_area' => $name ) as $taxonomy => $term ) {
+			$result = wp_set_object_terms( $part_id, $term, $taxonomy );
+			if ( is_wp_error( $result ) ) {
+				return $result;
+			}
+		}
 	}
+	return is_wp_error( $part_id ) ? $part_id : ( $part_id ? $part_id : new WP_Error( 'unapp_starter_save', __( 'A template part could not be saved.', 'unapp' ) ) );
 }
 
 /**
@@ -1061,17 +1219,17 @@ function unapp_set_part_to_pattern( $name, $title, $pattern ) {
 		if ( $existing ) {
 			$file = unapp_part_file_content( $name );
 			if ( '' !== $file ) {
-				unapp_save_part( $name, $title, $file );
+				return unapp_save_part( $name, $title, $file );
 			}
 		}
-		return;
+		return true;
 	}
 
 	if ( ! WP_Block_Patterns_Registry::get_instance()->is_registered( $pattern ) ) {
-		return;
+		return new WP_Error( 'unapp_missing_pattern', __( 'A template part pattern could not be loaded.', 'unapp' ) );
 	}
 
-	unapp_save_part( $name, $title, '<!-- wp:pattern {"slug":"' . $pattern . '"} /-->' );
+	return unapp_save_part( $name, $title, '<!-- wp:pattern {"slug":"' . $pattern . '"} /-->' );
 }
 
 /**
@@ -1080,8 +1238,24 @@ function unapp_set_part_to_pattern( $name, $title, $pattern ) {
  * @param array $site Starter site definition.
  */
 function unapp_apply_starter_footer( $site ) {
+	if ( ! empty( $site['profile_enabled'] ) || ! empty( $site['business']['email'] ) || ! empty( $site['business']['phone'] ) ) {
+		return unapp_save_part( 'footer', __( 'Footer', 'unapp' ), unapp_starter_footer_markup( $site ) );
+	}
+	return unapp_set_part_to_pattern( 'footer', __( 'Footer', 'unapp' ), $site['footer'] ?? '' );
+}
+
+/** Pure footer generation shared by preview and import. */
+function unapp_starter_footer_markup( $site ) {
 	$pattern = isset( $site['footer'] ) ? $site['footer'] : '';
-	unapp_set_part_to_pattern( 'footer', __( 'Footer', 'unapp' ), $pattern );
+	if ( ! empty( $site['profile_enabled'] ) ) {
+		$content = unapp_business_prepare_markup( unapp_personalize_starter( unapp_get_pattern_markup( $pattern ?: 'unapp/footer' ), $site['business'] ), $site['business'] );
+		return unapp_business_footer( $content, $site['business'] );
+	}
+	if ( ! empty( $site['business']['email'] ) || ! empty( $site['business']['phone'] ) ) {
+		$pattern = $pattern ? $pattern : 'unapp/footer';
+		return unapp_personalize_starter( unapp_get_pattern_markup( $pattern ), $site['business'] );
+	}
+	return unapp_get_pattern_markup( $pattern ?: 'unapp/footer' );
 }
 
 /**
@@ -1096,6 +1270,17 @@ function unapp_apply_starter_footer( $site ) {
  */
 function unapp_starter_cta_url( $site, $created ) {
 	$key = isset( $site['cta_page'] ) ? $site['cta_page'] : '';
+	if ( ! empty( $site['one_page'] ) && 'shop' !== $key ) {
+		$pages = $site['supporting_pages'] ?? array();
+		if ( isset( $pages[ $key ] ) ) {
+			foreach ( unapp_one_page_links( unapp_get_starter_page_markup( $pages[ $key ] ) ) as $anchor => $unused ) {
+				if ( isset( $site['section_links'][ $anchor ] ) ) {
+					return home_url( '/#' . $anchor );
+				}
+			}
+		}
+		return home_url( '/#business-details' );
+	}
 
 	if ( 'shop' === $key && function_exists( 'wc_get_page_permalink' ) ) {
 		return wc_get_page_permalink( 'shop' );
@@ -1121,14 +1306,20 @@ function unapp_starter_cta_url( $site, $created ) {
  * @param array $created Created page IDs keyed by page key.
  */
 function unapp_apply_starter_header( $site, $created = array() ) {
+	$markup = unapp_starter_header_markup( $site, $created );
+	if ( is_wp_error( $markup ) ) { return $markup; }
+	return '' === $markup ? unapp_set_part_to_pattern( 'header', __( 'Header', 'unapp' ), '' ) : unapp_save_part( 'header', __( 'Header', 'unapp' ), $markup );
+}
+
+/** Pure header generation, retaining the original action for reset. */
+function unapp_starter_header_markup( $site, $created = array() ) {
 	$default = _x( 'Get Premium', 'Header call-to-action button', 'unapp' );
 	$label   = empty( $site['cta'] ) ? $default : $site['cta'];
 	$url     = unapp_starter_cta_url( $site, $created );
 
 	// Nothing to customise: the header file takes over again.
 	if ( $label === $default && '' === $url ) {
-		unapp_set_part_to_pattern( 'header', __( 'Header', 'unapp' ), '' );
-		return;
+		return '';
 	}
 
 	$markup = unapp_get_pattern_markup( 'unapp/header' );
@@ -1139,7 +1330,7 @@ function unapp_apply_starter_header( $site, $created = array() ) {
 	$pattern = '#(<a class="wp-block-button__link[^"]*"[^>]*?href=")\\#("[^>]*>)' . preg_quote( esc_html( $default ), '#' ) . '(</a>)#';
 
 	if ( '' === $markup || ! preg_match( $pattern, $markup ) ) {
-		return;
+		return new WP_Error( 'unapp_missing_pattern', __( 'The starter header could not be prepared.', 'unapp' ) );
 	}
 
 	$markup = preg_replace_callback(
@@ -1150,8 +1341,13 @@ function unapp_apply_starter_header( $site, $created = array() ) {
 		$markup,
 		1
 	);
+	$markup = unapp_main_action_mark( $markup, true );
 
-	unapp_save_part( 'header', __( 'Header', 'unapp' ), $markup );
+	if ( isset( $site['main_action'] ) && 'starter' !== $site['main_action']['type'] ) {
+		$changed = 0; $kept = 0;
+		$markup = unapp_main_action_update( $markup, $site['main_action'], $changed, $kept );
+	}
+	return $markup;
 }
 
 /**
@@ -1179,7 +1375,8 @@ function unapp_handle_starter_request() {
 	}
 
 	$slug   = isset( $_POST['starter'] ) ? sanitize_key( wp_unslash( $_POST['starter'] ) ) : '';
-	$result = unapp_apply_starter_site( $slug );
+	$request_id = isset( $_POST['request_id'] ) ? sanitize_key( wp_unslash( $_POST['request_id'] ) ) : '';
+	$result = unapp_apply_starter_site( $slug, array(), $request_id );
 
 	set_transient( UNAPP_STARTER_RESULT, is_wp_error( $result ) ? 'error:' . $result->get_error_code() : 'done', HOUR_IN_SECONDS );
 	wp_safe_redirect( admin_url( 'themes.php?page=unapp-starter-sites' ) );
@@ -1195,6 +1392,13 @@ function unapp_render_starter_screen() {
 	$step    = isset( $_GET['step'] ) ? sanitize_key( wp_unslash( $_GET['step'] ) ) : '';
 	$starter = isset( $_GET['starter'] ) ? sanitize_key( wp_unslash( $_GET['starter'] ) ) : '';
 	$sites   = unapp_get_starter_sites();
+
+	if ( 'preview' === $step && isset( $sites[ $starter ] ) ) {
+		echo '<div class="wrap unapp-starters">';
+		unapp_render_starter_preview( $starter );
+		echo '</div>';
+		return;
+	}
 
 	if ( 'done' === $step ) {
 		echo '<div class="wrap unapp-starters">';
@@ -1212,7 +1416,7 @@ function unapp_render_starter_screen() {
 		if ( 'brand' === $step ) {
 			unapp_wizard_render_brand( $starter );
 		} else {
-			unapp_wizard_render_plugins( $starter, unapp_wizard_brand_from( $_GET ) );
+			unapp_wizard_render_plugins( $starter, unapp_wizard_brand_from( unapp_wizard_choice_source() ) );
 		}
 
 		unapp_starter_styles();
@@ -1224,6 +1428,11 @@ function unapp_render_starter_screen() {
 	$sites  = unapp_get_starter_sites();
 	$active = get_option( UNAPP_STARTER_OPTION, array() );
 	$result = get_transient( UNAPP_STARTER_RESULT );
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only finder.
+	$query = sanitize_text_field( unapp_design_field( $_GET, 'starter_search' ) );
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only finder.
+	$category = sanitize_key( unapp_design_field( $_GET, 'starter_category' ) );
+	if ( ! isset( unapp_starter_categories()[ $category ] ) ) { $category = ''; }
 
 	if ( $result ) {
 		delete_transient( UNAPP_STARTER_RESULT );
@@ -1240,22 +1449,27 @@ function unapp_render_starter_screen() {
 				<?php
 				printf(
 					/* translators: %s: link to the site front page. */
-					wp_kses_post( __( 'Starter site applied. <a href="%s">View your site</a>.', 'unapp' ) ),
-					esc_url( home_url( '/' ) )
+					wp_kses_post( __( 'Starter site applied. <a href="%s">Finish your website</a>.', 'unapp' ) ),
+					esc_url( unapp_finish_url() )
 				);
 				?>
 			</p></div>
+		<?php elseif ( 'undone' === $result ) : ?>
+			<div class="notice notice-success"><p><?php esc_html_e( 'Setup undone. Your previous design and front-page settings are restored.', 'unapp' ); ?></p></div>
 		<?php elseif ( $result && 0 === strpos( $result, 'error' ) ) : ?>
 			<div class="notice notice-error"><p><?php echo esc_html( unapp_starter_error_message( $result ) ); ?></p></div>
 		<?php endif; ?>
 
-		<div class="unapp-starters__grid">
+		<?php unapp_render_launch_summary(); ?>
+		<?php unapp_render_starter_undo(); ?>
+		<?php unapp_render_starter_finder( $sites, $query, $category ); ?>
+		<div class="unapp-starters__grid" id="unapp-starter-results">
 			<?php foreach ( $sites as $slug => $site ) : ?>
 				<?php
 				$is_active     = isset( $active['slug'] ) && $active['slug'] === $slug;
 				$unapp_missing = unapp_starter_missing_requirement( $site );
 				?>
-				<div class="unapp-starter<?php echo $is_active ? ' is-active' : ''; ?>">
+				<div class="unapp-starter<?php echo $is_active ? ' is-active' : ''; ?>" data-starter="<?php echo esc_attr( $slug ); ?>" data-starter-search="<?php echo esc_attr( unapp_starter_search_text( $slug, $site ) ); ?>" data-starter-categories="<?php echo esc_attr( implode( ' ', $site['categories'] ?? array() ) ); ?>" <?php if ( ! unapp_starter_matches( $slug, $site, $query, $category ) ) : ?>hidden<?php endif; ?>>
 					<div class="unapp-starter__preview"
 						style="background:linear-gradient(135deg, <?php echo esc_attr( $site['swatches'][0] ); ?> 0%, <?php echo esc_attr( $site['swatches'][1] ); ?> 100%)">
 						<?php
@@ -1286,17 +1500,19 @@ function unapp_render_starter_screen() {
 							<?php endforeach; ?>
 						</p>
 						<p><?php echo esc_html( $site['summary'] ); ?></p>
-						<?php $unapp_page_count = count( $site['pages'] ) + 1; ?>
+						<p class="unapp-starter__requirements"><?php echo esc_html( empty( $site['requires'] ) ? __( 'Free · Native blocks · No required plugins', 'unapp' ) : sprintf( /* translators: %s: plugin name. */ __( 'Free · Requires %s', 'unapp' ), unapp_starter_requirement_label( $site['requires'] ) ) ); ?></p>
+						<?php $unapp_page_count = count( $site['pages'] ); ?>
 						<p class="unapp-starter__meta">
 							<?php
 							printf(
-								/* translators: %d: number of pages the starter creates. */
-								esc_html( _n( 'Creates %d page', 'Creates %d pages', $unapp_page_count, 'unapp' ) ),
+								/* translators: %d: supporting pages available with the full website option. */
+								esc_html( _n( 'One-page or full site · %d supporting page', 'One-page or full site · %d supporting pages', $unapp_page_count, 'unapp' ) ),
 								absint( $unapp_page_count )
 							);
 							?>
 						</p>
 						<div class="unapp-starter__buttons">
+							<a class="button" href="<?php echo esc_url( add_query_arg( array( 'page' => 'unapp-starter-sites', 'step' => 'preview', 'starter' => $slug ), admin_url( 'themes.php' ) ) ); ?>"><?php esc_html_e( 'Preview', 'unapp' ); ?></a>
 							<a class="button button-primary" href="<?php echo esc_url( add_query_arg( array( 'page' => 'unapp-starter-sites', 'step' => 'brand', 'starter' => $slug ), admin_url( 'themes.php' ) ) ); ?>">
 								<?php echo $is_active ? esc_html__( 'Set up again', 'unapp' ) : esc_html__( 'Set up this starter', 'unapp' ); ?>
 							</a>
@@ -1311,6 +1527,7 @@ function unapp_render_starter_screen() {
 								<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 									<?php wp_nonce_field( 'unapp_apply_starter' ); ?>
 									<input type="hidden" name="action" value="unapp_apply_starter">
+									<input type="hidden" name="request_id" value="<?php echo esc_attr( wp_generate_uuid4() ); ?>">
 									<input type="hidden" name="starter" value="<?php echo esc_attr( $slug ); ?>">
 									<button type="submit" class="button-link unapp-starter__skip">
 										<?php esc_html_e( 'Apply without setup', 'unapp' ); ?>
@@ -1372,7 +1589,7 @@ function unapp_starter_styles() {
 	?>
 	<style>
 		.unapp-starters__intro { max-width: 70ch; }
-		.unapp-starters__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 24px; }
+		.unapp-starters__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 20px; margin-top: 24px; }
 		.unapp-starter { background: #fff; border: 1px solid #dcdcde; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
 		.unapp-starter.is-active { border-color: #2271b1; box-shadow: 0 0 0 1px #2271b1; }
 		.unapp-starter__preview { height: 190px; display: flex; align-items: flex-end; justify-content: center; padding: 0 24px; overflow: hidden; }

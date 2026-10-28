@@ -109,7 +109,7 @@ body = section_std(
              color="muted") + "\n" +
         buttons([{"text": t("Plan your visit"), "url": home_anchor("visit")},
                  {"text": t("Meet the staff"), "url": home_anchor("staff"), "style": "outline"}]),
-        image(uri("assets/images/abstract/sanctuary.svg"), tattr("The church building"), radius=CARD_RADIUS),
+        image(uri("assets/images/showcase/church-welcome.webp"), tattr("The church building"), radius=CARD_RADIUS),
         left_width="54%", right_width="46%"),
     gap="0")
 write_pattern("church-story", title="Church: our story", cats=C + ", unapp_company, about",

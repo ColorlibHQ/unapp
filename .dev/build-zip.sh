@@ -21,6 +21,8 @@ mkdir -p "$OUT/unapp"
 cd "$ROOT"
 rsync -a --quiet \
 	--exclude '.git' \
+	--exclude '.github' \
+	--exclude 'AGENTS.md' \
 	--exclude '.gitignore' \
 	--exclude '.dev' \
 	--exclude '.claude' \

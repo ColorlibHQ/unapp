@@ -5,7 +5,7 @@
  * Categories: unapp, unapp_portfolio, portfolio, featured
  * Keywords: portfolio, about, bio, skills, designer
  * Viewport Width: 1400
- * Description: A short biography beside a photograph, with two columns of disciplines.
+ * Description: A short biography beside a brand study, with two columns of disciplines.
  *
  * @package Unapp
  */
@@ -17,8 +17,8 @@
 <div class="wp-block-columns are-vertically-aligned-center alignwide">
 <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%;">
-<!-- wp:image {"width":"100%","aspectRatio":"3/2","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/desk.svg' ) ); ?>" alt="<?php esc_attr_e( 'Studio placeholder', 'unapp' ); ?>" style="border-radius:20px;aspect-ratio:3/2;width:100%;height:auto"/></figure>
+<!-- wp:image {"width":"100%","aspectRatio":"4/3","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/showcase/meridian-housing.svg' ) ); ?>" alt="<?php esc_attr_e( 'Meridian Housing identity and welcome signage', 'unapp' ); ?>" style="border-radius:20px;aspect-ratio:4/3;width:100%;height:auto"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->

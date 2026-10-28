@@ -260,6 +260,30 @@ function unapp_pattern_categories() {
 			'label'       => _x( 'Unapp: Events', 'Block pattern category', 'unapp' ),
 			'description' => __( 'Sections for conferences and events: programmes, speakers, tickets and venue details.', 'unapp' ),
 		),
+		'unapp_home_services' => array(
+			'label' => _x( 'Unapp: Home Services', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Repairs, maintenance, service areas and quote enquiries.', 'unapp' ),
+		),
+		'unapp_coach' => array(
+			'label' => _x( 'Unapp: Coach & Consultant', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Coaching services, practical consulting and discovery-call enquiries.', 'unapp' ),
+		),
+		'unapp_photographer' => array(
+			'label' => _x( 'Unapp: Photographer', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Image-led work, commissions, the approach and photography enquiries.', 'unapp' ),
+		),
+		'unapp_nonprofit' => array(
+			'label' => _x( 'Unapp: Nonprofit', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Community programmes, volunteering, openness and ways to support.', 'unapp' ),
+		),
+		'unapp_cleaning' => array(
+			'label' => _x( 'Unapp: Cleaning', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Home and workplace cleaning, checklists and quote requests.', 'unapp' ),
+		),
+		'unapp_salon' => array(
+			'label' => _x( 'Unapp: Salon & Barber', 'Block pattern category', 'unapp' ),
+			'description' => __( 'Hair services, visit information and appointment requests.', 'unapp' ),
+		),
 		'unapp_blog'     => array(
 			'label'       => _x( 'Unapp: Blog & magazine', 'Block pattern category', 'unapp' ),
 			'description' => __( 'Editorial furniture: mastheads, category tiles, author introductions and subscribe panels.', 'unapp' ),
@@ -478,12 +502,27 @@ require get_parent_theme_file_path( 'inc/front-page-setup.php' );
 /**
  * Starter sites: complete designs for different kinds of website.
  */
+require get_parent_theme_file_path( 'inc/content.php' );
 require get_parent_theme_file_path( 'inc/starter-sites.php' );
+require get_parent_theme_file_path( 'inc/starter-finder.php' );
+require get_parent_theme_file_path( 'inc/starter-import.php' );
+require get_parent_theme_file_path( 'inc/starter-history.php' );
+require get_parent_theme_file_path( 'inc/starter-preview.php' );
 
 /**
  * Contact forms: render whichever form plugin is active, styled to the palette.
  */
 require get_parent_theme_file_path( 'inc/forms.php' );
+require get_parent_theme_file_path( 'inc/form-selection.php' );
+require get_parent_theme_file_path( 'inc/launch-checklist.php' );
+require get_parent_theme_file_path( 'inc/launch-recommendations.php' );
+require get_parent_theme_file_path( 'inc/design.php' );
+require get_parent_theme_file_path( 'inc/service-cards.php' );
+require get_parent_theme_file_path( 'inc/business-profile.php' );
+require get_parent_theme_file_path( 'inc/finish.php' );
+require get_parent_theme_file_path( 'inc/content-guide.php' );
+require get_parent_theme_file_path( 'inc/section-swaps.php' );
+require get_parent_theme_file_path( 'inc/personalized-preview.php' );
 
 /**
  * Visitor colour-scheme toggle, active only where the toggle pattern is used.
@@ -516,6 +555,7 @@ function unapp_period_toggle_script( $content, $block ) {
 			UNAPP_VERSION,
 			true
 		);
+		wp_localize_script( 'unapp-period-toggle', 'unappPeriodToggle', array( 'label' => __( 'Yearly billing', 'unapp' ) ) );
 	}
 
 	return $content;

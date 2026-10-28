@@ -3,12 +3,12 @@ Contributors: colorlib
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.5.10
+Stable tag: 2.6.0
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, one-column, rtl-language-support, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, style-variations, template-editing, threaded-comments, translation-ready
 
-Unapp is a lightweight block theme with thirteen one-click starter sites, built entirely for the WordPress Site Editor.
+Unapp is a free lightweight block theme with nineteen starter sites, built entirely for the WordPress Site Editor.
 
 == Description ==
 
@@ -20,7 +20,7 @@ Unapp ships its own shop, product, cart, checkout, order-confirmation and produc
 
 **Starter sites**
 
-Appearance → Starter Sites walks you through three steps — the starter, your name and look, and any plugin it needs — and offers thirteen complete designs, each with its own palette, typeface, home page, supporting pages and menu: SaaS & app, Portfolio, Church, Blog & magazine, Fitness studio, Restaurant, Agency, Shop, Property, Practice, Courses, Conference and Finance & advisory. Applying one creates the pages and sets your front page. No page, post or image is ever deleted — switching starter adds new pages and leaves your old ones in the Pages list — and the styles, header and footer it replaces are kept as revisions.
+Appearance → Starter Sites walks you through three steps — the starter, your name and look, and any plugin it needs — and offers nineteen complete designs, each with its own palette, typeface, home page, supporting pages and menu: SaaS & app, Portfolio, Church, Blog & magazine, Fitness studio, Restaurant, Agency, Shop, Property, Practice, Courses, Conference, Finance & advisory, Home Services, Cleaning, Salon & Barber, Coach & Consultant, Photographer and Nonprofit. Applying one creates the pages and sets your front page. No page, post or image is ever deleted — switching starter adds new pages and leaves your old ones in the Pages list — and the styles, header and footer it replaces are kept as revisions.
 
 **What's included**
 
@@ -82,11 +82,31 @@ Unapp aims to meet the WordPress accessibility-ready requirements and WCAG 2.1 l
 
 If you find an accessibility barrier, please report it on the theme's support forum so it can be fixed.
 
+== One-page setup and business profile ==
+
+The final setup step previews your selected homepage sections, business details, logo, colors, typography and main action before applying them. Choose an optional main action in Name and look; preview it at desktop, tablet or mobile widths. Preview and import share content generation. The homepage preview is private, uses a permission-checked POST and changes no live content or settings. Supporting-page links, external actions, purchase controls and submissions are inactive. Build my site applies and publishes the choices shown in the setup summary.
+
+The wizard's optional homepage section picker lets you omit unneeded sections while preserving the introduction, closing action and final notice. Navigation and homepage links account for omitted sections. Full-site supporting pages remain included. Choose Start guided content pass in Finish your website to review the sections actually saved: open each section or its images in the native editor, save changes, refresh the guide and mark it reviewed. New sections have clear List View names. Reviews reset for edited sections and never silently approve the rest of your site.
+
+Appearance → Finish your website is the return point after setup: business details, branding, homepage editing, contact forms and launch checks, with a suggested next step. Its main-action selector connects generated header, hero and closing buttons to calls, email, bookings, quotes or your WooCommerce Shop page. It preserves secondary links and directly edited buttons. Call/email actions follow Business profile updates; Keep starter buttons restores original actions. All editing remains native to WordPress.
+
+The starter wizard recommends a one-page website with a complete homepage and section navigation. Choose Full website for supporting pages and a Blog page. Colors, fonts, location, services and opening hours are optional; Shop still requires WooCommerce and its store pages.
+
+Appearance → Business profile updates shared public details created by the wizard on the current starter's pages and footer. Directly edited fields, older pages and other demo copy are preserved. Review your content before launch. Add supporting pages later without rebuilding your homepage or design. An untouched starter menu expands automatically; custom menus stay intact. The latest page addition has a guarded Undo under Starter Sites.
+
+== Make it yours ==
+
+Appearance → Make it yours links to WordPress's native branding, Styles and Navigation tools and offers three header and three footer presets. Preview a layout at desktop, tablet or mobile width before applying it. Presets save ordinary template parts and carry over the current menu, logo size and header action where the selected layout includes them. Applying replaces that part's other content; the latest change can be undone unless the part is subsequently edited. Native revisions are preserved when enabled. Pages, menus and global styles remain separate and editable in WordPress.
+
+== Launch checklist ==
+
+Appearance → Launch checklist checks starter pages, sample contacts, unfinished links and unavailable form selections. It links to affected content and lets you record reviews of business details, contact delivery and mobile behavior. Reviews reset after relevant edits. Checks never publish pages or send a test message. Blog posts and unrelated pages need your own review.
+
 == Frequently Asked Questions ==
 
 = How do I add a contact or newsletter form? =
 
-Unapp does not bundle a form plugin, and it does not need you to place one. Install any of the ten form plugins it recognises (WPForms, Contact Form 7, Gravity Forms, Fluent Forms, Forminator, Ninja Forms, Kali Forms, Everest Forms, HappyForms or Jetpack) and every contact section shows that plugin's form in place of the email panel. For a newsletter, add your newsletter plugin's block in place of a Subscribe button.
+Open Appearance → Launch checklist → Contact form to choose automatic detection, email-only contact or a specific published form. Supported plugins include WPForms, Contact Form 7, Gravity Forms, Fluent Forms, Forminator, Ninja Forms, Kali Forms, Everest Forms, HappyForms and Jetpack. The choice updates Unapp contact sections without rewriting pages; directly inserted forms keep their own settings. A missing selected form uses the email fallback and is flagged. For a newsletter, add your newsletter plugin's block in place of a Subscribe button.
 
 = How do I change the colors? =
 
@@ -105,6 +125,14 @@ Yes. Every section is a pattern: open the block inserter, choose the Patterns ta
 They are simple SVGs drawn for this theme — invented brand names for the logo cloud and duotone silhouettes for the team and testimonials. Nothing is licensed from a third party, so replace them with your own at any time.
 
 == Changelog ==
+
+= 2.6.0 =
+* Nineteen free native starters, including Home Services, Cleaning, Salon & Barber, Coach & Consultant, Photographer and Nonprofit.
+* Niche finder, personalized preview, one-page/full setup and a unified Finish your website workspace.
+* Shared business/service cards, guided page/image editing, native editor return shortcuts and safe section/header/footer swaps with Undo.
+* Contact-form selection, launch checklist and separate optional recommendations.
+* Original bundled imagery, responsive polish, hardened imports and automated integration/browser checks.
+
 
 
 = 2.5.10 =
@@ -222,6 +250,8 @@ Icons in assets/images/icons/ are based on Feather Icons
 Copyright (c) 2013-2023 Cole Bemis
 License: MIT — https://github.com/feathericons/feather/blob/main/LICENSE
 
-Avatar placeholders in assets/images/avatars/, wordmark logos in assets/images/logos/ and the abstract placeholder images in assets/images/abstract/ were created for this theme by Colorlib and are released under the theme's GPL license. All names, quotes, prices and other demo content are fictional.
+Avatar placeholders in assets/images/avatars/, wordmark logos in assets/images/logos/ and the abstract placeholder images in assets/images/abstract/, and the original product and brand illustrations in assets/images/showcase/ were created for this theme by Colorlib and are released under the theme's GPL license. All names, quotes, prices and other demo content are fictional.
+
+The WebP demonstration scenes in assets/images/showcase/ were created for this theme using OpenAI's image generation tool and are distributed under the theme's GPL license. They depict fictional products, venues, people and properties, not actual businesses or listings. Prompt and encoding details are recorded in .dev/starter-photography.json in the source repository.
 
 Product screenshots and photos in assets/images/ were shipped with the original Unapp theme by Colorlib and are redistributed under the theme's GPL license.

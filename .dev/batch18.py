@@ -6,23 +6,17 @@ R = "unapp, unapp_restaurant"
 A = "unapp, unapp_agency"
 
 # ================================================================= RESTAURANT
-cover_url = uri("assets/images/abstract/gathering.svg")
-inner = (eyebrow(t("Kitchen and dining room", "Restaurant hero eyebrow"), align="center", color="base") + "\n" +
-         h1(t("Ten tables, one menu, whatever the market had"), align="center", color="base",
-                 size="xxx-large") + "\n" +
-         para(t("Dinner Wednesday to Saturday · Lunch on Sunday · Bookings open six weeks ahead"),
-              align="center", color="base", size="large") + "\n" +
-         buttons([{"text": t("Book a table"), "url": home_anchor("bookings"), "bg": "base", "color": "primary"},
-                  {"text": t("See this week's menu"), "url": home_anchor("menu"), "style": "outline", "color": "base"}],
-                 justify="center", margin={"top": "40"}))
-body = f'''<!-- wp:cover {{"url":"{cover_url}","dimRatio":70,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":66,"minHeightUnit":"vh","align":"full","style":{{"spacing":{{"padding":{{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"blockGap":"var:preset|spacing|30"}}}},"layout":{{"type":"constrained","contentSize":"820px"}}}} -->
-<div class="wp-block-cover alignfull" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80);min-height:66vh"><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-70 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="{cover_url}" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
-{inner}
-</div></div>
-<!-- /wp:cover -->'''
+body = starter_hero(
+    t('Wharf Street · Bristol', "Starter hero eyebrow"),
+    t('Good food. A table worth sharing.'),
+    t('Seasonal cooking, a short wine list and a warm welcome. Dinner Wednesday to Saturday, lunch at the weekend.'),
+    'assets/images/showcase/restaurant-seasonal.webp', tattr('Roasted fish with spring greens and herbs on a ceramic plate'),
+    [{"text": t('Request a table'), "url": mailto("eat@wharfstreet.example", "Table booking")},
+     {"text": t('Explore the menu'), "url": home_anchor("menu"), "style": "outline"}],
+    note=t('Tell us your date, party size and dietary needs. We will confirm by reply.'))
 write_pattern("restaurant-hero", title="Restaurant: hero", cats=R + ", banner, featured",
               keywords="restaurant, hero, booking, menu, dining",
-              desc="A full-bleed cover with opening nights, a booking button and a link to the menu.",
+              desc="A dining introduction with seasonal food photography, a reservation enquiry and a menu link.",
               body=body)
 
 # ---------------------------------------------------------------- the menu
@@ -84,7 +78,7 @@ for day, hrs in HOURS:
     rows.append(columns([
         column(para(t(day, "Opening day"), weight="600"), width="32%", vertical_align="center"),
         column(para(t(hrs, "Opening hours"), color="muted", align="right"), width="68%", vertical_align="center"),
-    ], gap="30", vertical_align="center", is_stacked=False))
+    ], gap="20", vertical_align="center", class_name="unapp-hours-row"))
 hours_card = card(card_title(t("When we are open")) + "\n" +
                   ("\n" + separator(style="wide", color="border") + "\n").join(rows), justify="stretch")
 body = section_std(
@@ -106,7 +100,7 @@ write_pattern("restaurant-hours", title="Restaurant: hours and address", cats=R 
 # ---------------------------------------------------------------- the kitchen
 body = section_std(
     split(
-        image(uri("assets/images/abstract/desk.svg"), tattr("The kitchen pass"), radius=CARD_RADIUS),
+        image(uri("assets/images/showcase/restaurant-room.webp"), tattr("A warm dining room set with oak tables and linen napkins"), radius=CARD_RADIUS),
         eyebrow(t("The kitchen", "Section eyebrow label"), align="left") + "\n" +
         heading(t("We buy small and cook it the same week")) + "\n" +
         para(t("Two boats in Brixham, a farm outside Chew Magna and a cheese room in Bath. If something is not good enough on the day it comes off the menu, which is why the menu is printed on Wednesday morning and not before."),
@@ -150,7 +144,7 @@ body = section_std(
         heading(t("How to get a table")) + "\n" +
         para(t("Bookings open at nine on the first of each month, for the six weeks that follow. Fridays and Saturdays go within a day or two; midweek there is usually room."),
              color="muted", size="large") + "\n" +
-        lst([t("Tables of two to six: send the form, or ring after three"),
+        lst([t("Tables of two to six: send a request, or ring after three"),
              t("Seven or more, or the whole room: email and we will plan it with you"),
              t("Allergies and dietary needs: tell us when you book, not on the night"),
              t("Cannot make it: ring as early as you can. There is no deposit to lose")]) + "\n" +
@@ -165,7 +159,7 @@ write_pattern("restaurant-booking", title="Restaurant: booking", cats=R + ", una
 
 # ---------------------------------------------------------------- booking band
 body = band(t("Bookings open six weeks ahead, on the first of the month"),
-            t("Tables of two to six online. For anything larger, or the whole room, send us an email and we will sort it out."),
+            t("Tables of two to six by email. For anything larger, or the whole room, send us an email and we will sort it out."),
             [{"text": t("Book a table"), "url": mailto("eat@wharfstreet.example", "Table booking"),
               "bg": "base", "color": "contrast"},
              {"text": t("Ring the restaurant"), "url": tel("+44 117 555 0192"), "style": "outline", "color": "base"}],
@@ -178,16 +172,17 @@ write_pattern("restaurant-cta", title="Restaurant: booking band", cats=R + ", un
 # ================================================================= AGENCY
 body = section_std(
     split(
-        eyebrow(t("Independent since 2011", "Agency hero eyebrow"), align="left") + "\n" +
-        h1(t("We make the thing, not the deck about the thing"), size="xxx-large",
+        eyebrow(t("Northgate Studio · Manchester", "Agency hero eyebrow"), align="left") + "\n" +
+        h1(t("A better brand. A website that works."), size="xxx-large",
                 line_height="1.05") + "\n" +
-        para(t("A studio of nine in Manchester. Brand, product and the software to run both — for companies that have outgrown the website they built themselves."),
+        para(t("Brand design and websites for growing businesses. Meet the people doing the work, see what a project costs and tell us what you need."),
              color="muted", size="large") + "\n" +
-        buttons([{"text": t("See the work"), "url": home_anchor("work")},
-                 {"text": t("Start a project"), "url": home_anchor("contact"), "style": "outline"}]),
-        image(uri("assets/images/abstract/studio-2.svg"), tattr("Studio"), radius=CARD_RADIUS),
-        left_width="55%", right_width="45%"),
-    gap="0")
+        buttons([{"text": t("Get an estimate"), "url": home_anchor("contact")},
+                 {"text": t("See our work"), "url": home_anchor("work"), "style": "outline"}], gap="20", class_name="unapp-starter-actions") + "\n" +
+        para(t("A clear scope and price before we start."), color="muted", size="small"),
+        image(uri("assets/images/showcase/agency-launch.svg"), tattr("Northbank interiors website with a green and cream brand identity"), radius=CARD_RADIUS),
+        left_width="52%", right_width="48%"),
+    gap="0", class_name="unapp-starter-hero")
 write_pattern("agency-hero", title="Agency: introduction", cats=A + ", banner, featured",
               keywords="agency, studio, hero, introduction, creative",
               desc="A studio introduction with two calls to action and an image.",
@@ -229,7 +224,7 @@ row = (columns([
     column(card_title(php("$unapp_agency_client['name']")), width="55%", vertical_align="center"),
     column(para(php("$unapp_agency_client['meta']"), color="muted", size="small", align="right"),
            width="45%", vertical_align="center"),
-], gap="30", vertical_align="center", is_stacked=False) + "\n" + separator(style="wide", color="border"))
+], gap="20", vertical_align="center", class_name="unapp-client-row") + "\n" + separator(style="wide", color="border"))
 body = section_std(
     intro(eyebrow_text=t("Selected clients", "Section eyebrow label"),
           title=t("Who we have done it for")) + "\n" +
@@ -239,7 +234,7 @@ body = section_std(
 write_pattern("agency-clients", title="Agency: selected clients", cats=A + ", unapp_proof",
               keywords="agency, clients, work, portfolio, list",
               desc="A dated client list with the discipline beside each name.",
-              body=body, php_prelude=prelude, anchor="work")
+              body=body, php_prelude=prelude, anchor="clients")
 
 # ---------------------------------------------------------------- case study
 # The Work page's story. It replaced the SaaS case-study ("Before Unapp…").
@@ -250,7 +245,7 @@ body = section_std(
     intro(eyebrow_text=t("Case study", "Section eyebrow label"),
           title=t("Halden Rail: eleven logos down to one")) + "\n" +
     split(
-        image(uri("assets/images/abstract/motion.svg"), tattr("Halden Rail identity"), radius=CARD_RADIUS),
+        image(uri("assets/images/showcase/agency-rail.svg"), tattr("Halden Rail station sign and colour-coded route cards"), radius=CARD_RADIUS),
         para(t("Halden Rail runs regional trains across four counties and had, by its own count, eleven logos in use. We spent two weeks on the argument, six on the system and two getting it onto the first carriage."),
              size="large") + "\n" +
         lst([t("One mark, one typeface and a colour for each line"),
@@ -262,7 +257,7 @@ body = section_std(
 write_pattern("agency-case-study", title="Agency: case study", cats=A + ", unapp_proof, media",
               keywords="agency, case study, work, client, results, identity",
               desc="One client project told properly: the problem, what the studio made and two outcomes.",
-              body=body)
+              body=body, anchor="work")
 
 # ---------------------------------------------------------------- engagement
 BANDS = [

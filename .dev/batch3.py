@@ -16,11 +16,11 @@ body = section(
     intro(eyebrow_text=t("Product tour", "Section eyebrow label"),
           title=t("Everything in one place, finally"),
           lead=t("Three views of the same work — plan it, build it, report on it.")) + "\n" +
-    zig("dashboard-1.avif", "Planning board in Unapp", t("Plan", "Feature eyebrow"),
+    zig("showcase/workspace-timeline.svg", "Unapp launch timeline with discovery, design, build and launch milestones", t("Plan", "Feature eyebrow"),
         t("Plan the quarter in an afternoon"),
         t("Drag work into place, set a target date and let Unapp keep the roadmap honest as things move."),
         [t("Roadmap, board and timeline from one backlog"), t("Automatic capacity warnings"), t("Shareable read-only views")]) + "\n" +
-    zig("dashboard-2.avif", "Analytics view in Unapp", t("Measure", "Feature eyebrow"),
+    zig("showcase/workspace-report.svg", "Unapp project report showing task completion, team capacity and progress", t("Measure", "Feature eyebrow"),
         t("Reports that answer the real question"),
         t("Velocity, workload and progress are calculated as you work — no spreadsheet exports, no Friday scramble."),
         [t("Live dashboards for every team"), t("Weekly digests by email"), t("Export to CSV or the API")], reverse=True),

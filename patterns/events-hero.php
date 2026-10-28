@@ -5,32 +5,50 @@
  * Categories: unapp, unapp_events, banner, featured
  * Keywords: events, conference, hero, tickets, programme
  * Viewport Width: 1400
- * Description: A full-bleed conference cover with the dates, the shape of the event and a ticket button.
+ * Description: A conference introduction with original poster artwork, dates, ticket options and a programme link.
  *
  * @package Unapp
  */
 
 ?>
-<!-- wp:cover {"url":"<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/gathering.svg' ) ); ?>","dimRatio":70,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":68,"minHeightUnit":"vh","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained","contentSize":"860px"}} -->
-<div class="wp-block-cover alignfull" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80);min-height:68vh"><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-70 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/gathering.svg' ) ); ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
-<!-- wp:paragraph {"align":"center","textColor":"base","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
-<p class="has-text-align-center has-base-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'Bristol · 14–15 May 2027', 'Conference hero eyebrow', 'unapp' ); ?></p>
+<!-- wp:group {"align":"full","className":"unapp-starter-hero","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull unapp-starter-hero" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|60","left":"var:preset|spacing|60"}}}} -->
+<div class="wp-block-columns are-vertically-aligned-center alignwide">
+<!-- wp:column {"verticalAlignment":"center","width":"52%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:52%;">
+<!-- wp:paragraph {"align":"left","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
+<p class="has-text-align-left has-primary-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'Bristol · 14–15 May 2027', 'Starter hero eyebrow', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:heading {"level":1,"textAlign":"center","textColor":"base","fontSize":"xxx-large","style":{"typography":{"lineHeight":"1.2"}}} -->
-<h1 class="wp-block-heading has-text-align-center has-base-color has-text-color has-xxx-large-font-size" style="line-height:1.2;"><?php esc_html_e( 'Two days about building things that outlast the team that built them', 'unapp' ); ?></h1>
+<!-- wp:heading {"level":1,"fontSize":"xxx-large","style":{"typography":{"lineHeight":"1.05"}}} -->
+<h1 class="wp-block-heading has-xxx-large-font-size" style="line-height:1.05;"><?php esc_html_e( 'Two days. Ideas that stay with you.', 'unapp' ); ?></h1>
 <!-- /wp:heading -->
-<!-- wp:paragraph {"align":"center","textColor":"base","fontSize":"large"} -->
-<p class="has-text-align-center has-base-color has-text-color has-large-font-size"><?php esc_html_e( 'Sixteen talks, no sponsor keynotes, four hundred people and a bar that opens at five.', 'unapp' ); ?></p>
+<!-- wp:paragraph {"textColor":"muted","fontSize":"large"} -->
+<p class="has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Sixteen talks on building software that lasts. Meet the people doing the work, compare notes and leave with a new perspective.', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
-<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40);">
-<!-- wp:button {"textColor":"primary","backgroundColor":"base"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-primary-color has-text-color has-base-background-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/#tickets' ) ); ?>"><?php esc_html_e( 'Buy a ticket', 'unapp' ); ?></a></div>
+<!-- wp:buttons {"className":"unapp-starter-actions","style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
+<div class="wp-block-buttons unapp-starter-actions">
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#tickets' ) ); ?>"><?php esc_html_e( 'Explore tickets', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
-<!-- wp:button {"className":"is-style-outline","textColor":"base"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" href="<?php echo esc_url( home_url( '/#programme' ) ); ?>"><?php esc_html_e( 'See the programme', 'unapp' ); ?></a></div>
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#programme' ) ); ?>"><?php esc_html_e( 'View the programme', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
-</div></div>
-<!-- /wp:cover -->
+<!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
+<p class="has-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'Two days · Four hundred people · No sponsor keynotes', 'unapp' ); ?></p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"verticalAlignment":"center","width":"48%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:48%;">
+<!-- wp:image {"width":"100%","aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/showcase/conference-poster.svg' ) ); ?>" alt="<?php esc_attr_e( 'Longform conference graphic with bold typography and intersecting pathways', 'unapp' ); ?>" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%;height:auto"/></figure>
+<!-- /wp:image -->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+</div>
+<!-- /wp:group -->

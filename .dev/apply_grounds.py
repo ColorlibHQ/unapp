@@ -20,6 +20,8 @@ SOFT = {
     "pricing", "pricing-two", "finance-fees", "fitness-memberships",
     # how it works
     "how-it-works", "finance-process",
+    "home-services-process", "cleaning-process", "salon-process",
+    "coach-process", "photographer-services", "photographer-about", "nonprofit-values", "nonprofit-accountability",
     # directories and listings
     "integrations", "careers",
     # getting in touch

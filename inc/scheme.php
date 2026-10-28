@@ -73,6 +73,7 @@ function unapp_scheme_assets() {
 		UNAPP_VERSION,
 		true
 	);
+	wp_localize_script( 'unapp-scheme-toggle', 'unappSchemeToggle', array( 'label' => __( 'Dark mode', 'unapp' ) ) );
 }
 add_action( 'wp_enqueue_scripts', 'unapp_scheme_assets', 20 );
 

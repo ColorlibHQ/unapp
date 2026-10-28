@@ -11,10 +11,10 @@
  */
 
 $unapp_projects = array(
-	array( 'image' => 'studio-1', 'title' => _x( 'Nordwell Coffee', 'Project title', 'unapp' ), 'meta' => _x( 'Identity · Packaging · 2026', 'Project meta', 'unapp' ) ),
-	array( 'image' => 'desk', 'title' => _x( 'Fold Studio', 'Project title', 'unapp' ), 'meta' => _x( 'Website · Art direction · 2025', 'Project meta', 'unapp' ) ),
-	array( 'image' => 'skyline', 'title' => _x( 'Meridian Housing', 'Project title', 'unapp' ), 'meta' => _x( 'Brand system · 2025', 'Project meta', 'unapp' ) ),
-	array( 'image' => 'gathering', 'title' => _x( 'Common Ground', 'Project title', 'unapp' ), 'meta' => _x( 'Campaign · 2024', 'Project meta', 'unapp' ) ),
+	array( 'image' => 'nordwell-coffee', 'title' => _x( 'Nordwell Coffee', 'Project title', 'unapp' ), 'meta' => _x( 'Identity · Packaging · 2026', 'Project meta', 'unapp' ) ),
+	array( 'image' => 'fold-studio', 'title' => _x( 'Fold Studio', 'Project title', 'unapp' ), 'meta' => _x( 'Website · Art direction · 2025', 'Project meta', 'unapp' ) ),
+	array( 'image' => 'meridian-housing', 'title' => _x( 'Meridian Housing', 'Project title', 'unapp' ), 'meta' => _x( 'Brand system · 2025', 'Project meta', 'unapp' ) ),
+	array( 'image' => 'common-ground', 'title' => _x( 'Common Ground', 'Project title', 'unapp' ), 'meta' => _x( 'Campaign · 2024', 'Project meta', 'unapp' ) ),
 );
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"},"anchor":"work"} -->
@@ -35,7 +35,7 @@ $unapp_projects = array(
 <!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
 <div class="wp-block-column">
 <!-- wp:image {"width":"100%","aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/' . $unapp_project['image'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_project['title'] ); ?>" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%;height:auto"/></figure>
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/showcase/' . $unapp_project['image'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_project['title'] ); ?>" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%;height:auto"/></figure>
 <!-- /wp:image -->
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
 <h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_project['title'] ); ?></h3>
@@ -54,7 +54,7 @@ $unapp_projects = array(
 <!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
 <div class="wp-block-column">
 <!-- wp:image {"width":"100%","aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/' . $unapp_project['image'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_project['title'] ); ?>" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%;height:auto"/></figure>
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/showcase/' . $unapp_project['image'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_project['title'] ); ?>" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%;height:auto"/></figure>
 <!-- /wp:image -->
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
 <h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_project['title'] ); ?></h3>

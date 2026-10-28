@@ -4,17 +4,17 @@ from pgen import *
 B = "unapp, unapp_blog, unapp_content, posts, query"
 
 # ---------------------------------------------------------------- magazine masthead
-body = section(
-    group(
-        h1(t("The Slow Build"), align="center", size="xxx-large", line_height="1.05") + "\n" +
-        para(t("Essays on making software carefully, published most Fridays."),
-             align="center", color="muted", size="large") + "\n" +
-        separator(style="gradient", color=None),
-        layout="constrained", content_size="720px", gap="30"),
-    pad=("70", "70"), gap="0")
+body = starter_hero(
+    t('The Slow Build · Independent essays', "Starter hero eyebrow"),
+    t('Good software starts with care.'),
+    t('Essays on the craft of building software, the people behind it and the decisions that last. A thoughtful read, most Fridays.'),
+    'assets/images/showcase/editorial-notes.svg', tattr('The Slow Build editorial notebook with notes on craft, people and systems'),
+    [{"text": t('Read the latest'), "url": home_anchor("latest")},
+     {"text": t('Subscribe by email'), "url": home_anchor("subscribe"), "style": "outline"}],
+    note=t('Independent writing · No sponsorship · Browse the archive at your own pace'))
 write_pattern("blog-masthead", title="Blog: masthead", cats=B + ", header",
               keywords="blog, masthead, title, magazine, header",
-              desc="A magazine-style masthead: publication name, standfirst and a gradient rule.",
+              desc="An editorial introduction with original cover artwork, recent writing and subscription links.",
               body=body)
 
 # ---------------------------------------------------------------- category tiles (WP 7.0)

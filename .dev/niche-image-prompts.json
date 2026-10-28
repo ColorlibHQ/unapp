@@ -1,0 +1,38 @@
+{
+  "provider": "OpenAI imagegen built-in tool",
+  "purpose": "Original photographs for free native niche starters. Illustrative demonstration images, not actual client work, organisations or impact evidence.",
+  "images": [
+    {
+      "file": "assets/images/showcase/niche-home-services.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: homepage hero photograph for a free WordPress Home Services starter. Create an original editorial photograph of a tidy practical residential renovation workspace: an oak workbench with a well-used cordless drill, tape measure, neatly arranged hand tools and wood shavings, with a softly focused bright lived-in home hallway behind. No people, no brands or text, no watermark, no collage. Warm natural daylight, muted navy and warm wood tones, credible small local repair business rather than luxury property. Landscape 4:3, main tools central and visible when cropped on a phone, natural photographic detail."
+    },
+    {
+      "file": "assets/images/showcase/niche-cleaning.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: homepage hero photograph for a free WordPress Cleaning Company starter. Create an original editorial photograph of a calm freshly cleaned ordinary home kitchen, warm white cabinetry, pale oak details, sunlit window, a small organized cleaning caddy with unbranded spray bottles and neatly folded teal microfiber cloth on the island. No people, no readable text, no logos, no watermark, no collage. Soft morning sunlight, fresh but believable lived-in home, muted teal and soft cream colors, no exaggerated sparkles. Landscape 4:3, caddy and clean surfaces centered for mobile cropping."
+    },
+    {
+      "file": "assets/images/showcase/niche-salon.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: homepage hero photograph for a free WordPress Salon and Barber starter. Create an original editorial photograph of an intimate independent unisex hair studio: one warm tan leather barber styling chair in front of a tall rounded mirror, a small oak counter with neatly arranged unbranded scissors, combs and clippers, soft plaster walls and a green plant. No people, no lettering, no logos, no watermark, no collage. Warm window light, inviting restrained editorial interiors photography, rose-clay and warm walnut accents, realistic local shop rather than a luxury hotel. Landscape 4:3, chair centered for mobile cropping."
+    },
+    {
+      "file": "assets/images/showcase/niche-coach.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: hero photograph for a free WordPress Coach and Consultant starter. Original editorial photograph of a quiet independent coaching workspace: two comfortable chairs angled toward a small oak table, a blank open notebook, a simple water carafe and glasses, a green plant and softly lit blue-grey plaster walls. Natural window light, welcoming and practical rather than a luxury office, no people, no readable writing, no logos, no watermark, no collage. Landscape 4:3 with table and chairs centered for mobile cropping. Credible calm space for business coaching conversations."
+    },
+    {
+      "file": "assets/images/showcase/niche-photographer.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: featured landscape portfolio photograph for a free WordPress Photographer starter. An original fine-art editorial photograph of a rugged Atlantic coastline at dawn, sculptural sea cliffs, a small crescent of pale sand and gentle mist, muted sea-green water and amber morning light. No people, no buildings, no text, no logo, no watermark, no collage. Carefully composed natural photography, tactile rock and wave detail, subtle film grain, landscape 4:3 with the main cliff and bay inside the central 80 percent for mobile cropping. This is a sample portfolio image, not a picture of photographic equipment."
+    },
+    {
+      "file": "assets/images/showcase/niche-photographer-still-life.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: still-life portfolio photograph for a free WordPress Photographer starter. Original editorial still life of three handmade unbranded ceramic vessels with imperfect matte cream and muted terracotta glazes on a rough linen-covered wooden surface, soft window shadows, one small branch, restrained warm neutral palette. Art-directed but natural photographic detail, no people, no text, no logos, no watermark, no collage. Landscape 4:3, centered composition that crops elegantly on mobile. A separate distinctive photograph suitable for a photographer's sample portfolio."
+    },
+    {
+      "file": "assets/images/showcase/niche-photographer-architecture.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: architecture portfolio photograph for a free WordPress Photographer starter. Original editorial architectural photograph of a quiet modernist concrete staircase with curved plaster wall, long angular sunlight and deep shadow, pale warm stone surfaces and one narrow blue-sky opening. Strong geometric composition, realistic materials, muted neutral palette, no people, no text, no branding, no watermark, no collage. Landscape 4:3 and centered geometry suitable for mobile cropping. A separate distinctive sample portfolio photograph."
+    },
+    {
+      "file": "assets/images/showcase/niche-nonprofit.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: homepage hero photograph for a free WordPress Nonprofit starter. Original documentary-style editorial photograph of a neighbourhood community hall table prepared for volunteers: several reusable canvas grocery bags with fresh seasonal vegetables, tins with no readable labels, folded aprons and a simple basket; a few empty chairs and warm windows softly out of focus behind. Uplifting everyday community atmosphere, natural morning light, sage green and warm ochre palette. No people, no distressed beneficiaries, no text, no logos, no watermark, no collage. Landscape 4:3 with bags and produce centered for phone cropping. An illustrative scene, not evidence of a real organisation or impact."
+    }
+  ]
+}

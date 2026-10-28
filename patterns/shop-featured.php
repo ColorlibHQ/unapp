@@ -19,7 +19,7 @@
 <p class="has-text-align-center has-primary-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'New in', 'Section eyebrow label', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"textAlign":"center"} -->
-<h2 class="wp-block-heading has-text-align-center"><?php esc_html_e( 'The four most recent things', 'unapp' ); ?></h2>
+<h2 class="wp-block-heading has-text-align-center"><?php esc_html_e( 'Find your next everyday essential', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"align":"center","textColor":"muted","fontSize":"large"} -->
 <p class="has-text-align-center has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Everything is made in small runs, so this changes more often than we plan for.', 'unapp' ); ?></p>

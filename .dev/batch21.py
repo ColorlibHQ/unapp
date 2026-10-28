@@ -8,28 +8,24 @@ ED = "unapp, unapp_education"
 EV = "unapp, unapp_events"
 
 # ================================================================= REAL ESTATE
-body = section_std(
-    split(
-        eyebrow(t("Sales and lettings, Bath", "Estate agent hero eyebrow"), align="left") + "\n" +
-        h1(t("We only take on houses we would live in ourselves"), size="xxx-large",
-                line_height="1.05") + "\n" +
-        para(t("A small agency covering Bath and the villages east of it. Twelve properties on the books at a time, because that is how many we can show properly."),
-             color="muted", size="large") + "\n" +
-        buttons([{"text": t("See what is for sale"), "url": home_anchor("listings")},
-                 {"text": t("Book a valuation"), "url": home_anchor("valuation"), "style": "outline"}]),
-        image(uri("assets/images/abstract/skyline.svg"), tattr("Bath rooftops"), radius=CARD_RADIUS),
-        left_width="55%", right_width="45%"),
-    gap="0")
+body = starter_hero(
+    t('Lansdown & Co. · Bath and nearby villages', "Starter hero eyebrow"),
+    t('Find a place that feels like home.'),
+    t('A small local team, a carefully chosen collection of homes and time to show you around properly. Explore what is available or talk to us about your next move.'),
+    'assets/images/showcase/property-crescent.webp', tattr('Fictional Georgian limestone townhouse with a green front door'),
+    [{"text": t('Explore the homes'), "url": home_anchor("listings")},
+     {"text": t('Request a valuation'), "url": home_anchor("valuation"), "style": "outline"}],
+    note=t('Local knowledge · Published fees · A named agent from first call to completion'))
 write_pattern("realestate-hero", title="Property: introduction", cats=RE + ", banner, featured",
               keywords="real estate, property, estate agent, hero, homes",
               desc="An estate agency introduction with a valuation call to action.",
               body=body)
 
 LISTINGS = [
-    ("skyline", "Lansdown Crescent", "£1,250,000", "4 bed · 2 bath · Grade I listed"),
-    ("desk", "Walcot Street", "£465,000", "2 bed · 1 bath · Top-floor flat"),
-    ("gathering", "Bathford Mill", "£720,000", "3 bed · 2 bath · Converted mill"),
-    ("studio-1", "Bear Flat", "£389,000", "2 bed · 1 bath · Victorian terrace"),
+    ("property-crescent", "Lansdown Crescent", "£1,250,000", "4 bed · 2 bath · Grade I listed"),
+    ("property-flat", "Walcot Street", "£465,000", "2 bed · 1 bath · Top-floor flat"),
+    ("property-mill", "Bathford Mill", "£720,000", "3 bed · 2 bath · Converted mill"),
+    ("property-terrace", "Bear Flat", "£389,000", "2 bed · 1 bath · Victorian terrace"),
 ]
 prelude = "$unapp_listings = array(\n"
 for img, name, price, meta in LISTINGS:
@@ -44,7 +40,7 @@ prelude += ");\n"
 # align-items:flex-start the photograph's figure shrinks to its content, so its
 # box cannot be reserved before the file arrives.
 listing = group(
-    image(php_url("get_theme_file_uri( 'assets/images/abstract/' . $unapp_listing['image'] . '.svg' )"),
+    image(php_url("get_theme_file_uri( 'assets/images/showcase/' . $unapp_listing['image'] . '.webp' )"),
           php_attr("$unapp_listing['name']"), radius=CARD_RADIUS, aspect="4/3", scale="cover") + "\n" +
     card_title(php("$unapp_listing['name']")) + "\n" +
     para(php("$unapp_listing['price']"), color="primary", weight="700") + "\n" +
@@ -116,17 +112,14 @@ write_pattern("realestate-faq", title="Property: fee questions", cats=RE + ", un
               body=body)
 
 # ================================================================= MEDICAL
-body = section_std(
-    split(
-        eyebrow(t("NHS and private · Est. 1994", "Practice hero eyebrow"), align="left") + "\n" +
-        h1(t("A dental practice that runs on time")) + "\n" +
-        para(t("Six surgeries on Fore Street, open six days a week, with emergency slots kept back every morning for the people who need them that day."),
-             color="muted", size="large") + "\n" +
-        buttons([{"text": t("Book an appointment"), "url": tel("+44 1392 555 0146")},
-                 {"text": t("Our treatments"), "url": home_anchor("treatments"), "style": "outline"}]),
-        image(uri("assets/images/abstract/studio-2.svg"), tattr("The practice"), radius=CARD_RADIUS),
-        left_width="55%", right_width="45%"),
-    gap="0")
+body = starter_hero(
+    t('Fore Street Dental · Exeter', "Starter hero eyebrow"),
+    t('Good care starts with feeling at ease.'),
+    t('A friendly local dental team, clear treatment choices and time for your questions. Call us to discuss an appointment or explore the care we offer.'),
+    'assets/images/showcase/practice-room.webp', tattr('Bright dental surgery with a sage-green chair and modern equipment'),
+    [{"text": t('Call for an appointment'), "url": tel("+44 1392 555 0146")},
+     {"text": t('Explore treatments'), "url": home_anchor("treatments"), "style": "outline"}],
+    note=t('Open six days a week · Ask the team about appointment availability'))
 write_pattern("medical-hero", title="Practice: introduction", cats=ME + ", banner, featured",
               keywords="medical, dental, clinic, practice, hero, appointment",
               desc="A practice introduction with booking and treatments calls to action.",

@@ -109,9 +109,9 @@ write_pattern("faq", title="FAQ accordion", cats="unapp, unapp_utility, text, fe
 body = section(
     columns([
         column(heading(t("Ready to see it with your own projects?"), size="x-large", color="base") + "\n" +
-               para(t("Import a board and watch it come to life. It takes about five minutes."), color="base"),
+               para(t("Find the right plan for your team, from a free workspace to a shared home for every project."), color="base"),
                width="62%", vertical_align="center", gap="20"),
-        column(buttons([{"text": t("Start free trial"), "url": home_anchor("pricing"), "bg": "base", "color": "primary"}],
+        column(buttons([{"text": t("Explore plans"), "url": home_anchor("pricing"), "bg": "base", "color": "primary"}],
                        justify="right"), width="38%", vertical_align="center"),
     ], align="wide", gap="50", vertical_align="center"),
     style_variation="is-style-section-gradient", pad=("60", "60"), gap="0")

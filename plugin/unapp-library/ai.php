@@ -93,26 +93,27 @@ function unapp_ai_ready() {
  */
 function unapp_ai_extract_text( $markup ) {
 	$strings = array();
-
-	if ( ! preg_match_all(
-		'#<(h[1-6]|p|li|a)(\s[^>]*)?>(.*?)</\1>#s',
-		$markup,
-		$matches,
-		PREG_SET_ORDER
-	) ) {
-		return $strings;
-	}
-
-	foreach ( $matches as $match ) {
-		$text = trim( wp_strip_all_tags( $match[3] ) );
-
-		// Very short fragments are labels and dates; rewriting them adds noise.
-		if ( mb_strlen( $text ) < 3 || is_numeric( $text ) ) {
-			continue;
+	// Older Unapp versions do not have the shared text walker yet.
+	if ( ! function_exists( 'unapp_map_html_text' ) ) {
+		preg_match_all( '#<(h[1-6]|p|li|a)(\s[^>]*)?>(.*?)</\\1>#s', $markup, $matches, PREG_SET_ORDER );
+		foreach ( $matches as $match ) {
+			$text = trim( wp_strip_all_tags( $match[3] ) );
+			if ( mb_strlen( $text ) >= 3 && ! is_numeric( $text ) ) {
+				$strings[] = $text;
+			}
 		}
-
-		$strings[] = $text;
+		return array_values( array_unique( $strings ) );
 	}
+	unapp_map_html_text(
+		$markup,
+		static function ( $text ) use ( &$strings ) {
+			$trimmed = trim( $text );
+			if ( mb_strlen( $trimmed ) >= 3 && ! is_numeric( $trimmed ) ) {
+				$strings[] = $trimmed;
+			}
+			return $text;
+		}
+	);
 
 	return array_values( array_unique( $strings ) );
 }
@@ -140,6 +141,7 @@ function unapp_ai_rewrite( $strings, $description ) {
 		"array of exactly the same length, where each item is a replacement for the string at " .
 		"the same index.\n\nRules:\n" .
 		"- Keep each replacement close to the original length. These sit in a fixed layout.\n" .
+		"- Inline formatting splits sentences into adjacent fragments. Keep fragments short and preserve their meaning; do not expand each fragment into a full sentence.\n" .
 		"- Keep the register: a heading stays a heading, a button label stays two or three words.\n" .
 		"- Keep any number that is structural (prices, times, counts) unless the business " .
 		"description gives you a real one to use.\n" .
@@ -235,7 +237,9 @@ function unapp_ai_rewrite( $strings, $description ) {
 	$text = trim( preg_replace( '/^```(?:json)?|```$/m', '', $text ) );
 	$out  = json_decode( $text, true );
 
-	if ( ! is_array( $out ) || count( $out ) !== count( $strings ) ) {
+	if ( ! is_array( $out ) || count( $out ) !== count( $strings )
+		|| array_keys( $out ) !== range( 0, count( $strings ) - 1 )
+		|| count( array_filter( $out, static function ( $item ) { return is_string( $item ) && '' !== trim( $item ); } ) ) !== count( $strings ) ) {
 		return new WP_Error(
 			'unapp_ai_shape',
 			__( 'The reply did not line up with the page. Nothing was changed — try again.', 'unapp-library' )
@@ -285,33 +289,43 @@ function unapp_ai_response_text( $provider, $data ) {
  * @param array  $map    Original => replacement.
  * @return string
  */
-function unapp_ai_apply( $markup, $map ) {
-	uksort(
-		$map,
-		static function ( $a, $b ) {
-			return mb_strlen( $b ) <=> mb_strlen( $a );
+function unapp_ai_apply( $markup, $map, &$changed = 0, &$used = array() ) {
+	$changed = 0;
+	$used = array();
+	if ( ! function_exists( 'unapp_map_html_text' ) ) {
+		return preg_replace_callback( '/>([^<]+)</', static function ( $match ) use ( $map, &$changed, &$used ) {
+			$text = $match[1];
+			if ( isset( $map[ $text ] ) && $map[ $text ] !== $text ) {
+				++$changed;
+				$used[ $text ] = $map[ $text ];
+				return '>' . esc_html( $map[ $text ] ) . '<';
+			}
+			return $match[0];
+		}, $markup );
+	}
+	return unapp_map_html_text(
+		$markup,
+		static function ( $text ) use ( $map, &$changed, &$used ) {
+			$key = trim( $text );
+			if ( ! isset( $map[ $key ] ) || $map[ $key ] === $key ) {
+				return $text;
+			}
+			++$changed;
+			$used[ $key ] = $map[ $key ];
+			$start = strlen( $text ) - strlen( ltrim( $text ) );
+			return substr( $text, 0, $start ) . $map[ $key ] . substr( $text, $start + strlen( $key ) );
 		}
 	);
-
-	foreach ( $map as $from => $to ) {
-		if ( $from === $to ) {
-			continue;
-		}
-
-		$markup = str_replace( '>' . $from . '<', '>' . esc_html( $to ) . '<', $markup );
-	}
-
-	return $markup;
 }
 
 /**
- * Rewrite every page a starter created.
+ * Prepare a reviewable rewrite without modifying any page.
  *
  * @param int[]  $page_ids    Page IDs.
  * @param string $description The business.
- * @return array|WP_Error array( 'pages' => int, 'strings' => int )
+ * @return array|WP_Error Proposal with source hashes, or a provider error.
  */
-function unapp_ai_rewrite_pages( $page_ids, $description ) {
+function unapp_ai_prepare_rewrite( $page_ids, $description ) {
 	$strings = array();
 	$pages   = array();
 
@@ -336,16 +350,59 @@ function unapp_ai_rewrite_pages( $page_ids, $description ) {
 		return $map;
 	}
 
-	$changed = 0;
-
+	$proposal = array( 'id' => wp_generate_uuid4(), 'user' => get_current_user_id(), 'pages' => array(), 'map' => array() );
 	foreach ( $pages as $id => $markup ) {
-		$updated = unapp_ai_apply( $markup, $map );
-
+		$updated = unapp_ai_apply( $markup, $map, $replacements, $used );
 		if ( $updated !== $markup ) {
-			wp_update_post( array( 'ID' => $id, 'post_content' => wp_slash( $updated ) ) );
-			++$changed;
+			$proposal['map'] += $used;
+			$proposal['pages'][ $id ] = array( 'source' => hash( 'sha256', $markup ), 'updated' => $updated, 'changes' => $replacements );
 		}
 	}
+	return $proposal;
+}
 
-	return array( 'pages' => $changed, 'strings' => count( $map ) );
+/**
+ * Save a reviewed proposal only while every source page is still unchanged.
+ *
+ * @param array $proposal Locally stored proposal belonging to the current user.
+ * @return array|WP_Error Number of saved pages and text replacements.
+ */
+function unapp_ai_apply_proposal( $proposal ) {
+	if ( (int) ( $proposal['user'] ?? 0 ) !== get_current_user_id() ) {
+		return new WP_Error( 'unapp_ai_owner', __( 'Generate a rewrite preview with your own account first.', 'unapp-library' ) );
+	}
+	foreach ( $proposal['pages'] as $id => $change ) {
+		$post = get_post( $id );
+		if ( ! $post || ! current_user_can( 'edit_post', $id ) || hash( 'sha256', $post->post_content ) !== $change['source'] ) {
+			return new WP_Error( 'unapp_ai_stale', __( 'A page changed after this preview was generated. Nothing was applied. Generate a new preview to keep those edits.', 'unapp-library' ) );
+		}
+	}
+	$changed = 0;
+	$strings_changed = 0;
+	foreach ( $proposal['pages'] as $id => $change ) {
+		if ( function_exists( 'unapp_keep_revision' ) ) {
+			unapp_keep_revision( $id );
+		} else {
+			wp_save_post_revision( $id );
+		}
+		$saved = wp_update_post( array( 'ID' => $id, 'post_content' => wp_slash( $change['updated'] ) ), true );
+		if ( is_wp_error( $saved ) || ! $saved ) {
+			return new WP_Error( 'unapp_ai_save', __( 'A rewritten page could not be saved. Check your Pages list before trying again; earlier pages may have been updated.', 'unapp-library' ) );
+		}
+		++$changed;
+		$strings_changed += $change['changes'];
+	}
+	return array( 'pages' => $changed, 'strings' => $strings_changed );
+}
+
+/**
+ * Compatibility helper for integrations intentionally applying in one step.
+ *
+ * @param int[]  $page_ids Pages to rewrite.
+ * @param string $description Business description.
+ * @return array|WP_Error Saved counts or provider/save error.
+ */
+function unapp_ai_rewrite_pages( $page_ids, $description ) {
+	$proposal = unapp_ai_prepare_rewrite( $page_ids, $description );
+	return is_wp_error( $proposal ) ? $proposal : unapp_ai_apply_proposal( $proposal );
 }

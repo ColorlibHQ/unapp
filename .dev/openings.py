@@ -27,13 +27,20 @@ OPENINGS = [
     "blog-about", "blog-contact",
     "fitness-schedule", "fitness-memberships", "fitness-location",
     "restaurant-menu", "restaurant-kitchen", "restaurant-hours",
-    "agency-clients", "agency-team", "agency-contact",
+    "agency-clients", "agency-case-study", "agency-team", "agency-contact",
     "shop-workshop", "shop-faq", "shop-featured",
     "realestate-listings", "realestate-fees", "realestate-valuation",
     "medical-services", "medical-team", "medical-hours",
     "education-courses", "education-tutors", "education-contact",
     "events-programme", "events-tickets", "events-venue",
     "finance-services", "finance-team", "finance-contact",
+    "home-services-services", "home-services-location",
+    "cleaning-services", "cleaning-location",
+    "salon-services", "salon-location",
+    "home-services-contact", "cleaning-contact", "salon-contact",
+    "coach-services", "coach-about", "coach-contact",
+    "photographer-work", "photographer-about", "photographer-contact",
+    "nonprofit-programmes", "nonprofit-values", "nonprofit-support", "nonprofit-contact",
 ]
 SUFFIX = "-h1"
 

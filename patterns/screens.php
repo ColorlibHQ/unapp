@@ -12,19 +12,19 @@
 
 $unapp_screens = array(
 	array(
-		'file'    => 'dashboard-1.avif',
-		'caption' => _x( 'Portfolio overview', 'Gallery caption', 'unapp' ),
-		'alt'     => _x( 'Dashboard with balance history chart and project risk gauge', 'Image alt text', 'unapp' ),
+		'file'    => 'showcase/workspace-board.svg',
+		'caption' => _x( 'Project board', 'Gallery caption', 'unapp' ),
+		'alt'     => _x( 'Launch tasks grouped into To do, In progress and Ready', 'Image alt text', 'unapp' ),
 	),
 	array(
-		'file'    => 'dashboard-2.avif',
+		'file'    => 'showcase/workspace-report.svg',
 		'caption' => _x( 'Analytics and reports', 'Gallery caption', 'unapp' ),
-		'alt'     => _x( 'Dashboard with analytics widgets and charts', 'Image alt text', 'unapp' ),
+		'alt'     => _x( 'Task completion, capacity and project progress', 'Image alt text', 'unapp' ),
 	),
 	array(
-		'file'    => 'dashboard-3.avif',
+		'file'    => 'showcase/workspace-timeline.svg',
 		'caption' => _x( 'Project timeline', 'Gallery caption', 'unapp' ),
-		'alt'     => _x( 'Dashboard with project timeline and task list', 'Image alt text', 'unapp' ),
+		'alt'     => _x( 'Project timeline from discovery to launch', 'Image alt text', 'unapp' ),
 	),
 );
 ?>
@@ -39,7 +39,7 @@ $unapp_screens = array(
 		<h2 class="wp-block-heading has-text-align-center"><?php esc_html_e( 'A closer look at Unapp', 'unapp' ); ?></h2>
 		<!-- /wp:heading -->
 		<!-- wp:paragraph {"align":"center","textColor":"muted","fontSize":"large"} -->
-		<p class="has-text-align-center has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Clean dashboards that surface what matters. Click any screen to enlarge it.', 'unapp' ); ?></p>
+		<p class="has-text-align-center has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'One project, three useful views. Open a screen to explore the details.', 'unapp' ); ?></p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->

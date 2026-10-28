@@ -29,7 +29,7 @@
 <!-- wp:list {"className":"is-style-checklist"} -->
 <ul class="wp-block-list is-style-checklist">
 <!-- wp:list-item -->
-<li><?php esc_html_e( 'Tables of two to six: send the form, or ring after three', 'unapp' ); ?></li>
+<li><?php esc_html_e( 'Tables of two to six: send a request, or ring after three', 'unapp' ); ?></li>
 <!-- /wp:list-item -->
 <!-- wp:list-item -->
 <li><?php esc_html_e( 'Seven or more, or the whole room: email and we will plan it with you', 'unapp' ); ?></li>

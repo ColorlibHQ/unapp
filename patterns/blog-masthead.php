@@ -5,26 +5,50 @@
  * Categories: unapp, unapp_blog, unapp_content, posts, query, header
  * Keywords: blog, masthead, title, magazine, header
  * Viewport Width: 1400
- * Description: A magazine-style masthead: publication name, standfirst and a gradient rule.
+ * Description: An editorial introduction with original cover artwork, recent writing and subscription links.
  *
  * @package Unapp
  */
 
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained","contentSize":"720px"}} -->
-<div class="wp-block-group">
-<!-- wp:heading {"level":1,"textAlign":"center","fontSize":"xxx-large","style":{"typography":{"lineHeight":"1.05"}}} -->
-<h1 class="wp-block-heading has-text-align-center has-xxx-large-font-size" style="line-height:1.05;"><?php esc_html_e( 'The Slow Build', 'unapp' ); ?></h1>
-<!-- /wp:heading -->
-<!-- wp:paragraph {"align":"center","textColor":"muted","fontSize":"large"} -->
-<p class="has-text-align-center has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Essays on making software carefully, published most Fridays.', 'unapp' ); ?></p>
+<!-- wp:group {"align":"full","className":"unapp-starter-hero","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull unapp-starter-hero" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|60","left":"var:preset|spacing|60"}}}} -->
+<div class="wp-block-columns are-vertically-aligned-center alignwide">
+<!-- wp:column {"verticalAlignment":"center","width":"52%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:52%;">
+<!-- wp:paragraph {"align":"left","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
+<p class="has-text-align-left has-primary-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'The Slow Build · Independent essays', 'Starter hero eyebrow', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:separator {"className":"is-style-gradient"} -->
-<hr class="wp-block-separator has-alpha-channel-opacity is-style-gradient"/>
-<!-- /wp:separator -->
+<!-- wp:heading {"level":1,"fontSize":"xxx-large","style":{"typography":{"lineHeight":"1.05"}}} -->
+<h1 class="wp-block-heading has-xxx-large-font-size" style="line-height:1.05;"><?php esc_html_e( 'Good software starts with care.', 'unapp' ); ?></h1>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"muted","fontSize":"large"} -->
+<p class="has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'Essays on the craft of building software, the people behind it and the decisions that last. A thoughtful read, most Fridays.', 'unapp' ); ?></p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons {"className":"unapp-starter-actions","style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
+<div class="wp-block-buttons unapp-starter-actions">
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#latest' ) ); ?>"><?php esc_html_e( 'Read the latest', 'unapp' ); ?></a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#subscribe' ) ); ?>"><?php esc_html_e( 'Subscribe by email', 'unapp' ); ?></a></div>
+<!-- /wp:button -->
 </div>
-<!-- /wp:group -->
+<!-- /wp:buttons -->
+<!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
+<p class="has-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'Independent writing · No sponsorship · Browse the archive at your own pace', 'unapp' ); ?></p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"verticalAlignment":"center","width":"48%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:48%;">
+<!-- wp:image {"width":"100%","aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/showcase/editorial-notes.svg' ) ); ?>" alt="<?php esc_attr_e( 'The Slow Build editorial notebook with notes on craft, people and systems', 'unapp' ); ?>" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%;height:auto"/></figure>
+<!-- /wp:image -->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
 </div>
 <!-- /wp:group -->
