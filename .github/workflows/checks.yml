@@ -75,6 +75,15 @@ jobs:
             UNAPP_PREVIEW_STARTER="$starter" UNAPP_PREVIEW_OUTPUT="$RUNNER_TEMP/unapp-niches" UNAPP_PREVIEW_EDITOR=1 wp --path="$RUNNER_TEMP/unapp-wp" --skip-themes --skip-plugins eval-file "$GITHUB_WORKSPACE/.dev/render-starter.php"
           done
           UNAPP_STARTER_PREVIEW_DIR="$RUNNER_TEMP/unapp-niches" UNAPP_STARTERS=home-services,cleaning,salon,coach,photographer,nonprofit PLAYWRIGHT_MODULE="$RUNNER_TEMP/unapp-design-browser/node_modules/playwright" node .dev/tests/starters.cjs
+      - name: Save editor fixture diagnostics
+        if: failure() && matrix.wordpress == 'latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: editor-fixture-diagnostics-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/unapp-design/editor.html
+            ${{ runner.temp }}/unapp-design/paths.json
+          retention-days: 1
       - name: Save rendered UI fixture
         if: matrix.wordpress == 'latest'
         uses: actions/upload-artifact@v4

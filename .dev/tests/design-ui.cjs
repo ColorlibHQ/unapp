@@ -32,6 +32,8 @@ if ( screenshots ) fs.mkdirSync( screenshots, { recursive: true } );
 			return route.abort();
 		} );
 		const editor = await context.newPage();
+		editor.on( 'pageerror', error => console.error( 'Editor fixture:', error.message ) );
+		editor.on( 'requestfailed', request => console.error( 'Fixture request failed:', request.url() ) );
 		await editor.goto( 'http://design-fixture.test/editor.html' );
 		const validation = await editor.evaluate( () => {
 			const invalid = [];
