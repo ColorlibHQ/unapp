@@ -1,0 +1,348 @@
+{
+  "published": "2026-10-28",
+  "entry_corrections": [
+    {
+      "id": 9446,
+      "url": "https://colorlib.com/wp/free-wordpress-themes/",
+      "format": "cards",
+      "before_sha256": "112f2ed00976f880c6f6cd870acb45d122871a5659f81ce307eb1ccfafc979ec",
+      "after_sha256": "c596d57edfe04a747f7383607aa686ddea865ed584d16dbc2fa7050e7a04511d"
+    },
+    {
+      "id": 10966,
+      "url": "https://colorlib.com/wp/free-photography-wordpress-themes/",
+      "format": "cards",
+      "before_sha256": "e8d607a4733249af07fdf3687d8921bf004dbc82d47d64f945c91030ffd4d5d6",
+      "after_sha256": "c5db3766d3008ff0d7434c769aa271eea1dc80c74dd1a6ba7a79e9dd0742d94f"
+    },
+    {
+      "id": 116484,
+      "url": "https://colorlib.com/wp/free-charity-wordpress-themes/",
+      "format": "cards",
+      "before_sha256": "7c1a0ee679984f4370e26bcbe9b5f00609be45dc1d87958b46305ba2c856a245",
+      "after_sha256": "84a9d298b4810a954bf37ffbbf606105bf7f51574a3795d9352ab2fd5c76b06d"
+    },
+    {
+      "id": 229751,
+      "url": "https://colorlib.com/wp/free-personal-wordpress-themes/",
+      "format": "cards",
+      "before_sha256": "fdc2687b244b6e1fb21ae34d32fc6cf712eb5d3be3b55146044353909841fa00",
+      "after_sha256": "59e5febc22b26d35e113114959ce5cdc4d24323e08dd4f8b7e13acc26c84801b"
+    },
+    {
+      "id": 12945,
+      "url": "https://colorlib.com/wp/free-ecommerce-wordpress-themes/",
+      "format": "cards",
+      "before_sha256": "e225fe67f433ef1f6ed73a37954c94254faa08f286e7e04a374019831316b77e",
+      "after_sha256": "6e895f6955e443e3145fb1b27d8ec1d266617ae3c0043c4092191329eeba8383"
+    },
+    {
+      "id": 109209,
+      "url": "https://colorlib.com/wp/free-medical-wordpress-theme/",
+      "format": "cards",
+      "before_sha256": "1cde278a453a8b17dd3ddc9eb7a404dc0e57a1d9dc7f6e69a1473f3fe0e73ffc",
+      "after_sha256": "b7d82279609b2d7db3fe86fc3082145e66ee77d89ae6b0ce722566f9248e8d14"
+    },
+    {
+      "id": 116669,
+      "url": "https://colorlib.com/wp/free-event-wordpress-themes/",
+      "format": "cards",
+      "before_sha256": "b0a34bf00a28948f7969eee3acfba531393cb3babeabc5a5b4ce70bcaae5fa5d",
+      "after_sha256": "aab11fd4d6312d4cbfaea11ae9c129ac3ee063ccc2a1580683cbcdcd3322fb4f"
+    },
+    {
+      "id": 3158,
+      "url": "https://colorlib.com/wp/best-portfolio-wordpress-themes/",
+      "format": "glance",
+      "before_sha256": "3239a3e5e2a9b72180d26122e3df9e9677611d629a7e91fcfa8bbedd7cbbc48c",
+      "after_sha256": "5c8b747ace723ab0a4bb816146a983ff2ef46a55259d41b3525ec93c2a80691b"
+    },
+    {
+      "id": 9352,
+      "url": "https://colorlib.com/wp/best-one-page-wordpress-themes/",
+      "format": "plain",
+      "before_sha256": "1e7cbf6c55c9c0c9b08eb032be380eeab5f440a4b01026a64a557a533255840b",
+      "after_sha256": "5ee8374dbb945b4ce0aa08a68cfc4e707b8a48321e945a738fc581d238148c91"
+    },
+    {
+      "id": 116741,
+      "url": "https://colorlib.com/wp/free-gallery-wordpress-theme/",
+      "format": "cards",
+      "before_sha256": "cc1e2e9ebaf3602ec9f2f51711591a6f55f75bfe68ee975e15cb39e76604ee9f",
+      "after_sha256": "e88ba7575d13d76d0d570739f05d837f729c1cd036cacdee67e5482aad7b3e0c"
+    },
+    {
+      "id": 13365,
+      "url": "https://colorlib.com/wp/free-wordpress-travel-themes/",
+      "format": "cards",
+      "before_sha256": "fdf30b609e3f62f24c07d942012fdd0414db2bf5a91b899c749687cc48f42e80",
+      "after_sha256": "9d84ffc81905787b06af795f8ec654ab7f6dafd3f8fb867c9e2c76325d4cd6aa"
+    },
+    {
+      "id": 3639,
+      "url": "https://colorlib.com/wp/free-wordpress-wedding-themes/",
+      "format": "cards",
+      "before_sha256": "d9131e058920f187ee13a870a86d99c3c37800faa29fea1d5efb0c2c9bc614a8",
+      "after_sha256": "ed7682412b23a5f74bfd2514cdbbc120c3e2338e08808005235736b2308254eb"
+    },
+    {
+      "id": 116713,
+      "url": "https://colorlib.com/wp/free-fashion-wordpress-theme/",
+      "format": "cards",
+      "before_sha256": "7a7b3191c12452c5bc99e5f1c8aa253b917b83469dacae05966c3e74dc2f440d",
+      "after_sha256": "dcf2957a943a64e5cb144d49c6d70dc3e5005001c9dd88349becab80b6b6e144"
+    },
+    {
+      "id": 230474,
+      "url": "https://colorlib.com/wp/free-bakery-wordpress-themes/",
+      "format": "cards",
+      "before_sha256": "627ad0c9262fa9b79d76f989e07a86eb8675286fb1451367ebcc4a19b69b23d8",
+      "after_sha256": "166abf3db92fb44977a9591ab988e9797d982180f7748678f70fb8714defd933"
+    },
+    {
+      "id": 8891,
+      "url": "https://colorlib.com/wp/best-personal-blog-wordpress-themes/",
+      "format": "plain",
+      "before_sha256": "b23ee1a7083ca6a12598d4779b7c726864373a18c6d69a514bc3975dd50aec6a",
+      "after_sha256": "6012e2c8afeaca47627d22d8c6bea49bade0e7ad87231ac0e3ba99a3ad7d2f97"
+    },
+    {
+      "id": 30174,
+      "url": "https://colorlib.com/wp/creative-agency-wordpress-themes/",
+      "format": "plain",
+      "before_sha256": "63fd17389d1894fcbd51aedf5e73f2ba717cfb0b876e854c8e54040046529c09",
+      "after_sha256": "0dc932268cbab612f40c322d89bd219cd1694aa9e89c91c59d74b3735169cd72"
+    },
+    {
+      "id": 15476,
+      "url": "https://colorlib.com/wp/consulting-wordpress-themes/",
+      "format": "plain",
+      "before_sha256": "15e3ce45b63b6b59e074080ec7fd16fe14fa39c49d6107f6feaf7627c70f8d1b",
+      "after_sha256": "dc91986b57ed56a99b1cd77fa2d648a3224f867e39efa31a2a510408c5500e9a"
+    },
+    {
+      "id": 90803,
+      "url": "https://colorlib.com/wp/transportation-logistics-wordpress-themes/",
+      "format": "plain",
+      "before_sha256": "4bd78ea5854f4ba05bac2fd92e751be9bc77b17195ead99e47dff21e2258feda",
+      "after_sha256": "7059ec7c6c6b2bf4e0a9b241ab0eda36be537f598571dc1038437cea5d866b13"
+    },
+    {
+      "id": 328812,
+      "url": "https://colorlib.com/wp/equestrian-wordpress-themes/",
+      "format": "plain",
+      "before_sha256": "849954826b9730e86ba9c7fa0a75d5f9212295b0c9cb2a0a6dbd53d3f16479f5",
+      "after_sha256": "9cf59662cc4512496f274e7c55e6db1a5cc6362dda93524d80d3f18bd8cfe7fc"
+    },
+    {
+      "id": 15402,
+      "url": "https://colorlib.com/wp/construction-company-wordpress-themes/",
+      "format": "plain",
+      "before_sha256": "09588df7687c4327145f5c243fe29c3fe0bb6dec26622c5af77948cf4dd85d7d",
+      "after_sha256": "c3958f263d1bf4a93967e54598809bb021d34519e6030e019e78bd76e4d1452b"
+    },
+    {
+      "id": 4198,
+      "url": "https://colorlib.com/wp/best-wordpress-themes-for-architects/",
+      "format": "plain",
+      "before_sha256": "63f2138c4269cb0e5e8ea23341c9ba6ed9e10c7cfa85c9b3f9a86642bc614a1d",
+      "after_sha256": "7903c3440f09712f6b0e38345f3d365da3328327ed3500c0961d3da4c595bc98"
+    },
+    {
+      "id": 176118,
+      "url": "https://colorlib.com/wp/wordpress-themes-compatible-with-gutenberg/",
+      "format": "plain",
+      "before_sha256": "8e3be28b2385188f7c1769f3938b5c56a26330c4dafb9c2a3e03077f01450ee9",
+      "after_sha256": "4395cb5faa0e7ba89b4ba8016a2b831ec6456a00b5bed9c62498b921135f3997"
+    },
+    {
+      "id": 2420,
+      "url": "https://colorlib.com/wp/real-estate-wordpress-themes/",
+      "format": "plain",
+      "before_sha256": "4f9c4b034e84284461ebe480ff5afccaeecae6078505cc9863f6453627fb76d8",
+      "after_sha256": "42a39440b10b32fb7b6212b95ada131b545fcbd9bdade7a18804339aabf914e4"
+    },
+    {
+      "id": 95536,
+      "url": "https://colorlib.com/wp/travel-agency-wordpress-themes/",
+      "format": "plain",
+      "before_sha256": "bc3ac47104041cf7605c534297c64012c2c6dd961b94c5c458db05cdc7be1ba5",
+      "after_sha256": "695f984de9eeefca8fadbb4a741bba2f113f7ec5a6811671a62c7dd6fe37d68b"
+    },
+    {
+      "id": 163549,
+      "url": "https://colorlib.com/wp/travel-booking-wordpress-themes/",
+      "format": "details",
+      "before_sha256": "6d5a99038f6793b88e90eb339f9c81c1474fd5eede9becba0a75d486cd4f9e34",
+      "after_sha256": "f893c7e80e7f4abb24c48444abc27b08f035edc98c2d451c2b178e2b98ab7cca"
+    },
+    {
+      "id": 106592,
+      "url": "https://colorlib.com/wp/event-planner-wordpress-themes/",
+      "format": "plain",
+      "before_sha256": "c83a8f6f3587226f8cb8a65ad1cd839876c36dc7f695e092adaad1b302385e53",
+      "after_sha256": "2160a80d92dcf23fc8d8cab0a76d170c57deaea3184c8add0d2d1bd1e994abcb"
+    },
+    {
+      "id": 3321,
+      "url": "https://colorlib.com/wp/best-education-wordpress-themes/",
+      "format": "plain",
+      "before_sha256": "3ff4df9ee42c52e6e03a4197229eb31a710461fc9dd0dde9cccc54c3dee4eea1",
+      "after_sha256": "3764fd8b488e2ccf7de6e038e437a1e9616616d4e2d3389f83d08c1c916206e1"
+    },
+    {
+      "id": 12439,
+      "url": "https://colorlib.com/wp/wordpress-restaurant-themes/",
+      "format": "plain",
+      "before_sha256": "40dcfae7c698dcff54f4c535e31534c8998cb41be726d0c7550027c9935f5837",
+      "after_sha256": "60ac14a4a2730067bfce5fb4449c0112a02ab51c9c5fdeba18eac2e3116b7e8e"
+    },
+    {
+      "id": 15626,
+      "url": "https://colorlib.com/wp/popular-multipurpose-wordpress-themes/",
+      "format": "plain",
+      "before_sha256": "c101294a6444e1fcc170acbd390d238ae678aa3bbe87814eac1d25395e3dbdc1",
+      "after_sha256": "7aa6b51d3a08771ed2034fc8bc507dfe4b2ca441141494070dfd3fc509c53695"
+    }
+  ],
+  "css_only_migrations": [
+    {
+      "id": 218193,
+      "url": "https://colorlib.com/wp/actor-website-templates/",
+      "before_sha256": "3bae6f4640eac6fdb54848d0a5cbd662d41cf559396f1f8ee45576517241cbf5",
+      "after_sha256": "2432f2bdd417465e57c4881f857b7dbcf65488736e4a6c41cc505e8df51eb275"
+    },
+    {
+      "id": 226945,
+      "url": "https://colorlib.com/wp/videographer-website-templates/",
+      "before_sha256": "a08a50acfce43763339a1a1583a3c70192e43a28a778c15de242c0eefea29a1a",
+      "after_sha256": "a181b14f1ecc22f7408c5d2b18e23055c37c7ec3273e4765e5a785fc04ba4398"
+    },
+    {
+      "id": 226758,
+      "url": "https://colorlib.com/wp/wine-website-templates/",
+      "before_sha256": "94f7379d31c060c57205c16b36626d93dc09ac19dc2d25e75b15e92b6f241954",
+      "after_sha256": "9e97fe647aa3c401d5641eb32c9a381a4a2030930ce101c3473957e6eeac01c5"
+    },
+    {
+      "id": 43518,
+      "url": "https://colorlib.com/wp/best-free-ghost-themes/",
+      "before_sha256": "45bdbb9acbbffca6c0ed22ecf05867c80bd24283f8c80579c737ded1d8acb7d3",
+      "after_sha256": "fb2098085cc8a179d038b4930af32ffa8fe2e6458629fe6df4a07cf5c7b625f0"
+    },
+    {
+      "id": 112630,
+      "url": "https://colorlib.com/wp/gaming-html-website-templates/",
+      "before_sha256": "6bd8f6ededb0bf3abc52a80055f763733fb929f9ddef5e3d81c13f26ec917842",
+      "after_sha256": "90a25d7e97464887b67a64defb2d7ad0f66b89d13418094d1438dc43b866cb74"
+    },
+    {
+      "id": 226136,
+      "url": "https://colorlib.com/wp/electrician-website-templates/",
+      "before_sha256": "c22f8acdff542f81eb357d36dd0d294a9e7caf3dfc28c383dff0b5d7cfebd6c7",
+      "after_sha256": "d97ff5a3cf99e591b6cccda85149bc7c3dfdcdb8692d1ac03894c10c4e17e57d"
+    },
+    {
+      "id": 43413,
+      "url": "https://colorlib.com/wp/free-blogger-templates/",
+      "before_sha256": "8537663679f11a41a3f115690622b9bfb7d6cd05509902c3a53a9a42a197be83",
+      "after_sha256": "0c0628ca104aad5b1145aa82c2d80e886f68f6731483c0f69c45cdf17649ffa8"
+    },
+    {
+      "id": 43724,
+      "url": "https://colorlib.com/wp/best-free-tumblr-themes/",
+      "before_sha256": "3a594146b8b2b9bc7932c7f1108431ecc3977ef8cd8d6e7b098be3f7afc01cc0",
+      "after_sha256": "9b9f8434171d51bee101006fbe3b9bc7204320749ca8b205eab64fdf1d58489c"
+    },
+    {
+      "id": 144033,
+      "url": "https://colorlib.com/wp/beautiful-website-templates/",
+      "before_sha256": "1fc4c993d40ed2b578d7e6eb9dbbd287763dec77a9dde5993257390b3d446ebe",
+      "after_sha256": "45778bf1b48206856e7219a6643ad417f3701f3a9926b1e90a2e8be0de28d7ad"
+    },
+    {
+      "id": 227134,
+      "url": "https://colorlib.com/wp/startup-website-templates/",
+      "before_sha256": "bae55b974fc8574ce1a3ddd36aed71ced0d22fccb2035c6e8b64f61988565aa5",
+      "after_sha256": "ac99f0f94e8116a317a4e16631ad8f8609f83fd6fc0e03474fe5b013c9f40a7f"
+    },
+    {
+      "id": 144037,
+      "url": "https://colorlib.com/wp/church-website-templates/",
+      "before_sha256": "cfd66cc1d7abb9ed90c60d325c6ba8fd9a412033d1d2d727d6f763a55cfa8ab7",
+      "after_sha256": "2ed412aefbca36d8289c7176932b65b3633e646d38449ac0c27ebd7cb00a21e7"
+    },
+    {
+      "id": 116810,
+      "url": "https://colorlib.com/wp/free-music-wordpress-theme/",
+      "before_sha256": "cbc0451673ff1c62ebec06362c3cbad5252620f5358bb07ce03b06cafa88821b",
+      "after_sha256": "2f60b23294502c65ce481d4ea70da5465d70ac93270844400e2cf8dc0b4b127e"
+    },
+    {
+      "id": 108214,
+      "url": "https://colorlib.com/wp/free-wordpress-lawyers-theme/",
+      "before_sha256": "7122653debd069f382414a3d37e65c59e36a3f5a76d9f28886101de4c30401af",
+      "after_sha256": "285198844b68484c8b60c661f8674c5f567498dda132727bd06d9cf40ec8fe65"
+    },
+    {
+      "id": 229267,
+      "url": "https://colorlib.com/wp/free-news-wordpress-themes/",
+      "before_sha256": "485847fa85de4ebcffc8855444b071ee54195f7662589fc9b2f5f074fa18e9ae",
+      "after_sha256": "981c4f6c0322cf1c39224e70a9cfbfcc3020e327a17695e6947b03f2c366a055"
+    },
+    {
+      "id": 116911,
+      "url": "https://colorlib.com/wp/free-wordpress-themes-with-slider/",
+      "before_sha256": "0160662f19293f868c25eaeb0cd029638766966923938f394684427dbb704e16",
+      "after_sha256": "8bcc32e2f0969b87b22b5cbb21fd94eca01296d7e5d78714800ce2b1cfd5e751"
+    },
+    {
+      "id": 13390,
+      "url": "https://colorlib.com/wp/free-wordpress-video-themes/",
+      "before_sha256": "1a829963e8ac1af0e5abb93160fa66502257c0f9dd5fd11ef33965ecedb0d240",
+      "after_sha256": "d1d6a94a38b6ad25fbb72509fd963d21a10883fc3100eb3ce22b8ff28dc7892a"
+    },
+    {
+      "id": 219246,
+      "url": "https://colorlib.com/wp/plumber-wordpress-themes/",
+      "before_sha256": "d9fdd0b6ab142c3b12b23d51cefb22f6a13043116a6a1045537bb3ded1dd7313",
+      "after_sha256": "c62b1df81fa47ea6b7d47c82aa0672ef519468d79bb02e1d75db07ff4ab97108"
+    },
+    {
+      "id": 34763,
+      "url": "https://colorlib.com/wp/bootstrap-portfolio-website-templates/",
+      "before_sha256": "dba08e4f5742cd77c95e7821f1d42981d2b8a1417a4fb1e0dad90f4545b93e8a",
+      "after_sha256": "c63b0243fb0c43c17f8df5161b2af7053b3204bc2efcee8342f5621a1f53f9d2"
+    },
+    {
+      "id": 3965,
+      "url": "https://colorlib.com/wp/best-minimalist-wordpress-themes/",
+      "before_sha256": "387df9049e06f41cabd6fc9a3fc0ac4eb3dc8d23ccd521646bd1bf3535916905",
+      "after_sha256": "462f6c48d5b8dbd3ba67d55e7f1865d2a1b76e8ec76c86172bc06293fd1bb6b4"
+    },
+    {
+      "id": 37874,
+      "url": "https://colorlib.com/wp/parallax-website-templates/",
+      "before_sha256": "633351fad46a3d0d923ef4bd47604cd31e4b094fe358dd2fbca87abc7a0ec5aa",
+      "after_sha256": "aed7302e141582bf714fbf3abd4e627a82abaa9c0d5969e60476c0dfd4469a1a"
+    },
+    {
+      "id": 116824,
+      "url": "https://colorlib.com/wp/free-nature-wordpress-themes/",
+      "before_sha256": "d84c6ed9e7080900efa61822fc069794787321e131035f317a4af083d1263223",
+      "after_sha256": "ae63ee689ee11a0453bb8c4fa7c78dd9fb75633bd960f324b4775b98c6db3e8c"
+    },
+    {
+      "id": 228736,
+      "url": "https://colorlib.com/wp/free-wordpress-gaming-themes/",
+      "before_sha256": "98e93fb2004fc1f09d5f3e5c0e32e1382cdf15926df891f3a2bafcbfa52b237b",
+      "after_sha256": "a84b26fd7b2bfadc759e5b47614660c699b884756a7c1246bca73ad93bfe5420"
+    },
+    {
+      "id": 139554,
+      "url": "https://colorlib.com/wp/clan-website-templates/",
+      "before_sha256": "199cb188bb961b02a500f2862ebf03f20590f3135b1364efc00d45a037d2dcaa",
+      "after_sha256": "64f868aa6c0b4c66ad457b035d675c7b1ed3a0775500d25cb2d0e6cda723cc44"
+    }
+  ]
+}

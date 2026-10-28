@@ -14,7 +14,7 @@ foreach ( $patches as $patch ) {
 	if ( ! in_array( $id, $allowed, true ) || 'post' !== get_post_type( $id ) || 'publish' !== get_post_status( $id ) || hash( 'sha256', get_post_field( 'post_content', $id ) ) !== $patch['before_sha256'] ) {
 		throw new RuntimeException( 'Article changed after preparation: ' . $id );
 	}
-	if ( count( array_unique( array_column( $patch['products'], 'canonical' ) ) ) !== count( $patch['products'] ) || ! strpos( $patch['post_content'], 'data-colorlib-product=' ) ) {
+	if ( count( array_unique( array_column( $patch['products'], 'canonical' ) ) ) !== count( $patch['products'] ) || ! strpos( $patch['post_content'], 'class="wp-block-group colorlib-theme-entry ' ) ) {
 		throw new RuntimeException( 'Invalid or duplicate proposed entries: ' . $id );
 	}
 }
