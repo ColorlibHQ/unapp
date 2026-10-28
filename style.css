@@ -3,8 +3,8 @@ Theme Name: Unapp
 Theme URI: https://colorlib.com/wp/themes/unapp/
 Author: Colorlib
 Author URI: https://colorlib.com
-Description: Unapp is a lightweight, block-based WordPress theme with thirteen one-click starter sites — SaaS, portfolio, church, blog, fitness, restaurant, agency, shop, property, practice, courses, events and finance. Built for the Site Editor with 140+ section patterns, ten colour palettes and five typography presets you can mix, seven section styles and eleven block styles. WooCommerce templates included. Self-hosted variable fonts, no page-builder framework, no jQuery, no icon fonts.
-Version: 2.5.10
+Description: Unapp is a lightweight, block-based WordPress theme with thirteen one-click starter sites — SaaS, portfolio, church, blog, fitness, restaurant, agency, shop, property, practice, courses, events and finance. Built for the Site Editor with 140+ section patterns, twelve colour palettes and five typography presets you can mix, seven section styles and eleven block styles. WooCommerce templates included. Self-hosted variable fonts, no page-builder framework, no jQuery, no icon fonts.
+Version: 2.6.0
 Update URI: https://updates.colorlib.com/theme/unapp.json
 Requires at least: 6.6
 Tested up to: 7.1
@@ -1038,4 +1038,100 @@ Unapp is distributed under the terms of the GNU GPL.
    wider marks (Northwind, Meridian) were squeezed to 147px instead of scaling. */
 img[src*="/assets/images/logos/"] {
 	object-fit: contain;
+}
+
+.unapp-business-profile {
+	box-sizing: border-box;
+	max-width: var(--wp--style--global--content-size);
+	margin: var(--wp--preset--spacing--60) auto;
+	padding: var(--wp--preset--spacing--50);
+	border-radius: 20px;
+	background: var(--wp--preset--color--surface);
+	color: var(--wp--preset--color--contrast);
+}
+
+.unapp-business-profile p:empty {
+	display: none;
+}
+
+.unapp-business-profile p:first-child {
+	font-weight: 700;
+}
+
+.unapp-business-profile a {
+	color: var(--wp--preset--color--primary);
+	overflow-wrap: anywhere;
+}
+
+.unapp-business-profile--footer {
+	margin: var(--wp--preset--spacing--30) 0 0;
+	padding: 0;
+	background: transparent;
+}
+
+.unapp-business-profile--footer p:first-child {
+	font-weight: inherit;
+}
+
+/* Starter introductions keep copy readable beside the artwork, then give each
+   action its own touch target when columns stack. Applies in the editor too. */
+.unapp-starter-hero h1 {
+	text-wrap: balance;
+}
+
+.unapp-starter-actions > .wp-block-button {
+	min-width: 0;
+}
+
+.unapp-starter-actions .wp-block-button__link {
+	min-height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	text-wrap: balance;
+}
+
+@media (max-width: 781px) {
+	.unapp-starter-hero {
+		padding-block: var(--wp--preset--spacing--60) !important;
+	}
+
+	.unapp-starter-hero h1 {
+		font-size: clamp(2.25rem, 8vw, 3.5rem) !important;
+	}
+
+	.unapp-client-row .has-text-align-right,
+	.unapp-hours-row .has-text-align-right {
+		text-align: start;
+	}
+}
+
+@media (max-width: 599px) {
+	.unapp-starter-actions > .wp-block-button {
+		flex-basis: 100%;
+		width: 100%;
+	}
+
+	.unapp-starter-actions .wp-block-button__link {
+		width: 100%;
+	}
+}
+
+/* Section swaps remain ordinary Columns and Group blocks in the editor. */
+.wp-block-columns.is-style-unapp-section-stack {
+	flex-direction: column;
+	align-items: stretch;
+}
+
+.wp-block-columns.is-style-unapp-section-stack > .wp-block-column {
+	flex-basis: auto !important;
+	width: 100%;
+}
+
+/* Native Grid controls own the desktop count; the theme only stacks on phones. */
+@media (max-width: 739px) {
+	.wp-block-group.unapp-section-grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
 }

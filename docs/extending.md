@@ -70,8 +70,12 @@ renders the active form plugin's form, or the email fallback plus a hint that
 only administrators see. Installing a form plugin later therefore updates every
 contact page without editing any of them.
 
-The form is chosen by `unapp_detect_form()`. To force a specific one, or to
-render something the theme does not know about:
+Owners can choose a saved form, automatic detection or email-only contact under
+**Appearance → Launch checklist**. The choice applies to dynamic Unapp form slots.
+
+`unapp_detect_form()` resolves that choice. The `unapp_detected_form` filter remains
+the final override, including when the owner selected email-only contact. To render
+a form the theme does not know about:
 
 ```php
 add_filter( 'unapp_detected_form', function ( $form ) {
@@ -83,7 +87,19 @@ add_filter( 'unapp_detected_form', function ( $form ) {
 } );
 ```
 
-Return `null` to force the email fallback.
+Return `null` to force the email fallback. The admin selector indicates when a
+developer filter may override its choice.
+
+Providers added through `unapp_form_providers` can expose `forms_callback`, a
+callable returning an array of `form ID => title` for available forms. Existing
+providers with a `post_type` are listed from their published posts; a legacy
+single-form `callback` still works. Lists must contain form definitions, never
+submission data. A provider's shortcode must be registered before it is offered.
+
+Custom providers can append their form-settings version to the array passed to
+`unapp_launch_contact_signature` (second argument: resolved form). Only its hash
+is used to invalidate contact-delivery reviews. Post-based forms include their
+saved post and metadata in this signature automatically.
 
 ## Turn off the front-page setup
 
@@ -122,9 +138,9 @@ at the part it is good at.
 
 Only the text inside headings, paragraphs, list items and links is sent —
 `unapp_ai_extract_text()` pulls the text nodes and nothing else — and
-replacements go back between tags, so the block markup cannot be damaged by the
-reply. A reply that does not line up with the page one-for-one is rejected
-whole rather than applied partially.
+replacements are applied to text fragments while preserving tags and block attributes. A reply that does not line up one-for-one is rejected whole.
+
+Generating a rewrite now produces a preview without saving pages. Review the current and proposed wording, then apply or discard it. Applying makes no extra provider request. A preview expires after 30 minutes and belongs to the account that generated it. If a page changed in the meantime, applying stops so those edits are preserved.
 
 To add a provider, filter the list and give it an endpoint and a response
 shape; see `unapp_ai_providers()` and `unapp_ai_response_text()` in

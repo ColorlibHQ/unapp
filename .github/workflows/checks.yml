@@ -1,0 +1,105 @@
+name: Theme checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  wordpress:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - php: '7.4'
+            wordpress: '6.6'
+          - php: '8.4'
+            wordpress: latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: wordpress
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mysqli, mbstring, dom
+          tools: wp-cli
+          coverage: none
+      - run: python3 .dev/check.py
+      - name: Install an isolated WordPress test site
+        env:
+          WP_VERSION: ${{ matrix.wordpress }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/unapp-wp"
+          wp core download --path="$RUNNER_TEMP/unapp-wp" --version="$WP_VERSION"
+          wp config create --path="$RUNNER_TEMP/unapp-wp" --dbname=wordpress --dbuser=root --dbpass=root --dbhost=127.0.0.1:3306
+          wp core install --path="$RUNNER_TEMP/unapp-wp" --url=http://unapp.test --title=Tests --admin_user=tests --admin_password=local-tests-only --admin_email=tests@example.test --skip-email
+      - name: Install Contact Form 7 for the current-version smoke test
+        if: matrix.wordpress == 'latest'
+        run: wp plugin install contact-form-7 --path="$RUNNER_TEMP/unapp-wp"
+      - name: Exercise import success, failures, recovery and replay
+        run: |
+          mkdir -p "$RUNNER_TEMP/unapp-design" "$RUNNER_TEMP/unapp-business" "$RUNNER_TEMP/unapp-finish" "$RUNNER_TEMP/unapp-content" "$RUNNER_TEMP/unapp-personalized" "$RUNNER_TEMP/unapp-finder" "$RUNNER_TEMP/unapp-swaps" "$RUNNER_TEMP/unapp-services"
+          UNAPP_SERVICE_PREVIEW_DIR="$RUNNER_TEMP/unapp-services" UNAPP_SWAP_PREVIEW_DIR="$RUNNER_TEMP/unapp-swaps" UNAPP_FINDER_PREVIEW_DIR="$RUNNER_TEMP/unapp-finder" UNAPP_PERSONALIZED_PREVIEW_DIR="$RUNNER_TEMP/unapp-personalized" UNAPP_CONTENT_PREVIEW_DIR="$RUNNER_TEMP/unapp-content" UNAPP_FINISH_PREVIEW_DIR="$RUNNER_TEMP/unapp-finish" UNAPP_BUSINESS_PREVIEW_DIR="$RUNNER_TEMP/unapp-business" UNAPP_DESIGN_PREVIEW_DIR="$RUNNER_TEMP/unapp-design" UNAPP_RECOMMEND_PREVIEW_PATH="$RUNNER_TEMP/unapp-recommendations.html" UNAPP_LAUNCH_PREVIEW_PATH="$RUNNER_TEMP/unapp-launch.html" wp --path="$RUNNER_TEMP/unapp-wp" --skip-themes --skip-plugins eval-file "$GITHUB_WORKSPACE/.dev/tests/import.php"
+      - uses: actions/setup-node@v4
+        if: matrix.wordpress == 'latest'
+        with:
+          node-version: '22'
+      - name: Verify native presets and the design workspace in a browser
+        if: matrix.wordpress == 'latest'
+        run: |
+          npm install --prefix "$RUNNER_TEMP/unapp-design-browser" --no-audit --no-fund --ignore-scripts playwright@1.62.1
+          "$RUNNER_TEMP/unapp-design-browser/node_modules/.bin/playwright" install --with-deps chromium
+          UNAPP_RECOMMEND_PREVIEW_PATH="$RUNNER_TEMP/unapp-recommendations.html" PLAYWRIGHT_MODULE="$RUNNER_TEMP/unapp-design-browser/node_modules/playwright" node .dev/tests/launch-recommendations-ui.cjs
+          UNAPP_DESIGN_PREVIEW_DIR="$RUNNER_TEMP/unapp-design" PLAYWRIGHT_MODULE="$RUNNER_TEMP/unapp-design-browser/node_modules/playwright" node .dev/tests/design-ui.cjs
+          UNAPP_BUSINESS_PREVIEW_DIR="$RUNNER_TEMP/unapp-business" PLAYWRIGHT_MODULE="$RUNNER_TEMP/unapp-design-browser/node_modules/playwright" node .dev/tests/business-ui.cjs
+          UNAPP_FINISH_PREVIEW_DIR="$RUNNER_TEMP/unapp-finish" PLAYWRIGHT_MODULE="$RUNNER_TEMP/unapp-design-browser/node_modules/playwright" node .dev/tests/finish-ui.cjs
+          UNAPP_CONTENT_PREVIEW_DIR="$RUNNER_TEMP/unapp-content" PLAYWRIGHT_MODULE="$RUNNER_TEMP/unapp-design-browser/node_modules/playwright" node .dev/tests/content-guide-ui.cjs
+          UNAPP_SERVICE_PREVIEW_DIR="$RUNNER_TEMP/unapp-services" PLAYWRIGHT_MODULE="$RUNNER_TEMP/unapp-design-browser/node_modules/playwright" node .dev/tests/service-cards-ui.cjs
+          UNAPP_SWAP_PREVIEW_DIR="$RUNNER_TEMP/unapp-swaps" PLAYWRIGHT_MODULE="$RUNNER_TEMP/unapp-design-browser/node_modules/playwright" node .dev/tests/section-swaps-ui.cjs
+          UNAPP_PERSONALIZED_PREVIEW_DIR="$RUNNER_TEMP/unapp-personalized" PLAYWRIGHT_MODULE="$RUNNER_TEMP/unapp-design-browser/node_modules/playwright" node .dev/tests/personalized-preview-ui.cjs
+          UNAPP_FINDER_PREVIEW_DIR="$RUNNER_TEMP/unapp-finder" PLAYWRIGHT_MODULE="$RUNNER_TEMP/unapp-design-browser/node_modules/playwright" node .dev/tests/starter-finder-ui.cjs
+          mkdir -p "$RUNNER_TEMP/unapp-niches"
+          for starter in home-services cleaning salon coach photographer nonprofit; do
+            UNAPP_PREVIEW_STARTER="$starter" UNAPP_PREVIEW_OUTPUT="$RUNNER_TEMP/unapp-niches" UNAPP_PREVIEW_EDITOR=1 wp --path="$RUNNER_TEMP/unapp-wp" --skip-themes --skip-plugins eval-file "$GITHUB_WORKSPACE/.dev/render-starter.php"
+          done
+          UNAPP_STARTER_PREVIEW_DIR="$RUNNER_TEMP/unapp-niches" UNAPP_STARTERS=home-services,cleaning,salon,coach,photographer,nonprofit PLAYWRIGHT_MODULE="$RUNNER_TEMP/unapp-design-browser/node_modules/playwright" node .dev/tests/starters.cjs
+      - name: Save rendered UI fixture
+        if: matrix.wordpress == 'latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: launch-checklist-fixture
+          path: ${{ runner.temp }}/unapp-launch.html
+          retention-days: 1
+          if-no-files-found: error
+  browser:
+    needs: wordpress
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/download-artifact@v4
+        with:
+          name: launch-checklist-fixture
+          path: ${{ runner.temp }}/unapp-ui
+      - name: Install browser test tools outside the theme
+        run: |
+          npm install --prefix "$RUNNER_TEMP/unapp-browser" --no-audit --no-fund --ignore-scripts playwright@1.62.1
+          "$RUNNER_TEMP/unapp-browser/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Verify actual keyboard interaction
+        run: PLAYWRIGHT_MODULE="$RUNNER_TEMP/unapp-browser/node_modules/playwright" node .dev/tests/toggles.cjs
+      - name: Verify the rendered launch checklist and form selector
+        run: UNAPP_LAUNCH_PREVIEW_PATH="$RUNNER_TEMP/unapp-ui/unapp-launch.html" PLAYWRIGHT_MODULE="$RUNNER_TEMP/unapp-browser/node_modules/playwright" node .dev/tests/launch-ui.cjs

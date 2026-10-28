@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-**Unapp 2.5.5** is a Colorlib **WordPress block theme** (Full Site Editing) with **thirteen one-click starter sites** (SaaS, portfolio, church, blog, fitness, restaurant, agency, shop, property, practice, courses, conference, finance) — 241 pattern files (184 in the inserter; 57 hidden, including 44 `-h1` page-opening copies), 20 templates (six of them WooCommerce), 7 section styles, 11 block styles, and 12 colour palettes × 5 typography presets — text domain `unapp`, upstream `github.com/ColorlibHQ/unapp`. Version 2.0.0 (Aug 2026) is a from-scratch rewrite: the Epsilon Framework, Customizer section builder, Bootstrap 3, jQuery and icon fonts from 1.x are gone. It is *not* a static HTML template — the Colorlib R2 preview/download publishing flow and the HTML-template upgrade phases in the global instructions do not apply here.
+**Unapp 2.6.0** is a Colorlib WordPress block theme with **nineteen free starter sites** and 309 pattern files (232 available in the inserter; 77 hidden, including 64 page openings). It uses native WordPress blocks, the Site Editor and theme.json, without a page-builder dependency. Requirements are WordPress 6.6+ and PHP 7.4+; repository: github.com/ColorlibHQ/unapp. The companion Starter Library is version 1.1.0 and remains optional.
+
+Setup includes a niche finder, one-page/full-site choices, personalized preview, shared business details and service cards, main-action selection, guided page/image editing, section swaps with Undo, and optional launch recommendations. See README.md and docs/getting-started.md for current behavior. This is a WordPress theme; static HTML-template publishing instructions do not apply.
 
 Requires WP 6.6+ (theme.json v3, section styles); tested on WP 7.1. No build step, no npm, no SCSS — every file is committed as-is.
 
@@ -115,9 +117,9 @@ Useful checks with it: `wp eval 'echo do_blocks("<!-- wp:pattern {\"slug\":\"una
 
 ## Release checklist
 
-0. Regenerate and confirm no diff: `for i in $(seq 1 22); do python3 .dev/batch$i.py; done; python3 .dev/apply_grounds.py` and `python3 .dev/build_styles.py`; then run `.dev/heading_audit.py`, `.dev/link_audit.py`, `.dev/rhythm_audit.py` and `.dev/gradient_contrast.py` (each exits non-zero on a failure).
+0. Regenerate and confirm no diff: `for i in $(seq 1 24); do python3 .dev/batch$i.py; done; python3 .dev/apply_grounds.py` and `python3 .dev/build_styles.py`; then run `.dev/heading_audit.py`, `.dev/link_audit.py`, `.dev/rhythm_audit.py` and `.dev/gradient_contrast.py` (each exits non-zero on a failure).
 
 1. `php -l` all PHP, validate JSON, bump `Version:` in `style.css` and `Stable tag` in `readme.txt`, add a CHANGELOG entry.
-2. Activate on the Local site, load `/`, `/blog/`, a single post, `/author/…`, `/category/…`, `/tag/…`, a date archive, `?s=`, and (if WooCommerce is active) `/shop/`; render every pattern (`wp eval` loop over the registry) and check `wp-content/debug.log` (enable `WP_DEBUG_LOG` temporarily — remember to revert wp-config.php).
+2. Activate the built release in an isolated disposable WordPress installation (do not replace an unrelated active Local site), load `/`, `/blog/`, a single post, `/author/…`, `/category/…`, `/tag/…`, a date archive, `?s=`, and (if WooCommerce is active) `/shop/`; render every pattern (`wp eval` loop over the registry) and check `wp-content/debug.log` (enable `WP_DEBUG_LOG` temporarily — remember to revert wp-config.php).
 3. Run Theme Check from wp-admin against the built zip, not the working copy. **Exactly one REQUIRED is expected — `Update URI:` in `style.css`** — plus the single text domain INFO. Anything else is a regression: that one line is all that stands between this theme and a WordPress.org upload, and it must stay that way even though we are not submitting it. Check it stays true by unzipping the release beside the theme, stripping the header from the copy and re-running: zero REQUIRED, zero warnings. (A theme staged under a folder whose name is not `unapp` also draws a slug WARNING; that one is the staging folder, not the theme.)
 4. Regenerate `languages/unapp.pot` and `screenshot.png` if strings or the hero changed.

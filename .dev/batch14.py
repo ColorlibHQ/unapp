@@ -16,7 +16,7 @@ body = section_std(
              t("Coaches who lift, and who have all coached beginners"),
              t("Open gym hours included in every membership")]) + "\n" +
         buttons([{"text": t("Book a free session"), "url": home_anchor("book")}]),
-        image(uri("assets/images/abstract/track.svg"), tattr("The training floor"), radius=CARD_RADIUS),
+        image(uri("assets/images/showcase/fitness-floor.webp"), tattr("A bright brick-arch training floor with tidy barbells and lifting platforms"), radius=CARD_RADIUS),
         left_width="54%", right_width="46%"),
     gap="0")
 write_pattern("fitness-intro", title="Fitness: about the studio", cats=F + ", unapp_features",
@@ -27,10 +27,10 @@ write_pattern("fitness-intro", title="Fitness: about the studio", cats=F + ", un
 # ---------------------------------------------------------------- memberships
 PLANS = [
     ("Off-peak", "39", "Weekdays before 16:00 and all weekend.",
-     ["Every off-peak class", "Open gym whenever we are open", "Programme reviewed each month"], False, "Join off-peak"),
+     ["Every off-peak class", "Open gym whenever we are open", "Programme reviewed each month"], False, "Ask about off-peak"),
     ("Full", "59", "Any class, any hour we are open.",
      ["Every class on the timetable", "Open gym whenever we are open", "Programme reviewed each month",
-      "Bring a friend once a month"], True, "Join full"),
+      "Bring a friend once a month"], True, "Ask about full membership"),
     ("Coached", "120", "Small-group coaching, four to a coach.",
      ["Everything in Full", "Two coached sessions a week", "Written programme, updated fortnightly",
       "Video review of your lifts"], False, "Talk to a coach"),
@@ -167,7 +167,7 @@ for day, hrs in HOURS:
     rows.append(columns([
         column(para(t(day, "Opening day"), weight="600"), width="55%", vertical_align="center"),
         column(para(t(hrs, "Opening hours"), color="muted", align="right"), width="45%", vertical_align="center"),
-    ], gap="30", vertical_align="center", is_stacked=False))
+    ], gap="20", vertical_align="center", class_name="unapp-hours-row"))
 hours_card = card(card_title(t("Opening hours")) + "\n" +
                   ("\n" + separator(style="wide", color="border") + "\n").join(rows), justify="stretch")
 body = section_std(

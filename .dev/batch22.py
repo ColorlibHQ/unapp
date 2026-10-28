@@ -6,17 +6,14 @@ ED = "unapp, unapp_education"
 EV = "unapp, unapp_events"
 
 # ================================================================= EDUCATION
-body = section_std(
-    split(
-        eyebrow(t("Evening and weekend courses", "School hero eyebrow"), align="left") + "\n" +
-        h1(t("Learn a trade properly, from someone who does it")) + "\n" +
-        para(t("Short courses in woodwork, letterpress, ceramics and bookbinding, taught in a Victorian school hall by people who make their living at it."),
-             color="muted", size="large") + "\n" +
-        buttons([{"text": t("See the courses"), "url": home_anchor("courses")},
-                 {"text": t("How booking works"), "url": home_anchor("questions"), "style": "outline"}]),
-        image(uri("assets/images/abstract/studio-1.svg"), tattr("The workshop"), radius=CARD_RADIUS),
-        left_width="55%", right_width="45%"),
-    gap="0")
+body = starter_hero(
+    t('Evenings and weekends · Hands-on courses', "Starter hero eyebrow"),
+    t('Make something you are proud of.'),
+    t('Learn woodwork, letterpress, ceramics and bookbinding from people who practise their craft. Small classes, real tools and a project to take home.'),
+    'assets/images/showcase/course-workshop.webp', tattr('Oak workbench with a hand plane, wood shavings and a handmade stool'),
+    [{"text": t('Find your course'), "url": home_anchor("courses")},
+     {"text": t('How booking works'), "url": home_anchor("questions"), "style": "outline"}],
+    note=t('Beginners welcome · Materials included · Course prices shown up front'))
 write_pattern("education-hero", title="Courses: introduction", cats=ED + ", banner, featured",
               keywords="education, courses, school, learning, workshop, hero",
               desc="A course provider's introduction with two calls to action.",
@@ -134,23 +131,17 @@ write_pattern("education-contact", title="Courses: contact the school", cats=ED 
               body=body)
 
 # ================================================================= EVENTS
-cover_url = uri("assets/images/abstract/gathering.svg")
-inner = (eyebrow(t("Bristol · 14–15 May 2027", "Conference hero eyebrow"), align="center", color="base") + "\n" +
-         h1(t("Two days about building things that outlast the team that built them"),
-                 align="center", color="base", size="xxx-large") + "\n" +
-         para(t("Sixteen talks, no sponsor keynotes, four hundred people and a bar that opens at five."),
-              align="center", color="base", size="large") + "\n" +
-         buttons([{"text": t("Buy a ticket"), "url": home_anchor("tickets"), "bg": "base", "color": "primary"},
-                  {"text": t("See the programme"), "url": home_anchor("programme"), "style": "is-style-outline", "color": "base"}],
-                 justify="center", margin={"top": "40"}))
-body = f'''<!-- wp:cover {{"url":"{cover_url}","dimRatio":70,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":68,"minHeightUnit":"vh","align":"full","style":{{"spacing":{{"padding":{{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"blockGap":"var:preset|spacing|30"}}}},"layout":{{"type":"constrained","contentSize":"860px"}}}} -->
-<div class="wp-block-cover alignfull" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80);min-height:68vh"><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-70 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="{cover_url}" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
-{inner}
-</div></div>
-<!-- /wp:cover -->'''
+body = starter_hero(
+    t('Bristol · 14–15 May 2027', "Starter hero eyebrow"),
+    t('Two days. Ideas that stay with you.'),
+    t('Sixteen talks on building software that lasts. Meet the people doing the work, compare notes and leave with a new perspective.'),
+    'assets/images/showcase/conference-poster.svg', tattr('Longform conference graphic with bold typography and intersecting pathways'),
+    [{"text": t('Explore tickets'), "url": home_anchor("tickets")},
+     {"text": t('View the programme'), "url": home_anchor("programme"), "style": "outline"}],
+    note=t('Two days · Four hundred people · No sponsor keynotes'))
 write_pattern("events-hero", title="Event: hero", cats=EV + ", banner, featured",
               keywords="events, conference, hero, tickets, programme",
-              desc="A full-bleed conference cover with the dates, the shape of the event and a ticket button.",
+              desc="A conference introduction with original poster artwork, dates, ticket options and a programme link.",
               body=body)
 
 PROGRAMME = [

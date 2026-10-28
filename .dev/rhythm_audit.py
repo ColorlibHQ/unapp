@@ -55,13 +55,13 @@ def starter_pages():
     src = open(os.path.join(THEME, "inc", "starter-sites.php")).read()
     body = src[src.index("function unapp_get_starter_sites()"):src.index("apply_filters( 'unapp_starter_sites'")]
     out = {}
-    starts = list(re.finditer(r"^\t\t'([a-z]+)'\s*=> array\($", body, re.M))
+    starts = list(re.finditer(r"^\t\t'([a-z0-9-]+)'\s*=> array\($", body, re.M))
     for i, m in enumerate(starts):
         block = body[m.end():starts[i + 1].start() if i + 1 < len(starts) else len(body)]
         home = re.search(r"'home'\s*=> 'unapp/([a-z0-9-]+)'", block)
         if home:
             out[f"{m.group(1)} / home"] = [home.group(1)]
-        for page in re.finditer(r"^\t\t\t\t'([a-z]+)'\s*=> array\((.*?)^\t\t\t\t\),", block, re.M | re.S):
+        for page in re.finditer(r"^\t\t\t\t'([a-z0-9-]+)'\s*=> array\((.*?)^\t\t\t\t\),", block, re.M | re.S):
             refs = re.findall(r"'unapp/([a-z0-9-]+)'", page.group(2))
             if refs:
                 out[f"{m.group(1)} / {page.group(1)}"] = refs

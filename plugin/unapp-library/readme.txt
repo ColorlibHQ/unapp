@@ -4,7 +4,7 @@ Tags: block-patterns, starter-sites, full-site-editing
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,7 +37,7 @@ The plugin does nothing at all unless the Unapp theme is active.
 built, and only the words. Choose ChatGPT, Claude or Gemini — whichever you
 already have an account with — paste your own API key, and describe your
 business. The model receives the text on the page and your description, and
-returns replacements one for one.
+returns replacements one for one. Generate a preview, review the proposed wording, then apply or discard it. Pages stay unchanged until you apply; applying makes no extra API request. Previews expire after 30 minutes and stop if a page has changed since generation.
 
 The layout is never sent and never changes. Only the text inside headings,
 paragraphs, list items and links is extracted; the block markup around it is
@@ -71,6 +71,14 @@ in an image URL to point at the active theme's own assets rather than shipping
 copies.
 
 == Changelog ==
+
+= 1.1.0 — 2026-10-28 =
+* Review AI wording proposals before applying them; generation leaves pages unchanged.
+* Guard applying against stale pages, expired previews and mismatched owners.
+* Preserve native blocks, validate replacement text and clean up proposal data on uninstall.
+
+* Review proposed wording before saving, with source-page checks that protect newer edits.
+* Formatted text and entities are rewritten without changing block tags or attributes; saved counts and errors reflect actual changes.
 
 = 1.0.1 =
 * A saved AI key now belongs to the provider it was saved with: switching provider clears it, and the model resets to that provider's default.

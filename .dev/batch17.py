@@ -128,7 +128,7 @@ niche_footer(
     links_head="Work", links=[("Selected work", home_anchor("work")), ("Services and rates", home_anchor("services")),
                               ("About", home_anchor("about")), ("Enquiries", home_anchor("contact"))],
     contact_head="Say hello",
-    contact_lines=["mara@lindqvist.example", "Booking from February", "Stockholm, and remote"],
+    contact_lines=["mara@lindqvist.example", "Let’s discuss your next project", "Stockholm, and remote"],
     socials=[("instagram", "https://instagram.com"), ("x", "https://x.com"),
              ("linkedin", "https://linkedin.com")], posts_head="Writing")
 

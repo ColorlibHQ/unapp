@@ -30,8 +30,8 @@
 <div class="wp-block-columns are-vertically-aligned-center alignwide">
 <!-- wp:column {"verticalAlignment":"center","width":"52%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:52%;">
-<!-- wp:image {"width":"100%","aspectRatio":"30/19","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"},"shadow":"var:preset|shadow|card"}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/dashboard-1.avif' ) ); ?>" alt="<?php esc_attr_e( 'Planning board in Unapp', 'unapp' ); ?>" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card);aspect-ratio:30/19;width:100%;height:auto"/></figure>
+<!-- wp:image {"width":"100%","aspectRatio":"4/3","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"},"shadow":"var:preset|shadow|card"}} -->
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/showcase/workspace-timeline.svg' ) ); ?>" alt="<?php esc_attr_e( 'Unapp launch timeline with discovery, design, build and launch milestones', 'unapp' ); ?>" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card);aspect-ratio:4/3;width:100%;height:auto"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->
@@ -93,8 +93,8 @@
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"center","width":"52%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:52%;">
-<!-- wp:image {"width":"100%","aspectRatio":"30/19","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"},"shadow":"var:preset|shadow|card"}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/dashboard-2.avif' ) ); ?>" alt="<?php esc_attr_e( 'Analytics view in Unapp', 'unapp' ); ?>" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card);aspect-ratio:30/19;width:100%;height:auto"/></figure>
+<!-- wp:image {"width":"100%","aspectRatio":"4/3","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"},"shadow":"var:preset|shadow|card"}} -->
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/showcase/workspace-report.svg' ) ); ?>" alt="<?php esc_attr_e( 'Unapp project report showing task completion, team capacity and progress', 'unapp' ); ?>" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card);aspect-ratio:4/3;width:100%;height:auto"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->

@@ -3,24 +3,17 @@ from pgen import *
 
 # ============================================================ FITNESS
 F = "unapp, unapp_fitness, banner, featured"
-inner = (eyebrow(t("First class free", "Fitness hero eyebrow"), align="center", color="base") + "\n" +
-         h1(t("Stronger than last week"), align="center", color="base", size="xxx-large") + "\n" +
-         para(t("Small-group strength and conditioning in the old print works. Forty-five minutes, no mirrors, no nonsense."),
-              align="center", color="base", size="large") + "\n" +
-         # The palette's own button colours: an explicit contrast label on
-         # secondary is 1.73:1 in Midnight, whose partial sets the label to base.
-         buttons([{"text": t("Book a free session"), "url": home_anchor("book")},
-                  {"text": t("See the timetable"), "url": home_anchor("timetable"), "style": "is-style-outline", "color": "base"}],
-                 justify="center", gap="30", margin={"top": "40"}))
-cover = uri("assets/images/abstract/track.svg")
-body = f'''<!-- wp:cover {{"url":"{cover}","dimRatio":70,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":70,"minHeightUnit":"vh","align":"full","style":{{"spacing":{{"padding":{{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"blockGap":"var:preset|spacing|30"}}}},"layout":{{"type":"constrained","contentSize":"760px"}}}} -->
-<div class="wp-block-cover alignfull" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80);min-height:70vh"><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-70 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="{cover}" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
-{inner}
-</div></div>
-<!-- /wp:cover -->'''
+body = starter_hero(
+    t('Arch Twelve · First session free', "Starter hero eyebrow"),
+    t('Find your strength. Feel at home.'),
+    t('Small-group training with a coach who knows your name. Start where you are, build good habits and get a little stronger each week.'),
+    'assets/images/showcase/fitness-community.webp', tattr('A coach chatting with two members in a bright brick-arch strength studio'),
+    [{"text": t('Request a free session'), "url": mailto("hello@archtwelve.example", "Free session")},
+     {"text": t('View the timetable'), "url": home_anchor("timetable"), "style": "outline"}],
+    note=t('Beginners welcome · Twelve people per class · No joining fee'))
 write_pattern("fitness-hero", title="Fitness: hero", cats=F,
               keywords="fitness, gym, hero, class, training, banner",
-              desc="A high-contrast cover hero with a free-trial call to action.",
+              desc="A welcoming introduction with a training photo, first-session enquiry and timetable link.",
               body=body)
 
 rows = [
@@ -75,21 +68,14 @@ write_pattern("fitness-coaches", title="Fitness: coaches", cats="unapp, unapp_fi
 
 # ============================================================ FINANCE
 FI = "unapp, unapp_finance, featured"
-body = section(
-    columns([
-        column(
-            eyebrow(t("Independent since 1998", "Finance hero eyebrow"), align="left") + "\n" +
-            h1(t("Advice you could explain to your family"), size="xxx-large", line_height="1.1", align="left") + "\n" +
-            para(t("Fee-only financial planning for people who would rather understand the plan than be impressed by it."), color="muted", size="large") + "\n" +
-            buttons([{"text": t("Book an introduction"), "url": home_anchor("contact")},
-                     {"text": t("How we charge"), "url": home_anchor("fees"), "style": "is-style-outline"}],
-                    gap="30", margin={"top": "40"}) + "\n" +
-            para(t("Regulated by the Financial Conduct Authority · No commission, ever"), color="muted", size="small"),
-            width="52%", vertical_align="center", gap="30"),
-        column(image(uri("assets/images/abstract/ledger.svg"), tattr("Planning document placeholder"),
-                     radius="20px", shadow="card"), width="48%", vertical_align="center"),
-    ], align="wide", gap="60", vertical_align="center"),
-    pad=("70", "70"), gap="0")
+body = starter_hero(
+    t('Independent advice · Since 1998', "Starter hero eyebrow"),
+    t('A clearer plan for what comes next.'),
+    t('Straightforward financial planning, explained in plain English. Start with a conversation about your goals, then understand your options and our fees.'),
+    'assets/images/showcase/financial-plan.svg', tattr('An illustrated planning notebook with goals, a timeline and next steps'),
+    [{"text": t('Arrange an introduction'), "url": home_anchor("contact")},
+     {"text": t('See our fees'), "url": home_anchor("fees"), "style": "outline"}],
+    note=t('An introductory conversation before you commit to advice'))
 write_pattern("finance-hero", title="Finance: trust-led hero", cats=FI + ", banner",
               keywords="finance, advisor, hero, planning, trust",
               desc="A restrained hero that leads with independence and a regulatory line.",

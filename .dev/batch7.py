@@ -139,3 +139,34 @@ write_pattern("footer-slim", title="Footer: slim", cats="unapp, footer",
               desc="A one-row footer with the site title, a short menu, copyright and social links.",
               body=body, block_types="core/template-part/footer")
 print("batch 7 written")
+
+# ------------------------------------------------------------- native design presets
+# These contain site-owned branding and menus, with no sample contact details.
+main_menu = '<!-- wp:navigation {"ariaLabel":"' + tattr_x("Main menu", "Navigation landmark label") + '","style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} /-->'
+brand = group('<!-- wp:site-logo {"width":40} /-->\n<!-- wp:site-title {"level":0} /-->',
+              layout="flex", wrap="nowrap", gap="20")
+body = group(group(brand + "\n" + group(main_menu, layout="flex", wrap="nowrap"),
+                   align="wide", class_name="unapp-header-row", layout="flex", wrap="nowrap", justify="space-between"),
+             align="full", bg="base", pad={"top":"30", "bottom":"30"}, layout="constrained")
+write_pattern("header-simple", title="Header: simple", cats="unapp, header", keywords="header, simple, menu, branding",
+              desc="Site branding and the primary menu, without a call-to-action button.",
+              body=body, block_types="core/template-part/header")
+
+footer_menu = '<!-- wp:navigation {"overlayMenu":"never","ariaLabel":"' + tattr_x("Footer menu", "Navigation landmark label") + '","layout":{"type":"flex","flexWrap":"wrap"},"fontSize":"small"} /-->'
+footer_brand = '<!-- wp:site-title {"level":0} /-->\n<!-- wp:site-tagline {"fontSize":"small"} /-->'
+# Conditional policy link points only at the site's actual privacy-policy page.
+policy = '<?php if ( get_privacy_policy_url() ) : ?>\n' + para('<a href="<?php echo esc_url( get_privacy_policy_url() ); ?>">' + t("Privacy policy") + '</a>', size="small") + '\n<?php endif; ?>'
+copyright = para(php_format("get_bloginfo( 'name' )", "© %s", "Copyright with site name", "%s: site name."), size="small")
+legal = group(copyright + "\n" + policy, layout="flex", justify="space-between", wrap="wrap", gap="30", align="wide")
+for slug, title, inside, desc in (
+    ("footer-columns", "Footer: brand and menu", split(group(footer_brand, class_name="unapp-footer-brand", gap="20"), footer_menu, left_width="45%", right_width="55%", align="top") + "\n" + legal,
+     "Site name, tagline and a footer menu in two columns, followed by copyright and the site's privacy-policy link."),
+    ("footer-bar", "Footer: compact bar", group(footer_brand + "\n" + footer_menu, align="wide", layout="flex", justify="space-between", wrap="wrap", gap="40") + "\n" + legal,
+     "A compact row of site branding and navigation, with copyright and the site's privacy-policy link."),
+    ("footer-minimal", "Footer: minimal", group(footer_brand, align="wide", gap="20") + "\n" + legal,
+     "Site branding, copyright and the site's privacy-policy link, without a menu."),
+):
+    body = section_std(inside, bg="surface", pad=("60", "50"), gap="40", class_name="unapp-preset-footer")
+    write_pattern(slug, title=title, cats="unapp, footer", keywords="footer, branding, navigation, template part",
+                  desc=desc, body=body, block_types="core/template-part/footer")
+print("native header and footer presets written")

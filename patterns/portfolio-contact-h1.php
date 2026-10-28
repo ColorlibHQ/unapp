@@ -21,13 +21,20 @@
 <p class="has-text-align-left has-primary-color has-text-color has-heading-font-family has-small-font-size" style="font-weight:600;letter-spacing:0.12em;text-transform:uppercase;"><?php echo esc_html_x( 'Working together', 'Section eyebrow label', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1,"fontSize":"xx-large","style":{"typography":{"lineHeight":"1.2"}}} -->
-<h1 class="wp-block-heading has-xx-large-font-size" style="line-height:1.2;"><?php esc_html_e( 'Booking from February', 'unapp' ); ?></h1>
+<h1 class="wp-block-heading has-xx-large-font-size" style="line-height:1.2;"><?php esc_html_e( 'Let’s make your next move', 'unapp' ); ?></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"muted","fontSize":"large"} -->
 <p class="has-muted-color has-text-color has-large-font-size"><?php esc_html_e( 'I take on four or five projects a year, usually branding and product design for teams between five and fifty people. If the dates do not work I will say so straight away rather than keep you waiting.', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- wp:paragraph {"fontSize":"large","style":{"typography":{"fontWeight":"600"}}} -->
-<p class="has-large-font-size" style="font-weight:600;"><?php esc_html_e( 'mara@lindqvist.example', 'unapp' ); ?></p>
+<!-- wp:buttons {"className":"unapp-starter-actions"} -->
+<div class="wp-block-buttons unapp-starter-actions">
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:mara@lindqvist.example?subject=' . rawurlencode( _x( 'Project enquiry', 'Email subject line', 'unapp' ) ) ); ?>"><?php esc_html_e( 'Email your project brief', 'unapp' ); ?></a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+<!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
+<p class="has-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'mara@lindqvist.example', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:social-links {"iconColor":"muted","iconColorValue":"#6b7280","className":"is-style-logos-only","size":"has-small-icon-size","layout":{"type":"flex","justifyContent":"left"}} -->
 <ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only">

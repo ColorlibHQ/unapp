@@ -25,6 +25,7 @@
 				// save() does not emit these, and markup it did not produce
 				// fails block validation.
 				control.setAttribute( 'role', 'button' );
+				control.setAttribute( 'aria-label', window.unappSchemeToggle ? window.unappSchemeToggle.label : 'Dark mode' );
 				control.setAttribute( 'aria-pressed', isDark ? 'true' : 'false' );
 			}
 		} );
@@ -38,11 +39,23 @@
 		return root.getAttribute( 'data-unapp-scheme' ) === 'dark' ? 'dark' : 'light';
 	}
 
-	function bind( button ) {
-		button.addEventListener( 'click', function ( event ) {
-			if ( event.target.closest( 'a[href="#"]' ) ) {
-				event.preventDefault();
-			}
+	function bind( wrapper ) {
+		var control = wrapper.matches( 'a, button' ) ? wrapper : wrapper.querySelector( 'a, button' );
+		if ( ! control ) {
+			return;
+		}
+		if ( control.tagName === 'A' ) {
+			control.addEventListener( 'keydown', function ( event ) {
+				if ( event.key === ' ' ) {
+					event.preventDefault();
+					if ( ! event.repeat ) {
+						control.click();
+					}
+				}
+			} );
+		}
+		control.addEventListener( 'click', function ( event ) {
+			event.preventDefault();
 			var next = current() === 'dark' ? 'light' : 'dark';
 			try {
 				window.localStorage.setItem( KEY, next );

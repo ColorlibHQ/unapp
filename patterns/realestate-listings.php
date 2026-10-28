@@ -12,25 +12,25 @@
 
 $unapp_listings = array(
 	array(
-		'image' => 'skyline',
+		'image' => 'property-crescent',
 		'name'  => _x( 'Lansdown Crescent', 'Property name', 'unapp' ),
 		'price' => _x( '£1,250,000', 'Property price', 'unapp' ),
 		'meta'  => _x( '4 bed · 2 bath · Grade I listed', 'Property details', 'unapp' ),
 	),
 	array(
-		'image' => 'desk',
+		'image' => 'property-flat',
 		'name'  => _x( 'Walcot Street', 'Property name', 'unapp' ),
 		'price' => _x( '£465,000', 'Property price', 'unapp' ),
 		'meta'  => _x( '2 bed · 1 bath · Top-floor flat', 'Property details', 'unapp' ),
 	),
 	array(
-		'image' => 'gathering',
+		'image' => 'property-mill',
 		'name'  => _x( 'Bathford Mill', 'Property name', 'unapp' ),
 		'price' => _x( '£720,000', 'Property price', 'unapp' ),
 		'meta'  => _x( '3 bed · 2 bath · Converted mill', 'Property details', 'unapp' ),
 	),
 	array(
-		'image' => 'studio-1',
+		'image' => 'property-terrace',
 		'name'  => _x( 'Bear Flat', 'Property name', 'unapp' ),
 		'price' => _x( '£389,000', 'Property price', 'unapp' ),
 		'meta'  => _x( '2 bed · 1 bath · Victorian terrace', 'Property details', 'unapp' ),
@@ -58,7 +58,7 @@ $unapp_listings = array(
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group">
 <!-- wp:image {"width":"100%","aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/' . $unapp_listing['image'] . '.svg' ) ); ?>" alt="<?php echo esc_attr( $unapp_listing['name'] ); ?>" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%;height:auto"/></figure>
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/showcase/' . $unapp_listing['image'] . '.webp' ) ); ?>" alt="<?php echo esc_attr( $unapp_listing['name'] ); ?>" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%;height:auto"/></figure>
 <!-- /wp:image -->
 <!-- wp:heading {"level":3,"fontSize":"large"} -->
 <h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $unapp_listing['name'] ); ?></h3>

@@ -19,7 +19,7 @@ directory, so the header is right for us and that finding is expected.
 
 If Unapp is ever submitted to WordPress.org, remove the header from
 `style.css` and `inc/updates.php` stops doing anything, because core will not
-fire the hook. Nothing else has to change.
+fire the hook. Directory submission also needs a fresh review of onboarding, content creation, plugin functionality, privacy and all current theme requirements; a clean Theme Check result alone does not establish eligibility.
 
 `unapp_updates_self_hosted()` makes that literally true rather than nearly
 true. It reads the header back off the theme, and `unapp_updates_enabled()`
@@ -28,10 +28,10 @@ on the Starter Sites screen — which would otherwise describe a twice-daily
 request that no longer happens. The header is the switch; there is not a second
 one to remember.
 
-Verified against 2.5.8 with Theme Check (283 files): the `Update URI` REQUIRED
-is the only finding, and removing that one line leaves zero REQUIRED and zero
-warnings. Re-check this whenever `inc/updates.php`, the headers or the build
-script change — see the release checklist.
+For 2.6.0, the packaged theme's only REQUIRED finding is the external Update
+URI. Private preview frames produce informational notices. The preview title
+uses WordPress's native document-title hook. Re-check the packaged ZIP whenever
+the updater, preview documents, headers or build script change.
 
 ## The endpoint
 

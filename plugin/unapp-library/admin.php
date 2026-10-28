@@ -248,12 +248,12 @@ function unapp_ai_run() {
 	if ( ! $page_ids || '' === $description ) {
 		set_transient( 'unapp_ai_result', array( 'error' => __( 'Describe the business, and apply a starter first.', 'unapp-library' ) ), MINUTE_IN_SECONDS * 5 );
 	} else {
-		$result = unapp_ai_rewrite_pages( $page_ids, $description );
-		set_transient(
-			'unapp_ai_result',
-			is_wp_error( $result ) ? array( 'error' => $result->get_error_message() ) : $result,
-			MINUTE_IN_SECONDS * 5
-		);
+		$result = unapp_ai_prepare_rewrite( $page_ids, $description );
+		if ( is_wp_error( $result ) ) {
+			set_transient( 'unapp_ai_result', array( 'error' => $result->get_error_message() ), MINUTE_IN_SECONDS * 5 );
+		} else {
+			set_transient( 'unapp_ai_proposal', $result, 30 * MINUTE_IN_SECONDS );
+		}
 	}
 
 	delete_option( 'unapp_ai_running' );
@@ -280,7 +280,7 @@ function unapp_ai_render() {
 	<div class="wrap unapp-ai">
 		<h1><?php esc_html_e( 'Rewrite with AI', 'unapp-library' ); ?></h1>
 		<p class="unapp-ai__intro">
-			<?php esc_html_e( 'This rewrites the words on the pages your starter built, and only the words. The layout, the spacing and the images are never sent and never change — the model receives the text on the page and a description of your business, and returns replacements one for one.', 'unapp-library' ); ?>
+			<?php esc_html_e( 'Generate and review a rewrite before changing your pages. This rewrites the words on the pages your starter built, and only the words. The layout, the spacing and the images are never sent and never change — the model receives the text on the page and a description of your business, and returns replacements one for one.', 'unapp-library' ); ?>
 		</p>
 
 		<?php // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- display flag set by our own redirect. ?>
@@ -354,6 +354,7 @@ function unapp_ai_render() {
 			<p><button type="submit" class="button"><?php esc_html_e( 'Save', 'unapp-library' ); ?></button></p>
 		</form>
 
+		<?php unapp_ai_render_proposal(); ?>
 		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="unapp-ai__panel">
 			<?php wp_nonce_field( 'unapp_ai_run' ); ?>
 			<input type="hidden" name="action" value="unapp_ai_run">
@@ -378,7 +379,7 @@ function unapp_ai_render() {
 				</p>
 				<p>
 					<button type="submit" class="button button-primary" <?php disabled( ! unapp_ai_ready() ); ?>>
-						<?php esc_html_e( 'Rewrite my pages', 'unapp-library' ); ?>
+						<?php esc_html_e( 'Generate a rewrite preview', 'unapp-library' ); ?>
 					</button>
 					<?php if ( ! unapp_ai_ready() ) : ?>
 						<span class="description"><?php esc_html_e( 'Add a key above first.', 'unapp-library' ); ?></span>
@@ -395,5 +396,64 @@ function unapp_ai_render() {
 			.unapp-ai textarea { max-width: 760px; }
 		</style>
 	</div>
+	<?php
+}
+
+/** Apply or discard the locally stored, reviewed rewrite. */
+function unapp_ai_review_action() {
+	check_admin_referer( 'unapp_ai_review' );
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_die( esc_html__( 'You are not allowed to rewrite the site.', 'unapp-library' ), 403 );
+	}
+	$id = isset( $_POST['proposal_id'] ) ? sanitize_key( wp_unslash( $_POST['proposal_id'] ) ) : '';
+	$proposal = get_transient( 'unapp_ai_proposal' );
+	if ( ! is_array( $proposal ) || $proposal['id'] !== $id || (int) $proposal['user'] !== get_current_user_id() ) {
+		$result = new WP_Error( 'unapp_ai_expired', __( 'This preview expired or was replaced. Generate a new preview before applying changes.', 'unapp-library' ) );
+	} else {
+		$discard = isset( $_POST['discard'] );
+		$result = $discard ? array( 'discarded' => true ) : unapp_ai_apply_proposal( $proposal );
+		delete_transient( 'unapp_ai_proposal' );
+	}
+	set_transient( 'unapp_ai_result', is_wp_error( $result ) ? array( 'error' => $result->get_error_message() ) : $result, 5 * MINUTE_IN_SECONDS );
+	wp_safe_redirect( admin_url( 'themes.php?page=unapp-ai' ) );
+	exit;
+}
+add_action( 'admin_post_unapp_ai_review', 'unapp_ai_review_action' );
+
+/** Show the exact proposed strings before a user commits them. */
+function unapp_ai_render_proposal() {
+	$proposal = get_transient( 'unapp_ai_proposal' );
+	if ( ! is_array( $proposal ) || (int) $proposal['user'] !== get_current_user_id() ) {
+		return;
+	}
+	?>
+	<section class="unapp-ai__panel">
+		<h2><?php esc_html_e( 'Review the proposed wording', 'unapp-library' ); ?></h2>
+		<p><?php esc_html_e( 'Your pages are unchanged. Review these text replacements before applying them. This preview expires in 30 minutes; applying it makes no further API request.', 'unapp-library' ); ?></p>
+		<?php if ( $proposal['pages'] ) : ?>
+			<p><?php esc_html_e( 'Pages included:', 'unapp-library' ); ?> <?php echo esc_html( implode( ', ', array_map( 'get_the_title', array_keys( $proposal['pages'] ) ) ) ); ?></p>
+			<div tabindex="0" role="region" aria-label="<?php esc_attr_e( 'Proposed text replacements', 'unapp-library' ); ?>" style="max-height:480px;overflow:auto">
+				<table class="widefat striped" style="table-layout:fixed">
+					<thead><tr><th scope="col"><?php esc_html_e( 'Current text', 'unapp-library' ); ?></th><th scope="col"><?php esc_html_e( 'Proposed text', 'unapp-library' ); ?></th></tr></thead>
+					<tbody>
+					<?php foreach ( $proposal['map'] as $from => $to ) : ?>
+						<tr><td style="overflow-wrap:anywhere"><?php echo esc_html( $from ); ?></td><td style="overflow-wrap:anywhere"><?php echo esc_html( $to ); ?></td></tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
+		<?php else : ?>
+			<p><?php esc_html_e( 'The provider did not propose any changes.', 'unapp-library' ); ?></p>
+		<?php endif; ?>
+		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+			<?php wp_nonce_field( 'unapp_ai_review' ); ?>
+			<input type="hidden" name="action" value="unapp_ai_review">
+			<input type="hidden" name="proposal_id" value="<?php echo esc_attr( $proposal['id'] ); ?>">
+			<p>
+				<?php if ( $proposal['pages'] ) : ?><button type="submit" class="button button-primary"><?php esc_html_e( 'Apply reviewed wording', 'unapp-library' ); ?></button><?php endif; ?>
+				<button type="submit" name="discard" value="1" class="button"><?php esc_html_e( 'Discard preview', 'unapp-library' ); ?></button>
+			</p>
+		</form>
+	</section>
 	<?php
 }

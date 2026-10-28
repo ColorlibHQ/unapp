@@ -52,10 +52,11 @@ brief_card = card(
 body = section_std(
     split(
         eyebrow(t("Working together", "Section eyebrow label"), align="left") + "\n" +
-        heading(t("Booking from February")) + "\n" +
+        heading(t("Let’s make your next move")) + "\n" +
         para(t("I take on four or five projects a year, usually branding and product design for teams between five and fifty people. If the dates do not work I will say so straight away rather than keep you waiting."),
              color="muted", size="large") + "\n" +
-        para(t("mara@lindqvist.example"), size="large", weight="600") + "\n" +
+        buttons([{"text": t("Email your project brief"), "url": mailto("mara@lindqvist.example", "Project enquiry")}], class_name="unapp-starter-actions") + "\n" +
+        para(t("mara@lindqvist.example"), size="small", color="muted") + "\n" +
         social([("x", "https://x.com"), ("instagram", "https://instagram.com"),
                 ("linkedin", "https://linkedin.com")], size="has-small-icon-size", justify="left"),
         brief_card, left_width="55%", right_width="45%", align="top"),
@@ -68,7 +69,7 @@ write_pattern("portfolio-contact", title="Portfolio: availability and enquiries"
 # ================================================================= BLOG
 body = section_std(
     split(
-        image(uri("assets/images/abstract/reading.svg"), tattr("Reading"), radius=CARD_RADIUS),
+        image(uri("assets/images/showcase/editorial-notes.svg"), tattr("Editorial notebook and a printed issue of The Slow Build"), radius=CARD_RADIUS),
         eyebrow(t("About", "Section eyebrow label"), align="left") + "\n" +
         heading(t("Why this exists")) + "\n" +
         para(t("The Slow Build started in 2019 as an argument with a former colleague about whether software has to be made the way it usually is. He has since conceded, partially."),

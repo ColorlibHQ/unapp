@@ -65,7 +65,7 @@
 <p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.72);"><?php echo esc_html_x( 'mara@lindqvist.example', 'Footer contact line', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"small","style":{"color":{"text":"rgba(255,255,255,0.72)"}}} -->
-<p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.72);"><?php echo esc_html_x( 'Booking from February', 'Footer contact line', 'unapp' ); ?></p>
+<p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.72);"><?php echo esc_html_x( 'Let’s discuss your next project', 'Footer contact line', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"small","style":{"color":{"text":"rgba(255,255,255,0.72)"}}} -->
 <p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.72);"><?php echo esc_html_x( 'Stockholm, and remote', 'Footer contact line', 'unapp' ); ?></p>

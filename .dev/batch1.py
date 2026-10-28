@@ -7,20 +7,20 @@ C = "unapp, unapp_hero, banner, featured"
 body = section(
     columns([
         column(
-            eyebrow(t("New in 2.0","Hero eyebrow"), align="left") + "\n" +
-            h1(t("Ship your product, not your project plan"), size="xxx-large", line_height="1.1", align="left") + "\n" +
-            para(t("Unapp keeps roadmaps, files and conversations in one place, so the work moves forward while you sleep."), color="muted", size="large") + "\n" +
-            buttons([{"text": t("Start free trial"), "url": "#pricing"},
-                     {"text": t("Book a demo"), "url": mailto("hello@example.com", "Book a demo"), "style": "is-style-outline"}],
-                    gap="30", margin={"top": "40"}) + "\n" +
-            para(t("No credit card required · 14-day trial"), color="muted", size="small"),
+            eyebrow(t("One workspace. Real progress.","Hero eyebrow"), align="left") + "\n" +
+            h1(t("Less chasing. More shipping."), size="xxx-large", line_height="1.1", align="left") + "\n" +
+            para(t("Bring projects, files and conversations together. Give your team a clear plan and see what is ready to ship."), color="muted", size="large") + "\n" +
+            buttons([{"text": t("Explore plans"), "url": home_anchor("pricing")},
+                     {"text": t("See how it works"), "url": home_anchor("how-it-works"), "style": "is-style-outline"}],
+                    gap="20", class_name="unapp-starter-actions") + "\n" +
+            para(t("Start with the free plan. Grow when you are ready."), color="muted", size="small"),
             width="46%", vertical_align="center", gap="30"),
         column(
-            image(uri("assets/images/dashboard-1.avif"), tattr("Unapp dashboard with project analytics"),
+            image(uri("assets/images/showcase/workspace-board.svg"), tattr("Unapp website launch board with tasks grouped into To do, In progress and Ready"),
                   radius="20px", shadow="card-strong"),
             width="54%", vertical_align="center"),
     ], align="wide", gap="60", vertical_align="center"),
-    pad=("70", "70"), gap="60")
+    pad=("70", "70"), gap="60", class_name="unapp-starter-hero")
 write_pattern("hero-split", title="Hero: split with screenshot", cats=C,
               keywords="hero, banner, split, screenshot, landing",
               desc="Two-column hero: copy and buttons on the left, a product screenshot on the right.",

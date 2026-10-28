@@ -65,7 +65,7 @@ featured = ('<!-- wp:woocommerce/product-collection {"queryId":0,"query":{"perPa
             '</div>\n<!-- /wp:woocommerce/product-collection -->')
 body = section_std(
     intro(eyebrow_text=t("New in", "Section eyebrow label"),
-          title=t("The four most recent things"),
+          title=t("Find your next everyday essential"),
           lead=t("Everything is made in small runs, so this changes more often than we plan for.")) + "\n" +
     featured + "\n" +
     buttons([{"text": t("See everything in stock"), "url": SHOP_URL}], justify="center"))
@@ -74,19 +74,14 @@ write_pattern("shop-featured", title="Shop: featured products", cats=S + ", unap
               desc="Four newest products from the store, with a link to the full shop. Needs WooCommerce.",
               body=body)
 
-# storefront hero
-body = section_std(
-    split(
-        eyebrow(t("Workshop and shop", "Shop hero eyebrow"), align="left") + "\n" +
-        h1(t("Things we make, in numbers we can stand behind"), size="xxx-large",
-                line_height="1.05") + "\n" +
-        para(t("A small workshop in Leeds making bags, aprons and a few things that did not fit either category. Two hundred of anything, then we stop and think about it."),
-             color="muted", size="large") + "\n" +
-        buttons([{"text": t("Shop everything"), "url": SHOP_URL},
-                 {"text": t("How it is made"), "url": home_anchor("making"), "style": "outline"}]),
-        image(uri("assets/images/abstract/studio-1.svg"), tattr("The workshop"), radius=CARD_RADIUS),
-        left_width="55%", right_width="45%"),
-    gap="0")
+body = starter_hero(
+    t('Made in Leeds · Small runs', "Starter hero eyebrow"),
+    t('Made for the everyday. Built to stay.'),
+    t('Canvas bags, aprons and useful things, cut and stitched in our four-person workshop. Fewer pieces, thoughtfully made.'),
+    'assets/images/showcase/shop-goods.webp', tattr('Olive canvas tote with leather handles and a natural canvas apron'),
+    [{"text": t('Shop the collection'), "url": SHOP_URL},
+     {"text": t('Meet the workshop'), "url": home_anchor("making"), "style": "outline"}],
+    note=t('Free UK returns · Two-year guarantee · Repairs at cost'))
 write_pattern("shop-hero", title="Shop: hero", cats=S + ", banner, featured",
               keywords="shop, hero, store, ecommerce, workshop",
               desc="A storefront introduction with two calls to action and an image.",
@@ -95,7 +90,7 @@ write_pattern("shop-hero", title="Shop: hero", cats=S + ", banner, featured",
 # the workshop
 body = section_std(
     split(
-        image(uri("assets/images/abstract/desk.svg"), tattr("The bench"), radius=CARD_RADIUS),
+        image(uri("assets/images/showcase/shop-workbench.webp"), tattr("Canvas and leather being stitched at a workshop bench"), radius=CARD_RADIUS),
         eyebrow(t("How it is made", "Section eyebrow label"), align="left") + "\n" +
         heading(t("Four people, two benches, no factory")) + "\n" +
         para(t("Leather from a tannery in Devon that has been at it since 1863, canvas from Dundee, and thread we buy in quantities that embarrass our accountant."),

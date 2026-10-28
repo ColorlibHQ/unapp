@@ -5,7 +5,7 @@
  * A theme must not process form submissions — that is plugin territory, and
  * WordPress.org rejects themes that do it. So Unapp does the next best thing:
  * it finds whichever form plugin is already active, renders that plugin's
- * first form, and styles the result to match the palette. When no form plugin
+ * selected form (or detects one automatically), and styles it to match the palette. When no form plugin
  * is installed, the contact patterns fall back to an email panel that still
  * gives a visitor a way to get in touch.
  *
@@ -32,10 +32,11 @@ function unapp_form_providers() {
 			'shortcode' => '[wpforms id="%d"]',
 		),
 		'gravity'     => array(
-			'label'     => 'Gravity Forms',
-			'active'    => array( 'GFForms', 'GFAPI' ),
-			'callback'  => 'unapp_gravity_first_form',
-			'shortcode' => '[gravityform id="%d" title="false"]',
+			'label'          => 'Gravity Forms',
+			'active'         => array( 'GFForms', 'GFAPI' ),
+			'callback'       => 'unapp_gravity_first_form',
+			'forms_callback' => 'unapp_gravity_forms',
+			'shortcode'      => '[gravityform id="%d" title="false"]',
 		),
 		'cf7'         => array(
 			'label'     => 'Contact Form 7',
@@ -44,10 +45,11 @@ function unapp_form_providers() {
 			'shortcode' => '[contact-form-7 id="%d"]',
 		),
 		'fluent'      => array(
-			'label'     => 'Fluent Forms',
-			'active'    => array( 'FLUENTFORM', 'FLUENTFORM_VERSION' ),
-			'callback'  => 'unapp_fluent_first_form',
-			'shortcode' => '[fluentform id="%d"]',
+			'label'          => 'Fluent Forms',
+			'active'         => array( 'FLUENTFORM', 'FLUENTFORM_VERSION' ),
+			'callback'       => 'unapp_fluent_first_form',
+			'forms_callback' => 'unapp_fluent_forms',
+			'shortcode'      => '[fluentform id="%d"]',
 		),
 		'forminator'  => array(
 			'label'     => 'Forminator',
@@ -56,10 +58,11 @@ function unapp_form_providers() {
 			'shortcode' => '[forminator_form id="%d"]',
 		),
 		'ninja'       => array(
-			'label'     => 'Ninja Forms',
-			'active'    => array( 'Ninja_Forms', 'NF_PLUGIN_VERSION' ),
-			'callback'  => 'unapp_ninja_first_form',
-			'shortcode' => '[ninja_form id=%d]',
+			'label'          => 'Ninja Forms',
+			'active'         => array( 'Ninja_Forms', 'NF_PLUGIN_VERSION' ),
+			'callback'       => 'unapp_ninja_first_form',
+			'forms_callback' => 'unapp_ninja_forms',
+			'shortcode'      => '[ninja_form id=%d]',
 		),
 		'kali'        => array(
 			'label'     => 'Kali Forms',
@@ -125,7 +128,7 @@ function unapp_form_provider_active( $provider ) {
 }
 
 /**
- * The newest published form for a provider, if it has one.
+ * The first published form for a provider, if it has one.
  *
  * @param array $provider Provider definition.
  * @return int Form ID, or 0.
@@ -202,51 +205,20 @@ function unapp_ninja_first_form() {
  * @return array|null array( 'key', 'label', 'markup' ), or null when nothing is available.
  */
 function unapp_detect_form() {
-	static $detected = false;
-
-	if ( false !== $detected ) {
-		return $detected;
-	}
-
-	$detected = null;
-
-	foreach ( unapp_form_providers() as $key => $provider ) {
-		if ( ! unapp_form_provider_active( $provider ) ) {
-			continue;
-		}
-
-		// A self-contained block needs no form ID.
-		if ( ! empty( $provider['block'] ) ) {
-			$detected = array(
-				'key'    => $key,
-				'label'  => $provider['label'],
-				'markup' => '<!-- wp:' . $provider['block'] . ' /-->',
-			);
-			break;
-		}
-
-		$id = unapp_form_provider_id( $provider );
-		if ( ! $id ) {
-			continue;
-		}
-
-		$detected = array(
-			'key'    => $key,
-			'label'  => $provider['label'],
-			'markup' => sprintf( $provider['shortcode'], $id ),
-		);
-		break;
+	static $cache = array();
+	$choice = get_option( UNAPP_CONTACT_FORM_OPTION, 'auto' );
+	$key = unapp_form_cache_revision() . ':' . ( is_string( $choice ) ? $choice : 'invalid' );
+	if ( ! array_key_exists( $key, $cache ) ) {
+		$cache[ $key ] = unapp_resolve_contact_form( $choice );
 	}
 
 	/**
-	 * Filters the form Unapp renders in its contact patterns.
+	 * Filters the form Unapp renders, including a saved selection or email mode.
+	 * Return an array with a markup key, or null to force the email fallback.
 	 *
-	 * Return an array with a 'markup' key to render your own form, or null to
-	 * force the email fallback.
-	 *
-	 * @param array|null $detected Detected form.
+	 * @param array|null $detected Resolved contact form.
 	 */
-	return apply_filters( 'unapp_detected_form', $detected );
+	return apply_filters( 'unapp_detected_form', $cache[ $key ] );
 }
 
 /**
@@ -339,7 +311,8 @@ function unapp_render_form_slot( $block_content, $block ) {
 
 	if ( current_user_can( 'edit_theme_options' ) ) {
 		$block_content .= '<p class="has-muted-color has-text-color has-small-font-size unapp-form-hint"><em>'
-			. esc_html( unapp_form_admin_hint() ) . '</em></p>';
+			. esc_html( unapp_contact_form_hint() ) . ' <a href="' . esc_url( admin_url( 'themes.php?page=unapp-launch-checklist#unapp-contact-form' ) ) . '">'
+			. esc_html__( 'Choose a contact form', 'unapp' ) . '</a></em></p>';
 	}
 
 	return $block_content;

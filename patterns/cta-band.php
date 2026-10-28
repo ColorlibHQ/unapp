@@ -21,7 +21,7 @@
 <h2 class="wp-block-heading has-base-color has-text-color has-x-large-font-size"><?php esc_html_e( 'Ready to see it with your own projects?', 'unapp' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"base"} -->
-<p class="has-base-color has-text-color"><?php esc_html_e( 'Import a board and watch it come to life. It takes about five minutes.', 'unapp' ); ?></p>
+<p class="has-base-color has-text-color"><?php esc_html_e( 'Find the right plan for your team, from a free workspace to a shared home for every project.', 'unapp' ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->
@@ -30,7 +30,7 @@
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"right"}} -->
 <div class="wp-block-buttons">
 <!-- wp:button {"textColor":"primary","backgroundColor":"base"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-primary-color has-text-color has-base-background-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/#pricing' ) ); ?>"><?php esc_html_e( 'Start free trial', 'unapp' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-primary-color has-text-color has-base-background-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/#pricing' ) ); ?>"><?php esc_html_e( 'Explore plans', 'unapp' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

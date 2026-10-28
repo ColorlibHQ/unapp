@@ -441,9 +441,11 @@ def eyebrow(text, *, align="center", color="primary", custom_color=None):
                 transform="uppercase")
 
 
-def buttons(items, *, justify=None, margin=None, gap=None):
+def buttons(items, *, justify=None, margin=None, gap=None, class_name=None):
     """items: list of dicts {text, url, style, bg, color, width}"""
     a = {}
+    if class_name:
+        a["className"] = class_name
     style = {}
     spacing = {}
     css = ""
@@ -491,7 +493,8 @@ def buttons(items, *, justify=None, margin=None, gap=None):
                      f'<!-- /wp:button -->')
     attrs = f" {_attrs(a)}" if a else ""
     style_attr = f' style="{css}"' if css else ""
-    return (f'<!-- wp:buttons{attrs} -->\n<div class="wp-block-buttons"{style_attr}>\n'
+    classes = "wp-block-buttons" + (f" {class_name}" if class_name else "")
+    return (f'<!-- wp:buttons{attrs} -->\n<div class="{classes}"{style_attr}>\n'
             + "\n".join(inner) + '\n</div>\n<!-- /wp:buttons -->')
 
 
@@ -518,6 +521,28 @@ def _read_size(path):
         data = open(path, "rb").read(4096)
         i = data.find(b"ispe")
         size = (int.from_bytes(data[i + 8:i + 12], "big"), int.from_bytes(data[i + 12:i + 16], "big"))
+    elif path.endswith(".webp"):
+        # Read RIFF chunks without adding an imaging dependency to generation.
+        data = open(path, "rb").read()
+        if data[:4] != b"RIFF" or data[8:12] != b"WEBP":
+            raise ValueError(f"not a WebP image: {path}")
+        offset = 12
+        while offset + 8 <= len(data):
+            tag = data[offset:offset + 4]
+            length = int.from_bytes(data[offset + 4:offset + 8], "little")
+            chunk = data[offset + 8:offset + 8 + length]
+            if tag == b"VP8X":
+                size = (1 + int.from_bytes(chunk[4:7], "little"), 1 + int.from_bytes(chunk[7:10], "little"))
+            elif tag == b"VP8 " and chunk[3:6] == b"\x9d\x01\x2a":
+                size = (int.from_bytes(chunk[6:8], "little") & 0x3fff, int.from_bytes(chunk[8:10], "little") & 0x3fff)
+            elif tag == b"VP8L" and chunk[:1] == b"\x2f":
+                bits = int.from_bytes(chunk[1:5], "little")
+                size = (1 + (bits & 0x3fff), 1 + ((bits >> 14) & 0x3fff))
+            if size:
+                break
+            offset += 8 + length + (length % 2)
+        if not size:
+            raise ValueError(f"WebP dimensions unavailable: {path}")
     _SIZE_CACHE[path] = size
     return size
 
@@ -529,14 +554,14 @@ def intrinsic_size(src):
     one size (the avatars, the abstract set). A directory of mixed sizes (the
     logos) returns None: there is no single ratio to promise.
     """
-    m = re.search(r"assets/images/([a-z0-9/_.-]+\.(?:svg|avif))'", src)
+    m = re.search(r"assets/images/([a-z0-9/_.-]+\.(?:svg|avif|webp))'", src)
     if m:
         return _read_size(os.path.join(THEME, "assets", "images", m.group(1)))
     m = re.search(r"assets/images/([a-z0-9_-]+)/' \.", src)
     if m:
         folder = os.path.join(THEME, "assets", "images", m.group(1))
         sizes = {_read_size(os.path.join(folder, f)) for f in os.listdir(folder)
-                 if f.endswith((".svg", ".avif"))}
+                 if f.endswith((".svg", ".avif", ".webp"))}
         return sizes.pop() if len(sizes) == 1 else None
     return None
 
@@ -732,12 +757,12 @@ def intro(*, eyebrow_text=None, title=None, lead=None, align="center", content="
 
 def section(inner, *, pad=("70", "70"), gap="60", style_variation=None, bg=None, text=None,
             gradient=None, layout="constrained", content_size=None, wide_size=None, elements=None,
-            anchor=None, custom_text=None):
+            anchor=None, custom_text=None, class_name=None):
     padding = {"top": pad[0], "bottom": pad[1]}
     return group(inner, align="full", style_variation=style_variation, bg=bg, text=text,
                  gradient=gradient, pad=padding, gap=gap, layout=layout,
                  content_size=content_size, wide_size=wide_size, elements=elements, anchor=anchor,
-                 custom_text=custom_text)
+                 custom_text=custom_text, class_name=class_name)
 
 
 HEADER_TPL = """<?php
@@ -870,11 +895,24 @@ def faq_list(pairs):
 
 
 def section_std(inner, *, variation=None, bg=None, gradient=None, text=None,
-                pad=SECTION_PAD, gap=SECTION_GAP, elements=None, anchor=None, custom_text=None):
+                pad=SECTION_PAD, gap=SECTION_GAP, elements=None, anchor=None, custom_text=None, class_name=None):
     """Every section: same padding, same intro-to-content gap."""
     return section(inner, pad=pad, gap=gap, style_variation=variation, bg=bg,
                    gradient=gradient, text=text, elements=elements, anchor=anchor,
-                   custom_text=custom_text)
+                   custom_text=custom_text, class_name=class_name)
+
+
+def starter_hero(eyebrow_text, title, lead, image_file, image_alt, actions, note=None):
+    """Readable introductory copy, two real actions and uncropped 4:3 artwork."""
+    copy = (eyebrow(eyebrow_text, align="left") + "\n" +
+            h1(title, size="xxx-large", line_height="1.05") + "\n" +
+            para(lead, color="muted", size="large") + "\n" +
+            buttons(actions, gap="20", class_name="unapp-starter-actions"))
+    if note:
+        copy += "\n" + para(note, color="muted", size="small")
+    return section_std(
+        split(copy, image(uri(image_file), image_alt, radius=CARD_RADIUS, aspect="4/3", scale="cover")),
+        gap="0", class_name="unapp-starter-hero")
 
 
 GRADIENT_ELEMENTS = {
@@ -892,7 +930,7 @@ def band(title, body, buttons_list, *, width="720px", anchor=None):
     """A closing call-to-action on the palette gradient."""
     inner = (heading(title, align="center", size="xx-large", color="base") + "\n" +
              para(body, align="center", color="base", size="large") + "\n" +
-             buttons(buttons_list, justify="center", margin={"top": "20"}))
+             buttons(buttons_list, justify="center", margin={"top": "20"}, class_name="unapp-starter-actions"))
     return section_std(
         group(inner, layout="constrained", content_size=width, gap=STACK_GAP),
         gradient="primary-to-accent", text="base", gap="0", elements=GRADIENT_ELEMENTS, anchor=anchor)

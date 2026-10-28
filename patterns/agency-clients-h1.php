@@ -37,8 +37,8 @@ $unapp_agency_clients = array(
 	),
 );
 ?>
-<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"},"anchor":"work"} -->
-<div class="wp-block-group alignfull is-style-section-soft" id="work" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:group {"align":"full","className":"is-style-section-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"},"anchor":"clients"} -->
+<div class="wp-block-group alignfull is-style-section-soft" id="clients" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"680px"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"align":"center","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
@@ -52,8 +52,8 @@ $unapp_agency_clients = array(
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained","contentSize":"760px"}} -->
 <div class="wp-block-group">
 <?php foreach ( $unapp_agency_clients as $unapp_agency_client ) : ?>
-<!-- wp:columns {"verticalAlignment":"center","isStackedOnMobile":false,"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|30","left":"var:preset|spacing|30"}}}} -->
-<div class="wp-block-columns are-vertically-aligned-center is-not-stacked-on-mobile">
+<!-- wp:columns {"verticalAlignment":"center","className":"unapp-client-row","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"var:preset|spacing|20"}}}} -->
+<div class="wp-block-columns are-vertically-aligned-center unapp-client-row">
 <!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%;">
 <!-- wp:heading {"level":3,"fontSize":"large"} -->

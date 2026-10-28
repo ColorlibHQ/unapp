@@ -36,7 +36,7 @@ body = section(
 write_pattern("blog-featured", title="Blog: featured post + list", cats=CONTENT,
               keywords="blog, posts, featured, query, magazine",
               desc="One large lead post beside a compact list of the next three.",
-              body=body)
+              body=body, anchor="latest")
 
 # ------------------------------------------------------------- blog list (rows)
 row_inner = columns([

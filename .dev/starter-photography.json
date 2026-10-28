@@ -1,0 +1,112 @@
+{
+	"mode": "Built-in image_gen",
+	"purpose": "Fictional starter demonstration scenes, not photographs of actual businesses, staff, properties or products.",
+	"encoding": "1200px maximum width; WebP quality 84. Originals are retained in the generation library.",
+	"assets": [
+		{
+			"file": "shop-goods.webp",
+			"source": "exec-76c1b13a-9b56-4959-9782-28af5631c8e2.png",
+			"prompt": "Create one photorealistic editorial ecommerce product photograph for a fictional independent Leeds canvas and leather workshop. A beautifully made unbranded olive green waxed canvas tote bag with tan leather handles, a folded natural cream canvas apron beside it, on a pale warm limestone workbench. Close-up tactile stitching, honest handmade materials, understated high-end British craft art direction, soft daylight from left, warm neutral background, restrained composition, no text, no logos, no watermark, no people, no collage. Landscape 4:3 composition with all products fully inside central 80 percent so it crops elegantly on mobile. Intended as the main image on a WordPress shop starter."
+		},
+		{
+			"file": "restaurant-seasonal.webp",
+			"source": "exec-82bf43e6-802d-415c-ac41-59eabaa68247.png",
+			"prompt": "Create one photorealistic editorial food photograph for a fictional small seasonal Bristol restaurant. A simple handmade off-white ceramic plate of beautifully cooked golden roasted hake with spring greens, butter sauce and herbs on a warm oak dining table; a small bread plate, linen napkin and subtle wine glass at the edges. Natural window light, appetizing honest fine dining rather than elaborate decoration, warm cream and olive palette, shallow but sufficient depth of field, no text, no logos, no people, no watermark, no collage. Landscape 4:3 composition with plate fully in central 80 percent, suitable for mobile crop. Premium restaurant website hero photograph."
+		},
+		{
+			"file": "fitness-community.webp",
+			"source": "exec-0a1dfc17-ea5f-4551-aed3-10e4afc1e704.png",
+			"prompt": "Create one photorealistic editorial photograph for a fictional welcoming small-group strength studio in a converted UK brick railway arch. Two ordinary adult members with different body types in simple unbranded training clothes, one woman and one man, standing naturally with a friendly woman coach beside a tidy barbell training station, an empty racked barbell safely behind them. They are discussing their session, not performing a lift. Warm natural daylight, brick arches, rubber floor, tidy weights, authentic relaxed expressions, inviting and inclusive rather than intimidating, realistic anatomy and hands. No text, no logos, no watermark, no collage. Landscape 4:3 composition with people centered and comfortable margins for mobile crop."
+		},
+		{
+			"file": "church-welcome.webp",
+			"source": "exec-ce100867-c81f-4379-931f-43805e10a80e.png",
+			"prompt": "Photorealistic editorial architectural photograph for a fictional welcoming community church website. A small beautiful British brick church with a wide open accessible entrance, warm light visible through arched windows, planted beds, a welcoming sunlit forecourt and clear path into the doorway. Late afternoon natural light, calm optimistic atmosphere, no people, no text, no signs, no logos. Landscape 4:3 framing with entire entrance in central 80 percent, realistic architecture, no collage."
+		},
+		{
+			"file": "practice-room.webp",
+			"source": "exec-c5d3d549-5fa8-46e3-bb7d-2ad58706d38a.png",
+			"prompt": "Photorealistic editorial interior photograph for a fictional welcoming dental practice website. A beautifully clean modern dental surgery with a sage green treatment chair, white cabinets, a realistic dental light, frosted daylight window and a small plant away from the treatment area. Calm, bright, reassuring, professional and uncluttered, realistic equipment, no patients, no staff, no text, no logos. Landscape 4:3 composition with chair centered and space around it for mobile crop. No collage."
+		},
+		{
+			"file": "course-workshop.webp",
+			"source": "exec-f25d5b75-6cfb-4abd-8650-c56299967d46.png",
+			"prompt": "Photorealistic editorial craft photograph for a fictional evening school teaching traditional trades. A beautiful oak woodworking bench with a hand plane, wood shavings, a carefully made small wooden stool, a folded canvas apron, and distant shelves holding ceramic bowls. Warm natural daylight in an old British school hall, tactile real materials, inviting creative atmosphere, no people, no text, no logos. Landscape 4:3 composition with stool and tools centered for mobile crop, no collage."
+		},
+		{
+			"file": "property-crescent.webp",
+			"source": "exec-f32c0290-ef0b-4fb2-a116-732381353245.png",
+			"prompt": "Photorealistic editorial real-estate photograph of a fictional Georgian townhouse on an elegant curved Bath limestone crescent in England. Three storeys, tall sash windows, dark green front door, black iron railings, warm honey stone, restrained planting, a beautiful clear soft-sunlight day, architectural perspective straight and realistic. No people, no cars, no text, no signs, no logos. Landscape 4:3, central house fully in frame, fictional demo property, no collage."
+		},
+		{
+			"file": "property-flat.webp",
+			"source": "exec-d45fae30-49a8-414a-815e-1afd094bbf34.png",
+			"prompt": "Photorealistic editorial real-estate interior photograph of a fictional top-floor Georgian flat in Bath England. Light-filled living room with tall sash windows looking toward honey-stone rooftops, pale walls, oak floor, simple cream sofa, warm terracotta armchair, a small oak coffee table and one green plant. Airy understated lived-in elegance, realistic geometry, no people, no text, no logos. Landscape 4:3, comfortable mobile crop, fictional demo property, no collage."
+		},
+		{
+			"file": "property-mill.webp",
+			"source": "exec-e09ed63a-9d9b-46c5-8c08-e3dedfbb758f.png",
+			"prompt": "Photorealistic editorial real-estate exterior photograph of a fictional converted honey-stone mill home in a quiet Somerset village near Bath. Three-storey former mill with tasteful large black framed windows, a green front door, climbing plants and a small peaceful gravel courtyard garden. Bright overcast natural light, authentic English limestone and slate roof, realistic charming architecture. No people, no text, no cars, no signage, no logos. Landscape 4:3 entire main building central, fictional demo property, no collage."
+		},
+		{
+			"file": "property-terrace.webp",
+			"source": "exec-32b95a20-fa04-4d03-8186-c529586dbac3.png",
+			"prompt": "Photorealistic editorial real-estate exterior photograph of a fictional modest Victorian terraced house in Bath England. Warm honey limestone facade, two storeys, traditional ground-floor bay window, deep blue front door, slate roof, small neat front garden with low stone wall and potted plants. Morning daylight, honest inviting estate-agency photography, realistic architecture. No people, no cars, no text, no logos, no signage. Landscape 4:3 house centered with comfortable mobile crop, fictional demo property, no collage."
+		},
+		{
+			"file": "shop-workbench.webp",
+			"source": "exec-23ed7e18-84a4-4b7b-99fb-7c36a15ca279.png",
+			"prompt": "Photorealistic editorial craft photograph for a fictional Leeds canvas and leather workshop. Close view of a maker's two anatomically realistic hands guiding olive waxed canvas and tan leather under a simple industrial sewing machine on a warm wooden workbench. Neat thread spools, leather offcuts and a pair of scissors at edges, tactile precise stitching, soft daylight, understated quality craft atmosphere. No text, no logos, no faces, no watermark, no collage. Landscape 4:3 composition, main sewing detail centered for mobile crop."
+		},
+		{
+			"file": "restaurant-room.webp",
+			"source": "exec-82c86423-6184-411d-bcf9-c3499f7a5a65.png",
+			"prompt": "Photorealistic editorial interior photograph of a fictional intimate seasonal restaurant in Bristol. Small warm corner dining room with honey oak tables, beautifully simple ceramic plates, ivory linen napkins, bentwood chairs, soft daylight through tall windows, a small vase of seasonal branches. Cozy understated modern British hospitality, natural materials, realistic interior perspective, no diners, no staff, no text, no logos, no watermark. Landscape 4:3 composition, central table with comfortable mobile crop, no collage."
+		},
+		{
+			"file": "fitness-floor.webp",
+			"source": "exec-777162fb-9cad-4abe-8d5d-90a4243276bd.png",
+			"prompt": "Photorealistic editorial architectural interior photograph of a fictional small-group strength gym in a beautifully converted British brick railway arch. Bright daylight through tall arched windows, tidy lifting platforms, black rubber flooring, safely racked barbells and kettlebells arranged in the distance, warm brickwork, clean and welcoming rather than dark or aggressive. No people, no mirrors, no text, no logos, no watermark. Landscape 4:3 composition, realistic safe equipment and architecture, no collage."
+		},
+		{
+			"file": "niche-home-services.webp",
+			"source": "OpenAI imagegen built-in tool; original retained in generation library",
+			"prompt": "Use case: photorealistic-natural. Asset type: homepage hero photograph for a free WordPress Home Services starter. Create an original editorial photograph of a tidy practical residential renovation workspace: an oak workbench with a well-used cordless drill, tape measure, neatly arranged hand tools and wood shavings, with a softly focused bright lived-in home hallway behind. No people, no brands or text, no watermark, no collage. Warm natural daylight, muted navy and warm wood tones, credible small local repair business rather than luxury property. Landscape 4:3, main tools central and visible when cropped on a phone, natural photographic detail."
+		},
+		{
+			"file": "niche-cleaning.webp",
+			"source": "OpenAI imagegen built-in tool; original retained in generation library",
+			"prompt": "Use case: photorealistic-natural. Asset type: homepage hero photograph for a free WordPress Cleaning Company starter. Create an original editorial photograph of a calm freshly cleaned ordinary home kitchen, warm white cabinetry, pale oak details, sunlit window, a small organized cleaning caddy with unbranded spray bottles and neatly folded teal microfiber cloth on the island. No people, no readable text, no logos, no watermark, no collage. Soft morning sunlight, fresh but believable lived-in home, muted teal and soft cream colors, no exaggerated sparkles. Landscape 4:3, caddy and clean surfaces centered for mobile cropping."
+		},
+		{
+			"file": "niche-salon.webp",
+			"source": "OpenAI imagegen built-in tool; original retained in generation library",
+			"prompt": "Use case: photorealistic-natural. Asset type: homepage hero photograph for a free WordPress Salon and Barber starter. Create an original editorial photograph of an intimate independent unisex hair studio: one warm tan leather barber styling chair in front of a tall rounded mirror, a small oak counter with neatly arranged unbranded scissors, combs and clippers, soft plaster walls and a green plant. No people, no lettering, no logos, no watermark, no collage. Warm window light, inviting restrained editorial interiors photography, rose-clay and warm walnut accents, realistic local shop rather than a luxury hotel. Landscape 4:3, chair centered for mobile cropping."
+		},
+		{
+			"file": "niche-coach.webp",
+			"source": "exec-0a989689-24d2-49d7-88f5-4087675e10cc.png",
+			"prompt": "Use case: photorealistic-natural. Asset type: hero photograph for a free WordPress Coach and Consultant starter. Original editorial photograph of a quiet independent coaching workspace: two comfortable chairs angled toward a small oak table, a blank open notebook, a simple water carafe and glasses, a green plant and softly lit blue-grey plaster walls. Natural window light, welcoming and practical rather than a luxury office, no people, no readable writing, no logos, no watermark, no collage. Landscape 4:3 with table and chairs centered for mobile cropping. Credible calm space for business coaching conversations."
+		},
+		{
+			"file": "niche-photographer.webp",
+			"source": "exec-3b15d919-82ce-4387-bd03-abaf5d29469c.png",
+			"prompt": "Use case: photorealistic-natural. Asset type: featured landscape portfolio photograph for a free WordPress Photographer starter. An original fine-art editorial photograph of a rugged Atlantic coastline at dawn, sculptural sea cliffs, a small crescent of pale sand and gentle mist, muted sea-green water and amber morning light. No people, no buildings, no text, no logo, no watermark, no collage. Carefully composed natural photography, tactile rock and wave detail, subtle film grain, landscape 4:3 with the main cliff and bay inside the central 80 percent for mobile cropping. This is a sample portfolio image, not a picture of photographic equipment."
+		},
+		{
+			"file": "niche-photographer-still-life.webp",
+			"source": "exec-42bb083d-2b62-4a39-b74a-2ffc62ae3c6f.png",
+			"prompt": "Use case: photorealistic-natural. Asset type: still-life portfolio photograph for a free WordPress Photographer starter. Original editorial still life of three handmade unbranded ceramic vessels with imperfect matte cream and muted terracotta glazes on a rough linen-covered wooden surface, soft window shadows, one small branch, restrained warm neutral palette. Art-directed but natural photographic detail, no people, no text, no logos, no watermark, no collage. Landscape 4:3, centered composition that crops elegantly on mobile. A separate distinctive photograph suitable for a photographer's sample portfolio."
+		},
+		{
+			"file": "niche-photographer-architecture.webp",
+			"source": "exec-c0f94687-2b51-462f-8ca2-e6ce3efc3144.png",
+			"prompt": "Use case: photorealistic-natural. Asset type: architecture portfolio photograph for a free WordPress Photographer starter. Original editorial architectural photograph of a quiet modernist concrete staircase with curved plaster wall, long angular sunlight and deep shadow, pale warm stone surfaces and one narrow blue-sky opening. Strong geometric composition, realistic materials, muted neutral palette, no people, no text, no branding, no watermark, no collage. Landscape 4:3 and centered geometry suitable for mobile cropping. A separate distinctive sample portfolio photograph."
+		},
+		{
+			"file": "niche-nonprofit.webp",
+			"source": "exec-d267938e-2790-4aa8-b10b-d131ff1acc98.png",
+			"prompt": "Use case: photorealistic-natural. Asset type: homepage hero photograph for a free WordPress Nonprofit starter. Original documentary-style editorial photograph of a neighbourhood community hall table prepared for volunteers: several reusable canvas grocery bags with fresh seasonal vegetables, tins with no readable labels, folded aprons and a simple basket; a few empty chairs and warm windows softly out of focus behind. Uplifting everyday community atmosphere, natural morning light, sage green and warm ochre palette. No people, no distressed beneficiaries, no text, no logos, no watermark, no collage. Landscape 4:3 with bags and produce centered for phone cropping. An illustrative scene, not evidence of a real organisation or impact."
+		}
+	]
+}

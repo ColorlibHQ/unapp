@@ -79,7 +79,7 @@ function unapp_wizard_plugin_suggestions( $starter ) {
 		}
 
 		// A form plugin is only worth suggesting when none is present at all.
-		if ( 'form' === $key && unapp_detect_form() ) {
+		if ( 'form' === $key && ( 'email' === get_option( UNAPP_CONTACT_FORM_OPTION, 'auto' ) || unapp_detect_form() ) ) {
 			continue;
 		}
 
@@ -163,6 +163,7 @@ function unapp_plugin_action( $plugin ) {
  * }
  */
 function unapp_wizard_apply_brand( $brand ) {
+	$brand = wp_parse_args( $brand, array( 'title' => '', 'tagline' => html_entity_decode( get_option( 'blogdescription' ), ENT_QUOTES, 'UTF-8' ), 'logo' => 0, 'logo_was' => 0 ) );
 	if ( current_user_can( 'manage_options' ) ) {
 		if ( '' !== $brand['title'] ) {
 			update_option( 'blogname', $brand['title'] );
@@ -177,6 +178,15 @@ function unapp_wizard_apply_brand( $brand ) {
 		// The field started with a logo and came back empty: the user pressed Remove.
 		remove_theme_mod( 'custom_logo' );
 	}
+	if ( current_user_can( 'manage_options' ) && ( ( '' !== $brand['title'] && get_option( 'blogname' ) !== sanitize_option( 'blogname', $brand['title'] ) )
+		|| get_option( 'blogdescription' ) !== sanitize_option( 'blogdescription', $brand['tagline'] ) ) ) {
+		return new WP_Error( 'unapp_starter_save', __( 'The site name could not be saved.', 'unapp' ) );
+	}
+	if ( ( $brand['logo'] && (int) get_theme_mod( 'custom_logo' ) !== $brand['logo'] )
+		|| ( ! $brand['logo'] && ! empty( $brand['logo_was'] ) && get_theme_mod( 'custom_logo' ) ) ) {
+		return new WP_Error( 'unapp_starter_save', __( 'The site logo could not be saved.', 'unapp' ) );
+	}
+	return true;
 }
 
 /**
@@ -194,12 +204,23 @@ function unapp_wizard_brand_from( $source ) {
 		'logo_was' => isset( $source['logo_was'] ) ? absint( $source['logo_was'] ) : 0,
 		'colors'   => isset( $source['colors'] ) ? sanitize_key( wp_unslash( $source['colors'] ) ) : '',
 		'type'     => isset( $source['typography'] ) ? sanitize_key( wp_unslash( $source['typography'] ) ) : '',
+		'email'    => sanitize_text_field( unapp_design_field( $source, 'public_email' ) ),
+		'phone'    => sanitize_text_field( wp_unslash( $source['public_phone'] ?? '' ) ),
+		'layout'   => 'one-page' === unapp_design_field( $source, 'layout' ) ? 'one-page' : 'full',
+		'profile_enabled' => true,
+		'description' => sanitize_textarea_field( unapp_design_field( $source, 'description' ) ),
+		'location' => sanitize_textarea_field( unapp_design_field( $source, 'location' ) ),
+		'services' => sanitize_textarea_field( unapp_design_field( $source, 'services' ) ),
+		'hours' => sanitize_textarea_field( unapp_design_field( $source, 'hours' ) ),
+		'service_cards' => unapp_service_cards_sanitize( array_map( 'wp_unslash', array_filter( $source, 'is_string' ) ) ),
+		'sections' => '1' === unapp_design_field( $source, 'sections_present' ) || isset( $source['sections'] ) ? array_values( array_map( 'sanitize_key', array_filter( is_array( $source['sections'] ?? null ) ? $source['sections'] : array(), 'is_string' ) ) ) : null,
+		'main_action' => array( 'type' => sanitize_key( unapp_design_field( $source, 'main_action_type' ) ?: 'starter' ), 'label' => sanitize_text_field( unapp_design_field( $source, 'main_action_label' ) ), 'url' => sanitize_text_field( unapp_design_field( $source, 'main_action_url' ) ) ),
 	);
 	// phpcs:enable WordPress.Security.NonceVerification
 }
 
 /**
- * Handle the wizard's final submit: brand, then starter.
+ * Handle the wizard's final submit; branding is applied only after setup succeeds.
  */
 function unapp_wizard_handle() {
 	check_admin_referer( 'unapp_wizard_build' );
@@ -218,28 +239,11 @@ function unapp_wizard_handle() {
 
 	$brand = unapp_wizard_brand_from( $_POST );
 
-	unapp_wizard_apply_brand( $brand );
-
-	// A palette or typeface chosen in the wizard overrides the starter's own.
-	if ( $brand['colors'] ) {
-		$sites[ $starter ]['colors'] = $brand['colors'];
-	}
-	if ( $brand['type'] ) {
-		$sites[ $starter ]['type'] = $brand['type'];
-	}
-
-	$override = $sites[ $starter ];
-	$filter   = function ( $all ) use ( $starter, $override ) {
-		$all[ $starter ] = $override;
-		return $all;
-	};
-
-	add_filter( 'unapp_starter_sites', $filter, 99 );
-	$result = unapp_apply_starter_site( $starter );
-	remove_filter( 'unapp_starter_sites', $filter, 99 );
+	$request_id = isset( $_POST['request_id'] ) ? sanitize_key( wp_unslash( $_POST['request_id'] ) ) : '';
+	$result = unapp_apply_starter_site( $starter, $brand, $request_id );
 
 	set_transient( UNAPP_STARTER_RESULT, is_wp_error( $result ) ? 'error:' . $result->get_error_code() : 'done', HOUR_IN_SECONDS );
-	wp_safe_redirect( admin_url( 'themes.php?page=unapp-starter-sites&step=done' ) );
+	wp_safe_redirect( add_query_arg( array( 'page' => 'unapp-starter-sites', 'step' => 'done', 'request_id' => $request_id ), admin_url( 'themes.php' ) ) );
 	exit;
 }
 add_action( 'admin_post_unapp_wizard_build', 'unapp_wizard_handle' );
@@ -319,12 +323,14 @@ function unapp_wizard_render_brand( $starter ) {
 	// Coming "Back" from step three carries what was typed there; otherwise start
 	// from what the site already has.
 	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only prefill.
-	$carried  = isset( $_GET['back'] ) ? unapp_wizard_brand_from( $_GET ) : null;
+	$choice_source = unapp_wizard_choice_source();
+	$carried  = isset( $choice_source['back'] ) ? unapp_wizard_brand_from( $choice_source ) : null;
 	$logo_was = (int) get_theme_mod( 'custom_logo' );
 	$logo_id  = $carried ? $carried['logo'] : $logo_was;
 	$logo_src = $logo_id ? wp_get_attachment_image_url( $logo_id, 'medium' ) : '';
-	$title    = $carried ? $carried['title'] : get_option( 'blogname' );
-	$tagline  = $carried ? $carried['tagline'] : get_option( 'blogdescription' );
+	$title    = $carried ? $carried['title'] : html_entity_decode( get_option( 'blogname' ), ENT_QUOTES, 'UTF-8' );
+	$tagline  = $carried ? $carried['tagline'] : html_entity_decode( get_option( 'blogdescription' ), ENT_QUOTES, 'UTF-8' );
+	$business = $carried ? $carried : get_option( 'unapp_business_details', array() );
 
 	if ( $carried && $carried['colors'] ) {
 		$site['colors'] = $carried['colors'];
@@ -333,7 +339,9 @@ function unapp_wizard_render_brand( $starter ) {
 		$site['type'] = $carried['type'];
 	}
 	?>
-	<form method="get" action="<?php echo esc_url( admin_url( 'themes.php' ) ); ?>" class="unapp-wizard">
+	<?php $service_form = (bool) unapp_service_card_spec( $site ); ?>
+	<form method="<?php echo $service_form ? 'post' : 'get'; ?>" action="<?php echo esc_url( $service_form ? add_query_arg( array( 'page' => 'unapp-starter-sites', 'step' => 'plugins', 'starter' => $starter ), admin_url( 'themes.php' ) ) : admin_url( 'themes.php' ) ); ?>" class="unapp-wizard">
+		<?php if ( $service_form ) { wp_nonce_field( 'unapp_wizard_choices', 'unapp_choices_nonce' ); } ?>
 		<input type="hidden" name="page" value="unapp-starter-sites">
 		<input type="hidden" name="step" value="plugins">
 		<input type="hidden" name="starter" value="<?php echo esc_attr( $starter ); ?>">
@@ -346,7 +354,18 @@ function unapp_wizard_render_brand( $starter ) {
 			?>
 		</h2>
 		<p class="unapp-wizard__lede"><?php esc_html_e( 'Everything here is optional and everything can be changed later. Leaving a field alone keeps what the site already has.', 'unapp' ); ?></p>
-
+		<fieldset class="unapp-wizard__panel"><legend><h3><?php esc_html_e( 'How much website do you need?', 'unapp' ); ?></h3></legend>
+			<p><label><input type="radio" name="layout" value="one-page" <?php checked( $carried ? $carried['layout'] : 'one-page', 'one-page' ); ?>> <strong><?php esc_html_e( 'One-page website (recommended)', 'unapp' ); ?></strong> — <?php esc_html_e( 'A complete homepage with section navigation. Add supporting pages later without rebuilding.', 'unapp' ); ?></label></p>
+			<p><label><input type="radio" name="layout" value="full" <?php checked( $carried ? $carried['layout'] : 'one-page', 'full' ); ?>> <strong><?php esc_html_e( 'Full website', 'unapp' ); ?></strong> — <?php esc_html_e( 'The homepage, all supporting pages and a blog page.', 'unapp' ); ?></label></p>
+			<?php if ( 'shop' === $starter ) : ?><p class="description"><?php esc_html_e( 'The Shop starter still needs WooCommerce and its store pages in either mode.', 'unapp' ); ?></p><?php endif; ?>
+		</fieldset>
+		<details class="unapp-wizard__panel"><summary><?php esc_html_e( 'Choose homepage sections (optional)', 'unapp' ); ?></summary>
+			<p><?php esc_html_e( 'Keep the complete starter, or uncheck sections you do not need. The introduction, closing action and final notice stay in place. This changes the homepage only; full-site supporting pages are still included.', 'unapp' ); ?></p>
+			<input type="hidden" name="sections_present" value="1">
+			<?php foreach ( unapp_section_choices( $site ) as $key => $choice ) : ?>
+				<?php if ( $choice['required'] ) : ?><p><?php echo esc_html( $choice['title'] ); ?> — <?php esc_html_e( 'Included', 'unapp' ); ?></p><?php else : ?><p><label><input type="checkbox" name="sections[]" value="<?php echo esc_attr( $key ); ?>" <?php checked( ! $carried || null === $carried['sections'] || in_array( $key, $carried['sections'], true ) ); ?>> <?php echo esc_html( $choice['title'] ); ?></label></p><?php endif; ?>
+			<?php endforeach; ?>
+		</details>
 		<div class="unapp-wizard__panel">
 			<h3><?php esc_html_e( 'Name and logo', 'unapp' ); ?></h3>
 			<p class="unapp-field">
@@ -374,6 +393,26 @@ function unapp_wizard_render_brand( $starter ) {
 		</div>
 
 		<div class="unapp-wizard__panel">
+			<h3><?php esc_html_e( 'Shared business profile', 'unapp' ); ?></h3>
+			<p class="unapp-field"><label for="unapp-description"><?php esc_html_e( 'What do you do?', 'unapp' ); ?></label><textarea id="unapp-description" name="description" class="large-text" rows="2"><?php echo esc_textarea( $business['description'] ?? '' ); ?></textarea></p>
+			<p class="unapp-wizard__hint"><?php esc_html_e( 'Use the email and phone visitors should see. These replace sample contact details on the new pages and footer. Leave them blank to keep the examples for now.', 'unapp' ); ?></p>
+			<p class="unapp-field">
+				<label for="unapp-public-email"><?php esc_html_e( 'Public email', 'unapp' ); ?></label>
+				<input type="email" id="unapp-public-email" name="public_email" class="regular-text" autocomplete="email"
+					value="<?php echo esc_attr( $business['email'] ?? '' ); ?>">
+			</p>
+			<p class="unapp-field">
+				<label for="unapp-public-phone"><?php esc_html_e( 'Public phone', 'unapp' ); ?></label>
+				<input type="tel" id="unapp-public-phone" name="public_phone" class="regular-text" autocomplete="tel"
+					value="<?php echo esc_attr( $business['phone'] ?? '' ); ?>">
+			</p>
+			<details><summary><?php esc_html_e( 'More business details (optional)', 'unapp' ); ?></summary>
+				<?php foreach ( array( 'location', 'services', 'hours' ) as $field ) : ?><p class="unapp-field"><label for="unapp-profile-<?php echo esc_attr( $field ); ?>"><?php echo esc_html( unapp_business_fields()[ $field ] ); ?></label><textarea id="unapp-profile-<?php echo esc_attr( $field ); ?>" name="<?php echo esc_attr( $field ); ?>" class="large-text" rows="3"><?php echo esc_textarea( $business[ $field ] ?? '' ); ?></textarea></p><?php endforeach; ?>
+			</details>
+		</div>
+		<?php unapp_render_service_card_fields( $site, $business ); ?>
+		<details><summary><?php esc_html_e( 'Customize colors and fonts (optional)', 'unapp' ); ?></summary>
+		<div class="unapp-wizard__panel">
 			<h3><?php esc_html_e( 'Colours', 'unapp' ); ?></h3>
 			<p class="unapp-wizard__hint">
 				<?php
@@ -396,7 +435,6 @@ function unapp_wizard_render_brand( $starter ) {
 				<?php endforeach; ?>
 			</div>
 		</div>
-
 		<div class="unapp-wizard__panel">
 			<h3><?php esc_html_e( 'Typeface', 'unapp' ); ?></h3>
 			<div class="unapp-swatches unapp-swatches--type">
@@ -409,7 +447,14 @@ function unapp_wizard_render_brand( $starter ) {
 				<?php endforeach; ?>
 			</div>
 		</div>
+		</details>
 
+		<details class="unapp-wizard__panel"><summary><?php esc_html_e( 'Main action (optional)', 'unapp' ); ?></summary>
+			<p><?php esc_html_e( 'Keep the starter buttons, or choose what visitors should do next. Call and email use your public details. Quotes use the included homepage contact details; bookings need a URL. Shop requires a published WooCommerce Shop page.', 'unapp' ); ?></p>
+			<p><label for="unapp-setup-action"><?php esc_html_e( 'Main action', 'unapp' ); ?></label><select id="unapp-setup-action" name="main_action_type"><?php foreach ( unapp_main_action_choices() as $key => $label ) : ?><option value="<?php echo esc_attr( $key ); ?>" <?php selected( $carried['main_action']['type'] ?? 'starter', $key ); ?>><?php echo esc_html( $label ); ?></option><?php endforeach; ?></select></p>
+			<p><label for="unapp-setup-action-label"><?php esc_html_e( 'Button wording (optional)', 'unapp' ); ?></label><input class="regular-text" id="unapp-setup-action-label" name="main_action_label" maxlength="60" value="<?php echo esc_attr( $carried['main_action']['label'] ?? '' ); ?>"></p>
+			<p><label for="unapp-setup-action-url"><?php esc_html_e( 'Booking or quote URL', 'unapp' ); ?></label><input class="regular-text" id="unapp-setup-action-url" type="url" name="main_action_url" value="<?php echo esc_attr( $carried['main_action']['url'] ?? '' ); ?>"></p>
+		</details>
 		<p class="unapp-wizard__actions">
 			<a class="button" href="<?php echo esc_url( admin_url( 'themes.php?page=unapp-starter-sites' ) ); ?>">
 				<?php esc_html_e( 'Back', 'unapp' ); ?>
@@ -421,31 +466,57 @@ function unapp_wizard_render_brand( $starter ) {
 }
 
 /**
- * Step three: the plugins this starter depends on, then build.
+ * Identical escaped setup choices for the private preview and build forms.
  *
  * @param string $starter Chosen starter slug.
  * @param array  $brand   Branding carried from step two.
  */
+function unapp_wizard_brand_fields( $starter, $brand ) {
+	$fields = array( 'starter' => $starter, 'site_title' => $brand['title'] ?? '', 'tagline' => $brand['tagline'] ?? '', 'logo_id' => $brand['logo'] ?? 0, 'logo_was' => $brand['logo_was'] ?? 0, 'colors' => $brand['colors'] ?? '', 'typography' => $brand['type'] ?? '', 'public_email' => $brand['email'] ?? '', 'public_phone' => $brand['phone'] ?? '', 'main_action_type' => $brand['main_action']['type'] ?? 'starter', 'main_action_label' => $brand['main_action']['label'] ?? '', 'main_action_url' => $brand['main_action']['url'] ?? '' );
+	foreach ( array( 'layout', 'description', 'location', 'services', 'hours' ) as $field ) { $fields[ $field ] = $brand[ $field ] ?? ''; }
+	$fields = array_merge( $fields, unapp_service_card_payload( $brand ) );
+	foreach ( $fields as $name => $value ) { echo '<input type="hidden" name="' . esc_attr( $name ) . '" value="' . esc_attr( $value ) . '">'; }
+	if ( is_array( $brand['sections'] ?? null ) ) {
+		echo '<input type="hidden" name="sections_present" value="1">';
+		foreach ( $brand['sections'] as $section ) { echo '<input type="hidden" name="sections[]" value="' . esc_attr( $section ) . '">'; }
+	}
+}
+
+/** Step three: review the personalized preview, dependencies and import summary. */
 function unapp_wizard_render_plugins( $starter, $brand ) {
 	$sites       = unapp_get_starter_sites();
 	$site        = $sites[ $starter ];
 	$suggestions = unapp_wizard_plugin_suggestions( $starter );
 	$missing     = unapp_starter_missing_requirement( $site );
+	$service_error = unapp_service_cards_validate( $brand );
 	$back_args   = array(
-		'page'       => 'unapp-starter-sites',
-		'step'       => 'brand',
-		'starter'    => $starter,
-		'back'       => 1,
-		'site_title' => $brand['title'],
-		'tagline'    => $brand['tagline'],
-		'logo_id'    => $brand['logo'],
-		'logo_was'   => $brand['logo_was'],
-		'colors'     => $brand['colors'],
-		'typography' => $brand['type'],
+		'page'         => 'unapp-starter-sites',
+		'step'         => 'brand',
+		'starter'      => $starter,
+		'back'         => 1,
+		'site_title'   => $brand['title'],
+		'tagline'      => $brand['tagline'],
+		'logo_id'      => $brand['logo'],
+		'logo_was'     => $brand['logo_was'],
+		'colors'       => $brand['colors'] ?? '',
+		'typography'   => $brand['type'] ?? '',
+		'public_email' => $brand['email'],
+		'public_phone' => $brand['phone'],
+		'layout' => $brand['layout'] ?? 'full',
+		'description' => $brand['description'] ?? '',
+		'location' => $brand['location'] ?? '',
+		'services' => $brand['services'] ?? '',
+		'hours' => $brand['hours'] ?? '',
+		'sections' => $brand['sections'] ?? null,
+		'sections_present' => is_array( $brand['sections'] ?? null ) ? '1' : '0',
+		'main_action_type' => $brand['main_action']['type'] ?? 'starter',
+		'main_action_label' => $brand['main_action']['label'] ?? '',
+		'main_action_url' => $brand['main_action']['url'] ?? '',
 	);
+	$back_args = array_merge( $back_args, unapp_service_card_payload( $brand ) );
 	?>
 	<div class="unapp-wizard">
-		<h2><?php esc_html_e( 'One or two things this starter needs', 'unapp' ); ?></h2>
+		<h2><?php esc_html_e( 'Review and build your website', 'unapp' ); ?></h2>
 
 		<?php if ( $suggestions ) : ?>
 			<p class="unapp-wizard__lede">
@@ -477,42 +548,44 @@ function unapp_wizard_render_plugins( $starter, $brand ) {
 			<p class="unapp-wizard__lede"><?php esc_html_e( 'Nothing to install — everything this starter needs is already active.', 'unapp' ); ?></p>
 		<?php endif; ?>
 
+		<?php if ( is_wp_error( $service_error ) ) : ?><div class="notice notice-error"><p><?php echo esc_html( $service_error->get_error_message() ); ?> <?php esc_html_e( 'Use Back to finish the card or clear both fields. Your entered choices are kept.', 'unapp' ); ?></p></div><?php else : ?><?php unapp_render_personalized_preview( $starter, $brand ); ?><?php endif; ?>
 		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 			<?php wp_nonce_field( 'unapp_wizard_build' ); ?>
 			<input type="hidden" name="action" value="unapp_wizard_build">
-			<input type="hidden" name="starter" value="<?php echo esc_attr( $starter ); ?>">
-			<input type="hidden" name="site_title" value="<?php echo esc_attr( $brand['title'] ); ?>">
-			<input type="hidden" name="tagline" value="<?php echo esc_attr( $brand['tagline'] ); ?>">
-			<input type="hidden" name="logo_id" value="<?php echo esc_attr( $brand['logo'] ); ?>">
-			<input type="hidden" name="logo_was" value="<?php echo esc_attr( $brand['logo_was'] ); ?>">
-			<input type="hidden" name="colors" value="<?php echo esc_attr( $brand['colors'] ); ?>">
-			<input type="hidden" name="typography" value="<?php echo esc_attr( $brand['type'] ); ?>">
+			<input type="hidden" name="request_id" value="<?php echo esc_attr( wp_generate_uuid4() ); ?>">
+			<?php unapp_wizard_brand_fields( $starter, $brand ); ?>
 
 			<div class="unapp-wizard__summary">
 				<h3><?php esc_html_e( 'What happens when you press the button', 'unapp' ); ?></h3>
-				<?php $unapp_page_count = count( $site['pages'] ) + 1; ?>
+				<?php $unapp_page_count = 'one-page' === ( $brand['layout'] ?? '' ) ? 1 : count( $site['pages'] ) + 1; ?>
 				<ul>
+					<?php if ( is_array( $brand['sections'] ?? null ) ) : ?><li><?php
+						$unapp_sections = array_filter( unapp_section_choices( $site ), static function ( $choice, $key ) use ( $brand ) { return $choice['required'] || in_array( $key, $brand['sections'], true ); }, ARRAY_FILTER_USE_BOTH );
+						/* translators: %s: selected homepage section names. */
+						printf( esc_html__( 'Homepage sections: %s. Shared business details are also included.', 'unapp' ), esc_html( implode( ', ', array_column( $unapp_sections, 'title' ) ) ) );
+					?></li><?php endif; ?>
 					<li>
 						<?php
 						/* translators: %d: number of pages. */
 						printf( esc_html( _n( '%d page is created and filled in', '%d pages are created and filled in', $unapp_page_count, 'unapp' ) ), absint( $unapp_page_count ) );
 						?>
 					</li>
-					<li><?php esc_html_e( 'A navigation menu is built from those pages', 'unapp' ); ?></li>
+					<li><?php echo 'one-page' === ( $brand['layout'] ?? '' ) ? esc_html__( 'A section menu is built for the homepage; supporting pages can be added later', 'unapp' ) : esc_html__( 'A navigation menu is built from those pages', 'unapp' ); ?></li>
 					<li><?php esc_html_e( 'The palette and typeface replace the current Global Styles', 'unapp' ); ?></li>
 					<li><?php esc_html_e( 'The header and footer take the starter\'s wording', 'unapp' ); ?></li>
+					<li><?php esc_html_e( 'Public contact details replace sample emails and phone numbers where supplied', 'unapp' ); ?></li>
 					<li><?php esc_html_e( 'The front page is pointed at the new home page', 'unapp' ); ?></li>
 					<li><?php esc_html_e( 'No page, post or image is deleted, and the previous styles, header and footer stay in their revision history', 'unapp' ); ?></li>
 				</ul>
 			</div>
 
 			<p class="unapp-wizard__actions">
-				<a class="button" href="<?php echo esc_url( add_query_arg( $back_args, admin_url( 'themes.php' ) ) ); ?>">
-					<?php esc_html_e( 'Back', 'unapp' ); ?>
-				</a>
-				<button type="submit" class="button button-primary button-hero" <?php disabled( (bool) $missing ); ?>><?php esc_html_e( 'Build my site', 'unapp' ); ?></button>
+				<?php if ( unapp_service_card_spec( $site ) ) : ?><button class="button" type="submit" form="unapp-wizard-back"><?php esc_html_e( 'Back', 'unapp' ); ?></button><?php else : ?>
+				<a class="button" href="<?php echo esc_url( add_query_arg( $back_args, admin_url( 'themes.php' ) ) ); ?>"><?php esc_html_e( 'Back', 'unapp' ); ?></a><?php endif; ?>
+				<button type="submit" class="button button-primary button-hero" <?php disabled( (bool) $missing || is_wp_error( $service_error ) ); ?>><?php esc_html_e( 'Build my site', 'unapp' ); ?></button>
 			</p>
 		</form>
+		<?php if ( unapp_service_card_spec( $site ) ) : ?><form id="unapp-wizard-back" method="post" action="<?php echo esc_url( add_query_arg( array( 'page' => 'unapp-starter-sites', 'step' => 'brand', 'starter' => $starter ), admin_url( 'themes.php' ) ) ); ?>"><input type="hidden" name="back" value="1"><?php wp_nonce_field( 'unapp_wizard_choices', 'unapp_choices_nonce' ); unapp_wizard_brand_fields( $starter, $brand ); ?></form><?php endif; ?>
 	</div>
 	<?php
 }
@@ -524,6 +597,14 @@ function unapp_wizard_render_done() {
 	$applied = get_option( UNAPP_STARTER_OPTION, array() );
 	$home    = isset( $applied['pages']['home'] ) ? (int) $applied['pages']['home'] : 0;
 	$result  = get_transient( UNAPP_STARTER_RESULT );
+	// A refresh should still show the completed run after its one-time notice.
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only result lookup.
+	$request_id = isset( $_GET['request_id'] ) ? sanitize_key( wp_unslash( $_GET['request_id'] ) ) : '';
+	$completed  = $request_id ? get_transient( 'unapp_import_' . md5( $request_id ) ) : false;
+	if ( is_array( $completed ) && ! empty( $completed['home'] ) ) {
+		$home = (int) $completed['home'];
+		$result = 'done';
+	}
 
 	// Read once here, so it does not reappear as a stale notice on the next visit.
 	delete_transient( UNAPP_STARTER_RESULT );
@@ -543,13 +624,26 @@ function unapp_wizard_render_done() {
 		<h2><?php esc_html_e( 'Your site is built', 'unapp' ); ?></h2>
 		<p class="unapp-wizard__lede"><?php esc_html_e( 'The pages are written, the menu is made and the front page points at the new home page. Every section is locked to its content, so you can rewrite the words without pulling the layout apart.', 'unapp' ); ?></p>
 		<p class="unapp-wizard__actions">
-			<a class="button button-primary button-hero" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'View your site', 'unapp' ); ?></a>
+			<a class="button button-primary button-hero" href="<?php echo esc_url( unapp_finish_url() ); ?>"><?php esc_html_e( 'Finish your website', 'unapp' ); ?></a>
+			<a class="button button-hero" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'View your site', 'unapp' ); ?></a>
 			<?php if ( $home ) : ?>
 				<a class="button button-hero" href="<?php echo esc_url( get_edit_post_link( $home, 'raw' ) ); ?>"><?php esc_html_e( 'Edit the home page', 'unapp' ); ?></a>
 			<?php endif; ?>
-			<a class="button button-hero" href="<?php echo esc_url( admin_url( 'site-editor.php' ) ); ?>"><?php esc_html_e( 'Open the Site Editor', 'unapp' ); ?></a>
+			<a class="button button-hero" href="<?php echo esc_url( unapp_design_url() ); ?>"><?php esc_html_e( 'Make it yours', 'unapp' ); ?></a>
+			<a class="button button-hero" href="<?php echo esc_url( unapp_business_url() ); ?>"><?php esc_html_e( 'Business profile', 'unapp' ); ?></a>
 		</p>
+		<?php unapp_render_launch_summary(); ?>
+		<?php unapp_render_starter_undo(); ?>
 		<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=unapp-starter-sites' ) ); ?>"><?php esc_html_e( 'Choose a different starter', 'unapp' ); ?></a></p>
 	</div>
 	<?php
+}
+
+/** Long service descriptions travel in native POST forms, never oversized URLs. */
+function unapp_wizard_choice_source() {
+	if ( 'POST' === ( $_SERVER['REQUEST_METHOD'] ?? '' ) && isset( $_POST['unapp_choices_nonce'] ) ) {
+		check_admin_referer( 'unapp_wizard_choices', 'unapp_choices_nonce' );
+		return $_POST;
+	}
+	return $_GET;
 }

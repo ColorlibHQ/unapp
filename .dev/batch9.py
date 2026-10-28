@@ -7,28 +7,30 @@ P = "unapp, unapp_portfolio, portfolio, featured"
 body = section(
     columns([
         column(
-            eyebrow(t("Designer & art director", "Portfolio eyebrow"), align="left") + "\n" +
-            h1(t("Mara Lindqvist"), size="xxx-large", line_height="1.05", align="left") + "\n" +
-            para(t("I help small teams look like the companies they are becoming — identity, packaging and the odd website."), color="muted", size="large") + "\n" +
-            buttons([{"text": t("See selected work"), "url": home_anchor("work"), "style": "is-style-arrow"}], margin={"top": "30"}),
+            eyebrow(t("Mara Lindqvist · Independent designer", "Portfolio eyebrow"), align="left") + "\n" +
+            h1(t("Small teams. Memorable brands."), size="xxx-large", line_height="1.05", align="left") + "\n" +
+            para(t("Brand identities, packaging and websites for founders making their next move. One designer, from the first conversation to the final detail."), color="muted", size="large") + "\n" +
+            buttons([{"text": t("Explore the work"), "url": home_anchor("work")},
+                     {"text": t("Discuss your project"), "url": home_anchor("contact"), "style": "outline"}], gap="20", class_name="unapp-starter-actions") + "\n" +
+            para(t("Working directly with founders · Identity projects from £6,000"), color="muted", size="small"),
             width="52%", vertical_align="center", gap="30"),
-        column(image(uri("assets/images/abstract/studio-2.svg"), tattr("Portrait placeholder"), radius="20px"),
+        column(image(uri("assets/images/showcase/portfolio-showcase.svg"), tattr("Nordwell Coffee identity: forest-green wordmark and apricot packaging"), radius="20px"),
                width="48%", vertical_align="center"),
     ], align="wide", gap="60", vertical_align="center"),
-    pad=("70", "70"), gap="0")
+    pad=("70", "70"), gap="0", class_name="unapp-starter-hero")
 write_pattern("portfolio-hero", title="Portfolio: introduction", cats=P,
               keywords="portfolio, hero, designer, introduction, personal",
-              desc="A personal introduction with a portrait — name, discipline and a one-line statement.",
+              desc="A work-led introduction with a brand study, project links and an indicative starting price.",
               body=body)
 
 prelude = """$unapp_projects = array(
-	array( 'image' => 'studio-1', 'title' => _x( 'Nordwell Coffee', 'Project title', 'unapp' ), 'meta' => _x( 'Identity · Packaging · 2026', 'Project meta', 'unapp' ) ),
-	array( 'image' => 'desk', 'title' => _x( 'Fold Studio', 'Project title', 'unapp' ), 'meta' => _x( 'Website · Art direction · 2025', 'Project meta', 'unapp' ) ),
-	array( 'image' => 'skyline', 'title' => _x( 'Meridian Housing', 'Project title', 'unapp' ), 'meta' => _x( 'Brand system · 2025', 'Project meta', 'unapp' ) ),
-	array( 'image' => 'gathering', 'title' => _x( 'Common Ground', 'Project title', 'unapp' ), 'meta' => _x( 'Campaign · 2024', 'Project meta', 'unapp' ) ),
+	array( 'image' => 'nordwell-coffee', 'title' => _x( 'Nordwell Coffee', 'Project title', 'unapp' ), 'meta' => _x( 'Identity · Packaging · 2026', 'Project meta', 'unapp' ) ),
+	array( 'image' => 'fold-studio', 'title' => _x( 'Fold Studio', 'Project title', 'unapp' ), 'meta' => _x( 'Website · Art direction · 2025', 'Project meta', 'unapp' ) ),
+	array( 'image' => 'meridian-housing', 'title' => _x( 'Meridian Housing', 'Project title', 'unapp' ), 'meta' => _x( 'Brand system · 2025', 'Project meta', 'unapp' ) ),
+	array( 'image' => 'common-ground', 'title' => _x( 'Common Ground', 'Project title', 'unapp' ), 'meta' => _x( 'Campaign · 2024', 'Project meta', 'unapp' ) ),
 );"""
 project = column(
-    image("<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/' . $unapp_project['image'] . '.svg' ) ); ?>",
+    image("<?php echo esc_url( get_theme_file_uri( 'assets/images/showcase/' . $unapp_project['image'] . '.svg' ) ); ?>",
           "<?php echo esc_attr( $unapp_project['title'] ); ?>", radius="20px", aspect="4/3", scale="cover") + "\n" +
     heading("<?php echo esc_html( $unapp_project['title'] ); ?>", level=3, size="large") + "\n" +
     para("<?php echo esc_html( $unapp_project['meta'] ); ?>", color="muted", size="small"),
@@ -51,7 +53,7 @@ write_pattern("portfolio-work", title="Portfolio: work grid", cats=P,
 
 body = section(
     columns([
-        column(image(uri("assets/images/abstract/desk.svg"), tattr("Studio placeholder"), radius="20px"),
+        column(image(uri("assets/images/showcase/meridian-housing.svg"), tattr("Meridian Housing identity and welcome signage"), radius="20px"),
                width="45%", vertical_align="center"),
         column(
             eyebrow(t("About", "Section eyebrow label"), align="left") + "\n" +
@@ -66,7 +68,7 @@ body = section(
     style_variation="is-style-section-soft", pad=("70", "70"), gap="0")
 write_pattern("portfolio-about", title="Portfolio: about", cats=P,
               keywords="portfolio, about, bio, skills, designer",
-              desc="A short biography beside a photograph, with two columns of disciplines.",
+              desc="A short biography beside a brand study, with two columns of disciplines.",
               body=body, anchor="about")
 
 prelude = """$unapp_offers = array(
@@ -93,21 +95,17 @@ write_pattern("portfolio-services", title="Portfolio: services and rates", cats=
 
 # ============================================================ CHURCH
 C = "unapp, unapp_church, banner, featured"
-inner = (eyebrow(t("Everyone is welcome", "Church hero eyebrow"), align="center", color="base") + "\n" +
-         h1(t("A church for people who are not sure about church"), align="center", color="base", size="xxx-large") + "\n" +
-         para(t("Sundays at 9:30 and 11:15 · Coffee from 9:00 · Kids welcome in every service"), align="center", color="base", size="large") + "\n" +
-         buttons([{"text": t("Plan your visit"), "url": home_anchor("visit"), "bg": "base", "color": "primary"},
-                  {"text": t("Service times"), "url": home_anchor("times"), "style": "is-style-outline", "color": "base"}],
-                 justify="center", gap="30", margin={"top": "40"}))
-cover_url = uri("assets/images/abstract/sanctuary.svg")
-body = f'''<!-- wp:cover {{"url":"{cover_url}","dimRatio":70,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":64,"minHeightUnit":"vh","align":"full","style":{{"spacing":{{"padding":{{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"blockGap":"var:preset|spacing|30"}}}},"layout":{{"type":"constrained","contentSize":"780px"}}}} -->
-<div class="wp-block-cover alignfull" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80);min-height:64vh"><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-70 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="{cover_url}" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
-{inner}
-</div></div>
-<!-- /wp:cover -->'''
+body = starter_hero(
+    t('Riverside Church · Everyone welcome', "Starter hero eyebrow"),
+    t('A place to belong. Room to be yourself.'),
+    t('Join us on Sunday for community, conversation and worship. Come with questions, bring the family or simply come as you are.'),
+    'assets/images/showcase/church-welcome.webp', tattr('Sunlit brick church with an open entrance and an accessible approach'),
+    [{"text": t('Plan your first visit'), "url": home_anchor("visit")},
+     {"text": t('Find a service'), "url": home_anchor("times"), "style": "outline"}],
+    note=t('Sundays at 9:30 and 11:15 · Step-free entrance · Coffee from 9:00'))
 write_pattern("church-hero", title="Church: welcome", cats=C,
               keywords="church, welcome, hero, service times, visit",
-              desc="A welcoming cover with service times and two calls to action.",
+              desc="A welcoming introduction with church photography, service times and first-visit links.",
               body=body)
 
 prelude = """$unapp_services_times = array(

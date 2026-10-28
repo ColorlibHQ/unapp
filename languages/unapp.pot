@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Unapp 2.5.10\n"
+"Project-Id-Version: Unapp 2.6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/unapp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-18T09:32:54+00:00\n"
+"POT-Creation-Date: 2026-10-28T08:51:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: unapp\n"
@@ -26,7 +26,7 @@ msgstr ""
 
 #. Description of the theme
 #: style.css
-msgid "Unapp is a lightweight, block-based WordPress theme with thirteen one-click starter sites — SaaS, portfolio, church, blog, fitness, restaurant, agency, shop, property, practice, courses, events and finance. Built for the Site Editor with 140+ section patterns, ten colour palettes and five typography presets you can mix, seven section styles and eleven block styles. WooCommerce templates included. Self-hosted variable fonts, no page-builder framework, no jQuery, no icon fonts."
+msgid "Unapp is a lightweight, block-based WordPress theme with thirteen one-click starter sites — SaaS, portfolio, church, blog, fitness, restaurant, agency, shop, property, practice, courses, events and finance. Built for the Site Editor with 140+ section patterns, twelve colour palettes and five typography presets you can mix, seven section styles and eleven block styles. WooCommerce templates included. Self-hosted variable fonts, no page-builder framework, no jQuery, no icon fonts."
 msgstr ""
 
 #. Author of the theme
@@ -286,27 +286,1160 @@ msgstr ""
 
 #: functions.php:264
 msgctxt "Block pattern category"
-msgid "Unapp: Blog & magazine"
+msgid "Unapp: Home Services"
 msgstr ""
 
 #: functions.php:265
-msgid "Editorial furniture: mastheads, category tiles, author introductions and subscribe panels."
+msgid "Repairs, maintenance, service areas and quote enquiries."
 msgstr ""
 
 #: functions.php:268
 msgctxt "Block pattern category"
-msgid "Unapp: Full pages"
+msgid "Unapp: Coach & Consultant"
 msgstr ""
 
 #: functions.php:269
+msgid "Coaching services, practical consulting and discovery-call enquiries."
+msgstr ""
+
+#: functions.php:272
+msgctxt "Block pattern category"
+msgid "Unapp: Photographer"
+msgstr ""
+
+#: functions.php:273
+msgid "Image-led work, commissions, the approach and photography enquiries."
+msgstr ""
+
+#: functions.php:276
+msgctxt "Block pattern category"
+msgid "Unapp: Nonprofit"
+msgstr ""
+
+#: functions.php:277
+msgid "Community programmes, volunteering, openness and ways to support."
+msgstr ""
+
+#: functions.php:280
+msgctxt "Block pattern category"
+msgid "Unapp: Cleaning"
+msgstr ""
+
+#: functions.php:281
+msgid "Home and workplace cleaning, checklists and quote requests."
+msgstr ""
+
+#: functions.php:284
+msgctxt "Block pattern category"
+msgid "Unapp: Salon & Barber"
+msgstr ""
+
+#: functions.php:285
+msgid "Hair services, visit information and appointment requests."
+msgstr ""
+
+#: functions.php:288
+msgctxt "Block pattern category"
+msgid "Unapp: Blog & magazine"
+msgstr ""
+
+#: functions.php:289
+msgid "Editorial furniture: mastheads, category tiles, author introductions and subscribe panels."
+msgstr ""
+
+#: functions.php:292
+msgctxt "Block pattern category"
+msgid "Unapp: Full pages"
+msgstr ""
+
+#: functions.php:293
 msgid "Complete page layouts. Insert one into an empty page to start from a finished design."
 msgstr ""
 
-#: inc/forms.php:258
+#: functions.php:558
+msgid "Yearly billing"
+msgstr ""
+
+#: inc/business-profile.php:8
+msgid "Business name"
+msgstr ""
+
+#: inc/business-profile.php:8
+msgid "Short description"
+msgstr ""
+
+#: inc/business-profile.php:8
+msgid "Location or address"
+msgstr ""
+
+#: inc/business-profile.php:8
+#: inc/starter-sites.php:462
+#: inc/starter-sites.php:516
+#: inc/starter-sites.php:543
+#: patterns/footer-finance.php:43
+msgid "Services"
+msgstr ""
+
+#: inc/business-profile.php:8
+#: patterns/fitness-location-h1.php:49
+#: patterns/fitness-location.php:49
+#: patterns/medical-hours-h1.php:46
+#: patterns/medical-hours.php:46
+msgid "Opening hours"
+msgstr ""
+
+#: inc/business-profile.php:8
+#: inc/setup-wizard.php:400
+msgid "Public email"
+msgstr ""
+
+#: inc/business-profile.php:8
+#: inc/setup-wizard.php:405
+msgid "Public phone"
+msgstr ""
+
+#: inc/business-profile.php:30
+msgid "Enter a valid public email address, or leave it empty."
+msgstr ""
+
+#: inc/business-profile.php:33
+msgid "Enter a public phone number containing digits, or leave it empty."
+msgstr ""
+
+#: inc/business-profile.php:78
+msgid "Business details"
+msgstr ""
+
+#: inc/business-profile.php:198
+msgid "Details"
+msgstr ""
+
+#: inc/business-profile.php:199
+#: inc/personalized-preview.php:77
+#: inc/starter-sites.php:60
+#: inc/starter-sites.php:87
+#: inc/starter-sites.php:118
+#: inc/starter-sites.php:141
+#: inc/starter-sites.php:168
+#: inc/starter-sites.php:331
+#: inc/starter-sites.php:551
+#: inc/starter-sites.php:1008
+#: patterns/footer.php:64
+msgid "Contact"
+msgstr ""
+
+#: inc/business-profile.php:263
+#: inc/finish.php:173
+msgid "Contact details"
+msgstr ""
+
+#: inc/business-profile.php:288
+#: inc/business-profile.php:479
+msgid "You are not allowed to change the business profile."
+msgstr ""
+
+#: inc/business-profile.php:307
+msgid "The profile or site content changed. Refresh before saving to protect newer edits."
+msgstr ""
+
+#: inc/business-profile.php:316
+msgid "Choose a different main action before removing the contact detail it uses."
+msgstr ""
+
+#: inc/business-profile.php:345
+msgid "The shared details could not be saved."
+msgstr ""
+
+#: inc/business-profile.php:354
+msgid "The business profile could not be saved."
+msgstr ""
+
+#: inc/business-profile.php:359
+msgid "The profile update stopped before it finished."
+msgstr ""
+
+#: inc/business-profile.php:374
+msgid "You are not allowed to add starter pages."
+msgstr ""
+
+#: inc/business-profile.php:387
+msgid "The site changed. Refresh before adding pages."
+msgstr ""
+
+#: inc/business-profile.php:392
+msgid "This site already has its supporting pages, or no one-page starter is selected."
+msgstr ""
+
+#: inc/business-profile.php:409
+msgid "The additional pages could not be saved."
+msgstr ""
+
+#: inc/business-profile.php:414
+msgid "The additional page content could not be saved completely."
+msgstr ""
+
+#: inc/business-profile.php:433
+msgid "The new page list could not be saved."
+msgstr ""
+
+#: inc/business-profile.php:443
+msgid "Adding pages stopped before it finished."
+msgstr ""
+
+#. translators: %d: images in this section.
+#: inc/business-profile.php:465
+#: inc/business-profile.php:486
+#: inc/content-guide.php:357
+#: inc/design.php:271
+#: inc/setup-wizard.php:633
+msgid "Business profile"
+msgstr ""
+
+#: inc/business-profile.php:487
+#: inc/content-guide.php:344
+#: inc/design.php:277
+#: inc/launch-checklist.php:347
+msgid "Back to Finish your website"
+msgstr ""
+
+#: inc/business-profile.php:488
+msgid "Enter public details once. Shared fields created by the wizard on your current starter pages and footer follow this profile; directly edited fields and older unlinked content are kept. Review the rest of the starter copy before launch."
+msgstr ""
+
+#: inc/business-profile.php:489
+#: inc/design.php:241
+#: inc/design.php:276
+#: inc/finish.php:347
+#: inc/setup-wizard.php:632
+msgid "Make it yours"
+msgstr ""
+
+#: inc/business-profile.php:489
+#: inc/design.php:279
+#: inc/launch-checklist.php:313
+#: inc/launch-checklist.php:346
+msgid "Launch checklist"
+msgstr ""
+
+#: inc/business-profile.php:490
+msgid "Supporting pages added. Your homepage and design were kept. Review Navigation if you customized the menu."
+msgstr ""
+
+#. translators: 1: number of updated shared fields, 2: number of customized fields kept.
+#: inc/business-profile.php:490
+#, php-format
+msgid "Profile saved. %1$d shared fields updated; %2$d customized fields kept."
+msgstr ""
+
+#: inc/business-profile.php:495
+msgid "Save business profile"
+msgstr ""
+
+#: inc/business-profile.php:497
+msgid "Ready for more pages?"
+msgstr ""
+
+#: inc/business-profile.php:497
+msgid "Add this starter’s supporting pages without replacing your homepage, header, footer or styles. An untouched starter menu is updated; an edited menu is left for you to organize in Navigation. The latest page addition can be undone from Starter Sites."
+msgstr ""
+
+#: inc/business-profile.php:497
+msgid "Add supporting pages"
+msgstr ""
+
+#: inc/content-guide.php:30
+msgid "Introduction"
+msgstr ""
+
+#: inc/content-guide.php:32
+#: inc/finish.php:354
+#: inc/setup-wizard.php:454
+msgid "Main action"
+msgstr ""
+
+#: inc/content-guide.php:34
+msgid "Questions and answers"
+msgstr ""
+
+#: inc/content-guide.php:36
+msgid "Testimonials"
+msgstr ""
+
+#: inc/content-guide.php:38
+msgid "Logos"
+msgstr ""
+
+#: inc/content-guide.php:40
+msgid "App screenshots"
+msgstr ""
+
+#: inc/content-guide.php:57
+msgid "Choose sections belonging to this starter, then try again."
+msgstr ""
+
+#: inc/content-guide.php:98
+msgid "Contact us"
+msgstr ""
+
+#: inc/content-guide.php:139
+msgid "Start with the headline: say what you offer and who it is for. Make the short description and main button match that promise."
+msgstr ""
+
+#: inc/content-guide.php:142
+msgid "Check public email, phone, address and opening hours. Use Business profile for shared details, and follow every contact or booking link."
+msgstr ""
+
+#: inc/content-guide.php:145
+msgid "Tell your real story: explain who you are, who you help and how you work. Replace sample people, photos and credentials with information you have permission to publish."
+msgstr ""
+
+#: inc/content-guide.php:148
+msgid "Describe your actual coaching or consulting offer, relevant experience and how scope, format and fees are agreed. Check discovery-call links and avoid promising outcomes you cannot guarantee."
+msgstr ""
+
+#: inc/content-guide.php:151
+msgid "Replace the illustrative portfolio with your own work, check captions and alternative text, and explain your commissions and image-use arrangements. Make project enquiry links work for your business."
+msgstr ""
+
+#: inc/content-guide.php:154
+msgid "Describe your actual programmes, current needs and ways to take part. Check volunteering and giving details, and publish only verified information about your organisation and its work."
+msgstr ""
+
+#: inc/content-guide.php:157
+msgid "Replace sample people, logos, quotations and results with accurate information you have permission to publish. Remove unsupported claims."
+msgstr ""
+
+#: inc/content-guide.php:160
+msgid "Check every price, currency, offer and condition. Make it clear what visitors receive and how they can enquire or buy."
+msgstr ""
+
+#: inc/content-guide.php:162
+msgid "Describe your actual services, products or work in clear language. Replace sample names and descriptions, and check each button destination."
+msgstr ""
+
+#: inc/content-guide.php:227
+msgid "Page section"
+msgstr ""
+
+#: inc/content-guide.php:228
+msgid "Your contact details"
+msgstr ""
+
+#: inc/content-guide.php:251
+msgid "You are not allowed to review this starter page."
+msgstr ""
+
+#: inc/content-guide.php:260
+msgid "This section changed. Refresh and review its current content."
+msgstr ""
+
+#: inc/content-guide.php:272
+msgid "The review could not be saved. Please try again."
+msgstr ""
+
+#: inc/content-guide.php:288
+#: inc/content-guide.php:344
+msgid "Guided content pass"
+msgstr ""
+
+#: inc/content-guide.php:308
+msgid "Replace images in this section"
+msgstr ""
+
+#: inc/content-guide.php:309
+msgid "Choose an image below. In WordPress, use Replace → Media Library or Upload; for a background, select its Cover block and use Replace. Save the page, then refresh this guide."
+msgstr ""
+
+#: inc/content-guide.php:310
+msgid "For large photos, aim for at least 1200 pixels wide; smaller cards usually need 600 pixels. Match the existing shape, adjust the crop or focal point, and check mobile preview. Describe meaningful images in alternative text; leave decorative images empty."
+msgstr ""
+
+#. translators: %d: image position within the section.
+#: inc/content-guide.php:316
+#, php-format
+msgid "Image %d"
+msgstr ""
+
+#. translators: %d: image position within the section.
+#: inc/content-guide.php:316
+msgid "Cover background"
+msgstr ""
+
+#. translators: %d: image position within the section.
+#: inc/content-guide.php:316
+msgid "Image block"
+msgstr ""
+
+#. translators: %d: image position within the section.
+#: inc/content-guide.php:317
+msgid "Bundled demo image. Replace it when it does not represent your business or work."
+msgstr ""
+
+#. translators: %s: saved image aspect ratio.
+#: inc/content-guide.php:318
+#, php-format
+msgid "Current shape: %s"
+msgstr ""
+
+#. translators: %s: current image alternative text or an empty-text label.
+#: inc/content-guide.php:319
+#, php-format
+msgid "Alternative text: %s"
+msgstr ""
+
+#. translators: %s: current image alternative text or an empty-text label.
+#: inc/content-guide.php:319
+msgid "Empty — check whether this image is decorative."
+msgstr ""
+
+#. translators: %d: image position within the section.
+#: inc/content-guide.php:320
+#, php-format
+msgid "Replace image %d in WordPress"
+msgstr ""
+
+#: inc/content-guide.php:327
+msgid "You are not allowed to review this website."
+msgstr ""
+
+#: inc/content-guide.php:345
+msgid "Review your homepage and supporting pages one section at a time. Open it in WordPress, save any changes, then return here and mark it reviewed. Reviews are yours to confirm; editing a section makes it need review again."
+msgstr ""
+
+#: inc/content-guide.php:348
+msgid "Starter pages"
+msgstr ""
+
+#. translators: 1: reviewed sections, 2: total sections.
+#: inc/content-guide.php:348
+#, php-format
+msgid "%1$d of %2$d reviewed"
+msgstr ""
+
+#: inc/content-guide.php:350
+msgid "This page has no editable block sections. Open it in WordPress to add content, then refresh this guide."
+msgstr ""
+
+#: inc/content-guide.php:350
+msgid "Edit page"
+msgstr ""
+
+#: inc/content-guide.php:350
+msgid "Choose a starter first"
+msgstr ""
+
+#. translators: 1: reviewed sections, 2: total sections.
+#: inc/content-guide.php:351
+#, php-format
+msgid "%1$d of %2$d sections on this page reviewed."
+msgstr ""
+
+#. translators: 1: reviewed sections, 2: total sections.
+#: inc/content-guide.php:352
+msgid "Page pass complete. Continue with the next unfinished starter page."
+msgstr ""
+
+#. translators: 1: reviewed sections, 2: total sections.
+#: inc/content-guide.php:352
+msgid "All starter page sections reviewed. Review your header and footer and test contact delivery and mobile behavior in the launch checklist."
+msgstr ""
+
+#. translators: 1: reviewed sections, 2: total sections.
+#: inc/content-guide.php:352
+msgid "Continue to next page"
+msgstr ""
+
+#. translators: 1: reviewed sections, 2: total sections.
+#: inc/content-guide.php:352
+msgid "Continue to launch checks"
+msgstr ""
+
+#: inc/content-guide.php:355
+msgid "Replace sample images where needed. Check their crop and descriptive alternative text; decorative images can have empty alternative text."
+msgstr ""
+
+#. translators: %d: images in this section.
+#: inc/content-guide.php:356
+#, php-format
+msgid "Images in this section: %d"
+msgstr ""
+
+#. translators: %d: images in this section.
+#: inc/content-guide.php:357
+msgid "Edit this section in WordPress"
+msgstr ""
+
+#. translators: %d: images in this section.
+#: inc/content-guide.php:357
+msgid "Edit section images"
+msgstr ""
+
+#: inc/content-guide.php:360
+msgid "The editor opens in a new tab with the section selected. Save there, then use the editor shortcuts to return to the guide, or return to this tab and refresh before confirming your review. All content stays in native blocks."
+msgstr ""
+
+#: inc/content-guide.php:361
+msgid "Reviewed, continue"
+msgstr ""
+
+#: inc/content-guide.php:361
+msgid "Refresh after editing"
+msgstr ""
+
+#: inc/content-guide.php:362
+msgid "Page sections"
+msgstr ""
+
+#: inc/content-guide.php:362
+#: inc/launch-checklist.php:370
+msgid "Reviewed"
+msgstr ""
+
+#: inc/content-guide.php:362
+msgid "Needs review"
+msgstr ""
+
+#: inc/content-guide.php:384
+msgid "Save your changes before leaving. Returning or moving on does not mark a section reviewed."
+msgstr ""
+
+#: inc/content-guide.php:384
+msgid "Save your changes in WordPress and wait for saving to finish before using this shortcut."
+msgstr ""
+
+#: inc/content-guide.php:391
+msgid "Review this section"
+msgstr ""
+
+#: inc/content-guide.php:392
+msgid "Back to website setup"
+msgstr ""
+
+#: inc/content-guide.php:397
+msgid "Next section"
+msgstr ""
+
+#: inc/design.php:15
+msgid "Navigation and action"
+msgstr ""
+
+#: inc/design.php:15
+msgid "Branding on the left, menu and an action button on the right."
+msgstr ""
+
+#: inc/design.php:16
+msgid "Centered branding"
+msgstr ""
+
+#: inc/design.php:16
+msgid "A centered logo and site name, with the menu underneath."
+msgstr ""
+
+#: inc/design.php:17
+msgid "Simple navigation"
+msgstr ""
+
+#: inc/design.php:17
+msgid "Branding and a menu, with no action button."
+msgstr ""
+
+#: inc/design.php:20
+msgid "Brand and menu"
+msgstr ""
+
+#: inc/design.php:20
+msgid "Site name and tagline beside navigation, with a legal row below."
+msgstr ""
+
+#: inc/design.php:21
+msgid "Compact bar"
+msgstr ""
+
+#: inc/design.php:21
+msgid "Branding and navigation share a compact, wrapping row."
+msgstr ""
+
+#: inc/design.php:22
+msgid "Minimal footer"
+msgstr ""
+
+#: inc/design.php:22
+msgid "Site branding and a legal row, without navigation."
+msgstr ""
+
+#: inc/design.php:65
+msgid "Choose an available header or footer preset."
+msgstr ""
+
+#: inc/design.php:100
+msgid "View the site"
+msgstr ""
+
+#: inc/design.php:112
+#: inc/design.php:163
+#: inc/design.php:255
+#: inc/setup-wizard.php:229
+#: inc/starter-history.php:177
+#: inc/starter-sites.php:1374
+msgid "You are not allowed to change the site design."
+msgstr ""
+
+#: inc/design.php:124
+msgid "This template part changed after the screen was opened. Refresh and preview it again before applying a preset."
+msgstr ""
+
+#: inc/design.php:139
+#: inc/launch-checklist.php:50
+#: inc/launch-recommendations.php:136
+#: inc/starter-sites.php:1311
+msgid "Header"
+msgstr ""
+
+#: inc/design.php:139
+#: inc/launch-checklist.php:50
+#: inc/launch-recommendations.php:136
+#: inc/starter-sites.php:1242
+#: inc/starter-sites.php:1244
+msgid "Footer"
+msgstr ""
+
+#: inc/design.php:146
+msgid "The preset could not be saved. The previous template part was restored."
+msgstr ""
+
+#: inc/design.php:146
+msgid "The preset could not be saved or fully restored. Review the template part in the Site Editor."
+msgstr ""
+
+#: inc/design.php:152
+msgid "The recovery copy could not be saved. The previous template part was restored."
+msgstr ""
+
+#: inc/design.php:152
+msgid "The recovery copy could not be saved and restoration is incomplete. Review the template part in the Site Editor."
+msgstr ""
+
+#: inc/design.php:172
+msgid "Undo is unavailable because the template part changed. Use the Site Editor and its revisions to review earlier versions."
+msgstr ""
+
+#: inc/design.php:175
+msgid "The template part could not be fully restored. Review it in the Site Editor."
+msgstr ""
+
+#: inc/design.php:217
+msgid "Your site, your style"
+msgstr ""
+
+#: inc/design.php:217
+msgid "This is a layout preview using your current site styles. Apply the preset, then edit every block in WordPress’s Site Editor."
+msgstr ""
+
+#: inc/design.php:225
+#: inc/personalized-preview.php:64
+#: inc/personalized-preview.php:146
+#: inc/starter-preview.php:70
+msgid "You are not allowed to preview the site design."
+msgstr ""
+
+#: inc/design.php:266
+msgid "Logo and site branding"
+msgstr ""
+
+#: inc/design.php:266
+msgid "Select the Site Logo or Site Title block in your header to change your branding."
+msgstr ""
+
+#: inc/design.php:267
+msgid "Colors, fonts and buttons"
+msgstr ""
+
+#: inc/design.php:267
+msgid "Open Styles to change your palette, typography and the Button block across the site."
+msgstr ""
+
+#: inc/design.php:268
+msgid "Navigation"
+msgstr ""
+
+#: inc/design.php:268
+msgid "Edit menu labels, links and order with WordPress’s navigation tools."
+msgstr ""
+
+#: inc/design.php:271
+msgid "Update shared business details, or add supporting pages to a one-page starter."
+msgstr ""
+
+#: inc/design.php:272
+msgid "Site name and tagline"
+msgstr ""
+
+#: inc/design.php:272
+msgid "Change the name and short description used by your branding blocks."
+msgstr ""
+
+#: inc/design.php:278
+msgid "Start with your branding, choose a header and footer, then refine the details in WordPress. Everything stays editable with native blocks."
+msgstr ""
+
+#: inc/design.php:279
+#: inc/starter-sites.php:1358
+#: inc/starter-sites.php:1359
+msgid "Starter Sites"
+msgstr ""
+
+#: inc/design.php:279
+#: inc/setup-wizard.php:628
+msgid "View your site"
+msgstr ""
+
+#: inc/design.php:280
+msgid "Saved. You can continue refining the layout in the Site Editor."
+msgstr ""
+
+#: inc/design.php:281
+msgid "Your brand, everywhere"
+msgstr ""
+
+#. translators: %s: branding task.
+#: inc/design.php:284
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#. translators: %s: selected layout name.
+#: inc/design.php:289
+#, php-format
+msgid "Preview: %s"
+msgstr ""
+
+#. translators: %s: selected layout name.
+#: inc/design.php:290
+msgid "Applying replaces this template part’s layout and content. Your logo and menu are carried over where the layout includes them. The latest preset can be undone unless the part is edited again; WordPress revisions are also kept when enabled. Review custom text, extra links or widgets before replacing them."
+msgstr ""
+
+#: inc/design.php:291
+#: inc/personalized-preview.php:165
+#: inc/section-swaps.php:264
+#: inc/starter-preview.php:160
+msgid "Preview width"
+msgstr ""
+
+#: inc/design.php:291
+#: inc/personalized-preview.php:165
+#: inc/section-swaps.php:264
+#: inc/starter-preview.php:161
+msgid "Desktop"
+msgstr ""
+
+#: inc/design.php:291
+#: inc/personalized-preview.php:165
+#: inc/section-swaps.php:264
+#: inc/starter-preview.php:162
+msgid "Tablet"
+msgstr ""
+
+#: inc/design.php:291
+#: inc/personalized-preview.php:165
+#: inc/section-swaps.php:264
+#: inc/starter-preview.php:163
+msgid "Mobile"
+msgstr ""
+
+#: inc/design.php:292
+msgid "Layout preview"
+msgstr ""
+
+#: inc/design.php:296
+msgid "Apply this header"
+msgstr ""
+
+#: inc/design.php:296
+msgid "Apply this footer"
+msgstr ""
+
+#: inc/design.php:296
+msgid "Edit the current layout instead"
+msgstr ""
+
+#: inc/design.php:302
+msgid "Header presets"
+msgstr ""
+
+#: inc/design.php:302
+msgid "Footer presets"
+msgstr ""
+
+#: inc/design.php:303
+msgid "Edit your current header in WordPress"
+msgstr ""
+
+#: inc/design.php:303
+msgid "Edit your current footer in WordPress"
+msgstr ""
+
+#. translators: %s: layout name.
+#: inc/design.php:309
+#, php-format
+msgid "Preview %s"
+msgstr ""
+
+#: inc/design.php:316
+msgid "Undo the latest preset"
+msgstr ""
+
+#: inc/design.php:316
+msgid "Restore the template part from before your last preset change. Undo stops if that part has since been edited."
+msgstr ""
+
+#: inc/design.php:316
+msgid "Undo latest preset"
+msgstr ""
+
+#: inc/finish.php:11
+msgid "Keep starter buttons"
+msgstr ""
+
+#: inc/finish.php:11
+msgid "Call us"
+msgstr ""
+
+#: inc/finish.php:11
+msgid "Email us"
+msgstr ""
+
+#: inc/finish.php:11
+#: inc/starter-sites.php:285
+#: patterns/medical-hours-h1.php:35
+#: patterns/medical-hours.php:35
+msgid "Book an appointment"
+msgstr ""
+
+#: inc/finish.php:11
+#: inc/starter-sites.php:497
+msgid "Get a quote"
+msgstr ""
+
+#: inc/finish.php:11
+#: inc/starter-finder.php:6
+#: inc/starter-sites.php:228
+msgid "Shop"
+msgstr ""
+
+#: inc/finish.php:19
+msgid "Choose an available main action."
+msgstr ""
+
+#: inc/finish.php:46
+msgid "Use a complete http or https booking or quote URL."
+msgstr ""
+
+#: inc/finish.php:51
+msgid "Add the public phone or email in Business profile, a booking or quote URL, or a published WooCommerce Shop page for this action."
+msgstr ""
+
+#: inc/finish.php:211
+msgid "You are not allowed to change the main action."
+msgstr ""
+
+#: inc/finish.php:228
+msgid "The site changed. Refresh before saving the main action."
+msgstr ""
+
+#: inc/finish.php:233
+msgid "Apply a starter and make sure you can edit its homepage first."
+msgstr ""
+
+#: inc/finish.php:246
+msgid "You are not allowed to edit these action buttons."
+msgstr ""
+
+#: inc/finish.php:257
+msgid "The action buttons could not be saved completely."
+msgstr ""
+
+#: inc/finish.php:264
+msgid "The main action could not be saved."
+msgstr ""
+
+#: inc/finish.php:270
+msgid "The action update stopped before it finished."
+msgstr ""
+
+#: inc/finish.php:283
+#: inc/finish.php:336
+#: inc/setup-wizard.php:627
+msgid "Finish your website"
+msgstr ""
+
+#: inc/finish.php:304
+#: inc/launch-checklist.php:352
+#: inc/starter-sites.php:1562
+msgid "Choose a starter"
+msgstr ""
+
+#: inc/finish.php:307
+msgid "Add your business details"
+msgstr ""
+
+#: inc/finish.php:310
+msgid "Choose your main action"
+msgstr ""
+
+#: inc/finish.php:314
+msgid "Review your website content"
+msgstr ""
+
+#: inc/finish.php:314
+msgid "Review the rest of your site"
+msgstr ""
+
+#: inc/finish.php:316
+msgid "View your website"
+msgstr ""
+
+#: inc/finish.php:316
+msgid "Finish your launch checks"
+msgstr ""
+
+#: inc/finish.php:321
+msgid "You are not allowed to finish this website."
+msgstr ""
+
+#: inc/finish.php:337
+msgid "Your next steps, all in one place. Edit with WordPress, then return here whenever you are ready to continue."
+msgstr ""
+
+#. translators: 1: updated buttons, 2: customized buttons preserved.
+#: inc/finish.php:338
+#, php-format
+msgid "Main action saved. %1$d buttons updated; %2$d customized buttons kept."
+msgstr ""
+
+#. translators: 1: updated buttons, 2: customized buttons preserved.
+#: inc/finish.php:339
+msgid "Next step"
+msgstr ""
+
+#: inc/finish.php:340
+msgid "Your starter homepage is published. Review its content before sharing your website."
+msgstr ""
+
+#: inc/finish.php:340
+msgid "Your starter homepage is not published. Open it in WordPress to review and publish it."
+msgstr ""
+
+#: inc/finish.php:340
+msgid "View homepage"
+msgstr ""
+
+#: inc/finish.php:341
+msgid "Another page is currently selected as your front page."
+msgstr ""
+
+#: inc/finish.php:341
+#: inc/launch-recommendations.php:150
+msgid "Review Reading settings"
+msgstr ""
+
+#: inc/finish.php:342
+msgid "Search engine indexing is currently discouraged. This is fine while building or on a staging site; review it when your public site is ready."
+msgstr ""
+
+#: inc/finish.php:342
+msgid "Review search visibility"
+msgstr ""
+
+#: inc/finish.php:346
+msgid "Your business"
+msgstr ""
+
+#: inc/finish.php:346
+msgid "Update shared public details, including your description, contact details and hours."
+msgstr ""
+
+#: inc/finish.php:346
+msgid "Edit business profile"
+msgstr ""
+
+#: inc/finish.php:347
+msgid "Your look"
+msgstr ""
+
+#: inc/finish.php:347
+msgid "Choose your logo, colors, fonts, header and footer using native WordPress controls."
+msgstr ""
+
+#: inc/finish.php:348
+msgid "Your content"
+msgstr ""
+
+#: inc/finish.php:348
+msgid "Review your homepage and supporting pages one section at a time. Replace images and edit content using the native WordPress editor."
+msgstr ""
+
+#: inc/finish.php:348
+msgid "Start guided content pass"
+msgstr ""
+
+#: inc/finish.php:348
+msgid "Edit homepage in WordPress"
+msgstr ""
+
+#: inc/finish.php:349
+msgid "Your launch checks"
+msgstr ""
+
+#. translators: 1: completed checks, 2: total checks.
+#: inc/finish.php:349
+#, php-format
+msgid "%1$d of %2$d checks complete. Choose a contact method, test delivery and review your site on mobile."
+msgstr ""
+
+#. translators: 1: completed checks, 2: total checks.
+#: inc/finish.php:349
+msgid "Review launch checklist"
+msgstr ""
+
+#. translators: 1: completed checks, 2: total checks.
+#: inc/finish.php:349
+#: inc/forms.php:315
+#: inc/launch-checklist.php:373
+msgid "Choose a contact form"
+msgstr ""
+
+#. translators: 1: completed checks, 2: total checks.
+#: inc/finish.php:349
+#: inc/launch-recommendations.php:159
+msgid "Recommended checks (optional)"
+msgstr ""
+
+#: inc/finish.php:351
+msgid "What should visitors do next?"
+msgstr ""
+
+#: inc/finish.php:351
+msgid "Choose the main action for your generated header, homepage hero and closing button. Secondary links and directly edited buttons are kept. Layouts without a header button stay that way. Everything remains editable in WordPress."
+msgstr ""
+
+#: inc/finish.php:355
+#: inc/setup-wizard.php:455
+msgid "Button wording (optional)"
+msgstr ""
+
+#: inc/finish.php:355
+msgid "Leave blank to use the action name."
+msgstr ""
+
+#: inc/finish.php:356
+#: inc/setup-wizard.php:456
+msgid "Booking or quote URL"
+msgstr ""
+
+#: inc/finish.php:356
+msgid "Required for bookings. Quotes use your Contact page or homepage contact details when left blank. Call and email use Business profile; Shop uses your published WooCommerce Shop page."
+msgstr ""
+
+#: inc/finish.php:357
+msgid "Save main action"
+msgstr ""
+
+#. translators: 1: form plugin, 2: saved form title, 3: form ID.
+#: inc/form-selection.php:176
+#, php-format
+msgid "%1$s — %2$s (#%3$d)"
+msgstr ""
+
+#. translators: 1: form plugin, 2: saved form title, 3: form ID.
+#: inc/form-selection.php:176
+msgid "Untitled form"
+msgstr ""
+
+#: inc/form-selection.php:191
+msgid "You are not allowed to change the contact form."
+msgstr ""
+
+#: inc/form-selection.php:194
+msgid "That form is no longer available. Choose an available form, automatic detection, or email only."
+msgstr ""
+
+#: inc/form-selection.php:198
+msgid "The contact form choice could not be saved."
+msgstr ""
+
+#: inc/form-selection.php:205
+msgid "Only you can see this: email-only contact is selected."
+msgstr ""
+
+#: inc/form-selection.php:208
+msgid "Only you can see this: create a form in a supported plugin, then choose it in the launch checklist."
+msgstr ""
+
+#: inc/form-selection.php:209
+msgid "Only you can see this: the selected form is unavailable, so visitors see the email fallback."
+msgstr ""
+
+#: inc/form-selection.php:231
+msgid "Contact form"
+msgstr ""
+
+#: inc/form-selection.php:232
+msgid "Choose the form used by Unapp contact sections across your site. You can change the form without editing those pages. Your form plugin handles submissions and email delivery."
+msgstr ""
+
+#: inc/form-selection.php:234
+msgid "The selected form is unavailable. Visitors see the saved email fallback until you choose another form. Other forms are not selected automatically."
+msgstr ""
+
+#: inc/form-selection.php:236
+msgid "Currently shown:"
+msgstr ""
+
+#: inc/form-selection.php:236
+msgid "Custom form"
+msgstr ""
+
+#: inc/form-selection.php:236
+msgid "Email fallback"
+msgstr ""
+
+#: inc/form-selection.php:238
+msgid "A developer filter can override this selection."
+msgstr ""
+
+#: inc/form-selection.php:243
+msgid "Form to display"
+msgstr ""
+
+#: inc/form-selection.php:245
+msgid "Previously selected form (unavailable)"
+msgstr ""
+
+#: inc/form-selection.php:246
+msgid "Automatic — first available form"
+msgstr ""
+
+#: inc/form-selection.php:247
+msgid "Email only — use the saved email links"
+msgstr ""
+
+#: inc/form-selection.php:250
+msgid "Save contact form"
+msgstr ""
+
+#: inc/form-selection.php:252
+msgid "Missing a form? Create and publish it in its plugin, then reload this screen. Forms added directly in the page editor keep their own settings. Jetpack offers its default contact-form block."
+msgstr ""
+
+#: inc/form-selection.php:253
+msgid "Find a form plugin"
+msgstr ""
+
+#: inc/forms.php:230
 msgid "Only you can see this: install any form plugin — WPForms, Contact Form 7, Gravity Forms, Fluent Forms and several others are recognised — and its form replaces this panel automatically."
 msgstr ""
 
-#: inc/forms.php:286
+#: inc/forms.php:258
 #: patterns/church-contact-h1.php:74
 #: patterns/church-contact.php:74
 #: patterns/contact-split-h1.php:106
@@ -315,7 +1448,7 @@ msgctxt "Contact form heading"
 msgid "Send a message"
 msgstr ""
 
-#: inc/forms.php:288
+#: inc/forms.php:260
 msgctxt "Contact fallback text"
 msgid "The quickest way to reach us is email — we answer within two working days."
 msgstr ""
@@ -330,7 +1463,7 @@ msgid "Home"
 msgstr ""
 
 #: inc/front-page-setup.php:147
-#: inc/starter-sites.php:723
+#: inc/starter-sites.php:861
 msgctxt "Title of the posts page created on activation"
 msgid "Blog"
 msgstr ""
@@ -398,6 +1531,501 @@ msgstr ""
 msgid "Choose a starter site"
 msgstr ""
 
+#: inc/launch-checklist.php:42
+msgid "Missing starter page"
+msgstr ""
+
+#: inc/launch-checklist.php:57
+msgid "Starter menu"
+msgstr ""
+
+#: inc/launch-checklist.php:261
+msgid "Check that starter pages are published"
+msgstr ""
+
+#: inc/launch-checklist.php:261
+msgid "Checks whether the pages created by this starter still exist and are published. Review the listed pages before sharing their links."
+msgstr ""
+
+#: inc/launch-checklist.php:262
+msgid "Replace sample contact details"
+msgstr ""
+
+#: inc/launch-checklist.php:262
+msgid "Checks for example email addresses and the demo phone numbers, including saved email fallbacks. Edit the listed pages or template parts to replace them."
+msgstr ""
+
+#: inc/launch-checklist.php:263
+msgid "Finish links and placeholder text"
+msgstr ""
+
+#: inc/launch-checklist.php:263
+msgid "Checks for empty links, example destinations, obvious placeholder text and unavailable shared blocks. Pricing and dark-mode controls are excluded."
+msgstr ""
+
+#: inc/launch-checklist.php:264
+msgid "Choose an available contact method"
+msgstr ""
+
+#: inc/launch-checklist.php:264
+msgid "A form or the saved email fallback is available. Availability does not confirm that messages are delivered."
+msgstr ""
+
+#: inc/launch-checklist.php:264
+msgid "The selected form is unavailable. Choose another form or email-only contact below."
+msgstr ""
+
+#: inc/launch-checklist.php:265
+msgid "Review business details, prices and testimonials"
+msgstr ""
+
+#: inc/launch-checklist.php:265
+msgid "Confirm that names, addresses, opening hours, prices, dates, images and testimonials describe your business. Listed pages still contain passages matching the starter; keeping suitable wording is fine after review."
+msgstr ""
+
+#: inc/launch-checklist.php:266
+msgid "Test how visitors contact you"
+msgstr ""
+
+#: inc/launch-checklist.php:266
+msgid "Open the contact page and check its email and phone links. If you use a form, send a test message and confirm that it arrives in the intended inbox. The theme does not send a test for you."
+msgstr ""
+
+#: inc/launch-checklist.php:267
+msgid "Review mobile navigation and buttons"
+msgstr ""
+
+#: inc/launch-checklist.php:267
+msgid "Visit the site on a narrow screen. Open and close the menu, follow the main buttons, and check that text and images fit. Also try the menu and controls with a keyboard."
+msgstr ""
+
+#: inc/launch-checklist.php:282
+#: inc/launch-checklist.php:338
+msgid "You are not allowed to review the site design."
+msgstr ""
+
+#: inc/launch-checklist.php:286
+msgid "The site changed after this checklist was opened. Review the refreshed checklist before saving."
+msgstr ""
+
+#: inc/launch-checklist.php:296
+msgid "The reviewed items could not be saved."
+msgstr ""
+
+#: inc/launch-checklist.php:325
+msgid "Before you launch"
+msgstr ""
+
+#. translators: 1: completed checks, 2: total checks.
+#: inc/launch-checklist.php:328
+#, php-format
+msgid "%1$d of %2$d launch checks complete. Replace sample content, choose a contact form, and review the site before sharing it."
+msgstr ""
+
+#: inc/launch-checklist.php:330
+msgid "Open launch checklist"
+msgstr ""
+
+#: inc/launch-checklist.php:348
+msgid "Automatic checks find common unfinished starter content. Owner reviews cover things the theme cannot verify. Reviews reset when the site content, design or contact choice changes. This checklist never publishes pages or sends messages."
+msgstr ""
+
+#: inc/launch-checklist.php:349
+msgid "Scans starter pages, the current static home page, header, footer and starter menu. Blog posts and unrelated pages need your own review."
+msgstr ""
+
+#: inc/launch-checklist.php:350
+msgid "Saved. The checklist reflects the current site."
+msgstr ""
+
+#: inc/launch-checklist.php:352
+msgid "Apply a starter to get checks for its pages and shared design. You can choose a contact form below even without a starter."
+msgstr ""
+
+#. translators: 1: completed checks, 2: total checks.
+#: inc/launch-checklist.php:357
+#, php-format
+msgid "%1$d of %2$d checks complete"
+msgstr ""
+
+#: inc/launch-checklist.php:359
+msgid "All checklist items are complete for this version of your site. Keep reviewing the site as you update it."
+msgstr ""
+
+#: inc/launch-checklist.php:370
+msgid "Checked automatically"
+msgstr ""
+
+#: inc/launch-checklist.php:370
+msgid "Owner review needed"
+msgstr ""
+
+#: inc/launch-checklist.php:370
+msgid "Needs attention"
+msgstr ""
+
+#: inc/launch-checklist.php:374
+msgid "View site in a new tab"
+msgstr ""
+
+#: inc/launch-checklist.php:378
+msgid "Save reviewed items"
+msgstr ""
+
+#: inc/launch-recommendations.php:34
+#: inc/launch-recommendations.php:55
+msgid "The linked content is missing or is not publicly viewable."
+msgstr ""
+
+#: inc/launch-recommendations.php:37
+msgid "The linked category or term is unavailable."
+msgstr ""
+
+#: inc/launch-recommendations.php:39
+msgid "Choose a destination for this menu item."
+msgstr ""
+
+#: inc/launch-recommendations.php:42
+msgid "Review this placeholder or unsupported destination."
+msgstr ""
+
+#: inc/launch-recommendations.php:43
+msgid "Check this email or telephone destination."
+msgstr ""
+
+#: inc/launch-recommendations.php:46
+msgid "Review this destination’s format."
+msgstr ""
+
+#: inc/launch-recommendations.php:63
+msgid "The linked content is not publicly viewable."
+msgstr ""
+
+#: inc/launch-recommendations.php:67
+msgid "The section anchor was not found in saved content. Check this link on the live page; plugins may add it dynamically."
+msgstr ""
+
+#: inc/launch-recommendations.php:96
+msgid "Menu item"
+msgstr ""
+
+#: inc/launch-recommendations.php:112
+msgid "Image"
+msgstr ""
+
+#: inc/launch-recommendations.php:113
+msgid "An image has no alternative-text attribute. Add a description if it conveys information, or empty alternative text if it is decorative."
+msgstr ""
+
+#: inc/launch-recommendations.php:113
+msgid "An image has empty alternative text. This is correct for decoration; add a description if the image conveys information."
+msgstr ""
+
+#: inc/launch-recommendations.php:119
+msgid "A shared reference is unavailable or circular. Review it in WordPress."
+msgstr ""
+
+#: inc/launch-recommendations.php:148
+msgid "Site icon"
+msgstr ""
+
+#: inc/launch-recommendations.php:148
+msgid "Configured"
+msgstr ""
+
+#: inc/launch-recommendations.php:148
+msgid "Optional branding"
+msgstr ""
+
+#: inc/launch-recommendations.php:148
+msgid "A site icon helps visitors recognize your browser tab. Choose a square image, ideally at least 512 × 512 pixels, in WordPress General Settings."
+msgstr ""
+
+#: inc/launch-recommendations.php:148
+msgid "Open General Settings"
+msgstr ""
+
+#: inc/launch-recommendations.php:149
+msgid "Navigation destinations"
+msgstr ""
+
+#: inc/launch-recommendations.php:149
+msgid "Worth reviewing"
+msgstr ""
+
+#: inc/launch-recommendations.php:149
+msgid "No obvious saved-link issues"
+msgstr ""
+
+#: inc/launch-recommendations.php:149
+msgid "Reviews saved native menu links for unfinished destinations, unavailable linked content and missing section anchors. External links, custom routes and dynamically generated menus still need a manual visit; no websites are contacted."
+msgstr ""
+
+#: inc/launch-recommendations.php:149
+msgid "Edit navigation in WordPress"
+msgstr ""
+
+#: inc/launch-recommendations.php:150
+msgid "Search visibility"
+msgstr ""
+
+#: inc/launch-recommendations.php:150
+msgid "Indexing is discouraged"
+msgstr ""
+
+#: inc/launch-recommendations.php:150
+msgid "Indexing is not discouraged"
+msgstr ""
+
+#: inc/launch-recommendations.php:150
+msgid "Keeping indexing discouraged is reasonable while building or on a staging site. Review this setting when your public site is ready. Allowing indexing does not guarantee a search-engine listing or make a private site public."
+msgstr ""
+
+#: inc/launch-recommendations.php:151
+msgid "Image descriptions"
+msgstr ""
+
+#: inc/launch-recommendations.php:151
+msgid "Confirm image purpose"
+msgstr ""
+
+#: inc/launch-recommendations.php:151
+msgid "No missing descriptions found in saved image markup"
+msgstr ""
+
+#: inc/launch-recommendations.php:151
+msgid "Meaningful images need descriptive alternative text. Empty text is correct for decorative images, so these are review suggestions, not errors. Decorative Cover backgrounds, bundled icons and explicitly hidden/presentational images are excluded. Dynamic images and the quality of existing descriptions need your own review."
+msgstr ""
+
+#: inc/launch-recommendations.php:151
+msgid "Open guided image editing"
+msgstr ""
+
+#: inc/launch-recommendations.php:160
+msgid "Helpful finishing touches to review when they suit your site. These are optional and do not affect launch progress. They never publish content or change settings automatically."
+msgstr ""
+
+#: inc/launch-recommendations.php:162
+msgid "An administrator can review this WordPress setting."
+msgstr ""
+
+#. translators: %d: saved findings to review.
+#: inc/launch-recommendations.php:163
+#, php-format
+msgid "Review suggestions (%d)"
+msgstr ""
+
+#: inc/personalized-preview.php:10
+#: inc/starter-sites.php:617
+msgid "Choose an image from your Media Library for the logo."
+msgstr ""
+
+#: inc/personalized-preview.php:28
+msgid "Choose service cards offered by this starter, or leave them blank."
+msgstr ""
+
+#: inc/personalized-preview.php:68
+#: inc/starter-import.php:138
+#: inc/starter-preview.php:28
+msgid "That starter site does not exist."
+msgstr ""
+
+#: inc/personalized-preview.php:82
+#: inc/starter-sites.php:1027
+msgid "Blog"
+msgstr ""
+
+#: inc/personalized-preview.php:147
+msgid "Submit your setup choices to preview them."
+msgstr ""
+
+#: inc/personalized-preview.php:163
+msgid "Preview your website"
+msgstr ""
+
+#: inc/personalized-preview.php:163
+msgid "Your selected sections, details, logo, colors and main action appear here before you build. This private homepage preview does not change the live site. Supporting-page links and contact actions are inactive."
+msgstr ""
+
+#: inc/personalized-preview.php:164
+msgid "Reload personalized preview"
+msgstr ""
+
+#: inc/personalized-preview.php:166
+msgid "Your personalized homepage preview"
+msgstr ""
+
+#: inc/personalized-preview.php:167
+msgid "Choose Reload personalized preview to load your choices. Device-width scaling requires JavaScript."
+msgstr ""
+
+#: inc/scheme.php:76
+msgid "Dark mode"
+msgstr ""
+
+#: inc/section-swaps.php:43
+msgid "Image on the right"
+msgstr ""
+
+#: inc/section-swaps.php:43
+msgid "Image on the left"
+msgstr ""
+
+#: inc/section-swaps.php:43
+msgid "Text above image"
+msgstr ""
+
+#: inc/section-swaps.php:44
+msgid "Two-column grid"
+msgstr ""
+
+#: inc/section-swaps.php:44
+msgid "Three-column grid"
+msgstr ""
+
+#: inc/section-swaps.php:44
+msgid "Single-column list"
+msgstr ""
+
+#: inc/section-swaps.php:45
+msgid "Text beside buttons"
+msgstr ""
+
+#: inc/section-swaps.php:45
+msgid "Text above buttons"
+msgstr ""
+
+#: inc/section-swaps.php:81
+msgid "Choose an editable starter page."
+msgstr ""
+
+#: inc/section-swaps.php:84
+msgid "Choose an editable section belonging to your current starter."
+msgstr ""
+
+#: inc/section-swaps.php:94
+msgid "This section changed. Refresh the guide before choosing a layout."
+msgstr ""
+
+#: inc/section-swaps.php:102
+msgid "This section changed. Refresh and preview its current content before applying a layout."
+msgstr ""
+
+#: inc/section-swaps.php:106
+msgid "Choose a compatible layout from this section’s preview options."
+msgstr ""
+
+#: inc/section-swaps.php:163
+msgid "Another person is editing this page. Wait until they finish, then refresh and preview again."
+msgstr ""
+
+#: inc/section-swaps.php:180
+msgid "The layout or recovery copy could not be saved. Your previous content was restored."
+msgstr ""
+
+#: inc/section-swaps.php:180
+msgid "The layout could not be fully restored. Review this page and its revisions in WordPress."
+msgstr ""
+
+#: inc/section-swaps.php:193
+msgid "This is no longer the latest section swap. Refresh the guide."
+msgstr ""
+
+#: inc/section-swaps.php:197
+msgid "This section changed after the swap. Undo is unavailable to protect your edits; use WordPress revisions to review earlier versions."
+msgstr ""
+
+#: inc/section-swaps.php:199
+msgid "Another person is editing this page. Wait until they finish before using Undo."
+msgstr ""
+
+#: inc/section-swaps.php:207
+msgid "The section could not be restored. Review its WordPress revisions; the recovery copy is still available."
+msgstr ""
+
+#: inc/section-swaps.php:223
+msgid "Section layout preview"
+msgstr ""
+
+#: inc/section-swaps.php:244
+msgid "Section layout saved. Your content stays editable in WordPress."
+msgstr ""
+
+#: inc/section-swaps.php:259
+msgid "Try another section layout"
+msgstr ""
+
+#: inc/section-swaps.php:260
+msgid "Preview a compatible layout using your saved text, images, buttons and links. Save any open editor changes first, then refresh this guide. Only this section changes; every block stays editable in WordPress."
+msgstr ""
+
+#: inc/section-swaps.php:261
+msgid "Section layout"
+msgstr ""
+
+#: inc/section-swaps.php:261
+msgid "Preview layout"
+msgstr ""
+
+#: inc/section-swaps.php:263
+msgid "This private preview does not change your page. External links and contact actions are inactive."
+msgstr ""
+
+#: inc/section-swaps.php:265
+msgid "Your section layout preview"
+msgstr ""
+
+#: inc/section-swaps.php:266
+msgid "Apply this layout"
+msgstr ""
+
+#: inc/section-swaps.php:278
+msgid "Undo last section swap"
+msgstr ""
+
+#: inc/section-swaps.php:278
+msgid "Restores only the last swapped section. Later edits to that section are protected."
+msgstr ""
+
+#: inc/section-swaps.php:288
+msgid "Stacked section"
+msgstr ""
+
+#: inc/service-cards.php:20
+msgid "Enter service cards as names and descriptions."
+msgstr ""
+
+#: inc/service-cards.php:22
+msgid "Use the available service name and description fields."
+msgstr ""
+
+#: inc/service-cards.php:26
+msgid "Give each service a name (up to 120 characters) and a short description (up to 600 characters), or leave both fields empty to keep that starter card."
+msgstr ""
+
+#: inc/service-cards.php:125
+msgid "Personalize service cards (optional)"
+msgstr ""
+
+#: inc/service-cards.php:125
+msgid "Enter a name and description for each card you want to replace. Blank rows keep the starter content; review any remaining examples. Icons, photos, prices and buttons stay as they are. Later profile updates preserve direct edits in WordPress. Clear a row to stop updating it, then remove unwanted cards in the native editor."
+msgstr ""
+
+#. translators: %d: card position.
+#: inc/service-cards.php:126
+#, php-format
+msgid "Service card %d"
+msgstr ""
+
+#. translators: %d: card position.
+#: inc/service-cards.php:127
+msgid "Service name"
+msgstr ""
+
+#: inc/service-cards.php:128
+msgid "Short service description"
+msgstr ""
+
 #: inc/setup-wizard.php:33
 msgid "Contact Form 7"
 msgstr ""
@@ -422,159 +2050,445 @@ msgstr ""
 msgid "Install"
 msgstr ""
 
-#: inc/setup-wizard.php:208
-#: inc/starter-sites.php:1178
-msgid "You are not allowed to change the site design."
+#: inc/setup-wizard.php:183
+msgid "The site name could not be saved."
 msgstr ""
 
-#: inc/setup-wizard.php:269
-#: inc/setup-wizard.php:367
+#: inc/setup-wizard.php:187
+msgid "The site logo could not be saved."
+msgstr ""
+
+#: inc/setup-wizard.php:273
+#: inc/setup-wizard.php:386
 msgid "Choose a logo"
 msgstr ""
 
-#: inc/setup-wizard.php:270
+#: inc/setup-wizard.php:274
 msgid "Use this logo"
 msgstr ""
 
 #. translators: %s: starter site name.
-#: inc/setup-wizard.php:345
+#: inc/setup-wizard.php:353
 #, php-format
 msgid "Make the %s starter yours"
 msgstr ""
 
-#: inc/setup-wizard.php:348
+#: inc/setup-wizard.php:356
 msgid "Everything here is optional and everything can be changed later. Leaving a field alone keeps what the site already has."
 msgstr ""
 
-#: inc/setup-wizard.php:351
-msgid "Name and logo"
-msgstr ""
-
-#: inc/setup-wizard.php:353
-msgid "Site title"
+#: inc/setup-wizard.php:357
+msgid "How much website do you need?"
 msgstr ""
 
 #: inc/setup-wizard.php:358
-msgid "Tagline"
+msgid "One-page website (recommended)"
+msgstr ""
+
+#: inc/setup-wizard.php:358
+msgid "A complete homepage with section navigation. Add supporting pages later without rebuilding."
+msgstr ""
+
+#: inc/setup-wizard.php:359
+msgid "Full website"
+msgstr ""
+
+#: inc/setup-wizard.php:359
+msgid "The homepage, all supporting pages and a blog page."
+msgstr ""
+
+#: inc/setup-wizard.php:360
+msgid "The Shop starter still needs WooCommerce and its store pages in either mode."
+msgstr ""
+
+#: inc/setup-wizard.php:362
+msgid "Choose homepage sections (optional)"
 msgstr ""
 
 #: inc/setup-wizard.php:363
-msgid "Logo"
+msgid "Keep the complete starter, or uncheck sections you do not need. The introduction, closing action and final notice stay in place. This changes the homepage only; full-site supporting pages are still included."
 msgstr ""
 
-#: inc/setup-wizard.php:369
-msgid "Remove"
+#: inc/setup-wizard.php:366
+msgid "Included"
+msgstr ""
+
+#: inc/setup-wizard.php:370
+msgid "Name and logo"
+msgstr ""
+
+#: inc/setup-wizard.php:372
+msgid "Site title"
 msgstr ""
 
 #: inc/setup-wizard.php:377
+msgid "Tagline"
+msgstr ""
+
+#: inc/setup-wizard.php:382
+msgid "Logo"
+msgstr ""
+
+#: inc/setup-wizard.php:388
+msgid "Remove"
+msgstr ""
+
+#: inc/setup-wizard.php:396
+msgid "Shared business profile"
+msgstr ""
+
+#: inc/setup-wizard.php:397
+msgid "What do you do?"
+msgstr ""
+
+#: inc/setup-wizard.php:398
+msgid "Use the email and phone visitors should see. These replace sample contact details on the new pages and footer. Leave them blank to keep the examples for now."
+msgstr ""
+
+#: inc/setup-wizard.php:409
+msgid "More business details (optional)"
+msgstr ""
+
+#: inc/setup-wizard.php:414
+msgid "Customize colors and fonts (optional)"
+msgstr ""
+
+#: inc/setup-wizard.php:416
 msgid "Colours"
 msgstr ""
 
 #. translators: %s: the palette the starter uses by default.
-#: inc/setup-wizard.php:381
+#: inc/setup-wizard.php:420
 #, php-format
 msgid "The %s starter uses its own palette. Pick another if it suits your brand better."
 msgstr ""
 
-#: inc/setup-wizard.php:401
+#: inc/setup-wizard.php:439
 msgid "Typeface"
 msgstr ""
 
-#: inc/setup-wizard.php:415
-#: inc/setup-wizard.php:511
+#: inc/setup-wizard.php:452
+msgid "Main action (optional)"
+msgstr ""
+
+#: inc/setup-wizard.php:453
+msgid "Keep the starter buttons, or choose what visitors should do next. Call and email use your public details. Quotes use the included homepage contact details; bookings need a URL. Shop requires a published WooCommerce Shop page."
+msgstr ""
+
+#: inc/setup-wizard.php:460
+#: inc/setup-wizard.php:583
+#: inc/setup-wizard.php:584
 msgid "Back"
 msgstr ""
 
-#: inc/setup-wizard.php:417
+#: inc/setup-wizard.php:462
 msgid "Continue"
 msgstr ""
 
-#: inc/setup-wizard.php:448
-msgid "One or two things this starter needs"
+#: inc/setup-wizard.php:519
+msgid "Review and build your website"
 msgstr ""
 
-#: inc/setup-wizard.php:454
+#: inc/setup-wizard.php:525
 msgid "WordPress installs these, not the theme. This starter cannot be built until its required plugin is active; the others can be skipped and added later."
 msgstr ""
 
-#: inc/setup-wizard.php:455
+#: inc/setup-wizard.php:526
 msgid "WordPress installs these, not the theme, and you can skip them and come back later. Nothing here is required to build the site."
 msgstr ""
 
-#: inc/setup-wizard.php:471
+#: inc/setup-wizard.php:542
 msgid "Ask an administrator to install it."
 msgstr ""
 
-#: inc/setup-wizard.php:477
+#: inc/setup-wizard.php:548
 msgid "Nothing to install — everything this starter needs is already active."
 msgstr ""
 
-#: inc/setup-wizard.php:492
+#: inc/setup-wizard.php:551
+msgid "Use Back to finish the card or clear both fields. Your entered choices are kept."
+msgstr ""
+
+#: inc/setup-wizard.php:559
 msgid "What happens when you press the button"
 msgstr ""
 
+#. translators: %s: selected homepage section names.
+#: inc/setup-wizard.php:565
+#, php-format
+msgid "Homepage sections: %s. Shared business details are also included."
+msgstr ""
+
 #. translators: %d: number of pages.
-#: inc/setup-wizard.php:498
+#: inc/setup-wizard.php:570
 #, php-format
 msgid "%d page is created and filled in"
 msgid_plural "%d pages are created and filled in"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/setup-wizard.php:501
+#: inc/setup-wizard.php:573
+msgid "A section menu is built for the homepage; supporting pages can be added later"
+msgstr ""
+
+#: inc/setup-wizard.php:573
 msgid "A navigation menu is built from those pages"
 msgstr ""
 
-#: inc/setup-wizard.php:502
+#: inc/setup-wizard.php:574
 msgid "The palette and typeface replace the current Global Styles"
 msgstr ""
 
-#: inc/setup-wizard.php:503
+#: inc/setup-wizard.php:575
 msgid "The header and footer take the starter's wording"
 msgstr ""
 
-#: inc/setup-wizard.php:504
+#: inc/setup-wizard.php:576
+msgid "Public contact details replace sample emails and phone numbers where supplied"
+msgstr ""
+
+#: inc/setup-wizard.php:577
 msgid "The front page is pointed at the new home page"
 msgstr ""
 
-#: inc/setup-wizard.php:505
+#: inc/setup-wizard.php:578
 msgid "No page, post or image is deleted, and the previous styles, header and footer stay in their revision history"
 msgstr ""
 
-#: inc/setup-wizard.php:513
+#: inc/setup-wizard.php:585
 msgid "Build my site"
 msgstr ""
 
-#: inc/setup-wizard.php:534
+#: inc/setup-wizard.php:615
 msgid "The site could not be built"
 msgstr ""
 
-#: inc/setup-wizard.php:536
+#: inc/setup-wizard.php:617
 msgid "Back to the starter sites"
 msgstr ""
 
-#: inc/setup-wizard.php:543
+#: inc/setup-wizard.php:624
 msgid "Your site is built"
 msgstr ""
 
-#: inc/setup-wizard.php:544
+#: inc/setup-wizard.php:625
 msgid "The pages are written, the menu is made and the front page points at the new home page. Every section is locked to its content, so you can rewrite the words without pulling the layout apart."
 msgstr ""
 
-#: inc/setup-wizard.php:546
-msgid "View your site"
-msgstr ""
-
-#: inc/setup-wizard.php:548
+#: inc/setup-wizard.php:630
 msgid "Edit the home page"
 msgstr ""
 
-#: inc/setup-wizard.php:550
-msgid "Open the Site Editor"
+#: inc/setup-wizard.php:637
+msgid "Choose a different starter"
 msgstr ""
 
-#: inc/setup-wizard.php:552
-msgid "Choose a different starter"
+#: inc/starter-finder.php:6
+#: patterns/pricing-compare.php:32
+msgid "Business"
+msgstr ""
+
+#: inc/starter-finder.php:6
+msgid "Local services"
+msgstr ""
+
+#: inc/starter-finder.php:6
+msgid "Creative"
+msgstr ""
+
+#: inc/starter-finder.php:6
+msgid "Health and wellbeing"
+msgstr ""
+
+#: inc/starter-finder.php:6
+msgid "Food and hospitality"
+msgstr ""
+
+#: inc/starter-finder.php:6
+#: patterns/pricing-compare.php:32
+msgid "Community"
+msgstr ""
+
+#: inc/starter-finder.php:6
+msgid "Education and events"
+msgstr ""
+
+#: inc/starter-finder.php:6
+msgid "Publishing"
+msgstr ""
+
+#: inc/starter-finder.php:6
+msgid "Technology"
+msgstr ""
+
+#: inc/starter-finder.php:48
+msgid "No required plugins"
+msgstr ""
+
+#: inc/starter-finder.php:65
+msgid "Find a starter"
+msgstr ""
+
+#: inc/starter-finder.php:67
+msgid "Find your starter"
+msgstr ""
+
+#: inc/starter-finder.php:67
+msgid "Try coaching, photography or charity"
+msgstr ""
+
+#: inc/starter-finder.php:68
+msgid "Category"
+msgstr ""
+
+#: inc/starter-finder.php:68
+msgid "All categories"
+msgstr ""
+
+#: inc/starter-finder.php:69
+msgid "Find starters"
+msgstr ""
+
+#: inc/starter-finder.php:69
+msgid "Clear filters"
+msgstr ""
+
+#. translators: %d: all available starters.
+#: inc/starter-finder.php:71
+#, php-format
+msgid "of %d starters shown"
+msgstr ""
+
+#. translators: %d: all available starters.
+#: inc/starter-finder.php:72
+msgid "No starters match. Try a broader search or clear the category."
+msgstr ""
+
+#: inc/starter-history.php:19
+#: inc/starter-sites.php:607
+msgid "Another starter is being built. Wait for it to finish before trying again."
+msgstr ""
+
+#: inc/starter-history.php:62
+msgid "The setup recovery copy could not be saved."
+msgstr ""
+
+#: inc/starter-history.php:114
+msgid "There is no starter setup to undo."
+msgstr ""
+
+#: inc/starter-history.php:118
+#: inc/starter-history.php:123
+msgid "Pages or design settings have changed since setup. Undo is unavailable to protect your edits. Use page and style revisions to restore individual changes."
+msgstr ""
+
+#: inc/starter-history.php:144
+msgid "This setup is no longer the latest one. Refresh the starter screen."
+msgstr ""
+
+#: inc/starter-history.php:154
+#: inc/starter-history.php:162
+#: inc/starter-import.php:192
+msgid "Some setup changes could not be restored."
+msgstr ""
+
+#: inc/starter-history.php:196
+msgid "Undo the last page addition"
+msgstr ""
+
+#: inc/starter-history.php:196
+msgid "Undo the last setup"
+msgstr ""
+
+#: inc/starter-history.php:200
+msgid "Restore the one-page page list and previous menu. Newly added pages move to the Trash or become drafts. Later page or menu edits prevent Undo."
+msgstr ""
+
+#: inc/starter-history.php:200
+msgid "Restore the previous design, menu, branding and front-page settings. New starter pages move to the Trash; older pages stay in place. If Trash is disabled, new pages become drafts. Undo becomes unavailable after you edit the new pages or design."
+msgstr ""
+
+#: inc/starter-history.php:205
+msgid "Undo page addition"
+msgstr ""
+
+#: inc/starter-history.php:205
+msgid "Undo this setup"
+msgstr ""
+
+#: inc/starter-import.php:22
+msgid "A required starter section is missing or contains a circular reference."
+msgstr ""
+
+#: inc/starter-import.php:26
+msgid "A required starter section is empty."
+msgstr ""
+
+#: inc/starter-import.php:48
+msgid "A required starter plugin is not active."
+msgstr ""
+
+#: inc/starter-import.php:52
+msgid "The starter page template is unavailable."
+msgstr ""
+
+#: inc/starter-import.php:59
+msgid "A starter page has no sections."
+msgstr ""
+
+#: inc/starter-import.php:69
+msgid "A starter page could not be prepared."
+msgstr ""
+
+#: inc/starter-import.php:82
+#: inc/starter-sites.php:896
+msgid "The starter style could not be loaded."
+msgstr ""
+
+#: inc/starter-import.php:103
+#: inc/starter-import.php:134
+#: inc/starter-sites.php:606
+msgid "This setup was undone. Choose a starter again to create a new site."
+msgstr ""
+
+#: inc/starter-import.php:163
+msgid "The public contact details could not be saved."
+msgstr ""
+
+#: inc/starter-import.php:177
+msgid "Setup stopped before it finished. Please try again."
+msgstr ""
+
+#: inc/starter-preview.php:36
+msgid "That starter page does not exist."
+msgstr ""
+
+#: inc/starter-preview.php:47
+msgid "Home"
+msgstr ""
+
+#: inc/starter-preview.php:51
+#: inc/starter-sites.php:1316
+#: patterns/header.php:30
+msgctxt "Header call-to-action button"
+msgid "Get Premium"
+msgstr ""
+
+#: inc/starter-preview.php:134
+msgid "Private homepage preview. Supporting-page links and external actions are inactive; forms are not submitted. Your live site is unchanged."
+msgstr ""
+
+#: inc/starter-preview.php:154
+msgid "Preview only — your pages, menu and design are unchanged. Use the menu inside the preview to explore supporting pages."
+msgstr ""
+
+#: inc/starter-preview.php:156
+msgid "Back to starters"
+msgstr ""
+
+#: inc/starter-preview.php:157
+#: inc/starter-sites.php:1517
+msgid "Set up this starter"
 msgstr ""
 
 #: inc/starter-sites.php:36
@@ -582,14 +2496,12 @@ msgid "SaaS & app"
 msgstr ""
 
 #: inc/starter-sites.php:37
-msgid "The default: a product landing page with features, proof, pricing and a free-trial call to action."
+msgid "The default: a product landing page with product illustrations, features, proof, pricing and clear calls to action."
 msgstr ""
 
 #: inc/starter-sites.php:38
-#: inc/starter-sites.php:1124
-#: patterns/header.php:30
 msgctxt "Header call-to-action button"
-msgid "Get Premium"
+msgid "Explore plans"
 msgstr ""
 
 #: inc/starter-sites.php:48
@@ -603,21 +2515,10 @@ msgstr ""
 #: inc/starter-sites.php:56
 #: inc/starter-sites.php:83
 #: inc/starter-sites.php:137
-#: inc/starter-sites.php:381
+#: inc/starter-sites.php:547
 #: patterns/footer-blog.php:46
 #: patterns/footer-portfolio.php:46
 msgid "About"
-msgstr ""
-
-#: inc/starter-sites.php:60
-#: inc/starter-sites.php:87
-#: inc/starter-sites.php:118
-#: inc/starter-sites.php:141
-#: inc/starter-sites.php:168
-#: inc/starter-sites.php:331
-#: inc/starter-sites.php:385
-#: patterns/footer.php:64
-msgid "Contact"
 msgstr ""
 
 #: inc/starter-sites.php:66
@@ -629,9 +2530,7 @@ msgid "Work first: a project grid, how you run a job, rates, a client quote and 
 msgstr ""
 
 #: inc/starter-sites.php:68
-#: inc/starter-sites.php:203
 #: inc/starter-sites.php:222
-#: patterns/agency-hero.php:35
 #: patterns/footer-agency.php:47
 msgid "Start a project"
 msgstr ""
@@ -653,7 +2552,6 @@ msgstr ""
 #: inc/starter-sites.php:95
 #: inc/starter-sites.php:106
 #: patterns/church-cta.php:27
-#: patterns/church-hero.php:28
 #: patterns/church-story-h1.php:35
 #: patterns/church-story.php:35
 #: patterns/footer-church.php:44
@@ -716,13 +2614,8 @@ msgid "A cover hero, the week’s menu, the kitchen, reviews, opening hours and 
 msgstr ""
 
 #: inc/starter-sites.php:176
-#: inc/starter-sites.php:195
-#: patterns/footer-restaurant.php:45
-#: patterns/restaurant-cta.php:27
-#: patterns/restaurant-hero.php:28
-#: patterns/restaurant-hours-h1.php:35
-#: patterns/restaurant-hours.php:35
-msgid "Book a table"
+#: patterns/restaurant-hero.php:32
+msgid "Request a table"
 msgstr ""
 
 #: inc/starter-sites.php:187
@@ -734,21 +2627,29 @@ msgstr ""
 msgid "The kitchen"
 msgstr ""
 
+#: inc/starter-sites.php:195
+#: patterns/footer-restaurant.php:45
+#: patterns/restaurant-cta.php:27
+#: patterns/restaurant-hours-h1.php:35
+#: patterns/restaurant-hours.php:35
+msgid "Book a table"
+msgstr ""
+
 #: inc/starter-sites.php:201
 msgid "Agency"
 msgstr ""
 
 #: inc/starter-sites.php:202
-msgid "A studio introduction, capabilities, a client list, published rates, the team and an enquiry form."
+msgid "A service-business website with a featured project, capabilities, published rates, the team and an enquiry form."
+msgstr ""
+
+#: inc/starter-sites.php:203
+#: patterns/agency-hero.php:32
+msgid "Get an estimate"
 msgstr ""
 
 #: inc/starter-sites.php:218
-#: patterns/agency-hero.php:44
 msgid "Studio"
-msgstr ""
-
-#: inc/starter-sites.php:228
-msgid "Shop"
 msgstr ""
 
 #: inc/starter-sites.php:229
@@ -757,13 +2658,11 @@ msgstr ""
 
 #: inc/starter-sites.php:230
 #: patterns/shop-cta.php:27
-#: patterns/shop-hero.php:32
 msgid "Shop everything"
 msgstr ""
 
 #: inc/starter-sites.php:242
 #: patterns/footer-shop.php:45
-#: patterns/shop-hero.php:35
 msgid "How it is made"
 msgstr ""
 
@@ -787,7 +2686,6 @@ msgstr ""
 #: inc/starter-sites.php:258
 #: inc/starter-sites.php:277
 #: patterns/footer-realestate.php:45
-#: patterns/realestate-hero.php:35
 msgid "Book a valuation"
 msgstr ""
 
@@ -808,13 +2706,6 @@ msgstr ""
 
 #: inc/starter-sites.php:284
 msgid "A clinic or dental practice: treatments in plain English, clinicians with qualifications, patient questions and opening hours."
-msgstr ""
-
-#: inc/starter-sites.php:285
-#: patterns/medical-hero.php:32
-#: patterns/medical-hours-h1.php:35
-#: patterns/medical-hours.php:35
-msgid "Book an appointment"
 msgstr ""
 
 #: inc/starter-sites.php:296
@@ -843,7 +2734,6 @@ msgstr ""
 
 #: inc/starter-sites.php:312
 #: patterns/education-cta.php:27
-#: patterns/education-hero.php:32
 msgid "See the courses"
 msgstr ""
 
@@ -861,8 +2751,8 @@ msgid "A two-day event: the programme, announced speakers, three ticket tiers an
 msgstr ""
 
 #: inc/starter-sites.php:339
-#: patterns/events-hero.php:28
-msgid "Buy a ticket"
+#: patterns/events-hero.php:32
+msgid "Explore tickets"
 msgstr ""
 
 #: inc/starter-sites.php:350
@@ -880,132 +2770,340 @@ msgid "Venue and access"
 msgstr ""
 
 #: inc/starter-sites.php:364
-msgid "Finance & advisory"
+msgid "Coach & Consultant"
 msgstr ""
 
 #: inc/starter-sites.php:365
-msgid "Credentials, plain-English services, how advice works, fees, advisers and the risk warning."
+msgid "Business coaching and consulting: ways to work together, the approach, a clear process and discovery-call requests."
 msgstr ""
 
 #: inc/starter-sites.php:366
+#: patterns/coach-cta.php:27
+#: patterns/coach-hero.php:32
+msgid "Request a discovery call"
+msgstr ""
+
+#: inc/starter-sites.php:377
+msgid "Work together"
+msgstr ""
+
+#: inc/starter-sites.php:381
+#: inc/starter-sites.php:408
+msgid "The approach"
+msgstr ""
+
+#: inc/starter-sites.php:385
+msgid "Start a conversation"
+msgstr ""
+
+#: inc/starter-sites.php:391
+msgid "Photographer"
+msgstr ""
+
+#: inc/starter-sites.php:392
+msgid "An image-led portfolio with landscape, still-life and architecture studies, commissions, the approach and project enquiries."
+msgstr ""
+
+#: inc/starter-sites.php:393
+#: patterns/photographer-cta.php:27
+#: patterns/photographer-hero.php:32
+msgid "Discuss a project"
+msgstr ""
+
+#: inc/starter-sites.php:404
+#: patterns/footer-portfolio.php:44
+msgid "Selected work"
+msgstr ""
+
+#: inc/starter-sites.php:412
+#: patterns/footer-portfolio.php:47
+msgid "Enquiries"
+msgstr ""
+
+#: inc/starter-sites.php:418
+msgid "Nonprofit"
+msgstr ""
+
+#: inc/starter-sites.php:419
+msgid "Community programmes, volunteering, practical support and giving enquiries, with clear information about how to get involved."
+msgstr ""
+
+#: inc/starter-sites.php:420
+#: inc/starter-sites.php:439
+#: patterns/nonprofit-hero.php:32
+msgid "Ways to support"
+msgstr ""
+
+#: inc/starter-sites.php:431
+msgid "Programmes"
+msgstr ""
+
+#: inc/starter-sites.php:435
+msgid "About our work"
+msgstr ""
+
+#: inc/starter-sites.php:443
+#: patterns/nonprofit-cta.php:27
+msgid "Get involved"
+msgstr ""
+
+#: inc/starter-sites.php:449
+msgid "Home Services"
+msgstr ""
+
+#: inc/starter-sites.php:450
+msgid "A local repair and maintenance business: practical services, how quotes work, service areas and clear phone/email enquiries. No required plugins."
+msgstr ""
+
+#: inc/starter-sites.php:451
+#: inc/starter-sites.php:470
+#: patterns/home-services-cta.php:27
+#: patterns/home-services-hero.php:32
+msgid "Request a quote"
+msgstr ""
+
+#: inc/starter-sites.php:466
+msgid "Where we work"
+msgstr ""
+
+#: inc/starter-sites.php:476
+msgid "Cleaning"
+msgstr ""
+
+#: inc/starter-sites.php:477
+msgid "Home and small workplace cleaning: service checklists, quote and visit arrangements, service areas and direct contact. No required plugins."
+msgstr ""
+
+#: inc/starter-sites.php:478
+#: patterns/cleaning-cta.php:27
+#: patterns/cleaning-hero.php:32
+msgid "Get a cleaning quote"
+msgstr ""
+
+#: inc/starter-sites.php:489
+msgid "Cleaning services"
+msgstr ""
+
+#: inc/starter-sites.php:493
+msgid "Areas and visits"
+msgstr ""
+
+#: inc/starter-sites.php:503
+msgid "Salon & Barber"
+msgstr ""
+
+#: inc/starter-sites.php:504
+msgid "An independent hair studio: cuts, styling, barbering and colour consultations, visit information and appointment requests. No required plugins."
+msgstr ""
+
+#: inc/starter-sites.php:505
+#: patterns/salon-cta.php:27
+#: patterns/salon-hero.php:32
+msgid "Request an appointment"
+msgstr ""
+
+#: inc/starter-sites.php:520
+msgid "Visit the studio"
+msgstr ""
+
+#: inc/starter-sites.php:524
+msgid "Appointments"
+msgstr ""
+
+#: inc/starter-sites.php:530
+msgid "Finance & advisory"
+msgstr ""
+
+#: inc/starter-sites.php:531
+msgid "Credentials, plain-English services, how advice works, fees, advisers and the risk warning."
+msgstr ""
+
+#: inc/starter-sites.php:532
 #: patterns/finance-contact-h1.php:32
 #: patterns/finance-contact.php:32
 #: patterns/footer-finance.php:46
 msgid "Book a call"
 msgstr ""
 
-#: inc/starter-sites.php:377
-#: patterns/footer-finance.php:43
-msgid "Services"
+#: inc/starter-sites.php:604
+msgid "The site changed after setup. Undo was stopped to protect your edits. Use page and style revisions for individual changes."
 msgstr ""
 
-#: inc/starter-sites.php:438
+#: inc/starter-sites.php:605
+msgid "This setup is no longer available to undo. Refresh the starter screen."
+msgstr ""
+
+#: inc/starter-sites.php:608
+msgid "Setup could not finish. Your previous site settings and design were restored. New starter pages are in the Trash. Please try again."
+msgstr ""
+
+#: inc/starter-sites.php:609
+msgid "Setup could not finish and some changes could not be restored. Check Pages, the Site Editor and Settings → Reading before trying again."
+msgstr ""
+
+#: inc/starter-sites.php:610
+msgid "A required starter section is missing. Reinstall the theme or starter pack, then try again."
+msgstr ""
+
+#: inc/starter-sites.php:611
+msgid "The starter page template is unavailable. Reinstall the theme, then try again."
+msgstr ""
+
+#: inc/starter-sites.php:612
+msgid "The starter style is missing or invalid. Reinstall the theme, then try again."
+msgstr ""
+
+#: inc/starter-sites.php:613
+msgid "Check your public email address and phone number, then try setup again."
+msgstr ""
+
+#: inc/starter-sites.php:614
+msgid "Check the homepage section choices for this starter and try again."
+msgstr ""
+
+#: inc/starter-sites.php:615
+msgid "Give each service card a name and description, or leave both fields blank, then try setup again."
+msgstr ""
+
+#: inc/starter-sites.php:616
+msgid "Use service cards offered by the selected starter, then try setup again."
+msgstr ""
+
+#: inc/starter-sites.php:618
+msgid "Choose an available main action in setup."
+msgstr ""
+
+#: inc/starter-sites.php:619
+msgid "Check the public contact details, booking URL or published Shop page for your main action."
+msgstr ""
+
+#: inc/starter-sites.php:620
+msgid "Use a complete http or https URL for the main action."
+msgstr ""
+
+#: inc/starter-sites.php:626
 msgid "This starter needs a plugin that is not active yet. Install and activate it, then build the site again."
 msgstr ""
 
-#: inc/starter-sites.php:441
+#: inc/starter-sites.php:629
 msgid "That starter site could not be applied. Please try again."
 msgstr ""
 
-#: inc/starter-sites.php:454
-msgid "That starter site does not exist."
+#: inc/starter-sites.php:660
+msgid "A starter page could not be saved."
 msgstr ""
 
-#. translators: %s: plugin name.
-#: inc/starter-sites.php:466
-#, php-format
-msgid "This starter needs %s. Install and activate it first."
+#: inc/starter-sites.php:667
+msgid "The blog page could not be saved."
 msgstr ""
 
-#: inc/starter-sites.php:473
-msgid "The starter site’s home page pattern could not be loaded."
+#: inc/starter-sites.php:692
+msgid "The starter settings could not be saved."
 msgstr ""
 
-#: inc/starter-sites.php:876
-msgid "Blog"
+#: inc/starter-sites.php:903
+#: inc/starter-sites.php:914
+#: inc/starter-sites.php:943
+msgid "The starter styles could not be saved."
 msgstr ""
 
-#: inc/starter-sites.php:902
+#: inc/starter-sites.php:1034
+msgid "The starter menu is empty."
+msgstr ""
+
+#: inc/starter-sites.php:1053
 msgid "Starter site menu"
 msgstr ""
 
-#: inc/starter-sites.php:1084
-msgid "Footer"
+#: inc/starter-sites.php:1076
+msgid "The starter menu could not be saved."
 msgstr ""
 
-#: inc/starter-sites.php:1130
-#: inc/starter-sites.php:1154
-msgid "Header"
+#: inc/starter-sites.php:1170
+msgid "A template part could not be saved."
 msgstr ""
 
-#: inc/starter-sites.php:1162
-#: inc/starter-sites.php:1163
-msgid "Starter Sites"
+#: inc/starter-sites.php:1229
+msgid "A template part pattern could not be loaded."
 msgstr ""
 
-#: inc/starter-sites.php:1209
+#: inc/starter-sites.php:1333
+msgid "The starter header could not be prepared."
+msgstr ""
+
+#: inc/starter-sites.php:1413
 msgid "Set up your site"
 msgstr ""
 
-#: inc/starter-sites.php:1233
+#: inc/starter-sites.php:1442
 msgid "Unapp starter sites"
 msgstr ""
 
-#: inc/starter-sites.php:1235
+#: inc/starter-sites.php:1444
 msgid "Each starter builds a complete site for one kind of business: a colour palette, a typeface, a home page and its supporting pages, and a matching menu. Setting one up takes three short steps — the starter, your name and look, then anything it needs installing. No page, post or image is ever deleted. The starter replaces the site's styles, header and footer, and the previous versions stay in their revision history."
 msgstr ""
 
 #. translators: %s: link to the site front page.
-#: inc/starter-sites.php:1243
+#: inc/starter-sites.php:1452
 #, php-format
-msgid "Starter site applied. <a href=\"%s\">View your site</a>."
+msgid "Starter site applied. <a href=\"%s\">Finish your website</a>."
+msgstr ""
+
+#: inc/starter-sites.php:1458
+msgid "Setup undone. Your previous design and front-page settings are restored."
 msgstr ""
 
 #. translators: %s: starter site name.
-#: inc/starter-sites.php:1275
+#: inc/starter-sites.php:1489
 #, php-format
 msgid "The home page the %s starter builds"
 msgstr ""
 
-#: inc/starter-sites.php:1282
+#: inc/starter-sites.php:1496
 msgid "Applied"
 msgstr ""
 
-#. translators: %d: number of pages the starter creates.
-#: inc/starter-sites.php:1294
+#: inc/starter-sites.php:1503
+msgid "Free · Native blocks · No required plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: inc/starter-sites.php:1503
 #, php-format
-msgid "Creates %d page"
-msgid_plural "Creates %d pages"
+msgid "Free · Requires %s"
+msgstr ""
+
+#. translators: %d: supporting pages available with the full website option.
+#: inc/starter-sites.php:1509
+#, php-format
+msgid "One-page or full site · %d supporting page"
+msgid_plural "One-page or full site · %d supporting pages"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/starter-sites.php:1301
+#: inc/starter-sites.php:1515
+msgid "Preview"
+msgstr ""
+
+#: inc/starter-sites.php:1517
 msgid "Set up again"
 msgstr ""
 
-#: inc/starter-sites.php:1301
-msgid "Set up this starter"
-msgstr ""
-
 #. translators: %s: plugin name, e.g. WooCommerce.
-#: inc/starter-sites.php:1307
+#: inc/starter-sites.php:1523
 #, php-format
 msgid "Needs %s, which the setup offers to install"
 msgstr ""
 
-#: inc/starter-sites.php:1316
+#: inc/starter-sites.php:1533
 msgid "Apply without setup"
 msgstr ""
 
-#: inc/starter-sites.php:1345
-msgid "Choose a starter"
-msgstr ""
-
-#: inc/starter-sites.php:1346
+#: inc/starter-sites.php:1563
 msgid "Name and look"
 msgstr ""
 
-#: inc/starter-sites.php:1347
+#: inc/starter-sites.php:1564
 msgid "Finish"
 msgstr ""
 
@@ -1021,67 +3119,12 @@ msgstr ""
 msgid "Unapp checks %1$s for updates twice a day and sends %2$s. No personal data and no site name is sent, and the identifier is a one-way hash. Add the %3$s filter to switch it off."
 msgstr ""
 
-#: patterns/agency-case-study.php
+#: patterns/agency-case-study-h1.php
 msgctxt "Pattern title"
-msgid "Agency: case study"
+msgid "Agency: case study (opening a page)"
 msgstr ""
 
-#: patterns/agency-case-study.php
-msgctxt "Pattern description"
-msgid "One client project told properly: the problem, what the studio made and two outcomes."
-msgstr ""
-
-#: patterns/agency-case-study.php:19
-#: patterns/case-study.php:19
-msgctxt "Section eyebrow label"
-msgid "Case study"
-msgstr ""
-
-#: patterns/agency-case-study.php:22
-msgid "Halden Rail: eleven logos down to one"
-msgstr ""
-
-#: patterns/agency-case-study.php:31
-msgid "Halden Rail identity"
-msgstr ""
-
-#: patterns/agency-case-study.php:38
-msgid "Halden Rail runs regional trains across four counties and had, by its own count, eleven logos in use. We spent two weeks on the argument, six on the system and two getting it onto the first carriage."
-msgstr ""
-
-#: patterns/agency-case-study.php:43
-msgid "One mark, one typeface and a colour for each line"
-msgstr ""
-
-#: patterns/agency-case-study.php:46
-msgid "Signage rules a depot manager can follow without us in the room"
-msgstr ""
-
-#: patterns/agency-case-study.php:49
-msgid "A brand site the in-house team updates themselves"
-msgstr ""
-
-#: patterns/agency-case-study.php:60
-msgid "11 → 1"
-msgstr ""
-
-#: patterns/agency-case-study.php:63
-msgid "logos in use"
-msgstr ""
-
-#: patterns/agency-case-study.php:74
-msgid "10 weeks"
-msgstr ""
-
-#: patterns/agency-case-study.php:77
-msgid "from brief to the first carriage"
-msgstr ""
-
-#: patterns/agency-clients-h1.php
-msgctxt "Pattern title"
-msgid "Agency: selected clients (opening a page)"
-msgstr ""
-
+#: patterns/agency-case-study-h1.php
 #: patterns/agency-clients-h1.php
 #: patterns/agency-contact-h1.php
 #: patterns/agency-team-h1.php
@@ -1092,6 +3135,12 @@ msgstr ""
 #: patterns/church-giving-h1.php
 #: patterns/church-story-h1.php
 #: patterns/church-visit-h1.php
+#: patterns/cleaning-contact-h1.php
+#: patterns/cleaning-location-h1.php
+#: patterns/cleaning-services-h1.php
+#: patterns/coach-about-h1.php
+#: patterns/coach-contact-h1.php
+#: patterns/coach-services-h1.php
 #: patterns/collaborate-h1.php
 #: patterns/contact-split-h1.php
 #: patterns/education-contact-h1.php
@@ -1107,9 +3156,19 @@ msgstr ""
 #: patterns/fitness-location-h1.php
 #: patterns/fitness-memberships-h1.php
 #: patterns/fitness-schedule-h1.php
+#: patterns/home-services-contact-h1.php
+#: patterns/home-services-location-h1.php
+#: patterns/home-services-services-h1.php
 #: patterns/medical-hours-h1.php
 #: patterns/medical-services-h1.php
 #: patterns/medical-team-h1.php
+#: patterns/nonprofit-contact-h1.php
+#: patterns/nonprofit-programmes-h1.php
+#: patterns/nonprofit-support-h1.php
+#: patterns/nonprofit-values-h1.php
+#: patterns/photographer-about-h1.php
+#: patterns/photographer-contact-h1.php
+#: patterns/photographer-work-h1.php
 #: patterns/portfolio-about-h1.php
 #: patterns/portfolio-contact-h1.php
 #: patterns/portfolio-work-h1.php
@@ -1120,6 +3179,9 @@ msgstr ""
 #: patterns/restaurant-hours-h1.php
 #: patterns/restaurant-kitchen-h1.php
 #: patterns/restaurant-menu-h1.php
+#: patterns/salon-contact-h1.php
+#: patterns/salon-location-h1.php
+#: patterns/salon-services-h1.php
 #: patterns/shop-faq-h1.php
 #: patterns/shop-featured-h1.php
 #: patterns/shop-workshop-h1.php
@@ -1128,6 +3190,78 @@ msgstr ""
 #: patterns/waitlist-h1.php
 msgctxt "Pattern description"
 msgid "The same section with its heading as the page's h1, for the first section of a page."
+msgstr ""
+
+#: patterns/agency-case-study-h1.php:19
+#: patterns/agency-case-study.php:19
+#: patterns/case-study.php:19
+msgctxt "Section eyebrow label"
+msgid "Case study"
+msgstr ""
+
+#: patterns/agency-case-study-h1.php:22
+#: patterns/agency-case-study.php:22
+msgid "Halden Rail: eleven logos down to one"
+msgstr ""
+
+#: patterns/agency-case-study-h1.php:31
+#: patterns/agency-case-study.php:31
+msgid "Halden Rail station sign and colour-coded route cards"
+msgstr ""
+
+#: patterns/agency-case-study-h1.php:38
+#: patterns/agency-case-study.php:38
+msgid "Halden Rail runs regional trains across four counties and had, by its own count, eleven logos in use. We spent two weeks on the argument, six on the system and two getting it onto the first carriage."
+msgstr ""
+
+#: patterns/agency-case-study-h1.php:43
+#: patterns/agency-case-study.php:43
+msgid "One mark, one typeface and a colour for each line"
+msgstr ""
+
+#: patterns/agency-case-study-h1.php:46
+#: patterns/agency-case-study.php:46
+msgid "Signage rules a depot manager can follow without us in the room"
+msgstr ""
+
+#: patterns/agency-case-study-h1.php:49
+#: patterns/agency-case-study.php:49
+msgid "A brand site the in-house team updates themselves"
+msgstr ""
+
+#: patterns/agency-case-study-h1.php:60
+#: patterns/agency-case-study.php:60
+msgid "11 → 1"
+msgstr ""
+
+#: patterns/agency-case-study-h1.php:63
+#: patterns/agency-case-study.php:63
+msgid "logos in use"
+msgstr ""
+
+#: patterns/agency-case-study-h1.php:74
+#: patterns/agency-case-study.php:74
+msgid "10 weeks"
+msgstr ""
+
+#: patterns/agency-case-study-h1.php:77
+#: patterns/agency-case-study.php:77
+msgid "from brief to the first carriage"
+msgstr ""
+
+#: patterns/agency-case-study.php
+msgctxt "Pattern title"
+msgid "Agency: case study"
+msgstr ""
+
+#: patterns/agency-case-study.php
+msgctxt "Pattern description"
+msgid "One client project told properly: the problem, what the studio made and two outcomes."
+msgstr ""
+
+#: patterns/agency-clients-h1.php
+msgctxt "Pattern title"
+msgid "Agency: selected clients (opening a page)"
 msgstr ""
 
 #: patterns/agency-clients-h1.php:15
@@ -1271,8 +3405,8 @@ msgstr ""
 
 #: patterns/agency-contact-h1.php:49
 #: patterns/agency-contact.php:49
-#: patterns/portfolio-contact-h1.php:60
-#: patterns/portfolio-contact.php:60
+#: patterns/portfolio-contact-h1.php:67
+#: patterns/portfolio-contact.php:67
 msgid "A budget range, even a wide one"
 msgstr ""
 
@@ -1377,19 +3511,27 @@ msgstr ""
 
 #: patterns/agency-hero.php:21
 msgctxt "Agency hero eyebrow"
-msgid "Independent since 2011"
+msgid "Northgate Studio · Manchester"
 msgstr ""
 
 #: patterns/agency-hero.php:24
-msgid "We make the thing, not the deck about the thing"
+msgid "A better brand. A website that works."
 msgstr ""
 
 #: patterns/agency-hero.php:27
-msgid "A studio of nine in Manchester. Brand, product and the software to run both — for companies that have outgrown the website they built themselves."
+msgid "Brand design and websites for growing businesses. Meet the people doing the work, see what a project costs and tell us what you need."
 msgstr ""
 
-#: patterns/agency-hero.php:32
-msgid "See the work"
+#: patterns/agency-hero.php:35
+msgid "See our work"
+msgstr ""
+
+#: patterns/agency-hero.php:40
+msgid "A clear scope and price before we start."
+msgstr ""
+
+#: patterns/agency-hero.php:47
+msgid "Northbank interiors website with a green and cream brand identity"
 msgstr ""
 
 #: patterns/agency-services.php
@@ -1554,7 +3696,7 @@ msgstr ""
 
 #: patterns/blog-about-h1.php:21
 #: patterns/blog-about.php:21
-msgid "Reading"
+msgid "Editorial notebook and a printed issue of The Slow Build"
 msgstr ""
 
 #: patterns/blog-about-h1.php:28
@@ -1648,8 +3790,20 @@ msgstr ""
 
 #: patterns/blog-contact-h1.php:21
 #: patterns/blog-contact.php:21
+#: patterns/cleaning-contact-h1.php:19
+#: patterns/cleaning-contact.php:19
+#: patterns/coach-contact-h1.php:19
+#: patterns/coach-contact.php:19
 #: patterns/education-contact-h1.php:21
 #: patterns/education-contact.php:21
+#: patterns/home-services-contact-h1.php:19
+#: patterns/home-services-contact.php:19
+#: patterns/nonprofit-contact-h1.php:19
+#: patterns/nonprofit-contact.php:19
+#: patterns/photographer-contact-h1.php:19
+#: patterns/photographer-contact.php:19
+#: patterns/salon-contact-h1.php:19
+#: patterns/salon-contact.php:19
 msgctxt "Section eyebrow label"
 msgid "Get in touch"
 msgstr ""
@@ -1740,15 +3894,38 @@ msgstr ""
 
 #: patterns/blog-masthead.php
 msgctxt "Pattern description"
-msgid "A magazine-style masthead: publication name, standfirst and a gradient rule."
+msgid "An editorial introduction with original cover artwork, recent writing and subscription links."
 msgstr ""
 
-#: patterns/blog-masthead.php:19
-msgid "The Slow Build"
+#: patterns/blog-masthead.php:21
+msgctxt "Starter hero eyebrow"
+msgid "The Slow Build · Independent essays"
 msgstr ""
 
-#: patterns/blog-masthead.php:22
-msgid "Essays on making software carefully, published most Fridays."
+#: patterns/blog-masthead.php:24
+msgid "Good software starts with care."
+msgstr ""
+
+#: patterns/blog-masthead.php:27
+msgid "Essays on the craft of building software, the people behind it and the decisions that last. A thoughtful read, most Fridays."
+msgstr ""
+
+#: patterns/blog-masthead.php:32
+msgid "Read the latest"
+msgstr ""
+
+#: patterns/blog-masthead.php:35
+#: patterns/blog-subscribe.php:27
+#: patterns/newsletter.php:33
+msgid "Subscribe by email"
+msgstr ""
+
+#: patterns/blog-masthead.php:40
+msgid "Independent writing · No sponsorship · Browse the archive at your own pace"
+msgstr ""
+
+#: patterns/blog-masthead.php:47
+msgid "The Slow Build editorial notebook with notes on craft, people and systems"
 msgstr ""
 
 #: patterns/blog-posts.php
@@ -1806,11 +3983,6 @@ msgstr ""
 #: patterns/cta-subscribe.php:25
 msgctxt "Email subject line"
 msgid "Subscribe"
-msgstr ""
-
-#: patterns/blog-subscribe.php:27
-#: patterns/newsletter.php:33
-msgid "Subscribe by email"
 msgstr ""
 
 #: patterns/blog-subscribe.php:30
@@ -2377,6 +4549,8 @@ msgstr ""
 
 #: patterns/church-giving-h1.php:36
 #: patterns/church-giving.php:36
+#: patterns/nonprofit-support-h1.php:68
+#: patterns/nonprofit-support.php:68
 msgid "Ask about giving"
 msgstr ""
 
@@ -2408,25 +4582,36 @@ msgstr ""
 
 #: patterns/church-hero.php
 msgctxt "Pattern description"
-msgid "A welcoming cover with service times and two calls to action."
+msgid "A welcoming introduction with church photography, service times and first-visit links."
 msgstr ""
 
-#: patterns/church-hero.php:17
-msgctxt "Church hero eyebrow"
-msgid "Everyone is welcome"
+#: patterns/church-hero.php:21
+msgctxt "Starter hero eyebrow"
+msgid "Riverside Church · Everyone welcome"
 msgstr ""
 
-#: patterns/church-hero.php:20
-msgid "A church for people who are not sure about church"
+#: patterns/church-hero.php:24
+msgid "A place to belong. Room to be yourself."
 msgstr ""
 
-#: patterns/church-hero.php:23
-msgid "Sundays at 9:30 and 11:15 · Coffee from 9:00 · Kids welcome in every service"
+#: patterns/church-hero.php:27
+msgid "Join us on Sunday for community, conversation and worship. Come with questions, bring the family or simply come as you are."
 msgstr ""
 
-#: patterns/church-hero.php:31
-#: patterns/footer-church.php:45
-msgid "Service times"
+#: patterns/church-hero.php:32
+msgid "Plan your first visit"
+msgstr ""
+
+#: patterns/church-hero.php:35
+msgid "Find a service"
+msgstr ""
+
+#: patterns/church-hero.php:40
+msgid "Sundays at 9:30 and 11:15 · Step-free entrance · Coffee from 9:00"
+msgstr ""
+
+#: patterns/church-hero.php:47
+msgid "Sunlit brick church with an open entrance and an accessible approach"
 msgstr ""
 
 #: patterns/church-ministries.php
@@ -2769,6 +4954,492 @@ msgctxt "Pattern description"
 msgid "Four answers a first-time visitor actually wants: how long it lasts, where to park, what happens to the children and what to wear."
 msgstr ""
 
+#: patterns/cleaning-contact-h1.php
+msgctxt "Pattern title"
+msgid "Cleaning: enquiry details (opening a page)"
+msgstr ""
+
+#: patterns/cleaning-contact-h1.php:22
+#: patterns/cleaning-contact.php:22
+#: patterns/cleaning-cta.php:19
+msgid "Let us know what needs a fresh start"
+msgstr ""
+
+#: patterns/cleaning-contact-h1.php:25
+#: patterns/cleaning-contact.php:25
+#: patterns/cleaning-cta.php:22
+msgid "Send your postcode, property size and the kind of clean you need. We will confirm the checklist, price and a suitable time with you."
+msgstr ""
+
+#: patterns/cleaning-contact-h1.php:35
+#: patterns/cleaning-contact.php:35
+msgctxt "Contact form heading"
+msgid "Get a cleaning quote"
+msgstr ""
+
+#: patterns/cleaning-contact.php
+msgctxt "Pattern title"
+msgid "Cleaning: enquiry details"
+msgstr ""
+
+#: patterns/cleaning-contact.php
+msgctxt "Pattern description"
+msgid "Cleaning: enquiry details using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/cleaning-cta.php
+msgctxt "Pattern title"
+msgid "Cleaning: contact request"
+msgstr ""
+
+#: patterns/cleaning-cta.php
+msgctxt "Pattern description"
+msgid "Cleaning: contact request using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/cleaning-cta.php:27
+msgctxt "Email subject line"
+msgid "Cleaning quote"
+msgstr ""
+
+#: patterns/cleaning-cta.php:30
+msgid "Ask a cleaning question"
+msgstr ""
+
+#: patterns/cleaning-hero.php
+msgctxt "Pattern title"
+msgid "Cleaning: introduction"
+msgstr ""
+
+#: patterns/cleaning-hero.php
+msgctxt "Pattern description"
+msgid "Cleaning: introduction using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/cleaning-hero.php:21
+msgctxt "Starter hero eyebrow"
+msgid "Clear Day Cleaning · Bristol"
+msgstr ""
+
+#: patterns/cleaning-hero.php:24
+msgid "A clean space. A little more time for you."
+msgstr ""
+
+#: patterns/cleaning-hero.php:27
+msgid "Regular home cleaning, one-off deep cleans and small workplace visits. We agree a checklist around your space, rather than leave you guessing what is included."
+msgstr ""
+
+#: patterns/cleaning-hero.php:35
+msgid "See what we clean"
+msgstr ""
+
+#: patterns/cleaning-hero.php:40
+msgid "Tell us about your space. We confirm scope, price and availability before booking."
+msgstr ""
+
+#: patterns/cleaning-hero.php:47
+msgid "Unbranded cleaning supplies and folded teal cloths on a sunlit kitchen island"
+msgstr ""
+
+#: patterns/cleaning-location-h1.php
+msgctxt "Pattern title"
+msgid "Cleaning: location and visits (opening a page)"
+msgstr ""
+
+#: patterns/cleaning-location-h1.php:19
+#: patterns/cleaning-location.php:19
+#: patterns/home-services-location-h1.php:19
+#: patterns/home-services-location.php:19
+msgctxt "Section eyebrow label"
+msgid "Where we work"
+msgstr ""
+
+#: patterns/cleaning-location-h1.php:22
+#: patterns/cleaning-location.php:22
+msgid "Cleaning that fits your routine"
+msgstr ""
+
+#: patterns/cleaning-location-h1.php:25
+#: patterns/cleaning-location.php:25
+msgid "Home and small workplace visits across Bristol and surrounding neighbourhoods. Contact us to check availability for your postcode."
+msgstr ""
+
+#: patterns/cleaning-location-h1.php:32
+#: patterns/cleaning-location.php:32
+msgid "Let us know about pets, parking and access arrangements. Oven, carpet and exterior-window cleaning are quoted separately when available."
+msgstr ""
+
+#: patterns/cleaning-location.php
+msgctxt "Pattern title"
+msgid "Cleaning: location and visits"
+msgstr ""
+
+#: patterns/cleaning-location.php
+msgctxt "Pattern description"
+msgid "Cleaning: location and visits using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/cleaning-process.php
+msgctxt "Pattern title"
+msgid "Cleaning: how it works"
+msgstr ""
+
+#: patterns/cleaning-process.php
+msgctxt "Pattern description"
+msgid "Cleaning: how it works using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/cleaning-process.php:19
+#: patterns/coach-process.php:19
+#: patterns/features-sticky.php:38
+#: patterns/finance-process.php:38
+#: patterns/home-services-process.php:19
+#: patterns/how-it-works.php:33
+#: patterns/salon-process.php:19
+msgctxt "Section eyebrow label"
+msgid "How it works"
+msgstr ""
+
+#: patterns/cleaning-process.php:22
+msgid "A clear checklist from the first conversation"
+msgstr ""
+
+#: patterns/cleaning-process.php:31
+#: patterns/home-services-process.php:31
+#: patterns/salon-process.php:31
+msgid "Step 1"
+msgstr ""
+
+#: patterns/cleaning-process.php:34
+msgid "Tell us about the space"
+msgstr ""
+
+#: patterns/cleaning-process.php:37
+msgid "Share the property size, rooms, postcode and whether you need a regular or one-off visit."
+msgstr ""
+
+#: patterns/cleaning-process.php:44
+#: patterns/home-services-process.php:44
+#: patterns/salon-process.php:44
+msgid "Step 2"
+msgstr ""
+
+#: patterns/cleaning-process.php:47
+msgid "Agree what is included"
+msgstr ""
+
+#: patterns/cleaning-process.php:50
+msgid "We discuss priorities, access, supplies and any extras, then confirm a quote for the agreed work."
+msgstr ""
+
+#: patterns/cleaning-process.php:57
+#: patterns/home-services-process.php:57
+#: patterns/salon-process.php:57
+msgid "Step 3"
+msgstr ""
+
+#: patterns/cleaning-process.php:60
+msgid "Choose a suitable visit"
+msgstr ""
+
+#: patterns/cleaning-process.php:63
+msgid "We confirm availability with you. Your enquiry is a request, not an automatic booking."
+msgstr ""
+
+#: patterns/cleaning-services-h1.php
+msgctxt "Pattern title"
+msgid "Cleaning: services (opening a page)"
+msgstr ""
+
+#: patterns/cleaning-services-h1.php:19
+#: patterns/cleaning-services.php:19
+#: patterns/home-services-services-h1.php:19
+#: patterns/home-services-services.php:19
+#: patterns/salon-services-h1.php:19
+#: patterns/salon-services.php:19
+msgctxt "Section eyebrow label"
+msgid "Our services"
+msgstr ""
+
+#: patterns/cleaning-services-h1.php:22
+#: patterns/cleaning-services.php:22
+msgid "The right clean for your space"
+msgstr ""
+
+#: patterns/cleaning-services-h1.php:25
+#: patterns/cleaning-services.php:25
+msgid "Choose the starting point that fits your needs. We agree priorities and any extras before the first visit."
+msgstr ""
+
+#: patterns/cleaning-services-h1.php:34
+#: patterns/cleaning-services.php:34
+msgid "Regular home cleaning"
+msgstr ""
+
+#: patterns/cleaning-services-h1.php:37
+#: patterns/cleaning-services.php:37
+msgid "A weekly or fortnightly visit covering agreed rooms, surfaces, floors and bathroom cleaning."
+msgstr ""
+
+#: patterns/cleaning-services-h1.php:44
+#: patterns/cleaning-services.php:44
+msgid "One-off deep cleaning"
+msgstr ""
+
+#: patterns/cleaning-services-h1.php:47
+#: patterns/cleaning-services.php:47
+msgid "A more detailed clean for a fresh start. Tell us about the condition of the space and any areas that need extra attention."
+msgstr ""
+
+#: patterns/cleaning-services-h1.php:54
+#: patterns/cleaning-services.php:54
+msgid "Small workplaces"
+msgstr ""
+
+#: patterns/cleaning-services-h1.php:57
+#: patterns/cleaning-services.php:57
+msgid "Arrange cleaning around your opening hours, with a checklist for desks, shared spaces, kitchens and washrooms."
+msgstr ""
+
+#: patterns/cleaning-services.php
+msgctxt "Pattern title"
+msgid "Cleaning: services"
+msgstr ""
+
+#: patterns/cleaning-services.php
+msgctxt "Pattern description"
+msgid "Cleaning: services using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/coach-about-h1.php
+msgctxt "Pattern title"
+msgid "The coaching approach (opening a page)"
+msgstr ""
+
+#: patterns/coach-about-h1.php:19
+#: patterns/coach-about.php:19
+msgctxt "Section eyebrow label"
+msgid "The approach"
+msgstr ""
+
+#: patterns/coach-about-h1.php:22
+#: patterns/coach-about.php:22
+msgid "Space to think. A practical way forward."
+msgstr ""
+
+#: patterns/coach-about-h1.php:25
+#: patterns/coach-about.php:25
+msgid "Good work starts by understanding the situation, not arriving with a ready-made answer."
+msgstr ""
+
+#: patterns/coach-about-h1.php:32
+#: patterns/coach-about.php:32
+msgid "My role is to listen carefully, ask useful questions and help make the work ahead more manageable. You bring the knowledge of your business and the decisions that are yours to make."
+msgstr ""
+
+#: patterns/coach-about-h1.php:35
+#: patterns/coach-about.php:35
+msgid "Sessions can be arranged online or in person where practical. Ask about experience relevant to your brief, availability and how we would work together."
+msgstr ""
+
+#: patterns/coach-about.php
+msgctxt "Pattern title"
+msgid "The coaching approach"
+msgstr ""
+
+#: patterns/coach-about.php
+msgctxt "Pattern description"
+msgid "The coaching approach in editable WordPress blocks."
+msgstr ""
+
+#: patterns/coach-contact-h1.php
+msgctxt "Pattern title"
+msgid "Coaching enquiry (opening a page)"
+msgstr ""
+
+#: patterns/coach-contact-h1.php:22
+#: patterns/coach-contact.php:22
+#: patterns/coach-cta.php:19
+msgid "What would you like to work through?"
+msgstr ""
+
+#: patterns/coach-contact-h1.php:25
+#: patterns/coach-contact.php:25
+#: patterns/coach-cta.php:22
+msgid "Tell me about your situation and a few suitable times to talk. I will reply with availability and next steps; sending an enquiry does not book a session."
+msgstr ""
+
+#: patterns/coach-contact-h1.php:35
+#: patterns/coach-contact.php:35
+msgctxt "Contact form heading"
+msgid "Request a discovery call"
+msgstr ""
+
+#: patterns/coach-contact.php
+msgctxt "Pattern title"
+msgid "Coaching enquiry"
+msgstr ""
+
+#: patterns/coach-contact.php
+msgctxt "Pattern description"
+msgid "Coaching enquiry in editable WordPress blocks."
+msgstr ""
+
+#: patterns/coach-cta.php
+msgctxt "Pattern title"
+msgid "Coach & Consultant: get in touch"
+msgstr ""
+
+#: patterns/coach-cta.php
+msgctxt "Pattern description"
+msgid "Coach & Consultant: get in touch in editable WordPress blocks."
+msgstr ""
+
+#: patterns/coach-cta.php:27
+msgctxt "Email subject line"
+msgid "Discovery call request"
+msgstr ""
+
+#: patterns/coach-cta.php:30
+#: patterns/nonprofit-cta.php:30
+#: patterns/photographer-cta.php:30
+msgid "Talk it through"
+msgstr ""
+
+#: patterns/coach-hero.php
+msgctxt "Pattern title"
+msgid "Coach & Consultant: introduction"
+msgstr ""
+
+#: patterns/coach-hero.php
+msgctxt "Pattern description"
+msgid "Coach & Consultant: introduction in editable WordPress blocks."
+msgstr ""
+
+#: patterns/coach-hero.php:21
+msgctxt "Starter hero eyebrow"
+msgid "Northward Coaching · Clearer next steps"
+msgstr ""
+
+#: patterns/coach-hero.php:24
+msgid "Make room for your next move."
+msgstr ""
+
+#: patterns/coach-hero.php:27
+msgid "Business coaching and practical consulting for people leading a team, building a business or working through a change. Start with a conversation about what matters next."
+msgstr ""
+
+#: patterns/coach-hero.php:35
+msgid "Explore ways to work together"
+msgstr ""
+
+#: patterns/coach-hero.php:40
+msgid "An initial conversation to discuss fit, scope and the right next step."
+msgstr ""
+
+#: patterns/coach-hero.php:47
+msgid "Two comfortable chairs around a small table with a notebook in a calm coaching workspace"
+msgstr ""
+
+#: patterns/coach-process.php
+msgctxt "Pattern title"
+msgid "Coaching process"
+msgstr ""
+
+#: patterns/coach-process.php
+msgctxt "Pattern description"
+msgid "Coaching process in editable WordPress blocks."
+msgstr ""
+
+#: patterns/coach-process.php:22
+msgid "A clear agreement, then useful work"
+msgstr ""
+
+#: patterns/coach-process.php:31
+msgid "Start with a conversation"
+msgstr ""
+
+#: patterns/coach-process.php:34
+msgid "Share the situation, what you hope to change and any questions about working together."
+msgstr ""
+
+#: patterns/coach-process.php:41
+msgid "Agree the focus"
+msgstr ""
+
+#: patterns/coach-process.php:44
+msgid "Discuss scope, format, timing and fees. Decide together whether this is a useful fit."
+msgstr ""
+
+#: patterns/coach-process.php:51
+msgid "Work and review"
+msgstr ""
+
+#: patterns/coach-process.php:54
+msgid "Turn conversations into practical next steps, with time to reflect and adjust the approach."
+msgstr ""
+
+#: patterns/coach-services-h1.php
+msgctxt "Pattern title"
+msgid "Ways to work together (opening a page)"
+msgstr ""
+
+#: patterns/coach-services-h1.php:19
+#: patterns/coach-services.php:19
+msgctxt "Section eyebrow label"
+msgid "Ways to work together"
+msgstr ""
+
+#: patterns/coach-services-h1.php:22
+#: patterns/coach-services.php:22
+msgid "Support shaped around the work in front of you"
+msgstr ""
+
+#: patterns/coach-services-h1.php:25
+#: patterns/coach-services.php:25
+msgid "Choose a starting point. We agree the focus, format and fees before work begins."
+msgstr ""
+
+#: patterns/coach-services-h1.php:34
+#: patterns/coach-services.php:34
+msgid "One-to-one coaching"
+msgstr ""
+
+#: patterns/coach-services-h1.php:37
+#: patterns/coach-services.php:37
+msgid "A focused space to explore decisions, leadership habits and the next steps you want to take."
+msgstr ""
+
+#: patterns/coach-services-h1.php:44
+#: patterns/coach-services.php:44
+msgid "Team workshops"
+msgstr ""
+
+#: patterns/coach-services-h1.php:47
+#: patterns/coach-services.php:47
+msgid "Practical sessions around shared priorities, communication and working together through change."
+msgstr ""
+
+#: patterns/coach-services-h1.php:54
+#: patterns/coach-services.php:54
+msgid "Business consulting"
+msgstr ""
+
+#: patterns/coach-services-h1.php:57
+#: patterns/coach-services.php:57
+msgid "Work through a specific business challenge with an agreed scope, useful outputs and a clear review point."
+msgstr ""
+
+#: patterns/coach-services.php
+msgctxt "Pattern title"
+msgid "Ways to work together"
+msgstr ""
+
+#: patterns/coach-services.php
+msgctxt "Pattern description"
+msgid "Ways to work together in editable WordPress blocks."
+msgstr ""
+
 #: patterns/collaborate-h1.php
 msgctxt "Pattern title"
 msgid "Collaborate (image and text) (opening a page)"
@@ -2981,14 +5652,12 @@ msgid "Ready to see it with your own projects?"
 msgstr ""
 
 #: patterns/cta-band.php:24
-msgid "Import a board and watch it come to life. It takes about five minutes."
+msgid "Find the right plan for your team, from a free workspace to a shared home for every project."
 msgstr ""
 
 #: patterns/cta-band.php:33
 #: patterns/hero-split.php:32
-#: patterns/pricing-compare.php:39
-#: patterns/pricing-two.php:117
-msgid "Start free trial"
+msgid "Explore plans"
 msgstr ""
 
 #: patterns/cta-subscribe.php
@@ -3021,7 +5690,7 @@ msgstr ""
 
 #: patterns/demo-agency.php
 msgctxt "Pattern description"
-msgid "The home page for the Agency starter site: introduction, capabilities, clients, engagements, the studio and an enquiry form."
+msgid "The home page for the Agency starter site: introduction, a featured project, clients, capabilities, engagements, the studio and an enquiry form."
 msgstr ""
 
 #: patterns/demo-blog.php
@@ -3042,6 +5711,26 @@ msgstr ""
 #: patterns/demo-church.php
 msgctxt "Pattern description"
 msgid "The home page for the Church starter site: welcome, service times, what to expect, ministries, staff, events, giving and an invitation."
+msgstr ""
+
+#: patterns/demo-cleaning.php
+msgctxt "Pattern title"
+msgid "Starter site: Cleaning"
+msgstr ""
+
+#: patterns/demo-cleaning.php
+msgctxt "Pattern description"
+msgid "A complete cleaning homepage."
+msgstr ""
+
+#: patterns/demo-coach.php
+msgctxt "Pattern title"
+msgid "Starter site: Coach & Consultant"
+msgstr ""
+
+#: patterns/demo-coach.php
+msgctxt "Pattern description"
+msgid "The complete Coach & Consultant homepage."
 msgstr ""
 
 #: patterns/demo-education.php
@@ -3084,6 +5773,16 @@ msgctxt "Pattern description"
 msgid "The home page for the Fitness starter site: hero, the studio, timetable, coaches, numbers, member stories, memberships and a join band."
 msgstr ""
 
+#: patterns/demo-home-services.php
+msgctxt "Pattern title"
+msgid "Starter site: Home Services"
+msgstr ""
+
+#: patterns/demo-home-services.php
+msgctxt "Pattern description"
+msgid "A complete home services homepage."
+msgstr ""
+
 #: patterns/demo-medical.php
 msgctxt "Pattern title"
 msgid "Starter site: Practice"
@@ -3092,6 +5791,26 @@ msgstr ""
 #: patterns/demo-medical.php
 msgctxt "Pattern description"
 msgid "The home page for the Practice starter site: introduction, treatments, clinicians, patient questions and opening hours."
+msgstr ""
+
+#: patterns/demo-nonprofit.php
+msgctxt "Pattern title"
+msgid "Starter site: Nonprofit"
+msgstr ""
+
+#: patterns/demo-nonprofit.php
+msgctxt "Pattern description"
+msgid "The complete Nonprofit homepage."
+msgstr ""
+
+#: patterns/demo-photographer.php
+msgctxt "Pattern title"
+msgid "Starter site: Photographer"
+msgstr ""
+
+#: patterns/demo-photographer.php
+msgctxt "Pattern description"
+msgid "The complete Photographer homepage."
 msgstr ""
 
 #: patterns/demo-portfolio.php
@@ -3132,6 +5851,16 @@ msgstr ""
 #: patterns/demo-saas.php
 msgctxt "Pattern description"
 msgid "The home page for the SaaS starter site: split hero, logo cloud, features, steps, proof, pricing and a closing call to action."
+msgstr ""
+
+#: patterns/demo-salon.php
+msgctxt "Pattern title"
+msgid "Starter site: Salon & Barber"
+msgstr ""
+
+#: patterns/demo-salon.php
+msgctxt "Pattern description"
+msgid "A complete salon & barber homepage."
 msgstr ""
 
 #: patterns/demo-shop.php
@@ -3512,25 +6241,32 @@ msgid "A course provider's introduction with two calls to action."
 msgstr ""
 
 #: patterns/education-hero.php:21
-msgctxt "School hero eyebrow"
-msgid "Evening and weekend courses"
+msgctxt "Starter hero eyebrow"
+msgid "Evenings and weekends · Hands-on courses"
 msgstr ""
 
 #: patterns/education-hero.php:24
-msgid "Learn a trade properly, from someone who does it"
+msgid "Make something you are proud of."
 msgstr ""
 
 #: patterns/education-hero.php:27
-msgid "Short courses in woodwork, letterpress, ceramics and bookbinding, taught in a Victorian school hall by people who make their living at it."
+msgid "Learn woodwork, letterpress, ceramics and bookbinding from people who practise their craft. Small classes, real tools and a project to take home."
+msgstr ""
+
+#: patterns/education-hero.php:32
+msgid "Find your course"
 msgstr ""
 
 #: patterns/education-hero.php:35
 msgid "How booking works"
 msgstr ""
 
-#: patterns/education-hero.php:44
-#: patterns/shop-hero.php:44
-msgid "The workshop"
+#: patterns/education-hero.php:40
+msgid "Beginners welcome · Materials included · Course prices shown up front"
+msgstr ""
+
+#: patterns/education-hero.php:47
+msgid "Oak workbench with a hand plane, wood shavings and a handmade stool"
 msgstr ""
 
 #: patterns/education-tutors-h1.php
@@ -3620,24 +6356,32 @@ msgstr ""
 
 #: patterns/events-hero.php
 msgctxt "Pattern description"
-msgid "A full-bleed conference cover with the dates, the shape of the event and a ticket button."
+msgid "A conference introduction with original poster artwork, dates, ticket options and a programme link."
 msgstr ""
 
-#: patterns/events-hero.php:17
-msgctxt "Conference hero eyebrow"
+#: patterns/events-hero.php:21
+msgctxt "Starter hero eyebrow"
 msgid "Bristol · 14–15 May 2027"
 msgstr ""
 
-#: patterns/events-hero.php:20
-msgid "Two days about building things that outlast the team that built them"
+#: patterns/events-hero.php:24
+msgid "Two days. Ideas that stay with you."
 msgstr ""
 
-#: patterns/events-hero.php:23
-msgid "Sixteen talks, no sponsor keynotes, four hundred people and a bar that opens at five."
+#: patterns/events-hero.php:27
+msgid "Sixteen talks on building software that lasts. Meet the people doing the work, compare notes and leave with a new perspective."
 msgstr ""
 
-#: patterns/events-hero.php:31
-msgid "See the programme"
+#: patterns/events-hero.php:35
+msgid "View the programme"
+msgstr ""
+
+#: patterns/events-hero.php:40
+msgid "Two days · Four hundred people · No sponsor keynotes"
+msgstr ""
+
+#: patterns/events-hero.php:47
+msgid "Longform conference graphic with bold typography and intersecting pathways"
 msgstr ""
 
 #: patterns/events-programme-h1.php
@@ -4359,13 +7103,6 @@ msgctxt "Sticky step"
 msgid "The plan updates itself as the work moves, and the people who need telling are told."
 msgstr ""
 
-#: patterns/features-sticky.php:38
-#: patterns/finance-process.php:38
-#: patterns/how-it-works.php:33
-msgctxt "Section eyebrow label"
-msgid "How it works"
-msgstr ""
-
 #: patterns/features-sticky.php:41
 msgid "Three moves, and the second one is the hard one"
 msgstr ""
@@ -4398,7 +7135,7 @@ msgid "Three views of the same work — plan it, build it, report on it."
 msgstr ""
 
 #: patterns/features-zigzag.php:34
-msgid "Planning board in Unapp"
+msgid "Unapp launch timeline with discovery, design, build and launch milestones"
 msgstr ""
 
 #: patterns/features-zigzag.php:41
@@ -4452,7 +7189,7 @@ msgid "Export to CSV or the API"
 msgstr ""
 
 #: patterns/features-zigzag.php:97
-msgid "Analytics view in Unapp"
+msgid "Unapp project report showing task completion, team capacity and progress"
 msgstr ""
 
 #: patterns/features.php
@@ -4791,32 +7528,32 @@ msgid "A restrained hero that leads with independence and a regulatory line."
 msgstr ""
 
 #: patterns/finance-hero.php:21
-msgctxt "Finance hero eyebrow"
-msgid "Independent since 1998"
+msgctxt "Starter hero eyebrow"
+msgid "Independent advice · Since 1998"
 msgstr ""
 
 #: patterns/finance-hero.php:24
-msgid "Advice you could explain to your family"
+msgid "A clearer plan for what comes next."
 msgstr ""
 
 #: patterns/finance-hero.php:27
-msgid "Fee-only financial planning for people who would rather understand the plan than be impressed by it."
+msgid "Straightforward financial planning, explained in plain English. Start with a conversation about your goals, then understand your options and our fees."
 msgstr ""
 
 #: patterns/finance-hero.php:32
-msgid "Book an introduction"
+msgid "Arrange an introduction"
 msgstr ""
 
 #: patterns/finance-hero.php:35
-msgid "How we charge"
+msgid "See our fees"
 msgstr ""
 
 #: patterns/finance-hero.php:40
-msgid "Regulated by the Financial Conduct Authority · No commission, ever"
+msgid "An introductory conversation before you commit to advice"
 msgstr ""
 
 #: patterns/finance-hero.php:47
-msgid "Planning document placeholder"
+msgid "An illustrated planning notebook with goals, a timeline and next steps"
 msgstr ""
 
 #: patterns/finance-process.php
@@ -5144,6 +7881,7 @@ msgid "An hour with a coach, an empty bar and no obligation to join anything at 
 msgstr ""
 
 #: patterns/fitness-cta.php:27
+#: patterns/fitness-hero.php:32
 msgctxt "Email subject line"
 msgid "Free session"
 msgstr ""
@@ -5153,7 +7891,6 @@ msgid "Book your free session"
 msgstr ""
 
 #: patterns/fitness-cta.php:30
-#: patterns/fitness-hero.php:31
 msgid "See the timetable"
 msgstr ""
 
@@ -5227,27 +7964,36 @@ msgstr ""
 
 #: patterns/fitness-hero.php
 msgctxt "Pattern description"
-msgid "A high-contrast cover hero with a free-trial call to action."
+msgid "A welcoming introduction with a training photo, first-session enquiry and timetable link."
 msgstr ""
 
-#: patterns/fitness-hero.php:17
-msgctxt "Fitness hero eyebrow"
-msgid "First class free"
+#: patterns/fitness-hero.php:21
+msgctxt "Starter hero eyebrow"
+msgid "Arch Twelve · First session free"
 msgstr ""
 
-#: patterns/fitness-hero.php:20
-msgid "Stronger than last week"
+#: patterns/fitness-hero.php:24
+msgid "Find your strength. Feel at home."
 msgstr ""
 
-#: patterns/fitness-hero.php:23
-msgid "Small-group strength and conditioning in the old print works. Forty-five minutes, no mirrors, no nonsense."
+#: patterns/fitness-hero.php:27
+msgid "Small-group training with a coach who knows your name. Start where you are, build good habits and get a little stronger each week."
 msgstr ""
 
-#: patterns/fitness-hero.php:28
-#: patterns/fitness-intro.php:48
-#: patterns/fitness-location-h1.php:38
-#: patterns/fitness-location.php:38
-msgid "Book a free session"
+#: patterns/fitness-hero.php:32
+msgid "Request a free session"
+msgstr ""
+
+#: patterns/fitness-hero.php:35
+msgid "View the timetable"
+msgstr ""
+
+#: patterns/fitness-hero.php:40
+msgid "Beginners welcome · Twelve people per class · No joining fee"
+msgstr ""
+
+#: patterns/fitness-hero.php:47
+msgid "A coach chatting with two members in a bright brick-arch strength studio"
 msgstr ""
 
 #: patterns/fitness-intro.php
@@ -5284,8 +8030,14 @@ msgstr ""
 msgid "Open gym hours included in every membership"
 msgstr ""
 
+#: patterns/fitness-intro.php:48
+#: patterns/fitness-location-h1.php:38
+#: patterns/fitness-location.php:38
+msgid "Book a free session"
+msgstr ""
+
 #: patterns/fitness-intro.php:57
-msgid "The training floor"
+msgid "A bright brick-arch training floor with tidy barbells and lifting platforms"
 msgstr ""
 
 #: patterns/fitness-location-h1.php
@@ -5312,13 +8064,6 @@ msgstr ""
 #: patterns/fitness-location-h1.php:30
 #: patterns/fitness-location.php:30
 msgid "hello@archtwelve.example · 0131 555 0142"
-msgstr ""
-
-#: patterns/fitness-location-h1.php:49
-#: patterns/fitness-location.php:49
-#: patterns/medical-hours-h1.php:46
-#: patterns/medical-hours.php:46
-msgid "Opening hours"
 msgstr ""
 
 #: patterns/fitness-location-h1.php:56
@@ -5415,7 +8160,7 @@ msgstr ""
 #: patterns/fitness-memberships-h1.php:18
 #: patterns/fitness-memberships.php:18
 msgctxt "Membership button"
-msgid "Join off-peak"
+msgid "Ask about off-peak"
 msgstr ""
 
 #: patterns/fitness-memberships-h1.php:20
@@ -5461,7 +8206,7 @@ msgstr ""
 #: patterns/fitness-memberships-h1.php:26
 #: patterns/fitness-memberships.php:26
 msgctxt "Membership button"
-msgid "Join full"
+msgid "Ask about full membership"
 msgstr ""
 
 #: patterns/fitness-memberships-h1.php:28
@@ -5886,8 +8631,10 @@ msgid "Studio"
 msgstr ""
 
 #: patterns/footer-agency.php:43
+#: patterns/footer-bar.php:21
 #: patterns/footer-blog.php:43
 #: patterns/footer-church.php:43
+#: patterns/footer-columns.php:31
 #: patterns/footer-education.php:42
 #: patterns/footer-events.php:42
 #: patterns/footer-finance.php:42
@@ -5974,6 +8721,32 @@ msgstr ""
 msgid "Built with the Unapp theme"
 msgstr ""
 
+#: patterns/footer-bar.php
+msgctxt "Pattern title"
+msgid "Footer: compact bar"
+msgstr ""
+
+#: patterns/footer-bar.php
+msgctxt "Pattern description"
+msgid "A compact row of site branding and navigation, with copyright and the site's privacy-policy link."
+msgstr ""
+
+#. translators: %s: site name.
+#: patterns/footer-bar.php:27
+#: patterns/footer-columns.php:39
+#: patterns/footer-minimal.php:26
+#, php-format
+msgctxt "Copyright with site name"
+msgid "© %s"
+msgstr ""
+
+#: patterns/footer-bar.php:31
+#: patterns/footer-columns.php:43
+#: patterns/footer-minimal.php:30
+#: patterns/legal.php:40
+msgid "Privacy policy"
+msgstr ""
+
 #: patterns/footer-blog.php
 msgctxt "Pattern title"
 msgid "Footer: blog and magazine"
@@ -6057,6 +8830,10 @@ msgctxt "Footer column heading"
 msgid "Visit"
 msgstr ""
 
+#: patterns/footer-church.php:45
+msgid "Service times"
+msgstr ""
+
 #: patterns/footer-church.php:46
 msgid "Ministries"
 msgstr ""
@@ -6089,6 +8866,16 @@ msgstr ""
 #: patterns/footer-church.php:74
 msgctxt "Footer contact line"
 msgid "hello@riverside.example"
+msgstr ""
+
+#: patterns/footer-columns.php
+msgctxt "Pattern title"
+msgid "Footer: brand and menu"
+msgstr ""
+
+#: patterns/footer-columns.php
+msgctxt "Pattern description"
+msgid "Site name, tagline and a footer menu in two columns, followed by copyright and the site's privacy-policy link."
 msgstr ""
 
 #: patterns/footer-education.php
@@ -6382,6 +9169,16 @@ msgctxt "Footer contact line"
 msgid "Level access · Hearing loop · Free patient parking"
 msgstr ""
 
+#: patterns/footer-minimal.php
+msgctxt "Pattern title"
+msgid "Footer: minimal"
+msgstr ""
+
+#: patterns/footer-minimal.php
+msgctxt "Pattern description"
+msgid "Site branding, copyright and the site's privacy-policy link, without a menu."
+msgstr ""
+
 #: patterns/footer-portfolio.php
 msgctxt "Pattern title"
 msgid "Footer: portfolio"
@@ -6402,16 +9199,8 @@ msgctxt "Footer column heading"
 msgid "Work"
 msgstr ""
 
-#: patterns/footer-portfolio.php:44
-msgid "Selected work"
-msgstr ""
-
 #: patterns/footer-portfolio.php:45
 msgid "Services and rates"
-msgstr ""
-
-#: patterns/footer-portfolio.php:47
-msgid "Enquiries"
 msgstr ""
 
 #: patterns/footer-portfolio.php:54
@@ -6431,7 +9220,7 @@ msgstr ""
 
 #: patterns/footer-portfolio.php:68
 msgctxt "Footer contact line"
-msgid "Booking from February"
+msgid "Let’s discuss your next project"
 msgstr ""
 
 #: patterns/footer-portfolio.php:71
@@ -6714,9 +9503,20 @@ msgid "Centred site title above a centred menu — an alternative header templat
 msgstr ""
 
 #: patterns/header-centered.php:23
+#: patterns/header-simple.php:27
 #: patterns/header.php:26
 msgctxt "Navigation landmark label"
 msgid "Main menu"
+msgstr ""
+
+#: patterns/header-simple.php
+msgctxt "Pattern title"
+msgid "Header: simple"
+msgstr ""
+
+#: patterns/header-simple.php
+msgctxt "Pattern description"
+msgid "Site branding and the primary menu, without a call-to-action button."
 msgstr ""
 
 #: patterns/header.php
@@ -6841,32 +9641,27 @@ msgstr ""
 
 #: patterns/hero-split.php:21
 msgctxt "Hero eyebrow"
-msgid "New in 2.0"
+msgid "One workspace. Real progress."
 msgstr ""
 
 #: patterns/hero-split.php:24
-msgid "Ship your product, not your project plan"
+msgid "Less chasing. More shipping."
 msgstr ""
 
 #: patterns/hero-split.php:27
-msgid "Unapp keeps roadmaps, files and conversations in one place, so the work moves forward while you sleep."
+msgid "Bring projects, files and conversations together. Give your team a clear plan and see what is ready to ship."
 msgstr ""
 
 #: patterns/hero-split.php:35
-msgctxt "Email subject line"
-msgid "Book a demo"
-msgstr ""
-
-#: patterns/hero-split.php:35
-msgid "Book a demo"
+msgid "See how it works"
 msgstr ""
 
 #: patterns/hero-split.php:40
-msgid "No credit card required · 14-day trial"
+msgid "Start with the free plan. Grow when you are ready."
 msgstr ""
 
 #: patterns/hero-split.php:47
-msgid "Unapp dashboard with project analytics"
+msgid "Unapp website launch board with tasks grouped into To do, In progress and Ready"
 msgstr ""
 
 #: patterns/hero.php
@@ -7095,6 +9890,216 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
+#: patterns/home-services-contact-h1.php
+msgctxt "Pattern title"
+msgid "Home Services: enquiry details (opening a page)"
+msgstr ""
+
+#: patterns/home-services-contact-h1.php:22
+#: patterns/home-services-contact.php:22
+#: patterns/home-services-cta.php:19
+msgid "What would you like taken off your list?"
+msgstr ""
+
+#: patterns/home-services-contact-h1.php:25
+#: patterns/home-services-contact.php:25
+#: patterns/home-services-cta.php:22
+msgid "Email a description, your area and a few photos. We will discuss the job and confirm the next step before arranging a visit."
+msgstr ""
+
+#: patterns/home-services-contact-h1.php:35
+#: patterns/home-services-contact.php:35
+msgctxt "Contact form heading"
+msgid "Request a quote"
+msgstr ""
+
+#: patterns/home-services-contact.php
+msgctxt "Pattern title"
+msgid "Home Services: enquiry details"
+msgstr ""
+
+#: patterns/home-services-contact.php
+msgctxt "Pattern description"
+msgid "Home Services: enquiry details using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/home-services-cta.php
+msgctxt "Pattern title"
+msgid "Home Services: contact request"
+msgstr ""
+
+#: patterns/home-services-cta.php
+msgctxt "Pattern description"
+msgid "Home Services: contact request using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/home-services-cta.php:27
+msgctxt "Email subject line"
+msgid "Home services quote"
+msgstr ""
+
+#: patterns/home-services-cta.php:30
+msgid "Talk about a job"
+msgstr ""
+
+#: patterns/home-services-hero.php
+msgctxt "Pattern title"
+msgid "Home Services: introduction"
+msgstr ""
+
+#: patterns/home-services-hero.php
+msgctxt "Pattern description"
+msgid "Home Services: introduction using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/home-services-hero.php:21
+msgctxt "Starter hero eyebrow"
+msgid "Northline Property Care · Bristol"
+msgstr ""
+
+#: patterns/home-services-hero.php:24
+msgid "A shorter list of jobs around the house."
+msgstr ""
+
+#: patterns/home-services-hero.php:27
+msgid "Repairs, decorating and practical help with the jobs that keep getting put off. Tell us what needs doing and we will agree the work before we begin."
+msgstr ""
+
+#: patterns/home-services-hero.php:35
+msgid "Explore our services"
+msgstr ""
+
+#: patterns/home-services-hero.php:40
+msgid "A clear scope, an agreed price and a visit arranged with you."
+msgstr ""
+
+#: patterns/home-services-hero.php:47
+msgid "Hand tools and a cordless drill on an oak workbench in a bright home hallway"
+msgstr ""
+
+#: patterns/home-services-location-h1.php
+msgctxt "Pattern title"
+msgid "Home Services: location and visits (opening a page)"
+msgstr ""
+
+#: patterns/home-services-location-h1.php:22
+#: patterns/home-services-location.php:22
+msgid "Local jobs, planned around your day"
+msgstr ""
+
+#: patterns/home-services-location-h1.php:25
+#: patterns/home-services-location.php:25
+msgid "Based in Bristol, with visits arranged across the city and nearby neighbourhoods. Ask about your address when you enquire."
+msgstr ""
+
+#: patterns/home-services-location-h1.php:32
+#: patterns/home-services-location.php:32
+msgid "Appointments by arrangement. Tell us about parking, stairs or access before the visit."
+msgstr ""
+
+#: patterns/home-services-location.php
+msgctxt "Pattern title"
+msgid "Home Services: location and visits"
+msgstr ""
+
+#: patterns/home-services-location.php
+msgctxt "Pattern description"
+msgid "Home Services: location and visits using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/home-services-process.php
+msgctxt "Pattern title"
+msgid "Home Services: how it works"
+msgstr ""
+
+#: patterns/home-services-process.php
+msgctxt "Pattern description"
+msgid "Home Services: how it works using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/home-services-process.php:22
+msgid "Know what happens before anyone arrives"
+msgstr ""
+
+#: patterns/home-services-process.php:34
+msgid "Describe the job"
+msgstr ""
+
+#: patterns/home-services-process.php:37
+msgid "Send a short list and a few photos. Include your area and any access or timing needs."
+msgstr ""
+
+#: patterns/home-services-process.php:47
+msgid "Agree the work"
+msgstr ""
+
+#: patterns/home-services-process.php:50
+msgid "We discuss the scope, materials and price. If a visit is needed before quoting, we explain that first."
+msgstr ""
+
+#: patterns/home-services-process.php:60
+msgid "Arrange a visit"
+msgstr ""
+
+#: patterns/home-services-process.php:63
+msgid "Choose an agreed time, prepare access and let us take care of the work on your list."
+msgstr ""
+
+#: patterns/home-services-services-h1.php
+msgctxt "Pattern title"
+msgid "Home Services: services (opening a page)"
+msgstr ""
+
+#: patterns/home-services-services-h1.php:22
+#: patterns/home-services-services.php:22
+msgid "Practical help for a home that works"
+msgstr ""
+
+#: patterns/home-services-services-h1.php:25
+#: patterns/home-services-services.php:25
+msgid "A single repair or a planned list of improvements. Share a few photos so we can understand the job."
+msgstr ""
+
+#: patterns/home-services-services-h1.php:34
+#: patterns/home-services-services.php:34
+msgid "Repairs and assembly"
+msgstr ""
+
+#: patterns/home-services-services-h1.php:37
+#: patterns/home-services-services.php:37
+msgid "Shelves, flat-pack furniture, sticking doors and the little fixes that make a difference."
+msgstr ""
+
+#: patterns/home-services-services-h1.php:44
+#: patterns/home-services-services.php:44
+msgid "Decorating and finishing"
+msgstr ""
+
+#: patterns/home-services-services-h1.php:47
+#: patterns/home-services-services.php:47
+msgid "Refresh a room with careful preparation, painting and finishing touches, with the scope agreed in advance."
+msgstr ""
+
+#: patterns/home-services-services-h1.php:54
+#: patterns/home-services-services.php:54
+msgid "Planned property care"
+msgstr ""
+
+#: patterns/home-services-services-h1.php:57
+#: patterns/home-services-services.php:57
+msgid "Bring several jobs into one visit, or discuss a maintenance plan for your home or rental property."
+msgstr ""
+
+#: patterns/home-services-services.php
+msgctxt "Pattern title"
+msgid "Home Services: services"
+msgstr ""
+
+#: patterns/home-services-services.php
+msgctxt "Pattern description"
+msgid "Home Services: services using editable native WordPress blocks."
+msgstr ""
+
 #: patterns/how-it-works.php
 msgctxt "Pattern title"
 msgid "How it works: numbered steps"
@@ -7267,10 +10272,6 @@ msgstr ""
 
 #: patterns/legal.php:37
 msgid "Last updated: 12 August 2026"
-msgstr ""
-
-#: patterns/legal.php:40
-msgid "Privacy policy"
 msgstr ""
 
 #: patterns/legal.php:43
@@ -7449,24 +10450,32 @@ msgid "A practice introduction with booking and treatments calls to action."
 msgstr ""
 
 #: patterns/medical-hero.php:21
-msgctxt "Practice hero eyebrow"
-msgid "NHS and private · Est. 1994"
+msgctxt "Starter hero eyebrow"
+msgid "Fore Street Dental · Exeter"
 msgstr ""
 
 #: patterns/medical-hero.php:24
-msgid "A dental practice that runs on time"
+msgid "Good care starts with feeling at ease."
 msgstr ""
 
 #: patterns/medical-hero.php:27
-msgid "Six surgeries on Fore Street, open six days a week, with emergency slots kept back every morning for the people who need them that day."
+msgid "A friendly local dental team, clear treatment choices and time for your questions. Call us to discuss an appointment or explore the care we offer."
+msgstr ""
+
+#: patterns/medical-hero.php:32
+msgid "Call for an appointment"
 msgstr ""
 
 #: patterns/medical-hero.php:35
-msgid "Our treatments"
+msgid "Explore treatments"
 msgstr ""
 
-#: patterns/medical-hero.php:44
-msgid "The practice"
+#: patterns/medical-hero.php:40
+msgid "Open six days a week · Ask the team about appointment availability"
+msgstr ""
+
+#: patterns/medical-hero.php:47
+msgid "Bright dental surgery with a sage-green chair and modern equipment"
 msgstr ""
 
 #: patterns/medical-hours-h1.php
@@ -7720,6 +10729,322 @@ msgstr ""
 msgid "Roughly 900 readers. Reply to any issue to stop receiving it."
 msgstr ""
 
+#: patterns/nonprofit-accountability.php
+msgctxt "Pattern title"
+msgid "Openness and questions"
+msgstr ""
+
+#: patterns/nonprofit-accountability.php
+msgctxt "Pattern description"
+msgid "Openness and questions in editable WordPress blocks."
+msgstr ""
+
+#: patterns/nonprofit-accountability.php:19
+msgctxt "Section eyebrow label"
+msgid "Questions are welcome"
+msgstr ""
+
+#: patterns/nonprofit-accountability.php:22
+msgid "Understand the work before you decide to help."
+msgstr ""
+
+#: patterns/nonprofit-accountability.php:25
+msgid "Ask about current programmes, the people coordinating them and how contributions are used."
+msgstr ""
+
+#: patterns/nonprofit-accountability.php:32
+msgid "We can share relevant information before you decide to volunteer, offer items or make a financial contribution. Contact us for current giving details rather than sending funds or items without checking first."
+msgstr ""
+
+#: patterns/nonprofit-contact-h1.php
+msgctxt "Pattern title"
+msgid "Community enquiry (opening a page)"
+msgstr ""
+
+#: patterns/nonprofit-contact-h1.php:22
+#: patterns/nonprofit-contact.php:22
+#: patterns/nonprofit-cta.php:19
+msgid "Let us know how you would like to get involved"
+msgstr ""
+
+#: patterns/nonprofit-contact-h1.php:25
+#: patterns/nonprofit-contact.php:25
+#: patterns/nonprofit-cta.php:22
+msgid "Ask about taking part, volunteering or supporting a programme. We will reply with current information and the right person to speak to."
+msgstr ""
+
+#: patterns/nonprofit-contact-h1.php:35
+#: patterns/nonprofit-contact.php:35
+msgctxt "Contact form heading"
+msgid "Get involved"
+msgstr ""
+
+#: patterns/nonprofit-contact.php
+msgctxt "Pattern title"
+msgid "Community enquiry"
+msgstr ""
+
+#: patterns/nonprofit-contact.php
+msgctxt "Pattern description"
+msgid "Community enquiry in editable WordPress blocks."
+msgstr ""
+
+#: patterns/nonprofit-cta.php
+msgctxt "Pattern title"
+msgid "Nonprofit: get in touch"
+msgstr ""
+
+#: patterns/nonprofit-cta.php
+msgctxt "Pattern description"
+msgid "Nonprofit: get in touch in editable WordPress blocks."
+msgstr ""
+
+#: patterns/nonprofit-cta.php:27
+msgctxt "Email subject line"
+msgid "Getting involved"
+msgstr ""
+
+#: patterns/nonprofit-hero.php
+msgctxt "Pattern title"
+msgid "Nonprofit: introduction"
+msgstr ""
+
+#: patterns/nonprofit-hero.php
+msgctxt "Pattern description"
+msgid "Nonprofit: introduction in editable WordPress blocks."
+msgstr ""
+
+#: patterns/nonprofit-hero.php:21
+msgctxt "Starter hero eyebrow"
+msgid "Common Ground Collective · Neighbours helping neighbours"
+msgstr ""
+
+#: patterns/nonprofit-hero.php:24
+msgid "A stronger community starts close to home."
+msgstr ""
+
+#: patterns/nonprofit-hero.php:27
+msgid "Bringing neighbours together through shared meals, practical support and opportunities to learn from one another. Find out what is happening and how you can help."
+msgstr ""
+
+#: patterns/nonprofit-hero.php:35
+msgid "Explore our programmes"
+msgstr ""
+
+#: patterns/nonprofit-hero.php:40
+msgid "Give time, offer practical support or ask about contributing."
+msgstr ""
+
+#: patterns/nonprofit-hero.php:47
+msgid "Reusable bags of fresh vegetables and folded aprons on a community hall table"
+msgstr ""
+
+#: patterns/nonprofit-programmes-h1.php
+msgctxt "Pattern title"
+msgid "Community programmes (opening a page)"
+msgstr ""
+
+#: patterns/nonprofit-programmes-h1.php:19
+#: patterns/nonprofit-programmes.php:19
+msgctxt "Section eyebrow label"
+msgid "Our programmes"
+msgstr ""
+
+#: patterns/nonprofit-programmes-h1.php:22
+#: patterns/nonprofit-programmes.php:22
+msgid "Practical ways to bring people together"
+msgstr ""
+
+#: patterns/nonprofit-programmes-h1.php:25
+#: patterns/nonprofit-programmes.php:25
+msgid "Ask about current activities, who can take part and how to get involved."
+msgstr ""
+
+#: patterns/nonprofit-programmes-h1.php:34
+#: patterns/nonprofit-programmes.php:34
+msgid "Community meals"
+msgstr ""
+
+#: patterns/nonprofit-programmes-h1.php:37
+#: patterns/nonprofit-programmes.php:37
+msgid "A place to share food and conversation. Contact us for current sessions and ways to help with preparation."
+msgstr ""
+
+#: patterns/nonprofit-programmes-h1.php:44
+#: patterns/nonprofit-programmes.php:44
+msgid "Practical support"
+msgstr ""
+
+#: patterns/nonprofit-programmes-h1.php:47
+#: patterns/nonprofit-programmes.php:47
+msgid "Connecting offers of everyday essentials with current local needs. Check what is useful before bringing items."
+msgstr ""
+
+#: patterns/nonprofit-programmes-h1.php:54
+#: patterns/nonprofit-programmes.php:54
+msgid "Shared skills"
+msgstr ""
+
+#: patterns/nonprofit-programmes-h1.php:57
+#: patterns/nonprofit-programmes.php:57
+msgid "Opportunities to learn from neighbours and share useful skills. Ask about upcoming activities or suggest an idea."
+msgstr ""
+
+#: patterns/nonprofit-programmes.php
+msgctxt "Pattern title"
+msgid "Community programmes"
+msgstr ""
+
+#: patterns/nonprofit-programmes.php
+msgctxt "Pattern description"
+msgid "Community programmes in editable WordPress blocks."
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php
+msgctxt "Pattern title"
+msgid "Ways to support (opening a page)"
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php:19
+#: patterns/nonprofit-support.php:19
+msgctxt "Section eyebrow label"
+msgid "Ways to support"
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php:22
+#: patterns/nonprofit-support.php:22
+msgid "Find the way to help that fits you"
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php:25
+#: patterns/nonprofit-support.php:25
+msgid "A conversation is a useful first step. We will confirm current needs and the appropriate next step with you."
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php:34
+#: patterns/nonprofit-support.php:34
+msgid "Give your time"
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php:37
+#: patterns/nonprofit-support.php:37
+msgid "Tell us what you enjoy doing, your availability and any access needs. We will discuss suitable opportunities."
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php:42
+#: patterns/nonprofit-support.php:42
+msgctxt "Email subject line"
+msgid "Volunteering enquiry"
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php:42
+#: patterns/nonprofit-support.php:42
+msgid "Ask about volunteering"
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php:51
+#: patterns/nonprofit-support.php:51
+msgid "Offer practical support"
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php:54
+#: patterns/nonprofit-support.php:54
+msgid "Ask which items or skills are currently useful before arranging a contribution or collection."
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php:59
+#: patterns/nonprofit-support.php:59
+msgctxt "Email subject line"
+msgid "Practical support enquiry"
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php:59
+#: patterns/nonprofit-support.php:59
+msgid "Check current needs"
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php:71
+#: patterns/nonprofit-support.php:71
+msgid "Get in touch for current ways to contribute and information about how support is used."
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php:76
+#: patterns/nonprofit-support.php:76
+msgctxt "Email subject line"
+msgid "Giving enquiry"
+msgstr ""
+
+#: patterns/nonprofit-support-h1.php:76
+#: patterns/nonprofit-support.php:76
+msgid "Discuss a contribution"
+msgstr ""
+
+#: patterns/nonprofit-support.php
+msgctxt "Pattern title"
+msgid "Ways to support"
+msgstr ""
+
+#: patterns/nonprofit-support.php
+msgctxt "Pattern description"
+msgid "Ways to support in editable WordPress blocks."
+msgstr ""
+
+#: patterns/nonprofit-values-h1.php
+msgctxt "Pattern title"
+msgid "How we work together (opening a page)"
+msgstr ""
+
+#: patterns/nonprofit-values-h1.php:19
+#: patterns/nonprofit-values.php:19
+msgctxt "Section eyebrow label"
+msgid "How we work"
+msgstr ""
+
+#: patterns/nonprofit-values-h1.php:22
+#: patterns/nonprofit-values.php:22
+msgid "Listen first. Work alongside one another."
+msgstr ""
+
+#: patterns/nonprofit-values-h1.php:31
+#: patterns/nonprofit-values.php:31
+msgid "Start with local priorities"
+msgstr ""
+
+#: patterns/nonprofit-values-h1.php:34
+#: patterns/nonprofit-values.php:34
+msgid "Listen to the people involved and shape activities around the needs they describe."
+msgstr ""
+
+#: patterns/nonprofit-values-h1.php:41
+#: patterns/nonprofit-values.php:41
+msgid "Make involvement practical"
+msgstr ""
+
+#: patterns/nonprofit-values-h1.php:44
+#: patterns/nonprofit-values.php:44
+msgid "Explain what is needed, how to join in and who to contact before someone commits their time."
+msgstr ""
+
+#: patterns/nonprofit-values-h1.php:51
+#: patterns/nonprofit-values.php:51
+msgid "Keep the conversation open"
+msgstr ""
+
+#: patterns/nonprofit-values-h1.php:54
+#: patterns/nonprofit-values.php:54
+msgid "Welcome questions, feedback and ideas about the work and how support is used."
+msgstr ""
+
+#: patterns/nonprofit-values.php
+msgctxt "Pattern title"
+msgid "How we work together"
+msgstr ""
+
+#: patterns/nonprofit-values.php
+msgctxt "Pattern description"
+msgid "How we work together in editable WordPress blocks."
+msgstr ""
+
 #: patterns/offices.php
 msgctxt "Pattern title"
 msgid "Office locations"
@@ -7903,6 +11228,294 @@ msgctxt "Pattern description"
 msgid "A conversion-focused landing page: split hero, logo cloud, features, proof, pricing and a closing call to action."
 msgstr ""
 
+#: patterns/photographer-about-h1.php
+msgctxt "Pattern title"
+msgid "Behind the camera (opening a page)"
+msgstr ""
+
+#: patterns/photographer-about-h1.php:19
+#: patterns/photographer-about.php:19
+msgctxt "Section eyebrow label"
+msgid "Behind the camera"
+msgstr ""
+
+#: patterns/photographer-about-h1.php:22
+#: patterns/photographer-about.php:22
+msgid "Notice what is already there."
+msgstr ""
+
+#: patterns/photographer-about-h1.php:25
+#: patterns/photographer-about.php:25
+msgid "I am drawn to ordinary materials, changing light and the feeling of a place."
+msgstr ""
+
+#: patterns/photographer-about-h1.php:32
+#: patterns/photographer-about.php:32
+msgid "The approach is patient and collaborative: understand the story, look closely and make a set of photographs that belongs together. For commissioned work, that starts with understanding your audience and the use you have in mind."
+msgstr ""
+
+#: patterns/photographer-about-h1.php:35
+#: patterns/photographer-about.php:35
+msgid "Get in touch to discuss your brief, ask about a relevant body of work or check availability. We can agree the right approach before making plans."
+msgstr ""
+
+#: patterns/photographer-about.php
+msgctxt "Pattern title"
+msgid "Behind the camera"
+msgstr ""
+
+#: patterns/photographer-about.php
+msgctxt "Pattern description"
+msgid "Behind the camera in editable WordPress blocks."
+msgstr ""
+
+#: patterns/photographer-contact-h1.php
+msgctxt "Pattern title"
+msgid "Photography enquiry (opening a page)"
+msgstr ""
+
+#: patterns/photographer-contact-h1.php:22
+#: patterns/photographer-contact.php:22
+#: patterns/photographer-cta.php:19
+msgid "What would you like to make?"
+msgstr ""
+
+#: patterns/photographer-contact-h1.php:25
+#: patterns/photographer-contact.php:25
+#: patterns/photographer-cta.php:22
+msgid "Send a short brief, intended use, location and timing. I will reply with availability and the next steps for your project."
+msgstr ""
+
+#: patterns/photographer-contact-h1.php:35
+#: patterns/photographer-contact.php:35
+msgctxt "Contact form heading"
+msgid "Discuss a project"
+msgstr ""
+
+#: patterns/photographer-contact.php
+msgctxt "Pattern title"
+msgid "Photography enquiry"
+msgstr ""
+
+#: patterns/photographer-contact.php
+msgctxt "Pattern description"
+msgid "Photography enquiry in editable WordPress blocks."
+msgstr ""
+
+#: patterns/photographer-cta.php
+msgctxt "Pattern title"
+msgid "Photographer: get in touch"
+msgstr ""
+
+#: patterns/photographer-cta.php
+msgctxt "Pattern description"
+msgid "Photographer: get in touch in editable WordPress blocks."
+msgstr ""
+
+#: patterns/photographer-cta.php:27
+msgctxt "Email subject line"
+msgid "Photography enquiry"
+msgstr ""
+
+#: patterns/photographer-hero.php
+msgctxt "Pattern title"
+msgid "Photographer: introduction"
+msgstr ""
+
+#: patterns/photographer-hero.php
+msgctxt "Pattern description"
+msgid "Photographer: introduction in editable WordPress blocks."
+msgstr ""
+
+#: patterns/photographer-hero.php:21
+msgctxt "Starter hero eyebrow"
+msgid "Ellis Rowan · Photography"
+msgstr ""
+
+#: patterns/photographer-hero.php:24
+msgid "Photographs with a sense of place."
+msgstr ""
+
+#: patterns/photographer-hero.php:27
+msgid "Landscapes, objects and spaces, approached with patience and an eye for the details. Explore selected work, then tell me what you have in mind."
+msgstr ""
+
+#: patterns/photographer-hero.php:35
+msgid "Explore selected work"
+msgstr ""
+
+#: patterns/photographer-hero.php:40
+msgid "Editorial and commercial enquiries · Scope and availability agreed together"
+msgstr ""
+
+#: patterns/photographer-hero.php:47
+msgid "Sea cliffs and a small sandy bay in soft golden dawn light"
+msgstr ""
+
+#: patterns/photographer-process.php
+msgctxt "Pattern title"
+msgid "Planning a photography project"
+msgstr ""
+
+#: patterns/photographer-process.php
+msgctxt "Pattern description"
+msgid "Planning a photography project in editable WordPress blocks."
+msgstr ""
+
+#: patterns/photographer-process.php:19
+msgctxt "Section eyebrow label"
+msgid "From brief to delivery"
+msgstr ""
+
+#: patterns/photographer-process.php:22
+msgid "Make the important details clear from the start"
+msgstr ""
+
+#: patterns/photographer-process.php:31
+msgid "Share the brief"
+msgstr ""
+
+#: patterns/photographer-process.php:34
+msgid "Tell me what you need, where the images will be used, the location and your preferred timing."
+msgstr ""
+
+#: patterns/photographer-process.php:41
+msgid "Agree a plan"
+msgstr ""
+
+#: patterns/photographer-process.php:44
+msgid "We discuss the approach, deliverables, usage, fees and schedule before confirming the assignment."
+msgstr ""
+
+#: patterns/photographer-process.php:51
+msgid "Create and deliver"
+msgstr ""
+
+#: patterns/photographer-process.php:54
+msgid "Work to the agreed brief, then select and deliver the photographs in the formats we have discussed."
+msgstr ""
+
+#: patterns/photographer-services.php
+msgctxt "Pattern title"
+msgid "Photography commissions"
+msgstr ""
+
+#: patterns/photographer-services.php
+msgctxt "Pattern description"
+msgid "Photography commissions in editable WordPress blocks."
+msgstr ""
+
+#: patterns/photographer-services.php:19
+msgctxt "Section eyebrow label"
+msgid "Commissions"
+msgstr ""
+
+#: patterns/photographer-services.php:22
+msgid "Images with a purpose beyond the frame"
+msgstr ""
+
+#: patterns/photographer-services.php:31
+msgid "Editorial assignments"
+msgstr ""
+
+#: patterns/photographer-services.php:34
+msgid "A considered set of photographs for a story, publication or place. Share your subject and intended use."
+msgstr ""
+
+#: patterns/photographer-services.php:41
+msgid "Products and makers"
+msgstr ""
+
+#: patterns/photographer-services.php:44
+msgid "Still-life and detail photography shaped around the objects, materials and people behind your work."
+msgstr ""
+
+#: patterns/photographer-services.php:51
+msgid "Spaces and interiors"
+msgstr ""
+
+#: patterns/photographer-services.php:54
+msgid "Photographs of architecture and interiors, with a plan for access, light and the details that matter."
+msgstr ""
+
+#: patterns/photographer-work-h1.php
+msgctxt "Pattern title"
+msgid "Selected photographs (opening a page)"
+msgstr ""
+
+#: patterns/photographer-work-h1.php:19
+#: patterns/photographer-work.php:19
+#: patterns/portfolio-work-h1.php:25
+#: patterns/portfolio-work.php:25
+msgctxt "Section eyebrow label"
+msgid "Selected work"
+msgstr ""
+
+#: patterns/photographer-work-h1.php:22
+#: patterns/photographer-work.php:22
+msgid "A few ways of seeing"
+msgstr ""
+
+#: patterns/photographer-work-h1.php:25
+#: patterns/photographer-work.php:25
+msgid "Landscape, still life and architecture. Ask about a commission in a similar direction."
+msgstr ""
+
+#: patterns/photographer-work-h1.php:34
+#: patterns/photographer-work.php:34
+msgid "Sunlit rock formations and surf along a quiet coastline"
+msgstr ""
+
+#: patterns/photographer-work-h1.php:37
+#: patterns/photographer-work.php:37
+msgid "Coast and weather"
+msgstr ""
+
+#: patterns/photographer-work-h1.php:40
+#: patterns/photographer-work.php:40
+msgid "Landscape studies in light, texture and changing weather."
+msgstr ""
+
+#: patterns/photographer-work-h1.php:47
+#: patterns/photographer-work.php:47
+msgid "Three handmade ceramic vessels on linen in warm window light"
+msgstr ""
+
+#: patterns/photographer-work-h1.php:50
+#: patterns/photographer-work.php:50
+msgid "Objects and light"
+msgstr ""
+
+#: patterns/photographer-work-h1.php:53
+#: patterns/photographer-work.php:53
+msgid "Still-life compositions with honest materials and quiet detail."
+msgstr ""
+
+#: patterns/photographer-work-h1.php:60
+#: patterns/photographer-work.php:60
+msgid "A curved stone staircase with angular sunlight and a blue-sky opening"
+msgstr ""
+
+#: patterns/photographer-work-h1.php:63
+#: patterns/photographer-work.php:63
+msgid "Spaces and structure"
+msgstr ""
+
+#: patterns/photographer-work-h1.php:66
+#: patterns/photographer-work.php:66
+msgid "Architectural studies of shape, rhythm and the spaces between."
+msgstr ""
+
+#: patterns/photographer-work.php
+msgctxt "Pattern title"
+msgid "Selected photographs"
+msgstr ""
+
+#: patterns/photographer-work.php
+msgctxt "Pattern description"
+msgid "Selected photographs in editable WordPress blocks."
+msgstr ""
+
 #: patterns/portfolio-about-h1.php
 msgctxt "Pattern title"
 msgid "Portfolio: about (opening a page)"
@@ -7910,7 +11523,7 @@ msgstr ""
 
 #: patterns/portfolio-about-h1.php:21
 #: patterns/portfolio-about.php:21
-msgid "Studio placeholder"
+msgid "Meridian Housing identity and welcome signage"
 msgstr ""
 
 #: patterns/portfolio-about-h1.php:31
@@ -7960,7 +11573,7 @@ msgstr ""
 
 #: patterns/portfolio-about.php
 msgctxt "Pattern description"
-msgid "A short biography beside a photograph, with two columns of disciplines."
+msgid "A short biography beside a brand study, with two columns of disciplines."
 msgstr ""
 
 #: patterns/portfolio-contact-h1.php
@@ -7976,7 +11589,7 @@ msgstr ""
 
 #: patterns/portfolio-contact-h1.php:24
 #: patterns/portfolio-contact.php:24
-msgid "Booking from February"
+msgid "Let’s make your next move"
 msgstr ""
 
 #: patterns/portfolio-contact-h1.php:27
@@ -7984,33 +11597,44 @@ msgstr ""
 msgid "I take on four or five projects a year, usually branding and product design for teams between five and fifty people. If the dates do not work I will say so straight away rather than keep you waiting."
 msgstr ""
 
-#: patterns/portfolio-contact-h1.php:30
-#: patterns/portfolio-contact.php:30
+#: patterns/portfolio-contact-h1.php:32
+#: patterns/portfolio-contact.php:32
+msgctxt "Email subject line"
+msgid "Project enquiry"
+msgstr ""
+
+#: patterns/portfolio-contact-h1.php:32
+#: patterns/portfolio-contact.php:32
+msgid "Email your project brief"
+msgstr ""
+
+#: patterns/portfolio-contact-h1.php:37
+#: patterns/portfolio-contact.php:37
 msgid "mara@lindqvist.example"
 msgstr ""
 
-#: patterns/portfolio-contact-h1.php:46
-#: patterns/portfolio-contact.php:46
+#: patterns/portfolio-contact-h1.php:53
+#: patterns/portfolio-contact.php:53
 msgid "What to send"
 msgstr ""
 
-#: patterns/portfolio-contact-h1.php:51
-#: patterns/portfolio-contact.php:51
+#: patterns/portfolio-contact-h1.php:58
+#: patterns/portfolio-contact.php:58
 msgid "Roughly what you are making, in a paragraph"
 msgstr ""
 
-#: patterns/portfolio-contact-h1.php:54
-#: patterns/portfolio-contact.php:54
+#: patterns/portfolio-contact-h1.php:61
+#: patterns/portfolio-contact.php:61
 msgid "Who it is for, and who you are competing with"
 msgstr ""
 
-#: patterns/portfolio-contact-h1.php:57
-#: patterns/portfolio-contact.php:57
+#: patterns/portfolio-contact-h1.php:64
+#: patterns/portfolio-contact.php:64
 msgid "When you need it live"
 msgstr ""
 
-#: patterns/portfolio-contact-h1.php:65
-#: patterns/portfolio-contact.php:65
+#: patterns/portfolio-contact-h1.php:72
+#: patterns/portfolio-contact.php:72
 msgid "You will hear back within two working days, always from me."
 msgstr ""
 
@@ -8031,28 +11655,36 @@ msgstr ""
 
 #: patterns/portfolio-hero.php
 msgctxt "Pattern description"
-msgid "A personal introduction with a portrait — name, discipline and a one-line statement."
+msgid "A work-led introduction with a brand study, project links and an indicative starting price."
 msgstr ""
 
 #: patterns/portfolio-hero.php:21
 msgctxt "Portfolio eyebrow"
-msgid "Designer & art director"
+msgid "Mara Lindqvist · Independent designer"
 msgstr ""
 
 #: patterns/portfolio-hero.php:24
-msgid "Mara Lindqvist"
+msgid "Small teams. Memorable brands."
 msgstr ""
 
 #: patterns/portfolio-hero.php:27
-msgid "I help small teams look like the companies they are becoming — identity, packaging and the odd website."
+msgid "Brand identities, packaging and websites for founders making their next move. One designer, from the first conversation to the final detail."
 msgstr ""
 
 #: patterns/portfolio-hero.php:32
-msgid "See selected work"
+msgid "Explore the work"
 msgstr ""
 
-#: patterns/portfolio-hero.php:41
-msgid "Portrait placeholder"
+#: patterns/portfolio-hero.php:35
+msgid "Discuss your project"
+msgstr ""
+
+#: patterns/portfolio-hero.php:40
+msgid "Working directly with founders · Identity projects from £6,000"
+msgstr ""
+
+#: patterns/portfolio-hero.php:47
+msgid "Nordwell Coffee identity: forest-green wordmark and apricot packaging"
 msgstr ""
 
 #: patterns/portfolio-process.php
@@ -8266,12 +11898,6 @@ msgctxt "Project meta"
 msgid "Campaign · 2024"
 msgstr ""
 
-#: patterns/portfolio-work-h1.php:25
-#: patterns/portfolio-work.php:25
-msgctxt "Section eyebrow label"
-msgid "Selected work"
-msgstr ""
-
 #: patterns/portfolio-work-h1.php:28
 #: patterns/portfolio-work.php:28
 msgid "Recent projects"
@@ -8359,10 +11985,6 @@ msgid "Pro"
 msgstr ""
 
 #: patterns/pricing-compare.php:32
-msgid "Business"
-msgstr ""
-
-#: patterns/pricing-compare.php:32
 msgid "Projects"
 msgstr ""
 
@@ -8435,15 +12057,16 @@ msgid "Support"
 msgstr ""
 
 #: patterns/pricing-compare.php:32
-msgid "Community"
-msgstr ""
-
-#: patterns/pricing-compare.php:32
 msgid "Priority"
 msgstr ""
 
 #: patterns/pricing-compare.php:32
 msgid "Dedicated manager"
+msgstr ""
+
+#: patterns/pricing-compare.php:39
+#: patterns/pricing-two.php:117
+msgid "Start free trial"
 msgstr ""
 
 #: patterns/pricing-compare.php:42
@@ -9053,24 +12676,32 @@ msgid "An estate agency introduction with a valuation call to action."
 msgstr ""
 
 #: patterns/realestate-hero.php:21
-msgctxt "Estate agent hero eyebrow"
-msgid "Sales and lettings, Bath"
+msgctxt "Starter hero eyebrow"
+msgid "Lansdown & Co. · Bath and nearby villages"
 msgstr ""
 
 #: patterns/realestate-hero.php:24
-msgid "We only take on houses we would live in ourselves"
+msgid "Find a place that feels like home."
 msgstr ""
 
 #: patterns/realestate-hero.php:27
-msgid "A small agency covering Bath and the villages east of it. Twelve properties on the books at a time, because that is how many we can show properly."
+msgid "A small local team, a carefully chosen collection of homes and time to show you around properly. Explore what is available or talk to us about your next move."
 msgstr ""
 
 #: patterns/realestate-hero.php:32
-msgid "See what is for sale"
+msgid "Explore the homes"
 msgstr ""
 
-#: patterns/realestate-hero.php:44
-msgid "Bath rooftops"
+#: patterns/realestate-hero.php:35
+msgid "Request a valuation"
+msgstr ""
+
+#: patterns/realestate-hero.php:40
+msgid "Local knowledge · Published fees · A named agent from first call to completion"
+msgstr ""
+
+#: patterns/realestate-hero.php:47
+msgid "Fictional Georgian limestone townhouse with a green front door"
 msgstr ""
 
 #: patterns/realestate-listings-h1.php
@@ -9256,7 +12887,7 @@ msgid "Bookings open at nine on the first of each month, for the six weeks that 
 msgstr ""
 
 #: patterns/restaurant-booking.php:32
-msgid "Tables of two to six: send the form, or ring after three"
+msgid "Tables of two to six: send a request, or ring after three"
 msgstr ""
 
 #: patterns/restaurant-booking.php:35
@@ -9295,10 +12926,11 @@ msgid "Bookings open six weeks ahead, on the first of the month"
 msgstr ""
 
 #: patterns/restaurant-cta.php:22
-msgid "Tables of two to six online. For anything larger, or the whole room, send us an email and we will sort it out."
+msgid "Tables of two to six by email. For anything larger, or the whole room, send us an email and we will sort it out."
 msgstr ""
 
 #: patterns/restaurant-cta.php:27
+#: patterns/restaurant-hero.php:32
 msgctxt "Email subject line"
 msgid "Table booking"
 msgstr ""
@@ -9314,24 +12946,32 @@ msgstr ""
 
 #: patterns/restaurant-hero.php
 msgctxt "Pattern description"
-msgid "A full-bleed cover with opening nights, a booking button and a link to the menu."
+msgid "A dining introduction with seasonal food photography, a reservation enquiry and a menu link."
 msgstr ""
 
-#: patterns/restaurant-hero.php:17
-msgctxt "Restaurant hero eyebrow"
-msgid "Kitchen and dining room"
+#: patterns/restaurant-hero.php:21
+msgctxt "Starter hero eyebrow"
+msgid "Wharf Street · Bristol"
 msgstr ""
 
-#: patterns/restaurant-hero.php:20
-msgid "Ten tables, one menu, whatever the market had"
+#: patterns/restaurant-hero.php:24
+msgid "Good food. A table worth sharing."
 msgstr ""
 
-#: patterns/restaurant-hero.php:23
-msgid "Dinner Wednesday to Saturday · Lunch on Sunday · Bookings open six weeks ahead"
+#: patterns/restaurant-hero.php:27
+msgid "Seasonal cooking, a short wine list and a warm welcome. Dinner Wednesday to Saturday, lunch at the weekend."
 msgstr ""
 
-#: patterns/restaurant-hero.php:31
-msgid "See this week's menu"
+#: patterns/restaurant-hero.php:35
+msgid "Explore the menu"
+msgstr ""
+
+#: patterns/restaurant-hero.php:40
+msgid "Tell us your date, party size and dietary needs. We will confirm by reply."
+msgstr ""
+
+#: patterns/restaurant-hero.php:47
+msgid "Roasted fish with spring greens and herbs on a ceramic plate"
 msgstr ""
 
 #: patterns/restaurant-hours-h1.php
@@ -9412,7 +13052,7 @@ msgstr ""
 
 #: patterns/restaurant-kitchen-h1.php:21
 #: patterns/restaurant-kitchen.php:21
-msgid "The kitchen pass"
+msgid "A warm dining room set with oak tables and linen napkins"
 msgstr ""
 
 #: patterns/restaurant-kitchen-h1.php:28
@@ -9633,6 +13273,222 @@ msgctxt "Review in quotation marks"
 msgid "“%s”"
 msgstr ""
 
+#: patterns/salon-contact-h1.php
+msgctxt "Pattern title"
+msgid "Salon & Barber: enquiry details (opening a page)"
+msgstr ""
+
+#: patterns/salon-contact-h1.php:22
+#: patterns/salon-contact.php:22
+#: patterns/salon-cta.php:19
+msgid "Ready for your next look?"
+msgstr ""
+
+#: patterns/salon-contact-h1.php:25
+#: patterns/salon-contact.php:25
+#: patterns/salon-cta.php:22
+msgid "Email the service you want and a few preferred times, or call to talk it through. We will confirm availability and the right next step."
+msgstr ""
+
+#: patterns/salon-contact-h1.php:35
+#: patterns/salon-contact.php:35
+msgctxt "Contact form heading"
+msgid "Request an appointment"
+msgstr ""
+
+#: patterns/salon-contact.php
+msgctxt "Pattern title"
+msgid "Salon & Barber: enquiry details"
+msgstr ""
+
+#: patterns/salon-contact.php
+msgctxt "Pattern description"
+msgid "Salon & Barber: enquiry details using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/salon-cta.php
+msgctxt "Pattern title"
+msgid "Salon & Barber: contact request"
+msgstr ""
+
+#: patterns/salon-cta.php
+msgctxt "Pattern description"
+msgid "Salon & Barber: contact request using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/salon-cta.php:27
+msgctxt "Email subject line"
+msgid "Appointment request"
+msgstr ""
+
+#: patterns/salon-cta.php:30
+msgid "Call the studio"
+msgstr ""
+
+#: patterns/salon-hero.php
+msgctxt "Pattern title"
+msgid "Salon & Barber: introduction"
+msgstr ""
+
+#: patterns/salon-hero.php
+msgctxt "Pattern description"
+msgid "Salon & Barber: introduction using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/salon-hero.php:21
+msgctxt "Starter hero eyebrow"
+msgid "Juniper Hair Studio · Bristol"
+msgstr ""
+
+#: patterns/salon-hero.php:24
+msgid "Good hair starts with a conversation."
+msgstr ""
+
+#: patterns/salon-hero.php:27
+msgid "Cuts, styling, barbering and colour consultations in a relaxed neighbourhood studio. Bring an idea or ask us to help you find a look that fits your day."
+msgstr ""
+
+#: patterns/salon-hero.php:35
+msgid "Explore the service menu"
+msgstr ""
+
+#: patterns/salon-hero.php:40
+msgid "Tell us your service and preferred times. We confirm availability before your visit."
+msgstr ""
+
+#: patterns/salon-hero.php:47
+msgid "Tan styling chair, rounded mirror and neatly arranged tools in a warm independent hair studio"
+msgstr ""
+
+#: patterns/salon-location-h1.php
+msgctxt "Pattern title"
+msgid "Salon & Barber: location and visits (opening a page)"
+msgstr ""
+
+#: patterns/salon-location-h1.php:19
+#: patterns/salon-location.php:19
+msgctxt "Section eyebrow label"
+msgid "Plan your visit"
+msgstr ""
+
+#: patterns/salon-location-h1.php:22
+#: patterns/salon-location.php:22
+msgid "A neighbourhood studio with time to listen"
+msgstr ""
+
+#: patterns/salon-location-h1.php:25
+#: patterns/salon-location.php:25
+msgid "Visit our Bristol studio by appointment. Ask for directions, access information and current opening hours when arranging your visit."
+msgstr ""
+
+#: patterns/salon-location-h1.php:32
+#: patterns/salon-location.php:32
+msgid "If plans change, please get in touch so we can discuss moving your appointment. Booking and cancellation terms are confirmed with you."
+msgstr ""
+
+#: patterns/salon-location.php
+msgctxt "Pattern title"
+msgid "Salon & Barber: location and visits"
+msgstr ""
+
+#: patterns/salon-location.php
+msgctxt "Pattern description"
+msgid "Salon & Barber: location and visits using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/salon-process.php
+msgctxt "Pattern title"
+msgid "Salon & Barber: how it works"
+msgstr ""
+
+#: patterns/salon-process.php
+msgctxt "Pattern description"
+msgid "Salon & Barber: how it works using editable native WordPress blocks."
+msgstr ""
+
+#: patterns/salon-process.php:22
+msgid "Your visit, without the guesswork"
+msgstr ""
+
+#: patterns/salon-process.php:34
+msgid "Choose a starting point"
+msgstr ""
+
+#: patterns/salon-process.php:37
+msgid "Tell us the service you are interested in, your current hair and the change you have in mind."
+msgstr ""
+
+#: patterns/salon-process.php:47
+msgid "Request a suitable time"
+msgstr ""
+
+#: patterns/salon-process.php:50
+msgid "Share a few preferred dates. We confirm availability and any consultation needed before booking."
+msgstr ""
+
+#: patterns/salon-process.php:60
+msgid "Agree the plan together"
+msgstr ""
+
+#: patterns/salon-process.php:63
+msgid "At your visit, discuss the look, upkeep and price before the service starts."
+msgstr ""
+
+#: patterns/salon-services-h1.php
+msgctxt "Pattern title"
+msgid "Salon & Barber: services (opening a page)"
+msgstr ""
+
+#: patterns/salon-services-h1.php:22
+#: patterns/salon-services.php:22
+msgid "Find your next appointment"
+msgstr ""
+
+#: patterns/salon-services-h1.php:25
+#: patterns/salon-services.php:25
+msgid "A starting point for your visit. We discuss the finish you want and confirm the price before the service begins."
+msgstr ""
+
+#: patterns/salon-services-h1.php:34
+#: patterns/salon-services.php:34
+msgid "Cuts and styling"
+msgstr ""
+
+#: patterns/salon-services-h1.php:37
+#: patterns/salon-services.php:37
+msgid "A consultation, cut and finish shaped around your hair and the way you like to wear it. Ask about the right appointment length."
+msgstr ""
+
+#: patterns/salon-services-h1.php:44
+#: patterns/salon-services.php:44
+msgid "Barbering and shaping"
+msgstr ""
+
+#: patterns/salon-services-h1.php:47
+#: patterns/salon-services.php:47
+msgid "Clipper cuts, scissor work and beard shaping. Tell us what you have in mind when requesting a visit."
+msgstr ""
+
+#: patterns/salon-services-h1.php:54
+#: patterns/salon-services.php:54
+msgid "Colour consultations"
+msgstr ""
+
+#: patterns/salon-services-h1.php:57
+#: patterns/salon-services.php:57
+msgid "Talk through your colour goals, hair history and maintenance routine. We explain any checks needed before a colour appointment."
+msgstr ""
+
+#: patterns/salon-services.php
+msgctxt "Pattern title"
+msgid "Salon & Barber: services"
+msgstr ""
+
+#: patterns/salon-services.php
+msgctxt "Pattern description"
+msgid "Salon & Barber: services using editable native WordPress blocks."
+msgstr ""
+
 #: patterns/screens.php
 msgctxt "Pattern title"
 msgid "App screens gallery"
@@ -9645,12 +13501,12 @@ msgstr ""
 
 #: patterns/screens.php:16
 msgctxt "Gallery caption"
-msgid "Portfolio overview"
+msgid "Project board"
 msgstr ""
 
 #: patterns/screens.php:17
 msgctxt "Image alt text"
-msgid "Dashboard with balance history chart and project risk gauge"
+msgid "Launch tasks grouped into To do, In progress and Ready"
 msgstr ""
 
 #: patterns/screens.php:21
@@ -9660,7 +13516,7 @@ msgstr ""
 
 #: patterns/screens.php:22
 msgctxt "Image alt text"
-msgid "Dashboard with analytics widgets and charts"
+msgid "Task completion, capacity and project progress"
 msgstr ""
 
 #: patterns/screens.php:26
@@ -9670,7 +13526,7 @@ msgstr ""
 
 #: patterns/screens.php:27
 msgctxt "Image alt text"
-msgid "Dashboard with project timeline and task list"
+msgid "Project timeline from discovery to launch"
 msgstr ""
 
 #: patterns/screens.php:36
@@ -9683,7 +13539,7 @@ msgid "A closer look at Unapp"
 msgstr ""
 
 #: patterns/screens.php:42
-msgid "Clean dashboards that surface what matters. Click any screen to enlarge it."
+msgid "One project, three useful views. Open a screen to explore the details."
 msgstr ""
 
 #: patterns/security.php
@@ -9983,7 +13839,7 @@ msgstr ""
 
 #: patterns/shop-featured-h1.php:22
 #: patterns/shop-featured.php:22
-msgid "The four most recent things"
+msgid "Find your next everyday essential"
 msgstr ""
 
 #: patterns/shop-featured-h1.php:25
@@ -10017,16 +13873,32 @@ msgid "A storefront introduction with two calls to action and an image."
 msgstr ""
 
 #: patterns/shop-hero.php:21
-msgctxt "Shop hero eyebrow"
-msgid "Workshop and shop"
+msgctxt "Starter hero eyebrow"
+msgid "Made in Leeds · Small runs"
 msgstr ""
 
 #: patterns/shop-hero.php:24
-msgid "Things we make, in numbers we can stand behind"
+msgid "Made for the everyday. Built to stay."
 msgstr ""
 
 #: patterns/shop-hero.php:27
-msgid "A small workshop in Leeds making bags, aprons and a few things that did not fit either category. Two hundred of anything, then we stop and think about it."
+msgid "Canvas bags, aprons and useful things, cut and stitched in our four-person workshop. Fewer pieces, thoughtfully made."
+msgstr ""
+
+#: patterns/shop-hero.php:32
+msgid "Shop the collection"
+msgstr ""
+
+#: patterns/shop-hero.php:35
+msgid "Meet the workshop"
+msgstr ""
+
+#: patterns/shop-hero.php:40
+msgid "Free UK returns · Two-year guarantee · Repairs at cost"
+msgstr ""
+
+#: patterns/shop-hero.php:47
+msgid "Olive canvas tote with leather handles and a natural canvas apron"
 msgstr ""
 
 #: patterns/shop-promise.php
@@ -10095,7 +13967,7 @@ msgstr ""
 
 #: patterns/shop-workshop-h1.php:21
 #: patterns/shop-workshop.php:21
-msgid "The bench"
+msgid "Canvas and leather being stitched at a workshop bench"
 msgstr ""
 
 #: patterns/shop-workshop-h1.php:28

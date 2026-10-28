@@ -11,8 +11,8 @@
  */
 
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"},"anchor":"work"} -->
+<div class="wp-block-group alignfull" id="work" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);">
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"680px"}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"align":"center","textColor":"primary","fontFamily":"heading","fontSize":"small","style":{"typography":{"fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
@@ -27,8 +27,8 @@
 <div class="wp-block-columns are-vertically-aligned-center alignwide">
 <!-- wp:column {"verticalAlignment":"center","width":"46%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:46%;">
-<!-- wp:image {"width":"100%","aspectRatio":"3/2","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/motion.svg' ) ); ?>" alt="<?php esc_attr_e( 'Halden Rail identity', 'unapp' ); ?>" style="border-radius:20px;aspect-ratio:3/2;width:100%;height:auto"/></figure>
+<!-- wp:image {"width":"100%","aspectRatio":"4/3","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/showcase/agency-rail.svg' ) ); ?>" alt="<?php esc_attr_e( 'Halden Rail station sign and colour-coded route cards', 'unapp' ); ?>" style="border-radius:20px;aspect-ratio:4/3;width:100%;height:auto"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->

@@ -43,8 +43,8 @@
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"center","width":"46%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:46%;">
-<!-- wp:image {"width":"100%","aspectRatio":"3/2","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/abstract/sanctuary.svg' ) ); ?>" alt="<?php esc_attr_e( 'The church building', 'unapp' ); ?>" style="border-radius:20px;aspect-ratio:3/2;width:100%;height:auto"/></figure>
+<!-- wp:image {"width":"100%","aspectRatio":"4/3","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/showcase/church-welcome.webp' ) ); ?>" alt="<?php esc_attr_e( 'The church building', 'unapp' ); ?>" style="border-radius:20px;aspect-ratio:4/3;width:100%;height:auto"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->
