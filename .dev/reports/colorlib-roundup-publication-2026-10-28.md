@@ -48,6 +48,10 @@ Copy distinguishes requests and enquiries from confirmed bookings, inventory, ti
 | [32 Best WordPress Restaurant Themes 2026](https://colorlib.com/wp/wordpress-restaurant-themes/) | Pato, Unapp | 1 |
 | [31 Best Multipurpose WordPress Themes 2026](https://colorlib.com/wp/popular-multipurpose-wordpress-themes/) | Unapp | 0 |
 
+## Presentation follow-up
+
+The initial expansion introduced a separate presentation. It has been corrected: additions now match each article’s existing feature-card, at-a-glance or plain-description format and use the established global buttons or Details/Demo links. Repeated component CSS was moved into the shared Colorlib stylesheet. See [the consistency correction](colorlib-consistency-2026-10-28.md).
+
 ## Verification and recovery
 
 All 29 saved posts and titles matched the prepared source immediately after publication. Public browser validation covers HTTP responses, leading entries, SEO/visible counts, contents destinations, ItemList totals, decoded screenshots with alternative text, and section overflow at 1440, 390 and 320 pixels. Representative article screenshots were inspected at desktop and phone widths. The main roundup needed its exact stale GET origin-cache entry removed before its refreshed SEO title appeared.

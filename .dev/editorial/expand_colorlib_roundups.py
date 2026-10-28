@@ -2,6 +2,7 @@
 """Prepare reviewed WordPress article patches; publishing is a separate guarded step."""
 import hashlib,html,json,re
 from pathlib import Path
+from article_components import render_picks, remove_embedded_components
 ROOT=Path(__file__).resolve().parent
 COPY=json.loads((ROOT/'colorlib-roundup-copy.json').read_text())
 DATA=json.loads(Path('/tmp/colorlib-editorial-inventory.json').read_text())
@@ -26,7 +27,7 @@ VARIANTS={
 'restaurant':('Restaurant starter','An independent restaurant or cafe','Editable menu, opening hours and booking enquiries','Unapp’s free Restaurant starter covers a priced menu, the kitchen, reviews, opening hours and a booking-request action. Its ordinary WordPress blocks make the food, photographs and wording straightforward to change, with a personalized preview and guided finishing workspace for the rest of the site.','Use email, phone or a form plugin for requests; live table availability and confirmed reservations are separate.'),
 'realestate':('Property starter','A small estate agency with editable listings','Property information, published fees and valuation enquiries','Unapp’s free Property starter provides an agency website with listings, published fees and a valuation enquiry path. The listing sections are ordinary blocks, so it is a simple option for a small selection of properties you edit yourself. Native setup and guided content review help replace the sample information.','It does not include a structured listings database, map search or an IDX/MLS feed.'),
 'blog':('Blog & magazine starter','An editorial blog with a broader site','Masthead, real posts and category sections','Unapp’s free Blog & magazine starter includes an editorial masthead, featured-post presentation and category sections that use your actual posts. Its one-page/full-site setup and native Styles controls suit a writer who also wants supporting information pages. The guided content pass helps finish the static sections while posts stay managed in WordPress.','A blog needs your own posts, categories and featured images; the starter’s sample wording is for review.')}
-CSS='''.colorlib-editorial-picks{margin:28px 0}.colorlib-editorial-note{padding:16px 20px;border-left:4px solid #1a73e8;background:#f4f8ff;color:#334155}.colorlib-editorial-picks .template-card__meta{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.colorlib-editorial-picks .template-card__badge{display:inline-block;background:#edf4ff;color:#174ea6;padding:5px 10px;border-radius:6px;font-size:13px}.colorlib-editorial-picks figure{margin:18px 0}.colorlib-editorial-picks figure img{display:block;max-width:100%;height:auto;border-radius:10px;border:1px solid #e2e8f0}.colorlib-editorial-picks figcaption{font-size:13px;color:#64748b;margin-top:7px}.colorlib-editorial-actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 32px}.colorlib-editorial-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 18px;border-radius:6px;border:1px solid #16645a;color:#16645a;font-weight:600;text-decoration:none}.colorlib-editorial-actions a:first-child{background:#16645a;color:#fff}.cltoc{margin:24px 0;padding:16px 20px;border:1px solid #e2e8f0;border-radius:10px}.cltoc summary{cursor:pointer;font-weight:600}.cltoc ol{margin-top:14px}.clqp__grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}.wp-block-table{overflow-x:auto}.colorlib-editorial-picks h3{scroll-margin-top:40px}@media(max-width:600px){.colorlib-editorial-actions{flex-direction:column}.colorlib-editorial-actions a{width:100%;box-sizing:border-box}}'''
+
 
 def plain(s):return html.unescape(re.sub('<[^>]+>','',s)).strip()
 def hstart(c,pos):
@@ -93,10 +94,7 @@ def prepare(post_id,keys):
  # Insert our free group immediately before the first full theme-list section.
  first=remaining[0]['start'];h2=list(re.finditer(r'<h2\b[^>]*>.*?</h2>',c[:first],re.S));assert h2,post_id
  insertion=hstart(c,h2[-1].start())
- section=['<!-- wp:html -->','<style>'+CSS+'</style>','<section class="colorlib-editorial-picks" aria-labelledby="colorlib-free-picks">','<h2 id="colorlib-free-picks">Our free Colorlib picks</h2>','<p class="colorlib-editorial-note">We develop and maintain these free themes at Colorlib. Download them directly from us and explore their live demos below. These editions use Colorlib updates; WordPress.org install counts and ratings do not apply. Any speed table on this page covers the themes already measured in that test.</p>']
- for d in front_infos:
-  im=MEDIA[d['key']];name=html.escape(d['name']);title=name+' — '+html.escape(d['subtitle']);section += [f'<article data-colorlib-product="{d["canonical"]}"><h3 id="{d["anchor"]}">{title}</h3>',f'<div class="template-card__meta"><span class="template-card__badge">Colorlib theme · maintained by us</span><span class="template-card__badge">Free from Colorlib</span><span class="template-card__badge">Native WordPress editing</span></div>',f'<figure><a href="{d["demo"]}"><img src="{im["url"]}" alt="{html.escape(im["alt"],quote=True)}" width="1440" height="1000" loading="lazy" decoding="async" class="wp-image-{im["id"]}"></a><figcaption>Live {name} demo, photographed in October 2026. {html.escape(d["subtitle"])}.</figcaption></figure>',f'<p><strong>Best for:</strong> {html.escape(d["best"])}.</p>',f'<p>{html.escape(d["copy"])}</p>',f'<p><strong>Keep in mind:</strong> {html.escape(d["limit"])}</p>',f'<div class="colorlib-editorial-actions"><a href="{d["page"]}">More info / Free download</a><a href="{d["demo"]}">See the live demo</a></div></article>']
- section+=['</section>','<!-- /wp:html -->'];new_section='\n'.join(section)+'\n\n';c=c[:insertion]+new_section+c[insertion:];c=renumber(c);all_es=entries(c);total=len(all_es)
+ new_section=render_picks(front_infos, MEDIA, c);c=c[:insertion]+new_section+c[insertion:];c=remove_embedded_components(c);c=renumber(c);all_es=entries(c);total=len(all_es)
  # All original external entries remain, in their original relative order.
  old_external=[e['name'] for e in old_es if e['name'].split(' — ')[0] not in selected];new_external=[e['name'] for e in all_es if e['name'].split(' — ')[0] not in selected];assert old_external==new_external,(post_id,'External entries changed')
  toc='<!-- wp:html -->\n<details class="cltoc"><summary>Table of contents — all '+str(total)+' themes</summary><ol>'+''.join('<li><a href="#'+e['id']+'">'+html.escape(e['name'])+'</a></li>' for e in all_es)+'</ol></details>\n<!-- /wp:html -->'
@@ -108,7 +106,7 @@ def prepare(post_id,keys):
    start=hstart(c,manual.start());lst=re.search(r'<(ul|ol)\b[^>]*>.*?</\1>',c[manual.end():],re.S);assert lst
    end=manual.end()+lst.end();closing=re.match(r'\s*<!-- /wp:list -->',c[end:]);end+=closing.end() if closing else 0;c=c[:start]+toc+c[end:]
   else:
-   ins=c.index('<!-- wp:html -->\n<style>'+CSS);c=c[:ins]+toc+'\n\n'+c[ins:]
+   ins=c.index('<!-- wp:group {"className":"colorlib-editorial-picks"} -->');c=c[:ins]+toc+'\n\n'+c[ins:]
  # Add our leading picks to summary UI and feature comparison; benchmark rows stay untouched.
  picked=front_infos[:3];quick=re.search(r'(<ul class="quick-picks__list">)',c)
  if quick:
@@ -174,7 +172,7 @@ def prepare(post_id,keys):
  assert wpbalance(c),(post_id,'Unbalanced native blocks')
  assert len({e['id'] for e in all_es})==total,(post_id,'Duplicate entry anchors')
  assert all_es[0]['id']==front_infos[0]['anchor'],(post_id,[e['name'] for e in all_es[:3]])
- assert len(re.findall('data-colorlib-product=',c))==len(keys)
+ assert len(re.findall('class="wp-block-group colorlib-theme-entry ',c))==len(keys)
  return {'id':post_id,'url':post['url'],'old_title':post['post_title'],'post_title':title,'before_sha256':hashlib.sha256(old.encode()).hexdigest(),'post_content':c,'seo':seo,'original_entries':original_count,'total_entries':total,'display_count':display,'added_entries':added,'products':[{'key':d['key'],'canonical':d['canonical'],'anchor':d['anchor'],'demo':d['demo'],'page':d['page']} for d in front_infos],'preview_section':new_section}
 
 if __name__=='__main__':
